@@ -5,7 +5,7 @@
 #   LANG=en_US.UTF-8 Rscript analysis/revision/<script>.R
 # ==============================================================================
 
-suppressMessages(pkgload::load_all("~/Documents/github/resources/opencheck", quiet = TRUE))
+suppressMessages(pkgload::load_all("opencheck", quiet = TRUE))  # the copy bundled with this package
 
 ROOT       <- normalizePath(".")
 HARMONIZED <- file.path(ROOT, "data/harmonized")
