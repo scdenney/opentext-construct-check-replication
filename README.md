@@ -2,6 +2,8 @@
 
 Replication materials for the working paper by Steven Denney (Leiden University), November 2026.
 
+The paper is on SSRN: <https://papers.ssrn.com/abstract=6912419>.
+
 This repository is temporary. The materials will be deposited in a Dataverse upon publication.
 
 ## What is here
