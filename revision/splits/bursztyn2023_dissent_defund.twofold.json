@@ -1,0 +1,2517 @@
+{
+  "meta": {
+    "scheme": "twofold",
+    "p_discovery": 0.5,
+    "seed": 4242,
+    "n_splits": 1,
+    "strata": "treatment",
+    "id_col": "id",
+    "n": 500,
+    "data_hash": "d9c9536375ade5dbd175610c78b18ea96da3627da39dd2a2f1ad6f76f5e94ec3",
+    "created": "2026-11-17T18:08:08Z",
+    "opencheck_version": "0.0.0.9000"
+  },
+  "split_hash": "a33fab8a6c5cd1443dd95d6a183050a58feece49676f694662deeff1bddaa6d4",
+  "assignments": [
+    {
+      "id": "bursztyn2023_dissent_defund_1",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_2",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_3",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_4",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_5",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_6",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_7",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_8",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_9",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_10",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_11",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_12",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_13",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_14",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_15",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_16",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_17",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_18",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_19",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_20",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_21",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_22",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_23",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_24",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_25",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_26",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_27",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_28",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_29",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_30",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_31",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_32",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_33",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_34",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_35",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_36",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_37",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_38",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_39",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_40",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_41",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_42",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_43",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_44",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_45",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_46",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_47",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_48",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_49",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_50",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_51",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_52",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_53",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_54",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_55",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_56",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_57",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_58",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_59",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_60",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_61",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_62",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_63",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_64",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_65",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_66",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_67",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_68",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_69",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_70",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_71",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_72",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_73",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_74",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_75",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_76",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_77",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_78",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_79",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_80",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_81",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_82",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_83",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_84",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_85",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_86",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_87",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_88",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_89",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_90",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_91",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_92",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_93",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_94",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_95",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_96",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_97",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_98",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_99",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_100",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_102",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_103",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_104",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_105",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_106",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_107",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_108",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_109",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_110",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_111",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_113",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_115",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_117",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_118",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_119",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_120",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_122",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_124",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_125",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_126",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_127",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_128",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_129",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_130",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_131",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_132",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_134",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_135",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_136",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_137",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_138",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_140",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_141",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_142",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_143",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_144",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_145",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_146",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_147",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_148",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_149",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_150",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_151",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_153",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_154",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_155",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_156",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_157",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_158",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_159",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_160",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_161",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_163",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_164",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_166",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_167",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_168",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_169",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_170",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_171",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_172",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_173",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_174",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_175",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_176",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_177",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_179",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_180",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_181",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_182",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_183",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_184",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_185",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_186",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_187",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_188",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_189",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_190",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_191",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_192",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_193",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_194",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_195",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_196",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_197",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_199",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_200",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_201",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_202",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_204",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_205",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_207",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_208",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_210",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_211",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_212",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_213",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_214",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_215",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_216",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_217",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_218",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_219",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_220",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_221",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_222",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_223",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_224",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_225",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_226",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_227",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_228",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_229",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_231",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_232",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_233",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_234",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_235",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_236",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_238",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_239",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_240",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_241",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_242",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_243",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_244",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_245",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_246",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_247",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_248",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_250",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_251",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_252",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_254",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_255",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_256",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_257",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_258",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_259",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_260",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_261",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_262",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_263",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_264",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_265",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_266",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_267",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_269",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_270",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_271",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_272",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_273",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_274",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_275",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_277",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_278",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_279",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_280",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_281",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_282",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_283",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_284",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_285",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_288",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_289",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_290",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_291",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_292",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_294",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_295",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_296",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_297",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_298",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_299",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_301",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_302",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_303",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_304",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_305",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_306",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_307",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_308",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_310",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_311",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_312",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_313",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_314",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_315",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_316",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_317",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_318",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_319",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_320",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_321",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_322",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_323",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_324",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_325",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_326",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_327",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_328",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_329",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_330",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_331",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_333",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_335",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_336",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_339",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_340",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_341",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_342",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_344",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_345",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_346",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_347",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_348",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_349",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_350",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_351",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_352",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_353",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_354",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_355",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_356",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_357",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_358",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_359",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_360",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_361",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_362",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_363",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_364",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_365",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_366",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_367",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_368",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_369",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_371",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_372",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_373",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_374",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_375",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_376",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_377",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_378",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_379",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_380",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_381",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_382",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_383",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_384",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_385",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_386",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_387",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_388",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_389",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_390",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_391",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_392",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_393",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_395",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_396",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_397",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_398",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_399",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_400",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_401",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_402",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_403",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_404",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_405",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_406",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_407",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_408",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_409",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_410",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_411",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_412",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_413",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_414",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_415",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_416",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_417",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_419",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_420",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_421",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_422",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_423",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_424",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_425",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_426",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_427",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_428",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_429",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_430",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_431",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_432",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_433",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_434",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_436",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_437",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_438",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_439",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_440",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_441",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_442",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_443",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_444",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_445",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_446",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_447",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_448",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_449",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_450",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_452",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_453",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_454",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_455",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_456",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_457",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_458",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_459",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_460",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_461",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_462",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_463",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_464",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_465",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_466",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_467",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_469",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_470",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_471",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_472",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_473",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_474",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_475",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_476",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_477",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_478",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_479",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_480",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_481",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_482",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_483",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_484",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_485",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_486",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_487",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_488",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_489",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_491",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_492",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_494",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_495",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_496",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_497",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_498",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_499",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_500",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_501",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "bursztyn2023_dissent_defund_507",
+      "split": 1,
+      "fold": "A"
+    }
+  ]
+}

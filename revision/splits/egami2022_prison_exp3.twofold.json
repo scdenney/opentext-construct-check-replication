@@ -1,0 +1,5187 @@
+{
+  "meta": {
+    "scheme": "twofold",
+    "p_discovery": 0.5,
+    "seed": 4242,
+    "n_splits": 1,
+    "strata": "treatment",
+    "id_col": "id",
+    "n": 1034,
+    "data_hash": "65fd1e92c6224f81d46e13579fe0b7b781f97830c66ba4a21c9edc38c3449ed0",
+    "created": "2026-10-28T22:45:03Z",
+    "opencheck_version": "0.0.0.9000"
+  },
+  "split_hash": "62512305a3db021d7d77de84d4e07af247882d1f77d96bb9433642d1cc5d310f",
+  "assignments": [
+    {
+      "id": "egami2022_prison_exp3_1",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_2",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_3",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_4",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_5",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_6",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_7",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_8",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_9",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_10",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_11",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_12",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_13",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_14",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_15",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_16",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_17",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_18",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_19",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_20",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_21",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_22",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_23",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_24",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_25",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_26",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_27",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_28",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_29",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_30",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_31",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_32",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_33",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_34",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_35",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_36",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_37",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_38",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_39",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_40",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_41",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_42",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_43",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_44",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_45",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_46",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_47",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_48",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_49",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_50",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_51",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_52",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_53",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_54",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_55",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_56",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_57",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_58",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_59",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_60",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_61",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_62",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_63",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_64",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_65",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_66",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_67",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_68",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_69",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_70",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_71",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_72",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_73",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_74",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_75",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_77",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_78",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_79",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_80",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_81",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_82",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_83",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_84",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_85",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_86",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_87",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_88",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_89",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_90",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_91",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_92",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_93",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_94",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_95",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_96",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_97",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_98",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_99",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_100",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_102",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_103",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_104",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_105",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_106",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_107",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_108",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_109",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_110",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_111",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_113",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_115",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_116",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_117",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_118",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_119",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_120",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_122",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_124",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_125",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_126",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_127",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_128",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_129",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_130",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_131",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_132",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_133",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_134",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_135",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_136",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_137",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_138",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_140",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_141",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_142",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_143",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_144",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_145",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_146",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_147",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_148",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_149",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_150",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_151",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_152",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_153",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_154",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_155",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_156",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_158",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_159",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_160",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_161",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_162",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_163",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_166",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_167",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_168",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_169",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_170",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_171",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_172",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_173",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_174",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_175",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_176",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_177",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_178",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_179",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_180",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_181",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_182",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_183",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_184",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_185",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_187",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_188",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_189",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_190",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_191",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_192",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_193",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_194",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_195",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_196",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_197",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_199",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_200",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_201",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_202",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_204",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_205",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_207",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_210",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_212",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_213",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_214",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_215",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_216",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_217",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_218",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_219",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_220",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_221",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_222",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_223",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_224",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_225",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_226",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_227",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_228",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_229",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_231",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_232",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_233",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_234",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_235",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_236",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_238",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_239",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_240",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_241",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_242",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_243",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_244",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_245",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_246",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_247",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_248",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_250",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_251",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_252",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_254",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_255",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_256",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_257",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_258",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_259",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_260",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_261",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_262",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_263",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_264",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_265",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_266",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_267",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_269",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_270",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_271",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_272",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_273",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_274",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_275",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_277",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_278",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_279",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_280",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_281",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_282",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_283",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_284",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_285",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_286",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_288",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_289",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_290",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_291",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_292",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_294",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_295",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_296",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_297",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_298",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_299",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_301",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_302",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_303",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_304",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_305",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_306",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_307",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_308",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_310",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_311",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_312",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_313",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_314",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_316",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_317",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_318",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_319",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_320",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_321",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_322",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_323",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_324",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_325",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_326",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_327",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_328",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_329",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_330",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_331",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_332",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_333",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_334",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_335",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_336",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_338",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_339",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_340",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_341",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_342",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_344",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_345",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_346",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_347",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_348",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_349",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_350",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_351",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_352",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_353",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_354",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_355",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_356",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_357",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_358",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_359",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_360",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_361",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_362",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_363",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_364",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_365",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_366",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_367",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_368",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_369",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_371",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_372",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_373",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_374",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_375",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_376",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_377",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_378",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_379",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_380",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_381",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_382",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_383",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_384",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_385",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_386",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_387",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_388",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_389",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_390",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_391",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_392",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_393",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_394",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_395",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_396",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_397",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_398",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_399",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_400",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_401",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_402",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_403",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_404",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_405",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_406",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_407",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_408",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_409",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_410",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_411",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_412",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_413",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_414",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_415",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_416",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_417",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_419",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_420",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_421",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_422",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_423",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_424",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_425",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_426",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_427",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_428",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_429",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_430",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_431",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_432",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_433",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_434",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_436",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_437",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_438",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_439",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_440",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_441",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_442",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_443",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_444",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_445",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_446",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_447",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_448",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_449",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_450",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_452",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_453",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_454",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_455",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_456",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_457",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_458",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_459",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_460",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_461",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_462",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_463",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_464",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_465",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_466",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_467",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_469",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_470",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_471",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_472",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_473",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_474",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_475",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_476",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_477",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_478",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_479",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_480",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_481",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_482",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_483",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_484",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_485",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_486",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_487",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_488",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_489",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_491",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_492",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_494",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_495",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_496",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_497",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_498",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_499",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_500",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_501",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_502",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_503",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_504",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_505",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_506",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_507",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_508",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_509",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_510",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_511",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_512",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_513",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_514",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_515",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_516",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_517",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_518",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_519",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_520",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_521",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_522",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_523",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_524",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_525",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_526",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_527",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_528",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_529",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_530",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_531",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_532",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_533",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_534",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_535",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_536",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_537",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_538",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_539",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_540",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_541",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_542",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_543",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_544",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_545",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_546",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_547",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_548",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_549",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_550",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_551",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_552",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_553",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_554",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_555",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_556",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_557",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_558",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_559",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_560",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_561",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_562",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_563",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_564",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_565",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_566",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_567",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_568",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_569",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_570",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_571",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_572",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_573",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_574",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_575",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_576",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_577",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_578",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_579",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_580",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_581",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_582",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_583",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_584",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_585",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_586",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_587",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_588",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_589",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_590",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_591",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_592",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_593",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_594",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_595",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_596",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_597",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_598",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_599",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_600",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_601",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_602",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_603",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_604",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_605",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_606",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_607",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_608",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_609",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_610",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_611",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_612",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_613",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_614",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_615",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_616",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_617",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_618",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_619",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_620",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_621",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_622",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_623",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_624",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_625",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_626",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_627",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_628",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_629",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_630",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_631",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_632",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_633",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_634",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_635",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_636",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_637",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_638",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_639",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_640",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_641",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_642",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_643",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_644",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_645",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_646",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_647",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_648",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_649",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_650",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_651",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_652",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_653",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_654",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_655",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_656",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_657",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_658",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_659",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_660",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_661",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_662",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_663",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_664",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_665",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_666",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_667",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_668",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_669",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_670",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_671",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_672",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_673",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_674",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_675",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_676",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_677",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_678",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_679",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_680",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_681",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_682",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_683",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_684",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_685",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_686",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_687",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_688",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_689",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_690",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_691",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_692",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_693",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_694",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_695",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_696",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_697",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_698",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_699",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_700",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_701",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_702",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_703",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_704",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_705",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_706",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_707",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_708",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_709",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_710",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_711",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_712",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_713",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_714",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_715",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_716",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_717",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_718",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_719",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_720",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_721",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_722",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_723",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_724",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_725",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_726",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_727",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_728",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_729",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_730",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_731",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_732",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_733",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_734",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_735",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_736",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_737",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_738",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_739",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_740",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_741",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_742",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_743",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_744",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_745",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_746",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_747",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_748",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_749",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_750",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_751",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_752",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_753",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_754",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_755",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_756",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_757",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_758",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_759",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_760",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_761",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_762",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_763",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_764",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_765",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_766",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_767",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_768",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_769",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_770",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_771",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_772",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_773",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_774",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_775",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_776",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_777",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_778",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_779",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_780",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_781",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_782",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_783",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_784",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_785",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_786",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_787",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_788",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_789",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_790",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_791",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_792",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_793",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_794",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_795",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_796",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_797",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_798",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_799",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_800",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_801",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_802",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_803",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_804",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_805",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_806",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_807",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_808",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_809",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_810",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_811",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_812",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_813",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_814",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_815",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_816",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_817",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_818",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_819",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_820",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_821",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_822",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_823",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_824",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_825",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_827",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_828",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_829",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_830",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_831",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_832",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_833",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_834",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_835",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_836",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_837",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_838",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_839",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_840",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_841",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_842",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_843",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_844",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_845",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_846",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_847",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_848",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_849",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_850",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_851",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_852",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_853",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_854",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_855",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_856",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_857",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_858",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_859",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_860",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_861",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_862",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_863",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_864",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_865",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_866",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_867",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_868",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_869",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_870",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_871",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_872",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_873",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_874",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_875",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_876",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_877",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_878",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_879",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_880",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_881",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_882",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_883",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_884",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_885",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_886",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_887",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_888",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_889",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_890",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_891",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_892",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_893",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_894",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_895",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_896",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_897",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_898",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_899",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_900",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_901",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_902",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_903",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_904",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_905",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_906",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_907",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_908",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_909",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_910",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_911",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_912",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_913",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_914",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_915",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_916",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_917",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_918",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_919",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_920",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_921",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_922",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_923",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_924",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_925",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_926",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_927",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_928",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_929",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_930",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_931",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_932",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_933",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_934",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_935",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_936",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_937",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_938",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_939",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_940",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_941",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_942",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_943",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_944",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_945",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_946",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_947",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_948",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_949",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_950",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_951",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_952",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_953",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_954",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_955",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_956",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_957",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_958",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_959",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_960",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_961",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_962",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_963",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_964",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_965",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_966",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_967",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_968",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_969",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_970",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_971",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_972",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_973",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_974",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_975",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_976",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_977",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_978",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_979",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_980",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_982",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_983",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_984",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_985",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_986",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_987",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_988",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_989",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_990",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_991",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_992",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_993",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_994",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_995",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_996",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_997",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_998",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_999",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1000",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1001",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1002",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1003",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1004",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1005",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1006",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1007",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1008",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1009",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1010",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1011",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1012",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1013",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1014",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1015",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1016",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1017",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1018",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1019",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1020",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1021",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1022",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1023",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1024",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1025",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1026",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1027",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1028",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1029",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1030",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1031",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1032",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1033",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1044",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1065",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1069",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1075",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1077",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "egami2022_prison_exp3_1083",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "egami2022_prison_exp3_1087",
+      "split": 1,
+      "fold": "A"
+    }
+  ]
+}

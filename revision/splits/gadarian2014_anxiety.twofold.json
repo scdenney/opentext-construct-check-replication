@@ -1,0 +1,1722 @@
+{
+  "meta": {
+    "scheme": "twofold",
+    "p_discovery": 0.5,
+    "seed": 4242,
+    "n_splits": 1,
+    "strata": "treatment",
+    "id_col": "id",
+    "n": 341,
+    "data_hash": "d59f40f93382a1f1d81914ff2753f3c564ba4818f9eed00e820c8f58ddb78766",
+    "created": "2026-10-28T22:45:03Z",
+    "opencheck_version": "0.0.0.9000"
+  },
+  "split_hash": "a6097c65a05556071c340bce02f59feb32ec7d08ea1f4f145a287d90c2b33dc2",
+  "assignments": [
+    {
+      "id": "gadarian2014_anxiety_1",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_2",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_3",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_4",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_5",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_6",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_7",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_8",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_9",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_10",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_11",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_12",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_13",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_14",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_15",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_16",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_17",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_18",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_19",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_20",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_21",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_22",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_23",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_24",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_25",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_26",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_27",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_28",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_29",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_30",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_31",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_32",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_33",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_34",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_35",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_36",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_37",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_38",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_39",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_40",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_41",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_42",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_43",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_44",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_45",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_46",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_47",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_48",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_49",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_50",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_51",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_52",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_53",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_54",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_55",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_56",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_57",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_58",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_59",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_60",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_61",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_62",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_63",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_64",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_65",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_66",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_67",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_68",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_69",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_70",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_71",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_72",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_73",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_74",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_75",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_76",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_77",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_78",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_79",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_80",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_81",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_82",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_83",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_84",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_85",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_86",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_87",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_88",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_89",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_90",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_91",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_92",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_93",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_94",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_95",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_96",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_97",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_98",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_99",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_100",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_102",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_103",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_104",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_105",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_106",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_107",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_108",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_109",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_110",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_111",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_113",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_115",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_116",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_117",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_118",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_119",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_120",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_122",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_124",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_125",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_126",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_127",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_128",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_129",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_130",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_131",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_132",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_134",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_135",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_136",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_137",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_138",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_140",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_141",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_142",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_143",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_144",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_145",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_146",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_147",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_148",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_149",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_150",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_151",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_153",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_154",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_155",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_156",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_157",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_158",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_159",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_160",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_161",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_163",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_166",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_167",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_168",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_169",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_170",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_171",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_172",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_173",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_174",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_175",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_176",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_177",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_179",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_180",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_181",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_182",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_183",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_184",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_185",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_187",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_188",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_189",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_190",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_191",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_192",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_193",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_194",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_195",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_196",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_197",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_199",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_200",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_201",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_202",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_204",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_205",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_206",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_207",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_208",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_210",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_211",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_212",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_213",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_214",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_215",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_216",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_217",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_218",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_219",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_220",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_221",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_222",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_223",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_224",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_225",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_226",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_227",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_228",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_229",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_231",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_232",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_233",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_234",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_235",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_236",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_238",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_239",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_240",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_241",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_242",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_243",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_244",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_245",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_246",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_247",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_248",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_249",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_250",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_251",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_252",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_254",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_255",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_256",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_257",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_258",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_259",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_260",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_261",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_262",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_263",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_264",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_265",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_266",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_267",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_269",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_270",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_271",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_272",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_273",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_274",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_275",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_277",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_278",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_279",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_280",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_281",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_282",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_283",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_284",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_285",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_287",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_288",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_289",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_290",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_291",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_292",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_294",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_295",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_296",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_297",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_298",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_299",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_301",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_302",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_303",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_304",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_305",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_306",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_307",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_308",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_310",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_311",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_312",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_313",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_314",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_316",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_317",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_318",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_319",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_320",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_321",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_322",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_323",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_324",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_325",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_326",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_327",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_328",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_329",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_330",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_331",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_333",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_335",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_336",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_339",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "gadarian2014_anxiety_340",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "gadarian2014_anxiety_341",
+      "split": 1,
+      "fold": "A"
+    }
+  ]
+}

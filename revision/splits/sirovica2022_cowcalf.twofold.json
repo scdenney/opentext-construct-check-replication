@@ -1,0 +1,8987 @@
+{
+  "meta": {
+    "scheme": "twofold",
+    "p_discovery": 0.5,
+    "seed": 4242,
+    "n_splits": 1,
+    "strata": ["treatment", "country"],
+    "id_col": "id",
+    "n": 1794,
+    "data_hash": "b03a39f7040cbd7b84f6960b7bfe99ff9ef101b91aa4222020d3f29f91483c76",
+    "created": "2026-11-17T19:30:40Z",
+    "opencheck_version": "0.0.0.9000"
+  },
+  "split_hash": "8162488ca0907fea80be2743be172988aa5a59100625f4adb495c1c87fc72f44",
+  "assignments": [
+    {
+      "id": "CA1",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA2",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA3",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA4",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA5",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA6",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA7",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA8",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA9",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA10",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA11",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA12",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA13",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA14",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA15",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA16",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA17",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA18",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA19",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA20",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA21",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA22",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA23",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA24",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA25",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA26",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA27",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA28",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA29",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA30",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA31",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA32",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA33",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA34",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA35",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA36",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA37",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA38",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA39",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA40",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA41",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA42",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA43",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA44",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA45",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA46",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA47",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA48",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA49",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA50",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA51",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA52",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA53",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA54",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA55",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA56",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA57",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA58",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA59",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA60",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA61",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA62",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA63",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA64",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA65",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA66",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA67",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA68",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA69",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA70",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA71",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA72",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA73",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA74",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA75",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA76",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA77",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA78",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA79",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA80",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA81",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA82",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA83",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA84",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA85",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA86",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA87",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA88",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA89",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA90",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA91",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA92",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA93",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA94",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA95",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA96",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA97",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA98",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA99",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA100",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA102",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA103",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA104",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA105",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA106",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA107",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA108",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA109",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA110",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA111",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA113",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA114",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA115",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA116",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA117",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA118",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA119",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA120",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA122",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA124",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA125",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA126",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA127",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA128",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA129",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA130",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA131",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA132",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA134",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA135",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA136",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA137",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA138",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA140",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA141",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA142",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA143",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA144",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA145",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA146",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA147",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA148",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA149",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA150",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA151",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA153",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA154",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA155",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA156",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA157",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA158",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA159",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA160",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA161",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA163",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA166",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA167",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA168",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA169",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA170",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA171",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA172",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA173",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA174",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA175",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA176",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA177",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA179",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA180",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA181",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA182",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA183",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA184",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA185",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA187",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA188",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA189",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA190",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA191",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA192",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA193",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA194",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA195",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA196",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA197",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA198",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA199",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA200",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA201",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA202",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA204",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA205",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA207",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA208",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA209",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA210",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA211",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA212",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA213",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA214",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA215",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA216",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA217",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA218",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA219",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA220",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA221",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA222",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA223",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA224",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA225",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA226",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA227",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA228",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA229",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA231",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA232",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA233",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA234",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA235",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA236",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA238",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA239",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA240",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA241",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA242",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA243",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA244",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA245",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA246",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA247",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA248",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA250",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA251",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA252",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA254",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA255",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA256",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA257",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA258",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA259",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA260",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA261",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA262",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA263",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA264",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA265",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA266",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA267",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA269",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA270",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA271",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA272",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA273",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA274",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA275",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA277",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA278",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA279",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA280",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA281",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA282",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA283",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA284",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA285",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA288",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA289",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA290",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA291",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA292",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA294",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA295",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA296",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA297",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA298",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA299",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA301",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA302",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA303",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA304",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "CA305",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA306",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "CA307",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US308",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US310",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US311",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US312",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US313",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US314",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US316",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US317",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US318",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US319",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US320",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US321",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US322",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US323",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US324",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US325",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US326",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US327",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US328",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US329",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US330",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US331",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US333",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US335",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US336",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US339",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US340",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US341",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US342",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US344",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US345",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US346",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US347",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US348",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US349",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US350",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US351",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US352",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US353",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US354",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US355",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US356",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US357",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US358",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US359",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US360",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US361",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US362",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US363",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US364",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US365",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US366",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US367",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US368",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US369",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US371",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US372",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US373",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US374",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US375",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US376",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US377",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US378",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US379",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US380",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US381",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US382",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US383",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US384",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US385",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US386",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US387",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US388",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US389",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US390",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US391",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US392",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US393",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US394",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US395",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US396",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US397",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US398",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US399",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US400",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US401",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US402",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US403",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US404",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US405",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US406",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US407",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US408",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US409",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US410",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US411",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US412",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US413",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US414",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US415",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US416",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US417",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US419",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US420",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US421",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US422",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US423",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US424",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US425",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US426",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US427",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US428",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US429",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US430",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US431",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US432",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US433",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US434",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US436",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US437",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US438",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US439",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US440",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US441",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US442",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US443",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US444",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US445",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US446",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US447",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US448",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US449",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US450",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US452",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US453",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US454",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US455",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US456",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US457",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US458",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US459",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US460",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US461",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US462",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US463",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US464",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US465",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US466",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US467",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US469",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US470",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US471",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US472",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US473",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US474",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US475",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US476",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US477",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US478",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US479",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US480",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US481",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US482",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US483",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US484",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US485",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US486",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US487",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US488",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US489",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US491",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US492",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US494",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US495",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US496",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US497",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US498",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US499",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US500",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US501",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US502",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US503",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US504",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US505",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US506",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US507",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US508",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US509",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US510",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US511",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US512",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US513",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US514",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US515",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US516",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US517",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US518",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US519",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US520",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US521",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US522",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US523",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US524",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US525",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US526",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US527",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US528",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US529",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US530",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US531",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US532",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US533",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US534",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US535",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US536",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US537",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US538",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US539",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US540",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US541",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US542",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US543",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US544",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US545",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US546",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US547",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US548",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US549",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US550",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US551",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US552",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US553",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US554",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US555",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US556",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US557",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US558",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US559",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US560",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US561",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US562",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US563",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US564",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US565",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US566",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US567",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US568",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US569",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US570",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US571",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US572",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US573",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US574",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US575",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US576",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US577",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US578",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US579",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US580",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US581",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US582",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US583",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US584",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US585",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US586",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US587",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US588",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US589",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US590",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US591",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US592",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US593",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US594",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US595",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US596",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US597",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US598",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US599",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US600",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US601",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US602",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US603",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US604",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US605",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US606",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US607",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US608",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US609",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US610",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US611",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US612",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US613",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US614",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US615",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US616",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US617",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US618",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US619",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US620",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US621",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US622",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US623",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US624",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US625",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US626",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US627",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US628",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US629",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US630",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US631",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US632",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US633",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US634",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US635",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US636",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US637",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US638",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US639",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US640",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US641",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US642",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US643",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US644",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US645",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US646",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US647",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US648",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US649",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US650",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US651",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US652",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US653",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US654",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US655",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US656",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US657",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US658",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US659",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US660",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US661",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US662",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US663",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US664",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US665",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US666",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US667",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US668",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US669",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US670",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US671",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US672",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US673",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US674",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US675",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US676",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US677",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US678",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US679",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US680",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US681",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US682",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US683",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US684",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US685",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US686",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US687",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US688",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US689",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US690",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US691",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US692",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US693",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US694",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US695",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US696",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US697",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US698",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US699",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US700",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US701",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US702",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US703",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US704",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US705",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US706",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US707",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US708",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US709",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US710",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US711",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US712",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US713",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US714",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US715",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US716",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US717",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US718",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US719",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US720",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US721",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US722",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US723",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US724",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US725",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US726",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US727",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US728",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US729",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US730",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US731",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US732",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US733",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US734",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US735",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US736",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US737",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US738",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US739",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US740",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US741",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US742",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US743",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US744",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US745",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US746",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US747",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US748",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US749",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US750",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US751",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US752",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US753",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US754",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US755",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US756",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US757",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US758",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US759",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US760",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US761",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US762",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US763",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US764",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US765",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US766",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US767",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US768",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US769",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US770",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US771",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US772",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US773",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US774",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US775",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US776",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US777",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US778",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US779",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US780",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US781",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US782",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US783",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US784",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US785",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US786",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US787",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US788",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US789",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US790",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US791",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US792",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US793",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US794",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US795",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US796",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US797",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US798",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US799",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US800",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US801",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US802",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US803",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US804",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US805",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US806",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US807",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US808",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US809",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US810",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US811",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US812",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US813",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US814",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US815",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US816",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US817",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US818",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US819",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US820",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US821",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US822",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US823",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US824",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US825",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US826",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US827",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US828",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US829",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US830",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US831",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US832",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US833",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US834",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US835",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US836",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US837",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US838",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US839",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US840",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US841",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US842",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US843",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US844",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US845",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US846",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US847",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US848",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US849",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US850",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US851",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US852",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US853",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US854",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US855",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US856",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US857",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US858",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US859",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US860",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US861",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US862",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US863",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US864",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US865",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US866",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US867",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US868",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US869",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US870",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US871",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US872",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US873",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US874",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US875",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US876",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US877",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US878",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US879",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US880",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US881",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US882",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US883",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US884",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US885",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US886",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US887",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US888",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US889",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US890",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US891",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US892",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US893",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US894",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US895",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US896",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US897",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US898",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US899",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US900",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US901",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US902",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US903",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US904",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US905",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US906",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US907",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US908",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US909",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US910",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US911",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US912",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US913",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US914",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US915",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US916",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US917",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US918",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US919",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US920",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US921",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US922",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US923",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US924",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US925",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US926",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US927",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US928",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US929",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US930",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US931",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US932",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US933",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US934",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US935",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US936",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US937",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US938",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US939",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US940",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US941",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US942",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US943",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US944",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US945",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US946",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US947",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US948",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US949",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US950",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US951",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US952",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US953",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US954",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US955",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US956",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US957",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US958",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US959",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US960",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US961",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US962",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US963",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US964",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US965",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US966",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US967",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US968",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US969",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US970",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US971",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US972",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US973",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US974",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US975",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US976",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US977",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US978",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US979",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US980",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US981",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US982",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US983",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US984",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US985",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US986",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US987",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US988",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US989",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US990",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US991",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US992",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US993",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US994",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US995",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US996",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US997",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US998",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US999",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1000",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1001",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1002",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1003",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1004",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1005",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1006",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1007",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1008",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1009",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1010",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1011",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1012",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1013",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1014",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1015",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1016",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1017",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1018",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1019",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1020",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1021",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1022",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1023",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1024",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1025",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1026",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1027",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1028",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1029",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1030",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1031",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1032",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1033",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1034",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1035",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1036",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1037",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1038",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1039",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1040",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1041",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1042",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1043",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1044",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1045",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1046",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1047",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1048",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1049",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1050",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1051",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1052",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1053",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1054",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1055",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1056",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1057",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1058",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1059",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1060",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1061",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1062",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1063",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1064",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1065",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1066",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1067",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1068",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1069",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1070",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1071",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1072",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1073",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1074",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1075",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1076",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1077",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1078",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1079",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1080",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1081",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1082",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1083",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1084",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1085",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1086",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1087",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1088",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1089",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1090",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1091",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1092",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1093",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1094",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1095",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1096",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1097",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1098",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1099",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1100",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1101",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1102",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1103",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1104",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1105",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1106",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1107",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1108",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1109",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1110",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1111",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1113",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1115",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1116",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1117",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1118",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1119",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1120",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1121",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1122",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1124",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1125",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1126",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1127",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1128",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1129",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1130",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1131",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1132",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1134",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1135",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1136",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1137",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1138",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1140",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1141",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1142",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1143",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1144",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1145",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1146",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1147",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1148",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1149",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1150",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1151",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1153",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1154",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1155",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1156",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1157",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1158",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1159",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1160",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1161",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1163",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1166",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1167",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1168",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1169",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1170",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1171",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1172",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1173",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1174",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1175",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1176",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1177",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1179",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1180",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1181",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1182",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1183",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1184",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1185",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1187",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1188",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1189",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1190",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1191",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1192",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1193",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1194",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1195",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1196",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1197",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1199",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1200",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1201",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1202",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1204",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1205",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1207",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1208",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1210",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1211",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1212",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1213",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1214",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1215",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1216",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1217",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1218",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1219",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1220",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1221",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1222",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1223",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1224",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1225",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1226",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1227",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1228",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1229",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1231",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1232",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1233",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1234",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1235",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1236",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1238",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1239",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1240",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1241",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1242",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1243",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1244",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1245",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1246",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1247",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1248",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1250",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1251",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1252",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1254",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1255",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1256",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1257",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1258",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1259",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1260",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1261",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1262",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1263",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1264",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1265",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1266",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1267",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1269",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1270",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1271",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1272",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1273",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1274",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1275",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1277",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1278",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1279",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1280",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1281",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1282",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1283",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1284",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1285",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1288",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1289",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1290",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1291",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1292",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1294",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1295",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1296",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1297",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1298",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1299",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1300",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1301",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1302",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1303",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1304",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1305",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1306",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1307",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1308",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1310",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1311",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1312",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1313",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1314",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1316",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1317",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1318",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1319",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1320",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1321",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1322",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1323",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1324",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1325",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1326",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1327",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1328",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1329",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1330",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1331",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1333",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1335",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1336",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1339",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1340",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1341",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1342",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1344",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1345",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1346",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1347",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1348",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1349",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1350",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1351",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1352",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1353",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1354",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1355",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1356",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1357",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1358",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1359",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1360",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1361",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1362",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1363",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1364",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1365",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1366",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1367",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1368",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1369",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1371",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1372",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1373",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1374",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1375",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1376",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1377",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1378",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1379",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1380",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1381",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1382",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1383",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1384",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1385",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1386",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1387",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1388",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1389",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1390",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1391",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1392",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1393",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1394",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1395",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1396",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1397",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1398",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1399",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1400",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1401",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1402",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1403",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1404",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1405",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1406",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1407",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1408",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1409",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1410",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1411",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1412",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1413",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1414",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1415",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1416",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1417",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1419",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1420",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1421",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1422",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1423",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1424",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1425",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1426",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1427",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1428",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1429",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1430",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1431",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1432",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1433",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1434",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1436",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1437",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1438",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1439",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1440",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1441",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1442",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1443",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1444",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1445",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1446",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1447",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1448",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1449",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1450",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1452",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1453",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1454",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1455",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1456",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1457",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1458",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1459",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1460",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1461",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1462",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1463",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1464",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1465",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1466",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1467",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1469",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1470",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1471",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1472",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1473",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1474",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1475",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1476",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1477",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1478",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1479",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1480",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1481",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1482",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1483",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1484",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1485",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1486",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1487",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1488",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1489",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1491",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1492",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1494",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1495",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1496",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1497",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1498",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1499",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1500",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1501",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1502",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1503",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1504",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1505",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1506",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1507",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1508",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1509",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1510",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1511",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1512",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1513",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1514",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1515",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1516",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1517",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1518",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1519",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1520",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1521",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1522",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1523",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1524",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1525",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1526",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1527",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1528",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1529",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1530",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1531",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1532",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1533",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1534",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1535",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1536",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1537",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1538",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1539",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1540",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1541",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1542",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1543",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1544",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1545",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1546",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1547",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1548",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1549",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1550",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1551",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1552",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1553",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1554",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1555",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1556",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1557",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1558",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1559",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1560",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1561",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1562",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1563",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1564",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1565",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1566",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1567",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1568",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1569",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1570",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1571",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1572",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1573",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1574",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1575",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1576",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1577",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1578",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1579",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1580",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1581",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1582",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1583",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1584",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1585",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1586",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1587",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1588",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1589",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1590",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1591",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1592",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1593",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1594",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1595",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1596",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1597",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1598",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1599",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1600",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1601",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1602",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1603",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1604",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1605",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1606",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1607",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1608",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1609",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1610",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1611",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1612",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1613",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1614",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1615",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1616",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1617",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1618",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1619",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1620",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1621",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1622",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1623",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1624",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1625",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1626",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1627",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1628",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1629",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1630",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1631",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1632",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1633",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1634",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1635",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1636",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1637",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1638",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1639",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1640",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1641",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1642",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1643",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1644",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1645",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1646",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1647",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1648",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1649",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1650",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1651",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1652",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1653",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1654",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1655",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1656",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1657",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1658",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1659",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1660",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1661",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1662",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1663",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1664",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1665",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1666",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1667",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1668",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1669",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1670",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1671",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1672",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1673",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1674",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1675",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1676",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1677",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1678",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1679",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1680",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1681",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1682",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1683",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1684",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1685",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1686",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1687",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1688",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1689",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1690",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1691",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1692",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1693",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1694",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1695",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1696",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1697",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1698",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1699",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1700",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1701",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1702",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1703",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1704",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1705",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1706",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1707",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1708",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1709",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1710",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1711",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1712",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1713",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1714",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1715",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1716",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1717",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1718",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1719",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1720",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1721",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1722",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1723",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1724",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1725",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1726",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1727",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1728",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1729",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1730",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1731",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1732",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1733",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1734",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1735",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1736",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1737",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1738",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1739",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1740",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1741",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1742",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1743",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1744",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1745",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1746",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1747",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1748",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1749",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1750",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1751",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1752",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1753",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1754",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1755",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1756",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1757",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1758",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1759",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1760",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1761",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1762",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1763",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1764",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1765",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1766",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1767",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1768",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1769",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1770",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1771",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1772",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1773",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1774",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1775",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1776",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1777",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1778",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1779",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1780",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1781",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1782",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1783",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1784",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1785",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1786",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1787",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1788",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1789",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1790",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1791",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "US1792",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1793",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "US1794",
+      "split": 1,
+      "fold": "A"
+    }
+  ]
+}

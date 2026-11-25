@@ -1,0 +1,7722 @@
+{
+  "meta": {
+    "scheme": "twofold",
+    "p_discovery": 0.5,
+    "seed": 4242,
+    "n_splits": 1,
+    "strata": "treatment",
+    "id_col": "id",
+    "n": 1541,
+    "data_hash": "636d5eaf0845e54a66b82906ea3f7861a1a32a9e4c500d81147e4fe82b7fdba2",
+    "created": "2026-10-28T22:45:04Z",
+    "opencheck_version": "0.0.0.9000"
+  },
+  "split_hash": "51bea827ab751b1a7bcb9a86f4df680ebc5d483d0d4f3c189e63b98b5a55aebb",
+  "assignments": [
+    {
+      "id": "glazier2021_selfcoding_1",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_2",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_3",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_4",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_5",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_6",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_7",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_8",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_9",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_10",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_11",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_12",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_13",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_14",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_15",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_16",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_17",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_18",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_19",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_20",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_21",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_22",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_23",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_24",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_25",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_26",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_28",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_29",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_30",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_31",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_32",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_33",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_34",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_35",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_36",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_37",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_38",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_39",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_40",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_41",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_42",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_43",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_44",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_45",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_46",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_47",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_48",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_49",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_50",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_51",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_52",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_53",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_54",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_55",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_56",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_57",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_58",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_59",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_60",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_61",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_62",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_63",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_64",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_65",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_66",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_67",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_68",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_69",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_70",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_71",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_72",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_73",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_74",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_75",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_76",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_77",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_78",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_79",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_80",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_81",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_82",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_83",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_84",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_85",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_86",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_87",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_88",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_89",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_90",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_91",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_92",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_93",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_94",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_95",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_96",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_97",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_98",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_99",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_100",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_102",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_103",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_104",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_105",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_106",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_107",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_108",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_109",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_110",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_111",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_112",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_113",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_115",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_116",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_117",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_118",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_119",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_120",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_122",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_124",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_125",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_126",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_127",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_128",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_129",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_130",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_131",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_132",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_134",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_135",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_136",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_137",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_138",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_140",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_141",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_142",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_143",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_144",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_145",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_146",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_147",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_148",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_149",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_150",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_151",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_153",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_154",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_155",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_156",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_157",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_158",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_159",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_160",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_161",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_163",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_165",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_166",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_167",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_168",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_169",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_170",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_171",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_172",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_173",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_174",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_175",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_176",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_177",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_179",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_180",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_181",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_182",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_183",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_184",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_185",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_187",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_188",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_189",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_190",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_191",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_192",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_193",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_194",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_195",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_196",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_197",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_199",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_200",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_201",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_202",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_203",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_204",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_205",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_207",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_208",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_210",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_211",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_212",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_213",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_214",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_215",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_216",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_217",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_218",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_219",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_220",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_221",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_222",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_223",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_224",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_225",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_226",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_227",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_228",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_229",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_231",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_232",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_233",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_234",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_235",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_236",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_237",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_238",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_239",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_240",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_241",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_242",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_243",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_244",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_245",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_246",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_247",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_250",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_251",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_252",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_254",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_255",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_256",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_257",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_258",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_259",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_260",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_261",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_262",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_263",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_264",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_265",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_266",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_267",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_268",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_269",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_270",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_271",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_272",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_273",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_274",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_275",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_276",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_277",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_278",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_279",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_280",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_281",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_282",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_283",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_284",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_285",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_288",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_289",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_290",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_291",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_292",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_294",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_295",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_296",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_297",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_298",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_299",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_301",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_302",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_303",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_304",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_305",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_306",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_307",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_308",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_309",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_310",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_311",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_312",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_313",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_314",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_316",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_317",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_318",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_319",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_320",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_321",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_322",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_323",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_324",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_325",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_326",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_327",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_328",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_329",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_330",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_331",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_333",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_335",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_336",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_339",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_340",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_341",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_342",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_344",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_345",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_346",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_347",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_348",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_349",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_350",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_351",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_352",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_353",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_354",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_355",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_356",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_357",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_358",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_359",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_360",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_361",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_362",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_363",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_364",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_365",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_366",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_367",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_368",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_369",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_371",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_372",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_373",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_374",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_375",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_376",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_377",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_378",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_379",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_380",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_381",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_382",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_383",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_384",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_385",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_386",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_387",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_388",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_389",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_390",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_391",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_392",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_393",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_394",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_395",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_396",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_397",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_398",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_399",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_400",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_401",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_402",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_403",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_404",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_405",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_406",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_407",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_408",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_409",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_410",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_411",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_412",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_413",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_414",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_415",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_416",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_417",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_419",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_420",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_421",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_422",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_423",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_424",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_425",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_426",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_427",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_428",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_429",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_430",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_431",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_432",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_433",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_434",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_436",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_437",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_438",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_439",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_440",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_441",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_442",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_443",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_444",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_445",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_446",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_447",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_448",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_449",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_450",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_452",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_453",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_454",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_455",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_456",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_457",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_458",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_459",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_460",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_461",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_462",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_463",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_464",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_465",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_466",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_467",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_469",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_470",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_471",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_472",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_473",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_474",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_475",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_476",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_477",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_478",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_479",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_480",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_481",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_482",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_483",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_484",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_485",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_486",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_487",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_488",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_489",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_491",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_492",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_494",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_495",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_496",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_497",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_498",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_499",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_500",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_501",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_502",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_503",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_504",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_505",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_507",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_508",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_509",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_510",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_511",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_512",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_513",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_514",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_515",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_516",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_517",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_518",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_519",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_520",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_521",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_522",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_523",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_524",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_525",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_526",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_527",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_528",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_529",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_530",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_531",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_532",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_533",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_534",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_535",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_536",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_537",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_538",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_539",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_540",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_541",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_542",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_543",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_544",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_545",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_546",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_547",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_548",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_549",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_550",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_551",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_552",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_553",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_554",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_555",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_556",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_557",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_558",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_559",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_560",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_561",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_562",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_563",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_564",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_565",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_566",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_567",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_568",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_569",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_570",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_571",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_572",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_573",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_574",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_575",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_576",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_577",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_578",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_579",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_580",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_581",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_582",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_583",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_584",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_585",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_586",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_587",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_588",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_589",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_590",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_591",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_592",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_593",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_594",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_595",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_596",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_597",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_598",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_599",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_600",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_601",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_602",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_603",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_604",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_605",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_606",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_607",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_608",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_609",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_610",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_611",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_612",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_613",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_614",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_615",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_616",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_617",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_618",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_619",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_620",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_621",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_622",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_623",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_624",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_625",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_626",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_627",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_628",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_629",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_630",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_631",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_632",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_633",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_634",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_635",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_636",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_637",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_638",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_639",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_640",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_641",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_642",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_643",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_644",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_645",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_646",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_647",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_648",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_649",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_650",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_651",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_652",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_653",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_654",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_655",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_656",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_657",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_658",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_659",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_660",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_661",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_662",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_663",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_664",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_665",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_666",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_667",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_668",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_669",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_670",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_671",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_672",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_673",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_674",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_675",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_676",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_677",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_678",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_679",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_680",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_681",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_682",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_683",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_684",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_685",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_686",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_687",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_688",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_689",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_690",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_691",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_692",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_693",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_694",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_695",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_696",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_697",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_698",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_699",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_700",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_701",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_702",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_703",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_704",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_705",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_706",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_707",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_708",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_709",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_710",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_711",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_712",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_713",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_714",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_715",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_716",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_717",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_718",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_719",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_720",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_721",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_722",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_723",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_724",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_725",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_726",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_727",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_728",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_729",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_730",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_731",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_732",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_733",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_734",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_735",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_736",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_737",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_738",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_739",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_740",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_741",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_742",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_743",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_744",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_745",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_746",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_747",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_748",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_749",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_750",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_751",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_752",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_753",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_754",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_755",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_756",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_757",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_758",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_759",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_760",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_761",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_762",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_763",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_764",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_765",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_766",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_767",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_768",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_769",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_770",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_771",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_772",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_773",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_774",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_775",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_776",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_777",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_778",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_779",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_780",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_781",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_782",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_783",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_784",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_785",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_786",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_787",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_788",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_789",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_790",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_791",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_792",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_793",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_794",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_795",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_796",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_797",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_798",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_799",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_800",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_801",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_802",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_803",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_804",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_805",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_806",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_807",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_808",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_809",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_810",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_811",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_812",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_813",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_814",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_815",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_816",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_817",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_818",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_819",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_820",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_821",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_822",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_823",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_824",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_825",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_826",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_827",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_828",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_829",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_830",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_831",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_832",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_833",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_834",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_835",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_836",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_837",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_838",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_839",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_840",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_841",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_842",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_843",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_844",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_845",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_846",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_847",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_848",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_849",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_850",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_851",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_852",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_853",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_854",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_855",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_856",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_857",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_858",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_859",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_860",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_861",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_862",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_863",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_864",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_865",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_866",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_867",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_868",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_869",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_870",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_871",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_872",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_873",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_874",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_875",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_876",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_877",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_878",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_879",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_880",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_881",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_882",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_883",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_884",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_885",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_886",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_887",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_888",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_889",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_890",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_891",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_892",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_893",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_894",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_895",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_896",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_897",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_898",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_899",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_900",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_901",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_902",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_903",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_904",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_905",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_906",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_907",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_908",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_909",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_910",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_911",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_912",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_913",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_914",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_915",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_916",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_917",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_918",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_919",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_920",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_921",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_922",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_923",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_924",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_925",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_926",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_927",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_929",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_930",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_931",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_932",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_933",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_934",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_935",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_936",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_937",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_938",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_939",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_940",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_941",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_942",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_943",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_944",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_945",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_946",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_947",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_948",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_949",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_950",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_952",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_953",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_954",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_955",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_956",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_957",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_958",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_959",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_960",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_961",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_962",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_963",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_964",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_965",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_966",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_967",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_968",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_969",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_970",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_971",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_972",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_974",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_975",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_976",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_977",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_978",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_979",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_980",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_981",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_982",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_984",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_985",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_986",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_987",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_988",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_989",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_990",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_991",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_993",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_994",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_995",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_996",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_997",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_998",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_999",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1000",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1001",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1002",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1003",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1004",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1005",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1006",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1007",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1008",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1009",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1010",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1011",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1012",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1013",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1014",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1015",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1016",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1017",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1018",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1019",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1020",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1021",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1022",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1023",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1024",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1025",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1026",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1027",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1028",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1029",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1030",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1031",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1032",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1033",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1034",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1035",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1036",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1037",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1038",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1039",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1040",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1041",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1042",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1043",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1044",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1045",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1046",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1047",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1048",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1049",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1050",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1051",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1052",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1053",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1054",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1055",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1056",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1057",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1058",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1059",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1060",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1061",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1062",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1063",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1064",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1065",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1066",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1067",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1068",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1069",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1070",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1071",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1072",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1073",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1074",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1075",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1076",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1077",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1078",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1079",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1080",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1081",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1082",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1083",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1084",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1085",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1086",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1087",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1088",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1089",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1090",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1091",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1092",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1093",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1094",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1095",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1096",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1097",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1098",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1099",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1100",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1101",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1102",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1103",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1104",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1105",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1106",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1107",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1108",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1109",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1110",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1111",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1112",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1113",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1114",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1115",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1116",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1117",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1118",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1119",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1120",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1121",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1122",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1123",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1124",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1125",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1126",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1127",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1128",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1129",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1130",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1131",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1132",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1133",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1134",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1135",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1136",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1137",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1138",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1139",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1140",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1141",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1142",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1143",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1144",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1145",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1146",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1147",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1148",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1149",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1150",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1151",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1152",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1153",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1154",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1155",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1156",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1157",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1158",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1159",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1160",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1161",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1162",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1163",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1164",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1165",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1166",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1167",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1168",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1169",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1170",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1171",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1172",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1173",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1174",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1175",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1176",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1177",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1178",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1179",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1180",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1181",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1182",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1183",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1184",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1185",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1186",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1187",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1188",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1189",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1190",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1191",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1192",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1193",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1194",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1195",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1196",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1197",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1198",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1199",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1200",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1201",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1202",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1203",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1204",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1205",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1206",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1207",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1208",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1209",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1210",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1211",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1212",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1213",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1214",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1215",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1216",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1217",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1218",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1219",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1220",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1221",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1222",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1223",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1224",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1225",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1226",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1227",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1228",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1229",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1230",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1231",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1232",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1233",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1234",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1235",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1236",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1237",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1238",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1239",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1240",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1241",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1242",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1243",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1244",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1245",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1246",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1247",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1248",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1249",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1250",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1251",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1252",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1253",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1254",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1255",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1256",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1257",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1258",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1259",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1260",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1261",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1262",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1263",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1264",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1265",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1266",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1267",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1268",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1269",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1270",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1271",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1272",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1273",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1274",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1275",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1276",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1277",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1278",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1279",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1280",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1281",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1282",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1283",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1284",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1285",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1286",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1287",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1288",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1289",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1290",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1291",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1292",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1293",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1294",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1295",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1296",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1297",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1298",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1299",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1300",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1301",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1302",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1303",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1304",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1305",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1306",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1307",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1308",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1309",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1310",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1311",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1312",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1313",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1314",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1315",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1316",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1317",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1318",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1319",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1320",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1321",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1322",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1323",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1324",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1325",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1326",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1327",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1328",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1329",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1330",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1331",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1332",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1333",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1334",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1335",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1336",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1337",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1338",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1339",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1340",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1341",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1342",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1343",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1344",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1345",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1346",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1347",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1348",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1349",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1350",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1351",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1352",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1353",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1354",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1355",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1356",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1357",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1358",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1359",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1360",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1361",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1362",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1363",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1364",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1365",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1366",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1367",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1368",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1369",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1370",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1371",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1372",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1373",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1374",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1375",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1376",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1377",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1378",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1379",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1380",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1381",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1382",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1383",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1384",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1385",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1386",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1387",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1388",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1389",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1390",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1391",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1392",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1393",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1394",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1395",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1396",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1397",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1398",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1399",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1400",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1401",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1402",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1403",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1404",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1405",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1406",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1407",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1408",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1409",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1410",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1411",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1412",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1413",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1414",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1415",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1416",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1417",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1418",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1419",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1420",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1421",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1422",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1423",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1424",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1425",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1426",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1427",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1428",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1429",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1430",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1431",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1432",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1433",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1434",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1435",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1436",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1437",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1438",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1439",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1440",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1441",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1442",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1443",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1444",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1445",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1446",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1447",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1448",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1449",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1450",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1451",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1452",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1453",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1454",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1455",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1456",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1457",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1458",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1459",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1460",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1461",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1462",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1463",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1464",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1465",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1466",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1467",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1468",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1469",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1470",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1471",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1472",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1473",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1474",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1475",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1476",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1477",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1478",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1479",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1480",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1481",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1482",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1483",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1484",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1485",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1486",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1487",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1488",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1489",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1490",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1491",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1492",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1493",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1494",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1495",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1496",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1497",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1498",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1499",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1500",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1501",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1502",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1503",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1504",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1505",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1506",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1507",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1508",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1509",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1510",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1511",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1512",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1513",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1514",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1515",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1516",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1517",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1518",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1519",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1520",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1521",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1522",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1523",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1524",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1525",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1526",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1527",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1528",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1530",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1531",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1532",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1533",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1535",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1537",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1538",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1539",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1540",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1541",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1542",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1543",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1544",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1545",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1546",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1547",
+      "split": 1,
+      "fold": "A"
+    },
+    {
+      "id": "glazier2021_selfcoding_1548",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1549",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1568",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1575",
+      "split": 1,
+      "fold": "B"
+    },
+    {
+      "id": "glazier2021_selfcoding_1696",
+      "split": 1,
+      "fold": "B"
+    }
+  ]
+}
