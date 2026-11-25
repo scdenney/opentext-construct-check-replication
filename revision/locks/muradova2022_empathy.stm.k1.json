@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "6aebc3c9666df05696737063f06d40e3202413d0fa565515cc4b177aa9881745",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_muradova2022_empathy",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/muradova2022_empathy.stm.rds",
+      "sha256": "bfe29b127ec0566311c2924dd46696aec54119c95dd75f2f82f7b10fb5c315a1"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/muradova2022_empathy.topic_choice.csv",
+      "sha256": "b250665213b82f4c80835151c57213be98e76bd5d0bbbc06107df3f5c1681bb5"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "e2f6d52b695ab4e05ccccf6b81df7c7c877c549b614cac65a027dd8f01d61688",
+  "created": "2026-11-18T03:28:32Z",
+  "opencheck_version": "0.0.0.9000"
+}

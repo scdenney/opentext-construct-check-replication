@@ -1,0 +1,49 @@
+# DRAFT, not registered. POSITIVE CONTROL ONLY: the open text is the priming task, so
+# the two arms answer different questions and any shift is largely prompt-induced.
+# Written from the OSF preregistration and proposal, the replication README, codebook
+# and analysis code. NOT blind: the authors' coding prompt quotes about 20 study answers
+# (see provenance). Steven must confirm the placebo before running oc_study_register().
+id: ward2026_localcandidates
+title: "Neighborhood-identity vs individual-identity writing prime before a US candidate conjoint (Prolific, 2025)"
+source:
+  citation: "Ward, A. J. Place-Based Identity and the Demand for Local Candidates. Replication materials (file prefix ward_jop), GitHub albert-ward/replication-place-based-identity-local-candidates, commit 45fe4ce (2026-10-30). Article not found; preregistration: Ward, A. (2025), 'Does local identity increase voters' preferences for local candidates?', OSF registration 782p4 (project osf.io/mwbcu), with proposal 'proposed_survey_experiment_award.pdf'. Part of Ward, A. J. (2025), Go as we are: the neighbourhood and its political effects, DPhil thesis, University of Oxford."
+  doi: "10.5287/ora-zvpzgj85n"
+  data: "https://github.com/albert-ward/replication-place-based-identity-local-candidates (data CC0 1.0 per README; no LICENSE file); data/external/ward2026_localcandidates/raw/ward_jop_localcandidates_exp_data.csv"
+languages: [en]
+context: "US adults recruited on Prolific in April 2025 were asked to write a short reflection, either on the most important reason people feel they belong to their neighborhood and want to live there, or on what kinds of things they personally like and why. Answers are in English; personal details such as street and place names are replaced by bracketed tags."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "text (harmonized); raw columns treatment (neighborhood prime arm) and control (individual prime arm)"
+  prompt: "Treatment: 'People belong to different types of groups. One of the most important and essential of these groups is the neighborhood you belong to. Each neighborhood is different. Now we'd like to know what you think. What do you think is the most important reason people feel like they belong to your neighborhood and want to live there? You should try your best to be as thorough and convincing as possible, because we want to use these answers to explain to people who have never visited your neighborhood why people feel like they belong there. Please take your time and do not rush.' Control: 'People differ in many ways and each human being is unique. One person likes music, another likes to go for a walk, still another likes to go out. Everyone is different. Now we'd like to know what you think. What kind of things do you like and why? Please take your time and do not rush.' (Proposal on OSF 782p4, sections 5.1-5.2, written before fielding; the first paragraph of the treatment wording is confirmed by opentext_coding_prompt.txt, the control wording is not confirmed against the fielded survey)"
+  position: "The treatment itself: after pre-treatment demographics and party identification, before a three-round paired candidate conjoint (party primary) and the neighborhood-belonging item"
+treatment:
+  variable: treatment
+  contrast: "neighborhood-identity prime (1) vs individual-identity prime (0)"
+  level: respondent
+  notes: "Simple randomization of the two primes (registration 782p4, q7). The file has no randomizer field; the authors define assignment as having a treatment reflection (treatment_group = !is.na(treatment), Rmd ll. 53-55), and every row has exactly one of the two reflections. POSITIVE CONTROL: the comparison is between two different writing prompts. The treatment prompt asks about the neighborhood and why people belong there; the control prompt asks about personal likes and never mentions the neighborhood. A difference in the target is therefore largely mechanical and does not show that the prime changed what respondents think. Authors' exclusions (exclude = TRUE, 896 rows) include a text-length cut at the bottom decile within each arm (124 vs 84 characters) and a hand flag for chatbot-written answers, both selections on the text itself"
+constructs:
+  target:
+    - name: neighborhood_attachment
+      definition: "The response expresses attachment to or belonging in the respondent's own neighborhood or local community: social ties with neighbors, a sense of community, feeling at home there, or personal or family roots in the area. Answers that mention the neighborhood only for practical features (safety, schools, shops, prices, commute) without any of these do not count"
+      source: "Ward, OSF registration 782p4 (q6: the prime is 'designed to prime participants' affective attachment to their neighbourhood'); proposal, section 3 ('a vignette designed to induce participants' attachment to their neighborhood'; the effect 'is intended primarily to increase salience') and section 4.2 ('control for ITT by analyzing the open-ended responses to the prime'). The authors coded only treatment-arm text and made no prediction about a treatment-control difference in the text"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Because the two prompts ask different questions, almost
+  # any everyday consideration (family, work, hobbies, nature, money, religion) is
+  # invited by one prompt or the other, so only one placebo is offered.
+  placebo:
+    - name: national_or_state_politics
+      definition: "The response mentions politics or government above the neighborhood level: political parties, politicians, elections or voting, or state or national government and policy. Homeowners' associations and neighborhood rules do not count"
+      rationale: "Neither prompt asks about politics, and the political part of the study (the party-primary candidate conjoint) comes only after the text, so it cannot carry over into the answers"
+estimand: "ITT difference (neighborhood prime minus individual prime) in the share of responses expressing neighborhood_attachment, E[g(R(1))] - E[g(R(0))], among non-excluded rows, estimated on the estimation fold. This is a positive-control estimand: a large positive value is expected mechanically from the difference in prompts"
+outcomes:
+  closed_ended: "manipulation_check: 'I feel like I belong to the neighborhood in which I live', 5 = strongly agree to 1 = strongly disagree, Don't know = NA, asked after the conjoint (Rmd ll. 461-470). Also pid_lean (pre-treatment; routes the primary shown)"
+human_codes:
+  available: true
+  column: "human_code, human_negative"
+  notes: "Author's hand codes for a random validation sample of 303 treatment-arm reflections (248 non-excluded): human_code PI place identity / PD place dependence / MX mixed / UNUSABLE; human_negative 1 if the answer says people live there despite the area. PI (or PI + MX) is close to neighborhood_attachment. No control-arm answer is coded, so these codes can check the classifier's accuracy within the treatment arm only and cannot validate the treatment-control contrast. The LLM codes in the archive (llm_code, negative, pi_claims, pd_claims; Claude Sonnet 5.5) are not carried into the harmonized file"
+provenance:
+  written_before_reading_text: false
+  contamination: "The authors' coding prompt (opentext_coding_prompt.txt, lines 144-284, 'These are real responses from this study') quotes about 19 treatment-arm answers in full, and its calibration section (lines 87-143) contains at least two more that match study answers; the codebook (l. 128) paraphrases a negative answer. The wave-3 searcher read the whole prompt, README and codebook. The card drafter saw the first 160 characters or so of each quoted answer in a grep of the prompt file. The harmonized file flags the 26 matching rows (all treatment arm, 22 non-excluded) in quoted_in_coding_prompt; consider dropping them from the evaluation fold. The drafter also saw the counts of human_code by exclusion status (non-excluded: PI 149, PD 84, MX 14, UNUSABLE 1) and the manipulation check by arm, but no other text value"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from preregistration, proposal, codebook and analysis code"
+  date: "2026-11-17"

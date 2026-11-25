@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the BJPolS article (open access, Cambridge
+# Core reader), its online appendix, the variable labels and the author's
+# S1_SI.do, before any open-text value was read. The vignette wording (article
+# Table 2) is an image and was not read; the arm descriptions come from the
+# article text.
+id: aarslew2026_electoralintegrity
+title: "Electoral cheating by a party (absentee-ballot fraud or misinformation) vs a fair win, and explanations of vote choice (US Study 1, 2021-22)"
+source:
+  citation: "Aarslew, L. F. (2026). How violations of electoral integrity undermine partisan attachments. British Journal of Political Science, 56."
+  doi: "10.1017/S0007123426101343"
+  data: "doi:10.7910/DVN/YWMRHS (CC0 1.0); data/external/aarslew2026_electoralintegrity/raw/data_S1.dta; harmonized_aarslew2026_electoralintegrity.csv"
+languages: [en]
+context: "US adults in an online survey (December 2021 to January 2022) read a short text about a future congressional election in their state won by the Republican or the Democratic candidate; versions differed in how the winning party conducted the election. They were asked whom they would vote for if a new election were held with the same candidates and, if they chose a candidate, to explain in their own words why they would vote for that candidate."
+unit: respondent
+id_column: id
+text:
+  column: Q18 / Q19 / Q20 (merged into text; item records which)
+  prompt: "In your own words, please explain why you would vote for the [Democratic | Republican | Independent] candidate... (variable labels, truncated at 80 characters; the item shown matches the vote choice)"
+  position: "After the election vignette, the recall check, election-fairness rating (pei), party support ratings, and the vote-choice item ('Remember the text about a state election that you just read. If a new election for congressional seat were held after two years with the same candidates running, who would you vote for?'). Respondents answering Don't know to the vote item got no open item."
+treatment:
+  variable: treatment
+  contrast: "cheating by the vignette party (absentee + misinformation, pooled as in the article) vs fair win (control)"
+  level: respondent
+  notes: "3 x 2 respondent-level design, equal cells (about 845): condition (control: the party 'won fairly'; absentee: mail-in/absentee ballot fraud modelled on the 2019 North Carolina 9th district election; misinformation: robocalls, push polling or fake letters) x vignette_party (Republican, Democrat). Matching vignette_party to the respondent's pre-treatment party gives the in-party vs out-party cheating conditions (copartisan). The article collapses the two violation arms (fn. 10; S1_SI.do variable D) because their effects do not differ. Analysis sample: partisans incl. leaners (4,258), as in every Study 1 analysis (S1_Fig1.do and S1_SI.do filter only on copartisan_D); pure independents and missing party ID are excluded. The open item depends on a post-treatment choice: its wording names the chosen candidate, and Don't know voters get no item. Partisans answering, by arm (control / absentee / misinformation): 1,154 / 1,197 / 1,174 of 1,416 / 1,426 / 1,416 assigned. Vote choice among partisans (control / absentee / misinformation): Democratic 605 / 554 / 556; Republican 464 / 461 / 423; independent 95 / 192 / 200; Don't know 250 / 217 / 228; missing 2 / 2 / 9. The randomized comparison is pooled over choices among respondents who chose a candidate; that sample is itself selected by a post-treatment answer (Don't know shares differ by arm), and within-choice comparisons are descriptive only. The vignette describes the violation directly, so mentions of it are partly a reaction to stimulus content (partial positive control)."
+constructs:
+  target:
+    - name: election_cheating
+      definition: "The explanation refers to cheating or misconduct in elections as a reason for the vote: fraud, tampering with or harvesting absentee or mail-in ballots, spreading misinformation or lies to voters, a rigged or unfair election, or a candidate's or party's honesty about how elections are run. Answer yes whether the reference counts for or against a candidate (including saying a candidate or party did not cheat)."
+      source: "Aarslew 2026, section 'The Impact of Electoral Malpractice on Partisan Attachments': 'electoral fairness constitutes an important democratic norm' and 'election subversion, therefore, represents a direct norm violation'; in-party violations cause 'negative emotional reactions' and 'push individuals to disassociate themselves from the party', making voters 'less reliant on partisan preconvictions'; 'out-party transgressions exert a positive comparison effect' (H1, H2). The article states no expectation about open text; this target applies the stated mechanism (the fairness norm violation enters the evaluation of the parties) to the vote explanation."
+      expected_direction: increase
+  # Code each placebo as a separate yes/no judgment.
+  placebo:
+    - name: policy_positions
+      definition: "The explanation refers to a specific policy issue or position of a candidate or party (for example the economy, taxes, abortion, immigration, guns, health care, crime)"
+      rationale: "The arms change how the election was conducted, not the candidates' or parties' issue positions. Caveat: cheating raised agreement that the cheating party's policies are 'so misguided that they threaten my state's well-being' (appendix B3-B4), so general judgments of a party may move; this placebo asks only about named issues"
+    - name: candidate_qualifications
+      definition: "The explanation refers to a candidate's experience, competence, qualifications or personal background (as distinct from honesty or cheating)"
+      rationale: "The vignette gives no information on the candidates' qualifications in any arm (per the article's description of the treatments), and that information is constant across arms"
+estimand: "ITT difference (absentee and misinformation pooled minus control) in the share of explanations expressing election_cheating, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among partisans who chose a candidate and answered, pooled over vote choice, vignette party and in-/out-party condition"
+outcomes:
+  closed_ended: "vote_choice (and vote_relation: in-party / out-party / independent); pei election fairness (manipulation check, 1-5); feelings_reps / feelings_dems party support; rep_/dem_policy, rep_/dem_cheat (appendix B3-B4)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes of any kind; the open items are not analyzed in the article, appendix, or S1_SI.do."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer was read by the drafter or, per the manifest, the searcher. The article and appendix quote no answers (checked). By count only, the drafter learned that 5 answers are exactly the string 'NA' (dropped by the builder because read.csv reads them as missing)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, appendix and code only"
+  date: "2026-11-17"

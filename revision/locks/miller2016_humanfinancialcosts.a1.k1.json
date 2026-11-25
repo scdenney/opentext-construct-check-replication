@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "751ceab78d14ed1f56c27a69f50c10a1f6225e113e5f62ebdefbe98152cb327a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/miller2016_humanfinancialcosts.36da8d6b3ffd.yaml",
+      "sha256": "e8f235fdd01649e18952339e5e71bef008547d6c07e02512def15a22a46964b6"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["522b497febf736bb3a68ed03735a265b395a4261115e2c68e4319cacc85c9049", "87e0144a05db502d51bbd141a45bbcf4867caef412633831e192fe665c2b5296", "9976b8f7cef78b7d504dbc5b1a7a5c81c585468bf0aa57285654c5a85ed4bbba", "a42d22aecba73847fc786171953c6604e4b53cf307a38506962f4de8d6113329", "b80d1b8e453ba9ae548312cda3c8d59053d520ac5804468a02f5c9a950bd3c48", "cedc86d01592586ae7a986bbc4d668e6a112d330bc848f3c83443fbd400dcad2", "d58cb32d3be193167207972d7064231f439f93386e1498b02784c8abdda7a096", "e1da7caa06576865ea5d4067bc09482ed6f470ac26ce922420c25035c917a201", "eb990f562afd3729eea42105c98e43559580f64494026c6e4147062cb943f63a"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "2b4cdf494f29842d411623c7d30713ecd84216e39c036941482936cfad0c0577",
+  "created": "2026-11-18T00:06:09Z",
+  "opencheck_version": "0.0.0.9000"
+}

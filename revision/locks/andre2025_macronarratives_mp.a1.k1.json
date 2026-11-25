@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "129df6e823ddb1a849bf06e9afd529425bbc2db8a0935a6d0f4b532012590b4e",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/andre2025_macronarratives_mp.342ecc1443ff.yaml",
+      "sha256": "e17512dfc00d1470c92c125819231e00c82c308c872cd8fa02711dded0cd7878"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["227162f28bdcff659e4657299bf9de7385a1cc0e04b274df43ba2313f283aa35", "47a0f19446b12cbd2e7ba9e35b29ed4d7f26e05b9650933c16ff5966f37c22d1", "574db343fdc65744718ab4297ea55718bcab0757ffd51273dfea57ee7c6069d8", "578191dec7c38892e5c841dec5e450555ee08e680d457215ea9143fc8d8cc910", "a6deeb9b8c15a49280edbbdfaadd9f753f3e7ce71ff3bf2b775ebf6a6ec6e1b6", "b557008d2145e17916124a73f7bc9ef0a65811e96924e3f0a892069be738d15b", "b8e0c8321e8c0e18a3f43d1168d6833fa820715068d706d636003aecbd66deb9", "c34d183442aa5d1057569a9104fe83473928eb645dc81ce44ce5bff34d9f7ac6", "fe86344543aba0e43e9528ce77f4d191cc93b1e7afa25712c2cb0cfcd0aef5a2"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "e090ccc1c299857582baf8a2c06a8de8e0e887e42c2a3729c7f27f1d233744f5",
+  "created": "2026-11-17T18:37:05Z",
+  "opencheck_version": "0.0.0.9000"
+}

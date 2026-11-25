@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "7aa24f294eada5b11691bd4fca7366ee06ab3cf45db4cc0483200d28df15d745",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/williamson2017_taxes.rds",
+      "sha256": "c7700abca89518035b911f3480af40db97302ced37961e21992d818baac6006b"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/williamson2017_taxes.topic_choice.csv",
+      "sha256": "f8793fc11dd0ed9c3086ec5566ad4154355ab6c5fd70c9c770062467b692cfb0"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "58d17c710e09b2ad60b0034950cff548e62bbaa07b1c5c8810aa43453ab806ff",
+  "created": "2026-11-23T23:33:36Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the AsPredicted preregistration, the PsyArXiv preprint
+# (hypotheses, Method, Measures, Table 3 counts), the questionnaire, codebook, SPSS syntax and
+# R code, and blind counts, before any open-text value was read.
+id: roos2024_subjectivity
+title: "Subjectively vs non-subjectively phrased news-discussion comments and the phrasing of respondents' own replies (Netherlands 2023)"
+source:
+  citation: "Roos, C. A., van der Linden, L., & Krahmer, E. (2024). Mitigating perceived polarization by acknowledging subjectivity: An experimental study of the impact of differently phrasing comments in online news discussions. PsyArXiv preprint."
+  doi: "10.31234/osf.io/f62sg"
+  data: "doi:10.34894/8HCKQU (CC BY-NC 4.0); data/external/roos2024_subjectivity/raw/RestructuredDataset.sav, CodingFirstRound.xlsx; harmonized_roos2024_subjectivity.csv"
+languages: [nl]
+context: "Dutch adults, mostly students, read two discussion threads of reader comments posted under Dutch online news articles on different topics, rated how they perceived the commenters, and for each thread wrote the comment they would post if they joined that discussion; the thread stayed visible below the answer box."
+unit: task
+id_column: "ID1 + Time (harmonized id = <ID1>_t<Time>); respondent_id = ID1"
+text:
+  column: Comment_Text
+  prompt: "Stel dat je mee zou doen aan deze online discussie, hoe zou jouw reactie eruitzien? Typ hieronder jouw reactie. Onderstaand kun je de discussie teruglezen ter inspiratie voor je antwoord. (Suppose you would join this online discussion, what would your response look like? Type your comment here. You can reread the discussion below for inspiration.)"
+  position: "After each discussion section and the four perception scales (polarization, solidarity, feeling heard, disinhibition); followed by Comment_Chance (closed) and Comment_Why (open, not carded). Two tasks per respondent."
+treatment:
+  variable: treatment
+  contrast: "discussion comments phrased subjectively, with subjectivity markers such as 'I think' added to each sentence (1) vs the same comments with all subjectivity words removed (0)"
+  level: "task-level, within respondent: every respondent saw one subjective and one non-subjective discussion"
+  notes: "Four NU.nl discussions (8 comments each, rephrased by ChatGPT), two on polarized topics (Zwarte Piet, smokers' health-care premium) and two on non-polarized topics (ChatGPT, Japan), each in two phrasings. Each respondent saw one polarized and one non-polarized topic, one in each phrasing, in random order (questionnaire: random allocation to one of the eight discussions; preregistration Q4: 16 cells; Order codes 1-4 cross which topic type carries the subjective phrasing with presentation order). Which topic carried which phrasing is counterbalanced, so phrasing is randomized at the task level; topic, polarized_topic, order and time are design columns. The answer box is preceded by the manipulated thread, which remains visible below it ('for inspiration'), so some of a shift toward subjective phrasing may be direct copying of the stimulus wording: treat the contrast as partly mechanical (positive control for style imitation). Pair by respondent; split folds by respondent; cluster errors by respondent. N = 175 respondents; exclusions as in the authors' H3 test (rows the coders marked as no substantive reply), 320 tasks remain (161 / 159)."
+constructs:
+  target:
+    - name: subjective_opinion_marking
+      definition: "The reply contains at least one explicit marker that a statement is the writer's own view, such as 'ik denk', 'ik vind', 'volgens mij', 'naar mijn mening', 'ik heb het gevoel' (I think, I find, in my opinion, I feel), rather than stating opinions as facts"
+      source: "Preregistration Q2 and Q5 and preprint Hypothesis 3 (Introduction): 'participants will be more likely to phrase their opinions subjectively after reading a subjective discussion'; coding rule in preprint Method, Measures: a comment is subjective when it contains at least one statement of opinion such as 'I think', 'I find', 'in my opinion', 'I feel'"
+      expected_direction: increase
+  placebo:
+    - name: topic_facts_reference
+      definition: "The reply cites a specific fact, number, date, law, study or news source about the article's topic"
+      rationale: "Removing or adding subjectivity markers leaves the factual content of the stimulus comments unchanged, and topic (the main driver of factual content) is counterbalanced across phrasings. Weak placebo: a writer who presents opinions as facts might also cite more facts."
+    - name: question_to_others
+      definition: "The reply asks a question addressed to the other commenters or to readers"
+      rationale: "The hypothesis concerns how participants phrase their own opinion, not whether they engage others with questions; the stimulus comments in both phrasings contain the same speech acts. Weak placebo if a subjective thread invites more dialogue (the authors' Hypothesis 2 on willingness to join)."
+estimand: "Task-level difference (subjective minus non-subjective discussion) in the share of replies expressing each construct, estimated on the estimation fold with respondent-level splitting and respondent-clustered errors"
+outcomes:
+  closed_ended: "comment_chance (Comment_Chance, 1 very small - 5 very big chance of joining the discussion); perception scales (Polarization, Solidarity, FeelingHeard, Disinhibition) in the raw restructured file"
+human_codes:
+  available: true
+  column: "human_subjective (final resolved code, CodingComments: 1 = reply contains subjectivity markers, 0 = not, NA = no substantive reply); human_coder1, human_coder2 (first-round codes, recoded to 1 = subjective)"
+  notes: "Coded by the first author and a research assistant independently (preprint, Measures): first round disagreed on 28 of 354 replies, Cohen's kappa 0.862; disagreements resolved by discussion. Whether the coders were blind to condition is not stated; the coding file lists replies by participant and presentation order (Observation = Time) without a condition column, but the first author designed the stimuli. The coding file's legend is reversed (0 = subjective, 1 = objective); recoded in the builder and checked against CodingComments (identical on all 301 agreed rows). Published counts (Table 3): subjective replies 66/161 non-subjective vs 86/159 subjective condition; the harmonized file reproduces these exactly."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer seen by me or (per MANIFEST) the searcher. Read: the preprint's Method and Results passages on H3 (coding rule, kappa, Table 3 counts) but not its Discussion or appendices (82 pages; whether they quote participant replies was not checked). The human codes and published Table 3 cover the full sample."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from preregistration, preprint method/results, questionnaire, codebook and code only"
+  date: "2026-11-17"

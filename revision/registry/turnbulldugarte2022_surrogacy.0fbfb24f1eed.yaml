@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the author's OSF preprint (doi:10.31219/osf.io/t4exs,
+# April 2022: abstract, sections 3-4 and 6), the replication code (QTA.R, mainanalysis.R)
+# and counts from the deposit, before any open-text value of the dataset was read. The
+# published JEPP version could not be opened from this machine (Taylor & Francis returned
+# 403 / a bot check); its exact wording of the text expectation is unverified. Two
+# published example answers were seen in part (see contamination).
+id: turnbulldugarte2022_surrogacy
+title: "Same-sex vs opposite-sex couple using a paid surrogate and explanations of support for surrogacy (UK 2021)"
+source:
+  citation: "Turnbull-Dugarte, S. J. (2023). Fine for Adam & Eve but not Adam & Steve? Homonegativity bias, parasocial contact, and public support for surrogacy. Journal of European Public Policy, 31(2) (online 2022)."
+  doi: "10.1080/13501763.2022.2154823"
+  data: "doi:10.7910/DVN/PDOXJD (CC0 1.0); data/external/turnbulldugarte2022_surrogacy/raw/QTAdatafile.Rdata (object simple); harmonized_turnbulldugarte2022_surrogacy.csv"
+languages: [en]
+context: "Adults in the United Kingdom answered an online survey in 2021. Most first read a short news-style message about a married couple who had a child with the help of a paid surrogate (the couple differed between respondents); others read no message. All then said how far they agree that couples unable to conceive biological children on their own should be allowed to pay a surrogate, and were asked what mattered most to them when answering."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Thinking about the previous question, what mattered most to you when considering your answer?"
+  position: "Immediately after the closed support item (5-point agreement that couples unable to conceive should be allowed to pay a surrogate), which follows the treatment message; same wording in all five arms (preprint section 6, p. 25)"
+treatment:
+  variable: treatment
+  contrast: "same-sex couple (celeb_gay, ordinary_gay: Tom Daley and Dustin Lance Black, or a fictitious Tom Smith and his husband) vs opposite-sex couple (celeb_straight, ordinary_straight: Sarah Jessica Parker and Matthew Broderick, or a fictitious Jessica Smith and her husband); control (no couple) as a secondary reference"
+  level: respondent
+  notes: "Five arms randomized at the respondent level with equal probability (preprint section 4, Table 2): a 2x2 factorial of couple sexuality (homo) and celebrity vs ordinary couple (prestige), plus a control asked the support item without a message. All messages say the couples are married and the surrogate was paid (covariate-control design). The primary contrast pools the celebrity factor, which is balanced across it. The same-sex message names two husbands, so answers that mention the couple's sexuality are partly an echo of what was read (partial positive control); in the control arm no couple is shown. No respondent id in the text object; id is row order. Pre-registered experiment (preprint fn. 3), but the text analysis is not described as pre-registered."
+constructs:
+  target:
+    - name: parents_sexuality
+      definition: "The answer refers to the sexual orientation or the sex composition of the intended parents or of couples in general as something that mattered, for example gay, homosexual, same-sex, two men or two fathers, heterosexual, or that a child needs a mother and a father; any reference counts, whether for or against surrogacy"
+      source: "Preprint (OSF t4exs), section 6 'Understanding opposition: quantitative text analysis approach', subsection 'Quantitative text analysis', p. 27: 'I test to what extent treatment allocation i) engenders sexuality-based or transactional-based self-reported reasonings for treated subjects'; p. 28: 'As expected ... individuals in receipt of the homosexual treatment factor are significantly more inclined to reference sexuality terms in the self-reported rational for their views on surrogacy.' Mechanism: H1 (section 3), homonegativity 'activated via exposure to same-sex couples'. The author's measure is a word dictionary (QTA.R line 21: gay, homo, sexuality, LGBT, same sex, orientation, gender, sexual, biological, ...)."
+      expected_direction: increase
+  placebo:
+    - name: celebrity_reference
+      definition: "The answer refers to celebrities, fame, famous people, or to the particular couple being well known or wealthy"
+      rationale: "Celebrity vs ordinary couple (prestige) is randomized independently of couple sexuality and is balanced within the primary contrast, so mentions of celebrity should not move with the sexuality factor."
+    - name: personal_experience
+      definition: "The answer refers to the respondent's own experience or that of family or friends with infertility, adoption, IVF or surrogacy"
+      rationale: "Personal experience is fixed before treatment, and neither couple message bears on it."
+estimand: "ITT difference (same-sex couple minus opposite-sex couple, control excluded) in the share of answers expressing parents_sexuality, E[g(R(1))] - E[g(R(0))], with prestige as a stratum, estimated on the estimation fold; same-sex couple vs control as secondary"
+outcomes:
+  closed_ended: "support: authors' dichotomized support for paid surrogacy (1 = agree or strongly agree), the main outcome (H1, H2)"
+human_codes:
+  available: false
+  column: null
+  notes: "None. The author coded the text with two keyword dictionaries (QTA.R: 'gayword' sexuality terms, 'moneyword' transactional terms) at the token level, not with human coders."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was shown. Published material seen while drafting: (1) a search tool on the published article page returned two truncated example answers printed in the article's qualitative section, both about the parents' sexual orientation (one opposing gay parents); (2) the article's reported result that sexuality terms rise from 3% to 6.5% under the same-sex treatment (preprint p. 28). The preprint's qualitative examples (section 6, pp. 25-26) were deliberately not read. The searcher displayed no text (manifest)."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the OSF preprint, replication code and deposit counts"
+  date: "2026-11-18"

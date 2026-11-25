@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the NBER working-paper version (w29730, revised Aug 2022:
+# Sections 2.3, 3.1.7, 3.2, Appendix E.10 instruction screenshots), the replication README and
+# cleaning/analysis code, before any open-text value was read. The QJE version was not read;
+# the experiment is "Auxiliary Experiment 7" in the replication code and "Auxiliary Experiment 6"
+# in the working paper.
+id: bursztyn2023_dissent_defund
+title: "Lower-credibility rationale: inferred motives of an anti-defund-the-police dissenter, Cover vs No Cover (Auxiliary Experiment 7)"
+source:
+  citation: "Bursztyn, L., Egorov, G., Haaland, I., Rao, A., & Roth, C. (2023). Justifying dissent. Quarterly Journal of Economics, 138(3), 1403-1451."
+  doi: "10.1093/qje/qjad007"
+  data: "doi:10.7910/DVN/YVUIFF (CC0 1.0); data/external/bursztyn2023_dissent/raw/replication folder/data/raw/defund-nocredible-receiver-deidentified.dta; harmonized_bursztyn2023_dissent_defund.csv"
+languages: [en]
+context: "US Democrats and independents on Prolific were told they had been matched with an earlier participant who joined a campaign opposing defunding the police and agreed to post a Tweet saying so; the Tweet said the participant was shown an article arguing that defunding the police would increase violent crime either before or after joining. They were then asked why they think the participant joined the campaign."
+unit: respondent
+id_column: "none in the file; harmonized id = bursztyn2023_dissent_defund_<row>"
+text:
+  column: openended
+  prompt: "Why do you think your matched respondent chose to join the campaign to oppose defunding the police?"
+  position: "First outcome after the Cover/No Cover Tweet, before the guess about the NAACP donation and the $1 bonus decision (Appendix E.10 screenshots)"
+treatment:
+  variable: condition
+  contrast: "Cover: Tweet says 'Before joining, I was shown this article ...' (excuse = 1) vs No Cover: 'After joining ...' (noexcuse = 0)"
+  level: respondent
+  notes: "Respondent-level randomization; lower-credibility Tweets that drop the author's academic credentials and the reference to scientific evidence (Section 3.1.7). Same design and prompt as Experiment 2 (card bursztyn2023_dissent_exp2) apart from the Tweet wording; separate sample (November 2021, n = 506 analysed). Both arms mention the article; only its timing differs. Rows with condition NA (6) are dropped by the authors (receiver-clean.do line 8); harmonized exclude = TRUE."
+constructs:
+  target:
+    - name: evidence_attribution
+      definition: "The response attributes the participant's decision to the article, evidence, data or information about crime (e.g. the participant was convinced by what they read)"
+      source: "Section 3.2.2 (Experiment 2): Cover respondents more often use phrases about the article or evidence; Section 3.2.3 and Proposition 2 (Section 2.3): the less credible rationale should shift inference in the same direction but by less ('all the effects are attenuated if the signal is noisier'); the authors report positive but smaller, non-significant effects on the structured measures and did not analyse this text"
+      expected_direction: increase
+    - name: prejudice_attribution
+      definition: "The response attributes the decision to racism, prejudice, bias against Black people, or bad character"
+      source: "Section 3.2.3 and Table 3 columns 4-6: Cover is expected to lower inferred prejudice (belief that the participant donated to the NAACP), attenuated with the lower-credibility rationale"
+      expected_direction: decrease
+  placebo:
+    - name: personal_police_tie
+      definition: "The response says the participant has family or friends in law enforcement, or personal experience with the police"
+      rationale: "Cover and No Cover differ only in the timing word (before/after being shown the article); nothing about the participant's personal ties is conveyed in either arm. Same placebo as card bursztyn2023_dissent_exp2"
+estimand: "ITT difference (Cover minus No Cover) in the share of responses expressing evidence_attribution, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among exclude == FALSE"
+outcomes:
+  closed_ended: "believe_donated (guess that the participant donated $5 to the NAACP); bonus (authorized $1 bonus); attrit (post-randomization attriter flag, receiver-clean.do line 11)"
+human_codes:
+  available: false
+  column: null
+  notes: "No hand codes or text analysis of this item in the paper or the package (receiver-text-analysis.py and twitter-receiver-word-analysis.R use only the Experiment 2 and 4 files)"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known for this item: no openended value from this file was printed; counts only. The paper quotes characteristic phrases from the Experiment 2 text (Section 3.2.2), which share the prompt with this item; I read them, as the drafter of card bursztyn2023_dissent_exp2 did"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper (NBER version), README and code only"
+  date: "2026-11-17"

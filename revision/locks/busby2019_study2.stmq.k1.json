@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "972da8f503d41d60d7d376403bc7e79f0977d149bf2ebcfa93d7d0504d4bcbbb",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_busby2019_study2",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/busby2019_study2.stm.rds",
+      "sha256": "7c489282c86a2398ab8b167d65c8d9687064453e78e9ec99e88e18fa5324d02c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/busby2019_study2.topic_choice_qwen36_35b.csv",
+      "sha256": "25f395fd49a3af76807c5e4cde3f6b3b22a490155a633c1bd86c801e4fbcced8"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "4e16e00e5b38d075c4f16cb12aa722160642a32b916db738460e7139dd87d5f7",
+  "created": "2026-11-17T18:03:46Z",
+  "opencheck_version": "0.0.0.9000"
+}

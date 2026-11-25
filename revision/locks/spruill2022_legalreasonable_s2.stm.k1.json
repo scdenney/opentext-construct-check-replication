@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "b190bccced94369668af4bdeaab2e8a9e3afde58cbd57ba06e857b6a5a374fe6",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_spruill2022_legalreasonable_s2",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/spruill2022_legalreasonable_s2.stm.rds",
+      "sha256": "aba5befc5217dfc64763820af3c3b6b9d73ff686c906135f7cd75a526297769d"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/spruill2022_legalreasonable_s2.topic_choice.csv",
+      "sha256": "e9b1b9e1818aaa1cc797a3e6111f84e1ae08781a41c7c3c4c0c0f4a34b2de625"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "93ef39934205ee8b420d10634fedb84e332e73a4073a44be11c25f8443eb3b1a",
+  "created": "2026-11-18T03:28:30Z",
+  "opencheck_version": "0.0.0.9000"
+}

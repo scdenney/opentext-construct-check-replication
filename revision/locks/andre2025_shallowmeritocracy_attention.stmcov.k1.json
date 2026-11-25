@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "9c70130b45ada0bb1d11bc5b6721d6c4a08058a35a6ac13337d7b650a07c6aaf",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_andre2025_shallowmeritocracy_attention",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/andre2025_shallowmeritocracy_attention.stmcov.rds",
+      "sha256": "0db699611e1e4fcc8aeb4a0716ac480bcb18f141ab6eaa0240aaa1ee90a41580"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/andre2025_shallowmeritocracy_attention.stmcov.topic_choice.csv",
+      "sha256": "d62a9d0488dce398a041174f7075c2c2f07c2eae2a1d04542fa672fa4e0aebe7"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "02bcd18580f9840f9899e2f3815e10a79e566e82af8e2f6febeffa7ccda1cc79",
+  "created": "2026-11-22T16:41:20Z",
+  "opencheck_version": "0.0.0.9000"
+}

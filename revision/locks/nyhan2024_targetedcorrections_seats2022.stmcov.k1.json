@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "1705228c3af439f3cd26dc8a558f45a2100e5f50da04e1274d7d9e04b32280be",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_nyhan2024_targetedcorrections_seats2022",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nyhan2024_targetedcorrections_seats2022.stmcov.rds",
+      "sha256": "0c1d946c9293967630e14aac0e0801d4bfeafd5e2682e1e216df15a37b068634"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nyhan2024_targetedcorrections_seats2022.stmcov.topic_choice.csv",
+      "sha256": "82f41de7b4e961201dc6b3056e8a40c5c87cb640815bdacc242f1278279a46a5"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "9060306d1dde179cf284fe22a4afb39aac2e997201109573e0daf0a5ebc3f339",
+  "created": "2026-11-22T16:41:24Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the Animal Welfare article (Introduction, Table 1,
+# Materials and methods, quantitative Results and discussion), the instrument wording in
+# the deposited file's second header row, and counts. The article's qualitative section,
+# which prints example answers, was not read beyond its theme list.
+id: weston2021_elephant
+title: "Elephant feels terrible vs feels excellent and explanations of willingness to support an elephant tourist attraction (US MTurk 2019)"
+source:
+  citation: "Weston, M. E., Mills, K. E., & von Keyserlingk, M. A. G. (2021). Your happiness or mine: Influence of affective states and level of contact on public perceptions of elephant tourism. Animal Welfare, 30(3), 279-293."
+  doi: "10.7120/09627286.30.3.005"
+  data: "doi:10.6084/m9.figshare.11607354.v2 (CC BY 4.0); data/external/weston2021_elephant/raw/UFAW_elephant_manuscript_data.xlsx; harmonized_weston2021_elephant.csv"
+languages: [en]
+context: "US adults recruited on Amazon Mechanical Turk read a short description of Molly, an Asian elephant at a tourist attraction in northern Thailand, including whether tourists may touch and ride her and what elephant experts had determined about how she feels most of the time. They rated their willingness to support the attraction and how it would make them feel, then explained their answers."
+unit: respondent
+id_column: "ResponseId (row number in the sheet where ResponseId is missing)"
+text:
+  column: "Q18, column 19 (harmonized: text)"
+  prompt: "Please explain your above answers:"
+  position: "After the vignette, the manipulation check ('Do you believe that Molly spends all her time feeling [excellent/terrible]?') and eight 7-point Likert items in randomized order (willingness to support, perceived emotional value; Table 2); before demographics."
+treatment:
+  variable: treatment
+  contrast: "elephant feels terrible (1; FT) vs feels excellent (0; FE)"
+  level: respondent
+  notes: "2 x 2 between-subjects, random assignment to one of four vignettes (Table 1): affective state (FE/FT) x level of contact with tourists (contact: low = tourists may not touch or ride her, photos of her; high = tourists may touch and ride her, photos with her). The file has no condition column; arms are recovered from which Qualtrics vignette block is filled, and the block-to-vignette mapping is read from the question wording in the file's second header row (checked in the builder). The vignette states the expert finding that Molly feels 'excellent' or 'terrible', so mentions of her feelings are partly carry-over of vignette wording (positive control); the target is restricted to welfare concern as a reason. exclude reproduces two of the authors' three exclusions (incomplete 69, failed manipulation check 227); their third, 32 'incomplete qualitative responses', is a content judgment and is not reproduced, so the non-excluded set is 622, not 590. The manipulation-check exclusion is post-treatment and differential (failure among complete responses 32% FE vs 22% FT), as in the authors' analysis; an all-complete (849-row) analysis is a possible sensitivity check."
+constructs:
+  target:
+    - name: elephant_welfare_concern
+      definition: "The response gives the elephant's suffering, poor welfare, unhappiness or mistreatment (including that she feels terrible) as a reason for its ratings or for not wanting to support or visit the attraction"
+      source: "Table 1 hypotheses (FE/LC: 'Concerns for welfare will overweigh desire for proximity'; FT/LC and FE/HC: whether 'Molly's positive welfare' is satisfied drives support); Introduction (affective states 'may be an effective way to communicate welfare issues'; recognition of welfare issues decreases willingness to support facilities). The hypotheses are stated for the Likert outcomes; the welfare-concern reasoning is the mechanism the authors give for them."
+      expected_direction: increase
+  # Separate yes/no judgments. Crowd-out by the target could lower them, so the
+  # false-positive check is an increase. A contact-tied placebo (touching, riding)
+  # is not used: respondents in the feels-terrible arm may name riding or contact as
+  # the cause of her state, so it is not expected to stay flat.
+  placebo:
+    - name: travel_practicality
+      definition: "The response refers to practical limits on visiting: the cost of travel, the distance to Thailand, being unable or unlikely to travel abroad, or having no plans to visit Thailand"
+      rationale: "The location and the attraction are identical in all four vignettes; the elephant's affective state does not change whether a respondent can travel to Thailand."
+    - name: prior_experience_reference
+      definition: "The response refers to the respondent's own past experience with elephants or animal attractions: having visited an elephant camp, zoo, circus or sanctuary, or having ridden or touched an elephant"
+      rationale: "Prior experience is fixed before treatment (the authors measure it as a demographic); the vignette does not ask about it."
+estimand: "ITT difference (feels terrible minus feels excellent) in the share of responses expressing elephant_welfare_concern, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among non-excluded rows; contact as a stratum"
+outcomes:
+  closed_ended: "Willingness to support (support_important_have, support_important_support, support_pay, support_visit) and perceived emotional value (emo_wellbeing, emo_exciting, emo_elated, emo_happy), 1-7 as stored (Methods: 1 = strongly disagree; the Figure 1 caption gives the reverse); manip_check (1 = yes, 2 = no; pre-text)"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors coded the open answers inductively in NVivo (themes: facility characteristics, elephant characteristics, human-elephant interactions, undeveloped arguments); codes are not deposited."
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. The article's qualitative findings section prints example answers; the drafter stopped reading at its opening paragraph (theme list) and saw no quoted answer. The instrument wording (vignettes, check, item prompt) was printed from the file's second header row; it holds no answers. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, instrument header and counts"
+  date: "2026-11-17"

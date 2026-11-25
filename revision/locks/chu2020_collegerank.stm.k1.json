@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "6985070961e7ebaaced76683b028c4bbd3c9de5ad4ee98f5c03ef1a72ead1a33",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_chu2020_collegerank",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chu2020_collegerank.stm.rds",
+      "sha256": "ad3bfc789a6eb474782e6a59a948dca6c1cc7656a891b6a42414f75cd11b198c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chu2020_collegerank.topic_choice.csv",
+      "sha256": "449e63051c5cbc814d577cb739d27ca01de29a58b77194b814fdbfcffef1ff13"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "40e7b29ce8d04310c74557394376d1da0bcf78deaa230e248af29095a67764a6",
+  "created": "2026-11-17T22:51:58Z",
+  "opencheck_version": "0.0.0.9000"
+}

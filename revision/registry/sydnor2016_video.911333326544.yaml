@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the TESS study summary and outcome coding scheme
+# (raw/osf_wiki_summary.txt; the PI's proposal page), the fielded questionnaire
+# (raw/310.209.01009.1_TESS216_Sydnor_Final.docx) and counts from the data files, before
+# any open-text value was read. Sister card: sydnor2016_video_whynot (Q4b, H3B).
+id: sydnor2016_video
+title: "Uncivil vs civil video clip (political or entertainment) and viewers' own comments on the clip (US 2016)"
+source:
+  citation: "Sydnor, E. (2016). How Conflict Orientation Influences Emotional and Political Responses to Incivility. Time-sharing Experiments for the Social Sciences, study sydnor770 (TESS3 216). Findings in Sydnor, E. (2019). Disrespectful Democracy: The Psychology of Political Incivility. Columbia University Press."
+  doi: "none for the TESS study; TESS study page https://tessexperiments.org/study/sydnor770"
+  data: "OSF https://osf.io/s43kb/ (component 7jfhr, Sydnor770.zip); data/external/sydnor2016_video/raw/TESS_Sydnor_Client_5.sav (text) and TESS_Sydnor_Client_5.dta (XTESS216); harmonized_sydnor2016_video.csv"
+languages: [en]
+context: "US adults (GfK KnowledgePanel, 2016) watched one 45-second video clip, either an exchange at a congressional hearing on Planned Parenthood or two judges evaluating a contestant's pasta dish on the cooking show MasterChef, and were invited to ask questions or offer their own comments in a box below the video if they wished."
+unit: respondent
+id_column: CaseID
+text:
+  column: Q2
+  prompt: "Please watch the video below. After watching the clip, you are invited to ask questions or offer your own comments in the box below if you would like to do so. Add your comment:"
+  position: "Box directly under the treatment video; before the sharing item (Q4), emotion items (Q6) and clip ratings (Q5). Optional: 1,144 of 3,101 left it empty"
+treatment:
+  variable: XTESS216
+  contrast: "uncivil clip (XTESS216 3 MasterChef uncivil, 4 Planned Parenthood uncivil; treatment = 1) vs civil clip (1 MasterChef civil, 2 Planned Parenthood civil; treatment = 0), pooled over topic"
+  level: respondent
+  notes: "2 x 2 randomized by GfK (civility x topic), 752-799 per cell. XTESS216 is missing from the deposited .sav and is taken from the .dta in the same zip (rows and all closed columns identical). The civil and uncivil clips show different speakers (Cummings vs Jordan; female vs male judge). Commenting is optional and itself an outcome (H1): 64% commented after uncivil clips vs 57% after civil ones, so the text sample is selected after treatment. H3A is stated for conflict-approaching respondents; the pooled direction is an assumption (the moderators co_* are in the file)."
+constructs:
+  target:
+    - name: uncivil_language
+      definition: "The comment itself uses uncivil language: name-calling, insults, mockery, attacks on a person's character, inflammatory exaggeration, histrionics or conspiracy claims (directed at anyone, including the people in the clip)"
+      source: "Study summary, H3A: 'Conflict-approaching individuals who are exposed to incivility will be more driven to participate, but will also be more likely to use uncivil discourse in their own commentary'; definition from the authors' outcome code d 'Use of uncivil language' (name-calling, mockery, character assassination, misrepresentative exaggeration, histrionics or conspiracy theories; Gervais 2014)"
+      expected_direction: increase
+  placebo:
+    - name: technical_video_problems
+      definition: "The comment reports a problem with playing, seeing or hearing the video"
+      rationale: "All respondents passed the same video test before treatment; the civil and uncivil clips are of the same length and format"
+    - name: food_cooking_reference
+      definition: "The comment refers to food, cooking, the dish or the cooking show"
+      rationale: "Topic (MasterChef vs Planned Parenthood) is randomized independently of civility and both civility arms are half MasterChef; the civil and uncivil MasterChef clips judge the same dish. Risk: comments on the judge's rudeness may displace comments on the food"
+estimand: "ITT difference (uncivil minus civil clip) in the share of comments expressing uncivil_language, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over topic, among respondents who left a comment"
+outcomes:
+  closed_ended: "Q4 share the story (yes/no); Q6 emotions (angry, disgusted, anxious, amused, entertained, enthusiastic); Q5 clip informative, civil (manipulation check), biased"
+human_codes:
+  available: false
+  column: null
+  notes: "The author hand-coded the comments with six codes (no comment; confusion; metacommunication; uncivil language; political opinion; questions to learn more; study summary), but the codes are not in the archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or, per the manifest, the searcher. The drafter read the study summary's 'Summary of Findings', which reports results from the author's coding of these comments (conflict-approaching respondents more likely to use incivility after seeing it; people comment when an exchange is an egregious norm violation or surprisingly civil). The 2019 book may print example comments (not read). The author coded the full sample"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from study summary and questionnaire only"
+  date: "2026-11-17"

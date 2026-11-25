@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "ab9d68e6af4c13e2b461d18416671e7c0f07e2a72aa06e84ae137eeeeeff7362",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/calarco2019_vignette.rds",
+      "sha256": "4bcd30e9dabe97c3ff892f35ef52870787a064d0bf7b107eb45b9c79607538ed"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/calarco2019_vignette.topic_choice.csv",
+      "sha256": "eff9eba86d45da0592ed753e4f928d8fbf040a35bcd72de4af74a9c2179f0bcb"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "adc9b4bdbc0552bf0f5e11c1d4994d58aeed2b2cf1e1e817f739ebcc5b2f6f5e",
+  "created": "2026-11-23T23:33:12Z",
+  "opencheck_version": "0.0.0.9000"
+}

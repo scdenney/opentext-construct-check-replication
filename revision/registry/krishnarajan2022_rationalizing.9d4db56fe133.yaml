@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the APSR supplementary materials (pre-registration,
+# questionnaire), the Online Appendix (Appendix H on the vignettes), the author's Data_setup.do,
+# DDI labels and counts, before any open-text value was read. The article body was not read
+# (paywalled; the open accepted manuscript sits behind a Cloudflare check this machine cannot pass).
+id: krishnarajan2022_rationalizing
+title: "Regular vs undemocratic senator behavior on the respondent's side or the other side, and explanations of democracy ratings (US, YouGov 2020)"
+source:
+  citation: "Krishnarajan, S. (2023). Rationalizing democracy: The perceptual bias and (un)democratic behavior. American Political Science Review, 117(2), 474-496."
+  doi: "10.1017/S0003055422000806"
+  data: "doi:10.7910/DVN/WGPHFT (terms: not to be redistributed outside Harvard Dataverse; local use only); data/external/krishnarajan2022_rationalizing/raw/data_core.dta; harmonized_krishnarajan2022_rationalizing.csv (not for redistribution)"
+languages: [en]
+context: "US adults in a YouGov online panel (autumn 2020) read four short descriptions of a fictional, unnamed US senator's action or policy proposal on health care, immigration or social spending, rated how the behavior affects democracy in the United States, and were then asked to briefly explain that rating."
+unit: task
+id_column: "caseid + item (harmonized id = <caseid>_<Q7|Q11|Q15|Q19>); respondent_id = caseid"
+text:
+  column: "Q7 (action 1), Q11 (action 2), Q15 (proposal 1), Q19 (proposal 2)"
+  prompt: "You have stated that: '<the respondent's own democracy rating, lower case>'. Please offer a brief explanation for your answer."
+  position: "After each vignette: approval (Q5/Q9) or support for the proposal (Q13/Q17), then the democracy rating (Q6/Q10/Q14/Q18), then this item; four tasks per respondent, two per module, module order randomized"
+treatment:
+  variable: "treatment = <behavior>_<alignment>; behavior from the vignette code (regular/undemocratic), alignment = senator's ideological side (left/right, from the vignette code) vs respondent's side (left_right < 6 left, > 6 right, from pre-treatment Q2_1-Q2_3; 6 or missing = neutral)"
+  contrast: "Primary: among undemocratic vignettes, senator on the respondent's side (undemocratic_agree = 1) vs on the other side (undemocratic_disagree = 0)"
+  level: "task-level (vignette randomized per task); alignment combines the randomized senator side with the respondent's pre-treatment left-right position"
+  notes: "Within each module the vignette is drawn per task from 12 (3 issues x left/right x regular/undemocratic), with no issue repeated within a module (pre-registration, Randomization). Undemocratic versions add a violation to the regular one: actions -- journalists of one leaning barred from a press conference (health care), group promised veto power over immigration bills for campaign donations (immigration), campaign ad with false statements (social spending); proposals -- senators on one side barred from campaigning near hospitals, activists on one side barred from protesting in public, union or business leaders barred from running for Congress (Online Appendix H). The prompt pipes in the respondent's own (post-treatment) rating, so wording varies with the outcome. Respondents in the centre (left_right = 6) or with missing ideology are 'neutral' and outside the primary contrast. Secondary contrasts: regular_disagree vs regular_agree (author expects regular behavior one dislikes to be called undemocratic), and undemocratic vs regular overall (a positive control: the violation is stated in the vignette, so a rise in norm-violation talk is partly mechanical). Split folds by respondent; cluster by respondent."
+constructs:
+  target:
+    - name: democratic_norm_violation
+      definition: "The explanation says the senator's behavior or proposal breaks a democratic rule, right or norm or is unfair to political opponents: for example restricting the press, free speech, protest or the right to run for office, campaigning, buying influence with donations, or lying to the public"
+      source: "Pre-registration (Supplementary Materials, Appendix A2, 'Test of mechanisms'): rationalizing citizens 'will ignore democratic aspects of politicians' behavior and transmit their policy disagreement/agreement into their democracy perceptions'; Undemocratic behavior bias hypothesis (A2, Hypotheses). Abstract: when a politician acts undemocratically to promote desired policies, citizens find arguments for considering it democratic."
+      expected_direction: decrease
+    - name: policy_or_country_benefit
+      definition: "The explanation justifies the rating by whether the policy goal itself is good or bad or by its consequences for the country or its people (e.g. health care access, the economy, jobs, security), rather than by how the senator went about it"
+      source: "Pre-registration (Appendix A2, Hypotheses and 'Test of mechanisms'): democratic transmission (policy agreement carried into democracy perceptions) and democratic elevation (evaluating the behavior 'based on how it affects their country in a broader sense')"
+      expected_direction: increase
+  placebo:
+    - name: earlier_scenario_reference
+      definition: "The explanation refers to another senator, proposal or event described earlier in the survey, or compares this case with one seen before"
+      rationale: "Possible only from the second task on; tied to task position and the randomized module order, which are independent of whether the senator is on the respondent's side. Neither transmission nor elevation concerns other vignettes. Expect a low base rate."
+    - name: personal_experience
+      definition: "The explanation refers to the respondent's own life or that of family or friends (their own job, insurance, taxes, benefits, immigration history or community)"
+      rationale: "The mechanisms concern policy agreement and the country as a whole, not the respondent's own circumstances. Weaker placebo: policy-based reasoning could draw on personal experience, so a rise here alongside policy_or_country_benefit is not by itself a false positive."
+estimand: "Task-level difference (undemocratic vignettes: senator on the respondent's side minus the other side) in the share of explanations expressing each construct, estimated on the estimation fold with respondent-level splitting and respondent-clustered errors"
+outcomes:
+  closed_ended: "dem_rating (Q6/Q10/Q14/Q18, 1 much less to 5 much more democratic; 977 -> NA); approval (Q5/Q9 approval of the behavior, Q13/Q17 agreement that the proposal be implemented); dem_list_rating (Q8/Q12/Q16/Q20, effect on the respondent's chosen democratic attribute)"
+human_codes:
+  available: false
+  column: null
+  notes: "The author analyzed the explanations only by word frequencies (stemmed bag of words, Figure 3 word cloud) comparing rationalizing and non-rationalizing answers, a split defined by the post-treatment rating. No answer-level codes are archived."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer seen by me or (per MANIFEST) the searcher. Seen in the author's Data_setup.do: the five placeholder answers he blanks (strings of 'x' and a survey URL). Not read: the article body, which prints Figure 3, a word cloud of words from these explanations by rationalization status, and may quote example answers; a reader of the article has seen that output. The author's text analysis used the full sample."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from pre-registration, appendix and replication code only"
+  date: "2026-11-17"

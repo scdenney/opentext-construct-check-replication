@@ -1,0 +1,50 @@
+# DRAFT, not registered. POSITIVE CONTROL: the open text is the anxiety-induction
+# writing task, so the prompt differs by arm. Written from the stm documentation and
+# Roberts et al. (2014) before any open-text value was read. The exact prompt is
+# unverified. Steven must confirm the placebos before running oc_study_register().
+id: gadarian2014_anxiety
+title: "Anxiety-induction writing task about immigration (Gadarian & Albertson; stm 'gadarian' data)"
+source:
+  citation: "Gadarian, S. K., & Albertson, B. (2014). Anxiety, immigration, and the search for information. Political Psychology, 35(2), 133-164. Analyzed in Roberts, M. E., et al. (2014). Structural topic models for open-ended survey responses. American Journal of Political Science, 58(4), 1064-1082."
+  doi: "10.1111/pops.12034"
+  data: "R package stm 1.3.8, data(gadarian); copy at data/external/gadarian2014_anxiety/raw/gadarian.rds"
+languages: [en]
+context: "US adults in a survey experiment were asked to write about the issue of immigration; the instructions differed between versions. Responses are lowercased."
+unit: respondent
+id_column: null   # MetaID is constant (0); use row order
+text:
+  column: open.ended.response
+  prompt: "UNVERIFIED paraphrase (stm help page): treatment subjects were asked to write about what made them anxious (worried) about immigration; control subjects to write about immigration. Exact wording is in Gadarian & Albertson (2014)"
+  position: "The writing task is the treatment induction; it precedes the information-search outcomes"
+treatment:
+  variable: treatment
+  contrast: "worry/anxiety writing prompt (1) vs neutral immigration writing prompt (0)"
+  level: respondent
+  notes: "171 treated / 170 control in the stm copy (341 rows; the help says 351). The text is lowercased. pid_rep (7-point party ID, 0-1) is available as a covariate"
+constructs:
+  target:
+    - name: immigration_threat_fear
+      definition: "The response expresses worry, fear or anger about immigration or immigrants, or describes immigration as a threat (crime, jobs, costs of public services, security, illegal entry)"
+      source: "Roberts et al. 2014, Covariate Analysis: treated responses discuss the fear/anger topic (Topic 1) more by .28 (95% CI .23-.33), showing that 'the study's encouragement to express worries about immigration was effective'; Gadarian & Albertson 2014 (anxiety induction)"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment. The design
+  # steers content, so both placebos are weak.
+  placebo:
+    - name: named_politician
+      definition: "The response names a specific politician or party (e.g. a president, a candidate, a named party)"
+      rationale: "Neither prompt mentions political actors; the manipulation is emotional framing of the same topic"
+    - name: family_immigrant_heritage
+      definition: "The response mentions that the respondent's own family or ancestors were immigrants"
+      rationale: "Pre-treatment fact; but a worry prompt could crowd it out, so treat a shift as weak evidence"
+estimand: "ITT difference in the share of responses expressing immigration_threat_fear, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. This is a positive-control estimand"
+outcomes:
+  closed_ended: "None in the stm copy (the original study's information-search outcomes are not included)"
+human_codes:
+  available: false
+  column: null
+  notes: "The original study had two RAs code enthusiasm, concern, fear and anger (3-point scales; Roberts et al. 2014). Those codes are not in the stm copy"
+provenance:
+  written_before_reading_text: true
+  contamination: "No values of open.ended.response were read; only character-class counts were taken (uppercase 0 of 341, punctuation 253 of 341). The corpus is the canonical STM example: Roberts et al. (2014) prints topic words and example responses, and the drafter saw at least one while reading that paper. The full corpus has been analyzed many times"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

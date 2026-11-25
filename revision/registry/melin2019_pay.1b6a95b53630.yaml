@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Melin1066.pdf), the
+# OSF wiki summary, the fielded questionnaire (with the resume images) and the
+# SPSS labels, before any open-text answer was read (see contamination: four
+# numeric-only answers were displayed). No published article was found.
+id: melin2019_pay
+title: "Military vs cosmetics work history of a woman job applicant and explanations of recommended pay, US adults (TESS 2019)"
+source:
+  citation: "Melin, J. (2019). Testing a Theory of Hybrid Femininity. Time-sharing Experiments for the Social Sciences, study melin1066 (proposal TESS-1066.R2 and data)."
+  doi: null
+  data: "https://osf.io/tbrfh/ (TESS archive); data/external/melin2019_pay/raw/8041.41_TESS_041_Melin.sav; harmonized_melin2019_pay.csv"
+languages: [en]
+context: "US adults imagined working for a company hiring a senior manager (at an automotive manufacturer, a wedding and events planner, or a consulting firm), read the job description and the resume of a woman applicant, recommended a salary and bonus, rated her on several traits, and were then asked for their overall assessment of how much to pay her and to explain why in a few sentences."
+unit: respondent
+id_column: CaseId
+text:
+  column: Q8
+  prompt: "What is your overall assessment regarding how much to pay the applicant for the [Senior Technical Project Manager / Senior Event Planning Manager / Senior Manager] position? In your own words, please write a few sentences explaining why you feel this way."
+  position: "After the salary and bonus sliders (Q1-Q2) and the commitment, competence, reliability, leadership and masculinity/femininity ratings (Q3-Q7); before the manipulation check (Q9)"
+treatment:
+  variable: P_41
+  contrast: "military (hypermasculine) work history, P_41 in 1-3 (treatment = 1) vs cosmetics (hyperfeminine) work history, P_41 in 4-6 (treatment = 0), pooled over the three target jobs"
+  level: respondent
+  notes: "2 x 3 between-subjects design, one preloaded cell per respondent: resume (military: 'U.S. Army Project Manager (Active-duty Enlisted)', vs cosmetics: 'Cosmetics Project Manager') x target job (automotive / wedding and events / consulting; P_41 1,4 / 2,5 / 3,6). Name, education, volunteer work and skills are identical across resumes. Item wording is the same in both resume arms (the job title varies with the job factor). The resume differs by arm, so mentions of the military itself are partly mechanical."
+constructs:
+  target:
+    - name: status_competence_traits
+      definition: "The response justifies the pay (high or low) by the applicant's personal qualities of competence or status: being capable, competent, a (strong) leader, disciplined, reliable, dependable, committed, hard-working or able to handle pressure. Mentions of her background or experience count only if they are tied to such a quality."
+      source: "Proposal p. 3 (Theory): 'when a woman has performed hypermasculine work ... potential employers outside her occupational field may perceive her to be more masculine and higher status (i.e., more competent and capable of leadership, more committed and reliable), and thus entitled to higher compensation than an equally qualified woman with a mixed-sex or hyperfeminine occupational background'; OSF wiki hypothesis on status and reward distinctions"
+      expected_direction: increase
+  placebo:
+    - name: target_industry_reference
+      definition: "The response refers to the industry or line of business of the hiring company: cars or automotive manufacturing, weddings or event planning, or consulting"
+      rationale: "The target job is randomized independently of the resume and appears in the item wording; mentions should vary with the job factor, not with the resume"
+    - name: education_reference
+      definition: "The response refers to the applicant's education: her degree, university, GPA or part-time study"
+      rationale: "Education is identical on both resumes. Caveat: a more salient military history could crowd out other resume details"
+estimand: "ITT difference (military minus cosmetics) in the share of responses expressing status_competence_traits, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Q1 recommended salary (slider $35,000-$225,000) and Q2 bonus; Q3-Q6 commitment, capability/self-confidence/competence, reliability, leadership; Q7 masculine/feminine (all asked before Q8)"
+human_codes:
+  available: false
+  column: null
+  notes: "The proposal plans a qualitative analysis of the open answers; no codes are in the archive"
+provenance:
+  written_before_reading_text: false
+  contamination: "While checking refusal codes, the drafter printed a frequency table of answers consisting only of digits: besides the skip code 98 (263), four answers were bare numbers (pay amounts). No worded answer was seen. The OSF wiki summary states the main results (higher pay and status ratings for the hypermasculine background in male-dominated and neutral jobs)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

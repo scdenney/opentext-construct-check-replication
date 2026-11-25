@@ -1,0 +1,50 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from
+# political-regimes-nationalism/replication/instruments/roc_survey_definition.json, the PAP
+# draft (draft/Political Regimes and the Shape of Nationalism 4.0.docx), overleaf/note_body.tex
+# and replication/code/01_roc_data_prep.R; blind to response values.
+id: roc2026_q12_national
+title: "National-identity conjoint open-end after task 3, Taiwan 2026"
+source:
+  citation: "Denney, S. & Steinhardt, H. C. 'Political Regimes and the Shape of Nationalism' (research note, in preparation); Taiwan 2026 survey fielded through Rakuten Insight"
+  doi: null
+  data: "data/harmonized/roc2026_q12_national.csv (from political-regimes-nationalism/roc-cbc26/data/roc_raw.csv; final Qualtrics pull 2026-06-17; replication/data/roc_long.rds matches it, 2500/2500 ids and 0 task-3 mismatches)"
+languages: [zh-Hant]
+unit: respondent
+id_column: id            # Qualtrics ResponseId
+text:
+  column: text           # source column Q12_6 (QID74)
+  prompt: "請簡要說明您選擇該位人選的主要原因。 (Please briefly explain the main reason you chose this person.)"
+  wording_note: "Differs from the mainland item (prc2026_q22_national asks why the chosen person is a national) and from the PAP wording ('Please explain why the person you chose is truly a national of our country'). The task-3 instruction above the profiles asks which person better fits the definition of a true national of our country."
+  position: "Block 'Nat ID Conjoint NEW' (6 paired tasks, 9 attributes), on the task-3 page: below the two task-3 profiles and the forced choice (Q12_5), above the 1-7 ratings of both persons (Q12_7). About the person chosen in task 3. Forced response."
+treatment:
+  variable: "chosen_patriotism, other_patriotism (task-3 displayed pair)"
+  contrast: "task-3 pair displays at least one 'Patriotic, often expresses' profile (1) vs neither profile shows that level (0)"
+  level: task-level attribute
+  notes: "Same nine harmonized attributes and column names as prc2026_q22_national (origin has five levels here, no Congo); origin, ancestry, language, legal_status, residence, politics and civicness also match roc2024_q74_national, while patriotism and social_values have no 2024 counterpart. Each profile's levels are drawn independently, so the task-3 pair composition is randomized; chosen_* alone is post-choice. No respondent-level arm precedes the open-end (RandomTextFlag is set after the conjoint and drives no block)."
+constructs:
+  target:
+    - name: patriotic_expression
+      definition: "The response justifies the choice by the person's love of country, patriotic feeling, or open expression of it"
+      source: "PAP draft 4.0, section 'The expression of patriotism' (H4d-H4e: patriotism raises acceptance in Taiwan; H4f: little added premium for public expression); overleaf/note_body.tex, section 'Regimes and the Content of Nationalism' (H4 family) and the Results paragraph on patriotism"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: economic_contribution
+      definition: "The response invokes the person's work, job, taxes, or economic contribution"
+      rationale: "No profile attribute concerns work or economic contribution, and the patriotism level displayed should not move it"
+    - name: family_ties
+      definition: "The response invokes marriage to a citizen or family or relatives in Taiwan"
+      rationale: "Family is not a profile attribute; the patriotism level displayed should not move mentions of it"
+estimand: "ITT difference on the estimation fold in the share of responses expressing patriotic_expression between respondents whose task-3 pair displayed a 'Patriotic, often expresses' profile and those whose pair did not, E[g(R(1))] - E[g(R(0))], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Task-3 forced choice (Q12_5) and 1-7 ratings of both persons (Q12_7_1, Q12_7_2; not carried in the harmonized file); AMCEs over all six tasks in the research note"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "No prior analysis of Q12_6 found; the only mention is a count of non-empty pilot responses in roc-cbc26/audit_pilot_2026-05-04.md. Steven has seen the data, and the conjoint AMCEs on the same respondents are reported in the research note."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"
+exclusions: "Project rule (replication/code/01_roc_data_prep.R): Finished and Q5 attention pass; the export already holds only such respondents, so no row is excluded"

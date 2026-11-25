@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the Dataverse abstract, README, variable labels and
+# the open-ends Stata code before any open-text value was read.
+id: tripp2026_refugees
+title: "'Refugee' vs 'immigrant' label and what comes to mind (US 2024, three free associations)"
+source:
+  citation: "Tripp, A., & Kam, C. D. (2026). Distinction without a difference: American public opinion on immigrants and refugees. Political Behavior."
+  doi: null
+  data: "doi:10.7910/DVN/LJSEY1; data/external/tripp2026_refugees/raw/Tripp Kam Bovitz open ends.dta; harmonized_tripp2026_refugees.csv"
+languages: [en]
+context: "A nationally representative online sample of US adults (2024) was randomly asked about either 'immigrants' or 'refugees' and wrote the first, second and third thing that comes to mind when they hear the term."
+unit: respondent
+id_column: respondent
+text:
+  column: "text (three rows per respondent, mention_1-3; harmonized: joined with ' | ' in mention order)"
+  prompt: "What is the first [second, third] thing that comes to mind when you hear the term immigrant [refugee]?"
+  position: "Open-ended block before the close-ended stereotype, affect and policy items"
+treatment:
+  variable: refugeecondition
+  contrast: "Refugee condition (1) vs Immigrant condition (0)"
+  level: respondent
+  notes: "Respondent-level randomization (1,508 vs 1,503 respondents). The treatment word appears in the prompt itself."
+constructs:
+  target:
+    - name: involuntary_humanitarian
+      definition: "The response describes people forced to flee or with no choice (war, persecution, conflict, danger) or in need of help, protection or compassion"
+      source: "Dataverse abstract: open-ended mentions reveal that refugees trigger themes of involuntariness, conflict and humanitarianism; authors' theme codes Push, No_choice, In_need, Humanity"
+      expected_direction: increase
+    - name: threat_fairness_politics
+      definition: "The response refers to illegality or fairness (e.g. coming the right way), threat (crime, jobs, costs) or domestic political conflict"
+      source: "Dataverse abstract: immigrants elicit themes of domestic politics, fairness and threat; codes Threatening, Politics"
+      expected_direction: decrease
+  placebo:
+    - name: personal_ties
+      definition: "The response mentions the respondent's own family, ancestors, friends or acquaintances who are immigrants or refugees"
+      rationale: "Personal and family ties predate the survey; the authors code them separately (Personal_ties), and either label can evoke one's own family history"
+estimand: "ITT difference (Refugee minus Immigrant) in the share of respondents expressing involuntary_humanitarian in any of the three mentions, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Warmth and competence stereotypes (ST_warmth_index, ST_comp_index), group affect, policy preferences"
+human_codes:
+  available: true
+  column: "human_<Theme>_any (19 themes, e.g. human_Push_any, human_No_choice_any, human_In_need_any, human_Humanity_any, human_Threatening_any, human_Politics_any, human_Personal_ties_any), aggregated to the respondent as any mention coded by any coder"
+  notes: "Up to four coders (A-D) per mention in the raw file (Theme_u_A ... Theme_u_D); the per-mention codes support reliability checks"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors hand-coded the full sample and report theme differences by condition; the target direction is a replication target"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

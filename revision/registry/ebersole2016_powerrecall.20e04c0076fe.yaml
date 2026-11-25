@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the ML3 codebook, formal analysis plan and the
+# original-study design before any open-text value was read. Steven must confirm the
+# placebo constructs before running oc_study_register().
+id: ebersole2016_powerrecall
+title: "High- vs low-power recall essays in Many Labs 3 (Galinsky et al. 2006 replication)"
+source:
+  citation: "Ebersole, C. R., Atherton, O. E., Belanger, A. L., et al. (2016). Many Labs 3: Evaluating participant pool quality across the academic semester via replication. Journal of Experimental Social Psychology, 67, 68-82. (Power effect replicates Galinsky, Magee, Inesi & Gruenfeld, 2006, Psychological Science, Study 2a.)"
+  doi: "10.1016/j.jesp.2015.10.012"
+  data: "https://osf.io/ct89g (CC-BY 4.0); data/external/ebersole2016_powerrecall/raw/ML3_PPool_and_MTurk_Data.csv"
+languages: [en]
+context: "US and Canadian university participant-pool students (20 sites) and MTurk workers in 2014 were randomly asked to recall and describe either an incident in which they had power over someone or one in which someone had power over them. The written description is the manipulation itself; a sarcasm-perception task followed."
+unit: respondent
+id_column: session_id
+text:
+  column: text   # harmonized; raw columns highpower (HighPower arm) and lowpower (LowPower arm)
+  prompt: "HighPower: 'Please recall a particular incident in which you were in a position of power. By power, we mean a situation in which you controlled the ability of another person or persons to get something they wanted, or were in a position to evaluate those individuals. Please describe this situation: events, feelings, thoughts, etc.' LowPower: 'Please recall a particular incident in which someone else had power over you. By power, we mean a situation in which someone had control over your ability to get something you wanted, or was in a position to evaluate you. Please describe this situation in which you did not have power - what happened, how you felt, etc.' (ML3 Variable Codebook)"
+  position: "Within the ML3 computer session, immediately after random assignment to the power condition; the essay is the treatment delivery, followed by the sarcastic-sincere email rating (DV)"
+treatment:
+  variable: PowerCond
+  contrast: "HighPower (1) vs LowPower (0)"
+  level: respondent
+  notes: "Randomized by the session script; 1,507 HighPower and 1,481 LowPower essays. 771 rows (mostly sites/sessions without the power task) have PowerCond NA and no essay. The two arms see different prompts, so the text measures what the manipulation induced rather than a reaction to a fixed stimulus"
+constructs:
+  target:
+    - name: holding_power_over_others
+      definition: "The respondent describes themself as controlling another person's outcomes, resources or opportunities, or as evaluating, supervising, directing or deciding for others"
+      source: "Prompt wording in the ML3 Variable Codebook (rows highpower/lowpower); ML3 Formal Analysis Plan, section 1 'Power and perspectives not taken (Galinsky, Magee, Inesi, & Gruenfeld, 2006, Study 2a)'"
+      expected_direction: increase
+    - name: attention_to_others_perspective
+      definition: "The respondent describes what the other person in the incident thought, felt, wanted or how the situation looked from that person's point of view"
+      source: "Galinsky et al. (2006) theory that power reduces perspective taking, which is the hypothesis ML3 tests (Formal Analysis Plan, section 1). This is a theory-based prediction about the essays, not one the authors tested on the text"
+      expected_direction: decrease
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: weather_or_physical_setting
+      definition: "The response mentions the weather, season, or physical surroundings (rooms, buildings, outdoor scenery) of the incident"
+      rationale: "Incidental scene detail that neither prompt asks for and that the power theory does not address"
+    - name: food_or_eating
+      definition: "The response mentions food, meals, drinks or eating"
+      rationale: "Incidental content unrelated to who held power in the incident"
+estimand: "ITT difference (HighPower minus LowPower) in the share of essays expressing the target construct, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "sarcasm: rating of how sarcastic vs sincere an ambiguous email was (perspective-taking DV); ML3 found no power effect on it"
+human_codes:
+  available: false
+  column: null
+  notes: "No human coding of the essays. The analysis plan uses essay length (characters) as a moderator only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No essay values were read; only column names, non-empty counts and word-count quantiles were printed. The ML3 paper itself was not read; the card relies on the codebook and the formal analysis plan"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

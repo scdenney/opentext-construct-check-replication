@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "a111ba699f39ffca71cd7670993efc2104bd133b5032e00a508d0bcb109be8bc",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_sktw_naturalization_2024",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024.stmcov.rds",
+      "sha256": "0208c504a93b61e1e83ca418895dcb61633d4a063fb6d6e918d5e8d3cfa49cb6"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024.stmcov.topic_choice.csv",
+      "sha256": "1d0356e081a22431793f9ddc08262d342eeefde91fabf71221a32999509c2c63"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "93fe591a9562b457c362f1192c18b3a0b1451bf0f4ce7ab02aa7c57fb82b67ee",
+  "created": "2026-11-22T16:40:44Z",
+  "opencheck_version": "0.0.0.9000"
+}

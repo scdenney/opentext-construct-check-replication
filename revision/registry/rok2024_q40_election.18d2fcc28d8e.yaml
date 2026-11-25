@@ -1,0 +1,54 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from Ward & Denney 2025
+# (Party Politics) main text and SI, persuasion_cues/qualtrics/ROK_241_Experiments.qsf
+# (QID106 = Q40; flow FL_5; QID99/QID101 intros) and the public replication
+# README; blind to response values.
+id: rok2024_q40_election
+title: "Candidate-choice conjoint with a randomized general vs presidential election frame, South Korea 2024"
+source:
+  citation: "Ward, P. & Denney, S. (2025). Partisan voters in party systems with ephemeral parties: Evidence from South Korea. Party Politics."
+  doi: "10.1177/13540688251339976"
+  data: "Harvard Dataverse 10.7910/DVN/3N4UFF (final_df_conjoint.csv v2: sample, task-6 attributes and choice); local replication/korean-election-conjoint/. Q40 text, RandomElectionIntro and the 22 task-6 choices missing from v2 come from _archive/ROK-Experiments-2024/ROK 24.1 Experiments_March 16, 2024_12.56_choicetext.csv. The text equals v2 open_text_reason up to outer whitespace. Harmonized: data/harmonized/rok2024_q40_election.csv"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose this candidate?)"
+  position: "Own page directly after paired task 6 of 10 (Q39), about the candidate chosen in task 6; single-line text box, force response on"
+  wording_note: "The paper (p. 7) says the open-text question came after the second task; the QSF block order (Q39 | Q40 | Q41) and the export put it after task 6."
+treatment:
+  variable: RandomElectionIntro
+  contrast: "presidential-election frame (2) vs general (National Assembly) election frame (1); column `treatment` = presidential / general"
+  level: respondent
+  notes: "Embedded data ${rand://int/1:2} set at flow FL_5 before the conjoint. The intro (QID99 / QID101) says the questions identify the criteria used to choose candidates in a general (총선) or presidential (대선) election, and SI Appendix C says respondents were reminded of the election type for every pair. Realized: 991 general / 1,014 presidential in the 2,005-person sample. Task-level positive control: the ten attributes of both task-6 profiles (chosen_* / other_*), fully randomized without restrictions. chosen_* levels are conditional on the respondent's choice and therefore post-treatment. Define attribute contrasts on the randomized pair (e.g. any task-6 profile carries an allegation), not on the chosen profile alone."
+constructs:
+  target:
+    - name: programmatic_policy_reasoning
+      definition: "Justifies the choice by the candidate's policy positions or ideological camp (labor, housing or real-estate tax, social policy or the anti-discrimination law, foreign policy, nuclear weapons), as opposed to the candidate's personal characteristics"
+      source: "Ward & Denney 2025, Findings and Discussion (pp. 7, 11): voter choice is programmatically structured. SI Appendix D (p. 8): partisan responses to real-estate and social-policy positions are stronger for presidential candidates. Main text p. 7 reports no substantive marginal-mean difference by election type, so the expected effect is small."
+      expected_direction: increase
+    - name: scandal_mention
+      definition: "Mentions a candidate's allegation or clean record (bribery, the son's military-service irregularity, pro-Japanese ancestors, or having no scandal)"
+      source: "Positive control from the design (SI Table B.1, Scandal attribute: None / Bribery allegations / Son's military service / Ancestors pro-Japanese); the attribute-to-mention link is the protocol's check, not a claim of the paper"
+      expected_direction: "increase when at least one task-6 profile carries an allegation, relative to pairs in which neither does"
+  placebo:
+    # PROPOSED; Steven to confirm. Measure as separate yes/no judgments, not as
+    # categories exclusive of the target.
+    - name: candidate_gender_mention
+      definition: "Mentions the candidate's gender (male or female candidate, women in politics)"
+      rationale: "The election-type frame changes the office, not the gender attribute. SI Appendix D reports election-type differences only for region, real-estate, social and foreign policy."
+    - name: candidate_age_mention
+      definition: "Mentions the candidate's age or generation (40, 55, 70; young or old candidate)"
+      rationale: "Age is shown and randomized in both frames, and the paper reports no election-type difference for it"
+estimand: "ITT on the estimation fold: share of Q40 responses expressing programmatic_policy_reasoning under the presidential frame minus under the general frame, E[g(R(1))] - E[g(R(0))], with g frozen on the discovery fold. Positive control: the same difference for scandal_mention between task-6 pairs with and without an allegation."
+outcomes:
+  closed_ended: "Forced choice in each of 10 tasks (marginal means in the paper); Q32 after task 1 asks which party the chosen candidate is closest to (manipulation check; manipulation_check1 in the deposit). The paper's analytic sample is likely voters; this file keeps all 2,005."
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes. _archive/ROK-Experiments-2024/Election conjoint/vote_text_eng.xlsx holds Q40 with an English translation and the respondent's political orientation (columns read, values not opened)."
+provenance:
+  written_before_reading_text: false
+  contamination: "Q40 was analyzed on the full sample: a four-topic LDA by partisan subgroup is reported in the paper (pp. 7, 11) and in SI Appendix D (Figs D.6-D.7), with code in _archive/ROK-Experiments-2024/Election conjoint/Election-cbc.qmd (from l. 1718) and prgoressives_LDA.pdf. A commented-out text-based screen (Election-cbc.qmd l. 638-646, qualtrics_file_badIDs.csv) was built by reading the responses. Constructs here come from the paper's argument and the design, not from the topics."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

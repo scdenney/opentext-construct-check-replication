@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the paper, readme and do-file header before any
+# open-text value was knowingly read (one row was echoed by a parser warning; see
+# provenance). Steven must confirm the placebos before running oc_study_register().
+id: glazier2021_selfcoding
+title: "Thematic vs episodic poverty news and attributions of the causes of poverty (MTurk 2018)"
+source:
+  citation: "Glazier, R. A., Boydstun, A. E., & Feezell, J. T. (2021). Self-coding: A method to assess semantic validity and bias when coding open-ended responses. Research & Politics, 8(3)."
+  doi: "10.1177/20531680211031752"
+  data: "doi:10.7910/DVN/E4AJZF; data/external/glazier2021_selfcoding/raw/self_coding_survey_original.xlsx"
+languages: [en]
+context: "US adults on Mechanical Turk (2018) read a brief news report about poverty (versions differed) and were then asked to list, in up to ten short entries, what they think are the most important causes of poverty."
+unit: respondent
+id_column: null   # no ID column; use row order. Causes are concatenated per respondent
+text:
+  column: "PovertyCause1 ... PovertyCause10 (concatenate the non-empty causes per respondent, in order)"
+  prompt: "In your opinion, what are the most important causes of poverty? (up to 10 open-ended boxes)"
+  position: "Directly after the randomized news report on poverty, followed by the self-coding item for each cause"
+treatment:
+  variable: thematic
+  contrast: "thematic frame (broad trends in poverty; thematic == 1) vs episodic frame (story about individual poor people; thematic == 0, episodic == 1)"
+  level: respondent
+  notes: "Brief news report randomized between two frames (Appendix A of the paper). episodic 887 / thematic 849 / 10 with thematic NA. 1,551 respondents gave at least one cause"
+constructs:
+  target:
+    - name: societal_attribution
+      definition: "At least one listed cause attributes poverty to government, the economy or social structures: low wages, lack of jobs, the education system, cost of living, inequality, discrimination, policy"
+      source: "Glazier et al. 2021, 'Demonstration of the self-coding method' and 'Analysis': following Iyengar (1994), 'respondents who received the thematic news frames were more likely to provide open-ended responses on the causes of poverty that attributed responsibility to government and society (p = 0.004)'"
+      expected_direction: increase
+    - name: individual_attribution
+      definition: "At least one listed cause attributes poverty to the poor themselves: laziness, poor choices, lack of effort, drug or alcohol use, poor money management, having children young"
+      source: "Same; Iyengar (1994) as summarized in the paper: episodic framing raises individual responsibility"
+      expected_direction: decrease
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: health_disability
+      definition: "At least one listed cause is illness, disability, or mental or physical health"
+      rationale: "These causes fit neither the individual-choice nor the government/society pole that the frames manipulate. Respondents often self-code them as 'something else'"
+    - name: personal_experience
+      definition: "The response refers to the respondent's own or family's experience of poverty"
+      rationale: "Pre-treatment, and not invited differently by the two frames"
+estimand: "ITT difference (thematic minus episodic) in the share of respondents with at least one societal_attribution cause, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "None beyond the self-codes; the paper's statistic is the share of government/society self-codes among individual + government/society self-codes (pctpcGE in self_coding.do)"
+human_codes:
+  available: true
+  column: "GEDO1 ... GEDO10"
+  notes: "Respondent self-codes, one per cause: 1 = mostly individual people and their choices, 2 = mostly government and society, 3 = something else (with a free-text box). These directly measure the target at the cause level. They are post-text judgements by the respondents themselves. A researcher-coded sample of 200 respondents (Iyengar codebook) is described in the paper but is not a column in the file"
+provenance:
+  written_before_reading_text: true
+  contamination: "During structural inspection, a data.table::fread parser warning echoed one raw data row (row 169, including its listed causes) to the drafter's console. Nothing from it was used, and later checks suppressed warnings. The authors analyzed the full sample with self-codes and keyword lists. The drafter did not read the do-file's hand-listed response strings (lines ~134 onward)"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,56 @@
+# DRAFT, not registered. Written from the Many Labs 1 materials (OSF wx7ck:
+# Measures_US_Version.docx, the experiment script and page files, the SPSS
+# analysis syntax, the site table) and the Peyton, Huber & Coppock (2022)
+# replication code, before any open-text value was read. Positive control:
+# the arms imagined different scenes, so the text shift is partly mechanical.
+# Steven must confirm the placebo constructs before running oc_study_register().
+id: peyton2022_imaginedcontact
+title: "Imagined contact with a Muslim stranger vs an outdoor scene, written descriptions (Many Labs 1, 36 samples, 2013)"
+source:
+  citation: "Klein, R. A., Ratliff, K. A., Vianello, M., et al. (2014). Investigating variation in replicability: A 'Many Labs' replication project. Social Psychology, 45(3), 142-152 (imagined-contact study replicating Husnu, S., & Crisp, R. J. (2010). Elaboration enhances the imagined contact effect. Journal of Experimental Social Psychology, 46(6), 943-950). Data file redistributed in the replication package of Peyton, K., Huber, G. A., & Coppock, A. (2022). The generalizability of online experiments conducted during the COVID-19 pandemic. Journal of Experimental Political Science, which uses only the ML1 gain/loss-framing columns."
+  doi: "10.1027/1864-9335/a000178"
+  data: "Yale ISPS Data Archive D173, doi:10.60600/YU/JTINWB (under the license of the original source, Harvard Dataverse doi:10.7910/DVN/38UTBF, CC0 1.0; ML1 OSF project osf.io/wx7ck is also CC0 1.0); data/external/peyton2022_imaginedcontact/raw/manylabs_asian_disease.csv; harmonized_peyton2022_imaginedcontact.csv"
+languages: [en, pl, pt-BR, it, tr, nl, cs]
+context: "University students and online volunteers in 36 samples in ten countries (2013) were randomly asked either to imagine meeting a Muslim stranger for the first time and learning interesting and unexpected things about the stranger, or to imagine walking in the outdoors, for one minute. They were then asked to describe as many aspects of the scenario they had imagined as possible. Answers are in English, Polish, Portuguese, Italian, Turkish, Dutch or Czech."
+unit: respondent
+id_column: session_id
+text:
+  column: text   # harmonized; raw column imagineddescribe
+  prompt: "Describe as many aspects of the scenario you just imagined as possible: (Please do not use the \"Enter\" key, just type your thoughts in a paragraph). (ML1 Measures_US_Version, 'Imagined Contact', writing task for both conditions; translated at the non-English sites)"
+  position: "Immediately after the one-minute imagination task (imagineda or imaginedb), before the four imagined-contact DV items; the imagined-contact block's position among the ML1 studies was randomized"
+treatment:
+  variable: ContactGroup
+  contrast: "imagined meeting a Muslim stranger (1, 'Contact group', task imagineda) vs imagined walking in the outdoors (0, 'Control group', task imaginedb)"
+  level: respondent
+  notes: "Random selection of one of two imagination tasks by the ML1 session script (manylabs2.expt.xml, branch imaginedselect, select=1). Coding verified in the ML1 SPSS syntax (Syntax.Manylabs.sps, lines 1535-1560) and in the task sequence of every row of the file (3,173 imagineda = 1; 3,171 imaginedb = 0). POSITIVE CONTROL: the writing prompt is identical across arms, but it asks respondents to describe what the arm-specific instruction told them to imagine, so the text shift is largely mechanical. 283 Polish, Czech and other answers have letters lost in the deposited file (replaced by U+FFFD)."
+constructs:
+  target:
+    - name: interaction_with_muslim_person
+      definition: "The response describes meeting, talking with or otherwise interacting with a person who is identified as Muslim or by Islamic religion, dress or practice (for example a Muslim, a woman in a headscarf, someone who goes to a mosque or prays as a Muslim)"
+      source: "Contact-condition instruction in the ML1 materials (Measures_US_Version, 'Imagined Contact'; page imagineda.html): 'imagine yourself meeting a Muslim stranger for the first time'. Klein et al. (2014) replicate Husnu & Crisp (2010): imagining contact with an outgroup member raises intentions to interact with that group. The authors did not analyse the descriptions"
+      expected_direction: increase
+    - name: learning_about_another_person
+      definition: "The response describes finding out something about another person: their background, job, interests, beliefs, family or experiences"
+      source: "Contact-condition instruction (ML1 Measures_US_Version): 'During the conversation imagine you find out some interesting and unexpected things about the stranger'. Not analysed by the authors"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: money_or_finances
+      definition: "The response mentions money, prices, payment, wealth or financial matters"
+      rationale: "Neither imagination instruction concerns money. ML1 randomized a currency prime (money_prime, MoneyGroup) independently of ContactGroup in the same session, so any money content should track money_prime, not the contact treatment"
+    - name: illness_or_injury
+      definition: "The response mentions illness, injury, physical pain or medical care"
+      rationale: "Incidental content that neither the contact instruction nor the outdoor-scene instruction calls for"
+exclusions: "283 answers whose text is not valid UTF-8 in the deposit (letters lost before deposit; 206 Polish, 75 Czech, 1 Brazilian, 1 Italian) are excluded. The damage follows the site, not the arm."
+estimand: "ITT difference (contact minus outdoor control) in the share of descriptions expressing the target construct, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, with site as stratum"
+outcomes:
+  closed_ended: "imagined_dv (Imagineddv): mean of four 9-point items on intentions to interact with Muslims, learn about Islam, importance of interacting with Muslims, and willingness to attend a mosque gathering"
+human_codes:
+  available: false
+  column: null
+  notes: "No human coding of the descriptions; ML1 analyses only the closed DV"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No description was read or printed; only counts were taken (non-empty rows, invalid-UTF-8 rows, non-ASCII code points and per-site counts of common function words for the language check). The searcher's manifest reports no text read. Neither ML1 nor PHC print example descriptions in the materials consulted."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from ML1 materials, ML1 syntax and PHC replication code"
+  date: "2026-11-17"

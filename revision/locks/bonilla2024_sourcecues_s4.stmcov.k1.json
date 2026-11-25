@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "9e6a5bd997923fcacb254168cd2b996af9fdc4684c00e981fcfd6250665e29af",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_bonilla2024_sourcecues_s4",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/bonilla2024_sourcecues_s4.stmcov.rds",
+      "sha256": "9a70e506aa6b467e556b8f925a17471040a72e4cda4b1fde9ad508be6afc523b"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/bonilla2024_sourcecues_s4.stmcov.topic_choice.csv",
+      "sha256": "20592a610d3f6fa09bdc4a2f0812f1d6219615cb0cc6bb33a3ef19b02dac08f4"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "ab7bf335e675608f8291293671d54d902481ee2b89218b6341a559ca42939787",
+  "created": "2026-11-22T16:41:34Z",
+  "opencheck_version": "0.0.0.9000"
+}

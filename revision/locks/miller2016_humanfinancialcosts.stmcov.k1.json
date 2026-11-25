@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "751ceab78d14ed1f56c27a69f50c10a1f6225e113e5f62ebdefbe98152cb327a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_miller2016_humanfinancialcosts",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/miller2016_humanfinancialcosts.stmcov.rds",
+      "sha256": "8cc1f74659a300a04a54f4b7977732cd001e3e4c1a86c0b729c5bc6543e446db"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/miller2016_humanfinancialcosts.stmcov.topic_choice.csv",
+      "sha256": "25468af6359b336fbf5f8e4f032a80074e94751732769b864aafe83b586e7db3"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "2d1c4e39de93833e430686e00c8c216d459daa1d4cbb103510fe6be19362750a",
+  "created": "2026-11-22T16:41:37Z",
+  "opencheck_version": "0.0.0.9000"
+}

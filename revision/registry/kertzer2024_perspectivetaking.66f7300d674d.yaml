@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the authors' accepted manuscript of the World
+# Politics article ("World Politics, Forthcoming", dated October 1, 2023, on
+# Kertzer's Harvard site, Research_files/SCS_KQB_Web.pdf: sections 1.1-1.2, 2 and
+# the appendix questionnaire), the codebook and the replication code, before any
+# open-text value of the dataset was read. Five published example answers were
+# seen (see contamination).
+id: kertzer2024_perspectivetaking
+title: "Perspective-taking writing task and the explanation of a South China Sea military policy choice, with randomized escalation by the other side (US and China 2016)"
+source:
+  citation: "Kertzer, J. D., Brutger, R., & Quek, K. (2024). Perspective taking and security dilemma thinking: Experimental evidence from China and the United States. World Politics, 76(2), 334-378."
+  doi: "10.1353/wp.2024.a924509"
+  data: "doi:10.7910/DVN/ACI6QO (CC0 1.0); data/external/kertzer2024_perspectivetaking/raw/; harmonized_kertzer2024_perspectivetaking.csv"
+languages: [en, zh-Hans]
+context: "Adults in the United States (in English) and in China (in Chinese) read that the other country (China or the United States) had decided to increase or to decrease its naval deployments in the South China Sea, wrote what their own country would conclude from that, and some were also asked to write what the other country would conclude if their own country increased its military activities there; all then said whether their own country's military activities in the South China Sea should increase, decrease or stay the same and briefly explained their response."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Please briefly explain your response. (China: 请简要解释您的回答：)"
+  position: "Last item of the module, directly after the 7-point policy choice (increase / decrease / keep the same, with branching follow-ups), which comes after the escalation vignette with Writing task I (attribution1) and, in the PT arm only, Writing task II (attribution2); asked of every respondent in both arms with the same wording"
+treatment:
+  variable: treatment
+  contrast: "perspective taking (1: before the policy choice, wrote what the other country would conclude if the respondent's own country increased its military activities in the South China Sea) vs control (0: no second writing task)"
+  level: respondent
+  notes: "2x2 between-subjects design run in parallel in both countries: treatment (PT) crossed with other_escalates (the other country increases vs decreases naval deployments; ch_incr in the US file, am_incr in the China file), both randomized at the respondent level (article, section 2 and Appendix 4.2 balance tables). Same design and item in both countries; country is a stratum (US en, CN zh-Hans) and other_escalates a design column. The PT writing task asks the respondent to state the other country's view of their own country's escalation, so a rise in references to that view is partly mechanical (positive control). The article treats PT as an encouragement design (some control respondents take the other's perspective unprompted; some treated respondents do not comply), so the ITT is diluted. Chinese answers are short (mean about 17 characters), closer to phrases than sentences."
+constructs:
+  target:
+    - name: other_side_view
+      definition: "The response refers to how the other country (China, for American respondents; the United States, for Chinese respondents) would perceive, interpret or respond to the respondent's own country's military activity or policy in the South China Sea, for example whether it would be seen as a threat, a provocation, weakness or goodwill, or whether it would lead the other side to escalate or de-escalate"
+      source: "Section 1.1 ('The palliative effect of perspective taking'): 'engaging in perspective taking will cause actors to better appreciate the effects their actions have on others, and be less likely to assume others' actions are offensively motivated'; section 1.2: 'perspective taking causes us to activate knowledge structures both about ourself and the target whose perspective we are taking'; section 2, quantity of interest 5: estimating 'the treatment effect of perspective taking on the explanations respondents give for their policy choices' to understand 'the knowledge structures perspective taking activates'. The authors argue PT can backfire (heighten awareness of conflicts of interest) but do not dispute that it brings the other side's view into the reasoning; no preregistration is cited."
+      expected_direction: increase
+  placebo:
+    - name: economic_stakes
+      definition: "The response refers to natural resources, fisheries, oil or gas, trade or shipping routes, or other economic stakes in the South China Sea"
+      rationale: "The introduction shown to every respondent in both arms mentions the region's natural resources, fisheries and trade routes, and the PT task concerns only the other country's reading of a military increase, not economic stakes."
+    - name: third_countries
+      definition: "The response refers to countries other than the United States and China (for example the Philippines, Vietnam, Japan or other claimants or allies)"
+      rationale: "The PT task concerns only the two countries; other claimants are mentioned in the shared introduction in both arms, so the PT treatment should not change references to them."
+estimand: "ITT difference (perspective taking minus control) in the share of responses expressing other_side_view, E[g(R(1))] - E[g(R(0))], pooled over countries and the escalation factor (both as strata), estimated on the estimation fold; by-country estimates as secondary"
+outcomes:
+  closed_ended: "policy_choice (1 decrease a lot ... 7 increase a lot; built as in SCS_Replication1.R lines 67 and 139), the authors' main outcome of the PT experiment"
+human_codes:
+  available: false
+  column: null
+  notes: "None in the deposit. The authors analyzed the answers with structural topic models (section 3.2.1), not hand codes."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was seen. Published material seen while drafting: five representative US answers printed in Figure 8 of the accepted manuscript (the 'Reciprocity' topic, China-de-escalates condition) and the article's summary that the STM results are 'similar' to the policy results (PT induces reciprocity among Americans). The STM section was not read further. Text was handled only as counts (non-empty, encoding, script markers)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the accepted manuscript, codebook and replication code"
+  date: "2026-11-17"

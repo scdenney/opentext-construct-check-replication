@@ -1,0 +1,56 @@
+# DRAFT, not registered. Written from the three OSF preregistrations ('Inequality Between
+# Whom': India qyzcu, South Africa z3th5, US tpw7u, registered 6-15 February 2024, with
+# the India questionnaire attached to qyzcu), the deposited codebooks, README and
+# replication code, and deposit counts, before any open-text value was read. Revised
+# 2026-11-18 after the lead read the POQ article through a library: the article uses q18
+# as an open-ended manipulation check (passage quoted under the first target). The agent
+# did not read the article itself; the passage and Figure 1 caption were relayed by the
+# coordinator.
+id: leipziger2026_groupinequality
+title: "Intergroup vs interpersonal inequality frames and stated reasons for economic differences (India, South Africa, US 2024)"
+source:
+  citation: "Leipziger, L. E., Aarslew, L. F., & Christensen, M. E. (2026). Do group-based inequalities feel more unjust? Experimental evidence from economically disadvantaged groups in India, South Africa, and the United States. Public Opinion Quarterly, 90(SI), 1261-."
+  doi: "10.1093/poq/nfag029"
+  data: "doi:10.7910/DVN/14AEWL (CC0 1.0); data/external/leipziger2026_groupinequality/raw/{IN,ZA,US}_survey.dta (column q18); harmonized_leipziger2026_groupinequality.csv"
+languages: [en, hi]
+context: "Members of economically disadvantaged groups (Scheduled Caste and Scheduled Tribe respondents in India, Black South Africans, African Americans) answered an online survey in 2024. Some first read a short news-style passage with a figure on how unequally economic resources are distributed in their country (the comparison described differed between respondents); others read nothing. All then answered questions about how fair the differences in economic resources are, and were asked for their reasons for why there are differences in economic resources in their country."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "We are now interested in hearing your reasons for why there are differences in economic resources in [India / South Africa / the United States]. More than one reason may come to mind. Please write your thoughts in the field below. Some sentences and/or keywords are enough."
+  position: "Block F, after the treatment block (Block E) and the recall check; q18 is shown in randomized order with the fairness item (q15), the luck-vs-effort item (q16) and the emotion items (q17); position in q18_position. Same wording in every arm. Second and third sentences from the India preregistration questionnaire; the codebooks give the first sentence only."
+treatment:
+  variable: treatment
+  contrast: "intergroup frame (economic resources of the advantaged group are about 9 times those of the respondent's group: upper-caste vs SC/ST households in India, White vs Black families in South Africa and the US) vs control (no passage)"
+  level: respondent
+  notes: "Simple randomization of respondents within each country (preregistrations, q7): India and South Africa three arms (intergroup, interpersonal = richest vs poorest 10% of households, control), about 533 each; US five arms (intergroup Black-White, interpersonal class-based, intragroup class frames among African Americans and among White Americans, control), 700/700/450/450/700. Country is a stratum. Same q18 wording in every arm. The intergroup passage names the groups and their gap, so a rise in group-based reasons (group_based_reasons) is partly an echo of what respondents read: positive control. The article itself uses q18 this way, as a manipulation check. US: the two intragroup class arms are left out of every contrast; the article's Figure 1 passage compares the intergroup prime with the interpersonal and control conditions only (6_Figure1.do, which would show the exact sample, was not downloaded; 5_preptext_US.R passes all five arms to it). Exclusions follow the authors' attention screens (1_cleaning.do). The answers are not checked for language; the questionnaires are in English, and one Indian answer contains Devanagari (lang hi)."
+constructs:
+  target:
+    - name: group_based_reasons
+      definition: "The answer explains differences in economic resources by group membership or by relations between groups: race, caste, ethnicity or tribe as such (for example Black and White people, upper castes and Scheduled Castes or Tribes), discrimination or prejudice against a group, or a group's historical treatment (for example apartheid, colonialism, slavery, segregation, the caste system). Answer no if the answer speaks only of classes, rich and poor people, or individuals, or only names a country or region"
+      source: "Article (POQ 90(SI), doi:10.1093/poq/nfag029), manipulation-check section, just before Figure 1: 'Further, analysis of open-ended responses demonstrates that the intergroup inequality prime successfully prompted respondents to think about inequality in group-based terms. Figure 1 shows that respondents given the intergroup prime were significantly more likely to mention words from an ‘intergroup dictionary’ as a reason for economic differences [...] than those in the interpersonal or control conditions.' Figure 1 caption: 'Differences in shares of respondents mentioning group-affiliation words to explain economic disparities.' The authors' dictionaries (3_preptext_IN.R, 5_preptext_US.R) also include 'class' (India) and 'histor' (all); this definition excludes class language alone and counts history only when it concerns a group."
+      expected_direction: increase
+    - name: circumstances_beyond_control
+      definition: "The answer gives as a reason for economic differences something people cannot control: luck or chance, the family, caste, race or group a person is born into, discrimination, history (for example colonialism, apartheid, slavery), or unequal access to opportunities"
+      source: "Expectation stated for the closed item q16 only; the article does not analyze the open answers for it. Preregistrations (OSF qyzcu, z3th5, tpw7u), H1: intergroup-primed respondents 'are more likely to experience feelings of injustice' than the control group; analysis plan (registration field q17): tested by whether they report that 'luck rather than effort determines differences in economic resources' (closed item q16, which defines luck as 'conditions, which you have no control over'). H2 predicts the same for the interpersonal frame and H3 a larger effect for the intergroup frame. The registrations describe the outcome block as respondents' 'view on the origins of such inequalities' (registration field q14)."
+      expected_direction: increase
+  placebo:
+    - name: corruption
+      definition: "The answer refers to corruption, bribery, or theft or misuse of public money by politicians or officials"
+      rationale: "None of the passages mentions government or corruption; they vary only between whom resources are unequally distributed, and the authors' hypotheses concern the luck-effort attribution and injustice, not the conduct of officials."
+    - name: education
+      definition: "The answer refers to education, schooling, qualifications or skills as a reason for economic differences"
+      rationale: "Neither passage mentions education (they report only the size of the resource gap and between whom it runs; India questionnaire, Block E), and neither the hypotheses nor the authors' dictionaries concern it. Weaker than corruption: an answer blaming a group's unequal access to schooling also counts as group_based_reasons, so a large rise in group-based reasons could carry some education mentions with it."
+estimand: "ITT difference (intergroup frame minus control) in the share of answers expressing each target (group_based_reasons, then circumstances_beyond_control), E[g(R(1))] - E[g(R(0))], pooled over countries with country as a stratum, estimated on the estimation fold. Secondary: intergroup vs interpersonal (reported in the article for group-based words; carries circumstances_beyond_control via preregistered H3) and interpersonal vs control (carries circumstances_beyond_control via preregistered H2). US intragroup arms are in no contrast"
+outcomes:
+  closed_ended: "effort_luck (q16: 0 only luck ... 10 only effort) and fairness (q15: 1 very unfair ... 7 very fair), preregistered H1-H3 outcomes"
+human_codes:
+  available: false
+  column: null
+  notes: "None in the deposit. The authors' R scripts (3_preptext_IN.R, 5_preptext_US.R) count two stemmed keyword dictionaries in q18 by arm for Figure 1 and Table SM2 of the article: an intergroup list (India: racism, race, discrimination, history, segregation, privilege, caste, class, tribe, religion, colonial, scheduled; US: racism, race, discrimination, racial, history, color, segregation, privilege, prejudice, slavery, jim, crow) and an 'interpersonal' list (hard, effort, lazy, work, deserve, luck, chance)."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was shown; only counts and Unicode-block counts were taken. Published material seen: the article's manipulation-check passage (relayed by the lead, who read the article) reports that intergroup-primed respondents were significantly more likely to use intergroup-dictionary words than the interpersonal and control groups, and gives two example words from the answers, 'Black' or 'apartheid' in South Africa and 'caste' in India; the lead has seen them too. The abstract (Crossref) was read and says the evidence for the main hypothesis is limited. The searcher displayed no text (manifest)."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the preregistrations, codebooks, README and replication code"
+  date: "2026-11-18"

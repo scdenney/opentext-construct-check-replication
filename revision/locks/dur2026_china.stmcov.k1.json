@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "315f9ddce31b7a041709c54645e6fada239d2fd7f0ebb920c352fdb6118f6a8f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_dur2026_china",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/dur2026_china.stmcov.rds",
+      "sha256": "35406165948ac6ce869bed404e878288dd909b71edaf5918c0eeac7e59abd326"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/dur2026_china.stmcov.topic_choice.csv",
+      "sha256": "8ebb8abb1ce6300820c29793693f34fffd14af47d662fc5ff049958b101726b5"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "fc4518bb365c6accf60e705e5aa754bc236277fdb15074c71028dd840a1c4122",
+  "created": "2026-11-22T16:41:10Z",
+  "opencheck_version": "0.0.0.9000"
+}

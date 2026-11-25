@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "e59079753c67daa85d5e820e89a81d6dece74946a8df95894ffffed99c8debfd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_chopra2024_newsdemand",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chopra2024_newsdemand.stm.rds",
+      "sha256": "09660f594ac7887ec60f4556bf0a66d963b1807f154c8c1381d02e65802f75fa"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chopra2024_newsdemand.topic_choice_qwen36_35b.csv",
+      "sha256": "b2000228c9b2e5413509d9f8c471dcf7ecff4c9bfcdf66bb857c3f7e4e07fc85"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "b797de6a2f4af0ed9c82f58a74d5b2951d824609ac2d00150301c2c48b74de44",
+  "created": "2026-11-17T18:03:52Z",
+  "opencheck_version": "0.0.0.9000"
+}

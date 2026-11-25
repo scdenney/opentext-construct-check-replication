@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the paper (Rmd source) and codebook before any
+# open-text value was read. Steven must confirm the placebo constructs before running
+# oc_study_register().
+id: ofosu2024_malawi
+title: "Discrimination vs progress voter-education videos and the message respondents took away (Malawi 2022)"
+source:
+  citation: "Ofosu, G. K., Seeberg, M. B., & Wahman, M. (2026). Messages matter: How voter education campaigns affect citizens' willingness to vote for women. The Journal of Politics, 88(1), 145-161."
+  doi: "10.1086/734252"
+  data: "doi:10.7910/DVN/6FHV5B; data/external/ofosu2024_malawi/raw/mm_respondent_data_original.csv"
+languages: [en]   # interviews in Chichewa; answers recorded in English (translation by enumerators presumed, undocumented)
+context: "Adults in rural Malawi (2022), interviewed face to face, watched a short animated video in Chichewa (versions differed in content; some were about women in politics). After a candidate-choice task, they were asked what message they took from the video; answers were recorded in English."
+unit: respondent
+id_column: KEY
+text:
+  column: q23
+  prompt: "What message did you take from the video? (codebook label; the paper says respondents were asked 'to briefly describe what they learned from the video (treatment) they watched')"
+  position: "At the end of the face-to-face survey, after the candidate-choice conjoint that followed the video; the closed check q24 comes next"
+treatment:
+  variable: tr_video
+  contrast: "'Low viability' = discrimination campaign (capability + discrimination messages) vs 'High viability' = progress campaign (capability + progress messages); the Control arm (plastic-basin commercial) is excluded from this contrast"
+  level: respondent
+  notes: "Randomized video shown on a tablet. Restrict to validdata == TRUE (pilot excluded): Low viability 852, High viability 515, Control 872. Both campaign videos open with the identical capability message and close with the identical slogan 'Let's vote for women!'"
+constructs:
+  target:
+    - name: discrimination_low_viability
+      definition: "The response says that women in politics face discrimination, harassment, lack of party support or voter prejudice, or that women candidates are unlikely to win or need encouragement because they are discouraged"
+      source: "Ofosu et al., section 'What messages do respondents take away from the gender campaign?': discrimination-video respondents 'were more likely to talk about the low electoral viability of women candidates and the discrimination they face by voters and political elites' (Topics 1-3); theory section on the discrimination message as a viability cue"
+      expected_direction: increase
+    - name: women_progress
+      definition: "The response says that women's presence in parliament is growing, that the constituency now has a woman MP, or that women hold senior offices (ministers, Speaker of Parliament)"
+      source: "Ofosu et al., theory and design sections (progress message content). The authors report that no STM topic clearly related to progress, so this is a theory-based prediction with weak prior evidence"
+      expected_direction: decrease   # discrimination arm minus progress arm
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: women_capability
+      definition: "The response says women are capable leaders, bring development to their constituencies, work hard, or are less corrupt than men"
+      rationale: "The capability message is identical in both campaign videos (design section). If it moves, the cause is attention competing with the arm-specific segment, which the separate yes/no coding is meant to detect"
+    - name: vote_for_women_appeal
+      definition: "The response repeats an exhortation to vote for women or to support women candidates"
+      rationale: "Both videos end with the same slogan 'Let's vote for women!'"
+estimand: "ITT difference (discrimination minus progress video) in the share of responses expressing discrimination_low_viability, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold within validdata == TRUE"
+outcomes:
+  closed_ended: "q24 closed manipulation check (1 = voting for a woman is a waste of one's vote, as she is unlikely to win; 2 = voting for a woman can help her win; 3 = none). Also q19_v-q22_v viability/attitude items and the conjoint choices"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors fit an 11-topic STM on the full analysis sample and labelled topics after reading the top 100 responses per topic"
+provenance:
+  written_before_reading_text: true
+  contamination: "No q23 values in the data file were read. The paper source (Rmd appendix) quotes one example response per topic, which the drafter saw. The authors' STM used the full sample, so the target direction is a replication target"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

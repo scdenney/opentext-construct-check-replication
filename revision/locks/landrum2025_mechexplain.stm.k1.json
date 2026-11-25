@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4c0d78a5a6852976dc0a02e8ab309e45cc5425449aca524de2d130ee8131db54",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_landrum2025_mechexplain",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/landrum2025_mechexplain.stm.rds",
+      "sha256": "06b09a772a82f46d37a0e9a043e081b18e08b3063ab0b820009ca48c463f056c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/landrum2025_mechexplain.topic_choice.csv",
+      "sha256": "82f683a24d361c2f8e842df6c23d5e441f8841d9795a581f05b0cce762afed81"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "824431a1551ed3b6f15064fa57c21f3a564e42ef2edaabc4c41e7ced8abc885a",
+  "created": "2026-10-29T15:22:49Z",
+  "opencheck_version": "0.0.0.9000"
+}

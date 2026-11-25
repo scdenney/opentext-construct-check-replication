@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "307c7d781c2ddde82bc00f7c32673930b82d673e955be00297dc787541f9404d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/aks21_c3_unification.1cd4f7cabc45.yaml",
+      "sha256": "df9cd33f7305166a1916cd99097b3d7a4d0a929ab64d65bd2ebec04976b0d486"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["1aff7555255b72e3d9db3cd8be81a733d24745e697fda3bee8b8f69d1fbbcb25", "3677a61a1532b32f02ab206e02aef6ece7391a436995e3b64d900eded0d7ad71", "376692077e8de1cf93dc2b89037ae3d64d8cadd2f676d3d2cc221ac797da7a68", "5eefa78dd6f0ed77e2fb89a4d456a2b182f2ca14d5ccebf539393265be6535f8", "ac4504685d56e853e9e9d81a15398ed94be6b86b05898638e94c730ef0fcd6f2", "e1af16b8b5ddcb29318d5242716681a18b33b6ee9069033c9103e237a8a89744", "e4298ad42c18a8d1cc2df345d7cd11f1ab06848693a1384779bb869fcfff86ab"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "ff3acd4485a9ad5d41c95984403383662c548a3ae1662efa260fe4f5923a31b7",
+  "created": "2026-10-28T22:06:47Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "a131e3fdab68e825b88359545ba95ce9cb3a90ea02e3761f6b69ca40ad13e85a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_marsh2025_lifestyleconjoint",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/marsh2025_lifestyleconjoint.stm.rds",
+      "sha256": "de4528cd630764c05e86a92140b29d91f789416bf278d9da2923f43f42d7ce6e"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/marsh2025_lifestyleconjoint.topic_choice_qwen36_35b.csv",
+      "sha256": "85cb4572a97bfa780b5751b478e833238dff1eb39a13df337724ccc06159bd3d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "cdd3c54a4ee3963c92445dbe8cc2eea62f63e2405ab3bdd2296fd56c130fb542",
+  "created": "2026-11-17T18:03:51Z",
+  "opencheck_version": "0.0.0.9000"
+}

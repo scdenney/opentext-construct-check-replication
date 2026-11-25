@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the SAFE WP 405 version of the paper (October
+# 2023; Section 5.4 'Determinants', Appendix C.7), the July 2023 pre-registration of
+# the origin, effort costs and bonus studies (AEARCTR-0005811), effort_costs_study.qsf
+# and the author's cleaning code. NOT blind: see provenance.contamination.
+id: andre2025_shallowmeritocracy_costs
+title: "Workers' reported dislike of the task and spectators' explanations of how they split pay (Andre 2025, effort costs study)"
+source:
+  citation: "Andre, P. (2025). Shallow meritocracy. Review of Economic Studies, 92(2), 772-807."
+  doi: "10.1093/restud/rdae040"
+  data: "doi:10.5281/zenodo.10591832 (licence: Zenodo field 'cc-by-4.0'; package README 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'); data/external/andre2025_shallowmeritocracy/raw/data/context_costs.sav; harmonized_andre2025_shallowmeritocracy_costs.csv"
+languages: [en]
+context: "US adults on Prolific (July 2023) read about two crowd workers who knew before working that worker A would earn $0.50 per task and worker B $0.10, learned what worker B would have done at $0.50 and how the workers rated the task, and split the workers' total earnings between them in eight effort scenarios, with real payouts. Afterwards they described the reasoning behind their decisions."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "explanation (context_costs.sav); `text` in the harmonized file"
+  prompt: "You split money between two workers. What was the reasoning that shaped your decisions? Please describe briefly."
+  position: "After the eight allocation decisions, near the end of the survey; same wording in both arms."
+treatment:
+  variable: treatment
+  contrast: "high effort costs (1: both workers rated the task 'tedious and tiresome') vs low effort costs (0: both rated it 'exciting and entertaining')"
+  level: respondent
+  notes: "One Qualtrics BlockRandomizer (even presentation) over four cells crossing `condition` (context_highcosts / context_lowcosts) with worker B's counterfactual in scenarios 1-3 (CH: would have done as many tasks as A at $0.50; CL: would not have done more), kept as cf_arm. The study ran in parallel with the origin-of-circumstances and bonus studies; participants were randomly assigned to a study, and the author removes repeat participants across the three (first row per Prolific id over the stacked files). Label warning: the 2023 PAP and Appendix C.7 call the 'tedious' arm 'Low effort costs'; the survey display logic and the paper's main text (Section 5.4) tie 'tedious and tiresome' to context_highcosts, which is the coding used here (treatment = 1). The information page and a recall line state the rating, and a quiz checks it, so a rise in mentions of the task being tedious is largely mechanical: read the effect as a positive control."
+constructs:
+  target:
+    - name: work_was_unpleasant
+      definition: "The response refers to the work being tedious, boring, tiring, monotonous, unpleasant or hard for the workers (the cost or burden of doing the tasks), for example as something to compensate. A statement that the workers enjoyed the task or found it easy does not count."
+      source: "July 2023 PAP, section 2 (The Effort Costs Study): 'The conditions exogenously manipulate spectators' beliefs about the effort costs that workers incur. The higher the perceived costs, the more important it would be to compensate them, and the more prevalent actual choice meritocratism should become—if compensating for effort costs is indeed a key motive among meritocrats'; same in Section 5.4 of the paper. Expected increase in the high-costs arm. The author states no text expectation; the target is the consideration the manipulation is stated to raise."
+      expected_direction: increase
+  placebo:
+    - name: disadvantage_shaped_effort
+      definition: "The response says that worker B's lower effort was caused by his lower piece rate, or that worker B would have done more tasks (or as many as worker A) at the higher rate."
+      rationale: "This consideration is moved by cf_arm, which is randomized independently of the effort-cost arm; the effort-cost information says nothing about how the rates affect effort."
+    - name: workers_need
+      definition: "The response says that the workers need the money, for example to live, pay bills, or survive, or refers to their financial hardship."
+      rationale: "The task ratings concern how the work felt, not the workers' financial situation (author's separate 'need' code, Table B.5)."
+estimand: "ITT difference (high minus low effort costs) in the share of responses expressing work_was_unpleasant, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold."
+outcomes:
+  closed_ended: "Allocations in scenarios 1-7 (not carried in the harmonized file). The paper's structural estimates show no shift in fairness types between the arms (Table C.7)."
+human_codes:
+  available: false
+  column: null
+  notes: "No hand codes for this study. The `code` column in the .sav is a Prolific completion code."
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) The drafter read the paper, which reports no shift in allocation types between the arms (Table C.7) and no text results for this study. (2) The paper prints example main-study answers (Table B.5) and example rationales from the unrandomized rationale study (Table 4); the drafter read them. (3) The wave-3 searcher printed about 5 rationale-study answers (not this sample). No answer from context_costs.sav was printed."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, pre-analysis plans, questionnaire and code"
+  date: "2026-11-17"

@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "7e8d746cdcf6f16af04904119cee6b14fe109edbd3df4d5b9eaf5b07d302fe90",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/ces2016_uma_mexicans.3a143b902a48.yaml",
+      "sha256": "574f6f5144a1a9a39a2068c98a7d86a8a6347d380df8b242b753666e6b9c70b3"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["5b1280c444a199646429fab5e7200b2acc9f0ad9e76e0c81b37bbf35c7b392e9", "a231c3d2f4f55dee329093266533b3ed329e27a10204e42cdf2b99bec61b6fa9", "b7fe144a39834628869de160520448404f2d4f59515a1734c223443a15cd93b4", "bad1268577d8475eda6b1581b9dd72984882bc1ae2b3b28fbd39098a926861c7", "d285d764b8ad0052b681d12ff04fd510511829f1e8283e9ac3dd25f02d072c19", "dc9fc34200232a35b1a4ce52327722970914c44b676f9e8e7127639d3bcabfa4", "ddb818589758d8f44d0482c3d4c1813691155f42d809cc6926d51e2ae6266d58"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "a60b40f991550556e2a6a0cfbf7384ba9591b86813217643fe8cd8685efc3634",
+  "created": "2026-11-17T22:48:30Z",
+  "opencheck_version": "0.0.0.9000"
+}

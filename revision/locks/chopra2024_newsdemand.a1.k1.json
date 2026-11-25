@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "e59079753c67daa85d5e820e89a81d6dece74946a8df95894ffffed99c8debfd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/chopra2024_newsdemand.4aebc99cddb1.yaml",
+      "sha256": "8a82924ac85581a76378b0825a4415a2e2c12a5c2df4d81b80815379596008b1"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0f6722b8ecd3af2aeda91b15553193c0f80390d7fe5419f80c61a91eaa5786ed", "13d2ca6d970cac54342dd5bdc78daedfafcd9e5a42911d069fb7035e2e0b3827", "42761d708a1c792c8fd8d49edd09c1159095e0a4158b0b9833d5c8e3e8c6f9ba", "50178e296f25e11f888136bf6055191ca35134293e6f392aea6e6240c4aac1af", "93b445dad7fe061dd82fb454963e2eef18bfd092291ec920664d5fb3c4d7973a", "9dc82683651d79c61ef87a7796925a9e7afbb65a714b5eae22a0e75f53f9df51", "c6940310ddc2304cebd19cf1a3d1718ffd54251960fe5842530761bd01337092", "e081d1f96945d07302f505eb482e6c8ab456505b331c361e3ccb397be57fbc4e", "e08203abe3f74a8981d3c57aa32e518461bec4f6c3a842c3a2374e36326d747d"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "e1e7191a28f7bf83c93932e04a1293829d9a6f60f865a550a020d31988cc41e7",
+  "created": "2026-10-29T00:33:18Z",
+  "opencheck_version": "0.0.0.9000"
+}

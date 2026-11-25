@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the abstract, codebook, questionnaire and coder
+# instructions before any open-text value was read. Steven must confirm the placebo
+# constructs and the conditional estimand before running oc_study_register().
+id: bisgaard2019_study1
+title: "Positive vs negative GDP news and partisan responsibility attributions (Bisgaard 2019, Study 1, US)"
+source:
+  citation: "Bisgaard, M. (2019). How getting the facts right can fuel partisan-motivated reasoning. American Journal of Political Science, 63(4), 824-839."
+  doi: "10.1111/ajps.12432"
+  data: "doi:10.7910/DVN/FTFJTV (no license stated); data/external/bisgaard2019_econnews/raw/study1.RData"
+languages: [en]
+context: "US adults (2016) read a short news article about recent U.S. economic growth figures (versions differed) or no article, then answered questions about the economy. They were asked who or what they think is responsible for how the nation's economy has changed over the past year."
+unit: respondent
+id_column: id
+text:
+  column: respOpen
+  prompt: "We are now interested in hearing your thoughts about who or what you think is responsible for the economic situation in the country. More than one possibility may come to mind. Please write your thoughts in the field below. Some sentences and/or keywords are enough. Who or what do you think is responsible for how the nation's economy has changed over the past year?"
+  position: "[q10], after the news article (treatment arms), the GDP recall item [q8a/q8b] and the national-economy item [q9]; before the closed Obama-responsibility item [q11]"
+treatment:
+  variable: treatment
+  contrast: "pos (article reporting persistent strong GDP growth) vs neg (article reporting a steep growth decline); control (no article) is a secondary reference"
+  level: respondent
+  notes: "Split-sample random assignment of article text (questionnaire_study1.pdf). US, 31 Mar-4 Jul 2016. control 374 / neg 750 / pos 750 (25 NA). The theory is conditional on partisanship: gov = 1 identifies with or leans to the incumbent party (Democrats), 0 = Republicans"
+constructs:
+  target:
+    - name: incumbent_responsibility
+      definition: "The response names President Obama, his administration or the Democrats as responsible (credit or blame) for the economic situation"
+      source: "Bisgaard 2019, abstract and Study 1: partisans accept the same facts but 'attributed responsibility in a highly selective fashion'. Coder instructions (coder_instruction_study1.pdf) define the incumbent category. Page numbers to be added from the article"
+      expected_direction: "increase among incumbent supporters (gov == 1) and decrease among opposition (gov == 0) for pos vs neg; no theorized sign for the pooled ITT"
+    - name: other_actor_responsibility
+      definition: "The response names actors or factors other than the incumbent as responsible: Congress, the Federal Reserve, banks or Wall Street, business, the global economy, oil prices, the previous administration"
+      source: "Same; the selective-attribution argument implies deflection to other actors when the news is unfavourable to one's side"
+      expected_direction: "decrease among gov == 1 and increase among gov == 0 for pos vs neg"
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment; low base rates likely.
+  placebo:
+    - name: personal_finances
+      definition: "The response refers to the respondent's own job, income, or household finances"
+      rationale: "The article manipulates national GDP news and the question asks about the national economy; personal circumstances are pre-treatment"
+    - name: partisan_self_label
+      definition: "The response states the respondent's own party or ideological identity (e.g. 'as a conservative')"
+      rationale: "Partisanship is measured pre-treatment, and neither article gives an arm-specific reason to self-label"
+estimand: "Difference in ITT effects: [E g(R(pos)) - E g(R(neg))] among gov == 1 minus the same among gov == 0, for the share expressing incumbent_responsibility, estimated on the estimation fold. The pooled ITT is reported descriptively"
+outcomes:
+  closed_ended: "resp / resp_org: 'How much is President Obama responsible for how the nation's economy has changed over the past year?' (asked after the open item). Also econ, gdp"
+human_codes:
+  available: true
+  column: "c1raw, c2raw"
+  notes: "Two coders from written instructions: -1 disbelieves article, 0 no answer, 1 other actors/factors only, 15 incumbent only indirectly ('government'), 2 incumbent and other actors, 3 incumbent only. Map 2 and 3 to incumbent_responsibility = 1, and decide before the test fold whether 15 counts. The codes cover the full sample"
+provenance:
+  written_before_reading_text: true
+  contamination: "No respOpen values were read. The coder instructions give short generic keyword examples (e.g. 'banks', 'oil prices'), and the drafter saw the c1raw x c2raw agreement table (not split by arm). The original author coded the full sample and published the attribution results, so the direction is a replication target"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

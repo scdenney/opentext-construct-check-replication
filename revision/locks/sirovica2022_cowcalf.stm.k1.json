@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4129bb6cf44f9dd11c8747e2cc42c3e3e9b2c508c4d89c186cf388c5648a2ad4",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_sirovica2022_cowcalf",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sirovica2022_cowcalf.stm.rds",
+      "sha256": "e9afe982388c3d9e26cbeb4d0b62e06241feb36cc8eea442811932f964edbb7d"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sirovica2022_cowcalf.topic_choice.csv",
+      "sha256": "f2b3c984342db0122bcc0ae0f9fd9c6fff6a6bf68fa09d057ce225dbc356a157"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "1124e0e0f3d8dd98fe537d6d825ed2a7b39a812fdf9bb21969fc220d80be3749",
+  "created": "2026-11-17T22:52:21Z",
+  "opencheck_version": "0.0.0.9000"
+}

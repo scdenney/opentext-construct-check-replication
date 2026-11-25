@@ -1,0 +1,53 @@
+# DRAFT, not registered. Written from the paper and archive documentation before any
+# open-text value was read. Steven must confirm the placebo constructs before running
+# oc_study_register().
+id: egami2022_prison_exp3
+title: "Criminal-history vignette and stated punishment for an undocumented immigrant (Egami et al., Experiment 3)"
+source:
+  citation: "Egami, N., Fong, C. J., Grimmer, J., Roberts, M. E., & Stewart, B. M. (2022). How to make causal inferences using texts. Science Advances, 8(42), eabg2652."
+  doi: "10.1126/sciadv.abg2652"
+  data: "doi:10.7910/DVN/QHJN8V; data/external/egami2022_prison/raw/experiment3.tab"
+languages: [en]
+context: "US adults on Mechanical Turk (2017) read a short vignette about a 28-year-old single man, a citizen of another country, convicted of illegally entering the United States; versions differed in what was said about his prior criminal record. After saying whether he should be sent to prison, they explained what the U.S. government should do with him and why."
+unit: respondent
+id_column: null   # no ID column in the file; use row order as the unit key
+text:
+  column: text
+  prompt: "Why or why not? Please describe in at least two sentences what actions if any the U.S. government should take with respect to this person and why? (Please do not include any identifying information such as your name or other information about you in this open-ended response.)"
+  position: "Directly after the closed item 'Should this offender be sent to prison?' (yes/no/don't know), which follows the vignette; asked of all respondents. Wording as reported for Experiment 2 (arXiv:1802.02163 §5.1.2); §5.1.3 reports no wording change for Experiment 3"
+treatment:
+  variable: treat
+  contrast: "prior criminal history: two prior prison sentences of more than a year, one for a violent crime, and a prior deportation (1) vs never imprisoned before (0)"
+  level: respondent
+  notes: "Single vignette, randomized between subjects. Both arms: '28-year-old single man, a citizen of another country, convicted of illegally entering the United States'. MTurk, 10 Sep 2017, US-located workers, Experiment 2 workers blocked, attention check placed before treatment. treat: 533 control / 561 treated"
+constructs:
+  target:
+    - name: punitive_removal
+      definition: "The response advocates sending the person to prison, punishing him to the full extent of the law, or deporting / sending him back to his country of origin"
+      source: "Egami et al. 2022, Applications, 'Text as outcome: an experiment on immigration' (arXiv:1802.02163v1 §5.1.4): treatment 'increased the amount of writing about maximal punishment, deportation, and sending the person back to their country of origin'"
+      expected_direction: increase
+    - name: leniency_or_conditional
+      definition: "The response says the person should be allowed to stay, should receive little or no punishment or help or rehabilitation, or that the right response depends on the circumstances of the crime"
+      source: "Same passage: 'The control group was more likely to advocate that the person should be able to stay in the country or that the punishment should depend on the circumstances of the crime'"
+      expected_direction: decrease
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment. Both are
+  # expected to have low base rates, which weakens the false-positive check.
+  placebo:
+    - name: vignette_constant_attributes
+      definition: "The response refers to the person's age, to his being single or unmarried, or to his being a man"
+      rationale: "'A 28-year-old single man' appears verbatim in both arms; treatment adds criminal history only"
+    - name: respondent_self_reference
+      definition: "The response refers to the respondent's own or family's immigration history, or to their personal experience with immigrants, police or prisons"
+      rationale: "These are pre-treatment respondent traits, and the vignette gives no arm-specific reason to disclose them"
+estimand: "ITT difference in the share of responses expressing punitive_removal, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "prison: 'Should this offender be sent to prison?' (Yes 406 / No 550 / Don't know 83 / blank 55), asked before the open item"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors labelled STM topics (fit on a random half, seed 02138), not documents"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text values in the data file were read by the drafter. The original authors fit an STM on a random half and published topic labels plus representative documents (paper Table 2 and appendix). The drafter read these while reading the paper. The targets paraphrase the authors' reported findings on this same sample, so the direction is a replication target, not a blind prediction"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "ae8a1b643f83f790ad5f327a9798f56dbba8c7c59143f0e63257d890d641af10",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/gadarian2014_anxiety.rds",
+      "sha256": "4e6887fa6f819a1f33c7b9a41b11635b38c1e974a580ed485cc515f3fbf0093c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/gadarian2014_anxiety.topic_choice.csv",
+      "sha256": "a4c212253710dc4e5cde87011814fbd17ea3b20f1a3151f23acf0757e71691f2"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "46a5738ead60facb785df28874eec2e76aed1cae15a297822c7909d5a40ed89e",
+  "created": "2026-11-23T23:29:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

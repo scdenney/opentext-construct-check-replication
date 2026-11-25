@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "567ac48c6fa7b40c49327d08f3449012d441ce3f3b3419f746383d0634802056",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/sydnor2016_video_whynot.rds",
+      "sha256": "0bfdac4d221a1589df3739a591693ed9eaf0fb3eec78d6088574d4c826561818"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/sydnor2016_video_whynot.topic_choice.csv",
+      "sha256": "457c113f9ced443ed44418efe7f54349bc28c1771ea93d2ebd3fd17dbd795305"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "9e7a68d2c813ccdd8b149132bdf1fc230ce5b73b110b8c12ba750f8fa6068db1",
+  "created": "2026-11-23T23:32:06Z",
+  "opencheck_version": "0.0.0.9000"
+}

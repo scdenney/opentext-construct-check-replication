@@ -1,0 +1,48 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 ROK export
+# header (Q20 wording), survey_design_overview.md, the 2023-11-28 final report draft,
+# Brehm, Zhou & Denney 2025 (CPCS) and IFES2023/Code; blind to response values.
+id: ifes2023_sk_politician
+title: "Emerging-politician conjoint with a task-5 open-end, South Koreans (IFES 2023)"
+source:
+  citation: "Brehm, R., Zhou, T., & Denney, S. (2025). From Division to Democracy: Integrating Post-Socialist Citizens in Germany and South Korea. Communist and Post-Communist Studies."
+  doi: "10.1525/cpcs.2025.2636997"
+  data: "data/harmonized/ifes2023_sk_politician.csv (from _archive/IFES2023/South Koreans/Data/IFES 2023 - ROK_February 12, 2024_16.45.csv)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q20
+  prompt: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician? Please enter your answer.)"
+  position: "After the forced choice of paired task 5 of 7 (Q90), before that task's ratings (Q21); about the politician chosen in task 5"
+treatment:
+  variable: "democracy_differs (derived: chosen_democracy != other_democracy)"
+  contrast: "task-5 profiles state different views on democracy (1) vs the same view (0)"
+  level: task-level attribute (positive control)
+  notes: "Five attributes (democracy, economy, welfare, gender, diversity), levels randomized per profile and task, attribute order randomized, no duplicate profiles (CPCS, design section). 'Differs' is symmetric in chosen/other and depends only on the randomized pair. The Korean economy levels read 'expand private / state-owned enterprises'; the harmonized labels use the CPCS English. No respondent-level arm. Regime socialization (North Korean migrants vs native South Koreans) is a non-randomized population contrast across this file and ifes2023_nk_politician; descriptive only."
+constructs:
+  target:
+    - name: democracy_reasoning
+      definition: "Reasoning that invokes democracy, democratic government, or democracy's effects on order or the economy as a ground for choosing the politician"
+      source: "Brehm, Zhou & Denney 2025, abstract and Table 2 ('Views on democracy'); Korean results section (North Korean migrants less enthusiastic about democracy than native South Koreans)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: personal_character
+      definition: "Reasoning that invokes the politician's personal qualities (honesty, competence, likability, experience)"
+      rationale: "No personal trait is shown in any profile, so whether the democracy views differ should not change mentions of character"
+    - name: gender_roles
+      definition: "Reasoning that invokes gender roles, women's employment or gender equality"
+      rationale: "The gender attribute is randomized independently of democracy; only crowd-out in a short answer could move it"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing democracy_reasoning when the task-5 profiles differ on democracy minus when they do not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 7 tasks plus 1-7 agreement ratings of each politician (CPCS marginal means; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data. The final report (Survey Design #1) describes the open-ends as seriousness/manipulation checks and the validated sample (Ward & Denney 2025 SI Appendix A) used manipulation and attention checks, so the exclude flag may depend on text content (attn_check_pass, embedded item Q110, is the text-independent alternative). IFES2023/Code/LDA.R is titled 'IFES23 Open-text analysis' and loads the ROK export as sk.pol.cbc.text but then overwrites it with the AKS21 C4 NSA file; no completed analysis of Q20 found."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "bf719891359b34b7a705a0f4c917ac2341214b1a4a16fa2e4e1764c82bd595c7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "codebook",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/codebooks_induced/cohen2019_collegemajor/k01.yaml",
+      "sha256": "4aefd1821ba6f0da5c825974393d662bc0580661823eaf9373e68f6a5f0b23f0"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": "26ac3891ce5a0a52ad646dc3537213582cf0f7d8238010f6b52ef1cf3a4c8958",
+  "notes": "A2 induced codebook, split 1 ; induced by Qwen/Qwen3.6-35B-A3B-FP8",
+  "lock_hash": "df04748b2d5e9e21e2e5cbbbcf11625b892811a106f1c153ceb0a52cbdd8915b",
+  "created": "2026-11-18T00:02:04Z",
+  "opencheck_version": "0.0.0.9000"
+}

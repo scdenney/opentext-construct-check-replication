@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the accepted manuscript (Birkbeck eprint 56079:
+# theory section, Methods, 'Evidence from Quantitative Text Analysis', Appendix E text
+# on excluded answers) and the pre-analysis plan (OSF dgh2u, AI_Survey_PAP.pdf,
+# sections 2-4), the replication code and deposit counts, before any open-text value
+# of the dataset was read. The article's text-analysis results were read (see
+# contamination).
+id: haslberger2025_aiexposure
+title: "Hands-on use of ChatGPT vs no use and what matters most in dealing with AI's labour-market effects (UK 2023)"
+source:
+  citation: "Haslberger, M., Gingrich, J., & Bhatia, J. (2025). Rage against the machine? Generative AI exposure, subjective risk, and policy preferences. Journal of European Public Policy."
+  doi: "10.1080/13501763.2025.2554903"
+  data: "doi:10.7910/DVN/YOSGEL (CC0 1.0); data/external/haslberger2025_aiexposure/raw/textdata.rds (column conclusion); harmonized_haslberger2025_aiexposure.csv"
+languages: [en]
+context: "Working-age adults in the United Kingdom with a ChatGPT account took an online survey in 2023. They completed three short work-like writing and reading tasks, some of them encouraged to use ChatGPT and others told not to, then answered questions about AI, jobs and government responsibilities. At the end they were asked what they think is most important when it comes to dealing with the effects of artificial intelligence on the labour market."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Please briefly tell us in your own words what you think is most important when it comes to dealing with the effects of artificial intelligence on the labour market."
+  position: "Last item of the survey, after the closed blocks on subjective job risk, attitudes to AI and social policy (article Table 2; PAP section 3, item 6 'Personal concerns'); same wording in both arms"
+treatment:
+  variable: treatment
+  contrast: "encouraged to use ChatGPT for three work-like tasks (1) vs instructed to complete them without ChatGPT (0)"
+  level: respondent
+  notes: "Simple randomization of respondents to two arms with probability 1/2 (PAP section 4; article Methods: 504 treatment, 537 control). An encouragement design: compliance was high but not complete (Appendix C), so the contrast is an ITT. The authors removed 38 answers they judged ChatGPT-written (37 treatment, 1 control; Appendix E) before depositing the text; that exclusion is post-treatment and nearly one-sided, and those rows cannot be restored. Undetected ChatGPT-written answers may remain in the treatment arm; the authors' reference ChatGPT answer (Appendix E) lists job displacement among its points, so residual machine-written answers would push the target up mechanically. The closed-outcome file has no id, so closed outcomes cannot be linked."
+constructs:
+  target:
+    - name: job_loss_concern
+      definition: "The answer expresses concern that AI will take people's jobs, replace workers or cause unemployment or job insecurity, for the respondent or for others, including when it names protecting jobs or workers from being replaced as what matters most"
+      source: "Pre-registered H1.1 (accepted manuscript, section 'Application to Generative AI', p. 6; PAP section 3.3.2 H3a): 'Treated respondents are more likely to fear job loss due to technology.' Mechanism (same section, risk-insurance framework): exposure to generative AI 'increases people's perception that AI tools could threaten their job stability or long-run income prospects'. The PAP (section 2) lists the open answer field among 'our main outcomes of interest'. H1.1 concerns the respondent's own job; the open item is not personal, so the definition counts concern for anyone's job. The authors also state a competing, not pre-registered, set (H2.1: no rise in fear of job loss)."
+      expected_direction: increase
+  placebo:
+    - name: international_competition
+      definition: "The answer refers to other countries, international competition, or the UK's position relative to other countries in AI"
+      rationale: "Neither the risk-insurance nor the sociotropic account links hands-on use of ChatGPT on work tasks to the international dimension of AI, and the tasks do not mention it."
+    - name: privacy_surveillance
+      definition: "The answer refers to privacy, personal data, data protection, or surveillance or monitoring of workers"
+      rationale: "The three tasks (improving an email, comparing two texts, a comprehension test) do not involve personal data or monitoring, and neither theoretical path runs through privacy. Weaker than the first: H1.2 (more negative attitudes to AI) could touch it."
+estimand: "ITT difference (ChatGPT encouraged minus control) in the share of answers expressing job_loss_concern, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Not linkable (data.rds has no id). In the article: replace_ai2 and replace_skill2 (subjective job risk, dichotomized), the H1.1 outcomes"
+human_codes:
+  available: false
+  column: null
+  notes: "None. overall_score_gpt4 in textdata.rds is a GPT-4 grade of the task performance, not a code of the open answer. The authors analyzed the text with sentiment scores and a three-topic STM."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was shown. Read while drafting: the article's text results (treated answers load less on an STM topic about job losses and intervention and more on one about AI's limitations; sentiment equal across arms; treated answers longer), the closed-item results (no rise in subjective job risk; no difference in expected workplace surveillance), and the authors' ChatGPT-generated reference answer in Appendix E (not a respondent's answer). The three example answers in Table E1 were not read. The searcher displayed no text (manifest)."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the accepted manuscript, PAP, replication code and deposit counts"
+  date: "2026-11-18"

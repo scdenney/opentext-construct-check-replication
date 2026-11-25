@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "c2721a119ec57274b82041eee1a68248605d2b589cb6eafc3ba3c64113b8ca5d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/andre2024_stockmodels_arbitrage.rds",
+      "sha256": "d6ff2ba03f90740dd0d33b7472a55b24fa412edb057faefeda04bf99fc6e2b23"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/andre2024_stockmodels_arbitrage.topic_choice.csv",
+      "sha256": "771454ec2becfe6e39aac4a4316cba7b3c2117058f1093a3d74d79b387cc9806"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "db115ac6a7eb8a308ef71f99aaaf84d83429e2f0b4cc136ac2ede80040488ad6",
+  "created": "2026-11-23T23:31:35Z",
+  "opencheck_version": "0.0.0.9000"
+}

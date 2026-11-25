@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Proposal__Hopkins365.pdf), the fielded questionnaire
+# (raw/TESS3_145_Hopkins_Survey.docx), the OSF study summary
+# (raw/osf_wiki_summary.txt), the GfK response-rate report and the SPSS variable
+# and value labels. No open-text value was read.
+id: hopkins2013_conjoint
+title: "Paired-candidate conjoint for president, governor or mayor, and the reason for preferring a candidate, four large US states"
+source:
+  citation: "Hopkins, D. J. (2014). Do Voting Criteria Differ across the Levels of the U.S. Federal System? A Conjoint Experiment to Understand Voter Decision-making. Time-sharing Experiments for the Social Sciences, study hopkins365 (TESS3 145)."
+  doi: null
+  data: "https://osf.io/c38xe/ (Tess3_145_Hopkins_Client.sav); data/external/hopkins2013_conjoint/harmonized_hopkins2013_conjoint.csv"
+languages: [en]
+context: "US adults in California, Florida, New York and Texas compared two hypothetical candidates for President, Governor of their state, or Mayor of their city, shown side by side with party affiliation and ideology, two issue positions, religion, annual income, race or ethnicity and gender, chose the one they preferred and were asked in one sentence why they prefer this candidate."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Why do you prefer this candidate? Please answer in one sentence."
+  position: "On the same page as the first of seven candidate pairings (Table1: Candidate 1 vs Candidate 2), after the forced choice Q1 and the 1-7 ratings Q2/Q3 (order of choice and ratings randomized, DOV_ORDER21). Asked only on the first pairing (questionnaire note before Q4); 200-character textbox. 'This candidate' is the candidate chosen in Q1."
+treatment:
+  variable: "chosen_party, other_party (Table1 party/ideology label of each profile); treatment = office arm"
+  contrast: "Primary: the two Table1 profiles carry different party/ideology labels (pair_differs on party; 396 non-excluded answers) vs the same label (113). Secondary: governor vs president and mayor vs president (office arm, respondent level)."
+  level: "task-level attribute of the pair shown (Table1), not of the chosen profile"
+  notes: "Each profile's party/ideology label is drawn uniformly and independently from Liberal Democrat, Moderate Democrat, Moderate Independent, Moderate Republican, Conservative Republican (questionnaire Appendix A); every profile shows a label, so the contrast is whether the label distinguishes the two candidates. The chosen/other split is post-choice; contrasts use the pair shown. Partly a positive control: when the labels are identical, party cannot be a reason to prefer one candidate. The office arm (XTESS145) is randomized with equal probability at the respondent level; the office name also appears in the question wording above the table."
+constructs:
+  target:
+    - name: partisanship_ideology
+      definition: "The answer gives the candidate's party (Democrat, Republican, Independent) or political ideology (liberal, moderate, conservative), or agreement with the respondent's own party or ideology, as a reason for preferring the candidate"
+      source: "Proposal pp. 2-3: vote-choice research 'emphasizes the role of candidates' partisan affiliations'; 'Our central question is how the role of candidate partisanship differs across the federal system' and whether out-party candidates win more support for mayor or governor than for president (stated premise that candidates' party drives choice). OSF study summary (Summary of Findings) also reports that respondents prefer copartisan candidates."
+      expected_direction: increase
+  placebo:
+    - name: candidate_gender
+      definition: "The answer refers to a candidate's gender (a woman, a man, female, male)"
+      rationale: "Gender is randomized independently of the party/ideology labels; whether the labels differ should not change mentions of gender (one-sentence answers may show some crowd-out)"
+    - name: candidate_religion
+      definition: "The answer refers to a candidate's religion or lack of reported religion (Evangelical, Protestant, Catholic, none)"
+      rationale: "Religion is randomized independently of the party/ideology labels"
+estimand: "Difference in the share of answers expressing partisanship_ideology between respondents whose first candidate pair showed different party/ideology labels and those whose pair showed the same label, on the estimation fold"
+outcomes:
+  closed_ended: "Q1 forced choice between Candidates 1 and 2 (Table1) and 1-7 support ratings Q2/Q3; six further pairings without an open item"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. The OSF study summary reports closed-outcome results (copartisan premium, similar criteria across offices) but no open-text content. A published analysis may exist in Hopkins (2018), The Increasingly United States (University of Chicago Press); not checked for printed answers."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

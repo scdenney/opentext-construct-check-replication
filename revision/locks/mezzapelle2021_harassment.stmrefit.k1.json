@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "172cdc90d653ad627ca8ab345d54ee10df749e4d59d9af6951df7f3423678822",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/mezzapelle2021_harassment.rds",
+      "sha256": "fdd25abf2e59ff3a0de4bb86324d2586c8cf4006e702c24e0b61e8092ab9821d"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/mezzapelle2021_harassment.topic_choice.csv",
+      "sha256": "d31efe143868712e65c4d995f084d3208f315d316b121d1fc3ef08464a8b1d48"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "c15bc7465f763e5bc40b0b78e70b75f4f76a319cedfbfc42bbeaac15bbc213da",
+  "created": "2026-11-23T23:32:24Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "80991a96396ba73a9febf67126f17a2460e1a23d5f94a9802f3108b26030b6a8",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/andre2025_shallowmeritocracy_cfadv.rds",
+      "sha256": "11f70b167b164abbd290c51e98c6b2bb2533b217e990d054082a72303bd82b6f"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/andre2025_shallowmeritocracy_cfadv.topic_choice.csv",
+      "sha256": "a290760354c10bfc2c94cc707d5a77083714668097824aca674728d0fbf8e7bd"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "74756de4cc2dbbe02c381f38ffbbd528ce3b565d9280350592d4d73042514ae2",
+  "created": "2026-11-23T23:31:20Z",
+  "opencheck_version": "0.0.0.9000"
+}

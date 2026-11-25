@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "8914feb0077f1b066939c3bc267d180fbcfcfe57b62dda00e8fcf0782baff7e6",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_darr2019_trumprussia",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/darr2019_trumprussia.stm.rds",
+      "sha256": "8639a88672b178dfa89a35f5bc06c18cd70882e10efaba3a456075d538ee19f7"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/darr2019_trumprussia.topic_choice.csv",
+      "sha256": "fbbbc5026f51d9a4a2fdf44fe4672d33843110afb25f9b4ebbaafe5e9894e820"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "cda6ce5611807c4dcd048c7cb8fd5973185c4f1a5630715320b4e3a8691ebb55",
+  "created": "2026-11-17T22:52:01Z",
+  "opencheck_version": "0.0.0.9000"
+}

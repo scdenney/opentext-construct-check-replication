@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "dcc3507053b2ed7e730608babdbb2ad0dcaf3983d04d40f0222703295863f62f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_roos2024_subjectivity",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/roos2024_subjectivity.stm.rds",
+      "sha256": "b74418fe86f5bcbb30a2e61b201c8ee90712094058a20c5c8d94316e4c713f29"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/roos2024_subjectivity.topic_choice.csv",
+      "sha256": "7aa40796885c4de51500a19d6a31d77a75c5beaf7b22d872820eec4713ac631e"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "bca26431a1d171ea6bd2a69261fab7d30e02c5ebe8990314ef279c53966e1d78",
+  "created": "2026-11-17T22:52:18Z",
+  "opencheck_version": "0.0.0.9000"
+}

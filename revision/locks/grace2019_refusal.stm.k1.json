@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "64bf5326dc054bdc3afd04f6f6fe432de5b8efdeb3142f68db7cad6686f14ecd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_grace2019_refusal",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/grace2019_refusal.stm.rds",
+      "sha256": "e47505ff3cd5b56beebe9b6543fab9d30d636507ded03ae0a2d869beb56d26df"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/grace2019_refusal.topic_choice.csv",
+      "sha256": "059aa4b705c3213d3056681b361aefae4c6489483fa89918827f3bcc0ed66d51"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "2164b1a691205b618182bf7ad6e2f674046457fe81303f3ba1a2257da6e233ce",
+  "created": "2026-11-17T22:52:02Z",
+  "opencheck_version": "0.0.0.9000"
+}

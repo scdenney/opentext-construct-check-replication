@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the QJE article (141(4), Section V.A), Online
+# Appendix D.3.1, the 2024 working paper (CEBI WP 07-23 rev1, Section 5.1), the AEA RCT
+# Registry preregistration "Attention Study" (12 Jun 2023), the .qsf and the authors'
+# cleaning code. One excluded answer was seen to be the literal string "NA" during a
+# builder check (see provenance); no other answer was read.
+id: andre2024_stockmodels_attention
+title: "Questions about traders' and price reactions before a return forecast and households' explanations of the forecast (Andre, Schirmer & Wohlfart, US 2023)"
+source:
+  citation: "Andre, P., Schirmer, P., & Wohlfart, J. (2026). Mental models of the stock market. Quarterly Journal of Economics, 141(4), 2925-."
+  doi: "10.1093/qje/qjag039"
+  data: "doi:10.7910/DVN/BNFSAO; data/external/andre2024_stockmodels/raw/data/experiments/attention_raw.sav; harmonized_andre2024_stockmodels_attention.csv"
+languages: [en]
+context: "US adults in an online survey read two hypothetical news scenarios about Nike announced four weeks earlier: neutral news (a supplier partnership continued) and good news (a new partnership expected to cut raw material costs by 20%), both of which received a lot of attention from stock market traders. Just before forecasting, some were asked how other traders had reacted to the announcements over the past four weeks, and some also how that reaction had affected Nike's stock price. Respondents predicted in which scenario $1,000 invested in Nike stock today and sold in twelve months would earn a higher return, and explained their prediction."
+unit: respondent
+id_column: ResponseId
+text:
+  column: explanation
+  prompt: "For the following investment ... You invest $1,000 in Nike stocks today, four weeks after the announcement was made in the two scenarios. You sell these stocks twelve months from now. ... you responded that you expect that the return of the investment in Nike stock would be [higher in scenario 1 / similar in both scenarios / higher in scenario 2]. Please explain why you think that would be the case. (MMSM__Attention_traders_prices.qsf, tag explanation)"
+  position: "Directly after the directional return forecast; in the treatment arms the traders' (and price) reaction questions sit on the prediction screen just before the forecast"
+treatment:
+  variable: treatment
+  contrast: "three arms: control (standard prediction screen); trader_reaction (asked whether other traders became more eager, equally eager or less eager to hold the stock); price_reaction (same question plus whether the traders' reaction increased, did not affect or decreased Nike's price). Primary: price_reaction vs control; secondary: trader_reaction vs control"
+  level: respondent
+  notes: "Qualtrics randomizer, June 2023 (1,183 after the authors' filters). Raw labels attention_trader / attention_trader_prices (tabD9_panelA.R l. 25-26). Explanation prompt identical across arms, but the price question is answered seconds before, so a rise in price mentions is partly a priming effect (positive control). Control respondents answer the same questions only later, before the background questions (preregistration fn. 1)"
+constructs:
+  target:
+    - name: price_response_reference
+      definition: "The response refers to how Nike's stock price has moved since the announcement or to its current price level: for example, that the price has already gone up, that the stock is more expensive now, or that buyers have already pushed up the price. A mention of traders' interest without any reference to the price does not count. Answer yes or no."
+      source: "Preregistration 12 Jun 2023, research question ('Do individuals believe that old news is relevant for future return differences because they fail to pay attention to the reaction of other traders and/or the reaction of the stock price ...? ... The condition Other Traders and Prices directs individuals' attention to the response of other traders and the subsequent response of the stock price. We test whether these attention manipulations affect ... the reasoning behind their expectations'); QJE Section V.A; 2024 working paper Section 5.1 ('If inattention is indeed contributing ... we would expect that these interventions reduce ... the fraction who reveal a neglect of equilibrium pricing in the open-ended elicitation')"
+      expected_direction: increase
+  placebo:
+    - name: macroeconomic_conditions
+      definition: "The response refers to the general economy or markets as a whole: recession, inflation, interest rates, the overall stock market or economic outlook. Answer yes or no."
+      rationale: "The attention questions concern trading in Nike stock only"
+    - name: social_or_ethical_concerns
+      definition: "The response refers to ethical, social or environmental aspects of the news: workers, labor conditions, sustainability or recycling as a moral matter, or the respondent's approval of Nike's conduct. Answer yes or no."
+      rationale: "Identical across arms; the attention questions have no ethical content"
+estimand: "ITT difference (price_reaction minus control) in the share of responses expressing price_response_reference, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "news_congruent (authors' return_1_recoded: 3 = higher return in the good news scenario, 2 = similar, 1 = lower); att_trader and att_trader_prices answers are in the raw file"
+human_codes:
+  available: false
+  column: null
+  notes: "The 2024 working paper reports human model-scheme codes for this study, but the package ships none for this file (0 of 1,192 ResponseIds in human_labels.csv). The package has the authors' GPT-5.2 attention-scheme codes (has_pc, has_ps, has_pr, has_b; labels.csv, merge on ResponseId); not in the harmonized file"
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) While diagnosing a failed re-read check, the drafter learned that one answer (an excluded row, arm not looked up) is the two-character string 'NA'; the row is dropped as empty. No other value was seen. (2) The drafter read the QJE article, Online Appendix D.3.1 (effects on any price reference and prices-as-costs codes) and the 2024 working paper (Table 4 Panel A: effects on EER and efficiency codes) before drafting; the target follows the preregistered research question. (3) The QJE prints six example explanations from the main descriptive surveys (Section IV.A.1; same item, other respondents). Online Appendix Tables C.1-C.2 (coding examples) were skipped. The searcher read no text from this package (MANIFEST)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, preregistration, questionnaire and code"
+  date: "2026-11-17"

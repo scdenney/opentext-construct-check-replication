@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the Journal of Dairy Science article (Abstract,
+# Introduction, Methods, quantitative Results; Murdoch repository copy of the published
+# version), the S1 survey, the Readme, the S3 SAS code and counts. Reading stopped at the
+# heading of the qualitative results; no quoted answer was seen. One of three explanation
+# items; the other two (industry, farmers) are listed in the drafter's report.
+id: bolton2026_calves
+title: "Surplus dairy calves raised in a feedlot vs on pasture and explanations of attitudes to the animals' lives (Australia 2022)"
+source:
+  citation: "Bolton, S. E., Sirovica, L. V., & von Keyserlingk, M. A. G. (2026). When is the problem truly \"solved\"? Australian public attitudes toward future scenarios addressing early life killing of surplus dairy calves. Journal of Dairy Science, 109(5), 5347-5355."
+  doi: "10.3168/jds.2025-28099"
+  data: "doi:10.5683/SP3/0CVJRZ (CC BY 4.0); data/external/bolton2026_calves/raw/S4_QualitativeDataset.tab, S2_QuantitativeDataset.tab; harmonized_bolton2026_calves.csv"
+languages: [en]
+context: "Australian adults in an online panel read that about 40% of calves born on Australian dairy farms are slaughtered within 2 weeks of birth, then a short scenario in which surplus calves are instead reared to about 18 months of age before slaughter, with a statement about the dairy industry's position on early slaughter and a description of where and how the animals are kept and fed. They rated how much they agreed with, and how appropriate and acceptable they found, the life led by these animals, then explained their ratings."
+unit: respondent
+id_column: "Participant ID (S4; harmonized: id)"
+text:
+  column: "<arm>9.4, S4 'Animal qual response' with the 'Participant ID: ' prefix removed (harmonized: text)"
+  prompt: "Please provide an explanation for your responses above:"
+  position: "Directly after the three 7-point items on the life led by the calves raised to 18 months (agree, appropriate, acceptable; Table 2), the first of three rating-plus-explanation blocks in fixed order (animals' lives, attitude to the dairy industry, trust in farmers); before the attention check and debriefing."
+treatment:
+  variable: treatment
+  contrast: "feedlot (1; kept in pens with no access to grass, eat grain and hay) vs pasture (0; kept in open paddocks, eat grass), pooled over the commitment factor"
+  level: respondent
+  notes: "2 x 2 between-subjects, random assignment to one of four vignettes (Methods, Table 1): rearing system (pasture / feedlot) x industry commitment (the industry has committed to discontinue slaughter within 2 weeks of birth / the practice has occurred for decades). The authors analyze the two factors as main effects in one model and state a hypothesis for each; the primary contrast pools over commitment, as their pasture hypothesis does. Arm cells (non-excluded): pasture 254 no commitment, 249 commitment; feedlot 259 no commitment, 237 commitment. The vignettes state 'pens with no access to grass' vs 'open paddocks and eat grass', so mentions of pens, grass and paddocks partly restate the stimulus (positive control). The authors' only exclusion (one respondent with missing demographic data, Readme) is reproduced by linking S4 to S2 on the three answers; all 1,000 passed the attention check. Three answers per respondent; only the first is used here."
+constructs:
+  target:
+    - name: unnatural_confinement_concern
+      definition: "The response objects to or expresses concern that the animals in the scenario live in unnatural or confined conditions: kept in pens or a feedlot, without access to grass, pasture or the outdoors, unable to roam or move freely, or fed an unnatural diet such as grain, as a reason for its ratings"
+      source: "Introduction, final two paragraphs: negative public attitudes toward cattle systems without pasture access are 'likely due to a lack of alignment with the value placed by the public on \"natural\" living conditions for animals'; 'we predict that how the animals are raised is likely to affect public acceptance'; hypothesis that rearing 'with access to pasture ... would positively affect participants' perceptions'. The hypothesis is stated for the ratings; the naturalness concern is the mechanism the authors give for it."
+      expected_direction: increase
+  # Separate yes/no judgments. Crowd-out by the target could lower them, so the
+  # false-positive check is an increase.
+  placebo:
+    - name: industry_commitment_reference
+      definition: "The response refers to the dairy industry's commitment, decision or policy to stop slaughtering calves within 2 weeks of birth, or to whether the industry will keep such a commitment"
+      rationale: "The commitment statement is randomized independently of the rearing system (2 x 2); the share of answers that mention it should not differ between feedlot and pasture arms."
+    - name: cow_calf_separation_reference
+      definition: "The response refers to calves being separated from their mothers shortly after birth or being fed milk by the farmer"
+      rationale: "Separation at birth is described in the common introduction shown to every respondent before the scenario; the rearing system after separation is the only thing the treatment changes."
+estimand: "ITT difference (feedlot minus pasture) in the share of responses expressing unnatural_confinement_concern, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among non-excluded rows; commitment as a stratum"
+outcomes:
+  closed_ended: "animal_agree, animal_approp, animal_accept (1-7, recoded from labels as in the S3 SAS code) and animal_attitude (their mean, the authors' construct), all asked before the text"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors coded the three items by inductive thematic analysis in NVivo (two coders on a draft codebook, then one coder); codes are not deposited."
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. The article was read through the quantitative results; the drafter stopped at the 'Qualitative Analysis' heading and saw no quoted answer or theme. Survey wording was read from S1 and the S2 header rows, which hold no answers. Answers were handled only as counts and normalized keys for the S4-S2 link; no value was printed. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, survey and counts"
+  date: "2026-11-17"

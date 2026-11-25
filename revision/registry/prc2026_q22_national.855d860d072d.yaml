@@ -1,0 +1,50 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from prc-cbcs/qsf/survey2025.qsf,
+# the PAP draft (political-regimes-nationalism/draft/Political Regimes and the Shape of
+# Nationalism 4.0.docx), overleaf/note_body.tex and replication/code/; blind to response values.
+id: prc2026_q22_national
+title: "National-identity conjoint open-end after task 3, Mainland China 2025"
+source:
+  citation: "Denney, S. & Steinhardt, H. C. 'Political Regimes and the Shape of Nationalism' (research note, in preparation); PRC-CBCS survey fielded through RIWI partner panels, 2025"
+  doi: null
+  data: "data/harmonized/prc2026_q22_national.csv (from political-regimes-nationalism/prc-cbcs/data/Final_data_text.xlsx; the only PRC export, 2026-03-27 on disk; the clean RDS was built from it and its task-3 linkage matches, 0 mismatches)"
+languages: [zh-Hans]
+unit: respondent
+id_column: id            # Qualtrics ResponseId
+text:
+  column: text           # source column Q22 (QID170)
+  prompt: "请解释为什么您认为您选择的这个人是我国国民。 (Please explain why you think the person you chose is a national of our country.)"
+  wording_note: "The PAP lists the item as 'Manipulation check #1 (after 3rd profile)': 'Please explain why the person you chose is truly a national of our country.' The fielded wording drops 'truly' (真正)."
+  position: "Conjoint 1 (national identity, 6 paired tasks, 9 attributes), on the task-3 page: below the two task-3 profiles and the forced choice (Q21), above the 1-7 rating of the chosen person (Q23). About the person chosen in task 3. Forced response."
+treatment:
+  variable: "chosen_patriotism, other_patriotism (task-3 displayed pair)"
+  contrast: "task-3 pair displays at least one 'Patriotic, often expresses' profile (1) vs neither profile shows that level (0)"
+  level: task-level attribute
+  notes: "Each profile's levels are drawn independently, so the composition of the task-3 pair is randomized for every respondent; the treated share is about 5/9 by design. chosen_* alone is post-choice and is not a randomized contrast. The same file supports the attribute-shown -> attribute-mentioned positive control for all nine attributes (columns origin, ancestry, legal_status, residence, language, patriotism, politics, social_values, civicness; names shared with roc2026_q12_national and, where the attribute matches, roc2024_q74_national). Other randomized variables in the file: Patriotism_list (list experiment shown before the conjoint; the sensitive list adds 'I am proud to be Chinese', the placebo list adds pride in one's family), and surveillance_exp (assigned after Q22, so usable only as a falsification contrast)."
+constructs:
+  target:
+    - name: patriotic_expression
+      definition: "The response justifies the chosen person's membership by their love of country, patriotic feeling, or open expression of it"
+      source: "PAP draft 4.0, section 'The expression of patriotism' (H4a-H4c: patriotism, and more so its public expression, raise acceptance in Mainland China); overleaf/note_body.tex, section 'Regimes and the Content of Nationalism' (H4 family) and the Results paragraph on patriotism"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Each placebo is a separate yes/no judgment,
+    # never a category that competes with the target in one label.
+    - name: economic_contribution
+      definition: "The response invokes the person's work, job, taxes, or economic contribution"
+      rationale: "No profile attribute concerns work or economic contribution, and the patriotism level displayed should not move it"
+    - name: family_ties
+      definition: "The response invokes marriage to a citizen or family or relatives in China"
+      rationale: "Family is not a profile attribute; the patriotism level displayed should not move mentions of it"
+estimand: "ITT difference on the estimation fold in the share of responses expressing patriotic_expression between respondents whose task-3 pair displayed a 'Patriotic, often expresses' profile and those whose pair did not, E[g(R(1))] - E[g(R(0))], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Task-3 forced choice (Q21) and 1-7 rating of the chosen person (Q23_1; not carried in the harmonized file); AMCEs over all six tasks in the research note"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Prior analyses of Q22 on the full sample: prc-cbcs/documentation/c1_political_system_open_text_report.md (2026-04-16; theme coding of the raw responses, linear-probability contrasts of task-3 democracy display and choice, and a 6-topic STM) and prc-cbcs/scripts/03_topic_models.R (LDA, k = 2-12, with a Chinese-English term dictionary and top-term tables). The drafter read only that memo's section headings, which state its findings on political-system language, and no responses or tables. Patriotism is the target partly because political views is the construct that memo analyzed; the LDA top terms may still have shown patriotism vocabulary to the authors."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"
+exclusions: "exclude = TRUE for 22 pilot-design respondents (project drops them from C1), 33 with missing task-3 attribute data (project drops), and 6 who failed or skipped the Q47 attention item (instrument-defined; not filtered by the project, so attn_q47_pass allows reverting)"

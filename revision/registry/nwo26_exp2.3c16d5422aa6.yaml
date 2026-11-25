@@ -1,0 +1,59 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the OSF registration
+# (nwo26-immigration-backlash/osf/registration_2026-08-06/registration_P2_procedural-legitimacy.md),
+# the Paper 2 manuscript (papers/2-legitimacy-policy-process/manuscript/sections/frontmatter/front_matter.tex),
+# the instrument spec (tools/conjoint-qsf/specs/shared/question_library.yaml, exp2_opentext) and the
+# fielded question text in export row 2 of the 2026-08-31T1349Z snapshot; blind to response values.
+id: nwo26_exp2
+title: "Procedural-legitimacy conjoint: why respondents evaluated the task-5 immigration policy (US, Germany, South Korea, Singapore)"
+source:
+  citation: "Denney, S. (2026). Procedural Legitimacy and Immigration Policy. Working paper (Paper 2, NWO 406.XS.25.01.065)."
+  doi: null
+  registration: "OSF registration 2026-08-06, Paper 2 (osf/registration_2026-08-06/registration_P2_procedural-legitimacy.md)"
+  data: "nwo26-immigration-backlash/tools/softlaunch-audit/data/snapshots/2026-08-31T1349Z/data/{US,DE,KR,SG}.csv (snapshot of record); harmonized: data/harmonized/nwo26_exp2.csv"
+languages: [en, de, ko, zh-Hans]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: "EXP2_OPENTEXT (Singapore Chinese fork: EXP2_OPENTEXT_ZH)"
+  prompt: "US/SG: In a few sentences, please tell us why you evaluated this policy the way you did. DE: Bitte schildern Sie in wenigen Sätzen, warum Sie diese Maßnahme so beurteilt haben. KR: 이 정책을 그렇게 평가하신 이유를 몇 문장으로 알려 주십시오. SG (Chinese): 请用几句话告诉我们，您为何如此评价这项政策。"
+  wording_note: "The instrument spec calls this item a mid-stream open-text manipulation check (forced response, own page). It asks about 'this policy', the single task-5 profile."
+  position: "After single-profile task 5 of 11 (10 tasks plus a repeat of task 1) of Experiment 2, about the task-5 policy. The Exp 2 block came first or second in the instrument (exp2_block_position), with Exp 1 in the other slot."
+treatment:
+  variable: profile_procedure
+  contrast: "Task-5 decision process: any violation (executive_overreach, external_imposition, procedural_neglect) vs the lawful baseline (code 'control'); each violation vs baseline as secondary contrasts"
+  level: "task-level attribute of the one task-5 profile; each respondent sees one, so for this item it is a respondent-level randomization"
+  notes: "All attributes are randomized independently and uniformly per task: Decision Process (4) x Implementation (3) x Policy Area (3) x Direction (2) x Composition (5). Second registered contrast: profile_implementation, unequal_application vs even_handed (discretionary intermediate). External imposition names one of several bodies (US: UNHCR, World Economic Forum, IOM; KR: OECD, IOM), recoverable from profile_process_shown. In Singapore the 'asylum' area is fielded as low-wage Work Permit labor."
+constructs:
+  target:
+    - name: procedural_legitimacy
+      definition: "Reasoning about how the policy decision was made: who decided and whether proper procedure was followed, e.g. legislative debate or consultation, bypassing parliament or congress, an executive order, skipped review or approval steps, international or outside bodies deciding, or the legality or legitimacy of the process"
+      source: "front_matter.tex, section Hypotheses (H1a); registration_P2, Hypotheses (H1a)"
+      expected_direction: increase
+      contrast: "profile_procedure violation vs control"
+    - name: equal_treatment_in_application
+      definition: "Reasoning about how the policy would be applied: whether comparable applicants are treated the same, fixed or published criteria, arbitrariness, exemptions or favoritism, or officials' discretion"
+      source: "front_matter.tex, section Hypotheses (H1b); registration_P2, Hypotheses (H1b)"
+      expected_direction: increase
+      contrast: "profile_implementation unequal_application vs even_handed (discretionary expected in between)"
+  # PROPOSED; Steven to confirm. Each placebo is a separate yes/no judgment, not
+  # a category competing with the targets in one label.
+  placebo:
+    - name: economic_consequences
+      definition: "Reasoning that invokes economic effects: jobs, labor shortages, wages, public costs, taxes, or the economy"
+      rationale: "Decision process and application are randomized independently of policy area, so economic reasoning should not move with either contrast. Short answers can substitute one reason for another; report any drop as substitution, not as a false positive."
+    - name: group_composition
+      definition: "Reasoning that refers to which immigrants the policy affects: their origin, nationality, ethnicity, religion, or culture"
+      rationale: "Composition is randomized independently of decision process and application; mentions of the affected group should not change with either contrast"
+estimand: "Per country (primary) and pooled with country fixed effects (auxiliary), on the estimation fold: share of responses expressing procedural_legitimacy when the task-5 profile showed a decision-process violation minus the share when it showed the lawful baseline, E[g(R(violation))] - E[g(R(baseline))], with g frozen from the discovery fold; the same for equal_treatment_in_application, unequal_application minus even_handed"
+outcomes:
+  closed_ended: "task5_support (binary support for the task-5 policy; binary support is the registered decision outcome across tasks). In the source but not in the harmonized file: C2_LEGIT_5 (acceptance item), EXP2_ATTRIBUTION (most important factor, after task 11), EXP2_MANIPULATION (noticed differences in how decisions were made, after task 11)."
+human_codes:
+  available: false
+  column: null
+  notes: "No per-response human codes. The prior pipeline holds human labels for NMF topics only (tools/paper-figures/opentext/labels.py), written from top terms and three exemplars per topic."
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has analysed this text. tools/paper-figures/opentext/ (01_corpus to 07_emit_keys) fits TF-IDF + NMF topic models per language on the Paper 2 analytic sample, attaches human topic labels, runs Korean keyword-family counts with 'procedure' and 'equal_treatment' families applied to all languages, and plots keyword incidence by support tercile; it feeds numbers_opentext.tex and the open-text SI figures of Paper 2 (exploratory). The soft-launch QC (tools/softlaunch-audit/analyze.py) also dumped the texts to opentext_<CC>.txt for review. The two targets here match the constructs that pipeline measured, so its keyword families must not be reused as g. While drafting, Claude read the pipeline's module docstrings (not responses or result files); one states the prior reading that respondents volunteer procedural language unprompted."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

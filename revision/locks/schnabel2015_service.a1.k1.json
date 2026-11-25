@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "6d67237d46940bf0f4cb1377980527f7378a650c53294b49d9a209a805de4e31",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/schnabel2015_service.cc49ff633d67.yaml",
+      "sha256": "767c24ce6ccd59a88d07b14fb90988334510bbfd3cca555cf313bd4c272f6da9"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0a7369eb33f131616a2526bcc8ac8d5800446b617e2803ef4b7c8a3bd02b0f12", "15eb2bcd5201af484e32ebe3aa08c5a70fe9f9e629a04b65b3394e0857271c38", "46d7ace81429ca9a3481939673bbd1cdfe9492ede8bd932247838726b0353ed9", "66481cac90484edb7000c688f91db43051d7e0501f0c814336a9158b298b4d7a", "6e748d8f976a30f7811f7fb96c533ecc45c5f75bea030522099200546264e5e8", "7a138ed6a24f9d3f9420720c02f50bbc79f869805954a1aa803e072a69851471", "a264f444b1b213d66f0fcd91e2c03b5ec238f3511add8883d196f4db339ae718", "bce033ea89686527f136934d34c9f0917f017bcd9d8893b775e4252726f825e5", "e72f2c40e0a594de5adb530121edd279b4bf4e51fa563cb51a9bb5485171fd36"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "429e92e5d805fe61fe3138d4648fbe7506c38a127a9c4aa71f5d4eaf69750061",
+  "created": "2026-11-17T21:12:57Z",
+  "opencheck_version": "0.0.0.9000"
+}

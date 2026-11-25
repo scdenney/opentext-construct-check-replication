@@ -1,0 +1,47 @@
+# Study card: fill in BEFORE reading any open-text response, then register it
+# with oc_study_register(). For an external dataset, write it from the
+# published paper and codebook alone.
+id: short_snake_case_id
+title: "Short descriptive title"
+source:
+  citation: "Author, A. (Year). Title. Journal."
+  doi: "10.xxxx/xxxxx"
+  data: "Archive DOI or local path"
+languages: [en]
+context: "One or two sentences shown to every model: who answered, what they saw, what they were asked. No results."
+unit: respondent            # respondent | task
+id_column: ResponseId
+text:
+  column: open_text
+  prompt: "Exact wording of the open-ended item"
+  position: "Where it sits (e.g. after conjoint task 6 of 10, about the chosen profile)"
+treatment:
+  variable: treat
+  contrast: "treated (1) vs control (0)"
+  level: respondent          # respondent-level regime or task-level attribute
+  notes: "How the treatment was randomized"
+constructs:
+  target:
+    - name: target_construct
+      definition: "What respondents would say if the treatment activated the construct the authors theorized"
+      source: "Where the authors state this (page or section)"
+      expected_direction: increase
+  # Measure placebos as separate yes/no judgments. If target and placebo are
+  # mutually exclusive categories of one label, a rise in the target lowers the
+  # placebo mechanically and the false-positive check is void.
+  placebo:
+    - name: unrelated_consideration
+      definition: "A consideration the treatment should not move"
+      rationale: "Why it should not move"
+estimand: "ITT difference in the share of responses expressing the target construct, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Closed-ended manipulation check or outcome, if any"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: true
+  contamination: none        # e.g. "codebook built on the full sample (2024 paper)"
+  author: "Name"
+  date: "YYYY-MM-DD"

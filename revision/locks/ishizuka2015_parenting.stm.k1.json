@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "ede2bd327bc1a05c2f8b9901fb05c84ca87bc75a7babfd262004a5c8812431d0",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ishizuka2015_parenting",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ishizuka2015_parenting.stm.rds",
+      "sha256": "62e13dde366ee198ef9a49ec0b3b116346b836c6026986dc847c66cf6e378cba"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ishizuka2015_parenting.topic_choice.csv",
+      "sha256": "7bc1826d0d83a45b4e528a3517891259eae60f533b3350b2861c5287ad79a507"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "1e2488ec3858e5f712c4da5718b62579dcaf1d5ffef6c4c28de755b8ef57a646",
+  "created": "2026-11-17T22:52:04Z",
+  "opencheck_version": "0.0.0.9000"
+}

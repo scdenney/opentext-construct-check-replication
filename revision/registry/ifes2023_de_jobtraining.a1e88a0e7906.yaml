@@ -1,0 +1,48 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 German export
+# header (Q110 wording), survey_design_overview.md, the 2023-11-28 final report draft,
+# Ward & Denney 2025 (Policy and Society) and SI, and IFES2023/Code; blind to response values.
+id: ifes2023_de_jobtraining
+title: "Job-training priority conjoint with a task-5 open-end, Germany (IFES 2023)"
+source:
+  citation: "Ward, P., & Denney, S. (2025). Welfare chauvinism in divided societies: the role of national identity in social policy preferences. Policy and Society."
+  doi: "10.1093/polsoc/puaf027"
+  data: "data/harmonized/ifes2023_de_jobtraining.csv (from _archive/IFES2023/Germans/Data/IFES 2023 - German_February 12, 2024_18.11-choice_text.csv; same export as replication/code/prepare_data.R)"
+languages: [de]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q110
+  prompt: "Warum haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)"
+  position: "After the forced choice of paired task 5 of 6 (Q106), before that task's ratings (Q107); about the candidate prioritized in task 5"
+treatment:
+  variable: "east_origin_in_task (derived: chosen_birth_origin == 'Saxony, DE' or other_birth_origin == 'Saxony, DE')"
+  contrast: "task 5 shows at least one candidate born in Saxony (former GDR) (1) vs none (0)"
+  level: task-level attribute (positive control)
+  notes: "Six attributes (age, family status, sex, occupation, criminal record, origin at birth: Saxony / Hamburg / Bavaria / Bucharest), randomized per profile and task; criminal record weighted 70/15/15 (P&S, Data and methodology). The indicator is a function of the randomized pair only. Alternative positive control: foreign_origin_in_task (Bucharest, RO) for classic welfare chauvinism. Fielded ages are 25/36/45/62; the replication files relabel them 25/35/46/62. The design document's randomized co-national solidarity prime ('Deutsche Einheit') is absent from the fielded task text and the export has no randomizer field, so there is no respondent-level arm. Harmonized task-5 attributes match replication/data/germany_job_training.csv for all 1,882 validated respondents."
+constructs:
+  target:
+    - name: east_origin_reasoning
+      definition: "Reasoning that invokes the candidate's place of birth or regional origin, in particular East Germany, Saxony or the former GDR, as a ground for prioritizing or not prioritizing them"
+      source: "Ward & Denney 2025, 'Intra-national exclusion: refining welfare chauvinism in divided societies' and 'Data and methodology' (origin is the primary attribute; Western Germans discriminate against Eastern German candidates)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: criminal_record
+      definition: "Reasoning that invokes a candidate's criminal record (theft, tax evasion) or lack of one"
+      rationale: "Criminal record is randomized independently of origin and shown in every task; only crowd-out could move it"
+    - name: family_need
+      definition: "Reasoning that invokes marital status or children, i.e. family need"
+      rationale: "Family status is randomized independently of origin and shown in every task"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing east_origin_reasoning when task 5 includes a Saxony-born candidate minus when it does not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 6 tasks plus 1-7 preference ratings (P&S marginal means; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Prior analysis of this item: an LDA topic model (textmineR, k = 6) of Q110 among Western German respondents in IFES2023/Code/open-text responses (chunk of IFES23-Discrim.qmd, which selects Q110 as 'open text responses'), with cached models in Code/models_a01d6ba3.../. The validated sample (exclude = FALSE) came from post-fielding manipulation and attention checks (P&S SI Appendix A), which may have used the open-ends; attn_check_pass (Q114) is the text-independent alternative. Steven has seen the data."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

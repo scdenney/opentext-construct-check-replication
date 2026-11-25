@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the PLoS ONE article (Introduction, sections 2.2-2.3,
+# 3, Discussion), the column headers and closed-ended counts. NOT fully blind: while reading
+# the article the drafter saw fragments of about ten published example answers (see
+# provenance.contamination). One of six explanation items; the other five are listed in
+# the drafter's report for the lead.
+id: mills2018_labtransparency
+title: "Low vs high institutional transparency and explanations of how honest a lab animal technician is (US/Canada MTurk 2016)"
+source:
+  citation: "Mills, K. E., Han, Z., Robbins, J., & Weary, D. M. (2018). Institutional transparency improves public perception of lab animal technicians and support for animal research. PLoS ONE, 13(2), e0193262."
+  doi: "10.1371/journal.pone.0193262"
+  data: "doi:10.6084/m9.figshare.5755308.v1 (CC BY 4.0); data/external/mills2018_labtransparency/raw/l.xlsx; harmonized_mills2018_labtransparency.csv"
+languages: [en]
+context: "Adults recruited on Amazon Mechanical Turk, told the study was about predicting personality from career choice, read about Cathy, a lab animal technician who induces joint swelling in research animals to test a rheumatoid arthritis vaccine, and about the facility where she works and how open it is to the public. They rated how honest Cathy is on a 1-7 scale and explained their answer."
+unit: respondent
+id_column: Participant
+text:
+  column: "Q115 - Please explain your answer. (harmonized: text)"
+  prompt: "Please explain your answer."
+  position: "Directly after Q77 'How honest is Cathy?' (1-7), the third of six rating-plus-explanation pairs in fixed order: warm (Q75/Q113), trustworthy (Q76/Q114), honest (Q77/Q115), intelligent, competent, confident; before social distance, support for the research and the transparency check (Q73)."
+treatment:
+  variable: treatment
+  contrast: "low transparency (1; deposited dummies *_lab) vs high transparency (0; *_farm)"
+  level: respondent
+  notes: "3 (species: cows, dogs, mice) x 2 (transparency) between-subjects, random assignment to one of six vignettes (section 2.2); cells 95/93/91 low and 90/83/98 high (cows/dogs/mice). Lab = low and farm = high verified against article Table 2 cell sizes and the transparency check (2.3 vs 5.1, section 3.1). The vignettes differ in six bracketed phrases: changes made to [increase/decrease] interactions with the community; the sign [is/is not] posted; the name [does/does not] make clear animals are used; public visits [are/are not] allowed; housing details [are/are not] publicly available. The target restates content of the low-transparency vignette, so part of any shift is carry-over of vignette wording (partial positive control). The same respondents explained their warm and trustworthy ratings just before this item and may refer back to those answers. The deposited file is the authors' final sample (550 of 614); the authors' further omission of answers 'that did not answer the question' from their qualitative analysis is a content judgment and is not reproduced (exclude = FALSE for all rows)."
+constructs:
+  target:
+    - name: concealment_concern
+      definition: "The response refers to the facility or Cathy hiding, concealing or not disclosing the work or its use of animals, or to the public not being allowed to see or learn about it (secrecy, no sign, no public visits, no information), as a reason bearing on Cathy's honesty"
+      source: "Introduction (facilities that 'shield their activities from public view'; aim 1: whether transparency affects perception of the technician, measured by warmth, which includes honest); section 2.3 ('transparency' used as an a priori theme in coding the open answers); Discussion ('As expected, transparency was a theme that many participants discussed'). The quantitative expectation is lower warmth under low transparency (title, aim 1). The authors give no separate prediction for the honesty item; the direction (more concealment reasoning under low transparency) follows from the warmth expectation."
+      expected_direction: increase
+  # Separate yes/no judgments. Crowd-out by the target could lower them, so the
+  # false-positive check is an increase.
+  placebo:
+    - name: species_reference
+      definition: "The response names or refers to the specific kind of animal used in the research (mice or rodents, dogs, cows or cattle)"
+      rationale: "Species is randomized independently of transparency (3 x 2 design, no interaction reported); the share of answers that mention which animal is used should not differ between the transparency arms."
+    - name: medical_purpose_reference
+      definition: "The response refers to the disease studied (rheumatoid arthritis), the vaccine, or the benefit of the research for human health"
+      rationale: "The research purpose is worded identically in all six vignettes; transparency changes only how open the facility is, not what the research is for."
+estimand: "ITT difference (low minus high transparency) in the share of responses expressing concealment_concern, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; species as a stratum"
+outcomes:
+  closed_ended: "rating_honest (Q77, 1-7), the rating this text explains; rating_warm (Q75) and rating_trustworthy (Q76) complete the warmth scale; transparency_check (Q73, 1-7, asked after the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors coded themes (personal attributes, job perception, transparency, cannot make a judgment, nature of the research; Table 4) by one coder after joint calibration, but deposited no codes."
+provenance:
+  written_before_reading_text: false
+  contamination: "While reading the article (sections 3.2.1-3.2.5 and a grep of section headings), the drafter saw one complete published quote (P20, about trustworthiness in a secretive place) and fragments of about nine others, among them answers about hiding activities from public scrutiny, the institution being 'shady', hurting the animals, and needing to make a living. The item each quote answers is mostly not stated; some may be honesty answers. The article also reports that transparency was a prominent theme for the warmth items and that the treatment changed the valence of that theme. The target follows the authors' a priori theme. No value of the data file's text columns was printed; per the manifest the searcher saw none."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, headers and counts"
+  date: "2026-11-17"

@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "6fa650bcdd436003d87c5805b398b27fdd007527762678fb800eca0d517d2ad7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_tripp2026_refugees",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/tripp2026_refugees.stm.rds",
+      "sha256": "3ac87cbf0c95c08b30b0bada109d65a058bd0b675c22e2f58de8e33cd00841f1"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/tripp2026_refugees.topic_choice.csv",
+      "sha256": "48802e8af534524145c1606617e2c09edf9673e931ba3be73f2cbbb6baba9556"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "bab6bc28692d0c3eaaa3873856ec3902211203e2504c76b0c13a970488235337",
+  "created": "2026-10-29T15:22:53Z",
+  "opencheck_version": "0.0.0.9000"
+}

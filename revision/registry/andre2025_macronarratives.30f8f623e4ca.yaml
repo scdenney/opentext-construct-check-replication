@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the README, the Qualtrics .qsf and variable labels
+# before any open-text value was read. The paper's description of this experiment was NOT
+# read; Steven must confirm the target construct against the published paper.
+id: andre2025_macronarratives
+title: "Government-spending prime and households' explanations of the inflation surge (attention experiment)"
+source:
+  citation: "Andre, P., Haaland, I., Roth, C., Wiederholt, M., & Wohlfart, J. (2025). Narratives about the macroeconomy. Review of Economic Studies."
+  doi: "REStud article DOI to confirm; replication package 10.5281/zenodo.15311300"
+  data: "10.5281/zenodo.15311300; data/external/andre2025_macronarratives/raw/attention_experiment.dta; harmonized_andre2025_macronarratives.csv"
+languages: [en]
+context: "US adults in an online survey during the 2022 inflation surge were told the current inflation rate and asked which factors caused the increase in inflation. Before that question, a randomly selected half first wrote a few sentences about what comes to mind when they think about recent government spending programs."
+unit: respondent
+id_column: responseid
+text:
+  column: story
+  prompt: "Why has the inflation rate increased? In previous years, the US inflation rate has mostly varied between 1.5% and 2.5%. [...] Recently, however, the inflation rate has increased. It is now at [current]%. [...] Which factors do you think caused the increase in the inflation rate? Please respond in full sentences."
+  position: "Directly after the treatment block: treated respondents answer the government-spending prime ('What comes to your mind when you think about recent government spending programs? Please write 3-4 sentences.') first; control respondents go straight to this item"
+treatment:
+  variable: treatment
+  contrast: "prime_govspending (1) vs baseline (0)"
+  level: respondent
+  notes: "Qualtrics randomizer; 557 vs 569 with non-empty text. Treated respondents write one extra open text before the outcome"
+constructs:
+  target:
+    - name: government_spending_cause
+      definition: "The response names government spending, stimulus or relief payments, fiscal packages or government deficits as a cause of the inflation increase"
+      source: "Design of the attention experiment (README 'attention experiment'; attention.qsf prime item). Priming via open-ended questions to shift what is top of mind is described in Haaland et al. 2025 JEL Section 2.4. Paper section and reported result to confirm"
+      expected_direction: increase
+  placebo:
+    - name: supply_disruption_cause
+      definition: "The response names supply-chain disruptions, shortages, or energy and oil prices as a cause"
+      rationale: "Not mentioned by the prime; coded as a separate yes/no so that crowd-out from the target is visible rather than mechanical"
+    - name: corporate_pricing_cause
+      definition: "The response blames firms raising prices, corporate greed or price gouging"
+      rationale: "Unrelated to government spending; the prime should not move it"
+estimand: "ITT difference (prime minus baseline) in the share of responses expressing government_spending_cause, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Inflation expectations and perceived inflation (know_pi, know_rise and later expectation items in attention_experiment.dta)"
+human_codes:
+  available: false
+  column: null
+  notes: "raw/dag_data holds hand-coded narrative DAGs from several coders; mapping of dag_<k> files to this experiment not verified, so no codes merged"
+provenance:
+  written_before_reading_text: true
+  contamination: "None from the text. Target derived from design documents, not from the paper's reported result"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

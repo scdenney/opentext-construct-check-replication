@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "f5738556d2f6d4d84a786a7233388b4f8d30c5431915a3a2ee41607807c3eed2",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_janssen2026_england",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/janssen2026_england.stm.rds",
+      "sha256": "f11cdbece97dc69eff11ff44c3c009139853de88b5a07ad979c7733292f8eae2"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/janssen2026_england.topic_choice.csv",
+      "sha256": "c3800ded1a27cf9e3d52872d816e097d955f9ed2cb5103a88e74991863e4aa44"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "6ea48c7c1ebe290256be2450815184eaeadc3479c10957ec957bf0ed105e1a10",
+  "created": "2026-10-29T15:22:46Z",
+  "opencheck_version": "0.0.0.9000"
+}

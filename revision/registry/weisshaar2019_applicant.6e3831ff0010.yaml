@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the OSF wiki summary (PI-written hypotheses),
+# the TESS project description, the fielded questionnaire and the SPSS labels,
+# before any open-text value was read. No published article of this experiment found.
+id: weisshaar2019_applicant
+title: "Name-signaled race and gender of a job applicant and descriptions of the applicant's strengths and weaknesses, employed US adults (TESS 2019-20)"
+source:
+  citation: "Weisshaar, K., & Chavez, K. (2019). An Imperfect Match? How Gender and Race Influence Perceptions of Job Applicants by Qualification Levels. Time-sharing Experiments for the Social Sciences, study weisshaar1206 (TESS-1206.R1 and data)."
+  doi: null
+  data: "https://osf.io/j986z/ (TESS archive); data/external/weisshaar2019_applicant/raw/PN8041.054_TESS054_Weisshaar_20200226.sav; harmonized_weisshaar2019_applicant.csv"
+languages: [en]
+context: "Employed US adults were told that recruiters had judged whether an applicant for a senior accountant position met the job requirements, read the applicant's cover letter and resume, rated how hireable the applicant was and how much the application needed more emphasis on several qualities, and were then asked to describe the applicant's strengths and weaknesses in their own words."
+unit: respondent
+id_column: CaseId
+text:
+  column: STRENGTHS_WEAKNESSES
+  prompt: "In your own words, how would you describe the strengths and weaknesses of the job applicant?"
+  position: "After the hireability rating (HIRE) and the six 'needs more emphasis' ratings (COM, CAP, LEAD, RESP, ASSERT, FIT); before the race/gender recall check (MANIPULATION)"
+treatment:
+  variable: P_NAME_TREAT
+  contrast: "primary: applicant named DeAndre Washington (Black man) or Katelyn Walsh (White woman) vs Jake Walsh (White man), pooled over the qualification factor; harmonized labels black_man, black_woman, white_man, white_woman"
+  level: respondent
+  notes: "2 x 4 between-subjects, equal probability, preloaded: name (P_NAME_TREAT 1 DeAndre Washington, 2 Ebony Washington, 3 Jake Walsh, 4 Katelyn Walsh) x recruiters' judgment that the applicant meets (P_QUALIF_TREAT = 1) or does not meet (2) the job requirements. Cover letter and resume are identical apart from the name; item wording is the same in all cells. The name is the only race/gender signal: correct race and gender recall (asked after the text) is 40% in the DeAndre arm, 51% Ebony, 55% Jake, 61% Katelyn, so the race signal is weak and the ITT understates the effect of perceived race."
+constructs:
+  target:
+    - name: stereotyped_shortcoming
+      definition: "The response names as a weakness, or casts doubt on, one of the applicant's personal qualities: commitment or dedication, capability or competence, leadership ability, responsibility or reliability, or assertiveness or confidence. Criticism of the form of the documents alone (wording, length, layout) counts as no."
+      source: "OSF wiki summary, Hypotheses 1-3: 'Gender and racial stereotypes for Black men and women and White women, compared to White men, for example along dimensions of commitment, capability, assertiveness, and leadership ability'; and 'Overall ... we expect that Black men and White women will face more negative evaluations than Black women'. H1 expects the stereotypes to be heightened when the applicant is underqualified; H2 expects them at both qualification levels."
+      expected_direction: increase
+  placebo:
+    - name: qualification_reference
+      definition: "The response says or implies that the applicant does or does not meet the job requirements, or is or is not qualified enough for this senior position"
+      rationale: "The qualification statement is randomized independently of the name and should move this mention (positive control under the qualification contrast) but not differ by name. Caveat: H2 suggests underqualification may serve as an excuse, which could interact with the name."
+    - name: volunteer_reference
+      definition: "The response refers to the applicant's volunteer work at the library"
+      rationale: "Identical on every resume; nothing in the name manipulation bears on it"
+estimand: "ITT difference (Black man or White woman minus White man) in the share of responses expressing stereotyped_shortcoming, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "HIRE (1-7); COM, CAP, LEAD, RESP, ASSERT, FIT ('needs more emphasis', 1-7), all asked before the text"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or (per the manifest) the searcher. The OSF wiki summary reports closed-outcome results (penalties for Black men and White women when underqualified, among respondents 30+)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

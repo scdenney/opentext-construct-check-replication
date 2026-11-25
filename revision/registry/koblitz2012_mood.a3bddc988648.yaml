@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the TESS proposal (Proposal__Koblitz279.pdf), the
+# questionnaire (including its debriefing text) and variable labels before any Q9 value was
+# read. A probable publication (Ferrer, Klein & Graff 2017, Study 2) was seen as an abstract only.
+id: koblitz2012_mood
+title: "Self-affirmation (and recalled emotion) before an alcohol and breast cancer message and written plans to cut down on drinking (TESS, US women 2012)"
+source:
+  citation: "Koblitz, A. (2012). Self-Affirmation and Affect: Effects on Implementation Intentions. Time-sharing Experiments for the Social Sciences, study koblitz279 (TESS2 115, fielded under PI name Ferrer). Probably reported (anger and neutral arms) as Study 2 of Ferrer, R. A., Klein, W. M. P., & Graff, K. A. (2017). Self-affirmation increases defensiveness toward health risk information among those experiencing negative emotions: Results from two national samples. Health Psychology (volume and pages not checked). UNCONFIRMED: Study 2 (n = 448, GfK, anger vs neutral induction) matches this design only in part."
+  doi: "10.1037/hea0000460 (probable publication; TESS study page https://tessexperiments.org/study/koblitz279)"
+  data: "TESS koblitz279, OSF https://osf.io/sh4px/; data/external/koblitz2012_mood/raw/TESS2_115_Ferrer_Client.sav; harmonized_koblitz2012_mood.csv"
+languages: [en]
+context: "US women who drink alcohol, in a national online panel (2012), first did a short writing task about a past experience or a room in their house and a short writing task about personal values, then read a message about research linking alcohol consumption to breast cancer. They were asked how, if they had any interest in changing their drinking in the next 7 days, they would go about it, listing any steps they would take to reduce their drinking."
+unit: respondent
+id_column: id
+text:
+  column: Q9
+  prompt: "If you have any interest in altering your alcohol consumption in the next 7 days, how will you go about it? Please list below any steps that you think you will take to reduce your alcohol consumption."
+  position: "After the alcohol and breast cancer message and Q8 (intention to decrease drinking in the next 2 weeks); before worry and risk items Q10-Q14"
+treatment:
+  variable: XTESS115
+  contrast: "self-affirmation (XTESS115 1-5: write about the value most important to you) vs no affirmation (6-10: write why your least important value could matter to someone else), pooled over the five emotion arms; harmonized column affirmation (1/0), arm labels <emotion>_sa / <emotion>_nosa"
+  level: respondent
+  notes: "2 (affirmation) x 5 (recalled emotion: happiest, saddest, angriest, most hopeful time, or neutral room description) between-subjects design, ten arms assigned by Knowledge Networks (questionnaire Table 1). Arm routing verified: value essays Q6A/Q7A and recall items Q1/Q1A are answered only in the arms routed to them. The emotion manipulation check (Q2-Q5) does not separate the arms as intended (the happiness-recall arms report the lowest current happiness, 4.81 vs 5.03-5.23), so emotion-specific contrasts rest on a manipulation without a visible effect. The proposal's focal test is the affirmation x emotion interaction; within the happiness arms alone (where both of the proposal's rival accounts predict an affirmation benefit) there are only 223 answers, below the 300 threshold, so the card registers the pooled affirmation main effect. The Q9 prompt asks every respondent for steps to reduce drinking, identically across arms."
+constructs:
+  target:
+    - name: implementation_plan
+      definition: "The response states at least one specific step the respondent will take to reduce or stop drinking (for example drinking fewer drinks, not buying alcohol, drinking only on certain days, substituting another drink)"
+      source: "Proposal (Proposal__Koblitz279.pdf, p. 1): self-affirmation may offset defensiveness to threatening health information and 'increase intentions and plans to change behavioral risk factors related to the threat'; p. 3-4: the study examines whether SA influences 'implementation intentions - or specific and detailed behavior change plans', building on Ferrer et al. (2011), where SA increased implementation intentions among people in a positive mood. Questionnaire debriefing: self-affirmed people 'are more likely to accept the conclusions of the article'"
+      expected_direction: increase
+  placebo:
+    - name: emotion_reference
+      definition: "The response refers to the respondent's feelings or mood (happiness, sadness, anger, hope, stress)"
+      rationale: "The emotion recall is randomized independently of affirmation (balanced 5 x 2), so mentions of feelings should not differ between affirmed and non-affirmed respondents"
+    - name: other_health_reasons
+      definition: "The response gives a health reason other than cancer for changing or keeping current drinking (weight or calories, liver, heart, sleep, medication, pregnancy)"
+      rationale: "The message and the affirmation concern breast cancer risk and personal values; neither mentions other health conditions. It can co-occur with a plan"
+estimand: "ITT difference (self-affirmation minus no affirmation) in the share of responses expressing implementation_plan, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over the emotion arms"
+outcomes:
+  closed_ended: "Q8 intention to decrease alcohol consumption in the next 2 weeks (1-7); Q10-Q11 worry; Q12-Q14 perceived breast cancer risk"
+human_codes:
+  available: false
+  column: null
+  notes: "None in the TESS archive. Ferrer, Klein & Graff (2017, abstract) rated 'specificity of health behavior change plans', which is very likely this item coded by humans, for their Study 2 (anger and neutral arms, if it is this sample); the ratings are not in the archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No Q9 value was read. The drafter read the abstract of Ferrer, Klein & Graff (2017), which reports that self-affirmation reduced plan specificity under negative emotion (Study 1, fear) with a consistent non-significant effect under anger (Study 2, probably this sample), and 'the salutary effect of self-affirmation on plan specificity' otherwise. The target was fixed from the proposal before the abstract was read"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal and questionnaire"
+  date: "2026-11-17"

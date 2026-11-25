@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "e66383c82b7244bd51a04bbdd1fb7f9416c3037d943f38c6e38a6b8191fd0144",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_nwo26_exp2",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nwo26_exp2.stmcov.rds",
+      "sha256": "1adf94d0be8b530ccc0ed68a2428b48fb00c81179aaa5fdfcd554bdc9afdb672"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nwo26_exp2.stmcov.topic_choice.csv",
+      "sha256": "533a3d9c9b446b1d331ea46d318066d01617fadb508b4a83726b379f08da208b"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "1bc6ca17cab3308212731a049c1e12315ea251d01bcfd20a84aa30992c4b5888",
+  "created": "2026-11-22T16:41:00Z",
+  "opencheck_version": "0.0.0.9000"
+}

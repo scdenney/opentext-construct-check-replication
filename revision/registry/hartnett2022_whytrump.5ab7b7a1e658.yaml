@@ -1,0 +1,52 @@
+# DRAFT, not registered. NULL / NEGATIVE-CONTROL CASE with a post-treatment selected
+# subset (text only from Trump voters who chose 'resist'). Written from the codebook and
+# abstract before any open-text value was read. Steven must decide whether to use it.
+id: hartnett2022_whytrump
+title: "Randomized Biden popular-vote margin and Trump voters' reasons for resisting the result (Lucid, Oct 2020)"
+source:
+  citation: "Hartnett, B., & Haver, A. (2022). Unconditional support for Trump's resistance prior to Election Day. PS: Political Science & Politics, 55(4), 661-667."
+  doi: "10.1017/S1049096522000695"
+  data: "doi:10.7910/DVN/YNUE8B; data/external/hartnett2022_whytrump/raw/unconditional_support_original.csv"
+languages: [en]
+context: "Likely Trump voters in a US online survey (October 2020) read a hypothetical in which Biden wins the popular vote by a stated margin and the electoral college. Those who said the Trump campaign should resist the results were asked why."
+unit: respondent
+id_column: rid
+text:
+  column: whytrump
+  prompt: "Why should the Trump campaign resist the results of the election? Please be as specific as possible."
+  position: "Only for likely Trump voters who, after reading 'Biden wins the popular vote by [margin] percentage points and wins the electoral college', chose 'Resist the results of the election...' (trumplose == 1); N = 204 of 510 Trump voters"
+treatment:
+  variable: margin
+  contrast: "randomized Biden popular-vote margin, integer 1-15 percentage points; linear slope, or margins 11-15 vs 1-5"
+  level: respondent
+  notes: "Margin is randomized for all respondents and enters the question text. The text exists only conditional on the post-treatment choice to resist. In a quick check of the closed outcome, margin did not predict choosing resist among the 510 (logit b = -0.018, SE 0.020)"
+constructs:
+  target:
+    - name: fraud_illegitimacy
+      definition: "The response claims the election is or would be rigged, fraudulent or illegitimate (voter fraud, mail-in ballots, a stolen or miscounted election)"
+      source: "Hartnett & Haver 2022, abstract: support for resistance 'existed before the election due to both misinformation about voter fraud and hyperpartisanship', and the margin experiment tests 'whether support for resistance was contingent on the results of the election'; the title claims it is unconditional"
+      expected_direction: "none (authors argue support and its reasons are not contingent on the margin)"
+    - name: partisan_hostility
+      definition: "The response justifies resistance by attacking Democrats or Biden (corrupt, radical, incompetent) rather than the election process"
+      source: "Same abstract ('hyperpartisanship')"
+      expected_direction: "none"
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: policy_stakes
+      definition: "The response cites specific policy stakes (taxes, jobs, guns, abortion, immigration) as the reason to resist"
+      rationale: "Policy stakes do not depend on the size of the hypothetical margin"
+    - name: personal_loyalty_trump
+      definition: "The response expresses personal loyalty to or admiration for Trump"
+      rationale: "Pre-treatment loyalty that should not vary with the margin presented"
+estimand: "Slope of the share expressing fraud_illegitimacy on margin among respondents with trumplose == 1 (conditional on a post-treatment choice; principal-strata caveat), estimated on the estimation fold; the theorized value is zero"
+outcomes:
+  closed_ended: "trumplose (1 = resist, 2 = concede), asked of 510 likely Trump voters"
+human_codes:
+  available: true
+  column: "tres11, tres22, tres33"
+  notes: "The authors' coding of up to three reasons per response into 7 categories (Biden is Incompetent, Democrats are Corrupt, Democrats are Radical, Distrust Election, Other, Support Trump, Voter Fraud). tres11 is present for 181 of the 204. Coder and procedure are not documented. Voter Fraud + Distrust Election map to fraud_illegitimacy"
+provenance:
+  written_before_reading_text: true
+  contamination: "No whytrump values were read. The drafter saw the tres11 category frequencies (not split by margin). The authors coded all 204 responses"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

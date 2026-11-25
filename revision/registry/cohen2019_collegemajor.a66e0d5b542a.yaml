@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Cohen1099.pdf), the fielded questionnaire
+# (raw/8041.044_TESS_044_Cohen_v10clean.docx), the SPSS labels and the abstract
+# of Cohen, Quadlin and Rouhani (2026). No open-text value was read.
+id: cohen2019_collegemajor
+title: "Vignette student's social class, debt and gender, and the reasons given for ranking college experiences, US"
+source:
+  citation: "Cohen, E. D. (2019). Social Class, College Debt, and the Purpose of College. Time-sharing Experiments for the Social Sciences, study cohen1099 (TESS 044). Majors part published as Cohen, E. D., Quadlin, N. Y., & Rouhani, S. (2026). Who Can Afford to Be an English Major? Economic Origins, Debt, and Public Beliefs about Higher Education. Sociology of Education 99(3): 195-215."
+  doi: "10.1177/00380407261427410"
+  data: "https://osf.io/5b6tf/ (TESS_044_Cohen_Final_Data19Sep30.sav); data/external/cohen2019_collegemajor/harmonized_cohen2019_collegemajor.csv"
+languages: [en]
+context: "US adults in an online survey panel (2019) read a short story about a high-school graduate (Michael or Emily) starting at a highly ranked private university; the story gave the parents' occupations and, for some respondents, how college would be paid for. After ranking nine college experiences (such as making friends, career development, getting good grades and having fun) by importance for the student, they were asked which factors mattered most in judging how important different college experiences are for the student, and why."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "When you were thinking about how important different college experiences are for [Michael/Emily], what were the most important factors you considered? In your own words, please write a few sentences explaining why you feel this way."
+  position: "Q19, end of Block B, directly after ranking nine college experiences (Q10-18); Block A (rating eight majors) came before or after Block B at random. Asked only of the random half assigned the Q19 ballot (the other half answered Q9 about majors instead)."
+treatment:
+  variable: treatment
+  contrast: "Primary: lawyer parents (treatment = 1, 402 non-excluded answers) vs factory-worker parents (0, 386), pooled over financing and gender. Secondary: university funding so no debt (no_debt, 255) vs $30,000 of loans (debt_30k, 276), pooled over class and gender."
+  level: respondent
+  notes: "Preload VIGNOE 1-24 assigns the 2 (parents: lawyers, factory workers) x 3 (financing: not mentioned, $30,000 loans, university covers costs so no debt) x 2 (Michael, Emily) vignette and the Q9/Q19 split ballot jointly (odd = Q9, even = Q19; DOV_OEASSIGNED agrees). Q19 ballot: 808 of 1,610 (binomial p = 0.90); vignettes balanced across ballots (chi-square p = 0.95). The cell mapping (questionnaire VIGNETTE screen) is confirmed by the manipulation checks: Q21 'both are lawyers' in 690 of 818 lawyer-parent rows vs 4 of 792 factory-worker rows; Q22 matches the financing condition in 415 to 476 of the 521 to 566 rows per arm. The vignette states the parents' occupation, so answers that merely restate it are partly mechanical; the target is defined on the social-experience consideration, not on mentions of class."
+constructs:
+  target:
+    - name: social_experiences_valued
+      definition: "The answer treats social experiences as important or worthwhile for this student: making friends, having fun or enjoying college, dating or romantic relationships, getting involved in campus activities, clubs, sports or Greek life, or building social connections or networks with other students. Answers that mention social experiences only to say they matter less than grades or a career, or that the student cannot afford them, count as no. Connections with professors alone do not count. Mentioning the parents' occupation, money or debt does not by itself count."
+      source: "Proposal (Cohen1099.pdf, PDF p. 5, footer 'Page 4 of 25'): 'I expect that the importance of social experiences will be recognized primarily for upper-class students and for students unconstrained by debt'; social experiences are the four ranked items 'having fun; making friends; dating and romantic relationships; and getting involved in campus activities' (PDF p. 8); Q19 'assesses reasons associated with the rankings' (PDF p. 8). Making connections with professors is listed among the academic and human-capital items (PDF p. 8)."
+      expected_direction: increase
+  placebo:
+    - name: student_gender
+      definition: "The answer refers to the student's gender or sex (being a man or a woman, a boy or a girl, male or female) or to what is typical or expected for men or for women"
+      rationale: "The student's name (Michael or Emily) is randomized independently of the parents' occupation and the financing condition; class and debt should not change how often respondents bring up gender."
+    - name: academic_ability
+      definition: "The answer refers to the student's intelligence, academic ability or talent, or to being a strong or high-achieving student"
+      rationale: "Every vignette describes the same student admitted to a highly ranked university; the proposal's pretest found perceived intelligence similar across class and financing conditions (Appendix B, Table AB3), and the design was revised to that end."
+estimand: "Difference in the share of answers that treat social experiences as important (social_experiences_valued) between respondents whose vignette student had lawyer parents and those whose student had factory-worker parents, on the estimation fold"
+outcomes:
+  closed_ended: "Q10-18 ranking of nine college experiences, 1 = most important (making friends Q10, campus activities Q12, having fun Q14 and dating Q17 are the social items); manipulation checks Q20-22"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archive holds survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "No Q19 value was seen. The abstract of Cohen, Quadlin and Rouhani (2026) was read: it summarizes the open answers to the other open item (Q9, majors, answered by the other half of the sample) as weighing upper-middle-class students' skills and interests and working-class students' chances of a good job; the article's full text was not accessed, so whether it quotes answers (to Q9 or Q19) is unknown. The proposal's Appendix B reports pretest (student sample, not this file) rankings showing friends, dating and having fun ranked higher for upper-class vignettes, and mentions reading pretest open answers about biology and the doctor parent."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

@@ -1,0 +1,54 @@
+# DRAFT, not registered. The elaboration prompt differs by arm (groups vs events), so
+# part of any shift is prompt-induced. Written from the paper summary, the authors' 2025
+# replication, variable labels and the analysis script before any essay text was read.
+# Steven must confirm the placebos before running oc_study_register().
+id: busby2019_study1
+title: "Dispositional (groups) vs situational (events) blame framing and populist rhetoric in essays (Busby, Gubler & Hawkins 2019, Study 1)"
+source:
+  citation: "Busby, E. C., Gubler, J. R., & Hawkins, K. A. (2019). Framing and blame attribution in populist rhetoric. The Journal of Politics, 81(2), 616-630."
+  doi: "10.1086/701832"
+  data: "doi:10.7910/DVN/78JPNJ; data/external/busby2019_populism/raw/study1.dta"
+languages: [en]
+context: "US adults chose the political problem that worries them most and then wrote a short explanation of who or what is responsible for it and what should be done (the wording of the request differed between versions)."
+unit: respondent
+id_column: QID
+text:
+  column: "PROB_why (primary); PROB_respons (short who/what field) may be prepended"
+  prompt: "Groups arm: 'What groups or individuals do you think are most responsible for [problem]?' then 'In at least a few sentences, explain why you think these groups or individuals are responsible and what should be done about them.' Events arm: 'What events or circumstances do you think are the main cause of [problem]?' then 'In at least a few sentences, explain why you think these events or circumstances have caused this and what should be done in response.' (Wording from Busby et al. 2025, Frontiers in Political Science, which says the task was drawn from the 2019 study with minor adaptations; verify against the 2019 SI)"
+  position: "Directly after the respondent picks the problem that worries them most (PROB), which follows the pre-treatment populism battery (POP_1-POP_14); the essays themselves are the outcome"
+treatment:
+  variable: TREATMENT
+  contrast: "Groups (1; dispositional blame) vs Events (0; situational blame)"
+  level: respondent
+  notes: "Groups 406 / Events 410. The elaboration task refers to the problem each respondent chose before randomization, so the task is the same across arms apart from the frame"
+constructs:
+  target:
+    - name: conspiring_elite
+      definition: "The essay blames a politically powerful actor for the problem: politicians, a ruling party, the government, bankers or corporations, the media, special interests"
+      source: "Busby et al. 2019 (JOP abstract): dispositional framing increased populist expression and situational framing did not. The coding of 'bad elite' is described in Busby et al. 2025 (Frontiers), section on the dependent variable"
+      expected_direction: increase
+    - name: good_people
+      definition: "The essay refers explicitly and positively to a large group of ordinary citizens harmed by the problem ('people like us', 'the American people', 'hard-working people')"
+      source: "Same; populism coded as bad elite and good people together"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment. Mentions of a
+  # responsible actor (badactor) are a manipulation check, not a placebo.
+  placebo:
+    - name: personal_experience
+      definition: "The essay refers to the respondent's own or family's experience of the problem"
+      rationale: "Pre-treatment; neither frame asks for personal experience"
+    - name: cites_facts_figures
+      definition: "The essay cites statistics, numbers or named factual sources"
+      rationale: "Both versions ask for a few sentences of explanation of the same chosen problem. The frame manipulates the locus of blame, not the use of evidence"
+estimand: "ITT difference (Groups minus Events) in the share of essays expressing conspiring_elite, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "None after the task. POP_1-POP_14 and POP_index5 are pre-treatment (POP2_r is the median split used as a moderator)"
+human_codes:
+  available: true
+  column: "badelite_r, badelite_n, goodpeople_r, goodpeople_n, badactor_r, badactor_n (two coders, 0/1); averaged badelite, goodpeople, badactor (0/0.5/1); populism"
+  notes: "Two coders (suffixes _r and _n). analysis.R computes Cohen's kappa for each pair. badactor is the manipulation check. Codes cover the full sample of compliers"
+provenance:
+  written_before_reading_text: true
+  contamination: "No essay text was read. During structural checks the drafter tabulated the averaged human code badactor by arm (Groups 311 vs Events 157 coded 1), i.e. the manipulation-check code by treatment, before drafting. The authors coded the full sample"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

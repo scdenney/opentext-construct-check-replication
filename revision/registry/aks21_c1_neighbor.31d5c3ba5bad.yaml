@@ -1,0 +1,51 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121*.xlsx), the Korean questionnaire draft
+# (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET] DG21-Survey-AKS_ko-KR_EDITED.docx),
+# and the C1 working paper (AKS21/C1_Resettle/TEMP material (for AKS Final Report)/North Korean
+# Defector-Migrants Integration.docx); blind to response values.
+id: aks21_c1_neighbor
+title: "NK defector-migrant profile conjoint, neighbor-choice rationale, South Korea 2021"
+source:
+  citation: "Denney, S. & Green, C. 'North Korean Defector-Migrants Integration' (working paper, AKS 2021-22 project; unpublished)"
+  doi: null
+  data: "data/harmonized/aks21_c1_neighbor.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC1 DV7neighborC1, LoopDWC1)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, 'Manipulation check'); English from the vendor datamap (DV7neighborC1). Fielded Korean wording not checked against the programmed instrument."
+  position: "After paired task 5 of 8, about the profile chosen for the neighbor question ('Which of the two people would you prefer to have as a neighbor?'). WP footnote 1: neighbor rationale after the fifth profile; the vendor export has non-empty text only in iteration 5."
+  placement_caveat: "The vendor datamap lists DV7neighborC1 directly after the hiring choice (DV3C1). If on-screen placement followed the datamap, this text explains the hiring choice of task 5. choice_hire in the CSV allows re-deriving chosen/other under that reading."
+treatment:
+  variable: "chosen_social_networks, other_social_networks"
+  contrast: "task 5 pair includes a profile that 'Has only North Korean defector-migrant colleagues' (chosen or other) vs neither"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "All 10 profile attributes fully randomized per profile and task. The 'shown on either profile' contrast is randomized; the chosen/other split is post-choice."
+constructs:
+  target:
+    - name: social_integration_ties
+      definition: "Reasoning that invokes whether a profile mixes with South Koreans, keeps to North Korean circles, or has the social networks to fit into the community"
+      source: "C1 working paper, Data and Methodology (neighbor = social integration) and Findings ('only North Korean colleagues, an indicator that they are not integrating entirely into South Korean society ... less preferred')"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: religion
+      definition: "Reasoning that invokes a profile's religion or lack of religion"
+      rationale: "Religion is randomized independently of social networks"
+    - name: age_life_stage
+      definition: "Reasoning that invokes a profile's age, youth or seniority"
+      rationale: "Age is randomized independently of social networks"
+estimand: "Difference in the share of responses expressing social_integration_ties between respondents whose task-5 pair showed an only-North-Korean-colleagues profile and those whose pair did not, on the estimation fold"
+outcomes:
+  closed_ended: "Forced choice (neighbor) and 1-7 neighbor rating per profile across 8 tasks (AMCEs in the WP; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA topic models on the neighbor sheet of integrate_text.xlsx (AKS21/Code/integrate_LDA_2.R, LDA_fulltest.R); English translations exist there. That file's respid-text alignment disagrees with the vendor export (neighbor sheet: 68 of 2007 equal at the same respid)."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

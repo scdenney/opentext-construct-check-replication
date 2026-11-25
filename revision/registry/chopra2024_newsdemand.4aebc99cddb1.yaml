@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the paper source (main text + appendix .tex in the
+# replication package), the README and variable labels before any open-text value was read.
+id: chopra2024_newsdemand
+title: "Biased vs unbiased outlet coverage and stated reasons for (not) subscribing to its newsletter (US Prolific 2021-22)"
+source:
+  citation: "Chopra, F., Haaland, I., & Roth, C. (2024). The demand for news: Accuracy concerns versus belief confirmation motives. The Economic Journal."
+  doi: "EJ article DOI to confirm; replication package 10.5281/zenodo.21244470"
+  data: "10.5281/zenodo.21244470; data/external/chopra2024_newsdemand/raw/study1.dta, study2.dta; harmonized_chopra2024_newsdemand.csv"
+languages: [en]
+context: "US Prolific respondents who voted for Biden or Trump in 2016 learned how The Boston Herald covered a CBO report on a bill (either reporting only the statistic favourable to one party or reporting both statistics), were offered a free weekly newsletter featuring the outlet's articles, and were then asked to explain why they did or did not subscribe."
+unit: respondent
+id_column: responseid
+text:
+  column: "reason_yes / reason_no (harmonized file: text)"
+  prompt: "You said \"Yes\" [\"No\"] to subscribe to our Weekly Economic Policy Newsletter. Can you br[iefly ...] (Stata label truncated at 80 characters; full wording in the instruction screenshots)"
+  position: "End of the main experiment, directly after the binary newsletter subscription decision; subscribers see the Yes version, non-subscribers the No version"
+treatment:
+  variable: treatment
+  contrast: "bias (right-wing bias in Experiment 1, left-wing bias in Experiment 2) = 1 vs no bias = 0"
+  level: respondent
+  notes: "Between-subject randomization within each experiment (Exp 1: 1,429/1,429; Exp 2: 1,234/1,234). Pooled across experiments as in the paper's motive analysis. The prompt version depends on the post-treatment subscription choice; analyse the pooled text."
+constructs:
+  target:
+    - name: outlet_bias_complaint
+      definition: "The response says the outlet or newsletter is politically biased, slanted, partisan, one-sided, unfair, or selectively reports facts"
+      source: "Main text, subsection 'Motives for news demand' (sec:subscription_motives): non-subscribers in the bias arms are almost three times as likely to justify non-subscription with the newsletter's political bias"
+      expected_direction: increase
+    - name: unbiasedness_praise
+      definition: "The response says the newsletter seems unbiased, balanced, objective, non-partisan or fair"
+      source: "Same subsection (subscribers in bias arms 10.8 pp less likely to give a bias-related justification) and Online Appendix 'Subscription motives': bias-arm subscribers 4.1 pp less likely to use synonyms of 'unbiased'"
+      expected_direction: decrease
+  placebo:
+    - name: newsletter_aversion
+      definition: "The response says the respondent does not want more email, has no time, or does not read newsletters in general"
+      rationale: "General email/newsletter habits predate the experiment and the newsletter offer is identical across arms; separate yes/no coding guards against mechanical crowd-out by bias reasons"
+    - name: economic_topic_interest
+      definition: "The response mentions interest or lack of interest in economic policy as a topic"
+      rationale: "The newsletter's topic (economic policy) is the same in all arms; only the outlet's reporting strategy varies"
+estimand: "ITT difference (bias minus no bias) in the share of responses expressing outlet_bias_complaint, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among exclude == FALSE"
+outcomes:
+  closed_ended: "Newsletter subscription (newsletter); expected accuracy, trust, quality and political bias of the newsletter (5-point items)"
+human_codes:
+  available: true
+  column: human_bias_motive_class
+  notes: "RA hand-coding (open_ended_reason.dta, 'classification') of whether political bias is cited as a reason; 4,991 responses per paper; merged on hashed Prolific ID (2,687 + 2,310 matched)"
+provenance:
+  written_before_reading_text: true
+  contamination: "Paper text read (quotes two example responses). Authors hand-coded and ran a distinctive-word analysis on the full sample, so the target directions are replication targets"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

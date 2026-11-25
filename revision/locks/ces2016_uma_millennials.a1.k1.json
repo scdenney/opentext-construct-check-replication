@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "345447a5290938d8e5281040ecda9d3075db1050f18020a2b5ffbd91bdff311a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/ces2016_uma_millennials.ef25036d0529.yaml",
+      "sha256": "85e82221038d2cbb94331ca9005c1e93afc54664481bad760cb9cd19bcb54714"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["5b05cb15ea91f27a9bc4aec543b51e71527ba35acb85efed18c9a7e4a4cee58d", "79688c6938838ae30962972babd8fd0bb32f80d772677a6d47362030bda812e0", "98d22d218c478ad091c6771cbdb530586cb19a99d677f6bf1e637cdc9adca52f", "bb9363e2da729591072b61735a2510cb3f604382d6d2efbf81e6baf4b7d7e55b", "ecb4ab0ce595047642819f159f8836aea27989c1e00ba4daddc78ec0277ccd0e", "f5ed77610e7054dc6f22880c598bb2b5e1980a2d7523828abb49e9c3f4876cd7", "f740f4507e3395f71f4c40fa5084c4e19535b8a6678c7b6d518d0e57cd70166b"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "03dea11d3bb94ad039d3c2943f46a5662b9c488080d28c22c0c5e8dc77d413cc",
+  "created": "2026-11-17T22:48:40Z",
+  "opencheck_version": "0.0.0.9000"
+}

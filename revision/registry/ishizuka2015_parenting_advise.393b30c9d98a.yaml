@@ -1,0 +1,44 @@
+# DRAFT, not registered. Second card for TESS ishizuka661: the first-vignette advice
+# item has its own stated expectation (proposal Tables 2-3). Written before any
+# open-text value was read. The expectation is one of two competing hypotheses.
+id: ishizuka2015_parenting_advise
+title: "Mother vs father in a parenting vignette and advice on how the parent should respond, US parents (TESS 2015)"
+source:
+  citation: "Ishizuka, P. (2019). Social class, gender, and contemporary parenting standards in the United States: Evidence from a national survey experiment. Social Forces, 98(1), 31-58. TESS study ishizuka661 (proposal: Preferences or Constraints? Education, Gender, and Parenting Attitudes)."
+  doi: "10.1093/sf/soy107"
+  data: "https://osf.io/bbehq/ (TESS archive); data/external/ishizuka2015_parenting/raw/TESS3_191_Ishizuka_Client.sav; harmonized_ishizuka2015_parenting_advise.csv"
+languages: [en]
+context: "US parents of children under 18 read a short parenting situation in which a parent (a mother or a father, named) faces a situation with a son or daughter aged 8 to 10, and were asked how they would advise the parent to respond."
+unit: respondent
+id_column: CaseID
+text:
+  column: Q1
+  prompt: "How would you advise [name] to respond in this situation?"
+  position: "First vignette, same page as the situation description (no parent behavior described); before the second vignette and its rating. Stored as a 3,072-byte very long string (13 SPSS segments)."
+treatment:
+  variable: DOV_Q1_PARENT
+  contrast: "vignette parent is a mother (treatment = 1) vs a father (0), pooled over the 6 situations and child gender"
+  level: respondent
+  notes: "Parent gender is assigned with equal probability within each XTESS191 education x gender block and signaled only by the parent's first name (6 female, 6 male names) and pronouns; it equals DOV_VIGNETTE01 codes (s-1)*4+1..2 (mother) vs +3..4 (father), checked in the builder. Item wording is identical across arms apart from the name."
+constructs:
+  target:
+    - name: advises_intensive_parenting
+      definition: "The response advises the parent to engage actively and intensively: reason or negotiate with the child, ask about or build on the child's interests, organize or sign the child up for activities or lessons, spend time with the child, or intervene with the teacher, school or doctor on the child's behalf"
+      source: "Proposal p. 3 and Table 2 (preference perspective): 'respondents should advise concerted cultivation (intensive) parenting for mothers, but not for fathers' (Mothers: concerted cultivation; Fathers: natural growth). The rival constraint perspective (Table 3) predicts concerted cultivation advice for both, i.e. no difference."
+      expected_direction: increase
+  placebo:
+    - name: child_gender_relevant
+      definition: "The response treats the child's being a boy or a girl as relevant to the advice (what boys or girls need, how sons or daughters should be treated)"
+      rationale: "Child gender is randomized independently of parent gender within each situation"
+estimand: "ITT difference (mother minus father) in the share of responses expressing advises_intensive_parenting, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "None for this vignette"
+human_codes:
+  available: false
+  column: null
+  notes: "The proposal plans structural topic models and independent human coding; no codes are in the TESS archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or (per the manifest) the searcher. The proposal reports that in the MTurk pilot (not this sample) respondents advised mothers and fathers to engage in similar intensive behaviors; the OSF wiki summary states the main finding (parents expect intensive parenting of mothers and fathers). The 2019 article may print example answers (not read)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

@@ -1,0 +1,51 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121*.xlsx), the Korean questionnaire draft
+# (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET] DG21-Survey-AKS_ko-KR_EDITED.docx),
+# and the C1 working paper (AKS21/C1_Resettle/TEMP material (for AKS Final Report)/North Korean
+# Defector-Migrants Integration.docx); blind to response values.
+id: aks21_c1_vote
+title: "NK defector-migrant profile conjoint, vote-choice rationale, South Korea 2021"
+source:
+  citation: "Denney, S. & Green, C. 'North Korean Defector-Migrants Integration' (working paper, AKS 2021-22 project; unpublished)"
+  doi: null
+  data: "data/harmonized/aks21_c1_vote.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC1 DV7votingC1, LoopDWC1)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, 'Manipulation check'); English from the vendor datamap (DV7votingC1). The fielded Korean wording was not checked against the programmed instrument."
+  position: "After paired task 7 of 8, about the profile chosen for the vote question ('Which of the two people would you vote for in a local election?'). WP footnote 1: vote rationale after the seventh profile; the vendor export has non-empty text only in iteration 7."
+  placement_caveat: "The vendor datamap lists DV7votingC1 directly after the neighbor choice (DV5C1), not the vote choice (DV1C1). If on-screen placement followed the datamap, this text explains the neighbor choice of task 7. choice_neighbor in the CSV allows re-deriving chosen/other under that reading."
+treatment:
+  variable: "chosen_former_kwp_member, other_former_kwp_member"
+  contrast: "task 7 pair includes at least one former Korean Workers' Party member (chosen or other = 'Yes') vs neither profile a former member"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "All 10 profile attributes fully randomized per profile and task (vendor loop files). The 'shown on either profile' contrast is randomized; the chosen/other split is post-choice. No respondent-level arm precedes C1."
+constructs:
+  target:
+    - name: north_korea_regime_ties
+      definition: "Reasoning that invokes a profile's former membership in the Korean Workers' Party or other ties to the North Korean regime or ideology"
+      source: "C1 working paper, Abstract ('Migrants who signal stronger ties to North Korea are especially discriminated against') and Findings (former KWP member 7-8pp less likely to be chosen)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments, not categories of one label.
+    - name: age_life_stage
+      definition: "Reasoning that invokes a profile's age, youth or seniority"
+      rationale: "Age is randomized independently of party membership; showing a KWP member should not change how often age is cited (beyond crowding out)"
+    - name: family_status
+      definition: "Reasoning that invokes marriage, divorce or having children"
+      rationale: "Relationship and children are randomized independently of party membership"
+estimand: "Difference in the share of responses expressing north_korea_regime_ties between respondents whose task-7 pair showed a former KWP member and those whose pair did not, E[g(R) | KWP shown] - E[g(R) | not shown], on the estimation fold"
+outcomes:
+  closed_ended: "Forced choice (vote) and 1-7 vote rating per profile across 8 tasks (AMCEs in the WP; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: "SI.R uses a text-derived 'attention' code (AKS21/Data/df_vote_check.xlsx) for this item, but that file's respid-to-text link agrees with the vendor export for only about half of respondents, so the code was not carried over"
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA topic models on all three C1 open-ends (AKS21/Code/integrate_LDA.R, integrate_LDA_2.R, LDA_fulltest.R) and the SI attention check (SI.R, Figure E.1) were run on integrate_text.xlsx / df_vote_check.xlsx; English translations exist in integrate_text.xlsx. Those files' respid-text alignment disagrees with the vendor export (vote sheet: 972 of 2008 equal at the same respid; 1993 of 1994 texts present under some respid)."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

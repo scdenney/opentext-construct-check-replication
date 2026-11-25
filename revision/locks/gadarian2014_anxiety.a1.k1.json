@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "ae8a1b643f83f790ad5f327a9798f56dbba8c7c59143f0e63257d890d641af10",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/gadarian2014_anxiety.1e1c682ef2fd.yaml",
+      "sha256": "4da667b9d6259912950fe8bf4dced45eb46da40628f8b5575385115afb30d52d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["64ea010f3edcc970dc4a73f8815c1ff2e3e73a5f1deb231404fb750209f9d6c6", "669c04bc1ac5b676604ac9187825dcb932313058bcf1d4f2b159f98dc5edcfcb", "7f5c825671871a3883e59dbccb1673e09fa26c920efe9a217325a3080c6048b6", "82921fecf996acbf646c26a2fba8052df2e12ecfae04f0420f9f02ff3d785833", "bf357e9cb42dc9448fed04863f077d9e671264105fd9e3c2cd0a22a5bfa57b33", "d64baa3e85d3a5568cb0bb0edde3f623f175aa3cf8d6d8d4a65bd6df7e371659", "f09dedf807f366c32a7d933e53b0a86b18763fcc95206256f72e3e4efee49519"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "efcca89e734d12fda76c9874af649ccb92ca460851a59811a1cb8ce27a9efbf1",
+  "created": "2026-10-29T00:34:56Z",
+  "opencheck_version": "0.0.0.9000"
+}

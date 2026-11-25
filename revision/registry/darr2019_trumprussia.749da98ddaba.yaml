@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the Perspectives on Politics article
+# (sections "Theory", "Data: The Portal Panel", "Methods"), its online appendix
+# (A: portal design; B: question wording), the authors' do-file and the
+# variable names, before any open-text value was read.
+id: darr2019_trumprussia
+title: "More vs less Trump-Russia scandal news in a week-long news portal and listed consequences of a Trump presidency (US 2017)"
+source:
+  citation: "Darr, J. P., Kalmoe, N. P., Searles, K., Sui, M., Pingree, R. J., Watson, B. R., Bryanov, K., & Santia, M. (2019). Collision with collusion: Partisan reaction to the Trump-Russia scandal. Perspectives on Politics, 17(3), 772-787."
+  doi: "10.1017/S1537592719001075"
+  data: "doi:10.7910/DVN/XSGYWA (CC0); data/external/darr2019_trumprussia/raw/Portal2_Russia.dta; harmonized_darr2019_trumprussia.csv"
+languages: [en]
+context: "Adults in the United States recruited online used a custom news website as their main news source for one week in June 2017, then answered a follow-up survey in which they listed up to five consequences they expected from Donald Trump's presidency."
+unit: respondent
+id_column: subjectid
+text:
+  column: openended_5con
+  prompt: "Up to five perceived consequences of a Trump presidency (exact wording not published; paraphrase from the article, 'Methods': respondents 'provided up to five perceived consequences of a Trump presidency, and then assessed those consequences on a five-point scale')"
+  position: "Post-test survey (wave 2), after the portal closed on June 16, 2017; the same item was asked in the pre-test (wave 1, before portal access), which is not part of the contrast. Followed by the overall rating of the consequences (openended_overall)."
+treatment:
+  variable: russia
+  contrast: "more Trump-Russia scandal stories in the portal feed (1) vs scandal stories filtered out (0)"
+  level: respondent
+  notes: "One of five binary factors in a full factorial (32 cells, variable condition), randomized at enrollment: russia, immigration (more immigration and less health care news vs the reverse), intraparty, factcheck, defenseOfJourn. Control feeds had Russia stories filtered out by keyword (Russia, Comey, Flynn, Mueller, Sessions), so 'less' rather than 'none' (appendix A); 68 scandal stories were shown in the treatment feed. Exposure depends on use (russiaUnique). Week-long exposure, not a single vignette; the question wording is identical across arms. The authors' main hypothesis concerns Republicans; pid_three (pre-test) is the moderator."
+constructs:
+  target:
+    - name: russia_scandal_consequence
+      definition: "The response names the Trump-Russia scandal or its investigation as a consequence of the Trump presidency: Russian interference or collusion, the Comey firing, Flynn, the special counsel Mueller, obstruction of justice, or impeachment or removal arising from these"
+      source: "Article, section 'Data: The Portal Panel': the absence of scandal coverage 'may lower both the accessibility and perceived importance of the scandal' (Iyengar and Kinder 1987; Miller and Krosnick 2000); hypothesis in 'Theory' that greater exposure to scandal stories lowers evaluations of the president. The authors did not analyze the open text; the content expectation is the accessibility mechanism they state."
+      expected_direction: increase
+  placebo:
+    - name: health_care_consequence
+      definition: "The response names health care, the Affordable Care Act or its repeal, or health insurance as a consequence"
+      rationale: "Health care versus immigration coverage was randomized by a separate factor (immigration), independent of russia, so mentions of health care should not move with Trump-Russia exposure"
+    - name: immigration_consequence
+      definition: "The response names immigration, deportation, the border wall, refugees or the travel ban as a consequence"
+      rationale: "Immigration coverage was randomized by the separate immigration factor, independent of russia"
+estimand: "ITT difference (more minus less Trump-Russia stories) in the share of post-test responses naming the Russia scandal as a consequence, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, adjusting for the other four factors"
+outcomes:
+  closed_ended: "openended_overall (post-test): 'Taken as a whole, how good or bad do you think the consequences of a Trump Presidency will be?' 0-4 as deposited (0 = very good, 4 = very bad, inferred); trump_job_appr (1-7)"
+human_codes:
+  available: false
+  column: null
+  notes: "openended_overall is the respondent's own closed rating of the consequences (appendix B), not a code of the text; kept as consequences_overall. The article does not analyze the open text."
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; the article and appendix print no open-text answers, and the searcher's manifest reports counts only"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, appendix and do-file only"
+  date: "2026-11-17"

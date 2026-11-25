@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the article (published version, CC BY-NC-ND,
+# from the PsyArXiv record osf.io/bk5g8: sections 3, 3.1.1-3.1.3.1, 3.2.2, 3.3), the
+# journal supplement (mmc1.docx: Section 2.3, Table S1.4 with the example column
+# masked), the OSF study materials, the preregistration (UBI2_PAP_Submitted_CT.docx,
+# registration osf.io/gwru2), the deviations note, and counts. Fragments of two
+# published Experiment 1 example answers were seen (see provenance).
+id: thomas2022_ubireframing_e2
+title: "Financial-freedom and freedom-for-prosperity frames vs a plain description of a basic income policy, and US conservatives' explanations of whether it reflects their values (MTurk, Experiment 2)"
+source:
+  citation: "Thomas, C. C., Walton, G. M., Reinhart, E. C., & Markus, H. R. (2023). Mitigating welfare-related prejudice and partisanship among U.S. conservatives with moral reframing of a universal basic income policy. Journal of Experimental Social Psychology, 105, 104424."
+  doi: "10.1016/j.jesp.2022.104424"
+  data: "OSF osf.io/kn6s4 (public, no licence field; article: 'Data and study materials are shared on the project OSF page'); data/external/thomas2022_ubireframing/raw/ubi2_data.csv; harmonized_thomas2022_ubireframing_e2.csv"
+languages: [en]
+context: "Politically conservative US adults recruited online (Amazon Mechanical Turk) read a short description of a universal basic income policy: a single monthly payment to all citizens, regardless of employment status, sufficient to cover basic needs, replacing many government programs; some read a version that also described the goal of the policy. Directly afterwards they were asked whether the policy reflects their values and to describe why or why not."
+unit: respondent
+id_column: ID
+text:
+  column: values
+  prompt: "Does this policy reflect your values? Please describe why or why not."
+  position: "Directly after the policy message, before every closed item, as in Experiment 1 (article 3.1.3.1: 'As in Experiment 1, after reading one of the three messages, participants were asked how the policy message related to their values'; study materials p. 8: 'The questions followed the same order as in Experiment 1'). Same wording in every arm."
+treatment:
+  variable: treatment
+  contrast: "freedom (Financial Freedom message, identical to Experiment 1) vs control (Universal Basic Income, policy details only), primary for freedom_mention; freedom_plus (Freedom for Prosperity message) vs control, secondary, same target"
+  level: respondent
+  notes: "Three-arm between-subjects design, preregistered (osf.io/gwru2); 'participants were randomly assigned to read one of three policy messages' (article 3.1.2). There is no security message in Experiment 2. Freedom for Prosperity is the Financial Freedom message (renamed) plus a paragraph on 'financial freedom', 'the liberty to pursue their talents' and 'the freedom to contribute to our nation's prosperity' (study materials p. 5). Positive control: both frames contain 'Freedom is an important value', 'enable individuals to decide for themselves' and 'greater autonomy in their decisions and in their lives', so part of any rise in freedom mentions is echo of the wording. The authors call the coding of this item exploratory (3.1.3.1: 'Full details are presented in SM Section 2.3 for this exploratory measure') but apply the Experiment 1 manipulation check with the same method and the same expected pattern (heading 'Manipulation check' in 3.1.3.1 and 3.2.2; SM 2.3: 'Using the same methods as in the qualitative manipulation check in Experiment 1'). The preregistration lists the item only under secondary analyses ('We will code qualitative responses to the following questions: 1. Does this policy reflect your values? ...'), with no expectation; its primary hypothesis 1 groups both freedom frames against control on support and expects mediation by 'values fit' (the closed moral-fit scale). Sample: conservatives only (ideology above 4, measured at the end of the survey; authors' preregistered rule)."
+constructs:
+  target:
+    - name: freedom_mention
+      definition: "The answer refers to freedom or to the autonomy of the individual: people being able to decide for themselves how to live their lives or how to use the money, independence from government deciding for them, or self-sufficiency. Answer yes if the theme is present, whether the respondent welcomes it or not."
+      source: "Authors' coding category 'Freedom' (journal supplement Table S1.4: 'References to the freedoms and autonomy of the individual, including autonomy to decide how to live one's life, and self-sufficiency'), reused in Experiment 2 (SM 2.3: 'RAs coded for the presence of freedom (see Table S1.3 for definition and example)'). Expectation: the item is again the manipulation check for the freedom frames (article 3.1.3.1, 3.2.2: 'both freedom conditions increased reference to the value of liberty, or freedom, compared to the control'); article 3.3 reads the smaller rise under Freedom for Prosperity as the added content having 'distracted from the focus on values'. Called exploratory (3.1.3.1); not a preregistered hypothesis."
+      expected_direction: increase
+  placebo:
+    - name: security_mention
+      definition: "The answer refers to concerns about loss or safety: financial insecurity or instability, economic problems or threats such as losing a job or income, or the need for protection against them, including the view that the program is needed because automation or technology threatens jobs. Answer yes if the theme is present, whether the respondent welcomes it or not. Answer no if the answer only names the Social Security program."
+      rationale: "The authors' Experiment 1 'Security' category (supplement Table S1.4). No Experiment 2 message mentions security, protection, instability or job loss (study materials pp. 1-5); the freedom messages describe technology as having brought prosperity, not threat. Freedom for Prosperity's 'Americans lose out' refers to unused talent, not to financial insecurity. Not human-coded in Experiment 2."
+    - name: religion_mention
+      definition: "The answer refers to religion: God, faith, the Bible, Christianity, a church, or religious or Christian values."
+      rationale: "The item asks about the respondent's values, so religious values are a natural answer for conservatives in every arm, but no message mentions religion and the authors expect nothing about it. Weak point: a frame that pulls answers toward freedom may slightly crowd out other values."
+estimand: "ITT difference (freedom frame minus control) in the share of answers expressing freedom_mention, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. Secondary: freedom_plus minus control, same target"
+outcomes:
+  closed_ended: "support (1-7, the authors' primary outcome); moral_fit (mean of three 1-5 items, the preregistered mediator 'values fit'); attention_pass (eligibility question, correct = 3); ideology (1-7, post-treatment; all above 4 by the sample rule). All asked after the open item."
+human_codes:
+  available: true
+  column: "human_freedom (val.lib)"
+  notes: "Two research assistants coded presence (1) or absence (0) of the freedom theme with the Experiment 1 definition (SM 2.3): 'After seven rounds of coding (kappa = .80), each RA coded half of the remaining data' (each round 10% of the corpus with discrepancies resolved, as in Experiment 1). One column; the deposit does not say which answers were double-coded. Security was not coded in Experiment 2. The article and supplement do not say whether the coders were blind to the arm. Counts of 1 (control / freedom / freedom_plus): 29 / 90 / 68, which reproduce the article's 11.9%, 39.0% and 30.0% (3.2.2)."
+provenance:
+  written_before_reading_text: false
+  contamination: "No answer was read from the data; only counts and byte-pattern counts were taken. While searching the article with grep, the drafter saw fragments of the two published Experiment 1 example answers in article 2.2.2 (one freedom-coded, one security-coded). The example column of supplement Table S1.4 was masked when read. The article reports the Experiment 2 freedom-mention shares by arm (3.2.2). The searcher's manifest reports no text read."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the article, supplement, study materials, preregistration and counts"
+  date: "2026-11-18"

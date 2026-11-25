@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "6985070961e7ebaaced76683b028c4bbd3c9de5ad4ee98f5c03ef1a72ead1a33",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/chu2020_collegerank.8249dd8b1c57.yaml",
+      "sha256": "77f7388f5d67156b3bcd6da13f5d1e8d194be21cf21386e103fcd21f7ffcb1d0"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["027ce879b51ee389a62be71ab1f9c45337d2c241c0bc26eb42cf0e83445e2956", "0db1638893a728604b7f1e6417123dc10bdad2f89b01fc0c17ebe8da4671784a", "315ce5a328da5fb5a99e49db5d4f2eab1d08e00c65bf53404fd3aef0a5fa608b", "3d7b6b4275ddc9a07cdbf093a0b346b87182439734d999e0284f8f5d01e03e04", "4537c56cbb5023084a2e58e1c4facdb4b553b82693cba8b91431a451233a2989", "61fc91a83b808d213a1beb5332276f0be4194812a470b965431166944e04cf86", "662d0bee4315d0f2a76b108992a3254e2039e5775f29b2f01a34ba6eb4172123", "8ca55a647148f8ca7ba70562f10ceb002b5740fbe5a3f1756c803e8f56c1b57b", "a5f4ef1c47ea83018134f51e1c8825ba63f2b51b79cf99b560b54c49b966f077"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "49830802209b80d01d6aaeaaae166f2d798c67809dc8c690964aac21f7f55504",
+  "created": "2026-11-17T21:11:17Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,53 @@
+# DRAFT, not registered. The open-item wording is not in the archive (paraphrase from
+# the authors' LLM prompt), and theory comes from the abstract only. Written before any
+# open-text value was read. Steven must confirm the wording, arm mapping and placebos
+# before running oc_study_register().
+id: dur2026_us
+title: "India's economic cooperation with the US vs with a US adversary and explanations of views of India (US sample, 2025)"
+source:
+  citation: "Dür, A., Isgandarov, A., Schweinberger, T., & Zeng, Y. (2026). Trade cooperation, exclusion, and public perceptions of conflict: Evidence from China and the USA. Conflict Management and Peace Science."
+  doi: "10.1177/07388942261466794"
+  data: "doi:10.7910/DVN/1R4BFZ; data/external/dur2026_tradeconflict/raw/Data/ORD-1288355-G1M5_DD_DEF_2025-04-04.xlsx (sheet VALUES)"
+languages: [en]
+context: "US adults in an online survey (2025) read a short description of India, including a sentence about India's recent economic cooperation (versions differed), and rated India and US-India relations. They were then asked to explain why they evaluated India and the relationship the way they did."
+unit: respondent
+id_column: RECORD
+text:
+  column: QOPEN
+  prompt: "NOT IN ARCHIVE. The authors' LLM prompt (Code/llm_output_creation_openq.R) describes the item as asking 'why a respondent evaluated India / the United States' relationship with India the way they did'. Take the exact wording from the article appendix"
+  position: "After the India vignette (LF_EXP1) and the closed items QEXPERIMENT1_1-3 (favorability toward India, ally, conflict)"
+treatment:
+  variable: LF_EXP1
+  contrast: "adversary cooperation (LF_EXP1 in 2-5: India intensified economic cooperation with China or 'an adversary of the United States') vs home cooperation (6-7: with the United States); control (1) as reference"
+  level: respondent
+  notes: "US file coding (verify against sheet LABELS): 1 = control (409); 2-5 = adversary, crossing named (China) vs generic adversary with consequence 'thereby enhancing India's military capacity' vs 'thereby reducing India's economic ties with the United States' (~200 each); 6 = home, no consequence; 7 = home + military capacity (400 each)"
+constructs:
+  target:
+    - name: negative_relations
+      definition: "The explanation describes India, or the US-India relationship, negatively: distrust, rivalry, India siding with US adversaries, threat, likely conflict"
+      source: "Dür et al. 2026, abstract: 'We expect exclusion (inclusion) to produce more negative (positive) views of the excluding (including) country and of relations with it'; 'Results support the main effect of exclusion'"
+      expected_direction: increase
+    - name: security_concern
+      definition: "The explanation mentions military capacity, security, defence or strategic threat"
+      source: "Same abstract: 'Views always turn negative when cooperation yields military gains for the other side'; strongest in the military-consequence arms"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: india_culture_people
+      definition: "The explanation refers to Indian culture, religion, food, people, population or diaspora"
+      rationale: "The vignette varies India's cooperation partner and its consequences, not cultural content"
+    - name: personal_contact
+      definition: "The explanation refers to the respondent's own contact with India or Indians (travel, friends, colleagues)"
+      rationale: "Pre-treatment"
+estimand: "ITT difference (adversary minus home cooperation) in the share of explanations expressing negative_relations, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "QEXPERIMENT1_1 (favorability toward India), QEXPERIMENT1_2 (India as ally), QEXPERIMENT1_3 (conflict expectation)"
+human_codes:
+  available: false
+  column: null
+  notes: "Data/llama_coding_updated.xlsx has Llama 3.1 positive/negative/neutral codes, which are LLM codes, not human codes, and include some malformed outputs"
+provenance:
+  written_before_reading_text: true
+  contamination: "No QOPEN values were read. The drafter saw the frequency table of Llama output labels, which includes a few malformed LLM messages but no respondent text. The authors' LLM coding used the full sample"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

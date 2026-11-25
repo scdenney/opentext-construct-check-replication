@@ -1,0 +1,55 @@
+# DRAFT, not registered. Written from the accepted manuscript (par.nsf.gov/servlets/purl/10465227),
+# the OSF preregistration k28sz (registered 2020-06-25) and its attached materials file
+# ("Performance_Attribution_Revised Materials June 5..docx", sha256 b3411912...), the authors'
+# deposited R scripts and the variable layout of the deposit, before any open-text value was read.
+# One card, two targets, each with its own primary contrast (see rv_treatments entry).
+id: porumbescu2023_blame
+title: "'Chinese virus' vs 'COVID-19' and negative vs positive testing framing, and who US respondents say did a bad job on the pandemic (MTurk, June 2020)"
+source:
+  citation: "Porumbescu, G. A., Moynihan, D. P., Anastasopoulos, L. J., & Olsen, A. L. (2023). When blame avoidance backfires: Responses to performance framing and outgroup scapegoating during the COVID-19 pandemic. Governance, 36(3), 779-803."
+  doi: "10.1111/gove.12701"
+  data: "doi:10.7910/DVN/Z9XXOW (CC0 1.0); data/external/porumbescu2023_blame/raw/COVID Data June 27 {Control,Treatments}.tab; harmonized_porumbescu2023_blame.csv"
+languages: [en]
+context: "US adults recruited online in late June 2020 read a short paragraph about the Trump Administration's efforts to test residents for the coronavirus (the wording of the paragraph, and whether it gave a testing figure, differed across versions), answered closed questions about the administration's performance and about who was responsible for the virus's spread, and were then asked: 'In the United States, who has done a bad job in responding to the pandemic? Why?'"
+unit: respondent
+id_column: id
+text:
+  column: Q22
+  prompt: "In the United States, who has done a bad job in responding to the pandemic? Why? (answer of 20 characters or more required; article, Measured Variables)"
+  position: "After the vignette. In the preregistered materials the order is: vignette; Q25 performance of the Trump Administration (0-10); Q26 threat (0-10); Q36/Q46 responsibility of the Trump Administration, the Obama Administration, the Chinese government, Nancy Pelosi, state governors, the mainstream media and the CDC for the spread (0-10 each); Q28 'What ethnic group is most responsible for the spread' (Chinese, Hispanic, Black, White/European, Korean); Q21 'who has done a good job ... Why?'; Q22; Q47 economic struggles; demographics; manipulation checks. The fielded instrument (Supplementary Appendix A) was not read; the deposit's column order (Q21, Q22, Q47, then the closed items) does not show display order."
+treatment:
+  variable: treatment
+  contrast: "Two factors, each the primary contrast for one target, pooled over the other factor. Virus name: chinese_negative + chinese_positive ('Chinese Virus') vs covid_negative + covid_positive ('COVID-19'); target chinese_people_blame. Framing: chinese_negative + covid_negative (percent who will NOT have enough tests) vs chinese_positive + covid_positive (percent who WILL have enough tests); target federal_blame. The baseline arm is in neither contrast."
+  level: respondent
+  notes: "2 x 2 between-subjects plus a baseline arm, one Qualtrics randomizer (FL_21_DO: Control, COVID+Positive, COVID+Negative, ChineseVirus+Positive, ChineseVirus+Negative; article, Setting and Research Design; preregistration q6). Deposited as two files: Control (287) and Treatments (1,152); together 1,439, the article's usable N. The testing figure was a random integer (51-99 positive, 1-49 negative; not in the deposit). The baseline paragraph names no virus and gives no figure; the authors use the baseline only for H1 (section 7.1) and test H2-H5 within the four treatment arms (Figures 3, 4, 7, 8). The Q22 wording is identical in all arms, but the vignette in the 'Chinese Virus' arms repeats that term three times, so echoes of the term are partly mechanical (positive control): echoing the name is not blame of Chinese people under the target definition. Every closed item before Q22 (Q36 Chinese government, Q28 ethnic group with 'Chinese' as an option) was shown in all arms, so it raises the base rate of China-related answers equally in every arm but is itself post-treatment. The framing factor changes testing figures only, so testing_reference is a positive control for the framing contrast. The article reports that the 'Chinese virus' cue raised STM topics about President Trump (section 7.2): federal_blame is therefore not a clean placebo for the virus-name contrast, and H6 (positive framing weakens the virus-name effect) implies a small framing main effect on chinese_people_blame when pooled over virus name."
+constructs:
+  target:
+    - name: chinese_people_blame
+      definition: "The response blames Chinese people, Chinese or Asian residents of the United States, or Chinese-Americans or Asian-Americans, as a group, for the pandemic or for the poor response to it. Calling the virus the 'Chinese virus' or saying it came from China does not count by itself; blaming only the Chinese government, the Chinese Communist Party or China as a state does not count."
+      source: "Article section 2.2, H2: 'Participants exposed to the term \"Chinese virus\" will be more likely to blame Chinese residents when compared to participants exposed to the term \"COVID-19.\"' Tested on Q22 in section 7.2. Preregistration (OSF k28sz, q2, 'Out-group attribution hypotheses', numbered H6 there): 'Participants exposed to the term 'Chinese Virus' will be more inclined to blame East Asian residents and the Chinese government when compared to participants exposed to the term 'COVID - 19.'' The card follows the article's narrower wording (residents, not the government)."
+      expected_direction: increase
+    - name: federal_blame
+      definition: "The response says that President Trump, the Trump administration, the White House, or the federal government (including federal agencies such as the CDC or the coronavirus task force) did a bad job in responding to the pandemic."
+      source: "Article section 2.3, H4: 'Exposure to negatively framed performance information will trigger greater blame attributed to the Trump administration and the federal government.' Tested on Q22 in section 7.4. Preregistration (q2, 'Framing Hypothesis', numbered H6 there) concerns evaluations, not blame: 'Participants exposed to negatively framed performance data will be more negative in their evaluations of actors in the United States Federal Government than participants exposed to positively framed performance data.'"
+      expected_direction: increase
+  # Code each as a separate yes/no judgment. Each target is also the other contrast's
+  # design-based placebo (see treatment.notes for why neither is a clean null).
+  placebo:
+    - name: testing_reference
+      definition: "The response mentions COVID-19 testing: the number or availability of tests, test shortages, or the speed or capacity of testing."
+      rationale: "Placebo for the virus-name contrast: both virus-name arms carry the same testing paragraph, pooled over the same mix of positive and negative figures, and neither H2 nor the virus-name theory concerns testing. It is a positive control for the framing contrast, which manipulates the testing figure (the article reports that framing raised the salience of testing performance, section 7.4)."
+    - name: economy_reference
+      definition: "The response refers to the economy, jobs, unemployment, businesses, or the economic costs of lockdowns or reopening."
+      rationale: "Neither factor mentions the economy, and no hypothesis in the article or the preregistration concerns it; the economic-struggles item (Q47) comes after Q22."
+estimand: "Two ITT contrasts, each among the four treatment arms and pooled over the other factor: (1) 'Chinese Virus' minus 'COVID-19' in the share of responses expressing chinese_people_blame; (2) negative minus positive testing framing in the share expressing federal_blame; E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Performance (Q25, Trump Administration 0-10); Severity (Q26); responsibility 0-10 for Trump Administration, Obama Administration, Chinese government, Pelosi, governors, media, CDC; Q28 ethnic group most responsible (Blame Chinese/White/Black dummies); manipulation checks Q33 (virus name: Chinese Virus / COVID - 19 / Did not say) and Q32 (agency named in the prompt)"
+human_codes:
+  available: false
+  column: null
+  notes: "None. The authors analyze Q22 with STM (unsupervised) only."
+provenance:
+  written_before_reading_text: true
+  contamination: "No Q22 (or Q21, Q47) value was displayed to the drafter or, per the manifest, the searcher. The article reports STM topic labels and topic-prevalence contrasts by arm on the full sample (Figures 1-13; e.g. no top topic mentions China or Chinese, 'Chinese virus' raised Trump-blame topics; framing raised testing salience), which the drafter read. The Supplementary Material, section 5, prints one findThoughts example answer per topic; it was not read, but it is published contamination. The deposited H1 script calls findThoughts on Q22 (not run)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from article, preregistration and deposit layout only"
+  date: "2026-11-17"

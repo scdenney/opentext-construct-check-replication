@@ -1,0 +1,43 @@
+# DRAFT, not registered. Written from the variable and value labels, SPSS syntax and the
+# published abstract before any open-text value was read.
+id: davies2013_audiencecosts
+title: "Audience-cost vignette (stay out vs threaten and back down vs act) and explanations of approval, British public"
+source:
+  citation: "Davies, G. A. M., & Johns, R. (2013). Audience costs among the British public: The impact of escalation, crisis type, and prime ministerial rhetoric. International Studies Quarterly, 57(4), 725-737."
+  doi: "10.1111/isqu.12045"
+  data: "doi:10.7910/DVN/QMTXDA; data/external/davies2013_audiencecosts/raw/ISQ replication data.sav; harmonized_davies2013_audiencecosts.csv"
+languages: [en]
+context: "British adults read about an international crisis (nuclear threat, hostages, or an invaded ally) in which the UK government did nothing, issued a threat or an escalated threat, or took military action with or without casualties, rated their approval of the government's handling and explained their rating in their own words."
+unit: respondent
+id_column: id
+text:
+  column: SPEC_W2_E1q2
+  prompt: "Open-ended explanation of approval/disapproval (exact wording not in the archive; see the ISQ article)"
+  position: "Directly after the 0-6 approval rating (SPEC_W2_E1q1)"
+treatment:
+  variable: SPEC_W2_E1action
+  contrast: "threat (2) and escalated threat (3), i.e. a threat that the government did not carry out in the vignette, vs control = do nothing (1); harmonized labels: control, threat, escalated_threat, action_no_casualties, action_casualties"
+  level: respondent
+  notes: "Factorial: action (5 levels) x crisis type SPEC_W2_E1reason (3) x PM justification SPEC_W2_E1PMjust (2). That the threat arms are back-down arms is inferred from the audience-cost design and the human code 'Shouldn't have been inconsistent'; confirm against the article. The control arm is smaller (230) than the others (about 500)."
+constructs:
+  target:
+    - name: inconsistency_credibility
+      definition: "The response criticizes the government for saying one thing and doing another: making threats it did not carry out, backing down, looking weak, or damaging the country's credibility"
+      source: "Audience-cost logic tested in the article (abstract); authors' code 3 'Shouldn't have been inconsistent' and its sub-codes 5-7 (show weakness/hurt future credibility; starting but not finishing is a waste; shouldn't talk and then not act)"
+      expected_direction: increase
+  placebo:
+    - name: crisis_type_reference
+      definition: "The response refers to the specific nature of the crisis: nuclear weapons, hostages, or the invasion of an ally"
+      rationale: "Crisis type is randomized independently of the action arm and is present in every vignette"
+estimand: "ITT difference (threat arms minus do-nothing) in the share of responses expressing inconsistency_credibility, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "SPEC_W2_E1q1 approval of the government's handling (0-6)"
+human_codes:
+  available: true
+  column: "human_basic_code (SPEC_W2_E1q2coded: should have attacked anyway / shouldn't have escalated anyway / shouldn't have been inconsistent / understand govt's thinking / other / DK) and human_detail_code (SPEC_W2_E1morecodes)"
+  notes: "Coded for 1,198 of 2,235 responses across all five arms; the selection rule for coding (perhaps disapprovers only) is not documented in the archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors hand-coded the full sample and may report code shares by arm in the article (not read)"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,57 @@
+# DRAFT, not registered. Written from the preregistration (osf.io/ju38c: EGAP form and
+# attached pre-analysis plan and LimeSurvey questionnaire), the DASSI codebook,
+# questionnaire and archive notes, and the published abstract, before any open-text
+# value was read. The article itself was not read (publisher and repository copies were
+# behind bot checks). The authors state no expectation about the content of the open
+# answers: the targets below are proposed from H3a-d and the preregistered mechanism.
+id: scaduto2023_foodpolitics
+title: "Menu ordered by a stranger (base, vegan, meat, traditional, ethnic) and explanations of the guessed party vote (Italy 2023)"
+source:
+  citation: "Scaduto, G., & Negri, F. (2024). Food for (political) thought: political inferences from apolitical cues and their social consequences in Italy. South European Society and Politics, 29(1), 79-108."
+  doi: "10.1080/13608746.2024.2411539"
+  data: "doi:10.71732/RMEP03 (DASSI SN248, CC BY 4.0); data/external/scaduto2023_foodpolitics/raw/SN248.dta; harmonized_scaduto2023_foodpolitics.csv. Preregistration: osf.io/ju38c"
+languages: [it]
+context: "Italian adults in an online panel survey (April 2023) imagined having lunch in a restaurant offering five fixed-price menus at 20 euros (base, vegan, meat, traditional and ethnic, each with its dishes listed) and overheard the person at the next table order one of them. They guessed that person's ideology and party; those who named a party were asked what made them think the person votes for that party."
+unit: respondent
+id_column: ID
+text:
+  column: OPENPART
+  prompt: "Cosa ti fa pensare che questa persona voti [partito indicato in C3]? (What makes you think this person votes for [party named in C3]?) The respondent's own party guess from C3 (EXPPARTY) is piped into the question, so the wording differs within arm; the guessed party is in the harmonized column exp_party."
+  position: "Questionnaire section C, item C4: after the vignette, the ideology guess (C2, EXPIDEOL) and the party guess (C3, EXPPARTY); shown only if C3 was a party (not 'Non saprei'); optional"
+treatment:
+  variable: RANDOM
+  contrast: "Primary: any politically coded menu (vegan, meat, traditional or ethnic; RANDOM 2-5) vs the base menu (control, RANDOM 1). Secondary: vegan + ethnic (left-coded) vs base; meat + traditional (right-coded) vs base; each menu vs base. Harmonized labels: base, vegan, meat, traditional, ethnic"
+  level: respondent
+  notes: "One randomization: RANDOM drawn uniformly from 1-5 in LimeSurvey (rand(1,5)); the base menu is the authors' control group (codebook p. 73: 'Gruppo di controllo: menù base'; treatments 1V vegan, 2M meat, 3T traditional, 4E ethnic). Every respondent sees all five menus and their dishes listed, then the arm names the one ordered; only that sentence differs by arm, so a mention of the ordered menu's dishes or label is partly mechanical (positive control); the targets require more than naming the food. POST-TREATMENT CONDITIONING: the open item is asked only of respondents who named a party, and it was optional, so every comparison is among answerers. Assigned / named a party / non-empty text by arm: base 225/127/115, vegan 227/141/133, meat 212/114/107, traditional 216/113/111, ethnic 222/123/116 (582 of 1,102). Answering rates do not differ detectably by arm (non-empty text by arm: chi-squared 3.97, df 4, p = 0.41; naming a party: p = 0.28), but the arms differ in which party answerers guessed, so answerer composition can differ. The preregistration's design text (q17) numbers 4 = Ethnic, 5 = Traditional; the instrument and codebook use 4 = traditional, 5 = ethnic, which the harmonized file follows. Fielded 18-24 April 2023 (Pollstar opt-in panel, quotas on gender, age, macro-region and education); no exclusions known."
+constructs:
+  target:
+    - name: food_political_link
+      definition: "The response explains the guess by connecting the person's food or menu choice to a political value, issue, social group or way of life (for example environmentalism or animal welfare, openness to other cultures or to immigrants, attachment to Italian or local tradition, conservatism, a typical voter of that party), not only by naming or describing the dishes, and not by giving no reason or saying it is a pure guess"
+      source: "no author expectation about the content of the open answer; proposed from the preregistration (osf.io/ju38c, q15 and pre-analysis plan 'General project'): respondents are expected to use 'cultural shortcuts attached to food characteristics, such as being ethnic, typical, vegan or carnivorous' because of their association with 'specific demographics, psychological traits and political issues'; the base menu is the authors' control"
+      expected_direction: increase
+    - name: progressive_cosmopolitan_link
+      definition: "The response connects the person's food choice to environmental or climate concern, animal welfare, sustainability, an alternative or health-conscious lifestyle, or openness to foreign cultures, multiculturalism or immigrants"
+      source: "no author expectation about the content of the open answer; proposed from preregistered H3a (vegan -> left-wing ideology and parties) and H3c (ethnic -> left), osf.io/ju38c q16; associations cited in the pre-analysis plan (vegan vs meaty, ethnic vs traditional food). Secondary target for vegan + ethnic vs base"
+      expected_direction: increase
+    - name: tradition_nation_link
+      definition: "The response connects the person's food choice to tradition, Italian, regional or local identity, attachment to customs and habits, conservatism, rejection of foreign or novel food, or meat-eating as a traditional or masculine trait"
+      source: "no author expectation about the content of the open answer; proposed from preregistered H3b (carnivore -> right-wing ideology and parties) and H3d (traditional -> right), osf.io/ju38c q16. Secondary target for meat + traditional vs base"
+      expected_direction: increase
+  # Measure placebos as separate yes/no judgments. The design has one randomized factor,
+  # so no placebo is tied to an independently randomized factor.
+  placebo:
+    - name: price_or_setting
+      definition: "The response refers to the price of the meal, the fixed-price format, or the restaurant or the lunch occasion itself"
+      rationale: "The restaurant, the lunch setting and the 20-euro fixed price are identical in every arm and all five menus cost the same; only the menu ordered varies. Weak placebo: no independently randomized factor exists, and its base rate may be low"
+estimand: "ITT difference among respondents who named a party and answered the open item (coded menus minus base menu) in the share of responses expressing food_political_link, E[g(R(1))] - E[g(R(0))] within answerers, estimated on the estimation fold"
+outcomes:
+  closed_ended: "EXPPARTY guessed party (harmonized exp_party; 'Non saprei' = NA) and EXPIDEOL guessed ideology 1-7 (exp_ideology); later EXPBEHAV (accept a coffee) and EXPCONV (pleasant political conversation)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes of OPENPART in the deposit. Whether the article analyzes the open answers was not checked (article not read)"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known: no OPENPART value was read; counts only (per arm, lengths, a dta-vs-sav length comparison, non-ASCII codepoint counts). The drafter saw the closed-ended party guess by arm among answerers. The article was not read, so it is unknown whether it reports or quotes open answers; the authors' GitHub appendix images (gaetanoscaduto/Negri_Scaduto_Appendix) were not opened"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from preregistration, codebook and questionnaire only"
+  date: "2026-11-17"

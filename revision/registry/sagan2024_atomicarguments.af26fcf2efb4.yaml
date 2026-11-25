@@ -1,0 +1,58 @@
+# DRAFT, not registered. Written from the ISQ article (hypotheses H1A-H3B in
+# "Law, Precedents, and Effectiveness" / "Messaging, Counter-Messaging, and Preexisting
+# Beliefs"; "Research Design"; "Measuring Availability and Salience ..."), read through
+# a web extraction of the open-access OUP HTML, plus the survey wording PDF and the
+# .do file, before any open-text value of the dataset was read. The article's
+# Figure 4 results and four published example answers were seen (see contamination).
+id: sagan2024_atomicarguments
+title: "JCS legal, precedent and effectiveness arguments (and counter-arguments) about a US nuclear strike on Iran and the single most important reason for the preferred option (US 2020)"
+source:
+  citation: "Sagan, S. D., & Valentino, B. A. (2025). Atomic Arguments and Counter-Arguments: How Exposure to Conflicting Information Influences American Public Support for the Use of Nuclear Weapons. International Studies Quarterly, 69(1), sqae154."
+  doi: "10.1093/isq/sqae154"
+  data: "doi:10.7910/DVN/KUF6CH (CC0 1.0); data/external/sagan2024_atomicarguments/raw/; harmonized_sagan2024_atomicarguments.csv"
+languages: [en]
+context: "US adults read a mock news story about a war with Iran in which the Joint Chiefs of Staff present two options, a nuclear strike on an Iranian city or continuing the ground war, with statements from the Joint Chiefs that differed between respondents; they chose which option they preferred and then described in their own words the single most important reason for preferring it."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "You said you preferred to launch the nuclear strike against the Iranian city [strike preferrers: prefer_strike_open] / to continue the ground war against Iran and not to conduct the nuclear strike against the Iranian city [ground preferrers: prefer_ground_open]. Briefly describe the single most important reason why you preferred this option."
+  position: "After the story, the manipulation checks and the 6-point preference item prefer_strike (1-3 ground war, 4-6 strike); the item shown depends on the choice; the two are pooled into one answer per respondent (design column item)"
+treatment:
+  variable: treatment
+  contrast: "primary: illegal (JCS conclude the strike would violate the international laws of armed conflict the US has signed) vs baseline (JCS present the two options with no such argument); secondary: precedent vs baseline, effect vs baseline, and each counter-message arm (illegal_counter, precedent_counter, effect_counter) vs baseline"
+  level: respondent
+  notes: "Respondents were randomly assigned to one of eight news stories (article, Research Design): baseline (ISQ_treatments 1, n = 800), illegal (2), illegal_counter (3), precedent (4), precedent_counter (5), effect (6: 90 percent chance Iran surrenders within 24 hours), effect_counter (7: some JCS members estimate 45 percent), 400 each; the eighth, salient-information arm (ISQ_treatments blank) listed three useful pieces of information before choosing and is excluded (exclude = TRUE), as in the authors' Figure 4. Arm numbers mapped by the arm-specific manipulation checks, each asked in exactly one arm. Every story gives the same 100,000 Iranian civilian death estimate and 20,000 additional US military deaths for the ground war. The question wording does not differ by arm, but the treatment arms put the argument in the headline, pull quotes and text, so a rise in references to it is partly a recall effect (positive control). The answer item is conditional on the closed choice, which the treatment may move (H1A-H3B); the registered contrast pools over choices (ITT on all answers) and keeps item and prefer_strike as design columns. The prompt asks for a single most important reason, so codes compete: a rise in one can lower others."
+constructs:
+  target:
+    - name: law_reference
+      definition: "The response refers to the legality of the nuclear strike: international law, the laws of war or armed conflict, treaties, war crimes, or whether the strike would be legal or illegal"
+      source: "H1A (International Law): messages that the strike would violate international law will decrease support for nuclear use; authors' human code open_law_3to6 analyzed by arm in Figure 4 (section 'Measuring Availability and Salience ...')"
+      expected_direction: increase
+    - name: precedent_reference
+      definition: "The response refers to the strike setting a precedent: ending the tradition of nuclear non-use, or making it more likely that other states would use nuclear weapons in the future, including against the United States or its allies (or arguing that this would not happen)"
+      source: "H2A (Precedent Setting): messages that nuclear use may set a precedent encouraging other states to use nuclear weapons against the US and its allies will decrease support; human code open_prec_3to6, Figure 4"
+      expected_direction: increase
+    - name: effectiveness_reference
+      definition: "The response refers to whether the nuclear strike would work militarily: force Iran to surrender, end the war quickly, or achieve US war aims (or fail to)"
+      source: "H3A (Military Effectiveness): messages that nuclear use is highly likely to accomplish important war aims will increase support; human code open_effect_3to6, Figure 4"
+      expected_direction: increase
+  placebo:
+    - name: civilian_deaths
+      definition: "The response refers to Iranian civilian deaths or suffering, or to killing innocent people"
+      rationale: "The civilian death estimate (100,000) is identical in every arm and no arm adds an argument about it. Caveats: the legal argument concerns the laws of armed conflict, which protect civilians, and the single-reason prompt allows crowd-out, so a drop under the precedent or legal arm is not by itself a false positive."
+    - name: us_troop_fatalities
+      definition: "The response refers to the lives or deaths of US soldiers or military personnel, or to sparing American troops"
+      rationale: "The cost of the ground war (20,000 additional US military deaths) is identical in every arm and no arm adds an argument about it. Caveat: the effectiveness arm (quick surrender) may raise it indirectly by implying a short war, so it is a clean placebo for the legal and precedent contrasts."
+estimand: "ITT difference (illegal minus baseline) in the share of responses expressing law_reference, E[g(R(1))] - E[g(R(0))], pooled over the strike and ground-war items, estimated on the estimation fold; secondary contrasts as listed under treatment"
+outcomes:
+  closed_ended: "prefer_strike (1 strongly prefer to continue the ground war ... 6 strongly prefer to launch the strike); prefer_strike_bin (the authors' main outcome)"
+human_codes:
+  available: true
+  column: "human_law (open_law_3to6), human_civilians (open_civs_3to6), human_precedent (open_prec_3to6), human_effectiveness (open_effect_3to6), human_troops (open_troops_3to6)"
+  notes: "Coded by the authors' team of three undergraduate coders; each scored 2 (definitely), 1 (probably) or 0, and a code is 1 when the three scores sum to 3 or more ('3to6'). Coded for every respondent in all arms, both items. The article does not say whether the coders were blind to arm or hypotheses; assume not blind. The authors analyze law, civilians and precedent among ground-war preferrers only and effectiveness and troops among strike preferrers only (Figure 4); the registered contrast pools both."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was seen. Published material seen while drafting: (1) a summary of the Figure 4 results by arm (baseline law references under 1 percent; the legal message raised them and the legal counter-message lowered them; precedent references about 6 percent at baseline, 15.5 percent in the precedent arm and 14.8 percent in its counter arm among ground preferrers; civilian references among ground preferrers fell from 51 to 35 percent in the precedent arm; no reported change in effectiveness or troop references); (2) four example answers printed in the article (three about precedent, one about conventional bombs). The authors hand-coded the full sample and report coded shares by arm."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the article, survey wording and replication code"
+  date: "2026-11-17"

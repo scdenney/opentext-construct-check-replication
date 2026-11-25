@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the TESS study summary (raw/osf_wiki_summary.txt),
+# the fielded questionnaire (raw/310.209.01009.1_TESS216_Sydnor_Final.docx) and counts
+# from the data files, before any open-text value was read. Sister card: sydnor2016_video
+# (Q2 comments, H3A).
+id: sydnor2016_video_whynot
+title: "Uncivil vs civil video clip and reasons for not sharing the clip on social media (US 2016)"
+source:
+  citation: "Sydnor, E. (2016). How Conflict Orientation Influences Emotional and Political Responses to Incivility. Time-sharing Experiments for the Social Sciences, study sydnor770 (TESS3 216). Findings in Sydnor, E. (2019). Disrespectful Democracy: The Psychology of Political Incivility. Columbia University Press."
+  doi: "none for the TESS study; TESS study page https://tessexperiments.org/study/sydnor770"
+  data: "OSF https://osf.io/s43kb/ (component 7jfhr, Sydnor770.zip); data/external/sydnor2016_video/raw/TESS_Sydnor_Client_5.sav (text) and TESS_Sydnor_Client_5.dta (XTESS216); harmonized_sydnor2016_video_whynot.csv"
+languages: [en]
+context: "US adults (GfK KnowledgePanel, 2016) watched one 45-second video clip, either an exchange at a congressional hearing on Planned Parenthood or two judges evaluating a contestant's pasta dish on the cooking show MasterChef. Asked whether they would share the story with their social network, those who said no were asked why they wouldn't share it."
+unit: respondent
+id_column: CaseID
+text:
+  column: Q4b
+  prompt: "Why wouldn't you share the story?"
+  position: "After the video, the optional comment box (Q2, or Q3 if Q2 was skipped) and the sharing item Q4; asked if Q4 = 2 (no, 2,890 of 3,101); before the emotion (Q6) and clip-rating (Q5) items"
+treatment:
+  variable: XTESS216
+  contrast: "uncivil clip (XTESS216 3, 4; treatment = 1) vs civil clip (1, 2; treatment = 0), pooled over topic"
+  level: respondent
+  notes: "2 x 2 randomized by GfK (civility x topic), 752-799 per cell. XTESS216 is missing from the deposited .sav and is taken from the .dta in the same zip (rows and all closed columns identical). The civil and uncivil clips show different speakers. The item is asked of those who declined to share (94-95% in every cell), so selection after treatment is small. H3B is stated for conflict-avoidant respondents; the pooled direction is an assumption (moderators co_* are in the file). Q3 ('Why did you decide not to leave a comment?', 959 answers, asked if Q2 was skipped) carries the same expectation and is not carded."
+constructs:
+  target:
+    - name: tone_of_exchange
+      definition: "The answer gives the tone of the exchange in the clip as a reason not to share it: rudeness, arguing, yelling, disrespect, negativity or conflict, or not wanting to spread or get drawn into such an exchange"
+      source: "Study summary, H3B: 'Conflict-avoidant respondents who are exposed to incivility will shy away from participating and will indicate that this is because of the tenor of the conversation'; H1 defines participation as sharing or commenting"
+      expected_direction: increase
+  placebo:
+    - name: no_social_media_use
+      definition: "The answer says the respondent does not use social media or never shares anything on it"
+      rationale: "A pre-treatment habit; the clip cannot change whether the respondent uses social media"
+    - name: food_cooking_reference
+      definition: "The answer refers to food, cooking, the dish or the cooking show"
+      rationale: "Topic (MasterChef vs Planned Parenthood) is randomized independently of civility and both civility arms are half MasterChef. Risk: reasons about tone may displace reasons about content"
+estimand: "ITT difference (uncivil minus civil clip) in the share of answers expressing tone_of_exchange, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over topic, among respondents who declined to share"
+outcomes:
+  closed_ended: "Q4 share the story (yes/no); Q5_2 clip civil (manipulation check); Q6 emotions"
+human_codes:
+  available: false
+  column: null
+  notes: "The author coded the explanations for sharing or not (study summary, outcome list), but the codes are not in the archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or, per the manifest, the searcher. The drafter read the study summary's 'Summary of Findings' (conflict-avoidant respondents 'are silent in the face of incivility'; sharing rates by conflict orientation). The 2019 book may print example answers (not read). The author coded the full sample"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from study summary and questionnaire only"
+  date: "2026-11-17"

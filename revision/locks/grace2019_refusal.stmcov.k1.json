@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "64bf5326dc054bdc3afd04f6f6fe432de5b8efdeb3142f68db7cad6686f14ecd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_grace2019_refusal",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/grace2019_refusal.stmcov.rds",
+      "sha256": "2b99d436677be4f369b6a4ce7bcab75d87b8e6e653ab70faeb162b6d0d9a8a28"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/grace2019_refusal.stmcov.topic_choice.csv",
+      "sha256": "10c854ce8238f2ca5361c3d9bcb7b32878419389aafca6cd045c86d4e2993e7b"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "c5b56e4d0599fb5824c702d046ccb03baa22fc9013e3566eb55e3de81d8e4d46",
+  "created": "2026-11-22T16:41:29Z",
+  "opencheck_version": "0.0.0.9000"
+}

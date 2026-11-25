@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from Schaffner's working paper "Follow the Racist?" (read in
+# full), the UMA 2016 pre-election questionnaire and the codebook, before any open-text value
+# of this dataset was read. The paper prints a few example comments (see provenance).
+id: ces2016_uma_blacks
+title: "Trump's 'thugs' tweet about Baltimore protesters vs no such quote and what white Americans write about Blacks (CCES 2016 UMass module)"
+source:
+  citation: "Schaffner, B. F. (n.d., c. 2018). Follow the Racist? The Consequences of Trump's Expressions of Prejudice for Mass Rhetoric. Working paper, Tufts University. Later in Schaffner, B. F. (2020). The Acceptance and Expression of Prejudice during the Trump Era. Cambridge University Press (Elements in American Politics)."
+  doi: "10.1017/9781108924153 (the Element; the working paper has no DOI; PDF read: ashford.zone/images/2018/09/followtheracist_v2.pdf)"
+  data: "doi:10.7910/DVN/YLYV32; data/external/ces2016_uma/raw/CCES16_UMA_OUTPUT_Feb2017.sav; harmonized_ces2016_uma_blacks.csv"
+languages: [en]
+context: "White American adults in an online election survey in autumn 2016 were shown several quoted statements from the presidential campaign and asked which candidate made each one; on the next page they were asked to write, in a few words, what comes to mind when they think of several groups. This answer is about Blacks."
+unit: respondent
+id_column: id
+text:
+  column: UMA342ax
+  prompt: "In a few words, please let us know what comes to mind when you think of the following groups? [Blacks]"
+  position: "Page after the UMA341 quote-attribution grid; one of six boxes (Blacks, Mexicans, Whites, Politicians, The Middle Class, Millennials) shown in random order; answers limited to a few words (paper, p. 8)"
+treatment:
+  variable: thugs_quote
+  contrast: "received Trump's tweet calling Baltimore protesters 'thugs' (UMA341_GROUP 2 'thugs' or 4 'both', thugs_quote = 1) vs not (groups 1 'neutral' and 3 'mexico', thugs_quote = 0), pooled over the Mexico quote as in the paper (Figure 1)"
+  level: respondent
+  notes: "2 x 2 factorial. UMA341_GROUP = random(1,4) among the two thirds of white (race == 1) respondents randomly routed to the UMA340-343 block (questionnaire l. 144-157). All arms see three neutral quotes (Obama 'has no solutions', hairstyle, hot peppers); group 2 adds Trump's tweet calling Baltimore protesters 'thugs', group 3 adds the Mexico 'rapists' remark, group 4 adds both; row order randomized. The quotes appear as an attention/knowledge question, not attributed in the prompt. The paper estimates each quote's effect as receivers vs non-receivers (Figure 1 caption; text p. 11); Figures 3-4 captions instead say 'vs the control condition'. The thugs quote targets Black Americans (paper p. 7: 'the target groups of interest for this experiment are Blacks and Mexicans (the targets of Trump's offensive comments)'), so it is the first contrast here; second contrast: mexico_quote (groups 3,4 vs 1,2), covered by the same expectation. Reusing the word 'thug' is possible and was slightly more frequent after the tweet (paper Table 1)."
+constructs:
+  target:
+    - name: offensive_comment
+      definition: "The response says something hateful or offensive about Blacks as a group: a slur, a demeaning stereotype (for example about crime, violence, laziness or welfare dependence), contempt, or hostility. A neutral description, a policy view stated without disparaging the group, or a mention of hardships or discrimination Black people face does not count."
+      source: "Expectation, end of section 'A Trump Effect?' (p. 6): 'I expect that seeing a prejudicial statement from Trump will lead people to say more negative (and offensive) things about identity groups because of the message those quotes send about the boundaries of acceptable discourse.' Outcome 'offensive' = raters marked the comment hateful or offensive (section 'Coding Respondent Comments', p. 10)."
+      expected_direction: increase
+    - name: negative_comment
+      definition: "The response expresses an unfavorable view of Blacks as a group (criticism, a negative trait, or resentment), whether or not it is offensive. Describing disadvantage or discrimination that Black people face, or a sympathetic remark, does not count."
+      source: "Same expectation (p. 6); outcome 'negativity' = raters' 100-point very negative to very positive scale (p. 9-10)."
+      expected_direction: increase
+  placebo:
+    - name: personal_acquaintance
+      definition: "The response refers to the respondent's own relationships with Black people: friends, family members, neighbors, coworkers or employees the respondent knows personally."
+      rationale: "Personal contact is a pre-treatment characteristic (the paper uses it as a moderator, p. 19-21); a quote seen seconds earlier should not change whether respondents mention people they know, under either the norm-signal or the mimicry account."
+estimand: "ITT difference (thugs_quote 1 minus 0, pooled over mexico_quote) in the share of responses expressing each target, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "None for this item. Pre-treatment closed item in the same block: UMA340 (majority-minority nation good/bad). Quote attributions UMA341a-e."
+human_codes:
+  available: false
+  column: null
+  notes: "The paper's MTurk ratings (negativity 0-100 and hateful/offensive/neither; median 7 raters per comment about Blacks) are not in the CCES archive; no public replication archive for them was found (see report). The Element was not openly readable."
+provenance:
+  written_before_reading_text: false
+  contamination: "No text value was printed from the data by me or, per the MANIFEST and sweep, by the searcher. But the working paper, read before drafting, prints three single-word example comments from this item (p. 9) with their mean ratings, and reports the item's results by arm (thugs quote: no significant effect on negativity or offensiveness; Mexico quote: offensiveness about 2 points higher, p. 11-12), the share rated offensive (29%) and the mean rating (p. 10), and effects by vote and contact (Figures 3-4). The paper's Supplementary Information (not read) prints the most negative comments. Effects are therefore published; the card tests the pipeline against a known result."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the working paper, questionnaire and codebook"
+  date: "2026-11-17"

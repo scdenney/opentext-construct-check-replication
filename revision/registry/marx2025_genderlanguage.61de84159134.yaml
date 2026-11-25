@@ -1,0 +1,43 @@
+# DRAFT, not registered. Written from the English codebook (online_survey_codebook.docx),
+# variable labels and the Dataverse abstract before any open-text value was read.
+id: marx2025_genderlanguage
+title: "Moralizing request to use gender-neutral language and open answers on hopes for the new coalition (Germany, December 2021)"
+source:
+  citation: "Marx, P. (2025). Is there a backlash against identity politics? Experimental and focus group evidence on the conflict over gender-neutral language in Germany. (Journal to confirm; replication data published 2025.)"
+  doi: null
+  data: "doi:10.7910/DVN/S9XCKE; data/external/marx2025_genderlanguage/raw/online_survey_data.dta; harmonized_marx2025_genderlanguage.csv"
+languages: [de]
+context: "German adults in a quasi-representative online survey (December 2021) were asked to write down the most important things they hope for from the new coalition government in Berlin; the question wording and instructions varied by experimental arm."
+unit: respondent
+id_column: lfdn
+text:
+  column: response
+  prompt: "(Codebook, English translation) Sometimes there are differences between what politicians in Berlin do and what citizens actually want from politics. Please write down the most important things you hope for from the new coalition in Berlin in the box below. Active GNL adds: Out of respect of our diverse coders [Codierer*innen], we would kindly ask you to use gender-neutral language (e.g. politicians [Politiker*innen]). Passive GNL writes Politiker*innen and Bürger*innen in the question. Technical adds: For technical reasons, we would kindly ask you to mark the most important terms with * (e.g. politics*)."
+  position: "The open item is itself the treatment carrier; it precedes the alienation items (v_40-v_47) and propensity-to-vote items (v_48-v_54)"
+treatment:
+  variable: treatment
+  contrast: "Active GNL (moralizing request to use gender-neutral language; 3) vs Control (1); harmonized labels: control, passive_gnl, active_gnl, technical"
+  level: respondent
+  notes: "Four arms of about 1,500 each. Technical is an active placebo request of the same form without moral content; Active GNL vs Technical isolates the moralizing content."
+constructs:
+  target:
+    - name: gnl_rejection
+      definition: "The response comments negatively on gender-neutral language, gendering or the request itself (e.g. refuses, mocks, or complains about being asked to gender), whether or not it also answers the question"
+      source: "Dataverse abstract: experimental exposure to a moralizing request to use gender-neutral language elicits negative reactions but no alienation"
+      expected_direction: increase
+  placebo:
+    - name: climate_policy_hope
+      definition: "The response names climate protection, energy transition or environmental policy as a hope for the coalition"
+      rationale: "Policy priorities for the new coalition should not depend on how the question is phrased; coded as a separate yes/no judgment so that crowd-out by meta-comments is visible rather than mechanical"
+estimand: "ITT difference (Active GNL minus Control) in the share of responses expressing gnl_rejection, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Political alienation items v_40-v_47; propensity to vote by party v_48-v_54 (paper: lower Green vote propensity under the treatment)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes in the archive; the paper's text analysis is not reproduced in the files"
+provenance:
+  written_before_reading_text: true
+  contamination: "Author analysed the open answers for negative reactions (abstract); paper full text not read"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

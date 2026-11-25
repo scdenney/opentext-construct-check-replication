@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the PLOS ONE article (sections 4-6), the
+# OSF materials.pdf, the Notes sheet and column names, before any open-text
+# value was read. Steven must confirm the target scope and placebos before
+# running oc_study_register().
+id: pogacar2023_inactioninertia
+title: "Missed big vs no missed deal and thoughts critical of a current discount (inaction inertia, US students)"
+source:
+  citation: "Pogacar, R., Brigden, N., Plant, E. A., Kardes, F. R., & Kellaris, J. J. (2023). The reference dependence roots of inaction inertia: A query theory account. PLOS ONE, 18(3), e0282876."
+  doi: "10.1371/journal.pone.0282876"
+  data: "OSF https://osf.io/rjm58/ (data.xlsx, coder.xlsx, materials.pdf); data/external/pogacar2023_inactioninertia/harmonized_pogacar2023_inactioninertia.csv"
+languages: [en]
+context: "Students at a US public university imagined that a friend had told them about a special pass to their favorite amusement park (regular price $100) that they could buy this week for $90; in some versions they had first missed an earlier deadline for a cheaper price. They then typed their thoughts about getting versus not getting the pass, one thought at a time (two to five thoughts, joined here with ' | ')."
+unit: respondent
+id_column: id   # authors' Qualtrics ResponseID
+text:
+  column: "text (PassThought1_TEXT ... PassThought5_TEXT, non-empty cells joined in listing order with ' | ')"
+  prompt: "We are interested in the positives and the negatives to getting a special pass to your favorite amusement park versus not getting a special pass. Please share with us the thoughts, feelings, and reactions that go through your mind as you think about the decision described in this scenario. ... we ask that you enter your thoughts in the box below, one at a time. (Thought 1 ... Thought 5)"
+  position: "Directly after the scenario; before or after the 1-11 purchase-likelihood item (randomized, `writing`); followed by the respondent's coding of each own thought"
+treatment:
+  variable: treatment
+  contrast: "big_missed (missed an earlier price of $40) vs control (no earlier deal mentioned); secondary: big_missed vs small_missed (missed an earlier price of $80)"
+  level: respondent
+  notes: "Three arms randomized between subjects (article section 5.1); Cond key in data.xlsx sheet Notes (-1 big, 0 control, 1 small). Arms: big_missed 276, control 278, small_missed 277; all 831 analyzed by the authors, no exclusions. Crossed with `writing` (thought listing before vs after the likelihood judgment, randomized, no effect reported). The scenario text differs by arm: only the missed-deal arms mention an earlier, cheaper price, so thoughts that refer to the missed deal can only occur there. The 'favorable of the foregone deal' half of the target is therefore partly mechanical (positive control); the 'critical of the current deal' half is not, since all arms see the same $90 offer. Arm mapping verified against published means of the purchase likelihood (4.95 / 6.67 / 6.79)."
+constructs:
+  target:
+    - name: against_current_deal
+      definition: "At least one listed thought is critical of the current offer (buying the pass for $90 this week), for example that the price is too high, the discount too small, the offer not worth it or not a good deal, or it speaks favorably of the earlier, cheaper offer that was missed (regret at missing it, the earlier price was better, comparing $90 unfavorably with it). Thoughts against the pass for reasons unrelated to its price or value (no time, cannot go) do not count."
+      source: "Article section 4 (Hypotheses), H3a: 'Participants who have missed a significantly better deal will be more likely than those who have missed a smaller deal or those in the control condition to list thoughts favorable of the foregone deal and critical of the current deal.' Companion H3b: the same thoughts are listed 'before listing thoughts favoring the current deal or critical of the foregone deal' (order; not a yes/no content judgment)."
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: time_availability
+      definition: "At least one listed thought concerns whether the respondent has the time to use the pass: schedule, school or work commitments, being busy"
+      rationale: "A consideration about using the pass, not about its price relative to a reference point; the missed-deal information changes only the price history. Caveat: with two to five thoughts each, more price thoughts could crowd out other content."
+    - name: social_companions
+      definition: "At least one listed thought is about going to the park with friends, family or others, or about what others will do (beyond restating that the friend told them about the offer)"
+      rationale: "The friend appears in every arm's scenario in the same role; companionship is unrelated to the reference-point mechanism behind H1-H3. Same crowding-out caveat."
+estimand: "ITT difference (big_missed minus control) in the share of respondents with at least one against_current_deal thought, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "choice: likelihood of buying the special pass, 1 (not at all likely) to 11 (extremely likely)"
+human_codes:
+  available: true
+  column: "human_self_codes, human_self_n_against, human_self_n_for, human_self_any_against, human_self_focus, human_self_order; human_coder_refpoint, human_coder_refpoint_index, human_coder_gainloss, human_coder_any_loss, human_coder_gainloss_index"
+  notes: "Two sources. (1) Respondent self-codes (PassCode1-5): each respondent coded each own thought as a reason to get the pass (+1), not to get it (-1) or neither (0); not blind to condition. human_self_codes joins them per thought, aligned with text; human_self_focus is the authors' H3a measure (mean code) and human_self_order their H3b measure. A -1 self-code is broader than the target (it includes reasons unrelated to price), so human_self_any_against is a loose proxy. (2) Coders' codes (GainLoss sheet; sections 5.3-5.4): two independent coders blind to condition coded each thought for a numerical reference point ($40/$80/$90/$100; numeric thoughts only, 136 respondents codable) and for gain (+1) / loss (-1) frame (609 respondents codable); agreement above 80%, disagreements resolved by discussion. Joined per thought with 'NA' for uncoded thoughts. Per-coder sheets are in coder.xlsx ('Process Coding'), not used. The authors analyzed all respondents with these codes."
+provenance:
+  written_before_reading_text: true
+  contamination: "No respondent text seen by the drafter or (per the manifest) the searcher. Seen: the article's by-arm results for thought focus, thought order, reference point and gain/loss (sections 6.1.2-6.1.4); the authors' own illustrative phrases in section 5.4 (hypothetical wording such as '$10 more', '$10 less', 'the extra $50', not respondent quotes); two practice-coding example sentences written by the authors in materials.pdf. The drafter computed by-arm means of choice and human_self_focus to verify the arm mapping. The authors' codes cover the full sample, so a fold split does not separate them from the text."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, materials and codebook only"
+  date: "2026-11-17"

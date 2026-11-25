@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "4f0700dbf1ae2a09fce09340b16e08b08b23eed8537d8a77d5ae1950722f29c0",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/glazier2021_selfcoding.49b5008cdbae.yaml",
+      "sha256": "cb2bfe2b461a88076d3f294e06a2ea74f1451b2af389484c8aa59724d8ae1a0a"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0900671b058f5ab6b80428bbafd1a477fd8d618fc9842303bb54cad58c9d677b", "1ebc9cc919e327e9602fe0aa11e8adf3f8a9014a35066dcbf670f4567073a6a6", "3c7c9ca8f3ecdadcd122523b7f8171506017f874cc8ca9cd40f9f59d2515d46e", "51df03092b960e72778e0493e430c8b5cd97ffdc19198305348eb03749aed171", "66e1ec3bbfd1047fdf7e8e8b338ad4ad7556b36c197c7ab392d68eb65d6fd0e1", "77de2cebf97c1879c1e3b2cc2c5cd3f725481c242a151a850f84f6fc2acbaeb4", "a9cd0906f87bb17777d89f96719b7f39046cc8ceafb43f2e30ce6227f23025d9", "d3840882731aa2782e8e6b5f0bbd9cded0f30362195394b9fb5566ea754a9e60", "fc91c82c7d7f2060b3c0802d77f95637ea280d06de8115406aba9e4846bdf847"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "69e882a3d1e2eeb5c9f0895a632ff8b82d82046bcbd8508d4e0eab1d7ab0a5aa",
+  "created": "2026-10-29T00:35:33Z",
+  "opencheck_version": "0.0.0.9000"
+}

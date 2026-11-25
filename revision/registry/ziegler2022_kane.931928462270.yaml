@@ -1,0 +1,53 @@
+# DRAFT, not registered. POSITIVE CONTROL: the open item is a recall manipulation check
+# of the randomized headline. Written from Ziegler (2022) and its SM before any
+# open-text value was read. Steven must confirm the placebos before running
+# oc_study_register().
+id: ziegler2022_kane
+title: "Trump party-(dis)unity headline and recall of the story (Kane 2020 data via Ziegler 2022)"
+source:
+  citation: "Ziegler, J. (2022). A text-as-data approach for using open-ended responses as manipulation checks. Political Analysis, 30(2), 289-297; re-analysis of Kane (2020)."
+  doi: "10.1017/pan.2021.2"
+  data: "GitHub jeffreyziegler/openEnded@2ab508d data/kaneData.rda (package license GPL >= 2); data/external/ziegler2022_openended/raw/kaneData.rda"
+languages: [en]
+context: "US adults saw a list of four news headlines, one of them about President Trump (versions differed), chose a story to read, and were then asked to briefly write what the story about President Trump concerned."
+unit: respondent
+id_column: null   # no ID column; use row order
+text:
+  column: openResponse
+  prompt: "Respondents were asked 'to briefly write what the story about President Trump concerned' (Ziegler 2022, main text; exact wording in Kane 2020 / Ziegler SM)"
+  position: "After the outcome question ('If you had to pick one, which of the following news stories would you want to read?'), which followed the list of four headlines"
+treatment:
+  variable: Conditions
+  contrast: "Disunited ('Trump recently upsetting many of his conservative supporters') vs United ('Trump recently pleasing many of his conservative supporters'); Control ('basic biographical information about President Trump') as reference"
+  level: respondent
+  notes: "One of four headlines was randomized; the other three are constant and apolitical. Control 235 / Disunited 244 / United 263"
+constructs:
+  target:
+    - name: supporters_upset
+      definition: "The response says Trump upset, angered or alienated conservatives, Republicans or his supporters"
+      source: "Ziegler 2022, re-analysis of Kane (2020): the disunity headline 'asserts that Trump recently upsets many of his conservative supporters'; recall is expected to track the headline read"
+      expected_direction: increase
+    - name: supporters_pleased
+      definition: "The response says Trump pleased, satisfied or won over conservatives, Republicans or his supporters"
+      source: "Same; the unity headline"
+      expected_direction: decrease
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: biographical_content
+      definition: "The response describes Trump's biography (background, family, business career, age)"
+      rationale: "Neither the Disunited nor the United headline is biographical; only Control is, and Control is outside this contrast"
+    - name: other_headline_recall
+      definition: "The response refers to one of the three constant non-Trump headlines"
+      rationale: "These headlines were identical across arms"
+estimand: "ITT difference (Disunited minus United) in the share of responses expressing supporters_upset, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. This is a positive-control estimand"
+outcomes:
+  closed_ended: "SelectTrump (chose the Trump story; the outcome, asked before the recall item)"
+human_codes:
+  available: true
+  column: "codeCorrect / correct"
+  notes: "A human coder judged each recall as correct (319) or incorrect (423) for the arm's headline. This benchmarks recall accuracy, not the target construct directly"
+provenance:
+  written_before_reading_text: true
+  contamination: "No openResponse values were read. The drafter saw the stimulus texts (textViewed) and the arm x codeCorrect table (Control 113/122, Disunited 104/140, United 102/161 correct/incorrect)"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

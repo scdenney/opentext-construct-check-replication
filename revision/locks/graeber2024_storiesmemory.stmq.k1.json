@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "56508376a507783d8d261ff6e58653dccf07cb0cd82eaaf990e79e98245c5e44",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_graeber2024_storiesmemory",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/graeber2024_storiesmemory.stm.rds",
+      "sha256": "9051cfd11225d088c3b95ca337a0df0a7727348bd26b4199fcda936a81334b9c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/graeber2024_storiesmemory.topic_choice_qwen36_35b.csv",
+      "sha256": "7aabaa501f64bf4da39d7dbd8f3a9e915aed4b6e6dd04ad3f5deaa456173d50e"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "d51ad05988b0f912d7c6996418824be03fb2ae357e3b0bbee22a5a0b285e6637",
+  "created": "2026-11-17T18:03:45Z",
+  "opencheck_version": "0.0.0.9000"
+}

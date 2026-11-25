@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the abstract, codebook, questionnaire and coder
+# instructions before any open-text value was read. Steven must confirm the placebo
+# constructs and the conditional estimand before running oc_study_register().
+id: bisgaard2019_study3
+title: "Negative vs positive growth news and partisan responsibility attributions (Bisgaard 2019, Study 3, Denmark)"
+source:
+  citation: "Bisgaard, M. (2019). How getting the facts right can fuel partisan-motivated reasoning. American Journal of Political Science, 63(4), 824-839."
+  doi: "10.1111/ajps.12432"
+  data: "doi:10.7910/DVN/FTFJTV (no license stated); data/external/bisgaard2019_econnews/raw/study3.RData"
+languages: [da]
+context: "Danish adults (2015-16) saw a one-sentence report of recent Danish economic growth figures (versions differed) and rated the economy. They were then asked, in Danish, who they think is responsible for the economic situation in Denmark today compared with a year ago."
+unit: respondent
+id_column: id
+text:
+  column: respOpen
+  prompt: "Q28 (English translation of the Danish questionnaire): We are now interested in hearing your thoughts about who you think is responsible for the current economic situation in Denmark. Please write as many of your considerations in the field below -- some keywords or a few sentences are enough. Who do you think is responsible for the state of the economic situation in Denmark today compared to 1 year ago?"
+  position: "Directly after the treatment item Q27a/Q27b (growth news plus the national-economy question); before the closed government-responsibility item Q29"
+treatment:
+  variable: treatment
+  contrast: "pos (Q27b: 2015 growth expected at 1.5%, 'a clear improvement') vs neg (Q27a: Q3 2015 growth of -0.1%, 'first time in over a year that economic growth is negative')"
+  level: respondent
+  notes: "Random display of Q27a or Q27b. Denmark, 15 Dec 2015-19 Feb 2016. neg 1,124 / pos 1,124 (373 NA). gov = 1 votes for the incumbent Liberal Party (Venstre; Lars Løkke Rasmussen government), 0 = Social Democrats or Social Liberals; NA for other voters (756 non-NA)"
+constructs:
+  target:
+    - name: incumbent_responsibility
+      definition: "The response names Lars Løkke Rasmussen, his government or Venstre as responsible (credit or blame) for the economic situation"
+      source: "Bisgaard 2019, abstract and Study 3: selective attribution of credit and blame by partisans. Coder instructions (coder_instruction_study3-4.pdf). Page numbers to be added"
+      expected_direction: "increase among government supporters (gov == 1) and decrease among opposition (gov == 0) for pos vs neg; no theorized sign for the pooled ITT"
+    - name: other_actor_responsibility
+      definition: "The response names actors or factors other than the current government as responsible: the previous (Social Democratic-led) government, parliament, the state, banks, the world economy, oil prices"
+      source: "Same; coder instructions list these as 'other' actors"
+      expected_direction: "decrease among gov == 1 and increase among gov == 0 for pos vs neg"
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: personal_finances
+      definition: "The response refers to the respondent's own job, income, unemployment or household finances"
+      rationale: "The treatment is one sentence of national growth news; personal circumstances are pre-treatment (Q30 asks about unemployment exposure after the open item)"
+    - name: partisan_self_label
+      definition: "The response states the respondent's own party or ideological identity"
+      rationale: "Vote intention is measured pre-treatment; neither news sentence gives an arm-specific reason to self-label"
+estimand: "Difference in ITT effects: [E g(R(pos)) - E g(R(neg))] among gov == 1 minus the same among gov == 0, for the share expressing incumbent_responsibility, estimated on the estimation fold. The pooled ITT is reported descriptively"
+outcomes:
+  closed_ended: "resp / resp_org (Q29: 'Lars Løkke Rasmussen's current government is responsible how the economic situation is in Denmark today...'); econ (Q27 economy perception)"
+human_codes:
+  available: true
+  column: "c1raw, c2raw"
+  notes: "Two coders: 0 no answer, 1 not the government, 2 government and others, 3 government only. Map 2 and 3 to incumbent_responsibility = 1. The codes cover the full sample"
+provenance:
+  written_before_reading_text: true
+  contamination: "No respOpen values were read. The drafter saw the c1raw x c2raw agreement table (not split by arm). The original author coded the full sample and published results, so the direction is a replication target"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "f858f897a72dc1a365700aa952647fbb7d220bd7bce7dd19afec17726e6ead3b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/egami2022_prison_exp2.rds",
+      "sha256": "80cddebd72f36a54f79950185ac614ecb20f828c3b9557a1729656c384b50389"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/egami2022_prison_exp2.topic_choice.csv",
+      "sha256": "425f242965833941be1f5987fab6f3563098c2cceb29d81e71f56e29db239d8b"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "6c6cb004581335333eaee9c8f669579e627912da126e7bcdaa059460f91c4672",
+  "created": "2026-11-23T23:29:25Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "38390f394d78449d4587fdebf6c5bc77da20555cc3b23c61bacdcbea32d255a2",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/spruill2022_legalreasonable_s1.8bd5c4818eed.yaml",
+      "sha256": "7e61181be52b698bd8132249befd7fef25247cdc1a89335d3b8c256094ce719d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0bd29cc606174e79d06ba2b7e79f49a409d4dc91f86e263ad27b0e3378a84a02", "6c71ea2cc32be481a10aa1e9d01f99a1392ad1ac6da9b89c485807deb4988ed1", "738a5a3445413004757b4639d58d12c0a305356e883fdb89e9f29684073438f2", "7b63d3632fbef5c4f5d63009591cdc4ccdb967cfdfd848554c76c4021317607b", "8120a4d82142ae8ff186e42a62e24427dc9c523e4b9f2934caf774544dfa6c99", "87a06bf2455136a380667a6637ebf8488e96ab61650e189c3bd03e00772fd02e", "8de2839da4bcad9c48c8078d1b857b54c18a211ca6a98c9789f6070b02d9120c", "f187ad542da6663c4d991310105c0845211e239a1880c6c8b3e712cfd06ec3d3", "f3788eca078ca310670ab0e3eee0c661ede26e55c6e4f96cb110044e624f98c0"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "0c0d0ba53df48f983c297b3d8cdfcd836b54d435554ef775150558abb24157e2",
+  "created": "2026-11-18T02:11:15Z",
+  "opencheck_version": "0.0.0.9000"
+}

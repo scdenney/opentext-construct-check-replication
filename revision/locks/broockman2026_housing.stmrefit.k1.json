@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "5fa685e5d34e4c2efc7b1f561713c558d3f8d2f3d786c863179ce6ce0d2a6c09",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/broockman2026_housing.rds",
+      "sha256": "9a9d726d8804ef2dc86b3d6acffe1cb3edded79f3c4a55119ea608d7f3747ecc"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/broockman2026_housing.topic_choice.csv",
+      "sha256": "abaad49d0607bcf44152cba90e1bfe83e0c4894c5374b3df9c39658b2f6e059b"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "94392128f07ae957a929068ce4df211bbc688b91780f44e57cf8e96a3693d001",
+  "created": "2026-11-23T23:33:22Z",
+  "opencheck_version": "0.0.0.9000"
+}

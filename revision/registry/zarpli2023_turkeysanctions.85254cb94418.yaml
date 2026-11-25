@@ -1,0 +1,46 @@
+# DRAFT, not registered. Written from the International Interactions article (theory
+# section, Hypothesis 1, Research Design and Survey sections, footnote 6), the abstract,
+# Main_analysis.do and Turkish_Sentiment_Analysis.Rmd, before any open-text value from
+# the data was read. The EGAP preregistration was not read. See provenance.contamination
+# for paraphrased example answers glimpsed in the article.
+id: zarpli2023_turkeysanctions
+title: "Certain vs uncertain US intentions behind sanctions on Turkey and explanations of support for changing the S-400 policy (Turkey 2021)"
+source:
+  citation: "Zarpli, O. (2023). Sanctions and target public opinion: Experimental evidence from Turkey. International Interactions, 49(3), 424-453."
+  doi: "10.1080/03050629.2023.2184814"
+  data: "doi:10.7910/DVN/KQ3Q2D (CC0 1.0); data/external/zarpli2023_turkeysanctions/raw/Survey_Data.dta; harmonized_zarpli2023_turkeysanctions.csv"
+languages: [tr]
+context: "Adults in Turkey recruited through Facebook ads (March 2021) read a short text about the economic sanctions the United States imposed on Turkey in December 2020 over its purchase of Russian S-400 missiles (versions of the text differed in what they said about the US's goals and the economic consequences), said how far they approve of changing the government's S-400 policy, and were asked to explain in one or two sentences why they answered that way."
+unit: respondent
+id_column: ResponseId
+text:
+  column: QID54
+  prompt: "In 1-2 sentences, please explain why you responded the way you did to the previous question (English rendering in the article, footnote 6; the Turkish wording is not in the archive)"
+  position: "After the vignette and the 5-point item on changing the government's S-400 policy (policy_change); article p. 441: 'an open-ended question that is asked following whether they support policy change'"
+treatment:
+  variable: treatment
+  contrast: "Primary: uncertain intentions (uncertain + uncertain_cost; FL_5_DO Treatment3, Treatment4) vs certain intentions (certain + certain_cost; Treatment1, Treatment2), pooled over the cost factor as in the article's Table 2. Secondary: Treatment3 vs Treatment1 (the authors' Rmd contrast); uncertain vs control (article Table 3). Harmonized labels: control, certain, certain_cost, uncertain, uncertain_cost"
+  level: respondent
+  notes: "Between-subject, one of five arms assigned by the Qualtrics randomizer FL_5_DO (article p. 440; 247/249/242/245/236 assigned). Among the four treatment arms the design is 2 x 2: intentions (certain: 'Some experts agree that the real objective of these sanctions is indeed to weaken Russia'; uncertain: 'Some experts, however, raise doubts that the real objective of the US is to limit Turkey's autonomy in defense industry and weaken Turkish military capabilities') crossed with cost ('Some experts highlighted that additional sanctions would further damage the Turkish economy'). The question wording is the same in all arms. POSITIVE CONTROL: the uncertain arms state the alternative US goal, so an answer that repeats that the US wants to weaken Turkey's military or defence industry is partly mechanical; the target asks whether the respondent attributes such an aim or distrust to the US, but an echo of the vignette will count. Likewise the cost arms state the economic damage, so the placebo economic_consequences is expected to rise under the cost contrast (secondary). progov (government supporter) was asked before treatment; H2 expects the uncertainty effect on policy support to be larger among government supporters. No exclusions (Main_analysis.do drops no respondents). EGAP preregistration not read."
+constructs:
+  target:
+    - name: sender_ulterior_motives
+      definition: "The response says or implies that the United States has an aim other than its stated one or cannot be trusted about its aims: for example that the real goal is to weaken Turkey, its army or defence industry, or its independence; that the S-400 purchase is a pretext or excuse; that the US has a hidden agenda; or that the US would not lift the sanctions even if Turkey changed its policy"
+      source: "Abstract: individuals are less supportive of policy change 'when they suspect that the sender has ulterior motives or a hidden agenda'; theory section before Hypothesis 1 (pp. 434-435): uncertainty raises the fear that compliance will not be reciprocated and the perception that the sender has a 'hidden agenda' and uses the policy 'as an excuse to pursue other objectives'; Hypothesis 1. The article's own text analysis is lexicon sentiment (Table 3), not this construct"
+      expected_direction: increase
+  placebo:
+    - name: economic_consequences
+      definition: "The response refers to economic consequences of the sanctions or of the dispute for Turkey: damage to the economy, trade, exports, the currency, prices, jobs or living standards"
+      rationale: "The cost information is randomized independently of the intentions factor and is balanced across the primary contrast (one cost arm on each side); the intentions sentences say nothing about the economy"
+estimand: "ITT difference (uncertain minus certain intentions, pooled over the cost factor) in the share of responses expressing sender_ulterior_motives, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "policy_change (approve of changing the government's S-400 policy, 1 strongly oppose to 5 strongly support); US2, Russia2 (post-treatment favourability)"
+human_codes:
+  available: false
+  column: null
+  notes: "None. The author scored the answers with a Turkish sentiment lexicon (SWNetTR++) on the typo-corrected file no_typos.csv"
+provenance:
+  written_before_reading_text: true
+  contamination: "No QID54 value from the data was read by the drafter or, per the searcher's report, by the searcher (only counts). The article discusses example answers anecdotally (Findings section, p. 445-446); the drafter did not read that passage, but a keyword search displayed five line fragments of it, including paraphrases that some respondents questioned why the US cares about Turkey's purchase and believed the US was preparing to attack Turkey, and that some cited adverse economic effects. The article also reports that the uncertainty arms show more negative lexicon sentiment than control (Table 3). The author's sentiment analysis used the full sample"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper and code only"
+  date: "2026-11-17"

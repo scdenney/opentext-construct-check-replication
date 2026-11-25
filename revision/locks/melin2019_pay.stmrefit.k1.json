@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "d060a0276e4d6aab08b1225aaeb2b49a7d6a9e0426e2ca7052e76f532df41ff7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/melin2019_pay.rds",
+      "sha256": "4727ff79cf3eae28390cf1c92bca4afc02a4eda5729886713f88ddff13f88d17"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/melin2019_pay.topic_choice.csv",
+      "sha256": "d396fba223830a44841e091b51947c4db3d1e34c2b5911535c383566ac326132"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "dfa4c3b91cae63167a556a8710f3a88b9926188e1a9a9c33208f87acd3f48a24",
+  "created": "2026-11-23T23:32:58Z",
+  "opencheck_version": "0.0.0.9000"
+}

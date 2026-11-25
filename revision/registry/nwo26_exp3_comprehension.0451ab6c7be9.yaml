@@ -1,0 +1,69 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the OSF registration
+# (nwo26-immigration-backlash/osf/registration_2026-08-06/registration_P3_creedal-persuasion.md; deposit
+# osf.io/kzqgj), national-identity-experiment/docs/foundation_note/osf.tex (Analysis plan), the instrument
+# specs (docs/instrument/specs/shared/question_library.yaml; countries/deu.yaml, rok.yaml) and the stimulus
+# record docs/design/exp3_creedal_stimuli_2026-07-09.md (AUTHORITATIVE SET v2); blind to response values.
+id: nwo26_exp3_comprehension
+title: "Creedal-nationalism passage: main-point recall by passage variant (US, Germany, South Korea)"
+source:
+  citation: "Denney, S. (2026). A Survey Experiment on Creedal-Nationalist Persuasion. Research note, working paper (Paper 3, NWO 406.XS.25.01.065)."
+  doi: null
+  registration: "OSF osf.io/kzqgj (registered 10 August 2026, embargoed); text in osf/registration_2026-08-06/registration_P3_creedal-persuasion.md"
+  data: "nwo26-immigration-backlash/tools/softlaunch-audit/data/snapshots/2026-08-31T1349Z/data/{US,DE,KR}.csv; harmonized: data/harmonized/nwo26_exp3_comprehension.csv"
+languages: [en, de, ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: EXP3_COMPREHENSION
+  prompt: "US: In one or two sentences, and in your own words, what was the main point of the text you just read? DE: Was war Ihrer Meinung nach die Kernaussage des Textes, den Sie gerade gelesen haben? Bitte in ein bis zwei Sätzen in eigenen Worten. KR: 방금 읽으신 글의 핵심 내용은 무엇이었습니까? 한두 문장으로, 본인의 표현으로 적어 주십시오."
+  wording_note: "A gist-recall item meant to document treatment receipt; by design it asks for no agreement or reaction (question_library.yaml, exp3_comprehension comment)."
+  position: "Treatment arm only: right after the roughly 90-word passage, with the clarity rating (block exp3_distractor), before the ISSP outcome battery; the final experiment in the instrument"
+treatment:
+  variable: treatment
+  source_variable: cn_variant
+  contrast: "Within the treatment arm, between tradition-keyed passage variants. For founding_charter: charter-keyed variants (US v1; DE v1, v2; KR v1, v3) vs variants that name no charter (US v2, v4; DE v3; KR v2); US v3 ('an idea set down two centuries ago') is implicit and held out. For the country-specific targets: the one variant carrying the element vs the other variants in that country."
+  level: respondent
+  notes: "cn_arm assigned 1:1; within treatment, variant drawn with equal probability (US 4, DE 3, KR 3) and recorded in cn_variant. The control arm saw only a transition screen and was not asked this item, so no treated-vs-control contrast exists for this text. The registration pools variants for the confirmatory tests and makes variant-level contrasts exploratory, so no registered direction exists for these contrasts; the directions below follow from the fielded passage text."
+constructs:
+  target:
+    - name: founding_charter
+      definition: "The answer names or invokes a constitution, the Basic Law (Grundgesetz), the Declaration of Independence, or another founding legal charter as what defines belonging or the nation"
+      source: "Fielded passages: question_library.yaml exp3_passage_v1-v4 (US), countries/deu.yaml and rok.yaml exp3_passage_v1-v3; variant keys in exp3_creedal_stimuli_2026-07-09.md, AUTHORITATIVE SET v2; variants pooled, variant contrasts exploratory per registration_P3, Design"
+      expected_direction: increase
+      contrast: "charter-keyed vs non-charter variants, within country; pooled with country fixed effects as auxiliary"
+    - name: kr_indigenous_democracy
+      definition: "Korea only. Democracy or human dignity presented as native to Korea or Asia rather than borrowed from the West (e.g. old Asian teaching that the people come before the ruler)"
+      source: "rok.yaml exp3_passage_v2 (universal-dignity key); exp3_creedal_stimuli_2026-07-09.md, KR V2"
+      expected_direction: increase
+      contrast: "KR v2 vs v1 and v3"
+    - name: de_new_we
+      definition: "Germany only. A new, plural 'we' that unites different people; belonging as plainly as the native-born; cohesion through doing things together"
+      source: "deu.yaml exp3_passage_v3 (Gauck-Steinmeier key); exp3_creedal_stimuli_2026-07-09.md, DE V3"
+      expected_direction: increase
+      contrast: "DE v3 vs v1 and v2"
+    - name: us_unfinished_nation
+      definition: "US only. Patriotism as self-scrutiny: the country is not yet finished and is strong enough to look hard at itself"
+      source: "question_library.yaml exp3_passage_v3 (Obama key); exp3_creedal_stimuli_2026-07-09.md, US V3"
+      expected_direction: increase
+      contrast: "US v3 vs v1, v2 and v4"
+  # PROPOSED; Steven to confirm. Each placebo is a separate yes/no judgment.
+  placebo:
+    - name: non_superiority
+      definition: "The answer says national pride does not mean ranking the nation above other nations"
+      rationale: "Every variant carries the same non-superiority disavowal (element D2), so recall of it should not differ between variants"
+    - name: immigration_policy_carryover
+      definition: "The answer refers to immigration policy, admission numbers, visas, or the policy scenarios from the earlier experiments"
+      rationale: "No variant discusses policy; carry-over from Experiments 1 and 2 should be equal across randomly drawn variants"
+estimand: "Within country and within the treatment arm, on the estimation fold: share of answers expressing the target among respondents drawn a variant that carries the element minus the share among those drawn a variant that does not, E[g(R(v_key))] - E[g(R(v_other))], with g frozen from the discovery fold; founding_charter also pooled with country fixed effects"
+outcomes:
+  closed_ended: "EXP3_CLARITY (clarity rating, same block, treatment arm only). Registered outcomes (both arms): ISSP pride and boundary composites and the two-item superiority guardrail; not in the harmonized file."
+human_codes:
+  available: false
+  column: null
+  notes: "The plan (foundation_note/osf.tex, Analysis plan) describes a per-protocol estimate gated by 'a blinded comprehension codebook fixed before fielding'. No such codebook or codes were found; the paper's reporting table (paper/sections/si_reporting_table.tex) lists the comprehension-gated estimate as not reported, 'hand coding not completed'."
+provenance:
+  written_before_reading_text: false
+  contamination: "No analysis of this text found. The de-identified Paper 3 repo dropped EXP3_COMPREHENSION (docs/codebook.md); tools/softlaunch-audit/probe_paper.py computed only answered counts and length statistics during fielding; the hand coding for the per-protocol estimate was not completed. The target constructs come from the stimulus text, not from responses."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

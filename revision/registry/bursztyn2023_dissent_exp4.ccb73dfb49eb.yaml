@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the QJE article (Section IV.B), README and cleaning
+# code before any open-text value was read.
+id: bursztyn2023_dissent_exp4
+title: "Rationale as social cover: inferred motives of a pro-deportation dissenter, Cover vs No Cover (Experiment 4)"
+source:
+  citation: "Bursztyn, L., Egorov, G., Haaland, I., Rao, A., & Roth, C. (2023). Justifying dissent. Quarterly Journal of Economics, 138(3), 1403-1451."
+  doi: "10.1093/qje/qjad007"
+  data: "doi:10.7910/DVN/YVUIFF; data/external/bursztyn2023_dissent/raw/replication folder/data/raw/deport-receiver-deidentified.dta; harmonized_bursztyn2023_dissent_exp4.csv"
+languages: [en]
+context: "US Democrats and independents on Prolific (November 2021) were told they had been matched with an earlier participant who joined a campaign to deport all illegal Mexican immigrants and authorized a tweet saying so; the tweet said the participant joined either before or after watching a Tucker Carlson Tonight clip arguing that illegal immigrants commit violent crimes. They were then asked why they think the participant joined."
+unit: respondent
+id_column: "none in the file; harmonized id = bursztyn2023_dissent_exp4_<row>"
+text:
+  column: openended
+  prompt: "Why do you think your matched participant chose to join the campaign [to deport all illegal Mexican immigrants]? (wording by analogy with Experiment 2, which Experiment 4 follows; confirm in Online Appendix E.4)"
+  position: "After the Cover/No Cover information, before the donation guess and the $1 bonus decision (order of the last two randomized)"
+treatment:
+  variable: condition
+  contrast: "Cover: watched the clip before joining (excuse = 1) vs No Cover: after joining (noexcuse = 0)"
+  level: respondent
+  notes: "Respondent-level randomization (541 vs 539). Rows with condition NA are pre-randomization attriters the authors drop; harmonized exclude = TRUE."
+constructs:
+  target:
+    - name: evidence_attribution
+      definition: "The response attributes the participant's decision to the video, the news segment, Tucker Carlson, or information about crime by immigrants"
+      source: "Section IV.B and Online Appendix Table B.17 (characteristic phrases by condition, as for Experiment 2)"
+      expected_direction: increase
+    - name: prejudice_attribution
+      definition: "The response attributes the decision to racism, xenophobia, prejudice against Mexicans or immigrants, or bad character"
+      source: "Section IV.B.2: Cover raises the belief that the participant donated to the U.S. Border Crisis Children's Relief Fund (13.4% vs 8.5%), i.e. lowers inferred prejudice"
+      expected_direction: decrease
+  placebo:
+    - name: personal_immigration_experience
+      definition: "The response says the participant has personal or family experience with immigration or lives near the border"
+      rationale: "The arms differ only in the before/after timing word; neither conveys anything about the participant's background"
+estimand: "ITT difference (Cover minus No Cover) in the share of responses expressing evidence_attribution, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among exclude == FALSE"
+outcomes:
+  closed_ended: "believe_donated (guess about the $5 donation); bonus ($1 bonus authorization)"
+human_codes:
+  available: false
+  column: null
+  notes: "Authors used chi-squared characteristic-phrase analysis on the full sample"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors ran a distinctive-phrase analysis on the full sample (Table B.17); the target direction is a replication target"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

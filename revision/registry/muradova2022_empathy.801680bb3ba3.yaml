@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the authors' accepted manuscript of the EJPR
+# article ("Forthcoming in European Journal of Political Research", KU Leuven
+# Lirias repository, 37 pages with the online appendix: theory sections, Research
+# design, Measurements of outcome variables, Results, Appendices B, C, D, H), the
+# deposited Stata do-file and variable labels, before any open-text value of the
+# dataset was read. One published example answer was seen (see contamination).
+id: muradova2022_empathy
+title: "Perspective-taking writing task about a policy opponent and the written justification of one's position on a universal basic income (UK 2019)"
+source:
+  citation: "Muradova, L., & Arceneaux, K. (2022). Reflective political reasoning: Political disagreement and empathy. European Journal of Political Research, 61(3), 740-761."
+  doi: "10.1111/1475-6765.12490"
+  data: "doi:10.7910/DVN/QYMM1Z (CC0 1.0); data/external/muradova2022_empathy/raw/0_data_for_analyses_.dta; harmonized_muradova2022_empathy.csv"
+languages: [en]
+context: "Adults in the United Kingdom said whether they opposed or favoured introducing a universal basic income scheme. Some then read a short profile of a woman named Sarah who held the opposite view, and some of those also wrote what they imagined she thought and felt; others instead wrote about their last weekend. All then restated their position and were asked to justify it in one paragraph."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "You indicated that you [oppose/favour] introducing a basic income scheme in the UK. Why do you think so? Please justify your choice in one paragraph (about 4 or 5 sentences)."
+  position: "After the treatment, the empathic-concern battery and the post-treatment attitude battery (assisted dying, basic income, NHS privatisation in randomized order); same wording in all arms, with the respondent's post-treatment position piped in. A parallel justification about assisted dying (cog_comp_ad, the authors' spillover outcome) follows and is not used."
+treatment:
+  variable: treatment
+  contrast: "perspective_taking (read the counter-attitudinal Sarah vignette, then imagined for about one minute how Sarah thinks and feels and wrote what they imagined) vs disagreement (read the same vignette, no instruction and no writing task); secondary: disagreement vs control (no vignette; wrote about their last weekend)"
+  level: respondent
+  notes: "Three arms randomized at the respondent level (tratamiento; manuscript, Research design and Figure 1). Arm names follow the paper, not the data labels: data 'perspectivetaking' = paper's empathy treatment; data 'exposure_to_disagreement' = paper's placebo; data 'placebo' = paper's control (Appendix H.1: the PAP used the data names). Sarah's view was always the opposite of the respondent's pre-treatment position (two vignette versions: pro-UBI on personal freedom and escape from an oppressive relationship; anti-UBI on loneliness and losing contact through work), so vignette version is determined by prior_favour, not randomized. Partly mechanical: the perspective-taking arm had just written a text articulating the opposing side's thoughts and feelings, while the disagreement arm read the same argument but wrote nothing before the justification, so some rise in references to the other side may be carryover from the essay rather than a change in reasoning (partial positive control). The disagreement arm is also the only arm with no writing before the outcome item."
+constructs:
+  target:
+    - name: opposing_consideration
+      definition: "The justification acknowledges at least one argument, consideration or viewpoint on the other side of the position it argues for (a drawback or risk of a basic income if the respondent favours it; a benefit or reason for it if the respondent opposes it), or acknowledges that the issue has more than one legitimate side, whether or not the respondent then rejects that consideration"
+      source: "H1 (section 'Empathy and reflection'): 'Empathy will have a positive effect on reflectiveness of citizens' political reasoning.' Reflection is defined (section 'Reflective political reasoning and motivational theories of reflection') as 'the willingness to second-guess one's prior views and beliefs by considering diverse and opposing solutions and perspectives'; the measurement section takes differentiation from Suedfeld and Tetlock: 'the individual's recognition that a topic has more than one dimension or that more than one legitimate viewpoint about it exists'. H1 compares empathy vs placebo (Table 1 Model 1, data arms perspective_taking vs disagreement). The authors measure it with a LIWC word-category score, not a content code, so this yes/no definition is the conceptual definition, not their coding rule."
+      expected_direction: increase
+  placebo:
+    - name: automation_technology
+      definition: "The justification refers to automation, robots, artificial intelligence or technological change replacing jobs"
+      rationale: "Not mentioned in either Sarah vignette (identical in the two contrasted arms), in the perspective-taking instruction, or in the scheme description all respondents read; imagining Sarah's feelings should not change whether respondents bring up technology. It is a substantive argument (usually pro-UBI), so an opponent who mentions it may also satisfy the target; the overlap is expected to be small."
+    - name: other_countries_or_trials
+      definition: "The justification refers to another country, or to a trial or pilot of a basic income anywhere"
+      rationale: "A factual reference that appears in neither vignette nor the instruction; the empathy task concerns one fictional British individual, so it should not change references to foreign experience or trials."
+estimand: "ITT difference (perspective_taking minus disagreement) in the share of justifications expressing opposing_consideration, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, with prior_favour (which vignette version was seen) as a stratum"
+outcomes:
+  closed_ended: "post_attitude_ubi (policy_at_bi, 1 strongly oppose .. 6 strongly favour) with pre_attitude_ubi (pre_bi_at), from which the authors build counter-attitudinal attitude change; empathic concern battery (Batson, 7 items) in the vignette arms"
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes. The deposit has the authors' automated LIWC scores of this text, kept as auto_complexity (cc_score, Owens-Wedeking formula: Sixltr + discrep + tentat + incl + cause + insight + inhib - certain - negate - excl; Appendix D) and auto_wordcount (LIWC word count, Appendix F). The authors chose LIWC over human coders to avoid coder bias (measurement section), so coder blindness to arm does not arise. The preregistration (EGAP, imported to OSF; Appendix G) split H1 into H1a-H1c; it was not located and its wording is unverified."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was seen; text was handled only as counts (non-empty, character length, code points for the encoding repair). Published material seen while drafting: one example answer about basic income printed in Appendix D ('Face validity', Respondent A) of the accepted manuscript; the remaining face-validity examples were not read. The manifest records only an accidental print of the binary .dta header (no responses). The results section (empathy raises the LIWC score by 0.17 SD vs placebo; disagreement vs control null) was read."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the accepted manuscript, do-file and variable labels"
+  date: "2026-11-18"

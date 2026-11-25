@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/PowellS4.pdf, incl. the
+# pretest footnote), the PI's OSF study summary, the codebook and counts, before any
+# open-text value was read. The fielded questionnaire is not in raw/; the Socius article
+# (perceptions of sex) was not read.
+id: powell2016_restroom
+title: "Trans woman vs trans man in a restroom vignette and explanations of which restroom Casey should use (US TESS 2017)"
+source:
+  citation: "Powell, B., Doan, L., & Quadlin, N. TESS short study powellS4, 'Factors Affecting Attitudes toward Transgender Bathroom Use' (proposal). Related: Doan, L., Quadlin, N., & Powell, B. (2019). Americans' perceptions of transgender people's sex: Evidence from a national survey experiment. Socius, 5."
+  doi: "10.1177/2378023119852015 (Socius article on the perceived-sex item; the restroom item is reported in a Springer handbook chapter)"
+  data: "OSF https://osf.io/y5mt3/ (TESS archive); data/external/powell2016_restroom/raw/PowellS4.dta; harmonized_powell2016_restroom.csv"
+languages: [en]
+context: "US adults in a national online panel read a two-sentence description of Casey, a transgender person who was described as 16 or 36 years old, as born female and now identifying as a man or boy or born male and now identifying as a woman or girl, and in most versions as usually being taken for a man or a woman, or as hard to tell. They chose which restroom Casey should use in a store or at school and then explained why."
+unit: respondent
+id_column: CaseId
+text:
+  column: "Q2A_OE (harmonized: text)"
+  prompt: "Why do you think that Casey should use [respondent's own Q1 choice: the men's / women's / boy's / girl's restroom, or their 'other' answer]? (codebook label; the proposal adds: In your own words, please write a few sentences explaining why you feel this way and how strongly you feel this way.)"
+  position: "Directly after the vignette and the restroom choice (Q1); before Q3 (does the respondent consider Casey male or female). Asked of everyone shown Q1; 1,958 answers, 76 skipped."
+treatment:
+  variable: treatment
+  contrast: "Casey is a trans woman / trans girl, born male (1; PGENID 2) vs a trans man / trans boy, born female (0; PGENID 1)"
+  level: respondent
+  notes: "2 x 2 x 4 between-subjects factorial with three deposited assignment variables: PGENID (gender identity), PAGESTAT (age_group: 36 vs 16) and PGENCONF (conformity: most people assume Casey's identity gender / birth sex / are unsure / not stated). The manifest's PAGESTAT is the age factor only. Teens were further split, on the same field days, between restroom items worded men's/women's at a store and boy's/girl's (at school or at a store); no assignment variable is deposited, q1_version is read from which item was answered. The prompt pipes in the respondent's own restroom choice (post-treatment; do not condition on it). The vignette states the birth sex and identity, so mentions of 'born male' or 'woman' are partly carry-over; the target requires a safety argument. Fielded with two other TESS short studies in randomized order (rnd_sect)."
+constructs:
+  target:
+    - name: restroom_safety
+      definition: "The response refers to safety, danger, protection or harassment in the restroom: for example the safety or privacy of women, girls or children using it, the risk of predators or assault, or the risk that Casey would be harassed, attacked or unsafe in a given restroom"
+      source: "Proposal, Background, 'Gender identity': restrictive policies are argued to 'protect women and girls from cisgender sexual predators who masquerade as transgender', while 'the safety of transwomen is compromised when they are required to use a men's bathroom' (two competing predictions for the closed outcome, both resting on restroom safety for trans women); footnote 4 (mTurk pretest, N = 400): 'Participants more often focused on biological/physiological explanations or others' safety in explanations for attitudes toward transwomen.'"
+      expected_direction: increase
+  # Separate yes/no judgments. Appearance or passing is not used as a placebo: the
+  # proposal ties the 'manly transwomen' image to the restroom debate, so appearance
+  # talk may move with gender identity.
+  placebo:
+    - name: age_reference
+      definition: "The response refers to Casey's age: being a teenager, minor, child or young person, or being an adult; or to Casey's parents or school"
+      rationale: "Age (PAGESTAT) is randomized independently of gender identity."
+    - name: personal_acquaintance
+      definition: "The response refers to the respondent knowing a transgender person, or to their own family members, friends or children"
+      rationale: "Fixed before treatment; the vignette's gender identity does not change whom the respondent knows."
+estimand: "ITT difference (trans woman minus trans man) in the share of responses expressing restroom_safety, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over age group and conformity"
+outcomes:
+  closed_ended: "restroom_choice (Q1, harmonized male / female / other; before the text and piped into it), perceived_sex (Q3, male / female / other; after the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes of Q2A_OE in the TESS archive. The pretest open answers (different sample) were coded by the authors."
+provenance:
+  written_before_reading_text: true
+  contamination: "None known for this sample. No text value was printed. The target's direction is informed by the authors' own pretest text analysis on a separate mTurk sample (proposal footnote 4), not by these data. The PI summary reports closed-outcome results only. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, codebook and counts"
+  date: "2026-11-17"

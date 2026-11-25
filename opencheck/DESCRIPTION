@@ -1,0 +1,28 @@
+Package: opencheck
+Title: Split-Sample Construct Checks for Open-Text Responses in Survey Experiments
+Version: 0.0.0.9000
+Authors@R: person("Steven", "Denney", email = "s.c.denney@hum.leidenuniv.nl",
+    role = c("aut", "cre"))
+Description: Tests whether a randomized treatment changes the considerations
+    respondents articulate in open-text answers. Discovery and codebook work
+    happen on a discovery fold only; the measurement is frozen into a hashed
+    lockfile before the estimation fold can be read, so the coding scheme is
+    never tuned on the data used to estimate the treatment contrast.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    curl,
+    digest,
+    jsonlite,
+    Matrix,
+    methods,
+    stats,
+    utils,
+    yaml
+Suggests:
+    quanteda,
+    stm,
+    stopwords,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1

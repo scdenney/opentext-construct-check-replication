@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "bf719891359b34b7a705a0f4c917ac2341214b1a4a16fa2e4e1764c82bd595c7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/cohen2019_collegemajor.rds",
+      "sha256": "2270fb2c7f5404fbd4435e9e0a8e7d6a88c057ba86cfd90efa8959aca069d614"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/cohen2019_collegemajor.topic_choice.csv",
+      "sha256": "f280536370aad8653cba557d7284cc0ef6c19d453a54f3f691a0b5c577441f8c"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "f6f79d684163005b5ee611a2935a0920b95bfa1d589d070995ea33027cd4639c",
+  "created": "2026-11-23T23:33:37Z",
+  "opencheck_version": "0.0.0.9000"
+}

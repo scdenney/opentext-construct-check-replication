@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "6d67237d46940bf0f4cb1377980527f7378a650c53294b49d9a209a805de4e31",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/schnabel2015_service.rds",
+      "sha256": "792d84b1da282d169b06e47c4b8dd52e27c3cc29e10de60bf25bd730d8543c34"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/schnabel2015_service.topic_choice.csv",
+      "sha256": "2b2366b2284a3d70bc4c06161dcfc7f74d8cfbe3768c6f519ad10d80085a1eaf"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "f9a5757eaa2d49904b3551a025615c75f8df3bd56ce62e7140cb4a66f9a9e824",
+  "created": "2026-11-23T23:33:05Z",
+  "opencheck_version": "0.0.0.9000"
+}

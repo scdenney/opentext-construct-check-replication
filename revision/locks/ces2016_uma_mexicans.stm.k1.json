@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "7e8d746cdcf6f16af04904119cee6b14fe109edbd3df4d5b9eaf5b07d302fe90",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ces2016_uma_mexicans",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ces2016_uma_mexicans.stm.rds",
+      "sha256": "7bd6c975da1de38fb28ee5c283bb7f1d5bf691800e6cf6f8c2615969bff79178"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ces2016_uma_mexicans.topic_choice.csv",
+      "sha256": "163e052696c2a01c6eaad5d820f5e4b0bc22702bb2eed58f1f66b62f3a457fb4"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "4c79f153298ab0f7bff378fc25825ea9694c21c224ca0ac6686873d84976a3f0",
+  "created": "2026-11-18T00:05:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

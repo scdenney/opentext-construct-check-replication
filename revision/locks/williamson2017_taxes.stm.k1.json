@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "7aa24f294eada5b11691bd4fca7366ee06ab3cf45db4cc0483200d28df15d745",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_williamson2017_taxes",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/williamson2017_taxes.stm.rds",
+      "sha256": "b64f789f6e21d1ce45c4eb0d7a1e24b6f127fef4020c1a2855b8f2203afa64ff"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/williamson2017_taxes.topic_choice.csv",
+      "sha256": "c987f31c71d245239555c271c8b3cecf0a3de2c0ce60540dc7d0c5d9deaa6c5f"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "f16767b42e74314a6393157c8aecc7324c9bc83675ac1960dcec5af9fdbaf90c",
+  "created": "2026-11-17T22:52:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4c0d78a5a6852976dc0a02e8ab309e45cc5425449aca524de2d130ee8131db54",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_landrum2025_mechexplain",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/landrum2025_mechexplain.stm.rds",
+      "sha256": "06b09a772a82f46d37a0e9a043e081b18e08b3063ab0b820009ca48c463f056c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/landrum2025_mechexplain.topic_choice_qwen36_35b.csv",
+      "sha256": "14a2d0090d8e7575f666873436c580e9ec54f008dd042a6353093f8ba58ef0c3"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "cf754801ab06d005db61a8160676396d1c0f0f3d05850d1f0c5cff0950638be7",
+  "created": "2026-11-17T18:03:55Z",
+  "opencheck_version": "0.0.0.9000"
+}

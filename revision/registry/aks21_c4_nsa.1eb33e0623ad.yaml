@@ -1,0 +1,55 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121.xlsx, _ConjointLoopC4.xlsx, _LoopDWC4.xlsx), the Korean
+# questionnaire draft (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET]
+# DG21-Survey-AKS_ko-KR_EDITED.docx, List Experiments and NSA Experiment) and
+# NSA-ROK_conjoint/Code/main_c4_NSA.R; blind to response values. The published paper was not
+# available locally.
+id: aks21_c4_nsa
+title: "National Security Act position conjoint with randomized rationale, South Korea 2021"
+source:
+  citation: "Green, C. & Denney, S. (2024). Why Do Democratic Societies Tolerate Undemocratic Laws? Sorting Public Support for the National Security Act in South Korea. Democratization 31(1): 113-131. (Citation as given in natid_book identity_conformity.txt; not checked against the article)"
+  doi: "10.1080/13510347.2023.2258082"
+  data: "data/harmonized/aks21_c4_nsa.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC4 DV3C4, LoopDWC4; main OECE dVII1)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, NSA Experiment, '(after 7th profile)'); English from the vendor datamap (DV3C4). Fielded Korean wording not checked against the programmed instrument."
+  position: "After paired task 7 of 8, about the NSA position chosen in that task (vendor export has non-empty text only in iteration 7)"
+treatment:
+  variable: "chosen_rationale, other_rationale"
+  contrast: "chosen position justified by 'It will strengthen South Korea's national security' vs 'It is the right thing to do' (reference); also 'safeguard liberal democracy' vs reference"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "Rationale (3 levels) is one of 3 attributes (endorser, policy position, rationale) fully randomized per position and task (LoopDWC4). The chosen position's rationale is post-choice; the 'shown on either position' version is randomized. Secondary respondent-level arm: treatment / dVII1, the list experiment immediately before C4 (list_control 670, list_unification_item 669, list_nsa_abolition_item 670; arm C lists 'Abolishing the National Security Act')."
+constructs:
+  target:
+    - name: national_security_threat
+      definition: "Reasoning that invokes national security, the North Korean threat, espionage or defending the state"
+      source: "Design (questionnaire draft, NSA Experiment: rationale levels 옳은 일이다 / 자유민주주의 수호 / 국가 안보 강화) and main_c4_NSA.R rationale coding; published paper not read, so no page reference"
+      expected_direction: increase
+    - name: liberal_democracy_rights
+      definition: "Reasoning that invokes liberal democracy, freedom of expression or civil liberties"
+      source: "Same; contrast 'It will safeguard South Korea's liberal democracy' vs reference"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: partisan_endorsement
+      definition: "Reasoning that invokes the Minjoo Party or the People Power Party taking the position"
+      rationale: "Endorser is randomized independently of the rationale"
+    - name: economic_considerations
+      definition: "Reasoning that invokes the economy, costs or material interests"
+      rationale: "No attribute references economics; the rationale should not move it"
+estimand: "Difference in the share of responses expressing the target between respondents whose chosen task-7 position carried the treated rationale and those whose chosen position carried 'It is the right thing to do', on the estimation fold; report the 'shown on either position' contrast alongside"
+outcomes:
+  closed_ended: "Forced position choice and 1-7 agreement per position across 8 tasks; direct NSA item IX5 (abolish the NSA, agree/disagree) after the conjoint"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA topic models on C4opentext.xlsx (NSA-ROK_conjoint/Code/LDA.R); that file carries English translations and matches the vendor export at the same respid (1990 of 1991 non-empty). The vendor export was used."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

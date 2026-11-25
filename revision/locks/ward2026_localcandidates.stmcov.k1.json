@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "dcbe64e12f87c841728d0e888ddd74a1b1796d8a64fb14a8d6ca98975e0c3b88",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ward2026_localcandidates",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ward2026_localcandidates.stmcov.rds",
+      "sha256": "2e5212ad8d133d123105251dea1b4ee25d47c112c20107d41f971c394c36f2b2"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ward2026_localcandidates.stmcov.topic_choice.csv",
+      "sha256": "3d022ba99dadb6ea3b6284b79f26bfd6143a22167200e9a49df8135907da55a2"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "d89be64551ba64528190018a9ce9db4c4d70582f13708204b14fddd887cef728",
+  "created": "2026-11-22T16:41:18Z",
+  "opencheck_version": "0.0.0.9000"
+}

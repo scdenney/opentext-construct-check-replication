@@ -1,0 +1,54 @@
+# DRAFT, not registered. Written from the preprint, questionnaire, codebook and README
+# before any open-text value was read. Steven must confirm the placebos before running
+# oc_study_register().
+id: janssen2026_england
+title: "Out-party democratic transgression and justifications for one's own party's response (Prolific England, 2025)"
+source:
+  citation: "Janssen, L., Werner, H., & Kern, A. (2026). 'When they go low, we kick them': The reciprocal nature of citizens' support for democratic transgressions. The Journal of Politics (accepted). Preprint: OSF doi:10.31219/osf.io/pwcz2."
+  doi: "10.1086/744129"
+  data: "doi:10.7910/DVN/IU11FD; data/external/janssen2026_transgressions/raw/Replication/England/Posted/ProlificEngland.dta"
+languages: [en]
+context: "Adults in England on Prolific (2025) read about a political situation involving their preferred party and another party (versions differed), then chose what they would like their party's politicians to do about protests, voting rules or press access. They were asked to briefly explain their choice."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "open_recip: derived before splitting as the first non-empty of OpenRecipProtest, OpenRecipProtest2, OpenRecipVote, OpenRecipVote2, OpenRecipPressRight, OpenRecipPressLeft, OpenRecipPress2 (each respondent answered one)"
+  prompt: "In the last survey question, you reported that you believe: [selected choice] Please provide a brief explanation for your answer. (The *2 columns carry the same request without the piped choice)"
+  position: "Immediately after the closed reciprocity item ('Amongst politicians of [in-party], there is a discussion about how they should handle [protests / voting / the press]... What would you like to see them do?'), which follows the scenario (T) or the plain introduction (C); asked of all respondents"
+treatment:
+  variable: treatment
+  contrast: "T (1): read that politicians of an out-party took an undemocratic action against supporters of the respondent's party vs C (0): no transgression scenario"
+  level: respondent
+  notes: "Pre-registered. Crossed with prime (democratic-right information, No 3,202 / Yes 829) and a randomized issue (protest, voting, press: right- or left-leaning outlet). C 2,016 / T 2,015; 3,989 have an explanation. Pool over prime and issue; stratify folds by prime x issue"
+constructs:
+  target:
+    - name: fairness_reciprocity
+      definition: "The explanation endorses responding in kind to restore fairness or balance: levelling the playing field, 'they did it first', answering the other side's action with the same measure"
+      source: "Janssen et al., preprint section 'Motivations for reciprocating democratic transgressions' (p. 9): reciprocal transgressions as a way to 're-establish an equilibrium in fairness' and 'level the playing field'; open-answer analysis (pp. 23-24) finds fairness the most frequent justification among treated endorsers"
+      expected_direction: increase
+    - name: revenge_punishment
+      definition: "The explanation expresses anger at the opposing party or a wish to punish, retaliate against or make the opponent suffer"
+      source: "Same section (pp. 9-10): revenge motivation (Riaz et al. 2024; Jackson et al. 2019); found in 11% of treated endorsers' answers (p. 24)"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment. Note that
+  # explanations restate the respondent's own choice (piped), and treatment moves that
+  # choice. Also consider a separate 'mentions the opponent's action' manipulation check.
+  placebo:
+    - name: personal_experience
+      definition: "The explanation refers to the respondent's own experience of protesting, voting, or reading or working in the press"
+      rationale: "Pre-treatment; the scenario changes what the opponent did, not the respondent's history"
+    - name: policy_substance
+      definition: "The explanation refers to substantive policy issues (economy, cost of living, immigration, health care, climate) rather than democratic procedure"
+      rationale: "The manipulation is a procedural transgression; it gives no reason to discuss policy content"
+estimand: "ITT difference (T minus C) in the share of explanations expressing fairness_reciprocity, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "recip (0 = Democratic, 1 = Undemocratic, 2 = Don't know; the endorsement share rises from 11.5% to 22.4% in England, preprint p. 17); closed mechanism items fairness, revenge, normal (Mech*); escalation (Escal*)"
+human_codes:
+  available: true
+  column: "Replication/Open answer analysis/Data/20250717_manual_coding_sample.xlsx: Manual_code (single coder) and category_clean (GPT-4)"
+  notes: "100 responses pooled across England and the US, drawn only from treated respondents who chose the undemocratic option. Categories: Fairness, Revenge, Normalization, None of the above. They cover T-endorsers only, so they cannot benchmark the C arm or the rejecters"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text values in the data were read. The preprint quotes at least one response (p. 24), which the drafter saw. The authors analyzed only the 907 treated endorsers (GPT-4 plus a 100-item manual check), so control-arm and rejecter explanations appear unanalyzed"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

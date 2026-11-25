@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "360e387c3423560bfd0486ea0fa7d2afb9d598700f2ba670462fff97cb93b07d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/sperber2024_zambia.859274f0a7ed.yaml",
+      "sha256": "4e229eb92afd59331cf2e9bfbfc05564c4b37936a2fd2d22458e0795eb135737"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["25ddfcc2ba9ce82fe4c775591b4197a4aec51ef7651350488bfa2955acf6881e", "370647fc55f442cf02290ee289ec4369a88c540bc3500fd38bf24495c22d3a0a", "3764416dc79ec1370baf85d7354f9dda9cb75dfcd3682d479420860bdcd6c238", "73eda58d559c999f72b6b9beb75f80d5032f52f94ae0a5a44f8b188958b0f23b", "7fa05276af1a03d46dab7be3da84a534d88dee0df8e356d0edb9058cec92b4a0", "9ac84b3b5612c8b8cf11f8a2cca853680230306bf797d9bfa5eb1cfa4b1cfedc", "ff9cd66b81bab58bd9f511720849b2a05d73552930379ccf5260515d46b5a9cc"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "feeebca4c0044a2da52520eac067dd4001befd9870f6426e5bd0dba8cff0bb08",
+  "created": "2026-11-17T18:37:07Z",
+  "opencheck_version": "0.0.0.9000"
+}

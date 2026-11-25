@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "fd8ebdaec45fb7a715258a1e1aaa06de3bcf7451afe25a465106635eac8f87dd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/andre2025_macronarratives_provision.c3394a6d3524.yaml",
+      "sha256": "81c5e9d70d4b019849434813921dc5502be7db8024d8e928348d94ebc0af9d59"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["17f24938e21900bba7b771e650e352f90507bc16e6a7d8cfe15494a4fc179926", "1d1df6cdc461b3df5110c73eff558f8f5d73e2c6843b7cc2e6eafa2a606b28c7", "2a5d5684a8b06f0e9130cc4d1eefca6c9ba198aa4d0bde25fbd7a7609127f972", "362d795370ca60d7dc3305cfcc5a131ba5d6cbabfc1ff590afd3f7ec54377ddb", "79514968cf47ee616393bf637bfea379e815d9afe9a2d195e2e08237d90a625b", "bcd8e7d51c699ad4012e24b978aff609a072dd5aebd5cafdb5d06edb0d3a3f12", "bfa1103594e01fb40065daa9ee43d792c2b7ba61a42036432b2798554866ed79", "c48cc4e938d1d8b03acdd039828ca0972814312dba9acb9472752e0d7639226f", "f198e26eef8e8a9049eb05c76e64da9ea59263c0bb7473dd997514c4e4c28b5d"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "cd6eb8af1e3e159e4061563cb0ad13d86f68a3284dee45c7092a680b53d71132",
+  "created": "2026-11-17T18:37:02Z",
+  "opencheck_version": "0.0.0.9000"
+}

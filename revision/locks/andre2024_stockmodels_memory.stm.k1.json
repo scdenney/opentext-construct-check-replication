@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "8f8ac3f4aa8d0d66dc055d0cf81386c576ae2217eb8beaa6252ec34e8677d2ae",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_andre2024_stockmodels_memory",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/andre2024_stockmodels_memory.stm.rds",
+      "sha256": "331ed416569a9302d2e297402805f70113eaf6f8d654cff9d7b79fd779e1210f"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/andre2024_stockmodels_memory.topic_choice.csv",
+      "sha256": "9146dbe1ecd2ecc843fa22ec346374f8f946f183f6d23fc0b65025802fd7bb1a"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "ce928b75e2ddbde4238c1cafe58aed4d22477554fecec9b57b43f86c5f91f5a8",
+  "created": "2026-11-17T21:35:04Z",
+  "opencheck_version": "0.0.0.9000"
+}

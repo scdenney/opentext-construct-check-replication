@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "e3d9118fb6b747e0608e73255c7e72af13cd96c97253b420424f2185cfd0435f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/ofosu2024_malawi.1d3a59ec19fb.yaml",
+      "sha256": "45a951a849d4b7fd8c6b6fd2bb0ac4d8de7eb97cb3dca3ad049d2d6c24f7fc66"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0aed5e734aa48de43d6f73a926b341a92904211150c782b0075e11f305c83e35", "39c70129f57ca87a77d06c0c9debc0e7da6b15ec8f4682caf9b532aad952756b", "56eff82a9fdb0534a8525d07f10a8ef3825cd372103a8b7b8857a2cf21b9f7f6", "69ad7af9ca073722c6fbceac4504507e74f1f39eb79bca0c7b9d8de687afe70c", "8595785b2fa031d6c93b2fa461eba0ebb91850481850c425bc138799d899b3a9", "9778a025513546f197ad00b082387e57a8ee636ec30c100cd603a8fd418c7388", "dd61cc3fbf0bc4ed535aba24a491f4baf9e7bcf16e30f87a55a0f88e9d621463", "e46a0c5be3d2af8265316e34b423f77156312b27f5cd23e0fa33bc2f513c2d1c", "f216a301227cc16fde0fdfebc2893b2478dfa0176e4aa54f956bae1ed3587ef7"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "bcfa9ffc7edb4177fd13bad51322f05f2787b01b0215d9a688a92ca0e05f155d",
+  "created": "2026-10-29T00:38:39Z",
+  "opencheck_version": "0.0.0.9000"
+}

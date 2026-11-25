@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "2d18fca89d173045b6121ae3fada9b17cdf7c09dc23ee552532fe8f92cd1937d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_krishnarajan2022_rationalizing",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/krishnarajan2022_rationalizing.stm.rds",
+      "sha256": "d4b974bf048a47342432710b056dc5092cedb0fc6d722d55f83aecc8c9f2c227"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/krishnarajan2022_rationalizing.topic_choice.csv",
+      "sha256": "15ea6ba6ac3ff1a9c825c438fc33adcb3e472fc1ff555fe2f89338902d291e25"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "59c870914a668dcefa919fb414fba73e9acbd07d2e688f9ab37306582c80c70a",
+  "created": "2026-11-17T21:35:16Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "7d42a857324fe6fddef2b15c7482ea98a9150fa0832edcb104aeb7edb56e50d5",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_mills2018_labtransparency",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/mills2018_labtransparency.stm.rds",
+      "sha256": "b2b34b3a29a739a25906f71e95faf8754e0104fd396d9427a8fb3910e81df51f"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/mills2018_labtransparency.topic_choice.csv",
+      "sha256": "80f037f62fb7eb79ee8fd0cb26549367b16ceb24bd25435c9c685117c81bc69d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "4ba7c90348d9452625630aaf25776a761ea20f7c068b34e6869838a06dd714c2",
+  "created": "2026-11-17T21:35:21Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "972da8f503d41d60d7d376403bc7e79f0977d149bf2ebcfa93d7d0504d4bcbbb",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/busby2019_study2.253c3e6b83ce.yaml",
+      "sha256": "e4830e4eb0ffce865ce90ef48d80b2450aa3e34475569746a11ccca020d36099"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["11c1cb0e8849c0a99207bdae0e1569c1e6aa273483121a1df6ea70d2dc267da8", "2082dd92e8f155ceceea772c2eb400dc74a5817875edbefc1ea16726131f66fd", "2396c886f9d5681710313b6d63760cec5f47251470ad8f9e48907b78ff98c4a4", "447d4a565d9e55cfb87607713142b7a25870344f03766db6a182bd7cdfaaf742", "561f02bc00f9562434b3497ff6a584c2fe34add690cacc248fea91aa269484e8", "6485597578f45aa47f73a269b444305e6af7029c87b770c09aa935e846c78988", "70bdee9a8b3db672b7bf28a74d49dc9b1b4608426da9e784619cc5ca20b1fea5", "855a422e58a2dd45c511791a939b92a3b90a3cfde8e7cc5db9ba6d6f8b3a9924", "a9d7a77621bffdc0aaaaeadbfaaa1bf479c12aa19a45cf99762a45d3b891875d"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "9f7be977abdfece4f15012162878a8ea4913402d813d3fdf1ee3cdb11ac12f62",
+  "created": "2026-10-29T00:33:15Z",
+  "opencheck_version": "0.0.0.9000"
+}

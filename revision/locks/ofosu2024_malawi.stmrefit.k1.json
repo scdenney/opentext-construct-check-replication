@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "e3d9118fb6b747e0608e73255c7e72af13cd96c97253b420424f2185cfd0435f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ofosu2024_malawi.rds",
+      "sha256": "74874b5b95de062328a51af8df21cff863ec831a4512eb04cfa3cdb02461dd9c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ofosu2024_malawi.topic_choice.csv",
+      "sha256": "fe21b09c5191a2985e52eec5d338b02db90991100c6b75418cc90378e01a58cb"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "db0b2d1295f3cde262cbdb446485a728f13a27a107fb5e676325214304a496e4",
+  "created": "2026-11-23T23:30:22Z",
+  "opencheck_version": "0.0.0.9000"
+}

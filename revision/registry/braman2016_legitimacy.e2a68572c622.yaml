@@ -1,0 +1,46 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Braman751.pdf), the fielded questionnaire
+# (raw/310.209.01087.1_TESS3225_Braman_Northwestern_University__v3.00.docx), the
+# OSF study summary, the GfK response-rate report and the SPSS labels. No
+# open-text value was read.
+id: braman2016_legitimacy
+title: "Expert consensus on congressional authority, public support and issue in a news vignette, and explanations of legitimacy judgments, US adults"
+source:
+  citation: "Braman, E. (2016). Exploring the Role of Constitutional Considerations, Public Support and Personal Preferences in Citizen Assessments of Proposed Congressional Action on Immigration and Gun Control. Time-sharing Experiments for the Social Sciences, study braman751 (TESS3 225). Published analysis: Braman, E. (2021). Thinking About Government Authority: Constitutional Considerations and Political Context in Citizens' Assessments of Judicial, Legislative, and Executive Action. American Journal of Political Science 65(2) (as cited in the OSF summary; not read)."
+  doi: null
+  data: "https://osf.io/k8pwg/ (TESS_225_Braman_Client.sav); data/external/braman2016_legitimacy/harmonized_braman2016_legitimacy.csv"
+languages: [en]
+context: "US adults read a news article about a bill in Congress, either federal background checks and magazine limits for guns or a ban on in-state tuition for undocumented students, which reported a poll on public support for the bill and what constitutional law experts said about Congress's authority to pass it; they then rated whether it would be legitimate for Congress to pass the bill and briefly explained that answer."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "In a sentence or two can you briefly explain your answer to this question? (follows B12: 'Finally, which of the following reflects your views about whether it would be a legitimate (or appropriate) exercise of authority for Congress to pass this legislation?')"
+  position: "Last substantive item, after the article (B08_G or B08_I), expert credibility B09, agreement that Congress should pass the bill B10, its explanation B11, and the 7-point legitimacy rating B12"
+treatment:
+  variable: treatment
+  contrast: "no_authority (legal experts overwhelmingly agree Congress does NOT have the constitutional authority; cells 5, 6, 11, 12) vs clear_authority (experts agree Congress HAS the authority; cells 1, 2, 7, 8), pooled over issue and public support; unclear_authority (experts divided; cells 3, 4, 9, 10) is secondary"
+  level: respondent
+  notes: "12-cell factorial XTESS225 = issue (gun control 1-6, immigration 7-12) x expert assessment of authority (3) x public support (over 85% in odd cells, under 15% in even cells); mapping from the questionnaire insert logic, verified against the value labels. The expert paragraph states the authority claim explicitly ('The Supreme Court would surely strike down this statute', 'an impermissible intrusion on state police powers'), so a shift in answers citing lack of authority is partly mechanical uptake of the treatment text (positive control)."
+constructs:
+  target:
+    - name: lacks_constitutional_authority
+      definition: "The answer says that Congress lacks the constitutional authority to pass the bill, that the bill is unconstitutional or would be struck down, or that the matter belongs to the states (states' rights, Tenth Amendment, intrusion on state powers)"
+      source: "Proposal p. 4, H1: 'information about compliance with rules should be significant in judgments of the legitimacy of proposed action'; p. 1: 'what individuals are told about congressional compliance with constitutional rules involving federalism should be important in their evaluation of the \"appropriateness\" of proposed action'"
+      expected_direction: increase
+  placebo:
+    - name: public_opinion_reference
+      definition: "The answer refers to public opinion about the bill: how many Americans support it, a poll, the majority, or what the people want"
+      rationale: "Public support (over 85% vs under 15%) is randomized independently of the expert assessment of authority and appears in every article"
+estimand: "ITT difference (no_authority minus clear_authority) in the share of answers expressing lacks_constitutional_authority, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "B12 legitimacy of Congress passing the bill (1 clearly legitimate ... 7 clearly not legitimate); B10 agreement that Congress should pass it; B09 expert credibility"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. The 2021 AJPS article was not read; whether it analyzes or quotes the open-ended answers is not checked."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

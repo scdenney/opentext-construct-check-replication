@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "bf501a7c1c6f99029c11ac51c48b6734b9b4526a07941814ba866c2ac954f63a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_lupu2024_lawsofwar_gov",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/lupu2024_lawsofwar_gov.stm.rds",
+      "sha256": "cf22d5af917c0f92a8d3a339812108e842c5b729702681a7fd5ebc408acb5d9a"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/lupu2024_lawsofwar_gov.topic_choice.csv",
+      "sha256": "0b2a59c3a8dcc7ac31eb982804e712fb9974015a9dc1c9d659dd3dad921c164c"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "fc94d78979f61bc012c7741725afbf79468bdec15c6dfe3c128950a1499a51dd",
+  "created": "2026-11-17T21:35:19Z",
+  "opencheck_version": "0.0.0.9000"
+}

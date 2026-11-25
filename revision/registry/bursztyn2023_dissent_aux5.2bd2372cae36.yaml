@@ -1,0 +1,43 @@
+# DRAFT, not registered. Written from the QJE article (Section III.B, Auxiliary Experiment 5,
+# Table II Panel E), README and cleaning code before any open-text value was read.
+id: bursztyn2023_dissent_aux5
+title: "Why respondents prefer a tweet citing evidence: Cover vs No Cover tweet choice and hand-coded motives (Auxiliary Experiment 5)"
+source:
+  citation: "Bursztyn, L., Egorov, G., Haaland, I., Rao, A., & Roth, C. (2023). Justifying dissent. Quarterly Journal of Economics, 138(3), 1403-1451."
+  doi: "10.1093/qje/qjad007"
+  data: "doi:10.7910/DVN/YVUIFF; data/external/bursztyn2023_dissent/raw/replication folder/data/raw/defund-openended-deidentified.dta; harmonized_bursztyn2023_dissent_aux5.csv"
+languages: [en]
+context: "US liberals and independents read an article reporting evidence that defunding the police would increase violent crime, imagined joining a campaign against defunding, chose which of two tweets they would post (one mentioning when they read the article, one with no reference to it), and explained their choice."
+unit: respondent
+id_column: "none in the file; harmonized id = bursztyn2023_dissent_aux5_<row>"
+text:
+  column: open_ended
+  prompt: "Please explain why you chose this tweet rather than the other tweet."
+  position: "Directly after the hypothetical tweet choice"
+treatment:
+  variable: condition
+  contrast: "Cover: choice between the 'Before I joined the campaign ...' tweet and a Control tweet (excuse = 1) vs No Cover: choice between the 'After I joined ...' tweet and the Control tweet (noexcuse = 0)"
+  level: respondent
+  notes: "n = 402 (202 vs 200). Small; mainly useful because it carries hand codes and a built-in null."
+constructs:
+  target:
+    - name: social_cover
+      definition: "The response says the preferred tweet shows followers that the article (evidence) shaped the decision to join, so that others will not misjudge the respondent's motives"
+      source: "Section III.B, Auxiliary Experiment 5 and Table II Panel E: the Cover manipulation raises social-cover mentions by 10 percentage points (67% relative to the No Cover mean)"
+      expected_direction: increase
+  placebo:
+    - name: anticipated_persuasion
+      definition: "The response says the article might persuade others to join or agree"
+      rationale: "Authors report no effect of the manipulation on anticipated-persuasion mentions (Section III.B); a separate yes/no code avoids mechanical crowd-out by social_cover"
+estimand: "ITT difference (Cover minus No Cover) in the share of responses expressing social_cover, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "post (tweet chosen: treatment tweet vs Control tweet)"
+human_codes:
+  available: true
+  column: human_hand_coding
+  notes: "Authors' hand codes over the full sample (social cover, anticipated persuasion, information, and further codes such as unnatural, misleading, signaling; multiple codes comma-separated; spelling normalized as in clean-openended.do)"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors hand-coded the full sample and published effects; the article quotes a few example responses in footnotes 21-23, which I read while extracting the design"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

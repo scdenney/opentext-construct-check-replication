@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "30904ccd224ef1d70a3035c4f6aa23df2a19421ed36731e98f416c42578880cc",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/prc2026_q60_ngo.ba334e4b032e.yaml",
+      "sha256": "3f59f5c4e1029c41df0a3454b486aa9a3880aa888dd688e7f5bbdb3db7e31981"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["131af5d39dcedf8df4c0dfe5a83acb93187a2a1b222a01c8d900758eb3745917", "14787ff5176adb8fa6665e371ba2fd1ff536f48110b98e5e9fbfcd992bad1a86", "21064bc3546049ef2f48f158eaad087056dfe9a94c992d3fa2e28c041094275e", "23eb246746e86e82f825750d1daa76e30e6218639262689cbb6cf4f6ea870788", "782556ce9e674a6656d77bdcc5e7fb6034d548d15411a7c1a4cc912d5ade85a0", "8b1caa5762302ad1c9a40c02bbe0b2f90d34a8fe4d8fc4d56f42b2224ad0f7b7", "c6d84756167482640029b94356469f9328d86f435012f8b97cff7dd660091d03", "ca5e3e2e66fb7bb919d01ef520b856047400e9f99cc9afaf24162360b2418ba1", "f0dbdd1dcb5331ddd83c4f1d2e79e9cc27ffaa7bbe0ac39d1a1141ca36ff28fd"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "2f76505a1954e971db8b5ec25adb6bf8bac7e0a8d51f7e8f0ce49655169c1504",
+  "created": "2026-10-28T22:08:08Z",
+  "opencheck_version": "0.0.0.9000"
+}

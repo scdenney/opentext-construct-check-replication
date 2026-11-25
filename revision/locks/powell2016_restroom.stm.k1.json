@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "bc3aac5c96772feb3c613cea90cb5e5e29dc5cd17c0ec585e17e2bb50b06019b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_powell2016_restroom",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/powell2016_restroom.stm.rds",
+      "sha256": "c78ab39d786c218e1a20678a76382ec71b6afc3d219149a3e0eb99c86421224d"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/powell2016_restroom.topic_choice.csv",
+      "sha256": "a2f1691393e8b91952701a02b62aba79abb54e127668c7c528ab2122f329f20e"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "8fa4517bdfcf4742845e4605130b810185e483d3d46d98b643cbaba1198657fc",
+  "created": "2026-11-17T22:52:16Z",
+  "opencheck_version": "0.0.0.9000"
+}

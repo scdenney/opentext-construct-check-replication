@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from Schaffner's working paper "Follow the Racist?" (read in
+# full), the UMA 2016 pre-election questionnaire and the codebook, before any open-text value
+# of this dataset was read. The paper prints a few example comments (see provenance).
+id: ces2016_uma_millennials
+title: "Trump's prejudiced quotes (Mexico 'rapists'; Baltimore 'thugs') and what white Americans write about Millennials, a group neither quote targets (CCES 2016 UMass module)"
+source:
+  citation: "Schaffner, B. F. (n.d., c. 2018). Follow the Racist? The Consequences of Trump's Expressions of Prejudice for Mass Rhetoric. Working paper, Tufts University. Later in Schaffner, B. F. (2020). The Acceptance and Expression of Prejudice during the Trump Era. Cambridge University Press (Elements in American Politics)."
+  doi: "10.1017/9781108924153 (the Element; the working paper has no DOI; PDF read: ashford.zone/images/2018/09/followtheracist_v2.pdf)"
+  data: "doi:10.7910/DVN/YLYV32; data/external/ces2016_uma/raw/CCES16_UMA_OUTPUT_Feb2017.sav; harmonized_ces2016_uma_millennials.csv"
+languages: [en]
+context: "White American adults in an online election survey in autumn 2016 were shown several quoted statements from the presidential campaign and asked which candidate made each one; on the next page they were asked to write, in a few words, what comes to mind when they think of several groups. This answer is about Millennials."
+unit: respondent
+id_column: id
+text:
+  column: UMA342fx
+  prompt: "In a few words, please let us know what comes to mind when you think of the following groups? [Millennials]"
+  position: "Page after the UMA341 quote-attribution grid; one of six boxes (Blacks, Mexicans, Whites, Politicians, The Middle Class, Millennials) shown in random order; answers limited to a few words (paper, p. 8)"
+treatment:
+  variable: treatment
+  contrast: "saw at least one prejudiced Trump quote (UMA341_GROUP 2 'thugs', 3 'mexico' or 4 'both') vs saw only the three neutral quotes (group 1 'neutral'). Neither prejudiced quote is about Millennials, so no quote-specific contrast has priority; the stated expectation concerns seeing a prejudiced statement. The two quote-specific contrasts (each pooled over the other quote, as in the paper's Figure 1) are secondary."
+  level: respondent
+  notes: "2 x 2 factorial. UMA341_GROUP = random(1,4) among the two thirds of white (race == 1) respondents randomly routed to the UMA340-343 block (questionnaire l. 144-157). All arms see three neutral quotes (Obama 'has no solutions', hairstyle, hot peppers); group 2 adds Trump's tweet calling Baltimore protesters 'thugs', group 3 adds the Mexico 'rapists' remark, group 4 adds both; row order randomized. The quotes appear as an attention/knowledge question, not attributed in the prompt. The paper estimates each quote's effect as receivers vs non-receivers (Figure 1 caption; text p. 11); Figures 3-4 captions instead say 'vs the control condition'. Neither quote names Millennials; the paper analyzes this item to test whether the quotes make respondents 'speak more negatively about a broader array of groups than were targeted' (p. 7-8). The expectation covers both quotes equally, so the choice of the Mexico quote as the first contrast is not given by targeting; it follows the paper's emphasis on that quote, which is informed by its published results (see provenance). Second contrast: thugs_quote (groups 2,4 vs 1,3)."
+constructs:
+  target:
+    - name: offensive_comment
+      definition: "The response says something hateful or offensive about Millennials as a group: an insult, a demeaning stereotype (for example lazy, spoiled, self-absorbed or stupid), contempt, or hostility. A neutral description, a policy view stated without disparaging the group, or a mention of hardships Millennials face (debt, jobs, housing) does not count."
+      source: "Expectation, end of section 'A Trump Effect?' (p. 6): 'I expect that seeing a prejudicial statement from Trump will lead people to say more negative (and offensive) things about identity groups because of the message those quotes send about the boundaries of acceptable discourse.' Outcome 'offensive' = raters marked the comment hateful or offensive (section 'Coding Respondent Comments', p. 10)."
+      expected_direction: increase
+    - name: negative_comment
+      definition: "The response expresses an unfavorable view of Millennials as a group (criticism, a negative trait, or resentment), whether or not it is offensive. Describing difficulties that Millennials face, or a sympathetic remark, does not count."
+      source: "Same expectation (p. 6); outcome 'negativity' = raters' 100-point very negative to very positive scale (p. 9-10)."
+      expected_direction: increase
+  placebo:
+    - name: personal_acquaintance
+      definition: "The response refers to the respondent's own relationships with Millennials or own generation: their children or grandchildren, friends, coworkers or employees they know personally, or the respondent being a Millennial."
+      rationale: "Family and personal ties to young adults, and the respondent's own age, are pre-treatment characteristics; a quote seen seconds earlier should not change whether respondents mention people they know, under either the norm-signal or the mimicry account."
+estimand: "ITT difference (mexico_quote 1 minus 0, pooled over thugs_quote) in the share of responses expressing each target, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "None for this item. Pre-treatment closed item in the same block: UMA340 (majority-minority nation good/bad). Quote attributions UMA341a-e."
+human_codes:
+  available: false
+  column: null
+  notes: "The paper's MTurk ratings (negativity 0-100 and hateful/offensive/neither; median 6 raters per comment about Millennials) are not in the CCES archive; no public replication archive for them was found (see report). The Element was not openly readable."
+provenance:
+  written_before_reading_text: true
+  contamination: "No text value of this item (UMA342fx) was seen by me or, per the MANIFEST and sweep, by the searcher. But the working paper, read before drafting, prints three single-word comments about Blacks (item UMA342ax, p. 9) and reports this item's results by arm (Mexico quote: more negative and about 4 points more offensive comments about Millennials; thugs quote: no significant effect, p. 12, 15), the share rated offensive (22%) and mean rating (p. 10), and effects by vote (Figure 3). The paper's Supplementary Information (not read) prints the most negative comments. Effects are therefore published; the card tests the pipeline against a known result."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the working paper, questionnaire and codebook"
+  date: "2026-11-17"

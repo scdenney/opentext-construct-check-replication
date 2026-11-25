@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "1482be5d3da2016bd388d46322c5f5944f4b944c1ffbbf20cfd6c189f7d6ae9b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/dill2022_kettlesofhawks.a30323746f32.yaml",
+      "sha256": "85bd867e9f75f948c76f399dfa6ac754c913aedd9ae9ef4a0518e4e01d590258"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["127bb950d16e7ddbfde809fbef308bdba38fd317e96276e293529109d2c14f2d", "243603f6ad0b0ef285b193518828913515177f8332732d524a5be1c33e7fb774", "49749ba716f801a187c1ceaa399533a4f53002fc2a6a7697a7985a7b61274a41", "4ca96b5460836bd1bb9ec816797363c9b9631850c9ff3a8d125818684b2bc68a", "5d38f22280dfd3a53bd32d9f3dde6a0c28d7de771f6f75a29b891af48fee24b2", "67e8fb7414091cce2d58f267dd37e959c611906ee56879cd40e97e5904c96bb4", "8dafbdf58102f63c8998ddd8f5d8ddd19e859e69d5a1423fe6848ba1a14152af", "9a30a05d8cfd37a103b698d08ec1e792f1b5220756d3b0be4790599a1ce679e0", "cdf9bdb9b99f0132310bf9201f343bdbca026c8cf84848e6ad3f6e53f0d6f09c", "d227011995b8052aa9fdae141d907649cc424a501a395ff1fff813dcc33cfbc6", "e5693c9dcae27735ff9c6e00d08ba0f2185024a72399b2b75639d5003233c069"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "1195c0e328bcd10d6cacfe4211924ad65439717a327348de6dbac43c81ff5db2",
+  "created": "2026-11-18T00:05:41Z",
+  "opencheck_version": "0.0.0.9000"
+}

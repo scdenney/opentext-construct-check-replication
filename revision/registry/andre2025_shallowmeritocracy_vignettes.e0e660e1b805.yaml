@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the SAFE WP 405 version of the paper (October
+# 2023; Sections 2, 5.3 and 6, Appendix D), vignette_study.qsf, disappointment_study.qsf
+# and the author's cleaning and analysis code. The vignette study was not
+# pre-registered (Appendix F). NOT blind: see provenance.contamination.
+id: andre2025_shallowmeritocracy_vignettes
+title: "Information on what the disadvantaged person would have done in better circumstances and respondents' explanations of their reward decisions in real-world vignettes (Andre 2025, vignette study)"
+source:
+  citation: "Andre, P. (2025). Shallow meritocracy. Review of Economic Studies, 92(2), 772-807."
+  doi: "10.1093/restud/rdae040"
+  data: "doi:10.5281/zenodo.10591832 (licence: Zenodo field 'cc-by-4.0'; package README 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'); data/external/andre2025_shallowmeritocracy/raw/data/fairness_expectations.sav (wave 1) and fairness_vignettes.sav (wave 2); harmonized_andre2025_shallowmeritocracy_vignettes.csv"
+languages: [en]
+context: "US adults in an online survey (Lucid, February 2021) read short scenarios about two people in unequal circumstances (for example two employees competing for a promotion, or two people from rich and poor families) who earned different amounts after making different choices, and said how the money should be split between them. Afterwards they described the reasoning behind their decisions."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "reason (both .sav files); `text` in the harmonized file"
+  prompt: "Your reasoning. In the previous two scenarios, you split money between two persons. What was the reasoning that shaped your decisions? Please describe briefly."
+  position: "Directly after the last vignette decision, before the belief questions and the demographic questionnaire. Wave 1 respondents saw 2 of 4 vignettes (random), after a separate allocation task (the disappointment study); wave 2 respondents saw all 4, but the item still says 'the previous two scenarios' (wording in vignette_study.qsf)."
+treatment:
+  variable: treatment
+  contrast: "Primary: 'high' (each vignette states that the disadvantaged person would have made the same choice as the advantaged person in the advantaged situation) vs 'low' (he would not have chosen differently). Second directional contrast: 'high' vs 'none' (vignettes describe only the actual choices). Secondary, no expected direction: 'low' vs 'none'."
+  level: respondent
+  notes: "Qualtrics BlockRandomizer with even presentation over treatment2 = treatment / counterfactual_low / counterfactual_high, at respondent level, in both waves; the same arm applies to every vignette a respondent sees. Which vignettes are shown is randomized independently (vig_* flags; 'law' is a crime vignette the paper does not report). Wave 1 also cross-randomizes the disappointment-study arm (treatment_exp), answered before the vignettes. The counterfactual sentence is part of each vignette text, so a mention of it is partly mechanical, most of all against 'none': read high vs none as a positive control. Exclusion (exclude = TRUE): the author's rules (feedback page reached, first row per Lucid id) and the paper's analysis rule of a mean time of at least 60 s per vignette (reg_vignettes.R; paper fn. 28)."
+constructs:
+  target:
+    - name: circumstances_shaped_choice
+      definition: "The response says that the disadvantaged person's choice (not working hard, not seeking promotion, not founding a company, and the like) was caused by his circumstances, or that he would have chosen as the advantaged person did had he been in the same situation, and treats this as a reason for the split (for example a reason to give him more). A statement that he would have chosen the same way anyway does not count."
+      source: "Section 6.1: 'To identify the sensitivity of reward decisions to the effect of circumstances on choices, I introduce a between-subject variation that is analogous to the counterfactual study of Section 5.3'; in the high condition 'his choice was strongly shaped by his circumstances', and 'If their reward decisions are sensitive to the effect of circumstances on choices, they should compensate the disadvantaged person'. Mechanism from Sections 2 and 5.3 (comparable choice meritocrats reward counterfactual comparable choices once the counterfactual is known). Expected increase for high vs low and high vs none. The author states no text expectation and the study was not pre-registered."
+      expected_direction: increase
+  placebo:
+    - name: own_experience
+      definition: "The response refers to the respondent's own life, job, family or personal experience."
+      rationale: "The counterfactual sentence concerns the vignette characters, not the respondent; nothing in any arm invites autobiography."
+    - name: legal_or_tax_rules
+      definition: "The response refers to laws, taxes, government rules or legal rights as a reason for the split."
+      rationale: "The counterfactual sentence concerns how the person would have chosen, not legal or tax arrangements, which none of the arms mentions."
+estimand: "ITT difference (high minus low) in the share of responses expressing circumstances_shaped_choice, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; high minus none as a second directional contrast; low minus none as a secondary quantity with no expected sign. Wave and vignette flags are design covariates."
+outcomes:
+  closed_ended: "Reward share of the disadvantaged person per vignette (redist_<vignette>_2; not carried in the harmonized file). The paper reports larger shares in high than in baseline (Table 6)."
+human_codes:
+  available: false
+  column: null
+  notes: "No hand codes for this study."
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) The drafter read the paper, which reports allocation effects (Table 6) but no text results for this study. (2) The paper prints example main-study answers (Table B.5) and example rationales from the unrandomized rationale study (Table 4); the drafter read them. (3) The wave-3 searcher printed about 5 rationale-study answers (not this sample). No answer from either vignette file was printed."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, pre-analysis plans, questionnaire and code"
+  date: "2026-11-17"

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "fdc100fca34093665c07884b5ac77ae7d4c110c4dbd9b27828bf635e9c302b83",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/musgrave2026_sanctionswtp.rds",
+      "sha256": "d1803fa41864f79eeebd3230da98273926f9d2ad28a44510306579c8aacf0bbe"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/musgrave2026_sanctionswtp.topic_choice.csv",
+      "sha256": "00b34aeaa4d279826d5982c9a2abd590825d3510a6e312797a582c63620016a1"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "32d207d65674e8218999c8535cc88c068e4d2d8d7e21954b88918f8f735c9f20",
+  "created": "2026-11-23T23:33:17Z",
+  "opencheck_version": "0.0.0.9000"
+}

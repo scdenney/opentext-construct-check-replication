@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the TESS proposal (Scherer712.pdf), the questionnaire
+# and variable labels before any Q11 value was read. The published article (Scherer et al.
+# 2019) was seen only as an abstract; its full text was not checked.
+id: scherer2015_screening
+title: "Fabricated high vs low cancer-risk feedback (and detailed test harms) and reasons for wanting an ineffective screening test (TESS, US 2015-16)"
+source:
+  citation: "Scherer, L. D., Valentine, K. D., Patel, N., Baker, S. G., & Fagerlin, A. (2019). A bias for action in cancer screening? Journal of Experimental Psychology: Applied, 25(2), 149-161. TESS study scherer712 (Scherer, 2015)."
+  doi: "10.1037/xap0000177"
+  data: "TESS scherer712, OSF https://osf.io/ewu2a/; data/external/scherer2015_screening/raw/TESS_204_Scherer_Client.sav; harmonized_scherer2015_screening.csv"
+languages: [en]
+context: "US adults aged 40-70 in a national online panel (2015-16) read about a new breast cancer (women) or prostate cancer (men) screening test that research shows does not reduce deaths from cancer and can lead to unnecessary treatment; most had first answered questions about their cancer risk factors and received an estimate of their own lifetime cancer risk. They said whether they would get the test and then listed their reasons in their own words."
+unit: respondent
+id_column: id
+text:
+  column: Q11
+  prompt: "Please explain your reason for answering the last question as you did. Why did you decide to get the screening test, or not get the screening test? List any and all reasons that were important in making your decision."
+  position: "Directly after Q10 (would you get this screening test, yes/no), which follows the risk feedback (Display1), perceived risk Q5, worry Q6, the test description (Display2a/2b) and test riskiness Q9"
+treatment:
+  variable: XTESS204
+  contrast: "high-risk feedback (XTESS204 1-2: lifetime risk 20%, 'significantly higher' than the 13% average) vs low-risk feedback (3-4: 6%, 'lower'), pooled over the harms factor; control (5) not in the primary contrast; harmonized labels high_harms, high_noharms, low_harms, low_noharms, control"
+  level: respondent
+  notes: "2 (risk feedback) x 2 (detailed harms of unnecessary treatment listed or not) factorial plus a control arm with no risk questions or feedback and no harms list (questionnaire, XTESS204 and Display1/Display2 conditions). The risk estimate is fabricated (debriefing). Cancer type follows respondent sex and is not randomized. Arms 1-4 also answered risk-factor items Q1-Q2 that control did not. Because the feedback states the respondent's risk, mentions of 'my risk is high/low' are partly mechanical (positive control). Mapping checked on closed items: Q5 perceived risk 5-7 chosen by 15% (high) vs 9% (low); Q9 test 'very risky' 6-7 by 37-41% (harms shown) vs 11-13% (not shown). Secondary contrast: harms shown (1, 3) vs not (2, 4), target test_harms; the control arm can be compared with each risk level."
+constructs:
+  target:
+    - name: cancer_worry_risk
+      definition: "The respondent gives their own elevated chance of getting cancer, or their worry or fear about getting cancer, as a reason for their decision (for example being at high risk, being afraid of cancer, wanting peace of mind about cancer)"
+      source: "Proposal (Scherer712.pdf, p. 4-5, 'The Present Research'): 'we predict that participants who are led to believe that their cancer risk is higher/lower than average cancer risk will be more/less worried about cancer, and this will cause them to be more/less willing to accept a test that lacks benefits'; p. 5: 'people want these tests because they are afraid of cancer'"
+      expected_direction: increase
+    - name: test_harms
+      definition: "The respondent gives harms or risks of the test or of the treatment it can lead to (unnecessary treatment, pain, infection, scarring, anxiety, cost or debt from treatment, false positives) as a reason for their decision"
+      source: "Proposal p. 2-3 and 5: making the harms of unnecessary treatment 'more concrete and affectively salient (e.g. pain, scarring, infection, death)' should 'considerably deter interest in ineffective screening tests'. Expectation for the secondary contrast (harms shown vs not); for the primary risk contrast it is not expected to move"
+      expected_direction: increase
+  placebo:
+    - name: doctor_advice
+      definition: "The response refers to what a doctor recommends or to wanting to ask or follow a doctor's advice"
+      rationale: "Neither factor mentions doctors; the risk feedback comes from a 'risk calculator' and the harms list describes treatment outcomes"
+    - name: test_ineffectiveness
+      definition: "The response refers to the test not reducing deaths or not extending life, or to the research results about the test"
+      rationale: "The statement that the test does not reduce cancer deaths is identical in every arm and independent of the risk feedback. It can co-occur with the target (e.g. worried but the test does not help)"
+estimand: "ITT difference (high minus low risk feedback) in the share of responses expressing cancer_worry_risk, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over the harms factor"
+outcomes:
+  closed_ended: "Q10 would get the test (yes/no), the decision Q11 explains; Q5 perceived risk; Q6 cancer worry; Q9 perceived test riskiness; Q12-Q13 recall and belief that the test does not reduce deaths"
+human_codes:
+  available: false
+  column: null
+  notes: "None in the TESS archive. The article (abstract) reports that cancer worry, reassurance and a desire for health information explained screening preferences; whether these came from coding Q11 was not checked (full text not read)."
+provenance:
+  written_before_reading_text: true
+  contamination: "No Q11 value was read. The proposal quotes pilot participants' reasons ('there's no harm, so why not'), which are from a different sample. The article full text, which may report coded reasons or examples, was not read."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook"
+  date: "2026-11-17"

@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the Study 1 paper (Carey, Fogarty, Gehrke, Nyhan &
+# Reifler, Science Advances 2025; Dartmouth working-paper version with Online Appendix A),
+# the OSF preregistration gpy3s (Wave 1 section), the Political Behavior paper whose archive
+# holds the data, and the Stata variable labels, before any open-text value was read.
+# Companion card: nyhan2024_targetedcorrections_seats2022 (same respondents, same randomization).
+id: nyhan2024_targetedcorrections_seats2020
+title: "Credible sources correction vs placebo articles and explanations of believed fraud in the 2020 U.S. House and Senate elections (YouGov, October-November 2022)"
+source:
+  citation: "Carey, J., Fogarty, B., Gehrke, M., Nyhan, B., & Reifler, J. (2025). Prebunking and credible source corrections increase election credibility: Evidence from the U.S. and Brazil. Science Advances (Study 1). Data deposited with Carey, J. M., Chun, E., Cook, A., Fogarty, B. J., Jacoby, L., Nyhan, B., Reifler, J., & Sweeney, L. (2025). The narrow reach of targeted corrections: No impact on broader beliefs about election integrity. Political Behavior, 47(2), 737-750."
+  doi: "Science Advances article adv3758 (DOI to confirm); data paper 10.1007/s11109-024-09968-0"
+  data: "doi:10.7910/DVN/NCZKCH (CC0); data/external/nyhan2024_targetedcorrections/raw/DART0053_OUTPUT_updated.dta; harmonized_nyhan2024_targetedcorrections_seats2020.csv"
+languages: [en]
+context: "U.S. adults in a YouGov panel, surveyed shortly before the November 2022 midterm elections, read a short series of news-style articles. Respondents who then said voter fraud changed the result of one or more of the 2020 U.S. House and Senate elections were asked to explain why they believe this."
+unit: respondent
+id_column: caseid
+text:
+  column: Q42e_new_w3
+  prompt: "You said you think that the results of [one or two / three to nine / ten or more] elections for the U.S. House and Senate in 2020 were changed by voter fraud. Please explain why you believe this to be true. (Online Appendix A, Study 1 questionnaire)"
+  position: "Post-treatment, the last item of the outcome battery, immediately after the closed item Q42a_post_w3 ('In how many of these elections do you think the winning candidate was not the rightful winner but instead won due to voter fraud?' None / One or two / Three to nine / Ten or more). Asked only of respondents who did not answer 'None'. The same closed item was asked before treatment (Q42a_w3) without an explanation."
+treatment:
+  variable: condition_treat
+  contrast: "credible sources correction (condition_treat = 2, harmonized 'credible') vs placebo articles (condition_treat = 3, harmonized 'placebo')"
+  level: respondent
+  notes: "Simple random assignment with p = 1/3 to prebunking (condition_treat = 1), credible sources correction, or placebo, administered by YouGov (OSF gpy3s, Wave 1). Credible sources: an introductory article 'Legitimacy of 2020 Election Affirmed by Leading Republicans' and four articles in which Republican officials, governors, an attorney general and judges reject claims of fraud in the 2020 election, each followed by a comprehension check repeated up to three times. Placebo: articles on unrelated topics. SELECTION: the explanation is asked only if Q42a_post_w3 is not 'None', and that item is a preregistered outcome of the treatment (H1), so the answering sample is selected after treatment; the estimate conditions on a post-treatment variable. Harmonized design columns: closed_post (Q42a_post_w3, 2-4), closed_pre (pre-treatment Q42a_w3, 1-4), pid7, weight; the ITT version needs the non-askers from the raw file. Mechanical overlap: the target names the sources quoted in the treatment articles, so part of any shift may be recall of the stimulus (positive control). Same respondents as nyhan2024_targetedcorrections_seats2022."
+constructs:
+  target:
+    - name: republican_or_judicial_sources
+      definition: "The response refers to what Republican officials or politicians, judges, or courts said or decided about fraud in the 2020 election (for example, that courts heard or dismissed fraud cases, or that Republican officials certified or disputed results). It counts whether the respondent accepts or rejects what these sources said."
+      source: "Carey et al. (2025), Study 1 design section: the credible sources correction 'draws its persuasive force from the identities of the sources who are quoted', presenting 'evidence of Republican judges and officials rejecting claims of voter fraud from Trump, their partisan ally'; theory section: sources 'speaking against partisan interest' should make corrective claims more credible; H1 (credible sources correction will reduce beliefs in the prevalence and effects of fraud in the 2020 election). The authors state the mechanism but not an expectation about the open-ended answers, which they do not analyze."
+      expected_direction: increase
+  placebo:
+    - name: personal_experience
+      definition: "The response cites the respondent's own experience, or that of family, friends or acquaintances, with voting or elections"
+      rationale: "Neither arm provides or asks about personal experience; the correction quotes public officials"
+    - name: future_elections
+      definition: "The response refers to the upcoming 2022 elections or to future elections"
+      rationale: "The credible sources correction is retrospective and concerns only the 2020 election; the prebunking arm, which concerns 2022, is not part of this contrast"
+estimand: "Difference (credible minus placebo) in the share of explanations expressing republican_or_judicial_sources among respondents asked the explanation, E[g(R) | asked, credible] - E[g(R) | asked, placebo], estimated on the estimation fold; secondary ITT version with non-askers counted as not expressing the target"
+outcomes:
+  closed_ended: "Q42a_post_w3 seats believed changed by fraud in 2020 (1 None ... 4 Ten or more; H1 outcome; pre-treatment version Q42a_w3); Biden rightful winner; confidence in the 2020 vote count"
+human_codes:
+  available: false
+  column: null
+  notes: "Neither paper analyzes the open-ended answers (checked in both texts)"
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; no open-text value was seen by the drafter, and the manifest states the searcher read none. Neither paper prints example answers."
+  author: "draft by Claude agent (wave 3, stage 2) 2026-11-17 from papers, preregistration and variable labels only"
+  date: "2026-11-17"

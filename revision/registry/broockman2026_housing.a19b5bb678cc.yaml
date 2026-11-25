@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the January 2026 working paper (Tobin
+# Center PDF; the APSR version and its online appendix were not available), the
+# replication README, codebook, questionnaire Study3.docx and the authors' R
+# scripts, before any open-text value was read.
+id: broockman2026_housing
+title: "Big real estate developers vs small local homebuilders as the beneficiaries of by-right permitting, and explanations of the permitting choice (US Prolific 2026)"
+source:
+  citation: "Broockman, D. E., Elmendorf, C. S., & Kalla, J. L. (forthcoming 2026). The symbolic politics of housing. American Political Science Review."
+  doi: "APSR DOI not checked; working paper 'The Symbolic Politics of Housing' (Tobin Center, Yale, 13 January 2026; OSF preprint surv9)"
+  data: "doi:10.7910/DVN/WARHEN (CC BY 4.0); data/external/broockman2026_housing/raw/developer_followup_2026.csv + developer_followup_explain_RAW.csv; harmonized_broockman2026_housing.csv"
+languages: [en]
+context: "US adults on Prolific (February 2026) read about a proposed policy that would require cities to approve housing developments that follow clear and specific rules set in advance (some versions listed detailed project requirements). They chose between a named group of builders (versions differed) being able to build apartments that comply with those rules and local government officials always being able to reject a proposed apartment development, and were then asked to explain why they selected their answer."
+unit: respondent
+id_column: anon_id
+text:
+  column: explain
+  prompt: "On the last page, we gave you two options: \"${stream_group_submit} should be able to build apartments that comply with the clear and specific rules the government made in advance.\" \"Local government officials should always be able to reject a proposed apartment development.\" You selected ${choice}. Please explain why you selected this answer. We are interested in what you were thinking when you answered the question. Please be honest, and do not come up with new thoughts now. (Study3.docx, block Explain)"
+  position: "Directly after the by-right permitting choice (streamlining_dv); before the beliefs battery. Thermometers toward builders and local officials were asked before the vignette."
+treatment:
+  variable: treatment
+  contrast: "submitting group 'Big real estate developers' (1) vs 'Small local homebuilders' (0), pooled over the policy-detail factor with project_char as a stratum"
+  level: respondent
+  notes: "2 x 2 respondent-level factorial: stream_group_submit x project_char (0 generic policy, 1 detailed specifications: 20-30 units, 4-6 stories, rents affordable at $120,000/year, standard designs, one-year construction, parking and noise rules). project_char arms are about 1:2 (854 vs 1,748 assigned), not explained by any filter; the archive does not document the randomizer, and the share assigned to Big developers is 52.5% (generic) vs 48.6% (detailed), so estimates must block on project_char. Answers by cell (developers/homebuilders): generic 448/406, detailed 847/897. The group label appears in the vignette, in the option the respondent chose or rejected, and again in the open-item prompt, so part of any shift in developer-related content is mechanical (partial positive control). The prompt also pipes the respondent's own choice, and the choice is post-treatment (answers by arm, Big developers vs homebuilders: by-right 461 vs 871, officials reject 756 vs 362, don't know 78 vs 70). The randomized comparison is pooled over choices; comparisons within a choice are conditional on a post-treatment outcome and are descriptive only. Item answered by 1,295 of 1,297 (developers) and 1,303 of 1,304 (homebuilders) assigned respondents with a closed answer."
+constructs:
+  target:
+    - name: negative_builder_affect
+      definition: "The explanation expresses a negative feeling or judgment about the people or companies who would build the housing (developers, builders, real estate companies, corporations, investors): for example that they are greedy, only care about profit, cannot be trusted, cut corners, or do not care about communities. Answer yes only if such a negative view of the builders is expressed, whether or not the builders are named exactly as in the question."
+      source: "Working paper (Jan 2026), Theoretical Argument, p. 4: by attribute substitution people answer 'do I like the group this policy appears to benefit?' and 'rely on their affect towards the groups or symbols that these stimuli make salient'; p. 2: framings 'which make different groups salient lead voters to rely on their attitudes towards these groups when judging these policies'; By-Right Permits section, pp. 10-12: a complex policy 'might lead people to rely on symbolic considerations to a greater extent', and the homebuilder-developer gap 'is driven by people who dislike big real estate developers'. The paper states no expectation about the open text; this target applies the stated mechanism to the explanation."
+      expected_direction: increase
+  # Code each placebo as a separate yes/no judgment.
+  placebo:
+    - name: project_specifications
+      definition: "The explanation refers to physical or procedural features of the projects: building height or number of stories, number of units, building design, parking, noise, or how long construction takes"
+      rationale: "These are the features listed in the detailed-policy factor (project_char), which is randomized independently of the submitting group and blocked on; the group label does not change them"
+    - name: own_housing_situation
+      definition: "The explanation refers to the respondent's own housing situation: renting or owning, their own neighborhood or street, or their own housing costs"
+      rationale: "Pre-treatment circumstance; the authors argue that homeownership and self-interest do not drive these preferences (pp. 2-5), and the group label does not change the respondent's own situation"
+estimand: "ITT difference (Big real estate developers minus Small local homebuilders) in the share of explanations expressing negative_builder_affect, E[g(R(1))] - E[g(R(0))], blocked on project_char, estimated on the estimation fold among respondents who answered the item, pooled over the closed choice"
+outcomes:
+  closed_ended: "streamlining_dv (by-right 1, don't know 0.5, officials may reject 0; authors' 03_developer_followup.R ll. 47-52), harmonized as choice and streamlining_dv_01; pre-treatment thermometers therm_big_developers, therm_small_homebuilders"
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes. developer_followup_coded.csv has Gemini 3 Flash codes on the full sample (affect_group_based, instrumental_policy, process_rights, uncertain_vague, other_reasoning, mentions_developer, developer_valence); kept as llm_* design columns, never as validation. The authors' online appendix reports developer valence of these answers by arm (figure developer_valence.pdf, from 04_developer_open_ends.R); that figure and the coded values by arm were not viewed."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer was read by the drafter or, per the manifest, the searcher. The few-shot examples in the authors' Gemini prompt (classify_developer_open_ends.py) were deliberately not read; they may contain respondent wording. The authors coded the full sample with an LLM and published valence shares by arm in the online appendix (not seen). The working paper read does not include this follow-up study; whether the APSR version quotes answers is unknown."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, questionnaire and code only"
+  date: "2026-11-17"

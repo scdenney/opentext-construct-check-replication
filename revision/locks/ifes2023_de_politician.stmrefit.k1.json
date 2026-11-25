@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "f28f51b3ebad4e00663c484873023a0aa64d071a049986cad99d97ef693819ee",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ifes2023_de_politician.rds",
+      "sha256": "e43ee74a7ff70e6a4867ee4d3906e9d3e26949c011837d5d696ab0ebbb796d4f"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ifes2023_de_politician.topic_choice.csv",
+      "sha256": "1137bd6b0068e93f9f734b85bf7734660ade78e6982f776005c7c4afeb15d2e8"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "e1f5d387b2821da6716bfdcbfc8b83d90bd95fe4cf5e5e5c557c4880e7054868",
+  "created": "2026-11-23T23:28:05Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the OSF codebook and the preprint abstract before any
+# open-text value was read. This is a positive-control case: the writing task is the
+# manipulation. Steven must confirm the placebo constructs before oc_study_register().
+id: coles2026_gratitude
+title: "Gratitude list vs daily-events list in a 34-country gratitude megastudy"
+source:
+  citation: "Coles, N. A., et al. (2026). A multinational megastudy of the effects of gratitude practices on subjective well-being. Proceedings of the National Academy of Sciences, 123(20). Preprint: PsyArXiv n5gq4_v3."
+  doi: "10.1073/pnas.2537789123"
+  data: "https://osf.io/ae385 (CC-BY 4.0); data/external/coles2026_gratitude/raw/GlobalGratitude_Raw.csv"
+languages: [en, pt, es, pl, da, tr, ko, ja, ru, sv, mk, "no", zh, th, kk, el, hi]
+context: "Online participants in 34 countries (2024-2025), each in their local language, were randomly assigned to one of six gratitude practices or three control tasks. In the two arms used here they spent a few minutes writing down either five things they were grateful for in the past week or five events from the past day that affected them, then rated their mood and outlook."
+unit: respondent
+id_column: ResponseId
+text:
+  column: text   # harmonized; raw columns grat_list (list arm) and control_events (events arm)
+  prompt: "list arm (grat_list): 'For the next few minutes, think back over the past week and write down five things in your life that you are grateful or thankful for.' events arm (control_events): 'For the next few minutes, think back over the past day (past 24 hours) and write down five events that somehow affected you.' (globalgratitude_final_codebook.csv; translated versions in the OSF translations folder)"
+  position: "Immediately after random assignment; the written list is the treatment delivery and precedes the affect, life-satisfaction and social-evaluation measures"
+treatment:
+  variable: condition
+  contrast: "list (1) vs events (0)"
+  level: respondent
+  notes: "Nine arms randomized in Qualtrics: list, letter, text, hk.list (naikan), sub (mental subtraction), god.letter (divine gratitude), events, int.events, measure. Harmonized file keeps list vs events only (1,326 and 1,300 non-empty texts; 2,207 in the authors' cleaned N = 10,696 sample). The prompts also differ in time frame (past week vs past 24 hours)"
+constructs:
+  target:
+    - name: gratitude_expression
+      definition: "The response expresses thankfulness, appreciation, or feeling fortunate or blessed for people, things, or events"
+      source: "Prompt wording in the codebook (grat_list vs control_events) and the preprint abstract, which frames the practices as raising gratitude-related states (thankful and grateful affect items; positive affect d = 0.36)"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: enumerated_items
+      definition: "The response is written as a list of separate items (numbered, bulleted, or separated) rather than continuous prose"
+      rationale: "Both prompts ask for five items, so the format should not differ by arm"
+    - name: weather_mention
+      definition: "The response mentions the weather or the season"
+      rationale: "Incidental content that neither prompt asks for; the gratitude theory makes no prediction about it"
+estimand: "ITT difference (list minus events) in the share of responses expressing gratitude_expression, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold within exclude == FALSE"
+outcomes:
+  closed_ended: "Post-task affect items (including thankful, grateful, happy, indebted, envious), life satisfaction (ls_1-ls_5), ladder, optimism and social-evaluation measures"
+human_codes:
+  available: false
+  column: null
+  notes: "No human coding of the written responses found in the files examined"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No written responses were read; only column names, non-empty counts, condition, language and lab tabulations were printed. The full PNAS paper was not accessible (HTTP 403); the card relies on the OSF codebook and preprint abstract"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Pepin791.pdf), the fielded questionnaire
+# (raw/310.209.00988.1_TESS3217_Pepin_Northwestern_University__v5.00.docx), the
+# OSF study summary, the GfK response-rate report and the SPSS labels. No
+# open-text value was read.
+id: pepin2016_couples_leisure
+title: "Couple vignette with randomized relative earnings, and explanations of whether one partner usually giving in on shared leisure is fair, US adults"
+source:
+  citation: "Pepin, J. R. (2016). Public Perceptions of Money in Families. Time-sharing Experiments for the Social Sciences, study pepin791 (TESS3 217). Published analysis of the closed items: Pepin, J. R. (2019). Beliefs About Money in Families: Balancing Unity, Autonomy, and Gender Equality. Journal of Marriage and Family 81(2), 361-379."
+  doi: "10.1111/jomf.12554"
+  data: "https://osf.io/cug34/ (TESS3_217_Pepin_Client.sav); data/external/pepin2016_couples/harmonized_pepin2016_couples_leisure.csv"
+languages: [en]
+context: "US adults read about a fictional couple, Michelle and Anthony, both 31, described by whether they are married or living together, how long they have been a couple, whether they have a child, and how much each earns from about forty hours of work a week; they read that the couple usually decides together about shared weekend activities or which movie to see but, when they cannot agree, one partner usually accepts the other's opinion, rated how fair that was, and explained their rating in two or three sentences."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Please explain why you indicated this decision is [very fair / somewhat fair / somewhat unfair / very unfair]. Please take your time and write 2-3 sentences. The 'Next' button will appear after 30 seconds."
+  position: "Directly after the fairness rating B06 ('Most of the time Anthony and Michelle make a decision together about [shared weekend activities / what movie to go see]. In instances when they can't agree, most of the time [Michelle / Anthony] eventually accepts [Anthony / Michelle]'s opinion. How fair do you think this is?'), with the vignette and B06 on screen; after B01-B05, including the first fairness item and its explanation"
+treatment:
+  variable: treatment
+  contrast: "Primary: unequal earnings (man_higher: Anthony $2,800 and Michelle $1,200 a month; woman_higher: the reverse) vs equal (each $2,000), pooled over marital status, duration and parental status. Secondary: man_higher vs woman_higher."
+  level: respondent
+  notes: "24-block factorial XTESS217 = marital status (2) x duration (3 or 7 years) x parental status (2) x relative earnings (3), equal probability; block mapping from questionnaire Appendix A, verified against the DOV_* insert variables. The partner who gives in (DOV_PERSON_B06) and the activity (DOV_ACTIVITY) are randomized separately. The proposal added this non-monetary decision at a reviewer's request to test whether earnings power extends beyond financial decisions (response to Reviewer 1, point 5). The earnings sentence is in the vignette shown above the item, so a rise in earnings mentions under unequal earnings is partly mechanical uptake of the vignette text (positive control). The proposal planned 12 cells with duration fixed at 3 years; the fielded design added duration."
+constructs:
+  target:
+    - name: earnings_breadwinning
+      definition: "The answer uses the partners' earnings as a reason: who earns more or less, who contributes more money, or whether the higher earner should or should not get more say in choosing the shared activity"
+      source: "Proposal pp. 2-3 (Breadwinning), the expectation this item was added to test: 'Money tends to give higher-earners power even over decisions having little to do with money ... I hypothesize higher-earners will be evaluated as having more rights to personal spending money ... and greater say in decision making'; p. 5: money is a source of power 'if respondents evaluate higher earners as having greater rights to family decisions'. OSF study summary, Hypotheses. For the secondary contrast, p. 3: 'women's breadwinning may be insufficient to elicit notions of breadwinning' (hedged)."
+      expected_direction: increase
+  placebo:
+    - name: marriage_reference
+      definition: "The answer refers to whether the couple is married or living together unmarried (marriage, husband, wife, spouses, cohabiting)"
+      rationale: "Marital status is randomized independently of relative earnings and stated in every vignette"
+    - name: children_reference
+      definition: "The answer refers to the couple's child or children, or to parenting"
+      rationale: "Parental status is randomized independently of relative earnings and stated in every vignette"
+estimand: "ITT difference (unequal minus equal earnings) in the share of leisure-decision explanations expressing earnings_breadwinning, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "B06 fairness of one partner usually accepting the other's opinion (1 very fair ... 4 very unfair)"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. The 2019 JMF article reports the closed allocation items; whether it or a later paper quotes the open-ended explanations was not checked."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

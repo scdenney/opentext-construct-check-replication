@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "ab9d68e6af4c13e2b461d18416671e7c0f07e2a72aa06e84ae137eeeeeff7362",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_calarco2019_vignette",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/calarco2019_vignette.stm.rds",
+      "sha256": "a2d722553ddc04eb5f2834bd6a10959d1e10869928e89992b4355f238a23188e"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/calarco2019_vignette.topic_choice.csv",
+      "sha256": "4ba1b04ffc766163cd2427da878ecd619f7776f30e7983995c6a142cfa14946c"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "cbc9f324986321e981664e302f247ad44326c03fb08d5d89b01b0befddb969b9",
+  "created": "2026-11-17T22:51:57Z",
+  "opencheck_version": "0.0.0.9000"
+}

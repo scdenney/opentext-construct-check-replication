@@ -1,0 +1,55 @@
+# DRAFT, not registered. Written from the authors' postprint (OSF g2d54, "Spruill & Lewis
+# (2022)_Preprint.pdf": introduction, Current Studies, Study 1 Method), the authors' R
+# scripts (S1_qualitative.Rmd, S1_quantitative.Rmd) and the question-text header row of the
+# Qualtrics export. The postprint prints no example answers. Its Results sections (LIWC
+# results by arm) were read: see provenance.contamination.
+# Sibling card: spruill2022_legalreasonable_s2 (preregistered replication, two arms).
+id: spruill2022_legalreasonable_s1
+title: "Describing a police officer as 'a police officer', 'an average police officer' or 'an objectively reasonable police officer' and how favorably respondents describe the officer (US jury-eligible online sample, 2021, Study 1)"
+source:
+  citation: "Spruill, M., & Lewis, N. A., Jr. (2022). Legal descriptions of police officers affect how citizens judge them. Journal of Experimental Social Psychology, 101, 104306 (Study 1)."
+  doi: "10.1016/j.jesp.2022.104306"
+  data: "OSF https://osf.io/g2d54/ (public; no licence set; no restriction stated); data/external/spruill2022_legalreasonable/raw/PsychologyofLegalDecisions_Data_Study_One.csv; harmonized_spruill2022_legalreasonable_s1.csv"
+languages: [en]
+context: "Jury-eligible US adults recruited online in 2021 took a short survey about law enforcement officers. As the first question, they were asked to describe the actions and/or conduct that come to mind when they imagine a police officer; the words used to describe the officer in the question differed across respondents."
+unit: respondent
+id_column: id
+text:
+  column: "Q111 (Blank arm), Q112 (OR arm), Q113 (Average arm); harmonized column text"
+  prompt: "Describe the actions and/or conduct that come to mind when you imagine [a police officer | an average police officer | an objectively reasonable police officer]. (Question-text header row of the export; postprint, Study 1 Method, 'Open-Ended Prompt': open essay box, no word or time limit.)"
+  position: "First item after the consent screen and the attention pledge (QC); followed by 27 person-perception trait ratings of the same officer (worded as in the prompt), debrief questions and demographics."
+treatment:
+  variable: treatment
+  contrast: "objectively reasonable police officer ('reasonable'; Condition OR) vs average police officer ('average'; Condition Average); secondary: reasonable vs 'a police officer' ('blank'; Condition Blank), and average vs blank"
+  level: respondent
+  notes: "Three-arm between-subjects design; postprint, Study 1 Method: 'Each participant was randomly assigned to one of three conditions'. Condition is a Qualtrics embedded-data field (374 rows per arm before exclusions). Each arm saw its own version of the question (separate Qualtrics questions Q111/Q112/Q113, mapping read from the export's question-text row); no respondent has text in another arm's column. Before the answer, the arms differ only in the descriptor in the prompt: consent, the attention pledge and the study description ('providing their thoughts about law enforcement officers') are the same. The randomized element is the wording of the prompt itself, so a shift in the text is partly mechanical ('positive control'): 'objectively reasonable' is itself a favorable descriptor that answers may echo or elaborate. Study 1 was not preregistered ('This analysis was exploratory in nature', Study 1 Method)."
+constructs:
+  target:
+    - name: favorable_portrayal
+      definition: "The description portrays the officer favorably: it attributes at least one positive quality, feeling or action to the officer (for example helpful, fair, calm, honest, respectful, caring, professional, competent, protecting or serving people, de-escalating, following the law). Answer yes even if the description also contains negative content. Answer no if the description is neutral or only negative, or if it only repeats the question's own words ('an average officer', 'an objectively reasonable officer') without describing what the officer is like or does."
+      source: "Postprint, Current Studies (p. 6): 'We also hypothesized that applying the legal language of reasonableness to police officers would result in more positive conceptions of officers for Americans regardless of their racial-ethnic background ... we expected that participants in the \"objectively reasonable\" condition would have more positive conceptions of officers than those in the average condition and that participants in the average condition's conceptions of police officers would be similar to baseline views.' Tested on the text as the LIWC share of positive-emotion words (Study 1 Results)."
+      expected_direction: increase
+    - name: unfavorable_portrayal
+      definition: "The description portrays the officer unfavorably: it attributes at least one negative quality, feeling or action to the officer (for example aggressive, rude, abusive, corrupt, biased or racist, lazy, arrogant, using excessive force, abusing power). Answer yes even if the description also contains positive content. Answer no if the description is neutral or only positive, or if it describes negative behavior only by members of the public (e.g. criminals the officer deals with)."
+      source: "Same hypothesis (postprint, Current Studies, p. 6: 'more positive conceptions of officers'); the authors test it in the text also as the LIWC share of negative-emotion words (Study 1 Results) and conclude that the legal term led participants 'to write about them more positively, less negatively' (General Discussion, p. 24)."
+      expected_direction: decrease
+  # Each placebo is a separate yes/no judgment, not exclusive of the targets.
+  placebo:
+    - name: appearance_equipment
+      definition: "The description mentions the officer's physical appearance or equipment: uniform, badge, gun or other weapon, handcuffs, radio, body camera, patrol car, or the officer's build, age, gender or race."
+      rationale: "The descriptor varies how good the officer is imagined to be, not what the officer looks like or carries; the prompt asks about 'actions and/or conduct' in every arm. No factor was randomized independently of the descriptor, so this is a theory-based placebo. Caveat: 'average' may invite a typical-person sketch that includes appearance."
+    - name: specific_offense
+      definition: "The description names a specific type of offense or incident the officer deals with, such as speeding or other traffic violations, drugs, theft, burglary, domestic disputes, violent crime or accidents."
+      rationale: "The legal descriptor concerns the officer's judgment and conduct, not the kind of crime policed; the prompt is the same task in every arm. Caveat: if 'objectively reasonable' evokes use-of-force cases, mentions of violent incidents could rise."
+estimand: "ITT difference (reasonable minus average) in the share of descriptions expressing each target, E[g(R(1))] - E[g(R(0))], among respondents in the authors' analytic sample who answered, estimated on the estimation fold. Secondary: reasonable minus blank (same expected signs) and average minus blank (the authors expect no difference: average 'similar to baseline views')."
+outcomes:
+  closed_ended: "Warmth (tolerant, warm, good-natured, sincere) and competence (competent, confident, independent, competitive, intelligent) of the officer, item means of the authors' trait ratings, asked after the open answer; columns warmth, competence. Design columns: race (ParticipantRace codes 1-8), race_white (authors' White vs non-White moderator)."
+human_codes:
+  available: false
+  column: null
+  notes: "None. The authors scored the answers with LIWC2015 (posemo, negemo); the LIWC output files on OSF were not downloaded."
+provenance:
+  written_before_reading_text: false
+  contamination: "No respondent's answer from Study 1 was read. While printing the first data row of the export (the files have no leading header rows), the drafter saw the Q113 value of one Study 1 row, which is the researchers' test entry 'Testing' (row with 'Testing' in age and occupation; excluded by the authors' QC filter and kept as an excluded row). The same print showed 160 characters of one Study 2 answer (see the sibling card). The drafter also read the postprint's results: in Study 1 the LIWC share of positive words did not differ by arm, and the reasonable arm used fewer negative words than the blank arm (not significantly fewer than the average arm); the abstract and discussion report the pooled conclusion. The searcher reports no text seen (MANIFEST). The postprint prints no example answers."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the postprint, preregistration (for Study 2), authors' scripts and export header"
+  date: "2026-11-18"

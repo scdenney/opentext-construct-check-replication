@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "307c7d781c2ddde82bc00f7c32673930b82d673e955be00297dc787541f9404d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_aks21_c2_nkbusiness",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/aks21_c2_nkbusiness.stm.rds",
+      "sha256": "efa3a1414122eaca5a4121ae0e7dfe998151277dc80014d669f5acb9efe255ae"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/aks21_c2_nkbusiness.topic_choice_qwen36_35b.csv",
+      "sha256": "fdc02a84dc2671e913428b50fc15b14f23e699c6b95a2a4a85b5d4fcdcc522fc"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "13959f2261eba02236f2a2c23f8d44125012c90624c5ef546f8ba5125d080641",
+  "created": "2026-11-17T18:03:39Z",
+  "opencheck_version": "0.0.0.9000"
+}

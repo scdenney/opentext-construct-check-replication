@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the OSF project description, the Measures document
+# and the Results Appendix before any open-text value in the data was read. Steven must
+# confirm the placebo constructs before running oc_study_register().
+id: landrum2025_mechexplain
+title: "Coherent vs incoherent mechanistic explanations and listed thoughts (climate change, masks)"
+source:
+  citation: "Landrum, A. R., & Huxster, J. K. (n.d.). Mechanistic explanations aren't immune to biased or heuristic processing [Preprint]. PsyArXiv, gd5xv_v1. OSF project 'Biased & Heuristic Processing of Mechanistic Explanations' (created 2024-10-28)."
+  doi: "PsyArXiv gd5xv_v1 (https://osf.io/preprints/psyarxiv/gd5xv_v1); no DOI found"
+  data: "https://osf.io/j9mq3 (CC-BY 4.0); data/external/landrum2025_mechexplain/raw/Coded_Thought_Lists_2.csv"
+languages: [en]
+context: "507 US online participants read a mechanistic explanation about climate change or mask-wearing that was either coherent or contained a logical flaw, rated its argument strength, and were then invited to list their thoughts and reactions to the message."
+unit: respondent
+id_column: ResponseId
+text:
+  column: text   # harmonized; raw columns T1-T10 joined with " | "
+  prompt: "ELAB: 'Did you have a lot of thoughts about or reactions to the message? (It doesn't matter if they are favorable or unfavorable).' If a lot/some: THOUGHTLIST 'Write each thought or reaction you had in response to the message using the boxes below. Please put one thought or reaction per text box. You do not have to worry about completing all 10 text boxes, and you don't need to worry about spelling or grammar.' (Measures.docx)"
+  position: "After the explanation and the six argument-strength items; 372 of 507 respondents listed at least one thought (respondents answering 'no thoughts' skipped the boxes)"
+treatment:
+  variable: QUALITY
+  contrast: "LOW = incoherent/illogical explanation (1) vs HIGH = coherent explanation (0)"
+  level: respondent
+  notes: "2 x 2 between-subjects: QUALITY (HIGH 250, LOW 257) crossed with TOPIC (CC = climate change 247, MSK = masks 260). Text present: CC-HIGH 95, CC-LOW 92, MSK-HIGH 95, MSK-LOW 90. Selection into the thought list (ELAB) is post-treatment"
+constructs:
+  target:
+    - name: noticing_logical_flaw
+      definition: "The respondent points out that the explanation's reasoning is flawed, contradictory, missing a step, or does not make sense as a causal account (not mere disagreement with the conclusion)"
+      source: "Results Appendix, 'Indicator 2': hypothesis that participants in the illogical condition will identify or comment on the logical flaw; the authors coded 14 of 257 (5%) illogical-condition participants as noticing it"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: position_on_issue
+      definition: "The respondent states agreement or disagreement with the scientific or policy position (that climate change is human-caused, or that masks reduce spread) without commenting on the explanation's reasoning"
+      rationale: "Both quality arms argue for the same conclusion on the same topic; only the coherence of the mechanism differs"
+    - name: partisan_reference
+      definition: "The response mentions political parties, politicians, the government, the media or partisan groups"
+      rationale: "Topic and conclusion are held fixed across quality arms, so partisan cues should not differ"
+estimand: "ITT difference (LOW minus HIGH quality) in the share of respondents expressing noticing_logical_flaw, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. Respondents who listed no thoughts count as not expressing it in the ITT version"
+outcomes:
+  closed_ended: "Argument strength (AS1-AS6, IRT score; no significant quality difference, Results Appendix Indicator 1); ELAB (amount of thoughts)"
+human_codes:
+  available: true
+  column: "human_final_code (13 mutually exclusive codes in 5 groups), human_coder1_global / human_coder2_global (two coders' grouped codes), human_notice (noticed flaw, 0/1), human_mech (mechanism focus, 0/1), human_s_platform / human_p_platform (0/1, meaning not documented in the files read)"
+  notes: "Two research-team coders, Cohen's kappa 0.84, disagreements resolved by discussion (Results Appendix Table 4a). NOTICE was assessed for illogical-condition participants; check whether HIGH-condition rows are structurally 0"
+provenance:
+  written_before_reading_text: true
+  contamination: "No thought values were read from the data files. While extracting hypotheses from the Results Appendix the drafter saw three participant quotes printed in the appendix (one row of Table 2a and two Indicator 3 examples). The authors' codes were built on the full sample"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

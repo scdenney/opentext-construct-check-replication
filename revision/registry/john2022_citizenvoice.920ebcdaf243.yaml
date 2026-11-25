@@ -1,0 +1,43 @@
+# DRAFT, not registered. Written from the archive README, Stata code comments, variable
+# labels and the published abstract before any open-text value was read.
+id: john2022_citizenvoice
+title: "Identity-deception vs other research designs on MPs and UK citizens' written reactions to the study (Deltapoll 2022)"
+source:
+  citation: "John, P., Kim, K., & Soto-Tamayo, L. (2024). Using citizen voice to evaluate experiments on politicians: A UK survey experiment. Journal of Experimental Political Science, 11(1), 42-51."
+  doi: "10.1017/XPS.2023.3 (to confirm; Cambridge PII S2052263023000039)"
+  data: "doi:10.7910/DVN/UDFLIA; data/external/john2022_citizenvoice/raw/Deltapoll_PeterJohn220114-final2.dta; harmonized_john2022_citizenvoice.csv"
+languages: [en]
+context: "A national online sample of UK adults read a description of a hypothetical research study in which researchers contact their local MP (seven versions differ in deception, debriefing, use of confederates, MP pre-agreement, complaints or a journalist) and were asked to say in more than ten words how they feel about the study."
+unit: respondent
+id_column: id
+text:
+  column: PJ7_1
+  prompt: "In more than 10 words tell us how you feel about this study?"
+  position: "After the scenario, the approval items (PJ3-PJ5) and the recall check of design features (PJ6); before the worthwhileness rating (PJ9)"
+treatment:
+  variable: Scenario
+  contrast: "identity deception (Scenarios A1, A2, A3 and C; researcher poses as a constituent) = 1 vs no identity deception (B1, B2 confederates; D journalist) = 0"
+  level: respondent
+  notes: "Seven scenarios randomized with equal probability (about 1,150 each). The binary follows the authors' deception_AC dummy in 'John et al_code(b).do'. Finer contrasts (debriefing: A2, A3, B2; MP complaint: A3) are available from Scenario."
+constructs:
+  target:
+    - name: deception_objection
+      definition: "The response objects to, or raises concern about, researchers lying to, deceiving or misleading MPs, e.g. pretending to be a constituent or using a false identity"
+      source: "Design of Scenarios A1-A3 and C (identity deception) in the code comments and abstract; the paper's question is whether identity deception lowers citizen approval (abstract: approval did not vary by design feature on closed-ended items)"
+      expected_direction: increase
+  placebo:
+    - name: mp_time_cost
+      definition: "The response says the study wastes MPs' or staff time or public money"
+      rationale: "All seven designs send the same kind of request to MPs, so the burden on MPs is held constant; only how the request is disguised varies"
+estimand: "ITT difference (identity deception minus no identity deception) in the share of responses expressing deception_objection, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "PJ3_1 agreement that the study should go ahead; PJ4 glad my MP took part; PJ5_1 likelihood of complaining; PJ9_1 worthwhileness"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; the paper reports closed-ended outcomes only (abstract); paper full text not read"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

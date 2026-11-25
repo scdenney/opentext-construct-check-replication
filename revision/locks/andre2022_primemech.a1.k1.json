@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "4881db2528e4688e8b657959fd785e1ade51eded1189821f1bf4e1bc3082ba60",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/andre2022_primemech.9ab4dcc235d4.yaml",
+      "sha256": "dfe9dc514a84d1a66e836e05f45666956e82608cd4a537f00b9a9d180489bbb7"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0f3a13752b93acfc2df09563f62a65a4f775abd29967e81093bf2f86ad393c73", "23bd28ef4fb07ec06458e205c3ca08abb054b9dd809cb945f626b0de2814c6d1", "3bb0679c1150affea81b3113bdae073fe0d269d78db987cc63dd3bf9139c6b6c", "5ea650e42695949547db7e7c7b14180edd62f5d6b3839172f5164289ab0f8819", "657bc7cf3c88916bc4eaaac363255f563f4626f61858161448841769eacc7c00", "6c5cb7584803732c83099ccf0e3158439731796e5035b5e9b10b2e5aa5a246b4", "72958149d6cab12f7017e986e8927a42ad5ed65c1a61651ce0f4b4060f8b6ac5", "8ca48a508526d620e3ac40bd4e26a7cbe283b711e6dea71f3388bfce9b10238b", "f2b3f5d2e1302cd467ae390ed3a472663d5f2946c0988edcd17f2b15efcf41f8"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "018faf4783199a8734a33cec891ec89a2b9e3e9d3d88ca6ac58b07c6b0832657",
+  "created": "2026-11-17T18:35:59Z",
+  "opencheck_version": "0.0.0.9000"
+}

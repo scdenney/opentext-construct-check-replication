@@ -1,0 +1,43 @@
+{
+  "lock_version": 1,
+  "split_hash": "a111ba699f39ffca71cd7670993efc2104bd133b5032e00a508d0bcb109be8bc",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_sktw_naturalization_2024",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024.stm.rds",
+      "sha256": "0713e989c79a6d10bab4921e04d5d375179f29b6b7588619defc66eca608411e"
+    },
+    {
+      "name": "stm_sktw_naturalization_2024@orig_KR",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024@orig_KR.stm.rds",
+      "sha256": "a7caf90af131bbd8aed89b91933d3bfa4a7740f2d5e68951c207aa7a00904632"
+    },
+    {
+      "name": "stm_sktw_naturalization_2024@orig_TW",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024@orig_TW.stm.rds",
+      "sha256": "99f8b90608082d00f5c80266c3ede525ded371de86cd5565a3bce022fbff7093"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sktw_naturalization_2024.topic_choice_qwen36_35b.csv",
+      "sha256": "3406ebf28248aa4b6dd28a7d14165389bab685277005374c2f6b3ad62555e734"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "3dbad8b44328ca593baf0b2f4327a81566de12f53396210eb194bea8f89ba55f",
+  "created": "2026-11-17T18:03:39Z",
+  "opencheck_version": "0.0.0.9000"
+}

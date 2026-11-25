@@ -1,0 +1,61 @@
+# DRAFT, not registered. Written from the ECONtribute DP 119 version of the paper
+# (October 2021; Section 4.5 and Online Appendix F), the Wave 4 .qsf, the codebook and
+# the authors' cleaning and analysis scripts. NOT blind: the searcher saw about 10 outcome
+# answers (see provenance.contamination), and the paper reports the hand-coded effects.
+# Section numbers are from DP 119; confirm against the REStud version before registering.
+id: andre2022_primemech
+title: "Costs prime and demand prime and households' explanations of their inflation forecast after a federal funds rate rise (Andre et al. 2022, Wave 4)"
+source:
+  citation: "Andre, P., Pizzinelli, C., Roth, C., & Wohlfart, J. (2022). Subjective models of the macroeconomy: Evidence from experts and representative samples. Review of Economic Studies, 89(6), 2958-2991."
+  doi: "10.1093/restud/rdac008"
+  data: "doi:10.5281/zenodo.5838445 (SubMod_Replication_220111.zip); data/external/andre2022_primemech/raw/{prime_text.dta,prime_qualtrics_export.csv}; harmonized_andre2022_primemech.csv"
+languages: [en]
+context: "US adults in an online survey read a hypothetical scenario in which the Federal Reserve unexpectedly raises the federal funds rate, and predicted how US inflation would change compared with the rate staying constant. Some respondents first predicted whether US firms would face higher or lower costs of doing business, or higher or lower demand for their goods and services, and wrote a few sentences about that prediction; all respondents then explained in 2-3 sentences how they came up with their inflation prediction."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "int_open (control) / int_open_prime (costs and demand arms); merged as `open` by the authors and as `text` in the harmonized file"
+  prompt: "Control (int_open): 'Your thoughts. Above, you predict how the change in the alternative scenario affects the US inflation rate. Please tell us how you come up with your prediction. What are your main considerations in making the prediction? Please respond in 2-3 sentences.' Primed arms (int_open_prime): 'Your thoughts in step 2. Above, you predict how the change in the alternative scenario affects the US inflation. Please tell us how you come up with your predictions. What are your main considerations in making the predictions in step 2? Please respond in 2-3 sentences.'"
+  position: "Last item on the 'Interest rate: Rise' page, directly below the inflation prediction (pi_int_rise). In the primed arms the same page first shows 'Step 1' (the costs or demand question, prime_costs / prime_demand) and its open item (prime_open), then 'Step 2: Prediction of inflation'. Control respondents see only 'Prediction of inflation'."
+treatment:
+  variable: treatment
+  contrast: "Two contrasts, both respondent-level: costs prime ('costs') vs control ('control'), primary target firm_cost_channel; demand prime ('demand') vs control, primary target demand_channel"
+  level: respondent
+  notes: "Qualtrics BlockRandomizer with even presentation over four equally likely cells (control, control, demand, costs), so P(control) = 1/2, P(costs) = P(demand) = 1/4; realized 772 / 362 / 387 in the authors' sample of 1,521. The item wording differs by arm ('Your thoughts in step 2', 'predictions in step 2' vs 'Your thoughts', 'prediction'), and the primed arms answer a closed question and write about firms' costs or product demand on the same page just before this item. A rise in the primed channel is therefore partly mechanical carry-over from step 1: read both target effects as a positive control (the authors call it the 'first stage'), not as evidence of spontaneous recall. Primed respondents also write twice on the page, which may shorten the second answer. Control respondents were later randomized to answer the costs or the demand question at the end of the survey (treatment_control, kept as control_question); that comes after the text and does not affect it. No other factor is randomized before the item."
+constructs:
+  target:
+    - name: firm_cost_channel
+      definition: "The response gives the effect of the rate rise on firms' costs as a consideration: higher (or lower) borrowing or financing costs for businesses, higher (or lower) costs of doing business or production, or firms changing their prices because their costs change. A mention of more expensive borrowing or loans that does not say whether businesses bear it does not count."
+      source: "DP 119 Section 4.5, Design and Results: the costs prime is meant to 'exogenously draw their attention to different propagation channels', here the supply-side (cost) channel; the authors measure this first stage with cost-related words in this item (Table 4, col. 1) and with the hand-coded 'Firms' costs (+)' group (Online Appendix F.2.4, Table A.23; group defined in Table A.17). Primary target of the costs-vs-control contrast; expected increase there. The authors state no expectation for it under the demand prime."
+      expected_direction: increase
+    - name: demand_channel
+      definition: "The response gives the effect of the rate rise on demand or spending as a consideration: consumers or households spending or buying less (or more), borrowing becoming more (or less) expensive for households or consumers, household income or money available changing, or firms investing less (or more). A mention of more expensive borrowing or loans that does not say whether households or consumers bear it does not count."
+      source: "DP 119 Section 4.5, Design and Results: the demand prime should raise 'retrieval of demand-side mechanisms' ('relative inattention to demand-side compared to supply-side mechanisms'); measured by demand-related words (Table 4, col. 2) and the hand-coded 'Product demand (-)' group (Table A.23; Table A.17). Primary target of the demand-vs-control contrast; expected increase there. The authors state no expectation for it under the costs prime."
+      expected_direction: increase
+  # The other prime's channel is NOT used as a placebo. The authors give no ex-ante
+  # expectation about cross-effects, their motivation is relative attention (demand-side
+  # vs supply-side), so crowd-out of the other channel is plausible, and their own
+  # hand codes report a cross-effect (costs prime lowers 'Product demand (-)' mentions,
+  # Table A.23). Each channel is estimated under the other contrast as a secondary,
+  # non-directional quantity.
+  # Placebos: separate yes/no judgments; any crowd-out would lower them, so the
+  # false-positive check is an increase.
+  placebo:
+    - name: political_reference
+      definition: "The response refers to politics: political parties, the president or the administration, elections, Congress, or the political motives of officials"
+      rationale: "Neither prime mentions politics; the authors code political comments as a separate response type ('politics'; about 10% of household answers in Wave 3, Online Appendix F). The primes concern firms' costs and product demand only."
+    - name: past_episode_reference
+      definition: "The response refers to a specific past economic event or period, or to what happened on earlier occasions when interest rates rose (for example the 1970s-80s, the 2008 crisis, or past Federal Reserve rate increases)"
+      rationale: "Neither prime asks about history or past experience; the authors code references to past events as a separate response type ('historical'). The prime questions ask about the scenario only."
+estimand: "For each prime, the ITT difference (prime minus control) in the share of responses expressing that prime's own channel (firm_cost_channel for costs, demand_channel for demand), E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. The respondents of the other primed arm are not part of a contrast."
+outcomes:
+  closed_ended: "pi_delta (pi_int_rise): predicted change in inflation, -1 to +1 percentage points, answered on the same page just before the text. costs_rise / demand_rise: step-1 answers in the primed arms (pre-text); in control asked after the text (post-treatment)."
+human_codes:
+  available: true
+  column: "human_int_costs (Firms' costs +), human_int_demand (Product demand -), human_int_labor (Labor demand -), human_mechanism (response type 'mechanism'), human_approach and human_variable (cleaned code strings), human_reviewer (coder R / W / P)"
+  notes: "One coder per response in Wave 4 (DP 119 Online Appendix F, fn. 10), three coders with about a third each. The coding files hold only ResponseId, the text and the codes, with no arm column, but the 'step 2' framing may reveal the arm. Mechanism groups are directional (costs up, demand down) and defined in Table A.17 / narratives_coded.json; the card targets are non-directional mentions of each channel, so agreement with the human codes is bounded by direction. Codes cover the full sample, and the paper reports their arm differences."
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) The wave-3 searcher printed about 10 short values of the column `open` (e.g. 'na', 'idk', 'Not sure', 'Good service for') from prime_text.dta. `open` is not a different item: it is the authors' merge of int_open and int_open_prime (clean_prime.R l. 87) and equals the outcome text in all 1,521 rows (checked by count), so these are outcome answers. Arm unknown. (2) The drafter read the paper, which reports the arm effects on word use and on the hand codes (Table 4, Table A.23), before drafting; the targets follow the authors' stated design, and the decision not to use the other channel as a placebo draws partly on the reported cross-effect. (3) The paper prints example answers (Section 4 and Online Appendix F, e.g. Tables A.15 and A.18), mostly or wholly from the Wave 3 associations survey on the same interest rate vignette; a few were seen in passing. (4) While listing variables the drafter printed the 7 distinct coder comments in the `comment` column (coder notes such as 'unsure, possibly over-reading'); one quotes a fragment of a response ('rate of doing business'). No other text value was printed."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, questionnaire and code"
+  date: "2026-11-17"

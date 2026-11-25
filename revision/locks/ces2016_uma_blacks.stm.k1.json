@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "cfc199f0f189c2723b1504f52d714a8509a0e148a4e1c7fbecc20ff690d35bbf",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ces2016_uma_blacks",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ces2016_uma_blacks.stm.rds",
+      "sha256": "dc360b0f0fd1458e7c9ccd47a1e0466829aea76a38770d9e8945292782218fd5"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ces2016_uma_blacks.topic_choice.csv",
+      "sha256": "c4170aee2167202fcea443d28ae4c5b4f1c83fe5a8988d8e2b6e228567ad53ff"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "f0b46c221a529fd03e8a8f7c75da2ad7f8f7e6cfb87d2e7b2ec1a009a7b49ce0",
+  "created": "2026-11-18T00:05:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

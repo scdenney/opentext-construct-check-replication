@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "22350fa75f3b0c11120b09cbd670adf978e53673e1204d4ee50227911c1ddb8f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/zarpli2023_turkeysanctions.rds",
+      "sha256": "cc266590e816ef63317f70fe5222bbb5b7bd7fc1ac694db9b1b3ec139b57b264"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/zarpli2023_turkeysanctions.topic_choice.csv",
+      "sha256": "b2f89a90753fc1a93f6009a056fb495e0175cf3fe5c1c244aaf083ccd40d041a"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "40f86157ab320d38987a048309ed648cbe30ecb96d7b70c6fd04649ed9357649",
+  "created": "2026-11-23T23:31:54Z",
+  "opencheck_version": "0.0.0.9000"
+}

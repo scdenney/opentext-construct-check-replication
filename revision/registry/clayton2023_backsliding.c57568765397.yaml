@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Clayton1617.pdf), the
+# fielded questionnaire (raw/9089.134_TESS_Clayton_2023_vFINALsimple.docx) and counts
+# from the data file, before any open-text value was read. No published article found.
+id: clayton2023_backsliding
+title: "Critics' specific-threat paragraph (five moral frames) vs none and explanations of support for a state election-certification measure (US 2023)"
+source:
+  citation: "Clayton, K. (2023). Interventions to Help Citizens Identify Incremental Democratic Backsliding. Time-sharing Experiments for the Social Sciences, study clayton1617 (TESS 134)."
+  doi: "none; TESS study page https://tessexperiments.org/study/clayton1617"
+  data: "OSF https://osf.io/m5adk/; data/external/clayton2023_backsliding/raw/9089_TESS_134_Clayton_client_file_20231218.sav; harmonized_clayton2023_backsliding.csv"
+languages: [en]
+context: "US adults (AmeriSpeak panel, 2023) read about a hypothetical measure, passed by Republicans or Democrats in another state's legislature, that would let the legislature review ballot counting and accept or reject election results, with a sponsor's statement that it protects democracy; some also read a critics' paragraph. They said whether they supported or opposed what the legislators did and were asked to explain why in a few words."
+unit: respondent
+id_column: CaseId
+text:
+  column: CONSIDER_WHY
+  prompt: "In a few words, please tell us why you [support/oppose] what the [Republicans/Democrats] did in this scenario?"
+  position: "Directly after the vignette, the threat-to-democracy item (THREAT, THREAT_STRENGTH) and the support/oppose item (CONSIDER, CONSIDER_STRENGTH); shown only to those who answered CONSIDER; before the candidate-choice task"
+treatment:
+  variable: treatment
+  contrast: "any critics' paragraph (DOV_FRAME_ASSIGN 2-6: harm, sanctity, authority, fairness or loyalty frame; treatment = 1) vs groundwork + justification only (DOV_FRAME_ASSIGN 1; treatment = 0)"
+  level: respondent
+  notes: "12 cells (DOV_CONDITION) = 6 frames x 2 parties of the actor (DOV_PARTY_ASSIGN), randomized by NORC; control cells were sized about 3x each frame cell (2,127 vs 693-772). The five frames share the same core sentence ('By giving the [party] the power to reject the results of elections that they lose ...') and differ in the moral framing of its consequence; they are pooled here, as in the proposal's candidate-choice analysis (Appendix Table 1 note), while the proposal's threat/support analyses compare each frame with control separately. Partly mechanical: the treated arms read text that names the consequence, so echoing it is a near positive control. The item wording depends on the respondent's own support/oppose answer, which the treatment is expected to move. 1,431 respondents (23% control, 26% treated) skipped the item (code 98); they are not in the file."
+constructs:
+  target:
+    - name: specific_antidemocratic_consequence
+      definition: "The answer says that the measure would let the legislature or a party reject, overturn or ignore election results it does not like, take away voters' choice, let one party seize or keep power regardless of the vote, or is otherwise a threat to democracy or fair elections"
+      source: "Proposal (raw/Clayton1617.pdf), section III 'Proposed Research Design': 'if citizens knew with certainty what type of consequences are likely to arise from a groundwork action, their threat perceptions and subsequent opposition to groundwork actions could be higher. I therefore propose testing whether informing citizens about the specific antidemocratic consequences that could arise from groundwork actions impacts democratic threat perceptions'; the treatments 'highlight the specific threat posed by the groundwork action'"
+      expected_direction: increase
+  placebo:
+    - name: administrative_cost
+      definition: "The answer refers to the cost, speed, workload or administrative burden of counting or reviewing ballots (time, money, delays, bureaucracy)"
+      rationale: "Neither the vignette nor any critics' paragraph mentions cost or administration; the frames vary only the antidemocratic consequence and its moral framing"
+    - name: personal_voting_experience
+      definition: "The answer refers to the respondent's own experience of voting, registering, or working at polls or in election administration"
+      rationale: "Personal experience is pre-treatment and none of the paragraphs refers to it"
+estimand: "ITT difference (any critics' paragraph minus control) in the share of answers expressing specific_antidemocratic_consequence, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over party of the actor"
+outcomes:
+  closed_ended: "THREAT (poses / does not pose a threat to democracy) and THREAT_STRENGTH; CONSIDER (support / oppose) and CONSIDER_STRENGTH; CANDIDATE_CHOICE"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archive holds survey data only; no published analysis of the open item found"
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; no open-text value was read by the drafter or, per the manifest, the searcher. Only counts were taken, including counts of the missing-value code '98' stored in the text column"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal and questionnaire only"
+  date: "2026-11-17"

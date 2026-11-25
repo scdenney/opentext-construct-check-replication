@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/SchnabelB47.pdf), the
+# fielded questionnaire, the SPSS labels and a summary of the article's framing and
+# methods (no answers reproduced), before any open-text value was read.
+id: schnabel2015_service
+title: "Refusal of wedding-photo service to a gay vs an interracial couple (crossed with religious reason and business type) and explanations of whether refusal should be allowed, US adults (TESS 2015)"
+source:
+  citation: "Powell, B., Schnabel, L., & Apgar, L. (2017). Denial of service to same-sex and interracial couples: Evidence from a national survey experiment. Science Advances, 3(12), eaao5834. TESS study schnabelBR47 (proposal: Americans' Views on Refusal of Services to Same-Sex Couples and Interracial Couples)."
+  doi: "10.1126/sciadv.aao5834"
+  data: "https://osf.io/ur99b/ (TESS archive); data/external/schnabel2015_service/raw/TESS3_184_Powell_Client.sav; harmonized_schnabel2015_service.csv"
+languages: [en]
+context: "US adults read a short story in which a photographer refused to take engagement portraits of a couple getting married, said whether the photographer or business should be allowed to refuse service or be required to serve the couple like any other customer, and were then asked to explain in a few sentences why they felt that way."
+unit: respondent
+id_column: CaseID
+text:
+  column: Q3
+  prompt: "Why do you think that the [photographer / corporate chain] should [be allowed to refuse services to the couple / be required to provide services to the couple as he/it would to all other customers]? In your own words, please write a few sentences explaining why you feel this way."
+  position: "After the vignette, the closed choice Q1 (whose selected option is inserted into the wording) and its strength Q2; before Q4 (support for gay and lesbian / interracial marriage). Asked of everyone. Stored as a 12,000-byte very long string (48 SPSS segments; the segment Q30 is not a second item)."
+treatment:
+  variable: XTESS184
+  contrast: "primary: gay couple (Michael and Jason; XTESS184 1-4) vs interracial couple (Michael and Jennifer, a black man and a white woman; 5-8), pooled over business type and reason. Secondary: religious vs non-religious reason (odd vs even cells); self-employed photographer (1, 2, 5, 6) vs photography studio in a large chain store whose owner disapproves (3, 4, 7, 8)."
+  level: respondent
+  notes: "2 x 2 x 2 between-subjects vignette, equal probability (about 255 per cell); order of the Q1 options randomized. Cell-to-factor mapping from proposal Appendix A, checked against DOV_INSERT_Q1_Q3 (business) and DOV_INSERT_Q4 (couple). The Q3 wording inserts the respondent's own post-treatment Q1 answer and names the business type, and the vignette names the couple and the stated reason, so part of any text shift is mechanical (positive control); respondents who chose 'refuse' and 'provide' answer differently worded questions."
+constructs:
+  target:
+    - name: disapproves_couple
+      definition: "The response expresses disapproval of the couple's relationship or marriage itself (e.g., calls it wrong, immoral, sinful or unnatural, or says marriage should be between certain people only)"
+      source: "Proposal p. 1: 'We expect public opinion will be more favorable toward business refusal to a gay couple than to an interracial couple as Americans hold more negative feelings toward gays than to racial minorities and interracial couples'; pp. 1-2: if support for refusal 'is primarily about opposition to gay marriage, there will be more support for refusal to gay couples across the board'. Article, Introduction (three research questions)."
+      expected_direction: increase
+    - name: religious_liberty
+      definition: "The response argues that people or businesses should be free to act on their religious beliefs or conscience (religious freedom, freedom of religion, not being forced to act against one's faith)"
+      source: "Proposal p. 1: 'if service refusal is about religious freedom broadly ... there should be greater support for businesses that refuse services for explicitly religious reasons than non-religious reasons ... We expect the first untested assumption will hold'. Applies to the secondary religious-vs-non-religious contrast."
+      expected_direction: increase
+    - name: owner_autonomy
+      definition: "The response argues that the person refusing has the right, as the owner of his own (small or private) business, to choose whom to serve or what work to take"
+      source: "Proposal p. 1: 'we expect public opinion will be more supportive of self-employed individuals refusing business services—especially on religious grounds—than closely held corporations' (religious freedom protecting individuals vs corporations). Applies to the secondary self-employed-vs-chain contrast."
+      expected_direction: increase
+  placebo:
+    - name: photo_quality_reference
+      definition: "The response refers to the photographer's skill or reputation, the quality of the photos, or the wedding invitations"
+      rationale: "Identical in all eight vignettes ('the best photographer in the area', photos for the invitations); no factor bears on it"
+estimand: "ITT difference (gay minus interracial couple) in the share of responses expressing disapproves_couple, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Q1 allowed to refuse (1) vs required to provide (0) (harmonized allow_refuse); Q2 strongly vs not strongly; Q4 support for same-sex / interracial marriage (asked after the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "The article reports a qualitative analysis of the open answers (Materials and Methods, 'Qualitative analysis'); no codes are deposited"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or (per the manifest) the searcher. The article analyzes the open answers and likely quotes some; it was read only through a summary that was told not to reproduce answers, and it states that views did not vary by reason and that support for refusal tracked libertarianism and opposition to marriage rights."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

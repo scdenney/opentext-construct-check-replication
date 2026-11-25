@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "1705228c3af439f3cd26dc8a558f45a2100e5f50da04e1274d7d9e04b32280be",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_nyhan2024_targetedcorrections_seats2022",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nyhan2024_targetedcorrections_seats2022.stm.rds",
+      "sha256": "d56b7544b4068268058367ab903c6d67363fe4c40484bf3bdcd3c328c1669303"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nyhan2024_targetedcorrections_seats2022.topic_choice.csv",
+      "sha256": "63d5ae00fc3c657df0b64fbb2e60b8aa596b40cffd673820af4901cc44237cd9"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "a12d916694f9c26c31911a1eeaeac45953e321c4b24a2088e69bdf049c778979",
+  "created": "2026-11-17T21:35:22Z",
+  "opencheck_version": "0.0.0.9000"
+}

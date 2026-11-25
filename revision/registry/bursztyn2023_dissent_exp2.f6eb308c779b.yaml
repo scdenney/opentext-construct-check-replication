@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the QJE article (Section III.C), README and cleaning
+# code before any open-text value was read.
+id: bursztyn2023_dissent_exp2
+title: "Rationale as social cover: inferred motives of an anti-defund-the-police dissenter, Cover vs No Cover (Experiment 2)"
+source:
+  citation: "Bursztyn, L., Egorov, G., Haaland, I., Rao, A., & Roth, C. (2023). Justifying dissent. Quarterly Journal of Economics, 138(3), 1403-1451."
+  doi: "10.1093/qje/qjad007"
+  data: "doi:10.7910/DVN/YVUIFF; data/external/bursztyn2023_dissent/raw/replication folder/data/raw/defund-receiver-deidentified.dta; harmonized_bursztyn2023_dissent_exp2.csv"
+languages: [en]
+context: "US Democrats and independents on Prolific were told they had been matched with an earlier participant who joined a campaign opposing defunding the police and authorized a tweet saying so; the tweet said the participant joined either before or after reading an article reporting evidence that defunding would raise violent crime. They were then asked why they think the participant joined the campaign."
+unit: respondent
+id_column: "none in the file; harmonized id = bursztyn2023_dissent_exp2_<row>"
+text:
+  column: openended
+  prompt: "Why do you think your matched participant chose to join the campaign to oppose defunding the police?"
+  position: "First outcome after the Cover/No Cover information, before the guess about the NAACP donation and the $1 bonus decision (Section III.C.1)"
+treatment:
+  variable: condition
+  contrast: "Cover: tweet says the participant read the article before joining (excuse = 1) vs No Cover: read it after joining (noexcuse = 0)"
+  level: respondent
+  notes: "Respondent-level randomization. Rows with condition NA are pre-randomization attriters that the authors drop (receiver-clean.do); harmonized exclude = TRUE for them."
+constructs:
+  target:
+    - name: evidence_attribution
+      definition: "The response attributes the participant's decision to the article, evidence, data or information about crime (e.g. the participant was convinced by what they read)"
+      source: "Section III.C: respondents in the Cover condition are more likely to use phrases related to the article or the associated evidence (Online Appendix Table B.11)"
+      expected_direction: increase
+    - name: prejudice_attribution
+      definition: "The response attributes the decision to racism, prejudice, bias against Black people, or bad character"
+      source: "Section III.C and Figure III: Cover raises the belief that the participant donated to the NAACP, i.e. lowers inferred prejudice"
+      expected_direction: decrease
+  placebo:
+    - name: personal_police_tie
+      definition: "The response says the participant has family or friends in law enforcement, or personal experience with the police"
+      rationale: "Cover and No Cover differ only in the timing word (before/after reading the article); nothing about the participant's personal ties is conveyed in either arm"
+estimand: "ITT difference (Cover minus No Cover) in the share of responses expressing evidence_attribution, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among exclude == FALSE"
+outcomes:
+  closed_ended: "believe_donated (guess that the participant donated $5 to the NAACP); bonus (authorize $1 bonus to the participant)"
+human_codes:
+  available: false
+  column: null
+  notes: "Authors used chi-squared characteristic-phrase analysis (Gentzkow-Shapiro) on the full sample, not hand codes"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors ran a distinctive-phrase analysis on the full sample and report the top phrases by arm (Table B.11); the target direction is a replication target"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

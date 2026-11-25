@@ -1,0 +1,51 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121*.xlsx), the Korean questionnaire draft
+# (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET] DG21-Survey-AKS_ko-KR_EDITED.docx),
+# and the C1 working paper (AKS21/C1_Resettle/TEMP material (for AKS Final Report)/North Korean
+# Defector-Migrants Integration.docx); blind to response values.
+id: aks21_c1_hire
+title: "NK defector-migrant profile conjoint, hiring-choice rationale, South Korea 2021"
+source:
+  citation: "Denney, S. & Green, C. 'North Korean Defector-Migrants Integration' (working paper, AKS 2021-22 project; unpublished)"
+  doi: null
+  data: "data/harmonized/aks21_c1_hire.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC1 DV7hiringC1, LoopDWC1)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, 'Manipulation check'); English from the vendor datamap (DV7hiringC1). Fielded Korean wording not checked against the programmed instrument."
+  position: "After paired task 3 of 8, about the profile chosen for the hiring question ('As a business owner / If you were a business owner, which of the two people would you hire as an employee?'). WP footnote 1: hiring rationale after the third profile; the vendor export has non-empty text only in iteration 3."
+  placement_caveat: "The vendor datamap lists DV7hiringC1 directly after the vote choice (DV1C1). If on-screen placement followed the datamap, this text explains the vote choice of task 3. choice_vote in the CSV allows re-deriving chosen/other under that reading."
+treatment:
+  variable: "chosen_occupation, other_occupation"
+  contrast: "task 3 pair includes an 'Unemployed' profile (chosen or other) vs neither profile unemployed"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "All 10 profile attributes fully randomized per profile and task. The 'shown on either profile' contrast is randomized; the chosen/other split is post-choice."
+constructs:
+  target:
+    - name: employment_occupation
+      definition: "Reasoning that invokes a profile's job, employment status, occupational skill or work capacity"
+      source: "C1 working paper, Data and Methodology (hiring = economic integration) and Findings (occupation: doctor vs unemployed +18pp for hiring; 'the more skilled the occupation, the more desirable')"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: religion
+      definition: "Reasoning that invokes a profile's religion or lack of religion"
+      rationale: "Religion is randomized independently of occupation; an unemployed profile in the pair should not change religion mentions"
+    - name: family_status
+      definition: "Reasoning that invokes marriage, divorce or having children"
+      rationale: "Relationship and children are randomized independently of occupation"
+estimand: "Difference in the share of responses expressing employment_occupation between respondents whose task-3 pair showed an unemployed profile and those whose pair did not, on the estimation fold"
+outcomes:
+  closed_ended: "Forced choice (hire) and 1-7 hiring rating per profile across 8 tasks (AMCEs in the WP; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA topic models on the hire sheet of integrate_text.xlsx (AKS21/Code/integrate_LDA_2.R, LDA_fulltest.R); English translations exist there. That file's respid-text alignment disagrees with the vendor export (hire sheet: 972 of 2008 equal at the same respid)."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "f9a5e27ca839b96d8a255bfd92771607f756e857b0d5a3d6dced232a59b8deb7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/aarslew2026_electoralintegrity.rds",
+      "sha256": "8a723c5228af96e1435b7833b1a3e86b6e0a42ee22a44a48633a99f33022f8ed"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/aarslew2026_electoralintegrity.topic_choice.csv",
+      "sha256": "b20a8e0c0d135dee42ea6c022c7cc9a781c87c052ff9a7a8c65a2def1e055d37"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "200eaee3062107fed6277b4d0b62bf9e62598b84b1c66d7e4163cf8a8672c981",
+  "created": "2026-11-23T23:33:19Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "6a4dc716681246cb12efc98a4cb9767fcb850b42cec444e97f59478399c9ddb7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ebersole2016_powerrecall.rds",
+      "sha256": "4e77d63cc226777115c5e5567318f76c4e5a00e531be2976414307392b4b1f49"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ebersole2016_powerrecall.topic_choice.csv",
+      "sha256": "5cc5f5992de0c84f98b7ecd6580acefddd2a12c1458a133404547161f7306f10"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "6ee4439bd81e38949e5f0e3b3bddb55b204a130af6d5a01e082c67094148e63f",
+  "created": "2026-11-23T23:29:23Z",
+  "opencheck_version": "0.0.0.9000"
+}

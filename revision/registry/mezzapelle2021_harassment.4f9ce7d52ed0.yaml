@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Mezzapelle1439.pdf), the
+# fielded questionnaire, the PI's OSF study summary, and the article preprint
+# (https://osf.io/s968w: end of Introduction, Study 1 coding prose, Study 2 Method), with
+# counts only. Category tables, results sections and figures of the preprint were not read.
+# The authors' coded results on this item are public (see provenance.contamination).
+id: mezzapelle2021_harassment
+title: "Transgender vs cisgender claimant in a redacted workplace sexual harassment report and respondents' guesses of what the harasser did (US TESS 2021)"
+source:
+  citation: "Mezzapelle, J. L., & Reiman, A.-K. (2024). Do sexual harassment claimants' gender identity and race influence third-party observers' assumptions about the harassment incident? Psychology of Women Quarterly (Study 2). TESS study mezzapelle1439, proposal TESS-1439.R1."
+  doi: "10.1177/03616843241252658"
+  data: "OSF https://osf.io/fxcn4/ (TESS archive); data/external/mezzapelle2021_harassment/raw/_9089.0106__TESS__Mezzapelle_Data.sav; harmonized_mezzapelle2021_harassment.csv"
+languages: [en]
+context: "US adults in a national online panel read a human resources sexual harassment incident report filed by an employee, Michelle, against a coworker, John; the details of what happened were redacted, and the report listed Michelle's race and gender identity. They were then asked what exactly they thought John did or said to Michelle, in a few words."
+unit: respondent
+id_column: CaseId
+text:
+  column: "Q2 (harmonized: text)"
+  prompt: "Based on the information you read in the incident report filed by Michelle, what exactly do you think John did or said to Michelle? Please tell us in a few words. While many possibilities may come to mind, please only write down the one most likely thing that you think John did."
+  position: "Directly after the report and the Q1 recall check of Michelle's race and gender identity (definitions of cisgender and transgender shown; wrong answers corrected on screen); before the credibility, harm, compensation and punishment items. Shown to everyone."
+treatment:
+  variable: treatment
+  contrast: "claimant listed as a transgender woman (1; P_EXP 2, 4) vs a cisgender woman (0; P_EXP 1, 3)"
+  level: respondent
+  notes: "2 x 2 between-subjects (P_EXP): claimant race (claimant_race, Black / White) x gender identity, shown in the report's demographics; the report is otherwise identical. The word 'transgender' appears only in the treated arm and the recall check repeats it, so mentions of Michelle being transgender are partly mechanical (positive control); the target requires harassment directed at her gender identity, not a mention of it. Recall-check accuracy differs by arm (q1_recall_correct: 77% treated vs 88% control among answers), as the authors report; they did not exclude failures. Authors' exclusion of 25 'incoherent' answers (content judgment, preregistered) is not reproduced."
+constructs:
+  target:
+    - name: gender_identity_harassment
+      definition: "The response says John harassed Michelle about her gender or gender identity: for example misgendering her, mocking or commenting on her being transgender or her transition, questioning whether she is a real woman, or other hostility toward her for not fitting gender norms"
+      source: "Proposal pp. 2-4 (Mezzapelle & Reiman 2021: observers assume transgender women faced gender harassment; anticipated categories incl. 'gender harassment' and 'intentional misgendering'); article Introduction (end): 'We also expected that participants might assume that White and Black transgender women experienced gender harassment based on their gender nonprototypicality'; article Study 1 coding recodes comments about transitioning and misgendering into gender harassment."
+      expected_direction: increase
+  # Separate yes/no judgments. The authors also predicted LESS unwanted sexual
+  # attention for transgender claimants; that is the mirror of the target and is not
+  # used as a placebo.
+  placebo:
+    - name: race_reference
+      definition: "The response says John's behavior involved Michelle's race: racial comments, slurs or racist treatment"
+      rationale: "Claimant race is randomized independently of gender identity in the 2 x 2; race is shown in every report."
+    - name: job_power_threat
+      definition: "The response says John used power over Michelle's job: threatening her position, offering or withholding promotion, raises, shifts or assignments, or demanding favors in exchange for work benefits"
+      rationale: "John is described as a coworker in every report; the claimant's gender identity does not change his organizational power."
+estimand: "ITT difference (transgender minus cisgender claimant) in the share of responses expressing gender_identity_harassment, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over claimant race"
+outcomes:
+  closed_ended: "q3_believable, q4_credible, q5_truthful, q6_harm, q7_compensation (1-7 agree, after the text), q8_punishment (1-8); q1_recall_correct (before the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors content-coded this item (two coders, 13 categories incl. gender harassment; coding instructions https://osf.io/6anej/, results https://osf.io/4xsu6/). The codes are not in the TESS archive; whether row-level codes are deposited on the authors' OSF nodes (2aqps, ehmj5) was not checked."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer was printed (113 cells hold only the web-skip code 98; counted). But the authors' full-sample coded results for this item are public and were seen while drafting: the PI's OSF summary and the article abstract report that gender harassment was mentioned more for transgender claimants (chi2(3) = 206.99, V = .32) and race more for Black claimants, and that unwanted sexual attention and appearance were mentioned more for cisgender claimants. The target and race placebo are those the authors pre-stated; the job_power_threat placebo was chosen without a known result. This card replicates a published text result on data the authors coded in full. The preprint's category table and results sections, which may print example answers, were not read. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire, preprint methods and counts"
+  date: "2026-11-17"

@@ -1,0 +1,53 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Chu1236.pdf), the study description (raw/TESS-1236.R1_description.docx),
+# the fielded questionnaire (raw/8041.0068_TESS_Teen_1_v7clean_-_FINAL.docx), the
+# NORC project report, the OSF study summary and the SPSS labels. No open-text
+# value was read.
+id: chu2020_collegerank
+title: "Paired college profiles with randomized rankings, and teenagers' explanations of which college they would prefer, US"
+source:
+  citation: "Chu, J. (2020). Educational Rankings and Adolescent Perceptions of College Cost. Time-sharing Experiments for the Social Sciences, study chu1236 (TESS 068)."
+  doi: null
+  data: "https://osf.io/yc2qb/ (8041.068_TESS_068_CHU.sav); data/external/chu2020_collegerank/harmonized_chu2020_collegerank.csv"
+languages: [en]
+context: "US teenagers aged 13 to 17 saw two hypothetical four-year US colleges side by side, described by US News ranking, public or private, size, graduation rate, location and student-to-faculty ratio, estimated each college's tuition and the financial aid they would receive, said which college they would prefer to attend if admitted to both, and explained their choice in one or two sentences."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Please explain how you came to this choice in 1-2 sentences."
+  position: "After the first pair (College A vs College B): size check T68_1, tuition and aid sliders for each college, and the 6-point preference T68_6A, with the profile table on screen. The same item was asked again after the second pair (T68_7C, not used in this card)."
+treatment:
+  variable: "chosen_rank, other_rank (US News ranking of the two task-1 profiles); treatment = 1 if they differ"
+  contrast: "Primary: the two colleges carry different ranking levels (608 non-excluded answers) vs the same level (132). Secondary: a 'Top 25' college is in the pair (264) vs not (476)."
+  level: "task-level attribute of the pair shown (task 1), not of the chosen profile"
+  notes: "Each profile's ranking is drawn uniformly and independently from Unranked, 75-100, 50-75, 25-50, Top 25; the other five attributes are drawn from the real-world joint distribution of college traits, independently of ranking (study description, Programming Note). Positive control in part: the stem of T68_1, on the same screen sequence, tells respondents whether College A is better, equally or worse ranked than College B, and equal rankings cannot distinguish the two colleges. The chosen/other split is post-choice; contrasts use the pair shown."
+constructs:
+  target:
+    - name: ranking_prestige
+      definition: "The answer gives a college's ranking, rank, prestige, reputation or 'better school' status as a reason for the choice"
+      source: "Proposal p. 3: 'First and on average, students will prefer a college that is higher ranked'; OSF study summary, Hypothesis 1: 'All else being equal, consumers will choose more prestigious options.'"
+      expected_direction: increase
+    - name: cost_affordability
+      definition: "The answer gives cost as a reason: tuition, price, affordability, financial aid, scholarships or debt"
+      source: "OSF study summary, Hypothesis 2: 'More prestigious options will be perceived as costing more than less prestigious options'; proposal p. 4: the effect of rank on preferences is expected to be mediated by perceived net cost. Applies to the secondary contrast (Top 25 college in the pair)."
+      expected_direction: increase
+  placebo:
+    - name: location_setting
+      definition: "The answer refers to a college's location or setting: rural, suburban, urban, city, town"
+      rationale: "Location is drawn independently of ranking and shown in every profile"
+    - name: campus_size
+      definition: "The answer refers to the number of students or the size of the college (small, medium, large)"
+      rationale: "Size is drawn independently of ranking; the size check T68_1 is asked of everyone before the choice"
+estimand: "Difference in the share of answers expressing ranking_prestige between respondents whose first pair showed two different ranking levels and those whose pair showed the same level, on the estimation fold"
+outcomes:
+  closed_ended: "T68_6A 6-point preference between College A and B; tuition (T68_2A, T68_4A) and financial-aid (T68_3A, T68_5A) predictions"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No published article located; the OSF study summary was read for hypotheses only."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

@@ -1,0 +1,49 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 North Korean
+# migrant export header (Q48 wording), survey_design_overview.md, the 2023-11-28 final
+# report draft, Brehm, Zhou & Denney 2025 (CPCS) and SI; blind to response values.
+# ROUTING: alice_only (small, vulnerable, re-identifiable sample).
+id: ifes2023_nk_politician
+title: "Emerging-politician conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)"
+source:
+  citation: "Brehm, R., Zhou, T., & Denney, S. (2025). From Division to Democracy: Integrating Post-Socialist Citizens in Germany and South Korea. Communist and Post-Communist Studies."
+  doi: "10.1525/cpcs.2025.2636997"
+  data: "data/harmonized/ifes2023_nk_politician.csv (from _archive/IFES2023/North Koreans/Data/choice-text_IFES+2023+-+North+Koreans_October+23,+2023_09.46.csv); alice_only"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q48
+  prompt: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician? Please enter your answer.)"
+  position: "After the forced choice of paired task 5 of 10 (Q36), before task 6 (Q38); about the politician chosen in task 5"
+treatment:
+  variable: "democracy_differs (derived: chosen_democracy != other_democracy)"
+  contrast: "task-5 profiles state different views on democracy (1) vs the same view (0)"
+  level: task-level attribute (positive control)
+  notes: "Same five-attribute design as the Korean panel, 10 tasks, forced choice only (no ratings; final report fn. 16). 'Differs' is symmetric in chosen/other and depends only on the randomized pair. No respondent-level arm. With about 309 included respondents and P(differs) near 2/3, the contrast has little power on its own; it is most useful pooled with ifes2023_sk_politician under one frozen g."
+constructs:
+  target:
+    - name: democracy_reasoning
+      definition: "Reasoning that invokes democracy, democratic government, or democracy's effects on order or the economy as a ground for choosing the politician"
+      source: "Brehm, Zhou & Denney 2025, abstract and Table 2 ('Views on democracy'); Korean results section (North Korean migrants less enthusiastic about democracy than native South Koreans)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: personal_character
+      definition: "Reasoning that invokes the politician's personal qualities (honesty, competence, likability, experience)"
+      rationale: "No personal trait is shown in any profile, so whether the democracy views differ should not change mentions of character"
+    - name: gender_roles
+      definition: "Reasoning that invokes gender roles, women's employment or gender equality"
+      rationale: "The gender attribute is randomized independently of democracy; only crowd-out in a short answer could move it"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing democracy_reasoning when the task-5 profiles differ on democracy minus when they do not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 10 tasks (CPCS marginal means; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data; Woorion staff and the team checked responses for quality (CPCS SI A.2). Exclusion here follows the CPCS eligibility rule (born in North Korea, at least 15 years there), not text. No topic model or coding of Q48 found in IFES2023/Code or natid_book."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

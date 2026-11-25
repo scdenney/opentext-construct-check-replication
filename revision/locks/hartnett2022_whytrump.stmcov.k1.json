@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "ecbfda130827ba932b1b30e4033f4c71b69e35f24c8c0e1d34302dbfb7fdf43c",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_hartnett2022_whytrump",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/hartnett2022_whytrump.stmcov.rds",
+      "sha256": "943fb7f2300555627da8a9943dd3bd11eccfefe88699634cecfe2c1c13b1238a"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/hartnett2022_whytrump.stmcov.topic_choice.csv",
+      "sha256": "fc8bc416f52997181686ef2e610ae2ea975eb5b0b2b83f40d69ce233e8a83899"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "4ab629ebc2f4ce178058c1858b99cbe7ff4dca2b0473ac84cb778a8f9c2228e7",
+  "created": "2026-11-22T16:41:12Z",
+  "opencheck_version": "0.0.0.9000"
+}

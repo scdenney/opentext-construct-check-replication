@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "81946ca56791e1992adf48bcb1722ee51264172c06c4176ada3d42b3df0d2be0",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/scaduto2023_foodpolitics.rds",
+      "sha256": "b3b0f7aa4515838759f31b45982182e7218aa9e36180fc939896f9b53d9e4634"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/scaduto2023_foodpolitics.topic_choice.csv",
+      "sha256": "6196d4c5aca5cb183ecb3524b4193e89f790856d4e2aa995a376ae7364567c2c"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "2de3e0ef47b39fbf6ce1800453c2aa27dbfe6a28e6878202c2398085d674b5dd",
+  "created": "2026-11-23T23:30:50Z",
+  "opencheck_version": "0.0.0.9000"
+}

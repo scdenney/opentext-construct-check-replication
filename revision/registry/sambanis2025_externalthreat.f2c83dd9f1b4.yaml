@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the README, codebooks (including the authors' pilot
+# coding scheme), Stata/R code and the abstract before any open-text value was read.
+id: sambanis2025_externalthreat
+title: "China external-threat vignette vs control vignette and written reactions (US, Study 2)"
+source:
+  citation: "Sambanis, N., & Lee, A. H.-Y. (2025). Does external threat bring the nation together? Evidence from the United States. American Journal of Political Science."
+  doi: "10.1111/ajps.70038"
+  data: "doi:10.7910/DVN/PRBIAS; data/external/sambanis2025_externalthreat/raw/AJPS_Main_Study2.dta; harmonized_sambanis2025_externalthreat.csv"
+languages: [en]
+context: "US partisans (Democrats and Republicans) read either a vignette about a threat to the United States from China or a control vignette, were asked to write their reaction to what they read, and then played public-goods games with groups of different partisan composition."
+unit: respondent
+id_column: responseid
+text:
+  column: "china_answer (threat arm) / control_answer (control arm); harmonized: text"
+  prompt: "Reaction to the vignette (open-ended); exact wording not in the archive (variable labels: 'Reaction to treatment vignette (open-ended)', 'Reaction to control vignette (open-ended)'); see the AJPS supporting information"
+  position: "Immediately after the vignette, before the public-goods-game contributions"
+treatment:
+  variable: threat
+  contrast: "China threat vignette (threat = 2, harmonized 1) vs control vignette (threat = 1, harmonized 0)"
+  level: respondent
+  notes: "Crossed with an independently randomized partisan-competition condition (competition 0/1); 484 threat, 489 control"
+constructs:
+  target:
+    - name: external_threat_perception
+      definition: "The response mentions or acknowledges that an external (foreign) entity poses a risk to the United States"
+      source: "Authors' own coding definition for the pilot open-ends (codebook_SI_Pilot_OpenEnded.pdf, variable perceive_external_threat); abstract: external threat strengthens national identification"
+      expected_direction: increase
+    - name: national_outgroup_hostility
+      definition: "The response expresses hostility, distrust or antagonism toward China or another foreign nation"
+      source: "Abstract: increased national identification is expressed mainly as hostility toward the national outgroup"
+      expected_direction: increase
+  placebo:
+    - name: climate_threat
+      definition: "The response mentions climate change or environmental problems"
+      rationale: "The vignette concerns a geopolitical rival, not the environment; the authors coded this category separately in the pilots (biggest_threat_climate), so it is defined independently of the target"
+estimand: "ITT difference (threat minus control) in the share of responses expressing external_threat_perception, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Public-goods-game contributions by group partisan composition (r1d9 ... r9d1)"
+human_codes:
+  available: false
+  column: null
+  notes: "Study 2 text is uncoded. The pilot files (AJPS_SI_Pilot_OpenEnded_China/Terrorism.csv, n = 200 each, treated arms only) carry human codes perceive_external_threat, external_threat_serious, biggest_threat_internal, biggest_threat_climate and can validate g, but have no control arm"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors made word clouds from the treated-arm text of Republicans (AJPS_Main_Study2Code.do, lines 144-145); no coded analysis of the Study 2 text found"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "e468dd40cb788dd15c3e37580a0c0fe661e685a09c4f5ace2944cb33a7dc994b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/pepin2016_couples_leisure.rds",
+      "sha256": "3431da66dbf0697a352d074a0c855380db3ad9be3a1ab760f125736638e35b26"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/pepin2016_couples_leisure.topic_choice.csv",
+      "sha256": "c57e29e897009bdcae6d3a78e5c6fffc867614639c67110cab39f4c277582413"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "dce8ec8987d11f91180e9cd85f0038aa5531290d1c6aad493f56e4f6ea207f66",
+  "created": "2026-11-23T23:32:43Z",
+  "opencheck_version": "0.0.0.9000"
+}

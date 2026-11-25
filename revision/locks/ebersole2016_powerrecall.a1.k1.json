@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "6a4dc716681246cb12efc98a4cb9767fcb850b42cec444e97f59478399c9ddb7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/ebersole2016_powerrecall.20e04c0076fe.yaml",
+      "sha256": "fb5394b7cb571ae6f14f491697b65288ac1055b36bafed3c33c83991d859c83f"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["36dc508c00aa10740e3fe96a78aea1dd21ad6b0653bead1d164301cb22ff325c", "4e86a80738706886ebd200546d844599f7ab9b4e6310593376d3a567089b9ab2", "5f5b734a3cc34fba51171c7fb3c04342634f70d68e83278ad9b3afdd6ea0593e", "6358d289199d0c4e275e2bb6ac75491ebe3921b1cff28632e1539cb0e94ea074", "6f2791e08900cc62422ede776780f9a2896d6e76b4af8d2657b4f3d9d58aed40", "866618e5e626a6c2500d42ed8a840f364965ebaa15273454df42beb18598b6ab", "a47f386bed797c865d1e3cae99a771536ca3274d9d1ad8fe9cc36be0df1a7ca3", "b168c6c1bd4bd173b86d415ee576b7a64ad8b0cfcf6deffb4748864af374fd17", "eaa8b04564bcc318f1af8ea0891f198531ee8e7ee7d71c1d5767a462fbc898c4"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "c9ef578dc0147ace6e47b92a242d71c2550f7dc5f4361739223f3f757346c65b",
+  "created": "2026-10-29T00:34:28Z",
+  "opencheck_version": "0.0.0.9000"
+}

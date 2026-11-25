@@ -1,0 +1,46 @@
+# DRAFT, not registered. Written from the JEL review's description, the README, variable
+# labels and code names before any open-text value was read. Paper sections to confirm.
+id: graeber2024_storiesmemory
+title: "Story vs statistic information about products and what respondents later recall (Baseline Experiment)"
+source:
+  citation: "Graeber, T., Roth, C., & Zimmermann, F. (2024). Stories, statistics, and memory. Quarterly Journal of Economics, 139(4)."
+  doi: "10.1093/qje/qjae020 (to confirm)"
+  data: "doi:10.7910/DVN/AOY4D6; data/external/graeber2024_storiesmemory/raw/BaselineExperiment_coded_recall_merged.xlsx; harmonized_graeber2024_storiesmemory.csv"
+languages: [en]
+context: "Online respondents read about three hypothetical product scenarios (a video game, a bicycle, a restaurant); for each product they received either a short story based on one customer review, a statistic summarising reviews, or no information. In a later follow-up survey they were asked to write down everything they remembered about each product scenario."
+unit: task
+id_column: prolific_pid + product
+text:
+  column: "free_form (raw columns {1,2,3}_openended_second / {1,2,3}_open_endedfirst in BaselineExperiment_raw_wave2.csv)"
+  prompt: "Please tell us anything you remember about this product scenario. Include as much detail as you can. Most importantly, please describe things in the order they come to mind, that is, the first thought first, then the next one etc."
+  position: "Follow-up (wave 2) survey, once per product, before or after the belief estimate (order randomized)"
+treatment:
+  variable: condition_
+  contrast: "story (storyshort_pos, storyshort_neg) = 1 vs statistic (statistic_pos, statistic_neg) = 0; noinfo arm excluded"
+  level: task
+  notes: "Format and valence randomized independently for each of three products within respondent in wave 1; cluster standard errors by respondent"
+constructs:
+  target:
+    - name: recall_of_received_information
+      definition: "The response reproduces the content or the direction (positive or negative) of the specific information shown in the first survey, i.e. details of the review story or the reported statistic"
+      source: "Graeber, Roth & Zimmermann (2024), recall evidence from this item (described in Haaland et al. 2025 JEL, Section 2.5 'selective recall of stories versus statistical information'); stories are retained better than statistics after a delay. Paper section/page to confirm"
+      expected_direction: increase
+  placebo:
+    - name: base_scenario_features
+      definition: "The response mentions the generic product scenario set-up that all arms saw (the type of product and its basic description)"
+      rationale: "The base scenario text is identical across format arms; only the added information differs"
+    - name: personal_taste_statement
+      definition: "The response states the respondent's own general preferences about this kind of product, unrelated to the information shown"
+      rationale: "Pre-existing tastes should not depend on the randomized information format"
+estimand: "ITT difference (story minus statistic) in the share of respondent-product recalls expressing recall_of_received_information, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Wave-2 belief estimate about a randomly drawn review being positive (beliefs_ / *_beliefs*); wave-1 immediate beliefs"
+human_codes:
+  available: true
+  column: "human_* in harmonized file (Nomemory, Mentiontype, Mentionvalence, Recallstatcorrectly, MentionqualFactors, ... ; suffix _a/_b = coder, no suffix = reconciled)"
+  notes: "Two-coder hand coding by the authors' team on the full sample"
+provenance:
+  written_before_reading_text: true
+  contamination: "Authors' coding used the full sample; their story-statistic recall result is a replication target"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

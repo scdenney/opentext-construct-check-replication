@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the TESS proposal, OSF wiki summary, questionnaire,
+# codebook and the published article (Morehouse et al. 2022) before any B1 value was read
+# from the data. The article and the wiki print example answers from this sample: see
+# provenance.contamination. The open answer is the authors' outcome itself (positive control).
+id: banaji2019_surgeon
+title: "Surgeon riddle with the child's gender varied (son, daughter, child) and the typed answer to the riddle (TESS, US 2019)"
+source:
+  citation: "Morehouse, K. N., Kurdi, B., Hakim, E., & Banaji, M. R. (2022). When a stereotype dumbfounds: Probing the nature of the surgeon = male belief. Current Research in Ecological and Social Psychology, 3, 100044 (Study 2). TESS study banajiS39 (Banaji, 2019)."
+  doi: "10.1016/j.cresp.2022.100044"
+  data: "TESS banajiS39, OSF https://osf.io/yn7mx/; data/external/banaji2019_surgeon/raw/8041.038_TESS_038_Banaji.sav; harmonized_banaji2019_surgeon.csv"
+languages: [en]
+context: "US adults in a national online panel (2019) read a short riddle: a father and his child are in a car accident, the father dies, and at the hospital the surgeon says they cannot operate because the patient is their own child. They were asked to type a brief answer to how this could be."
+unit: respondent
+id_column: id
+text:
+  column: B1
+  prompt: "How could this be? Please give a brief answer to the riddle."
+  position: "Directly after the riddle screen (first item of the TESS 038 section); followed by B2 (heard the riddle before?), then B3-B5 in random order"
+treatment:
+  variable: P_CONDITION
+  contrast: "daughter or child version (P_CONDITION 2 or 3) vs classic son version (1); harmonized labels son, daughter, child"
+  level: respondent
+  notes: "Three-arm between-subjects design; NORC randomly assigned P_CONDITION as a preload (questionnaire, custom preloads). 1 = father + son, 2 = father + daughter, 3 = father + child ('I can't operate on this patient. This is my child!'). The riddle wording differs by arm (son/boy/he vs daughter/girl/she vs child), so mentions of the child's gender in answers shift mechanically. The open answer is the authors' main outcome, so this card is a positive control: the target is what the authors coded. Secondary contrasts: child vs son, daughter vs son."
+constructs:
+  target:
+    - name: mother_answer
+      definition: "The answer says the surgeon is (or could be) the injured child's mother or another female parent (a woman who is the child's parent), alone or among other possibilities"
+      source: "Proposal (TESS short proposal, March 2019, p. 1-2, 'Study Design'): the son + father wording may prime 'male' and lead respondents to answer 'father' rather than 'mother'; varying the child's gender removes this. OSF wiki research question: 'Will changing the gender from son (classic riddle) to daughter or child increase the incidence of mother responses?' Coding rule: answers that include mother as a possibility = 1 (wiki 'Outcomes'; Morehouse et al. 2022, section 2.1.5)"
+      expected_direction: increase
+  placebo:
+    - name: family_doctor_rule
+      definition: "The answer refers to a rule or norm that doctors should not or may not operate on their own family members or relatives"
+      rationale: "Concerns why the surgeon cannot operate, not who the surgeon is; the riddle states the refusal identically in every arm, and the answer can mention it together with any identity for the surgeon"
+    - name: self_reference
+      definition: "The answer refers to the respondent themselves: their own family, their own experience, or how they themselves worked out (or failed to work out) the riddle"
+      rationale: "The child's gender changes the riddle's wording only; it gives no reason for respondents to talk about themselves. Not a category of surgeon identity, so it can co-occur with the target"
+estimand: "ITT difference (daughter or child minus son) in the share of answers expressing mother_answer, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among respondents who had not heard the riddle before"
+outcomes:
+  closed_ended: "None for the riddle itself (the open answer is the outcome). B2 prior exposure (asked after B1, used by the authors to exclude); B4 essentialist belief; B5 family doctors"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors hand-coded the answers into 15 categories (two independent coders, disagreements resolved by a third coder; Morehouse et al. 2022, section 2.1.5 and Supplement 3) and dichotomized them as mother vs not. The codes are not in the TESS archive; the article points to OSF https://osf.io/2fmt5/ for all data and scripts. Not fetched (OSF rate limit); worth adding as human_mother if the file is there."
+provenance:
+  written_before_reading_text: false
+  contamination: "No B1 value was read from the data. But the published article (Morehouse et al. 2022, sections 2.1.5 and 3.2.1) prints example answers, several from this TESS sample (Study 2), and the drafter read them while locating the coding rule; the OSF wiki summary also gives two example non-mother answers. The authors coded the full sample and report mother-response shares by arm (Study 2: 18.1% son, 23.2% daughter, 37.0% child among the not-heard sample). The target was fixed from the proposal before the article was read."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire, codebook and article"
+  date: "2026-11-17"

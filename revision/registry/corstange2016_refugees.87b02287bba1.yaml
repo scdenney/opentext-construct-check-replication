@@ -1,0 +1,56 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/CorstangeB69.pdf), the
+# OSF/TESS study summary (raw/osf_wiki_summary.txt), the fielded questionnaire
+# (raw/310.209.0215.1_TESS3229_..._v2.00.docx) and counts from the data file, before any
+# open-text value was read. No published article on this TESS study found.
+id: corstange2016_refugees
+title: "Single frames of the Syrian civil war (democracy vs dictatorship, moderates vs extremists, Sunni majority vs minorities) and Americans' own descriptions of the conflict (US 2016)"
+source:
+  citation: "Corstange, D. (2016). American Responses to the Syrian Refugee Crisis. Time-sharing Experiments for the Social Sciences, study corstangeBR69 (TESS3 229)."
+  doi: "none; TESS study page https://tessexperiments.org/study/corstangeBR69"
+  data: "OSF https://osf.io/t8xq7/; data/external/corstange2016_refugees/raw/TESS_229_Corstange_Client.sav; harmonized_corstange2016_refugees.csv"
+languages: [en]
+context: "US adults (GfK KnowledgePanel, 2016) read a short note that the Syrian civil war had killed up to half a million people and displaced more than 5 million, and that people have explained the conflict in different ways; some versions added one, two or three examples of how it has been described. With that note on screen, they were asked to describe the conflict in their own words."
+unit: respondent
+id_column: CaseID
+text:
+  column: D01
+  prompt: "In your own words, how would you describe the conflict?"
+  position: "Directly after the preamble (C01_A-H), which stays displayed above the question; D01 and the refugee-admissions item D02 in random order (DOV_D01_D02_Order)"
+treatment:
+  variable: XTESSCORS
+  contrast: "each single frame vs no frame: democracy (2) vs control (1); extremism (3) vs control (1); sectarian (4) vs control (1). Harmonized arm labels: control, democracy, extremism, sectarian, democracy_extremism, democracy_sectarian, extremism_sectarian, all_three"
+  level: respondent
+  notes: "8 conditions randomized by GfK (proposal: '1 control, 3 single frames, 3 double frames, and 1 triple frame'), 247-275 per arm; frame order within the multi-frame arms randomized (DOV_C01E-H_Split). Value labels in the .sav are bare numbers; the mapping comes from the questionnaire's 'Base: If XTESSCORS = k' and is checked against the split variables. Strongly mechanical: the frame sentence remains on screen while respondents write, so reuse of its words is close to a positive control (recall/echo). Arms with competing frames are secondary: H1 expects them to ignore frame content."
+constructs:
+  target:
+    - name: democracy_dictatorship
+      definition: "The answer describes the conflict as one between democracy and dictatorship: people seeking democracy, freedom or rights against a dictator, authoritarian regime or tyranny (for example Assad's rule)"
+      source: "Proposal and study summary, Hypothesis 1: 'People receiving a single frame will describe the conflict in terms employed by that frame'; frame 'democracy and dictatorship' (proposal, Experimental Manipulation). Primary for democracy vs control"
+      expected_direction: increase
+    - name: religious_extremism
+      definition: "The answer describes the conflict as one involving religious extremists, radical Islamists, jihadists or terrorists (for example ISIS) against moderates"
+      source: "Hypothesis 1 (as above); frame 'moderates and religious extremists'. Primary for extremism vs control"
+      expected_direction: increase
+    - name: sectarian_religious_groups
+      definition: "The answer describes the conflict as one between religious sects or communities: Sunnis against Shiites, Alawites, Christians or other religious minorities"
+      source: "Hypothesis 1 (as above); frame 'the majority population of Sunnis and religious minorities such as Shiites, Alawites, and Christians'. Primary for sectarian vs control"
+      expected_direction: increase
+  placebo:
+    - name: foreign_powers
+      definition: "The answer refers to the involvement of outside countries or powers in the conflict, such as the United States, Russia, Iran, Turkey or Western countries"
+      rationale: "No version of the preamble mentions outside powers; the frames vary only the axis of internal conflict"
+    - name: economic_causes
+      definition: "The answer gives economic or material causes of the conflict, such as oil, poverty, drought, unemployment or control of resources"
+      rationale: "No version of the preamble mentions economic causes"
+estimand: "ITT difference (single frame minus no frame) in the share of answers expressing that frame's construct, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; each target is primary for its own frame, and the other two targets act as additional placebos under that contrast"
+outcomes:
+  closed_ended: "D02: the number of refugees admitted to the US should be expanded greatly ... reduced greatly (1-5)"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archive holds survey data only; the study summary reports 'null effects' without saying which outcome"
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; no open-text value was read by the drafter or, per the manifest, the searcher. The study summary's 'Summary of Results: null effects' was read (no outcome specified)"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal and questionnaire only"
+  date: "2026-11-17"

@@ -1,0 +1,55 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121_ConjointLoopC2.xlsx, _LoopDWC2.xlsx), the Korean
+# questionnaire draft (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET]
+# DG21-Survey-AKS_ko-KR_EDITED.docx, Conjoint II), and the IMR manuscript and SI
+# (_archive/Pre-2024/NK-business-support_conjoint/WP/); blind to response values.
+id: aks21_c2_nkbusiness
+title: "NK migrant entrepreneurship policy conjoint with a randomized policy rationale, South Korea 2021"
+source:
+  citation: "Denney, S., Ward, P. & Green, C. (2025). Public Support for Migrant Entrepreneurship: The Case of North Koreans in the Republic of Korea. International Migration Review 59(3): 1156-1180."
+  doi: "10.1177/01979183231203927"
+  data: "data/harmonized/aks21_c2_nkbusiness.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC2 DV3C2, LoopDWC2); codes from NK-business-support_conjoint/Data/open_text_C2-robust.csv and whycheck.csv"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, 'DV3: Textbox answer ... after 4th profile'); English from the vendor datamap (DV3C2). Fielded Korean wording not checked against the programmed instrument."
+  position: "After paired task 4 of 5, about the policy chosen in that task (IMR manuscript: 'open-text answers collected after the fourth task'; vendor export has non-empty text only in iteration 4)"
+treatment:
+  variable: "chosen_policy_rationale, other_policy_rationale"
+  contrast: "'It will help North Koreans who face discrimination' (차별에 직면한 북한인에게 도움을 준다) vs 'It is good for South Korea' (한국에게 좋은 일이다, reference level), on the chosen policy; secondary: rationale shown on either policy in task 4"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "Policy rationale ('정책 지지 이유', 4 levels) is one of 8 attributes fully randomized per policy and task (LoopDWC2 dReasonC2). The chosen policy's rationale is post-choice (the discrimination rationale lowers the chance of being chosen: AMCE -0.044, SI Table D); the 'shown on either policy' version is randomized and can be built from chosen_ and other_."
+constructs:
+  target:
+    - name: anti_discrimination_help
+      definition: "Reasoning that invokes helping North Koreans who face discrimination, prejudice or unequal treatment in South Korea"
+      source: "IMR manuscript (WP/Public_Support_for_Migrant_Entrepreneurship.pdf), research design p. 10: 'The policy rationales provided are meant to determine the extent to which respondents can be persuaded to assist with the integration process (help North Koreans who face discrimination) or an economic (business conditions) rationale'"
+      expected_direction: increase
+    - name: local_business_conditions
+      definition: "Reasoning that invokes improving local business conditions or the local economy"
+      source: "Same passage (p. 10); contrast 'It will improve local business conditions' vs 'It is good for South Korea'"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments. Do not use the human
+    # economic/normative codes as placebos: they are mutually exclusive categories.
+    - name: funding_source
+      definition: "Reasoning that invokes how the policy is paid for (deficit spending, income tax, corporate tax)"
+      rationale: "Public cost is randomized independently of the rationale"
+    - name: partisan_endorsement
+      definition: "Reasoning that invokes the President, the Minjoo Party or the People Power Party endorsing the policy"
+      rationale: "Endorser is randomized independently of the rationale"
+estimand: "Difference in the share of responses expressing the target between respondents whose chosen task-4 policy carried the treated rationale and those whose chosen policy carried 'It is good for South Korea', E[g(R) | treated rationale] - E[g(R) | reference], on the estimation fold; report the 'shown on either policy' contrast alongside"
+outcomes:
+  closed_ended: "Forced policy choice and 1-7 agreement rating per policy across 5 tasks (AMCEs and MMs in the IMR paper; not used to validate g)"
+human_codes:
+  available: true
+  column: "codePW, codeCG (two coders), valuenew (resolved: codeCG where the coders disagree, per c2_LDA.R)"
+  notes: "Single-label codes: 1 economic rationale, 2 normative rationale, 3 other, 4 not an answer (SI Appendix E; paper repo analysis/R/10_nk_validation.R CODE_MAP). Coder agreement 1851/2005 on whycheck.csv. codeCG has one value 11 and 2 NA; valuenew missing for 4 respids. These codes measure the LDA-derived economic/normative split, not the target constructs above."
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA on the English translations (NK-business-support_conjoint/Code/c2_LDA.R) and two-coder hand codes built on the full sample; the IMR paper quotes responses. In the paper repo (data/nk_entrepreneurship/, identical copies), GPT-4o-mini and Qwen classifications were run and the codebook analysis/codebooks/nk_entrepreneurship.yaml was revised against the human codes (analysis/R/10_nk_validation.R, 11_calibration.R; in-sample kappa 0.40->0.67, response_matrix X1)."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the paper source in the Zenodo package (main text
+# sections sec:mechanism_experiment and sec:mechanisms, Table 1, online appendix text-analysis
+# section), the experimental-instruction screenshots (H.4) and variable labels, before any
+# open-text value was read.
+id: chopra2024_newsdemand_exp3
+title: "Biased vs unbiased outlet coverage and written explanations of why the outlet reported as it did (Experiment 3, US Prolific 2022)"
+source:
+  citation: "Chopra, F., Haaland, I., & Roth, C. (2024). The demand for news: Accuracy concerns versus belief confirmation motives. The Economic Journal."
+  doi: "EJ article DOI to confirm (as in card chopra2024_newsdemand); replication package 10.5281/zenodo.21244470"
+  data: "10.5281/zenodo.21244470 (CC-BY-4.0); data/external/chopra2024_newsdemand/raw/open_ended.dta, open_ended_handcoded.dta; harmonized_chopra2024_newsdemand_exp3.csv. Preregistration AsPredicted #87947"
+languages: [en]
+context: "US Prolific respondents who voted for Biden or Trump in 2020 read the competing party claims about either the Democrats' $15 minimum wage bill or a Republican healthcare plan and the two statistics in the CBO's report on it, then learned that The Boston Herald's article reported either only one of the statistics or both. They were asked to explain in two to three sentences why they think the newspaper reported the statistics that way."
+unit: respondent
+id_column: responseid
+text:
+  column: "open_unbiased_wage / open_biased_wage / open_ended_health (harmonized file: text)"
+  prompt: "Why do you think that The Boston Herald reported that the bill would reduce employment by 1.4 million jobs but not [and] that it would lift 900,000 people out of poverty? Please answer in two to three full sentences. (Healthcare version: '... reported that the plan would leave over 20 million more people uninsured but not [and] that it would decrease the deficit by over $100 billion?')"
+  position: "Only outcome of the experiment, directly after the treatment screen (Instructions H.4)"
+treatment:
+  variable: treatment
+  contrast: "bias: outlet reported only the statistic favorable to one party (biased = 1) vs no bias: outlet reported both statistics (unbiased = 0)"
+  level: respondent
+  notes: "Respondent-level randomization of treatment, cross-randomized with topic (article: wage, where the bias is right-wing; health, where it is left-wing). The question repeats the arm's reporting ('but not' vs 'and'), so the prompt differs by arm and a shift toward bias explanations is partly mechanical (positive control). Separate sample from Experiments 1-2 (previous participants excluded per the paper; 11 + 3 hashed Prolific ids nevertheless also appear in study1/study2)."
+constructs:
+  target:
+    - name: political_bias_attribution
+      definition: "The response says the newspaper reported this way because it is politically biased, partisan, slanted, or favors one party or ideology"
+      source: "Main text, sec:mechanism_experiment: pre-specified hand-coding category 'bias' (mentions that the outlet was politically biased); the experiment is designed to show that the bias treatments make respondents interpret the reporting as politically biased (Results paragraph and Figure 4)"
+      expected_direction: increase
+    - name: balanced_reporting_attribution
+      definition: "The response says the newspaper was trying to give a balanced, fair, complete or unbiased account of the facts"
+      source: "Main text, sec:mechanism_experiment: pre-specified category 'balanced'; online appendix text analysis: 'non-partisan', 'unbiased', 'fair', 'factual' characteristic of the no bias arms"
+      expected_direction: decrease
+  placebo:
+    - name: health_policy_reference
+      definition: "The response refers to health care, health insurance or the uninsured"
+      rationale: "Topic (wage vs health) is randomized independently of the bias treatment and both arms of each topic name the same two statistics, so mentions of health policy should not differ between bias and no bias"
+    - name: complexity_simplification
+      definition: "The response says the newspaper reported this way to keep the article short, simple or easy to understand"
+      rationale: "Authors' alternative-mechanism discussion (sec:mechanisms, Cognitive constraints): complexity was 'not on top of people's minds when interpreting the treatment variation' (2 of 388 responses). Caveat: rare, and selective reporting invites this explanation, so a small rise is conceivable"
+estimand: "ITT difference (bias minus no bias) in the share of responses expressing political_bias_attribution, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among exclude == FALSE, with topic strata"
+outcomes:
+  closed_ended: "None in this experiment"
+human_codes:
+  available: true
+  column: human_motives
+  notes: "Authors' hand codes for all 388 analysed responses (open_ended_handcoded.dta, merged on hashed Prolific id): one code per response among balanced, biased, cognitive constraints, delegation, entertainment, other. human_bias and human_balanced are 0/1 indicators of the two pre-specified categories. Codes are mutually exclusive, so they are not independent placebo judgments"
+provenance:
+  written_before_reading_text: true
+  contamination: "Paper read: it quotes example responses for the 'bias' and 'balanced' categories, reports the effects by voter group (Figure 4) and the characteristic phrases (online appendix). The human-code distribution by arm was tabulated (counts only) while checking the files. Target directions are replication targets"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper source, instructions and variable labels only"
+  date: "2026-11-17"

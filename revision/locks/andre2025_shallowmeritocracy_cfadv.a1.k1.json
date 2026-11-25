@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "80991a96396ba73a9febf67126f17a2460e1a23d5f94a9802f3108b26030b6a8",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/andre2025_shallowmeritocracy_cfadv.0c8390274a7c.yaml",
+      "sha256": "2bb8ec4d5c6eef14948a66e951942a6964dd8b229aff03a4e51a191c045c3a59"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0ade2816450dc9e1ae6ccba898501050501a31101ba069126b283acca120f422", "1c6dbb28f46d3acfc8d81bac3e627dff63074e47bdb9538ab2cd4338dc34705d", "2e6ac61f539236f0437717e7fcbc1caea4e39d93a6bfe9eac076b94884440994", "3bddf4f8ead77653e253698a214f2dcce479159f9eb1c79ab36fd12ebf114ef9", "6ac8cba64209d326a1091eda0c42745b7be62a551bfaef835979ebb079be2ead", "c9757f0b928eec700c8bdf86d5387c99bbeb149ed8b446dbf2c6c80f59f6f83a", "e5b0f93ec28028177d309ececabadbe22059b185e76977aaa14e0e583ee0f98c"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "d725a82d13ca70ec5febbd1b9075c7d6f89fe204fab9360ee8f71249f01e3755",
+  "created": "2026-11-17T18:36:55Z",
+  "opencheck_version": "0.0.0.9000"
+}

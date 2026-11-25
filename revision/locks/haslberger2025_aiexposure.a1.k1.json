@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "49676422c665ff8f725e3b92071aa093aa2e25221dccc651f334a2cfadfa864d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/haslberger2025_aiexposure.f3bca9a13896.yaml",
+      "sha256": "6703ed83a83ceeeed43484a1448277179f779274b53d434fab470cecebb852cc"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0aa1fb2b187fcf22171568c9f2501249a4c67e399076c3d1d147fa17a342a91c", "3f1e90b466fa4b9a6c7be3690c5c87b298e2744b5598fb349a66139908359768", "67538b9bfef53df53555ea802ea2c43a560ffd3ca1001a9abbd37db2f6250eb2", "8ff7fb007d1983c8b0018d679206a15269a9d2cd56459bad22acd6e76370e006", "aa9a24e5958ca52dd033ac34eb20c873efeee66e81a1da7e48022e9e44d1eba6", "c0821adc12d96ffe8ab974979232498fe8ac03ac5b67a947f04e2b68fe3d697e", "e2eb375ae6340c9bc0dd9067693960b1fa6ac8360a8e13279feaa2b4e3b83a5a"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "60a2ced423d70ce591ce26a140be4f06e92e85ccb30f0ccf2dc62f063d8229e5",
+  "created": "2026-11-18T03:31:53Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,55 @@
+# DRAFT, not registered. Written from the accepted online appendix (A, D.1, E, G),
+# the authors' replication script, variable labels and the abstract, before any
+# value of the `feelings` item was read. The article body (SAGE) was not read.
+id: nomikos2019_audiencecosts
+title: "Audience-cost vignette (stay out, back down, engage and fail, engage and succeed) and explanations of approval, US MTurk sample"
+source:
+  citation: "Nomikos, W. G., & Sambanis, N. (2019). What is the mechanism underlying audience costs? Incompetence, belligerence, and inconsistency. Journal of Peace Research, 56(4), 575-588."
+  doi: "10.1177/0022343319839456"
+  data: "JPR replication archive at PRIO (Nomikos and Sambanis.zip); data/external/nomikos2019_audiencecosts/raw/exp1.dta; harmonized_nomikos2019_audiencecosts.csv"
+languages: [en]
+context: "US adults recruited on Amazon Mechanical Turk read a hypothetical crisis in which a country invaded its neighbor and the US president either stayed out, threatened force and then backed down, or threatened force and sent troops who failed or succeeded in stopping the invasion; they rated their approval of the president's handling and then explained in their own words why they felt that way."
+unit: respondent
+id_column: id
+text:
+  column: feelings
+  prompt: "In your words, why did you feel the way that you did about the U.S. president's actions in the hypothetical scenario that you were presented (limit 100 words)?"
+  position: "Last of the approval items (appendix D.1), after the approval rating and its strength follow-up; one answer per respondent"
+treatment:
+  variable: treat
+  contrast: "Four arms (harmonized labels): stay_out (0), back_down (1), engage_fail (2), engage_succeed (3). Primary: engage_fail vs engage_succeed (incompetence). Secondary: back_down vs engage_fail (inconsistency), engage_fail vs stay_out (belligerence), back_down vs stay_out (conventional audience cost, inconsistency)."
+  level: respondent
+  notes: "Respondents randomly assigned to one of four treatments (appendix D.1); vignette factors (invader regime, motive, military strength, harm to the US) randomized independently. Arm codes 2 = engage and fail and 3 = engage and succeed are verified from the file's indicator labels (treat_se_fe) and the approval shares in appendix G.1. Positive control: the vignettes state the outcome, so the fail-vs-succeed shift in mentions of failure, and the engage-vs-stay-out shift in mentions of sending troops, are partly mechanical. The questionnaire also differs by arm before the open item: belief questions were asked before treatment in the two engage arms and after treatment in stay_out and back_down (D.1). No exclusions: the authors' script uses all rows."
+constructs:
+  target:
+    - name: failed_outcome_incompetence
+      definition: "The response judges the president by whether he achieved the outcome: it says the invasion was not stopped, the mission or intervention failed or succeeded only partly, the invader kept territory, or the president was incompetent, ineffective or unable to deliver results (yes/no)"
+      source: "Appendix A.2 and G.1: incompetence costs = Engage and Fail minus Engage and Succeed; c is the 'approval cost of not achieving preferred policy outcome' (game-tree legend, appendix A); abstract: approval losses 'arising from the perception that the leader is incompetent'"
+      expected_direction: increase
+    - name: inconsistency_backing_down
+      definition: "The response criticizes the president for saying one thing and doing another: making a threat or promise and not carrying it out, backing down, bluffing, or hurting US credibility or reputation (yes/no)"
+      source: "Appendix A.4 and G.2-G.3: inconsistency costs = Back Down minus Engage (holding belligerence constant); a = 'reputational cost from backing down'; footnote 10 (general aversion to people who say one thing and do another, plus reputation); A.1 conventional audience costs = Back Down minus Stay Out"
+      expected_direction: increase
+    - name: belligerence_military_force
+      definition: "The response objects to the president threatening or using military force: sending troops, intervening in another country's conflict, escalating, or the US acting as the world's police (yes/no)"
+      source: "Appendix A.3 and G.2-G.3: belligerence costs = Engage minus Stay Out (holding inconsistency constant); f2 = 'approval cost of military aggression' (game-tree legend)"
+      expected_direction: increase
+  placebo:
+    - name: invader_regime_type
+      definition: "The response refers to the attacking country's type of government: that it was led by a dictator or by a democratically elected government (yes/no)"
+      rationale: "Regime type is a vignette factor randomized independently of the presidential action and shown in every arm, in the vignette and the summary (appendix D.1)"
+    - name: invader_motive
+      definition: "The response refers to why the attacking country invaded: to gain power or resources, or because of a longstanding historical feud (yes/no)"
+      rationale: "Motive is a vignette factor randomized independently of the presidential action and shown in every arm (appendix D.1)"
+estimand: "ITT difference in the share of responses expressing each target between the two arms of its contrast (primary: engage_fail minus engage_succeed for failed_outcome_incompetence), E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "approval (0-6 approval of the president's handling) and appyes (1 = approves), asked before the open item"
+human_codes:
+  available: false
+  column: null
+  notes: "None. factors_7_textother is the 'other' field of a closed item, not a code of feelings."
+provenance:
+  written_before_reading_text: true
+  contamination: "No value of feelings was seen. The searcher printed three short respondent answers quoted in appendix F, from the separate placebo experiment (other-country leader, not in exp1.dta); those quotations are published example answers to a parallel open item and count as contamination. The article body was not read, so the card may miss a statement there about the open item."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the online appendix, replication script and variable labels"
+  date: "2026-11-17"

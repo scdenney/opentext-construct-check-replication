@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Grace1119.pdf), the PI's
+# OSF study summary (raw/osf_wiki_summary.txt), the fielded questionnaire
+# (raw/8041.048_TSS048_Grace_v4clean.docx), SAS value labels and counts, before any
+# open-text value was read. The ASR article (closed access) was not read.
+id: grace2019_refusal
+title: "Doctor's religious objection vs inadequate training as the reason for refusing to treat a transgender patient, and explanations of whether the refusal is acceptable (US TESS 2019)"
+source:
+  citation: "Doan, L., & Grace, M. K. (2022). Factors affecting public opinion on the denial of healthcare to transgender persons. American Sociological Review, 87(2), 275-302. TESS study grace1119 (Grace & Doan), proposal 'Factors Affecting Public Opinion on Transgender Medical Care Refusal' (TESS-1119.R1)."
+  doi: "10.1177/00031224221082233"
+  data: "OSF https://osf.io/hu45w/ (TESS archive); data/external/grace2019_refusal/raw/PN8041_TESS048_Grace_Client_File.sav; harmonized_grace2019_refusal.csv"
+languages: [en]
+context: "US adults in a national online panel, with an oversample of health care workers, read a short story in which a transgender patient goes to an urgent care clinic and the doctor refuses to treat them, saying he has either inadequate training for, or religious objections to, treating transgender patients and suggesting another provider because it is not an emergency. They rated whether the doctor should be allowed to refuse (or required) to treat the patient and then explained their rating in their own words."
+unit: respondent
+id_column: CaseId
+text:
+  column: "Q2 (harmonized: text)"
+  prompt: "Why do you [respondent's own Q1 answer: strongly disagree / somewhat disagree / somewhat agree / strongly agree] that Dr. Smith should be [allowed to refuse / required] to treat [patient name]? In your own words, please write a few sentences explaining why you feel this way."
+  position: "Directly after the vignette and Q1 (agree/disagree that the doctor should be allowed to refuse / required to treat); asked only of respondents who answered Q1 (5,004 of 5,028). Before Q3 (is the stated reason the true one), Q4 (contact with LGB/trans people) and Q5 (same as Q1 after a referral offer)."
+treatment:
+  variable: treatment
+  contrast: "doctor cites religious objections to treating transgender patients (1; P_EXP 5-8, 13-16) vs inadequate training for treating them (0; P_EXP 1-4, 9-12)"
+  level: respondent
+  notes: "2 (patient a trans woman or trans man) x 4 (Black, White, Latinx, Asian name) x 2 (rationale) between-subjects factorial in P_EXP (16 cells), blocked on the health-care-worker oversample (oversample_hcw); cell-to-factor mapping from the questionnaire and SAS value labels, checked against the piped patient name in the builder. The rationale wording ('inadequate training for' / 'religious objections to') is the only text that differs between arms, so mentions of religion are partly mechanical (positive control); the target is restricted to an argument about beliefs and the duty to treat. The Q2 prompt pipes in the respondent's own Q1 answer and a second, independently randomized wording switch (RND_01: 'allowed to refuse' vs 'required' to treat) that is not in the archive; Q1 is post-treatment and must not be conditioned on. Q2 is asked of everyone who answered Q1. The article's analytic N (4,876) is not reproduced from the archive and its rule was not seen (closed access), so no row is excluded."
+constructs:
+  target:
+    - name: beliefs_vs_duty_to_treat
+      definition: "The response argues that a doctor's personal, moral or religious beliefs should not decide whether a patient is treated: for example that doctors must treat everyone regardless of their own beliefs, that beliefs have no place in medical care, or that refusing on religious grounds is discrimination"
+      source: "Proposal (TESS-1119.R1) H1, PI study summary: 'Americans are less likely to endorse medical care refusal due to religious objections than insufficient medical training'; proposal pp. 3-4 (Providers' Justification for Treatment Refusal) contrasts religious-conscience refusal with refusal for lack of training. The hypothesis concerns Q1; that respondents reject religious refusal because beliefs should not override the duty to treat is this card's operationalization of the mechanism, not the authors' wording."
+      expected_direction: increase
+  placebo:
+    - name: patient_race_reference
+      definition: "The response refers to the patient's race or ethnicity, or to racial discrimination or racism"
+      rationale: "Patient race (signaled by the name) is randomized independently of the doctor's rationale within the factorial."
+    - name: own_healthcare_experience
+      definition: "The response refers to the respondent's own experience with doctors, clinics or health care, or to their own work in health care"
+      rationale: "Fixed before treatment; the rationale wording does not change the respondent's experience. The oversample of health care workers is balanced across arms by the blocking."
+estimand: "ITT difference (religious objection minus inadequate training) in the share of responses expressing beliefs_vs_duty_to_treat, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over patient gender and race; oversample_hcw as a stratum"
+outcomes:
+  closed_ended: "q1_agree_wording_unknown (Q1, 1-4; direction depends on the undeposited RND_01 wording), q3_rationale_primary (Q3, agree the stated reason is the doctor's true reason, 1-4), q5_agree_after_referral_wording_unknown (Q5, 1-4)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes of Q2 in the TESS archive. Whether the ASR article or the companion Social Science & Medicine paper (health care workers vs the public) analyzes the open answers was not checked (closed access)."
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No text value was printed; Q2 was handled by counts only (201 cells hold only the web-skip code 98). The ASR article, which may quote answers, was not read. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire, value labels and counts"
+  date: "2026-11-17"

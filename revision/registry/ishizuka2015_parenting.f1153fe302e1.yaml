@@ -1,0 +1,44 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Ishizuka661.pdf), the
+# OSF wiki summary, the fielded questionnaire and the SPSS dictionary, before any
+# open-text value was read. The Social Forces article was not read.
+id: ishizuka2015_parenting
+title: "Intensive (concerted cultivation) vs non-intensive (natural growth) parent behavior and explanations of parenting ratings, US parents (TESS 2015)"
+source:
+  citation: "Ishizuka, P. (2019). Social class, gender, and contemporary parenting standards in the United States: Evidence from a national survey experiment. Social Forces, 98(1), 31-58. TESS study ishizuka661 (proposal: Preferences or Constraints? Education, Gender, and Parenting Attitudes)."
+  doi: "10.1093/sf/soy107"
+  data: "https://osf.io/bbehq/ (TESS archive); data/external/ishizuka2015_parenting/raw/TESS3_191_Ishizuka_Client.sav; harmonized_ishizuka2015_parenting.csv"
+languages: [en]
+context: "US parents of children under 18 read a short description of a parenting situation with a child aged 8 to 10 and how the parent (a mother or a father) responded, rated the parent's parenting from excellent to poor, and were then asked what about the parent's parenting led them to give that rating."
+unit: respondent
+id_column: CaseID
+text:
+  column: Q3
+  prompt: "What was it about [name]'s parenting that led you to rate it as [Q2 answer]?"
+  position: "Second vignette: after the vignette (one of 6 situations, from a different domain than the first vignette) and the closed rating Q2; Q3 is on the next screen with the vignette shown again. Stored as a 3,072-byte very long string (13 SPSS segments)."
+treatment:
+  variable: DOV_VIGNETTE02
+  contrast: "concerted cultivation response (codes 8(s-1)+1..4 for situation s; treatment = 1) vs natural growth response (codes 8(s-1)+5..8; treatment = 0), pooled over situation, parent gender and child gender"
+  level: respondent
+  notes: "Factorial: 6 situations x CC/NG x parent gender (between-subject, assigned within the XTESS191 education x gender block) x child gender x parent name. Equal-probability assignment per the questionnaire, but 1,916 of 3,642 rows (52.6%, binomial p = 0.002) got CC; the imbalance appears in every block. Positive control: the vignette text differs by arm (the parent's described behavior), and Q3 inserts the respondent's own post-treatment rating, so part of any text shift is mechanical (respondents restate what the parent did)."
+constructs:
+  target:
+    - name: intensive_involvement_valued
+      definition: "The response presents the parent's active involvement with the child as good parenting: spending time with the child, talking or reasoning with the child, encouraging the child's interests, skills or development (e.g., activities, lessons, learning), or stepping in with a teacher or doctor on the child's behalf. Yes only if the response approves of involvement that this parent showed; criticizing the parent for a lack of involvement counts as no."
+      source: "Proposal pp. 2-4 and Tables 2-3; OSF wiki H1B and H2B: 'Higher- and lower-SES parents will both rate concerted cultivation (intensive parenting) more positively than natural growth (non-intensive parenting) behaviors'; 'Mothers and fathers will be evaluated more positively for intensive than for non-intensive parenting'. The rival H1A predicts this only for higher-SES respondents."
+      expected_direction: increase
+  placebo:
+    - name: child_gender_relevant
+      definition: "The response treats the child's being a boy or a girl as relevant to the evaluation (what boys or girls need, how sons or daughters should be treated)"
+      rationale: "Child gender is randomized independently of the CC/NG response and is balanced across arms"
+estimand: "ITT difference (concerted cultivation minus natural growth) in the share of responses expressing intensive_involvement_valued, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Q2 rating of the parent's parenting, 1 = excellent ... 6 = poor (harmonized column rating; 10 refusals set to NA)"
+human_codes:
+  available: false
+  column: null
+  notes: "The proposal plans structural topic models and independent human coding of the open answers; no codes are in the TESS archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or (per the manifest) the searcher. The proposal reports MTurk pilot results (not this sample). The 2019 Social Forces article analyzes the open answers and may print example answers (not read). A web search summary showed the article's closed rating shares, not text."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

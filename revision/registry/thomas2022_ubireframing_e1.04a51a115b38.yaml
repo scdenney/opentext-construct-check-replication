@@ -1,0 +1,53 @@
+# DRAFT, not registered. Written from the article (published version, CC BY-NC-ND,
+# downloaded from the PsyArXiv record osf.io/bk5g8: sections 1, 2.1.2, 2.1.3.1, 2.2.2,
+# Data availability), the journal supplement (mmc1.docx: Section 1.6, Table S1.4,
+# example column masked), the OSF study materials (Study Materials for Experiments
+# 1-3.pdf), and counts. Fragments of two published example answers were seen (see
+# provenance).
+id: thomas2022_ubireframing_e1
+title: "Financial-freedom and social-security frames vs a plain description of a basic income policy, and US adults' explanations of whether it reflects their values (MTurk, Experiment 1)"
+source:
+  citation: "Thomas, C. C., Walton, G. M., Reinhart, E. C., & Markus, H. R. (2023). Mitigating welfare-related prejudice and partisanship among U.S. conservatives with moral reframing of a universal basic income policy. Journal of Experimental Social Psychology, 105, 104424."
+  doi: "10.1016/j.jesp.2022.104424"
+  data: "OSF osf.io/kn6s4 (public, no licence field; article: 'Data and study materials are shared on the project OSF page'); data/external/thomas2022_ubireframing/raw/ubi1_data.csv; harmonized_thomas2022_ubireframing_e1.csv"
+languages: [en]
+context: "US adults recruited online (Amazon Mechanical Turk) read a short description of a basic income policy: a single monthly payment to all citizens, regardless of employment status, sufficient to cover basic needs, replacing many government programs; some read a version that also described the goal of the policy. Directly afterwards they were asked whether the policy reflects their values and to describe why or why not."
+unit: respondent
+id_column: ID
+text:
+  column: values
+  prompt: "Does this policy reflect your values? Please describe why or why not."
+  position: "Directly after the policy message, before every closed item: then policy support (1-7), the moral fit items, other policy measures, and demographics including ideology at the end (study materials p. 4, 'Question Order'; article 2.1.3.1: 'asked directly after the manipulation'). Same wording in every arm."
+treatment:
+  variable: treatment
+  contrast: "freedom (Financial Freedom message) vs control (Basic Income, policy details only), primary for freedom_mention; security (Social Security for All message) vs control, primary for security_mention"
+  level: respondent
+  notes: "Three-arm between-subjects design; participants 'were randomly assigned to read about a UBI policy communicated in one of three ways' (article 2.1.2). The policy details are identical across arms; each frame adds a title and two paragraphs on the goal the policy serves (study materials pp. 1-2). Positive control: the freedom message contains 'Freedom is an important value', the title 'Financial Freedom', 'enable individuals to decide for themselves' and 'greater autonomy in their decisions and in their lives'; the security message contains 'Security is an important value', 'threatening American security', 'instability in family finances', 'protect Americans and their families against financial shocks such as job losses' and 'safe and secure communities'. Part of any shift is echo of the message wording. The authors use the item as their manipulation check and coded it for exactly these two themes. The security message's title 'Social Security for All' names an existing program; a mention of that name alone is not a security mention under the definition below (drafter's clarification of the authors' definition). Each frame's theme is the placebo for the other frame's contrast. Sample: all ideologies; the authors' main analyses are simple slopes for conservatives, but the manipulation check is reported for conservatives and liberals alike (SM 1.6), and ideology is measured at the end of the survey (post-treatment), so no ideology subgroup contrast is registered."
+constructs:
+  target:
+    - name: freedom_mention
+      definition: "The answer refers to freedom or to the autonomy of the individual: people being able to decide for themselves how to live their lives or how to use the money, independence from government deciding for them, or self-sufficiency. Answer yes if the theme is present, whether the respondent welcomes it or not."
+      source: "Authors' coding category 'Freedom' (journal supplement Table S1.4: 'References to the freedoms and autonomy of the individual, including autonomy to decide how to live one's life, and self-sufficiency'). Expectation: the item is the manipulation check (article 2.1.3.1: 'For the manipulation check, two independent research assistants coded responses to an open-ended question asked directly after the manipulation ... RAs coded for the presence or absence of mentions of freedom and security'); SM Section 1.6: 'The manipulation check showed that the freedom and security policy messages effectively made the values of freedom and security, respectively, more salient than did the control message'; article 2.2.2. Not a numbered hypothesis; Experiment 1 was not preregistered (article section 2 intro)."
+      expected_direction: increase
+    - name: security_mention
+      definition: "The answer refers to concerns about loss or safety: financial insecurity or instability, economic problems or threats such as losing a job or income, or the need for protection against them, including the view that the program is needed because automation or technology threatens jobs. Answer yes if the theme is present, whether the respondent welcomes it or not. Answer no if the answer only names the Social Security program."
+      source: "Authors' coding category 'Security' (journal supplement Table S1.4: 'References to concerns of loss or safety and includes financial insecurity, problems, or threat, including why this program is a necessary step due to automation, technology'). Expectation as for freedom_mention (article 2.1.3.1, 2.2.2; SM 1.6), for the security message vs control."
+      expected_direction: increase
+  # Code each as a separate yes/no judgment. Under each contrast the other frame's
+  # target is the content placebo (see treatment.notes).
+  placebo:
+    - name: religion_mention
+      definition: "The answer refers to religion: God, faith, the Bible, Christianity, a church, or religious or Christian values."
+      rationale: "The item asks about the respondent's values, so religious values are a natural answer in every arm, but no message mentions religion (study materials pp. 1-2) and the authors expect nothing about it. Weak point: if a frame pulls answers toward freedom or security, other values may be mentioned somewhat less often (crowding out), so a small decrease is possible; it is not a category that excludes the targets."
+estimand: "ITT difference (frame minus control) in the share of answers expressing that frame's target, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, separately for the freedom and the security message against control"
+outcomes:
+  closed_ended: "support (1-7, the authors' primary outcome); moral_fit (mean of three 1-5 items); attention_pass (eligibility question, correct = 3); ideology (1-7, mean of social and economic self-placement, measured at the end of the survey, post-treatment). All asked after the open item."
+human_codes:
+  available: true
+  column: "human_freedom (val.lib), human_security (val.sec)"
+  notes: "Two research assistants coded presence (1) or absence (0) of each theme with the Table S1.4 definitions. Procedure (SM 1.6): 'For each round, RAs coded 10% of the corpus, we ran reliability, and resolved discrepancies. After five rounds of coding (average kappa = .84), each RA coded half of the remaining data.' So about half the answers carry a reconciled double code and half a single coder's code; the deposit has one column per theme and does not say which. The article and supplement do not say whether the coders were blind to the arm. The codes cover the full sample and the article reports their arm differences (SM 1.6, logistic regressions by ideology). Counts of 1 (control / freedom / security): freedom 15 / 82 / 18, security 19 / 18 / 54."
+provenance:
+  written_before_reading_text: false
+  contamination: "No answer was read from the data; only counts and byte-pattern counts were taken. While searching the article with grep, the drafter saw fragments of the two published example answers in article 2.2.2 (a freedom-coded example opening with agreement that the policy reflects the respondent's values and referring to people's own decisions, and a security-coded example opening 'Yes, it does' and mentioning financial security and protection). The example column of supplement Table S1.4 was masked when read. The article reports that the freedom and security messages raised the corresponding codes. The searcher's manifest reports no text read."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the article, supplement, study materials and counts"
+  date: "2026-11-18"

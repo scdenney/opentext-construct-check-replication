@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "2aaf59cdde5e19ad1af23538ebabefdaeb8976f4b199bc72f18c3051abdb7fcf",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_gidron2025_polarization",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/gidron2025_polarization.stm.rds",
+      "sha256": "a088d333f32ff2793d7878c43be92cae6e107c627726268173d8018ccadfd516"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/gidron2025_polarization.topic_choice.csv",
+      "sha256": "195e19e3c6040dbb39959cc734e3eff9f6bd7edde6eaf47b3a7fd8fdb73b6983"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "7f80d45be23b08b4bff0eccaaef0c4749f726f7799516f183f20c95e24af1c7c",
+  "created": "2026-10-29T15:22:44Z",
+  "opencheck_version": "0.0.0.9000"
+}

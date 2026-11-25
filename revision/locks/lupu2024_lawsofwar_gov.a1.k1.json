@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "bf501a7c1c6f99029c11ac51c48b6734b9b4526a07941814ba866c2ac954f63a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/lupu2024_lawsofwar_gov.e2703cca98eb.yaml",
+      "sha256": "3a03905e02960548171ee278cfeaf7104d733c35bcde2b22894a0a841dbd70dd"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["19d38569bce0ec39b904ab6b900c9f9995e433608c5c28112b2f0016e722759d", "31aa9b8ef57280c1394a0be4eceff5d70b0dddcd1c0beb43df023b35345d05ee", "3e4206140e1c5a7ec8f5eb2231c38e8dde050a371ae96fad738ddb8e8b5bbe0c", "50801f5d05e02b72bcb11a5604e5592d399cb853d8b1b081123af1f544cac50e", "ab5587ed0a3e3088398f278ae9cd2977b9db150b2b18795f7ad02e65792f2dd4", "b61a7b9d7914f0619a0384304bb8b759623352f191ba0e6c51749239ae2f7a40", "dedbfb3d9e6950ad8c0b5c218cb5c8d32e476bdf94bba919523f9e100f7da1d5"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "4c979ff26e54cad111c7cc6c4a87c0e5d733a5e149bedef2b4b42e23b8a7205a",
+  "created": "2026-11-17T18:36:32Z",
+  "opencheck_version": "0.0.0.9000"
+}

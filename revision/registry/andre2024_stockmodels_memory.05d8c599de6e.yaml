@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the QJE article (141(4), Section V.D.2.i), Online
+# Appendix D.3.7, the AEA RCT Registry preregistration "Memory Study" (22 Apr 2025), the
+# .qsf files and the authors' cleaning code, before any answer from these files was read.
+# The preregistration and the article describe the treatment differently (see target
+# source); Steven to confirm the target before registering.
+id: andre2024_stockmodels_memory
+title: "Remembered stock-price episodes and households' explanations of their return forecast after bad company news (Andre, Schirmer & Wohlfart, memory study, US 2025)"
+source:
+  citation: "Andre, P., Schirmer, P., & Wohlfart, J. (2026). Mental models of the stock market. Quarterly Journal of Economics, 141(4), 2925-."
+  doi: "10.1093/qje/qjag039"
+  data: "doi:10.7910/DVN/BNFSAO; data/external/andre2024_stockmodels/raw/data/experiments/memory/memory_w1_c1-4.sav (treatment) and memory_w2_c1-4.sav (outcome); harmonized_andre2024_stockmodels_memory.csv"
+languages: [en]
+context: "US adults in an online survey read two hypothetical news scenarios about Nike announced four weeks earlier: neutral news (Nike continued a supplier partnership) and bad news (a significant disruption of its supply chain); about half also read that Nike's stock price had fallen 10% since the bad news. They predicted in which scenario $1,000 invested in Nike stock today and sold in twelve months would earn a higher return, and explained their prediction. One or two days earlier, in a separately branded survey, they had written headlines and summaries for five news stories about past setbacks at large companies."
+unit: respondent
+id_column: ResponseId
+text:
+  column: explanation
+  prompt: "For the following investment ... You invest $1,000 in Nike stocks today, four weeks after the announcement was made in the two scenarios. You sell these stocks twelve months from now. ... you responded that you expect that the return of the investment in Nike stock would be [higher in scenario 1 / similar in both scenarios / higher in scenario 2]. Please explain why you think that would be the case. (MMSM__Memory_Wave_2.qsf, tag explanation)"
+  position: "Outcome wave (wave 2), directly after the directional return forecast; the wave was launched one to two days after wave 1 under a different survey layout and institution to hide the link (QJE fn. 13)"
+treatment:
+  variable: treatment
+  contrast: "wave-1 memory arm: overreaction_events (1; five stories about BP, Apple, Facebook, Netflix and Equifax in which bad news triggered a stock price collapse followed by high returns) vs control_events (0; the same adverse events without any stock price information)"
+  level: respondent
+  notes: "Randomized in wave 1 (Qualtrics, 3,009 completes); 2,020 completed wave 2 (authors report no selective attrition by arm, App. D.3.7). Treatment merged to wave 2 on the package's pseudonymized PROLIFIC_PID (clean_wide.R l. 740-745). Wave-2 context cross-randomized independently: context_w2 = price_info_overreaction (scenario 2 says the price fell 10%, worded to invoke overreaction; shown on the explanation screen too) vs no_price_info; analyse with context_w2 strata. The wave-2 prompt is identical across wave-1 arms. w2_collection records the four Qualtrics exports"
+constructs:
+  target:
+    - name: low_price_opportunity
+      definition: "The response argues that the stock's low or fallen price after the bad news makes the investment attractive or raises its return: for example, buying cheap or at a discount, getting more shares for the money, or expecting the price to recover or bounce back after falling. Answer yes or no."
+      source: "QJE Section V.D.2.i ('The goal of the treatment is to induce greater familiarity with the return implications of purchase costs. It effectively adds instances of such cases to households' memory database'); preregistration 22 Apr 2025, research question ('Does a treatment increasing familiarity with an overreaction perspective on the stock market change respondents' return forecasts and explanations ...?'). The preregistration frames the stories as overreaction and the article as purchase costs; the definition covers both readings of a low price"
+      expected_direction: increase
+  placebo:
+    - name: macroeconomic_conditions
+      definition: "The response refers to the general economy or markets as a whole: recession, inflation, interest rates, the overall stock market or economic outlook. Answer yes or no."
+      rationale: "The wave-1 stories concern single companies' setbacks and price paths, not the wider economy"
+    - name: social_or_ethical_concerns
+      definition: "The response refers to ethical, social or environmental aspects: workers, labor conditions, sustainability, or the respondent's moral approval or disapproval of Nike. Answer yes or no."
+      rationale: "Neither wave-1 arm nor the wave-2 scenario carries ethical content; the arms differ only in stock price information"
+estimand: "ITT difference (overreaction_events minus control_events) in the share of responses expressing low_price_opportunity, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold with context_w2 strata"
+outcomes:
+  closed_ended: "news_congruent (authors' return_1_recoded for bad news: 3 = lower return in the bad news scenario, 2 = similar, 1 = higher)"
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes. Authors' GPT-5.2 attention-scheme codes exist for the wave-2 answers (has_pc prices as costs, has_b, has_ps, has_pr; raw/data/text_codings/attention_scheme/labels.csv, merge on ResponseId); not in the harmonized file"
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer from these files was read. The drafter read the QJE article, Online Appendix (Tables D.11-D.12: effects of the memory treatment on benefits, prices-as-costs, value-signal and other price codes) and the 2024 working paper before drafting; the target follows the preregistration and the article's stated goal. The QJE prints six example explanations from the main descriptive surveys (Section IV.A.1; same item, other respondents). Online Appendix Tables C.1-C.2 (coding examples) were skipped. The wave-1 headline and summary texts were not opened. The searcher read no text from this package (MANIFEST)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, preregistration, questionnaire and code"
+  date: "2026-11-17"

@@ -1,0 +1,54 @@
+# DRAFT, not registered. Written from the abstract, the Study 4A preregistration
+# (AsPredicted #222638), the Study 4A stimuli, coding guide and analysis syntax
+# (ResearchBox #412 / Dataverse R6GB0B) before any open-text value was read. The full
+# article text was not available (SAGE and SSRN blocked); the target rests on the
+# abstract and the preregistration. POSITIVE CONTROL in part: the scenario wording
+# differs by arm (buy vs donate). Steven must confirm the placebos before
+# oc_study_register(). Study 3 ("Why did you purchase/get rid of this product?") has
+# no card: the authors state no expectation about the reasons people give.
+id: kwon2025_productjourney
+title: "Acquisition vs disposal of a household mug and thoughts about deciding alone or with one's partner (Study 4A, Prolific 2025)"
+source:
+  citation: "Kwon, T. A., Liu, P. J., & Haws, K. L. (2026). It takes one to buy but two to say goodbye: Asymmetrical preference for others' involvement in product decisions across the customer journey. Journal of Marketing Research, 63(1), 127-148."
+  doi: "10.1177/00222437251361007"
+  data: "doi:10.7910/DVN/R6GB0B (CC BY-NC-ND 4.0); data/external/kwon2025_productjourney/raw/S4A_Data.sav; harmonized_kwon2025_productjourney.csv (not for redistribution)"
+languages: [en]   # country not recorded; harmonized file sets US (Prolific; scenario names a Goodwill store), an assumption
+context: "US adults on Prolific who live with a spouse or romantic partner imagined going alone to a Goodwill store and considering either buying a mug for the household or donating a mug from the household, a mug they would be or had been the main user of. They were asked whether they would make that decision by themselves or check with their partner, and to write what thoughts were going through their head."
+unit: respondent
+id_column: ID
+text:
+  column: "THOUGHT (Qualtrics QID408 in the acquisition arm, QID418 in the disposal arm, coalesced by the authors)"
+  prompt: "Acquisition: 'As you are considering whether or not to buy this mug, would you make this decision by yourself (i.e., whether to buy the mug) or would you try to check with your partner? What thoughts are going through your head? Please write at least 1-2 sentences to explain what is going through your head right now.' Disposal: the same with 'donate' in place of 'buy'."
+  position: "Immediately after the scenario (the treatment); before the participant self-coding items (MP_item1-3) and the binary decision-mode choice (DV)"
+treatment:
+  variable: IV_disposal1purchase0
+  contrast: "disposal scenario (1) vs acquisition scenario (0)"
+  level: respondent
+  notes: "Two-arm between-subjects randomization (Qualtrics; preregistered AsPredicted #222638, 2025-04-11; target N = 600). The scenario and the thought-listing prompt differ by arm only in the frame: 'buying a mug to add to the drinkware' / 'buy' vs 'getting rid of a mug from the drinkware' / 'donate', and 'would be' vs 'have been' the primary user. Content about buying versus giving away therefore shifts mechanically (positive control); the target consideration (needing to know how much the partner values the mug) is named in neither prompt. Both prompts ask the same solo-vs-partner question."
+constructs:
+  target:
+    - name: partner_valuation_clarity
+      definition: "The response expresses a need or wish to know, check, or be sure how much the partner values, uses, likes, wants or is attached to the mug, or a wish to ask, consult or hear from the partner about it, or wonders how the partner would react. Answer yes if any such thought is present; answer no if the response considers only the respondent's own view, or states that the partner's view is already known or does not matter."
+      source: "Abstract: disposal (vs acquisition) 'increases perceptions of the potential for infringement on a household partner's rights, which increases the desire for clarity about a partner's product valuation'; preregistration AsPredicted #222638, Q5: participants in the disposal (vs acquisition) condition 'indicate thoughts that reflect a greater desire for clarity on how much their partner would value the product' (the thought listing is the preregistered mediator). Definition follows the authors' research-assistant coding guide (S4A Coding Guide.pdf, codes 2-3 vs 1)."
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. No factor is randomized independently of the frame,
+  # so these are considerations named in neither prompt and not part of the mechanism.
+  placebo:
+    - name: store_trip_logistics
+      definition: "The response refers to the trip to the store itself: getting there, timing, convenience, browsing or what else the store has"
+      rationale: "Both arms describe the same solo trip to the same Goodwill store; the theory concerns the partner's rights over the product, not the outing"
+    - name: other_people_besides_partner
+      definition: "The response refers to a person other than the respondent and the partner (children, other relatives, roommates, guests, friends, the next owner) as relevant to the decision"
+      rationale: "Both scenarios name only the respondent and the partner. Caveat: children are household members, so a disposal-driven concern for household rights could extend to them; treat a shift as a weak warning, not a failure"
+estimand: "ITT difference (disposal minus acquisition) in the share of responses expressing partner_valuation_clarity, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "dv_joint = DV (binary: decide by myself vs with my partner; asked after the text); MP (mean of three participant self-codes of the respondent's own thoughts, 1-7)"
+human_codes:
+  available: true
+  column: "human_mr_main (authors' binary: research-assistant code 2-3 vs 1, the mediator in S4A Syntax_For R.R); also human_mr_final (1-3), human_mr_coder1, human_mr_coder2, human_mr_robust (code 3 vs 1-2), and respondent self-codes human_self_mp (mean, 1-7) and human_self_item1-3"
+  notes: "Two hypothesis-blind research assistants (README) coded every thought listing with the S4A Coding Guide (1 = no or very low desire for clarity on the partner's valuation, 2 = implicit, 3 = explicit); MR_final is the reconciled code. The participant self-codes were made by the respondents after rereading their own text. Both are close benchmarks for partner_valuation_clarity. Coders and respondents saw the treatment frame."
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter, and the searcher's manifest reports counts only. The coding guide gives keyword cues (e.g. 'ask, discuss', 'use, need') and one invented illustration ('do I like this mug?'), not respondent answers. The article body (which may print example thoughts) was not read. The drafter saw the column structure of the coded variables but no tabulation of codes by arm."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from abstract, preregistration, stimuli and coding guide"
+  date: "2026-11-17"

@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "1e8c9ee1df847b34e205c5b0a3d511f66d47db32a837e6551793c437aa4fcc8c",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_bursztyn2023_dissent_exp4",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/bursztyn2023_dissent_exp4.stmcov.rds",
+      "sha256": "06201c7ac0df7a1aa082b9279835be123e8185a7ba6cfd164b838c344aacb75a"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/bursztyn2023_dissent_exp4.stmcov.topic_choice.csv",
+      "sha256": "0b1a42034208503643d5d89987ee63f684dc725fc6e8b45c938cbdbe53caf1d3"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "5bf8f27efd28e7635bc78f276fbb5bafdb2f1563e4cedc76cb39523284d700f5",
+  "created": "2026-11-22T16:41:07Z",
+  "opencheck_version": "0.0.0.9000"
+}

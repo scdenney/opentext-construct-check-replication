@@ -1,0 +1,50 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/VoglerS43.R1.pdf), the fielded
+# questionnaire, the PI's OSF study summary, the PSPB article's Method sections and notes
+# (accepted version), and counts, before any open-text value was read.
+id: vogler2019_precarious
+title: "Same-sex vs opposite-sex casual encounter by a person with a heterosexual history, and guesses about why they did it (US TESS 2019)"
+source:
+  citation: "Petsko, C. D., & Vogler, S. (2023). Is men's heterosexuality perceived as more precarious than women's? An intersectional, race-by-gender analysis. Personality and Social Psychology Bulletin (Experiment 2). TESS study voglerS43 (TESS 042), proposal 'Precarious or Policed Sexualities? How Race and Gender Affect the Categorization of Sexual Behaviors' (R1)."
+  doi: "10.1177/01461672221143839"
+  data: "OSF https://osf.io/4nyuc/ (TESS archive); data/external/vogler2019_precarious/raw/8041.042_TESS_042_Vogler.sav; harmonized_vogler2019_precarious.csv"
+languages: [en]
+context: "US adults in a national online panel read a short story about a single man or woman, identified only by first name, who has dated only people of the other sex and then has a casual sexual encounter with someone they met and felt attracted to. They rated how likely it was that the person is heterosexual, homosexual and bisexual, and then guessed why the person behaved the way they did."
+unit: respondent
+id_column: CaseId
+text:
+  column: "V2 (harmonized: text)"
+  prompt: "If you had to guess, why do you think [name] behaved the way [he/she] did in the story you just read?"
+  position: "Directly after the story and the three 0-100 orientation ratings (V1A-C); shown to everyone; last substantive item of the Vogler block (preceded by an unrelated TESS study, Banaji)."
+treatment:
+  variable: treatment
+  contrast: "the encounter is with someone of the same sex (1; P_BEHAV 1) vs of the opposite sex (0; P_BEHAV 2)"
+  level: respondent
+  notes: "2 x 2 x 2 between-subjects: behavior (P_BEHAV) x target gender (P_GENDER) x target race (P_RACE, via one of 15 names per race-gender cell; name_id). The story differs by arm only in 'another man/woman', so the target is partly a positive control: the item asks for a reason for a same-sex act in one arm and an ordinary one in the other, and the orientation ratings just before the text prime orientation in both arms. H1 is an interaction (the effect is larger for men); within-gender contrasts are secondary. 47 Black-woman rows saw the name 'Jermaine' by a programming error (name_error; the authors keep them). All interviews in English."
+constructs:
+  target:
+    - name: nonheterosexual_attribution
+      definition: "The response explains the behavior by the person being gay, lesbian or bisexual, attracted to the same sex, or not fully heterosexual, including hiding, questioning or discovering such an orientation"
+      source: "Proposal (R1), Experimental Design: 'we anticipate that individuals who have a single same-sex sexual encounter (vs. individuals who do not) will be regarded as less heterosexual', more so for men 'because men's homosexuality is more stigmatized than women's'; Introduction on the 'one time' rule ('men who engage in any form of same-sex sexual contact are labeled gay'); H1 (PI study summary). Article Experiment 2: the open item was exploratory and not analyzed."
+      expected_direction: increase
+  # Separate yes/no judgments. Situational excuses (alcohol, curiosity, loneliness)
+  # are not used as placebos: they are plausible alternative explanations of a
+  # same-sex act and may rise with the treatment.
+  placebo:
+    - name: race_reference
+      definition: "The response refers to the person's race or ethnicity, or to Black or White people"
+      rationale: "Target race is randomized independently of the behavior and is signaled only by the name."
+    - name: respondent_own_experience
+      definition: "The response refers to the respondent's own experiences or relationships, or to people the respondent knows"
+      rationale: "Fixed before treatment; the behavior in the story does not change whom the respondent knows or what they have done."
+estimand: "ITT difference (same-sex minus opposite-sex encounter) in the share of responses expressing nonheterosexual_attribution, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over target gender and race; secondary: the same contrast among male and among female targets (H1 predicts a larger effect for men)"
+outcomes:
+  closed_ended: "rating_heterosexual, rating_homosexual, rating_bisexual (0-100 certainty, before the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors did not analyze the open item (article, Experiment 2 Procedure)."
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No text value was printed (122 cells hold only the web-skip code 98; counted). The article reports closed-outcome results only and prints no answers. Per the manifest the searcher saw no text value."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire, article methods and counts"
+  date: "2026-11-17"

@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the QJE article (141(4), Section V.D.2.ii and fn. 14),
+# Online Appendix D.3.8, the AEA RCT Registry preregistration "Explaining Equilibrium Study"
+# (13 Jun 2023, wave 2 design), the .qsf and the authors' cleaning code, before any answer
+# from these files was read. Same respondents as andre2024_stockmodels_arbitrage.
+id: andre2024_stockmodels_arbitrage_w2
+title: "Explaining arbitrage and households' explanations of a return forecast on a new scenario one to three days later (Andre, Schirmer & Wohlfart, US 2023, wave 2)"
+source:
+  citation: "Andre, P., Schirmer, P., & Wohlfart, J. (2026). Mental models of the stock market. Quarterly Journal of Economics, 141(4), 2925-."
+  doi: "10.1093/qje/qjag039"
+  data: "doi:10.7910/DVN/BNFSAO; data/external/andre2024_stockmodels/raw/data/experiments/explain_eq_2_raw.sav (outcome) and explain_eq_1_raw.sav (treatment); harmonized_andre2024_stockmodels_arbitrage_w2.csv"
+languages: [en]
+context: "US adults in a follow-up online survey read two hypothetical news scenarios about Amazon announced four weeks earlier, one with neutral news and one with good news about its future earnings, predicted in which scenario $1,000 invested in Amazon stock today and sold in twelve months would earn a higher return, and explained their prediction. One to three days earlier they had read either a text on how stock prices adjust to expected company earnings through arbitrage or a text on the tides."
+unit: respondent
+id_column: ResponseId
+text:
+  column: explanation
+  prompt: "For the following investment ... You invest $1,000 in Amazon stocks today, four weeks after the announcement was made in the two scenarios. You sell these stocks twelve months from now. ... you responded that you expect that the return of the investment in Amazon stock would be [higher in scenario 1 / similar in both scenarios / higher in scenario 2]. Please explain why you think that would be the case. (MMSM__Arbitrage_knowledge_W2.qsf, tag explanation)"
+  position: "Wave 2, directly after the directional return forecast; no treatment material in this wave"
+treatment:
+  variable: treatment
+  contrast: "wave-1 arm: explain_eq (1; arbitrage and equilibrium pricing text) vs explain_tides (0; tides text)"
+  level: respondent
+  notes: "Randomized in wave 1 (June 2023); 588 of 947 completed wave 2, with no differential attrition by arm (App. D.3.8). Treatment merged on the package's pseudonymized PROLIFIC_PID (clean_wide.R l. 309-329). Prompt identical across arms and no lesson on screen, so a shift is less mechanical than in wave 1; the authors use this wave to address demand effects (QJE fn. 14). All respondents are also in andre2024_stockmodels_arbitrage"
+constructs:
+  target:
+    - name: equilibrium_price_offset
+      definition: "The response argues that the good news is already reflected in Amazon's current stock price, or that the higher price an investor pays today offsets the higher future earnings, so the expected return need not be higher; references to prices being 'priced in', market efficiency, arbitrage, or paying more for the same future profits count. Answer yes or no."
+      source: "Preregistration 13 Jun 2023 (wave 2 'is analogous to part 2 of wave 1 but uses the Amazon good news scenario'; 'We test whether explaining the consequences of equilibrium on stock markets affects individuals' return expectations and the reasoning behind their expectations'); QJE Section V.D.2.ii and fn. 14; Online Appendix D.3.8"
+      expected_direction: increase
+  placebo:
+    - name: macroeconomic_conditions
+      definition: "The response refers to the general economy or markets as a whole: recession, inflation, interest rates, the overall stock market or economic outlook. Answer yes or no."
+      rationale: "The arbitrage text concerns how a single stock is priced, not the wider economy"
+    - name: social_or_ethical_concerns
+      definition: "The response refers to ethical, social or environmental aspects: workers, labor conditions, sustainability, or the respondent's moral approval or disapproval of Amazon. Answer yes or no."
+      rationale: "Neither wave-1 text has ethical content; the wave-2 scenarios are identical across arms"
+estimand: "ITT difference (explain_eq minus explain_tides) in the share of responses expressing equilibrium_price_offset, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "news_congruent (authors' return_1_recoded: 3 = higher return in the good news scenario, 2 = similar, 1 = lower)"
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes in the package for this file. Authors' GPT-5.2 attention-scheme codes exist (labels.csv, merge on ResponseId); not in the harmonized file"
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer from these files was read. The drafter read the QJE article, Online Appendix D.3.8 (which reports this wave's forecast shift; the coded-reasoning table rows were not read closely) and the 2024 working paper before drafting. The QJE prints six example explanations from the main descriptive surveys (Section IV.A.1; same item, other respondents). Online Appendix Tables C.1-C.2 (coding examples) were skipped. The searcher read no text from this package (MANIFEST)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, preregistration, questionnaire and code"
+  date: "2026-11-17"

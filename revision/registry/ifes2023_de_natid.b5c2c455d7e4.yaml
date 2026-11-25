@@ -1,0 +1,48 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 German export
+# header (Q98 wording), survey_design_overview.md and the 2023-11-28 final report draft
+# (natid_book/chapters/04-korea-nk-migrants/extracted-text/IFES_2023/); blind to response values.
+id: ifes2023_de_natid
+title: "National-identity conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany (IFES 2023)"
+source:
+  citation: "Denney, S. et al. (2023). Integration Challenges and Opportunities in Divided Countries: A Comparative Analysis of Germany and South Korea. IFES 2023 final report (revised draft, 2023-11-28)."
+  doi: null
+  data: "data/harmonized/ifes2023_de_natid.csv (from _archive/IFES2023/Germans/Data/IFES 2023 - German_February 12, 2024_18.11-choice_text.csv)"
+languages: [de]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q98
+  prompt: "Bitte beschreiben Sie, warum die von Ihnen gewählte Person eher deutsch ist (Please describe why the person you chose is more German)"
+  position: "After the forced choice of paired task 5 of 6 (Q94), before that task's ratings (Q95); about the person chosen in task 5"
+treatment:
+  variable: treatment
+  contrast: "religion attribute (Christian / Not Christian) displayed in all six tasks (1) vs withheld (0)"
+  level: respondent
+  notes: "A regime contrast like sktw_naturalization_2024: the final report (fn. 1 to Table 4.6) says a religion attribute was randomly assigned to the German sample and is not analyzed there. There is no randomizer field in the export; treatment = religion_attr_shown is derived from whether 'Religion' appears among the C2-F-k-j attribute names (always all six tasks or none; 1,255 shown vs 1,285 withheld among those who reached Q98). Task-level attributes for task 5 (birthplace, residence, ancestry, citizenship, history and tradition, political institutions, language, national feeling, religion) are also included; a secondary positive control is ancestry_differs (chosen_ethnic_ancestry != other_ethnic_ancestry)."
+constructs:
+  target:
+    - name: religious_criteria
+      definition: "Reasoning that invokes religion, Christianity, the church or faith as a ground for the person being (more) German"
+      source: "Final report, Survey Design #3, National Identity Conjoint (Table 4.6 and fn. 1); the attribute's content defines the construct and the report states no hypothesis, so this is a positive control"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: language_criteria
+      definition: "Reasoning that invokes speaking German"
+      rationale: "Language is shown in both arms; it should not change except through crowd-out from the ninth attribute"
+    - name: citizenship_criteria
+      definition: "Reasoning that invokes German citizenship or passport"
+      rationale: "Citizenship is shown in both arms; it should not change except through crowd-out"
+estimand: "ITT regime contrast on the estimation fold: share of responses expressing religious_criteria when the religion attribute is shown minus when it is withheld, E[g(R(1))] - E[g(R(0))], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 6 tasks plus 1-7 'how German' ratings of each person (not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data. The validated sample (exclude = FALSE; Ward & Denney 2025 SI Appendix A) came from post-fielding manipulation and attention checks that may have used the open-ends; attn_check_pass (Q114) is the text-independent alternative. No topic model or coding of Q98 found in IFES2023/Code."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

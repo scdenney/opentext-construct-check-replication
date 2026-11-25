@@ -1,0 +1,52 @@
+# DRAFT, not registered. The article (JOP 84(4), paywalled) and its appendix were
+# NOT read: no open copy exists (OpenAlex: closed; publisher page and supplement
+# require a login). Theory comes from the abstract, the replication code
+# (Figures.R; the Study 3/4 cleanup commands as echoed in log.log) and the
+# authors' coding instructions. Steven: check the hypotheses section and
+# Appendix A-K before registering. Written
+# before any S1_reason value was read. Shares respondents with
+# bonilla2024_sourcecues_s4 (same 870 people, round 2).
+id: bonilla2024_sourcecues_s3
+title: "White vs Black candidate making a derogatory statement about Black people and Black respondents' reasons for their position (US 2019, Study 3)"
+source:
+  citation: "Bonilla, T., Filindra, A., & Lajevardi, N. (2022). How source cues shape evaluations of group-based derogatory political messages. Journal of Politics, 84(4), 1979-1996."
+  doi: "10.1086/720308"
+  data: "doi:10.7910/DVN/2CVG5E; data/external/bonilla2024_sourcecues/raw/study3_4_data.tsv (text), study3_cleaned_coded.dta (assignment, codes); harmonized_bonilla2024_sourcecues_s3.csv"
+languages: [en]
+context: "Black adults in the United States (online survey, 2019) read a short statement on crime and the justice system by a candidate for office who was identified as White or as Black; the statement either generalized negatively about Black people or talked about enforcing the law in general. They said how strongly they agreed with the statement and were then asked to explain the key reasons for their position."
+unit: respondent
+id_column: responseid
+text:
+  column: S1_reason
+  prompt: "Please explain the key reasons for your position."
+  position: "Round 1 of 2: right after the candidate statement (blocks wnb/wdb/bnb/bdb) and the agreement item S1_agree; before S1_appropriate, vote, traits and party recall"
+treatment:
+  variable: treatment
+  contrast: "Derogatory statement about Black people vs neutral statement, pooled over the speaker (white_derog, black_derog vs white_neutral, black_neutral). Secondary: the speaker, within the derogatory arms."
+  level: respondent
+  notes: "2 x 2 between-subjects within round 1 (treat1): speaker White/Black x statement derogatory/neutral; arms white_neutral, white_derog, black_neutral, black_derog (about 216-220 each). The speaker factor is the primary contrast because the authors' claim is about source cues: derogation is punished less when the speaker is a minority (here an in-group) candidate. The derogation factor (derog vs neutral) is a secondary contrast and is partly mechanical (positive control): only the derogatory statement mentions Black people, so answers that discuss Black people or racism will rise with it regardless of the theory. The neutral arms give a design-based placebo contrast (white_neutral vs black_neutral): no derogation, so the speaker's race should not move the target. Round 2 (card _s4) follows in the same session; round 1 is uncontaminated by it. Exact stimulus wording is not in the archive (questionnaire omits it); the description follows the Study 1a questionnaire and coding_instructions2.docx. LEAD CORRECTION (17 Nov 2026, before registration, from the article read through the university library): for Black respondents the authors expect no source-cue effect ('We expect Black audiences to recognize derogation in political messages and penalize the candidate regardless'; 'we expect source cues to play less of a role in shaping Black political judgments than White political judgments'). The registered primary contrast is therefore derogatory vs neutral, for which the authors state a direction; the speaker contrast is secondary with no expected direction. The derogatory vs neutral contrast is partly mechanical: only the derogatory statement makes a claim about the group."
+constructs:
+  target:
+    - name: rejects_as_racist
+      definition: "The answer rejects or criticizes the candidate's statement as racist, prejudiced, stereotyping, bigoted, offensive or inappropriate toward Black people (yes/no). Disagreement on other grounds alone does not count."
+      source: "Abstract: 'Both [Black and White Americans] punish the derogation less when issued by minority candidates'; norms against racially derogatory speech are the mechanism. Authors' human code S1_code2 = -2 ('clear pushback against statement the candidate made because it was inappropriate, racist', coding_instructions1.docx) Direction for the registered contrast: article, theory section, 'We expect Black audiences to recognize derogation in political messages and penalize the candidate regardless' of the speaker."
+      expected_direction: increase
+  placebo:
+    - name: other_policy_issue
+      definition: "The answer refers to a policy issue other than crime, policing, drugs, terrorism or the justice system, such as the economy, jobs, taxes, health care or education (yes/no)."
+      rationale: "No version of the statement raises other policy issues, and the speaker's race should not bring them up."
+    - name: media_reference
+      definition: "The answer refers to the news media, the interview, or press coverage of the candidate (yes/no)."
+      rationale: "Every arm presents the statement the same way (an interview); the speaker's race does not change how it was reported."
+estimand: "ITT difference (white_derog minus black_derog) in the share of answers expressing rejects_as_racist, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "S1_agree (agreement with the statement), S1_appropriate (appropriateness); also vote likelihood and trait ratings in the authors' file"
+human_codes:
+  available: true
+  column: "human_c1_code1..6, human_c1_nonsense (coder 1), human_c2_code1..6, human_c2_nonsense (coder 2)"
+  notes: "Two research assistants coded every non-empty answer (826-828) with coding_instructions1.docx: code1 pushback -1 / ambivalent 0 / support 1; code2 -2 clear pushback because inappropriate or racist ... 2 clear endorsement; code3 mentions discrimination against Black people; code4 against other stigmatized groups; code5 against Muslims; code6 mentions inclusivity. rejects_as_racist corresponds to code2 == -2 (and partly code3 == 1). Blindness to arm: coder 2 was NOT blind (the coder-2 sheet study3_coder2.dta carries treat1); coder 1's sheet (study3_coder1.dta, a Qualtrics export with responseid and S1_reason only) has no arm column, so coder 1 was probably blind to the label, though derogatory arms are often evident from the answer. The authors use the averaged code6 as 'Group Empathy', a moderator of candidate approval by arm (Figures.R, appendix_empathy_study3.pdf), not as an outcome. Coder agreement looks low on the marginals (code1: coder 1 rates 686 of 826 as 0, coder 2 only 226). Coder 1's nonsense flag is filled for 271 rows only. The authors' averaged codes code1-code6 are in study3_cleaned_coded.dta and not carried over."
+provenance:
+  written_before_reading_text: true
+  contamination: "No S1_reason value was read by the drafter. The drafter saw marginal counts of the human codes (not by arm). coding_instructions2.docx (Study 4 round) prints three example answers about Muslims; none is from the S1 item. The article was not read, so whether it prints example S1 answers or coded shares by arm is unknown; the replication archive has an appendix figure that plots approval against the averaged code6 by arm (appendix_empathy_study3.pdf, not opened; its code in Figures.R was read)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from abstract, replication code and coding instructions"
+  date: "2026-11-17"

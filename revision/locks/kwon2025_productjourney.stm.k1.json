@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "3acd1093441db7a4e4db945f62918917539604ea9e0324539a4028cda38920ec",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_kwon2025_productjourney",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/kwon2025_productjourney.stm.rds",
+      "sha256": "ba910051e0260fe0673a61954bbace14c18fec0c909af22ad0d1fd7aed53b63c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/kwon2025_productjourney.topic_choice.csv",
+      "sha256": "9921125c80233ac9cd21b9d4673c13aa06afbfc0f833b4da3dffa2b65db8a2dc"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "8fbbca570b22ad15a922e7d5a2847394087ad6c14e58ff425e8a1e329d43d7bd",
+  "created": "2026-11-17T21:35:19Z",
+  "opencheck_version": "0.0.0.9000"
+}

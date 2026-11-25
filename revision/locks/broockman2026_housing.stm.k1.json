@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "5fa685e5d34e4c2efc7b1f561713c558d3f8d2f3d786c863179ce6ce0d2a6c09",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_broockman2026_housing",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/broockman2026_housing.stm.rds",
+      "sha256": "237da050cc143d305ac2b260245358e084b6eb3c02150bade228884fccc2dd3c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/broockman2026_housing.topic_choice.csv",
+      "sha256": "f08094ac35fe957133e579aebac87b584117e99ab623480d8a0356704f72ad0d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "51511b0c73e584e1b07512da1e212280a79787d98977d433291f276c9856b105",
+  "created": "2026-11-17T22:51:56Z",
+  "opencheck_version": "0.0.0.9000"
+}

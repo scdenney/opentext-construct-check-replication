@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4c1f0f224665da8e66dfcd519f7a95d3044d22d5c8e4a1fca9be396f6d3e29d1",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_egami2022_prison_exp3",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/egami2022_prison_exp3.stm.rds",
+      "sha256": "610705fb153e354458ba36c9bd8b8a6c09cf5135a249dbd87ad504692c20a3cb"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/egami2022_prison_exp3.topic_choice_qwen36_35b.csv",
+      "sha256": "5da3e4d857ed46652ee05fbba3f49aee62e7c5b9ad877e40aa389327258a713e"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "a1cf61eb718b8604f0f75f0205124e175718334112d87c6f62ce42c3b4cd4626",
+  "created": "2026-11-17T18:03:46Z",
+  "opencheck_version": "0.0.0.9000"
+}

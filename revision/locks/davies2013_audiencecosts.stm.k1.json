@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "2c0b45cf6206520ea70ffa7970182071a148ad8f495c676efff17649bfa736c5",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_davies2013_audiencecosts",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/davies2013_audiencecosts.stm.rds",
+      "sha256": "101df7040f74b60338e74087f73b7efc045b71f8919ba2722e71c503b74f58bb"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/davies2013_audiencecosts.topic_choice.csv",
+      "sha256": "0ea733490e4b4c4c31e78bb0819f5e8fa02c563fd14165e682d834016ea3d8b7"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "cb3d48385adfe4400b089628b91f32ad46e86ea2c6b60587a271cad4ed46bc63",
+  "created": "2026-10-29T15:22:41Z",
+  "opencheck_version": "0.0.0.9000"
+}

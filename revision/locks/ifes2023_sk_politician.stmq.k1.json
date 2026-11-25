@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "475f206a57cb1816f452269e63976a1a40d8630e464bd8241057ad20a2bee68d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ifes2023_sk_politician",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ifes2023_sk_politician.stm.rds",
+      "sha256": "6fca2efeff22a6366fd9c972ef0dd3c337a8339c08549d884e94f405af70e8d9"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ifes2023_sk_politician.topic_choice_qwen36_35b.csv",
+      "sha256": "c476f1913a2c27d269e1583458febc35802355d1242d34994ef6fd317800a1cb"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "a7b39dfefc4118e7ffed1a5a80c79678c71eda55fca3865270d95a4ed70bf1b2",
+  "created": "2026-11-17T18:03:43Z",
+  "opencheck_version": "0.0.0.9000"
+}

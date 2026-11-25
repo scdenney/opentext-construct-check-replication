@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "4129bb6cf44f9dd11c8747e2cc42c3e3e9b2c508c4d89c186cf388c5648a2ad4",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/sirovica2022_cowcalf.rds",
+      "sha256": "c300d3e9a24af5fc994456a8397b91d64ea4f9abd2a0735c1ab1e211a8650b31"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/sirovica2022_cowcalf.topic_choice.csv",
+      "sha256": "c05fe7ceb784b5ef3f0ae443e8018128b074cd1581b5c692ab31357a283671b8"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "28bfc4659b68ea85785c5fca1fa095dcb9351a10e83fb4146d4a23aca772e5d5",
+  "created": "2026-11-23T23:33:27Z",
+  "opencheck_version": "0.0.0.9000"
+}

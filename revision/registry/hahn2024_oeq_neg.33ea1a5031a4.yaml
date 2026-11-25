@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the article (Zeitschrift fuer Psychologie 232(3);
+# sections Cognition, Research Questions and Hypotheses incl. Table 1, Method), the
+# authors' RDA.qmd and the item keys, before any answer in the data file was read.
+# The Results and Discussion sections on topics were not read. The article prints a few
+# translated example answers (see provenance.contamination).
+# Sibling card: hahn2024_oeq_pos (same design, positive-feedback item).
+id: hahn2024_oeq_neg
+title: "Open items at the end vs the beginning of a course evaluation and what students want their tutor to improve (German math tutoring courses, 2017-18)"
+source:
+  citation: "Hahn, S., Kroehne, U., & Merk, S. (2024). Improving and analyzing open-ended survey responses: A case study linking psychological theories and analysis approaches for text data. Zeitschrift für Psychologie, 232(3), 171-180."
+  doi: "10.1027/2151-2604/a000566"
+  data: "doi:10.23668/psycharchives.14490 (Hahn & Merk 2024, CC-BY 4.0); data/external/hahn2024_oeq/raw/Data_Long_Format.csv (question_id 48); harmonized_hahn2024_oeq_neg.csv"
+languages: [de]
+context: "Secondary-school students in a five-day mathematics tutoring course preparing for the German Abitur (school-leaving exam) filled in a course evaluation on their phones after the fourth course day. The survey contained rating items on the course and the tutor and two open questions on the tutor; this is the answer to the open question asking what the tutor could do better in future."
+unit: respondent
+id_column: completed_survey_id
+text:
+  column: "answer_text where question_id == 48 (harmonized file: text)"
+  prompt: "'Was könnte {Vorname der Kursleitung} in Zukunft besser machen?' ('What could TEACHERNAME do better in future?'). Wording from raw/Question_keys_data.csv, id 48; translation from the article, Method > Data Description."
+  position: "Arm-dependent (this is the treatment): either at the beginning of the survey, before all closed items, or at the end, after the 28 SEEQ teaching-quality items and the 14 items on satisfaction, demographics, school and reasons for registering. Asked together with the positive-feedback item 47 ('What has TEACHERNAME done especially well?'); the order of 47 and 48 within the pair is not documented."
+treatment:
+  variable: treatment
+  contrast: "open items at the end of the survey (1; survey_id 4, 5) vs at the beginning (0; survey_id 2, 3)"
+  level: respondent
+  notes: "2 x 2 field experiment; students were randomly assigned to one of four survey versions (article, Method > Procedure: 'Students were randomly assigned to different conditions of this 2 x 2 field trial'). Arm mapping from RDA.qmd (chunk 'Import data'); the distinct completed surveys per survey_id (2: 788, 3: 775, 4: 804, 5: 816) equal the article's cell sizes. Randomization was within classes, not by class: 206 of 287 classes contain all four versions, 67 three, 11 two, 3 one; so no cluster column is needed for assignment. Students reached a course-specific link; class_id, course_id and teacher_id are kept for optional clustering (the authors use random intercepts for teacher and respondent). Second factor, randomized independently: instruction before the open items, motivating ('The following questions are very important for TEACHER NAME and SCHOOL NAME and will help us to better respond to your wishes as students in the future'; English from the article, German wording not in the archive) vs neutral (no additional cue); column cue (1 = motivating; survey_id 2, 5). The authors expect the cue to have no or only a minor effect on content (Research Questions and Hypotheses), so cue vs neutral is a secondary, placebo contrast. The item wording is identical across arms. The position contrast also changes what the student has just done (28 rating items on the same tutor vs nothing), so a rise in closed-item aspects at the end is the priming mechanism the authors propose, not a wording artifact. 16 respondent_hash values completed two surveys (in different arms); they are kept as separate rows, as in the authors' data."
+constructs:
+  target:
+    - name: closed_item_aspect
+      definition: "The answer asks for improvement in at least one specific aspect of the course or the tutor that the survey's rating items asked about: usefulness of what was learned; raising interest in the math material; making the content understandable; challenging students or making them think; enthusiasm; energy or dynamism; humor; keeping students' interest through the teaching style; clearer or more understandable explanations; better preparation or more careful explanation; an overview of all Abitur-relevant topics; practice of Abitur task types; closing gaps in knowledge; encouraging discussion; inviting students' own ideas or solution paths, or critical questioning of solutions; encouraging questions; friendliness; making students feel they can ask for help; genuine interest in the students; knowing students' names; noticing when a student raises a hand; legible handwriting; speaking clearly; understandable solution strategies for math problems; answering questions clearly; the pace (too fast or too slow); the difficulty of the tasks. Answer no for 'nothing', 'stay as you are' or other answers without a named aspect, and for aspects outside this list."
+      source: "Article, section Cognition: positioning OEI at the end means information from the closed items 'may have been already activated'; section Research Questions and Hypotheses: 'positioning at the end may lead to ... a thematic shift in the answers due to prior elaboration on the closed items'; RDA.qmd, Research questions, hypothesis 3: 'Position at the end leads to topics more aligned to topics from closed questions'. Note that Table 1 labels content differences for position 'exploratory' and the Cognition section says it 'remains open' whether answers resemble or deviate from the closed items; the direction is taken from RDA hypothesis 3. Aspect list from the 28 SEEQ items, raw/Question_keys_data.csv ids 1-28."
+      expected_direction: increase
+  # Each placebo is a separate yes/no judgment, not exclusive of the targets.
+  placebo:
+    - name: provider_organization
+      definition: "The answer refers to the course provider (abiturma) or to course organization outside the tutor's own teaching: course dates or length, rooms, group size, price or booking, or course materials supplied by the provider."
+      rationale: "The motivating instruction, randomized independently of position, names the provider ('SCHOOL NAME') as well as the tutor; the item and the preceding rating items concern the tutor. Position should not move mentions of the provider. Caveats: the survey also has closed items mentioning abiturma (ids 31, 32, 36-38) and an open pair on abiturma (ids 45, 46) whose placement relative to item 48 is not documented; and a request for more course time can be read as organization, while the overview item (11) could prime it."
+    - name: named_math_topic
+      definition: "The answer names a specific area or topic of school mathematics, such as calculus (Analysis, Ableitung, Integral), functions, probability or statistics (Stochastik), vectors or analytic geometry, or matrices."
+      rationale: "No rating item names a mathematics topic (item 11 refers only to 'all Abitur-relevant topics'), so priming by the closed items should not raise it; neither factor concerns course content."
+estimand: "ITT difference (end minus beginning) in the share of answers expressing the target, E[g(R(1))] - E[g(R(0))], among students who answered item 48, estimated on the estimation fold; secondary: motivating minus neutral instruction, where no content change is expected. Both estimands condition on answering, which position and cue affect (the article reports higher response rates at the beginning), so the difference mixes a change in content with a change in who answers."
+outcomes:
+  closed_ended: "SEEQ items 1-28 and satisfaction items 29-32 (answer_integer). They are post-treatment for the beginning arm (asked after the open items) and pre-text for the end arm; use only descriptively. Answer length and response rate are the authors' surface outcomes."
+human_codes:
+  available: false
+  column: null
+  notes: "None in the archive. The authors ran STM (K = 12 for this item) and BERTopic on the full set of answers; the harmonized column authors_stm_empty flags the answers their STM drops (empty after stopword removal, which includes one-word answers such as 'nichts'; 230 of 2,118)."
+provenance:
+  written_before_reading_text: true
+  contamination: "No value of answer_text in the data file was read; only counts. (1) The article, Method > Data Description, prints six short translated example answers (two single words, two short phrases, two multi-sentence answers; items and arms not given); the drafter read them. (2) RDA.qmd, which the drafter read in full, contains the authors' topic labels for this item: STM K = 5, 7 and 12 (e.g. 'more self-exercise', 'too little time', 'Pacing', 'Explain better', 'Slow down', 'Task culture', 'Entrance and appearance', 'Curriculum allocation'), BERTopic labels (e.g. 'Explain slowly', 'No critics', 'Stay the same', 'Write clearly', 'Visual aids', 'More motivation') and the extra stopwords the authors removed ('vielleicht', 'bisschen'). No representative documents were seen (RDA.html, which would print them, was not downloaded). (3) The abstract states that 'positioning slightly altered the content of the responses'; the Results and Discussion sections on topics were not read. The authors' topic models used the full sample, so the target is a replication target."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the article, RDA.qmd and item keys"
+  date: "2026-11-17"

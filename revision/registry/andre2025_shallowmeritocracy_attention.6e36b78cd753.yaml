@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the SAFE WP 405 version of the paper (October
+# 2023; Sections 2, 3, 4.3, 5.2, Appendix B.3, F), the CRC TR 224 DP 318 v3 version
+# (October 2022), the May 2020 pre-analysis plan (AEARCTR-0005811), main_study.qsf
+# and the author's cleaning code. NOT blind: see provenance.contamination.
+id: andre2025_shallowmeritocracy_attention
+title: "Information that piece rates shape effort and spectators' explanations of how they split pay between two workers (Andre 2025, main study, attention condition)"
+source:
+  citation: "Andre, P. (2025). Shallow meritocracy. Review of Economic Studies, 92(2), 772-807."
+  doi: "10.1093/restud/rdae040"
+  data: "doi:10.5281/zenodo.10591832 (licence: Zenodo field 'cc-by-4.0'; package README 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'); data/external/andre2025_shallowmeritocracy/raw/data/fairness.sav and explanations.csv; harmonized_andre2025_shallowmeritocracy_attention.csv"
+languages: [en]
+context: "US adults in an online survey (Lucid, June 2020) read about two crowd workers who completed simple tasks for a piece rate of $0.10 or $0.50 and split the workers' total earnings between them in eight effort scenarios, with real payouts. At the end of the survey they described the reasoning behind their decisions."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "explanation (fairness.sav); `text` in the harmonized file"
+  prompt: "Your reasoning. This is the last mandatory question. In part 1 of the survey, you split money between two workers. Please describe briefly: What was the reasoning that shaped your decisions?"
+  position: "Last mandatory question, on the good-bye page after the eight allocation decisions, the incentivized belief question about how many tasks workers complete for $0.50 (asked of every respondent), and the demographic questionnaire."
+treatment:
+  variable: treatment
+  contrast: "Primary: 'attention' (workers knew their unequal rates in advance, plus the information pages) vs 'treatment' (same situation, no information pages). Second directional contrast: 'eqrates_attention' vs 'eqrates_treatment' (equal-rates versions). Secondary, no expected direction: 'treatment' vs 'control' (the paper's main contrast: workers knew their unequal rates in advance vs only knew the 50/50 odds) and 'eqrates_treatment' vs 'eqrates_control'."
+  level: respondent
+  notes: "One Qualtrics BlockRandomizer (even presentation) assigns each respondent to one of six cells with equal probability: EE (equal rates control), EU (control), UU (treatment), UU + debiasing (attention), UE (equal rates treatment), UE + debiasing (equal rates attention); a nested randomizer sets the screen order of the advantaged and disadvantaged worker (worker_order: ad / da; for EE the realized common rate, high / low). Attention cells see extra instruction pages saying that 'the piece rates strongly influence the number of tasks a worker completes', the average size of the effect, and two workers' comments explaining it; the page has a 20-second minimum, its message is repeated and tested in the quiz (Section 5.2). The open item wording is the same in every cell. A rise in the target under attention is therefore largely mechanical carry-over of the information: read it as a positive control (manipulation check of the information), not as spontaneous reasoning. Every respondent, in every cell, answers the belief question about the effect of the piece rate on effort before writing, which may raise the target in all cells. Attention rows from the May 2020 pilot are excluded by the author (exclude = TRUE)."
+constructs:
+  target:
+    - name: rate_shapes_effort
+      definition: "The response says that the workers' piece rates (pay per task, or knowing their rate in advance) affected how many tasks they chose to complete or how hard they worked: for example that a low rate discouraged a worker from working more, that a high rate encouraged a worker, or that a worker would have done more tasks had he been paid more. A mention of the pay rates that does not link them to the amount of work chosen does not count."
+      source: "Section 5.2 (Attention): the condition 'draws the attention of participants to the effect of circumstances on effort choices' and is designed so that 'it is very salient to spectators that circumstances shape choices'; May 2020 PAP section 1(3), treatments 5 and 6 'exogenously manipulate the beliefs of participants' by informing them 'that effort choices in the task are strongly context-dependent'. The author's hand code 'endogeneity' (Appendix B.3, Table B.5: 'acknowledgment that workers' effort choices are shaped by their circumstances') measures the same consideration. Expected increase for attention vs treatment and for equal-rates attention vs equal-rates treatment. For treatment vs control the PAP states two opposing hypotheses ('the nature of the project is explorative'), so that contrast has no expected direction."
+      expected_direction: increase
+  placebo:
+    - name: workers_need
+      definition: "The response says that the workers need the money, for example to live, pay bills, or survive, or refers to their financial hardship."
+      rationale: "The information pages concern how piece rates change effort, not the workers' needs. The author codes need as a separate motive (Table B.5, 'need')."
+    - name: work_quality
+      definition: "The response refers to the quality or accuracy of the workers' tasks (whether the work was done correctly or well), as distinct from the number of tasks."
+      rationale: "Nothing in any cell gives information on the quality of the work; the attention pages concern quantity of effort only."
+estimand: "ITT difference (attention minus treatment) in the share of responses expressing rate_shapes_effort, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; the same for equal-rates attention minus equal-rates treatment. Treatment minus control and equal-rates treatment minus equal-rates control are estimated as secondary quantities with no expected sign."
+outcomes:
+  closed_ended: "Share of total earnings assigned to the disadvantaged worker in decisions 1-7 (redistribution sliders; not carried in the harmonized file). The paper reports no effect of attention on allocations (Section 5.2, Table C.2)."
+human_codes:
+  available: true
+  column: "human_effort, human_accept (initial outcome fair), human_equality, human_endogeneity, human_counterfactual, human_need, human_misunderstand, human_other"
+  notes: "Author's multi-label hand codes (explanations.csv, cleaned as in clean_explanations.R), available for control, treatment and attention only; equal-rates cells are not coded (NA). human_endogeneity is the closest match to the target. Coders were probably not blind to the arm: the coding file holds `treatment` and `debiasing` next to the text, and the paper does not describe the coding procedure. The codes cover the full sample, and the paper reports their control vs treatment shares (Table B.6)."
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) The drafter read the paper, which reports hand-coded explanation shares for control vs treatment (Table B.6: effort 58.3% vs 59.2%, endogeneity 0.6% vs 1.0%, no significant differences) and says almost no treatment respondent mentions that circumstances shape choices (Section 4.3). (2) The paper prints example extracts of main-study answers in Table B.5 (one per code, including endogeneity) and example answers from the unrandomized rationale study (Table 4); the drafter read them. (3) While checking human-code coverage the drafter printed the mean of human_endogeneity by arm, which shows the share in the attention arm (about 3%, against 1% in treatment) and so reveals the direction of the primary contrast on the author's codes. (4) The wave-3 searcher printed about 5 answers from the rationale study (not this item's sample) and read the three Appendix B.3 examples. No answer from fairness.sav was printed."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, pre-analysis plans, questionnaire and code"
+  date: "2026-11-17"

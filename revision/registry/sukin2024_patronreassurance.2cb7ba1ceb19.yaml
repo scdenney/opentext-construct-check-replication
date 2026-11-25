@@ -1,0 +1,45 @@
+# DRAFT, not registered. Written from the ISQ article (LSE Research Online copy of the
+# published version: hypotheses 1A-2B in "A Hierarchical Framework for Reassurance",
+# "Survey Design", "Results"), the online appendix 7.2 (survey wording) and the
+# replication code, before any open-text value was read.
+id: sukin2024_patronreassurance
+title: "Randomly assigned US reassurance policy (high-risk vs low-risk) and explanations of support for it, Poland, Romania and the Baltic states (March 2022)"
+source:
+  citation: "Sukin, L., & Lanoszka, A. (2024). Credibility in Crises: How Patrons Reassure Their Allies. International Studies Quarterly, 68(2), sqae062."
+  doi: "10.1093/isq/sqae062"
+  data: "doi:10.7910/DVN/NAN9KR (CC0 1.0); data/external/sukin2024_patronreassurance/raw/; harmonized_sukin2024_patronreassurance.csv"
+languages: [pl, ro, lt, lv, et, en]
+context: "Adults in Poland, Romania, Latvia, Lithuania and Estonia, surveyed in March 2022 in their own language or English, read a scenario in which Russia has invaded a NATO member (Latvia or Lithuania), compared several possible US policies, were asked to imagine that the United States adopted one policy (sanctions on Russia, a bilateral or multilateral summit with Russia, moving US forces into the attacked country or into their own country, or reiterating the US promise to defend all NATO states), rated it, and explained in their own words why they support or oppose it."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Why do you support or oppose Policy [A/B/C/D/E/F]? (online appendix 7.2, English master; asked in the respondent's chosen language, translations not deposited)"
+  position: "After the assigned policy (Treatment) and its ratings: support, adequacy, economy, US keeps promises, cares about home country, capability and willingness to defend; source column WhyPolicy"
+treatment:
+  variable: treatment
+  contrast: "primary: high-risk policy (bilateral_summit, in_theater_deployment, deterrent_deployment, multilateral_summit) vs low-risk policy (sanctions, reiterate_guarantee), the authors' coding (Table 3 'High risk'; Replication.R variable Direct); secondary: deployments (in_theater_deployment, deterrent_deployment) vs low-risk, and summits (bilateral_summit, multilateral_summit) vs low-risk"
+  level: respondent
+  notes: "Each respondent is randomly assigned one of six policies (article, Survey Design: 'Each respondent is randomly assigned a policy'; variable Short / Policy, A sanctions, B bilateral summit, C in-theater deployment into the attacked state, D deterrent deployment into the home country, E multilateral summit, F reiterate guarantee; Replication.R header). There is no no-policy control. The target country (Latvia or Lithuania) is randomized except for Latvian and Lithuanian respondents, who get the other state (footnote 5). The policy text differs by arm and the item names the policy, so references to the policy's content are mechanical; the target is a judgment about the policy's risk, not its content. An earlier, separate randomization in the same survey (Treatment_DO: high or low, nuclear or conventional) is not used by the article and is kept only as design columns. Exclusions follow the authors' main sample (Replication.R df_clean2: attention check, manipulation check, completion, speeders, no state), N = 1,382 as in Table 3."
+constructs:
+  target:
+    - name: escalation_risk
+      definition: "The response says the policy being evaluated is risky or could make the situation worse: provoke Russia, escalate the conflict, widen the war, draw the respondent's country, NATO or the United States into fighting, risk nuclear war, or backfire (for example, lead to concessions to Russia or give Russia time). Statements that the policy avoids or reduces such risks, or that it simply would not work, do not count."
+      source: "Hypothesis 2B ('Allies will prefer low-risk reassurance policies over high-risk ones': allies managing alliance risks support policies with fewer chances of escalating a conflict or backfiring) and the Introduction ('allied audiences prefer demonstrations of credibility that minimize the risks of crisis escalation'); Results: 'this preference for low-risk reassurance policies relates to respondents' desire to avoid and manage escalation and other alliance risks'"
+      expected_direction: increase
+  placebo:
+    - name: us_military_capability
+      definition: "The response makes a claim about whether the United States is militarily strong enough or has the military capability to defend the respondent's country or its allies"
+      rationale: "The authors find that all six policies have equal effects on perceived US military capabilities (Results, 'Signaling Capability and Interest', Table 1: no significant variation between treatments). Caveat: the deployment policies mention US forces, so the definition requires a claim about US capability, not a mention of troops."
+estimand: "ITT difference (high-risk minus low-risk policy) in the share of responses expressing escalation_risk, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold with country strata"
+outcomes:
+  closed_ended: "support (approve of the US adopting the policy, 1-4); effective (policy would adequately address the Russian threat, 1-4)"
+human_codes:
+  available: false
+  column: null
+  notes: "No codes in the archive. The article mentions the authors read the open-ended explanations of pro-sanctions respondents (Results, discussion of sanctions)."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was seen (counts of language-specific letters only). The article states that respondents 'did not laud unique features of current sanctions in their open-ended explanations for their pro-sanctions preferences'; closed-ended results by policy (Tables 1-4) were read."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the article, online appendix and replication code"
+  date: "2026-11-17"

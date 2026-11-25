@@ -1,0 +1,54 @@
+# DRAFT, not registered. POSITIVE CONTROL ONLY: the open text is the priming task, so
+# the question wording differs by arm and any shift is largely prompt-induced. Written
+# from the paper and codebook before any open-text value was read. Steven must confirm
+# the placebos before running oc_study_register().
+id: gidron2025_polarization
+title: "Cultural vs economic issue-dispute prompts and the issues respondents name (ten-country priming experiment, 2021)"
+source:
+  citation: "Gidron, N., Adams, J., Horne, W., & Tichelbaecker, T. (2025). Beyond observational relationships: Evidence from a ten-country experiment that policy disputes cause affective polarization. British Journal of Political Science, 55, e84."
+  doi: "10.1017/S0007123425000158"
+  data: "doi:10.7910/DVN/ZIKPBD; data/external/gidron2025_polarization/raw/workfile.rds"
+languages: [en]   # DeepL translations from 10 national languages; originals not in the file
+context: "Adults in ten Western democracies (2021) were asked in their own language to describe the key cultural or economic issues on which political parties in their country disagree; answers were machine-translated into English."
+unit: respondent
+id_column: meta_UUID
+text:
+  column: "open_end_immigration_eng (cultural arm) / open_end_economics_eng (economic arm), coalesced by arm"
+  prompt: "Cultural arm: 'The last few years have witnessed dramatic political developments. Specifically, parties have clashed over cultural issues such as multiculturalism, immigration and national identity. Different parties hold very different views on these important issues. Can you describe to us what you think are the key cultural issues on which different parties disagree?' Economic arm: the same with 'economic issues such as taxes, economic inequality and the welfare state'"
+  position: "The treatment itself: after pre-treatment party ID and feeling thermometers, before the out-party trust outcome"
+treatment:
+  variable: treated_culture
+  contrast: "cultural-issues prompt (treated_culture == 1) vs economic-issues prompt (treated_econ == 1); the control (vacation prompt) has no text in the file"
+  level: respondent
+  notes: "Three-arm randomization within each of 10 countries (Latana, June-July 2021): cultural 3,549 / economic 3,659 / control 3,793. Stratify folds by country"
+constructs:
+  target:
+    - name: immigration_dispute
+      definition: "The response names immigration, migrants, refugees, asylum or border control as an issue on which parties disagree"
+      source: "Gidron et al. 2025, Empirical Strategy and Data (pp. 3-4): with condition-specific dictionaries, 37% of cultural-condition respondents mentioned immigration vs 12% in the economic condition"
+      expected_direction: increase
+    - name: economic_redistribution_dispute
+      definition: "The response names taxes, inequality, the welfare state, wages, pensions or public spending as an issue on which parties disagree"
+      source: "Prompt content (economic arm lists these examples); the cultural arm does not"
+      expected_direction: decrease
+  # PROPOSED; Steven to confirm. Because the prompts steer content, no consideration is
+  # cleanly unaffected. These are issues listed in neither prompt.
+  placebo:
+    - name: corruption_governance
+      definition: "The response names corruption, rule of law, judicial independence or democratic institutions as a dispute"
+      rationale: "Neither prompt lists these. Both prompts ask about inter-party disagreement, so any shift would indicate prompt spillover rather than the cultural/economic manipulation"
+    - name: covid_pandemic
+      definition: "The response names the COVID-19 pandemic, lockdowns or vaccination as a dispute"
+      rationale: "A salient issue in mid-2021 that is listed in neither prompt"
+estimand: "ITT difference (cultural minus economic prompt) in the share of responses expressing immigration_dispute, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. This is a positive-control estimand, so a large positive value is expected mechanically"
+outcomes:
+  closed_ended: "trust_in_opposing_parties (post-treatment out-party distrust; main outcome)"
+human_codes:
+  available: false
+  column: null
+  notes: "open_immig is a dictionary code (separate dictionaries per arm, built after the authors read about 15% of responses), not a human code. It can serve as a weak benchmark for immigration_dispute"
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text values were read. The drafter saw the open_immig x arm tabulation (1,482 of 3,549 cultural vs 429 of 3,659 economic) during structural checks. The authors read about 15% of responses to build their dictionaries, and the paper prints keyness terms (Fig. 3)"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

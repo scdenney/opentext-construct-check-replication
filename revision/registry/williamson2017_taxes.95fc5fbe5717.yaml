@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (raw/Williamson859.pdf), the fielded questionnaire
+# (raw/[8041.003] TESS Williamson_v3clean.docx), the NORC field report, the
+# SPSS labels and the abstract of Williamson (2018). No worded open-text value
+# was read; see provenance.contamination for the digit-only cells seen.
+id: williamson2017_taxes
+title: "Information about who pays taxes, and what Americans say they are upset that tax dollars pay for, US"
+source:
+  citation: "Williamson, V. (2017). \"The Taxpayer Gap\": Perceptions of the Taxpaying Population and Opposition to Welfare Spending. Time-sharing Experiments for the Social Sciences, study williamson859 (TESS 003). Experiment reported in Williamson, V. S. (2018). Who are \"The Taxpayers\"? The Forum 16(3): 399-418."
+  doi: "10.1515/for-2018-0027"
+  data: "https://osf.io/bsd7j/ (TESS003_Williamson_27July17.sav); data/external/williamson2017_taxes/harmonized_williamson2017_taxes.csv"
+languages: [en]
+context: "US adults in an online survey panel (2017) first saw a short chart with a one-sentence summary: about the federal income tax paid at different income levels, about all federal, state and local taxes paid at different income levels, or about internet use over time. They then estimated what share of adults pay taxes, said whether they are a taxpayer and what they are glad tax dollars pay for, and were asked: what are you upset that tax dollars pay for?"
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "What are you upset that tax dollars pay for?"
+  position: "Q8, after the information chart and its attention check (Q2/Q3/Q4 by arm), Q5 (estimated percentage of adults who pay taxes), Q6 (are you a taxpayer) and Q7 (glad; open text, not used in this card); before Q9A-C spending on food stamps, Social Security and the military. Medium text box, prompted twice if blank. Same wording in all arms."
+treatment:
+  variable: treatment
+  contrast: "Primary: federal income tax information (federal_income_tax, 502 non-excluded answers) vs internet-use control (control, 515). Second: all-taxes information (all_taxes, 504) vs control, with the opposite expected direction (coded control = 1 in rv_treatments so the expected sign is positive)."
+  level: respondent
+  notes: "GROUP preload (1 COND1 federal income tax chart, 2 COND2 all-taxes chart, 3 CONTROL internet chart): 'RANDOM ASSIGNMENT TO ONE OF THE THREE CONDITIONS, IF POSSIBLE BALANCED BY PARTY ID' (questionnaire). Whether the assignment was blocked on party is not documented; party ID (pid1, party_id7) is kept as a design column. The proposal states the FIT and AT expectations together ('FIT ... more likely (and AT respondents will be less likely)'); FIT is named first and is the condition the study's argument is built on, so FIT vs control is primary. Not a positive control: the item wording is identical across arms and does not repeat the chart."
+constructs:
+  target:
+    - name: means_tested_upset
+      definition: "The answer names, as something the respondent is upset that tax dollars pay for, a means-tested social safety-net program or government aid to the poor: food stamps or SNAP, welfare, cash assistance or TANF, assistance to the poor, tax refunds or tax credits for people who pay no income tax (such as the EITC), Medicaid, public or subsidized housing (Section 8), SSI, WIC, free phones, or handouts or benefits for people who do not work. Social Security, Medicare, unemployment insurance, veterans' benefits, or Obamacare named without reference to aid for the poor do not count; benefits for immigrants count only if they name welfare or one of these programs."
+      source: "Proposal (Williamson859.pdf, PDF p. 7, Study Design): 'The expectation is that those in the FIT condition will be more likely (and AT respondents will be less likely) to list a means-tested social safety net program among those that upset them'; open answers 'will then be coded for particular programs' (PDF p. 7); Power Analysis expectations 2 and 3 (PDF p. 13). Programs named in the proposal: food stamps (means-tested), welfare, assistance to the poor, low-income tax credits that remove net income tax liability; Social Security and military spending are the named non-means-tested contrasts. Medicaid, TANF, housing, SSI and WIC are added by the drafter as standard US means-tested programs."
+      expected_direction: increase
+  placebo:
+    - name: military_defense
+      definition: "The answer names military or defense spending, wars, weapons or foreign military operations as something the respondent is upset that tax dollars pay for"
+      rationale: "The proposal expects the treatments to move food stamps 'but not Social Security or military spending' (PDF p. 7; Power Analysis, PDF p. 13): military spending is the author's own stated null."
+    - name: infrastructure
+      definition: "The answer names roads, bridges, highways, public transit or other infrastructure or public works as something the respondent is upset that tax dollars pay for"
+      rationale: "Infrastructure is a universal, non-means-tested public good unrelated to who pays taxes; neither information chart bears on it."
+estimand: "Difference in the share of answers naming a means-tested safety-net program (means_tested_upset) between the federal income tax arm and the control arm, on the estimation fold; second contrast control minus all-taxes arm"
+outcomes:
+  closed_ended: "Q9A federal spending on food stamps (increase / decrease / same; the author's closed measure of the same expectation), Q9B Social Security and Q9C military (expected nulls), Q5 estimated percentage of adults who pay taxes (manipulation outcome), Q6 taxpayer self-description"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archive holds survey data only; the author's program coding of Q7/Q8 is not deposited"
+provenance:
+  written_before_reading_text: false
+  contamination: "While checking skip codes, the drafter printed a frequency table of the digit-only cells of Q7_OE and Q8_OE (Q8_OE: four answers consisting only of a one- to three-digit number; Q7_OE: six such answers). No worded answer was seen. The proposal prints one brief pilot answer from an earlier opt-in sample, not from this file (PDF p. 7, note 2): 'Medicare for welfare people and other things illegals get for free.' The proposal also reports the pilot correlation that conservative Republicans who think fewer adults pay taxes more often mention a safety-net program (PDF p. 8, note 3). The abstract of Williamson (2018) was read; it reports closed-item results (taxpayer estimates and self-description by party) and says nothing about the open answers. Its full text was not accessed, so whether it reports or quotes the open answers is unknown."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

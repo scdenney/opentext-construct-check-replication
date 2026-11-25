@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "9a93f64dc4a5997840b6c907cb5d00e2f9232c66242d275cce4e4d5cdaa9cd44",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_marx2025_genderlanguage",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/marx2025_genderlanguage.stm.rds",
+      "sha256": "8a542a6c8e65a784300c87ddcaaddcb2837a3fd41cf27c371bec81f8826c0631"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/marx2025_genderlanguage.topic_choice_qwen36_35b.csv",
+      "sha256": "72e3258271fdc365f563534a1e8770248771b734b2e2e529149409ad71b295df"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "27565c182e9262542553ee46ac8e40b1054c3f89e960b074445f55263e905e49",
+  "created": "2026-11-17T18:03:47Z",
+  "opencheck_version": "0.0.0.9000"
+}

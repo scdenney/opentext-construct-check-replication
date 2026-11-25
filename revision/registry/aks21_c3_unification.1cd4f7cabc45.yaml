@@ -1,0 +1,50 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the AKS21 vendor datamap
+# (C_UOT-21-2101 Conjoint Datamap 261121_ConjointLoopC3.xlsx, _LoopDWC3.xlsx), the Korean
+# questionnaire draft (Korean-unification_conjoint/Copy of [Delvinia 2021.08.25_1315_CET]
+# DG21-Survey-AKS_ko-KR_EDITED.docx, Conjoint III) and the analysis code
+# (Korean-unification_conjoint/main_c3.R); blind to response values. No manuscript located.
+id: aks21_c3_unification
+title: "Post-unification scenario conjoint, scenario-choice rationale, South Korea 2021"
+source:
+  citation: "Denney, S. & Green, C. AKS 2021-22 project, Conjoint III 'National Unification Plan' (no paper or draft located)"
+  doi: null
+  data: "data/harmonized/aks21_c3_unification.csv; source _archive/Pre-2024/AKS21/Data/C_UOT-21-2101 p995570460322 261121/ (OECE ConjointLoopC3 DV3C3, LoopDWC3)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)"
+  wording_note: "Korean wording from the pre-fielding questionnaire draft (EDITED docx, Conjoint III, '(after 7th profile)'); English from the vendor datamap (DV3C3). Fielded Korean wording not checked against the programmed instrument."
+  position: "After paired task 7 of 8, about the scenario chosen in that task (questionnaire draft 'after 7th profile'; vendor export has non-empty text only in iteration 7)"
+treatment:
+  variable: "chosen_political_system, other_political_system"
+  contrast: "chosen scenario 'North-South integration under liberal democratic system' vs 'Confederation' (and vs 'authoritarian single-party system'); secondary: level shown on either scenario in task 7"
+  level: "task-level attribute (positive control: attribute shown -> attribute mentioned)"
+  notes: "Political system (3 levels) is one of 10 attributes fully randomized per scenario and task (LoopDWC3 dPolSystemC3). The chosen scenario's level is post-choice; the 'shown on either scenario' version is randomized."
+constructs:
+  target:
+    - name: political_system_democracy
+      definition: "Reasoning that invokes the political system of the unified Korea: liberal democracy, freedom, single-party or authoritarian rule, or a confederal arrangement"
+      source: "No hypothesis statement located. Inferred from the design (questionnaire draft, Conjoint III: 통일 후 정치 체계 listed first) and the analysis focus in Korean-unification_conjoint/main_c3.R ('Marginal Means of Political System Attributes' by political ID and generation, lines ~148-250)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: unification_tax_cost
+      definition: "Reasoning that invokes the unification tax or the financial cost of unification"
+      rationale: "Tax level is randomized independently of the political system (watch for crowding out of a single stated reason)"
+    - name: ethnic_kinship
+      definition: "Reasoning that invokes Koreans being one people, shared blood or national kinship"
+      rationale: "No attribute references kinship; the political-system level should not move it"
+estimand: "Difference in the share of responses expressing political_system_democracy between respondents whose chosen task-7 scenario had the liberal democratic system and those whose chosen scenario had confederation, on the estimation fold; report the 'shown on either scenario' contrast alongside"
+outcomes:
+  closed_ended: "Forced scenario choice and 1-7 agreement rating per scenario across 8 tasks (AMCEs/MMs in main_c3.R; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "No text analysis script found for C3. Text exports with English translations exist (Korean-unification_conjoint/c3_open text.csv, .xlsx; AKS21/Data/c3_open text.xlsx); the csv's respids mostly do not exist in the survey and none of its texts match the vendor export at the same respid, so it was not used."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

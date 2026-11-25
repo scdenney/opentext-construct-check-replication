@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "aa24336b09afb85bdec9963f0715ec6e0e1f0ec50d5274e58c61def5897f77bd",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/bursztyn2023_dissent_defund.rds",
+      "sha256": "94bb22e205395935950b800513a761edae103bf46d1796d6cf913834f1bb90c3"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/bursztyn2023_dissent_defund.topic_choice.csv",
+      "sha256": "5b19ca17f48298b8a6938985745bfc8fc99b6a5aa410836a2dee054fe53fd7ee"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "2d0e82770b6a5fec087078500ed1fe72ecfb7ed647fe4249a049f69c78baf657",
+  "created": "2026-11-23T23:31:15Z",
+  "opencheck_version": "0.0.0.9000"
+}

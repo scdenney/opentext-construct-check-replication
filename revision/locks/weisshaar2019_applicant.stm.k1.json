@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "5aed242e22e726bbe96ac7842f53fca99881ff898730d3e30e29f08ba83ea83c",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_weisshaar2019_applicant",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/weisshaar2019_applicant.stm.rds",
+      "sha256": "e21bbd6f36cfd1c655fd5e74b9d1d17385033423e8d043f81edab286365ac046"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/weisshaar2019_applicant.topic_choice.csv",
+      "sha256": "cd6a119796efe1b8515a1ceb8ae3090d72898e9086d4a2ff645019e6d89a7727"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "87f7e68455b31894eedb796a917498e1dc3602498e9bb503f7c1967f7e0d0963",
+  "created": "2026-11-17T22:52:25Z",
+  "opencheck_version": "0.0.0.9000"
+}

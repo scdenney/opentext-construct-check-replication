@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the SAFE WP 405 version of the paper (October
+# 2023; Sections 2 and 5.3, Appendix C.4), the June 2022 pre-registration of the
+# advantaged counterfactual experiment (AEARCTR-0005811), advantaged_counterfactual_
+# study.qsf and the author's cleaning code. NOT blind: see provenance.contamination.
+id: andre2025_shallowmeritocracy_cfadv
+title: "Information on what the advantaged worker would have done at the low rate and spectators' explanations of how they split pay (Andre 2025, advantaged counterfactual study)"
+source:
+  citation: "Andre, P. (2025). Shallow meritocracy. Review of Economic Studies, 92(2), 772-807."
+  doi: "10.1093/restud/rdae040"
+  data: "doi:10.5281/zenodo.10591832 (licence: Zenodo field 'cc-by-4.0'; package README 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'); data/external/andre2025_shallowmeritocracy/raw/data/fairness_counterfactual_adv.sav; harmonized_andre2025_shallowmeritocracy_cfadv.csv"
+languages: [en]
+context: "US adults in an online survey (Lucid, June-August 2022) read about two crowd workers who knew before working that worker A would earn $0.50 per task and worker B $0.10, and split the workers' total earnings between them in eight effort scenarios, with real payouts. Afterwards they described the reasoning behind their decisions."
+unit: respondent
+id_column: ResponseId
+text:
+  column: "explanation (fairness_counterfactual_adv.sav); `text` in the harmonized file"
+  prompt: "You split money between two workers. What was the reasoning that shaped your decisions? Please describe briefly."
+  position: "After the eight allocation decisions, near the end of the survey; same wording in every arm."
+treatment:
+  variable: treatment
+  contrast: "Primary: 'low' (spectators learn that worker A would have completed as few tasks as worker B at $0.10) vs 'high' (worker A would not have changed his effort at $0.10). Second directional contrast: 'low' vs 'none' (no information on worker A's counterfactual). Secondary, no expected direction: 'high' vs 'none'."
+  level: respondent
+  notes: "Qualtrics BlockRandomizer with even presentation over three cells (treatment = UU / CL / CH). Note the labels: here 'low' is the case in which the workers would have behaved alike under equal circumstances, i.e. the analogue of 'high' in the counterfactual study (Appendix C.4: 'The effect from the main counterfactual study should reverse'); the labels follow the data (CL / CH) and the .qsf wording ('would also have completed' vs 'would still have completed'). Both informed arms read counterfactual information, so a mention of it per se is mechanical; the target is directional. Against 'none' a rise is partly mechanical: read low vs none as a positive control. One answer that is exactly 'NA' is dropped by the builder (read.csv reads it as missing); it was an excluded row."
+constructs:
+  target:
+    - name: advantage_shaped_effort
+      definition: "The response says that worker A's higher effort was caused by his higher piece rate, or that worker A would have done fewer tasks (or as few as worker B) at the lower rate, or that worker B's lower effort was due to his lower rate, and treats this as a reason for the split (for example a reason to give B more or to split equally). A statement that A would have worked just as hard at the lower rate does not count."
+      source: "Pre-registration of 22 June 2022: design and analysis 'identical to the existing counterfactual experiment' (January 2021 PAP, section 3: more redistribution to the disadvantaged worker when the choice effect of circumstances is larger); Appendix C.4: the low counterfactual of the advantaged worker 'corresponds to the high counterfactual treatment in the main counterfactual study' and the effect 'should reverse'. Section 2 describes the comparable-choice reasoning (compare choices under identical circumstances). Expected increase for low vs high and low vs none. The author does not state a text expectation; the target is the reasoning the stated mechanism describes."
+      expected_direction: increase
+  placebo:
+    - name: workers_need
+      definition: "The response says that the workers need the money, for example to live, pay bills, or survive, or refers to their financial hardship."
+      rationale: "The counterfactual information concerns worker A's effort at the other rate, not either worker's needs (author's separate 'need' code, Table B.5)."
+    - name: work_quality
+      definition: "The response refers to the quality or accuracy of the workers' tasks (whether the work was done correctly or well), as distinct from the number of tasks."
+      rationale: "No arm gives information on the quality of the work."
+estimand: "ITT difference (low minus high) in the share of responses expressing advantage_shaped_effort, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; low minus none as a second directional contrast; high minus none as a secondary quantity with no expected sign."
+outcomes:
+  closed_ended: "Share of total earnings assigned to worker B in scenarios 1-3 (not carried in the harmonized file). The paper reports that the counterfactual-study effects reverse as expected (Figure C.4)."
+human_codes:
+  available: false
+  column: null
+  notes: "No hand codes for this study (explanations.csv covers the main and counterfactual studies only). The `code` column in the .sav is a numeric completion code."
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) The drafter read the paper, which reports the allocation effects (Figure C.4) but no text results for this study. (2) The paper prints example main-study answers (Table B.5) and example rationales from the unrandomized rationale study (Table 4); the drafter read them. (3) The wave-3 searcher printed about 5 rationale-study answers (not this sample). (4) A round-trip check revealed that one answer in this file is exactly 'NA' (inferred from read.csv turning it into a missing value; its length, 2, was printed, not its content). No other answer was printed."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, pre-analysis plans, questionnaire and code"
+  date: "2026-11-17"

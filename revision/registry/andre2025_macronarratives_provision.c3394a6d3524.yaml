@@ -1,0 +1,57 @@
+# DRAFT, not registered. Written from the REStud manuscript (Jan 2026, Sections 3.3-3.4
+# and 5.2.1), the Qualtrics .qsf files, the authors' cleaning and analysis do-files and
+# variable names, before any open-text value was read. The paper's Table 4 (coded
+# narrative shares by arm) was read; see provenance.contamination.
+id: andre2025_macronarratives_provision
+title: "Pent-up-demand vs energy-crisis narrative provision and households' own inflation narratives one day later"
+source:
+  citation: "Andre, P., Haaland, I., Roth, C., Wiederholt, M., & Wohlfart, J. (2026). Narratives about the macroeconomy. Review of Economic Studies."
+  doi: "REStud manuscript MS32326 (DOI to confirm); replication package 10.5281/zenodo.15311300"
+  data: "10.5281/zenodo.15311300; data/external/andre2025_macronarratives/raw/dag_wave1.dta (assignment), dag_wave2.dta (text); harmonized_andre2025_macronarratives_provision.csv"
+languages: [en]
+context: "US adults on Prolific in April 2022 took part in a two-part study on inflation; some first read an explanation of the rise in inflation attributed to economic experts, others read none. One day later, in a follow-up survey, all were told the current US inflation rate and asked which factors they think caused the increase."
+unit: respondent
+id_column: "responseid (wave 2); id = prov_<responseid>"
+text:
+  column: story
+  prompt: "Why has the inflation rate increased? In previous years, the US inflation rate has mostly varied between 1.5% and 2.5%. At this rate, a bundle of goods and services that costs $1,000 in one year, would cost between $1,015 and $1,025 in the next year. Recently, however, the inflation rate has increased. It is now at [current]%. At this rate, a bundle of goods and services that costs $1,000 in one year, would cost $[price] in the next year. Which factors do you think caused the increase in the inflation rate? Please respond in full sentences."
+  position: "Follow-up survey (wave 2), one day after the treatment; asked of all arms with the same wording, before the 12-month inflation forecast and the purpose question"
+treatment:
+  variable: treatment
+  contrast: "three arms (wave 1): pudem (pent-up demand narrative) vs baseline (no narrative) is primary; energy (energy-crisis narrative) vs baseline is the second contrast; pudem vs energy is not registered"
+  level: respondent
+  notes: "Qualtrics randomizer in wave 1 (treatment: baseline / pudem / energy); the text comes from the follow-up wave and is linked by hashed prolific_pid (authors' merge_dagprovision.do). Each narrative arm read an expert explanation of the inflation rise (pent-up demand from forced pandemic savings; or the global energy crisis), with expert quotes, and in wave 1 wrote 'in your own words' how that factor caused inflation (arm-specific items q58 / q46, not used here). The outcome repeats information the treated arms were given the day before, so a rise in the named factor is partly a recall or restatement effect (positive control); the authors call it the 'first stage' and note possible social-desirability restatement (fn. 21). Attrition to the follow-up was slightly lower in the pure control arm (p = 0.030, Section 5.2.1)."
+constructs:
+  target:
+    - name: pent_up_demand_cause
+      definition: "The response names pent-up demand as a cause: people saved money (or could not spend it) during the pandemic or lockdowns and are now spending it, a surge in consumer spending or demand after reopening, or consumers being flush with cash from forced savings. A mention of stimulus checks or government payments alone does not count, nor does the pandemic alone without the saving-then-spending mechanism."
+      source: "Section 5.2.1 (Design; Results): the pent-up demand treatment 'emphasizes the role of pent-up demand as a result of forced savings from the pandemic', and the shift in respondents' own narratives toward the provided factor is the experiment's stated first stage ('our treatments successfully generate variation in respondents' narratives'); outcome dagcode_pudem in analysis/table4.do. Primary target of pudem vs baseline; expected increase."
+      expected_direction: increase
+    - name: energy_crisis_cause
+      definition: "The response names energy as a cause: higher oil, gas, gasoline, fuel or electricity prices, an energy shortage or crisis, or reduced energy supply (including from Russia), raising costs or prices."
+      source: "Section 5.2.1: the energy treatment 'emphasizes the role of the energy crisis'; first-stage outcome dagcode_energy in analysis/table4.do. Primary target of energy vs baseline; expected increase. The authors state no ex-ante expectation for it under pudem vs baseline."
+      expected_direction: increase
+  # Neither narrative mentions workers, wages or politicians (wording checked in
+  # dag_provision_demand.qsf, blocks Q51 and Q56). Pandemic, supply chains, Russia and
+  # firms' cost pass-through ARE in the stimuli and are therefore not placebos.
+  # Crowd-out (the authors report small crowd-out of other factors, Figure B.6) would
+  # lower a placebo, so the false-positive check is an increase.
+  placebo:
+    - name: labor_shortage_cause
+      definition: "The response names a shortage of workers, people not returning to work, or rising wages or labor costs as a cause"
+      rationale: "Neither provided narrative mentions labor or wages; the authors code it as its own factor (labshort, Table 1)."
+    - name: government_blame_cause
+      definition: "The response blames politicians, the president, the administration, Congress or government mismanagement or bad policy in general for the inflation rise (spending programs counted only if the response frames them as mismanagement or blames a politician)"
+      rationale: "Neither narrative mentions politicians or policy failure; the authors code it as a separate factor (government mismanagement, pol)."
+estimand: "For each narrative arm, the ITT difference (arm minus baseline) in the share of follow-up responses expressing that arm's own factor (pent_up_demand_cause for pudem, energy_crisis_cause for energy), E[g(R(1))] - E[g(R(0))], estimated on the estimation fold. Respondents of the other narrative arm are not part of a contrast."
+outcomes:
+  closed_ended: "inflation_12_w2 (12-month inflation point forecast in the follow-up, 0-20 censored as in clean_inflation_point.do); purpose_correct (hand-coded correct guess of the study hypothesis)"
+human_codes:
+  available: true
+  column: "human_dagcode_* (pudem, energy, labshort, pol, ...), human_dagcat_{demand,supply,misc}, human_dag_both_DS, human_dag_size, human_dag_exists, human_auxcode_{dk,junk}"
+  notes: "Authors' DAG hand codes from processed/narratives.dta (built by clean_narratives.R from raw/dag_data), merged by wave-2 ResponseId. Coders blind to the research objectives (Section 3.4); whether experiment responses were double-coded is not stated (double coding is stated for the descriptive waves). human_dagcode_pudem and human_dagcode_energy are the authors' Table 4 outcomes for the two targets; human_dagcode_labshort and human_dagcode_pol match the placebos."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer from this item was seen by me or (per the MANIFEST) by the searcher. Before drafting I read the paper's Table 4 and Section 5.2.1 results (coded shares of pent-up demand and energy mentions by arm, effect sizes) and Table 1 of the paper, which prints example answers from the descriptive surveys (not from this experiment). The authors' hand codes cover the full sample."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, questionnaire and code only"
+  date: "2026-11-17"

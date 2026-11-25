@@ -1,0 +1,47 @@
+# DRAFT, not registered. Written from the TESS questionnaire, the PI study summary
+# (OSF wiki / tessexperiments.org study page) and variable labels, before any
+# open-text value was read.
+id: levine2009_donate
+title: "Donation request mentioning financial worries vs general request (ACS CAN) and listed thoughts, US adults"
+source:
+  citation: "Levine, A. S. (2009). What Not to Say When Asking for Donations: How the Content of Requests Affects Participation. Time-sharing Experiments for the Social Sciences (TESS), study levine707. Published work: Levine, A. S. (2015). American Insecurity: Why Our Economic Fears Lead to Political Inaction. Princeton University Press."
+  doi: "10.1515/9781400852130"
+  data: "https://osf.io/r5d6k/ (TESS archive); data/external/levine2009_donate/raw/tess2_005_Levine_final_data.sav; harmonized_levine2009_donate.csv"
+languages: [en]
+context: "US adults in an online panel read a short description of the American Cancer Society Cancer Action Network (ACS CAN), sometimes preceded by an extra paragraph, and were then asked either to donate part of a $15 payment to the organization or to sign up for its volunteer e-mail list. Afterwards they were asked to list any thoughts they had while making their decision."
+unit: respondent
+id_column: id
+text:
+  column: Q0
+  prompt: "We are interested in thoughts that you had while making your decision. Please list any thoughts below, whether they were about the information you read or the decision you made; also whether they were positive, neutral, and/or negative. We have deliberately provided more space than we think people will need, to ensure that everyone will have plenty of room."
+  position: "Directly after the participation decision (AMT donation amount in arms 1-3, SIGN listserv sign-up in arms 4-6), before all other questions; same wording in all arms"
+treatment:
+  variable: treatment
+  contrast: "financial-issue paragraph (financial_donate, financial_volunteer; XTESS005 2 & 5) vs general information only (general_donate, general_volunteer; XTESS005 1 & 4), pooled over the participation factor. Arm labels: general_donate, financial_donate, nonfinancial_donate, general_volunteer, financial_volunteer, nonfinancial_volunteer"
+  level: respondent
+  notes: "3 x 2 factorial randomized by TESS/Knowledge Networks (XTESS005 1-6): information (general ACS CAN text; the same text preceded by a paragraph on worrying how to pay bills and the expense and debt of cancer treatment; or preceded by a paragraph on worrying about getting ill and cancer pain) x participation (donate from $15 vs sign up for a volunteer listserv). The question wording is the same in all arms. The financial paragraph itself talks about money worries, so part of any rise in the target is respondents echoing the stimulus (partly mechanical, positive control). Text nonresponse is higher in the volunteer arms (about 63% answered vs 85% in the donation arms) but similar across the information arms (73% financial, 74% general). Secondary contrasts: financial vs general within the donation arms only (where hypothesis 1 applies); non-financial vs general (no stated consideration)."
+constructs:
+  target:
+    - name: personal_financial_constraint
+      definition: "The response expresses concern about the respondent's own or their household's money: having enough money, needing the money, paying bills, a tight budget, debt, hard economic times affecting them, or being unable to afford to give or to afford health care. Mentions of the organization needing money, or of the donation amount alone without a concern about the respondent's own finances, do not count."
+      source: "TESS study summary (study page levine707 / OSF wiki), Abstract: 'many issues that people care about remind them of budgetary constraints. Mentioning these issues in requests can reduce people's willingness to participate by making it difficult to justify spending scarce resources'; Hypothesis 1: 'Mentioning issues that people find important, yet that remind them of financial constraints, decreases their willingness to donate money.' Also Levine (2015), American Insecurity (argument that appeals remind people of their economic fears; not read)."
+      expected_direction: increase
+  placebo:
+    - name: volunteering_time
+      definition: "The response mentions volunteering, giving time, signing up for an e-mail list or newsletter, or contacting legislators."
+      rationale: "These refer to the participation opportunity, a factor randomized independently of the information factor; the financial paragraph says nothing about time or volunteering. Caveat: hypothesis 3 says money and time are treated differently, so a few respondents in the financial arms might contrast giving money with giving time."
+    - name: cancer_screening_prevention
+      definition: "The response mentions cancer prevention, screening, mammograms, colon cancer screening, or early detection."
+      rationale: "The prevention sentence is part of the general ACS CAN text shown identically in every arm; the financial paragraph does not mention prevention. Caveat: the extra paragraph lengthens the stimulus and could slightly dilute mentions of the common text (a decrease, not an increase)."
+estimand: "ITT difference (financial-issue arms minus general arms, pooled over donation and volunteer arms) in the share of responses expressing personal_financial_constraint, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "amount_donated (AMT, $0-15, arms 1-3); sign_up (SIGN, arms 4-6); q9_fin_worry (Q9, worry about present financial situation, asked after the text item)"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "none known. Levine (2015, American Insecurity) may report or quote these thought listings; the book was not read."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from questionnaire, TESS study summary and variable labels only"
+  date: "2026-11-17"

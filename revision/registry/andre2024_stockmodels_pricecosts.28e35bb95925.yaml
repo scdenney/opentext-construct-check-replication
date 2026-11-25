@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the QJE article (141(4), Sections V.B-V.C) and Online
+# Appendix D.3.3, the AEA RCT Registry preregistration "Interpreting Past Price Changes
+# Study" (26 Jan 2026), the .qsf and the authors' cleaning and analysis code, before any
+# answer from this file was read. The paper reports the coded effects (see contamination).
+id: andre2024_stockmodels_pricecosts
+title: "Price information and cost framing of a stock purchase and households' explanations of their return forecast (Andre, Schirmer & Wohlfart, UK 2026)"
+source:
+  citation: "Andre, P., Schirmer, P., & Wohlfart, J. (2026). Mental models of the stock market. Quarterly Journal of Economics, 141(4), 2925-."
+  doi: "10.1093/qje/qjag039"
+  data: "doi:10.7910/DVN/BNFSAO; data/external/andre2024_stockmodels/raw/data/experiments/prices_costs_raw.sav; harmonized_andre2024_stockmodels_pricecosts.csv"
+languages: [en]
+context: "UK adults in an online survey read two hypothetical news scenarios about Nike announced four weeks earlier: neutral news (Nike continued a supplier partnership) and good news (a new partnership expected to cut raw material costs by 20%). Depending on the version, the scenarios also said how Nike's stock price had moved since the announcements, and the investment was described either as investing $1,000 in Nike stock or as buying a fixed number of Nike shares. Respondents predicted in which scenario the investment, made today and sold in twelve months, would earn a higher return, and explained their prediction."
+unit: respondent
+id_column: ResponseId
+text:
+  column: explanation
+  prompt: "For the following investment ... [frame-specific description of the investment, e.g. 'You invest $1,000 in Nike stocks today, four weeks after the announcement was made in the two scenarios'] You sell these stocks twelve months from now. ... you responded that you expect that the return of the investment in Nike stock would be [higher in scenario 1 / similar in both scenarios / higher in scenario 2]. Please explain why you think that would be the case. (MMSM__Price_As_Costs_Salient.qsf, tag explanation; the frame text is piped from embedded field frame_text_v2)"
+  position: "Directly after the directional return forecast (return_1), which follows the scenario screen and a comprehension quiz"
+treatment:
+  variable: treatment
+  contrast: "four arms: control (standard scenarios, no price information); price_info (scenario 2 adds that Nike stock rose 14% to $71.40 since the announcement, scenario 1 that it stayed at $62.50); number_of_shares (price_info plus: $1,000 buys 16 shares in scenario 1 and 14 in scenario 2); purchase_cost (price_info plus: 16 shares cost $1,000 in scenario 1 and $1,142 in scenario 2). Primary: number_of_shares and purchase_cost pooled vs price_info. Secondary: price_info vs control"
+  level: respondent
+  notes: "Qualtrics randomizer, four arms of about 500 (preregistration). Raw coding: treatment control / baseline_w_price crossed with frame standard / number_of_shares / purchase_sum (authors' price_info_side_calc.R l. 43, 101, 127). The price information and the frame text are shown on the prediction and explanation screens as well (preregistration), so the explanation prompt itself differs by arm: a rise in price or cost mentions is partly mechanical (positive control), most for price_info vs control. Prolific UK sample (the authors moved from Prolific US; QJE fn. 9)"
+constructs:
+  target:
+    - name: prices_as_investor_costs
+      definition: "The response treats the stock's price, or its rise since the announcement, as the cost of the investment that bears on the return: for example, the stock is more expensive now, the money buys fewer shares, or the same shares cost more, so the return is lower or the advantage of the good news is offset. Answer yes or no."
+      source: "QJE Section V.C ('Two new treatment conditions make the implication of higher prices for investor costs salient by changing the presentation of the problem ... encourage viewing prices as costs'); preregistration 26 Jan 2026, research question ('Do changes in the decision format ... that make cost implications of higher prices salient have an additional effect?'). Primary contrast: cost frames vs price_info"
+      expected_direction: increase
+    - name: price_reference
+      definition: "The response mentions Nike's current stock price, the price per share, or a change in the stock price since the announcement, in any way and in any direction of argument. Answer yes or no."
+      source: "QJE Section V introduction ('selective attention is drawn to salient features of the context ... this section explores when and how households start reasoning about the prices they pay') and V.B ('We make the price response ... an explicit and salient feature of the problem description'); preregistration 26 Jan 2026 ('Do scenario descriptions that feature price information shift respondents' return predictions and reasoning?'). Secondary contrast: price_info vs control"
+      expected_direction: increase
+  placebo:
+    - name: macroeconomic_conditions
+      definition: "The response refers to the general economy or markets as a whole: recession, inflation, interest rates, the overall stock market or economic outlook. Answer yes or no."
+      rationale: "No arm mentions the wider economy; price and cost framing concern Nike's own share price only"
+    - name: social_or_ethical_concerns
+      definition: "The response refers to ethical, social or environmental aspects of the news: workers, labor conditions, sustainability or recycling as a moral matter, or the respondent's approval of Nike's conduct. Answer yes or no."
+      rationale: "Identical across arms (the recycled-polyester partnership appears in every arm); the price and cost information carries no ethical content"
+estimand: "ITT difference (number_of_shares and purchase_cost pooled, minus price_info) in the share of responses expressing prices_as_investor_costs, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "news_congruent (authors' return_1_recoded: 3 = higher return in the good news scenario, 2 = similar, 1 = lower)"
+human_codes:
+  available: false
+  column: null
+  notes: "No human codes for this file. The authors coded the text with GPT-5.2 (attention scheme: has_b benefits, has_pc prices as costs, has_ps prices as value signal, has_pr other price reference; raw/data/text_codings/attention_scheme/labels.csv, merge on ResponseId; Online Appendix C reports Dice 0.77 against 200 human-coded answers). These are machine codes and are not in the harmonized file"
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer from this file was read. The drafter read the QJE article and Online Appendix and the 2024 working paper (CEBI WP 07-23 rev1), which report this experiment's effects on the coded reasoning shares (Figures V and VI; Section V.B-V.C text: benefits, any price reference, prices as costs and prices as value signal by arm) before the targets were written; the targets follow the preregistered research question and the section's stated design. The QJE prints six example explanations from the main descriptive surveys (Section IV.A.1; same item wording, other respondents), which were read. Online Appendix Tables C.1-C.2 (coding examples) were skipped. The searcher read no text from this package (MANIFEST)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, preregistration, questionnaire and code"
+  date: "2026-11-17"

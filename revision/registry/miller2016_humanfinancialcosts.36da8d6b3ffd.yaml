@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the online appendix (A, B, C), the
+# authors' replication script, variable labels, and passages of the article's
+# "theory and hypotheses" section quoted by the lead (who read the article
+# through a library), before any value of `Written_Response` was read.
+id: miller2016_humanfinancialcosts
+title: "Human vs financial and sunk vs prospective costs of a US intervention, and explanations of approval, two US MTurk samples"
+source:
+  citation: "Miller, C., & Barber, B. S. IV (2016). It's only money: Do voters treat human and financial sunk costs the same? Journal of Peace Research, 53(1), 116-129."
+  doi: "10.1177/0022343315608934"
+  data: "JPR replication archive at PRIO (Miller & Barber 2016 replication.zip); data/external/miller2016_humanfinancialcosts/raw/Combined_MTurk_Survey_Results.dta; harmonized_miller2016_humanfinancialcosts.csv"
+languages: [en]
+context: "US adults recruited on Amazon Mechanical Turk read about a friendly, democratically elected government facing an al-Qaeda-backed insurgency and a US decision to send, or keep sending, either troops or weapons; some versions stated how many US troops had already been killed or how much money had already been spent. They rated their approval of the American decision from 1 to 10 and could then say in their own words why they chose that answer."
+unit: respondent
+id_column: id
+text:
+  column: Written_Response
+  prompt: "If you like, tell us more about why you chose the answer you did."
+  position: "Directly after the 1-10 approval rating of the American decision (appendix C.1-C.2, 'Follow Up - Open Ended Response'); optional; one answer per respondent"
+treatment:
+  variable: treatment
+  contrast: "Four arms (harmonized labels): human_prospective, human_sunk, financial_prospective, financial_sunk; design columns cost_type (human/financial), timing (prospective/sunk), level (low/high sample). Primary: human (human_prospective + human_sunk) vs financial (financial_prospective + financial_sunk), pooled over timing and level, for american_lives. Second target: sunk (human_sunk + financial_sunk) vs prospective (human_prospective + financial_prospective) for recoup_past_investment. Secondary, no registered target: human_sunk vs financial_sunk (H2's sunk-cost comparison)."
+  level: respondent
+  notes: "Respondents were assigned to one of four cells within each of two separate MTurk samples, a low-cost sample (14 troops killed and $20 million / $124 million spent; appendix C.1) and a high-cost sample (4,500 troops killed and $20 million / $33.3 billion spent; C.2). Level was not randomized against the arms: appendix A and Tables B1-B3 report the two samples separately and the file codes them with separate columns (Low_Sunk/High_Sunk, treatmen/treatment), so estimation must stratify on level. The prospective vignettes are identical in both samples. Exclusions follow the authors' script (finished == 1 and Total_Time > 1, ll. 65-67; reproduces the N of Table B3); 21 rows with no cell recorded are excluded. Positive control: american_lives is partly mechanical, because only the human arms mention US troops and only the human-sunk arms state that US troops were killed; the financial arms mention weapons and dollars only. recoup_past_investment is partly mechanical too: only the sunk arms describe costs already paid. The human-sunk vignette also states that $20 million was spent. The item is optional; non-excluded answered/assigned per cell: human_prospective 165/192 low, 149/183 high; human_sunk 175/191, 166/182; financial_prospective 171/195, 152/173; financial_sunk 171/187, 161/176 (response 81-92%, lowest in human_prospective high)."
+constructs:
+  target:
+    - name: american_lives
+      definition: "The response gives the lives or safety of Americans as a reason for the rating: US troops dying or being killed, casualties, putting soldiers at risk or in harm's way, the value of American lives compared with money, or the duty not to let those who already died have died in vain (yes/no). Mentioning troops or deaths only to restate the scenario, without using them as a reason for approving or disapproving, is no."
+      source: "Theory and hypotheses (article, quoted by the lead): 'The sunk costs fallacy and the sacred values protection model together suggest human and financial sunk costs may be treated differently.'; 'However, if human lives possess a \"sacred\" significance, then blood may generate an even larger sunk costs effect than treasure.'; 'Sacred values protection hypothesis (H2): Respondents will treat human and financial sunk costs differently.'; 'Prospectively, since the sacred values protection model suggests that people are more averse to losing human lives, we expect that citizens will be less likely to support sending troops than sending money ex ante.' These hypotheses concern support, not the text; the target follows from the stated mechanism (human lives carry a weight that money does not). The article does not mention the open item."
+      expected_direction: increase
+    - name: recoup_past_investment
+      definition: "The response uses what has already been spent, sent or lost as a reason to continue: recouping or getting something back for the investment, not wasting the money, weapons or lives already committed, finishing what was started because so much has gone in, or not letting the dead have died in vain (yes/no). Citing past costs as a reason to stop (cutting losses, enough has been spent) is no; mentioning the past costs without using them as a reason to continue is no."
+      source: "Theory and hypotheses (article, quoted by the lead): 'Sunk cost hypothesis (H1): Sunk costs (both human and financial) will increase support for intervention.' and its reasoning that people are 'more willing to engage in actions in an attempt to recoup losses from previous decisions'. H1 concerns support; the target follows from the stated mechanism. Contrast: sunk vs prospective."
+      expected_direction: increase
+  placebo:
+    - name: us_security_terrorism
+      definition: "The response refers to US national security or national interest, terrorism, or the risk that the country becomes a base for terrorists (yes/no)"
+      rationale: "Every vignette, in all four arms and both samples, states the same threat ('Fearing the country may become a base for terrorists'); no factor varies it (appendix C)"
+    - name: partner_government_or_people
+      definition: "The response refers to the foreign country's government, its leader, or its people: for example that the leader is elected, trustworthy or a friend of the US, that the country asked for help, or what the country's people need or deserve (yes/no)"
+      rationale: "The description of the requesting leader ('democratically elected, trustworthy and a genuine friend of the United States') and the request itself are identical in every arm; no factor varies them (appendix C)"
+estimand: "ITT difference in the share of responses expressing each target between the two sides of its contrast, stratified by sample (level), E[g(R(1))] - E[g(R(0))], estimated on the estimation fold (primary: human minus financial for american_lives; second: sunk minus prospective for recoup_past_investment)"
+outcomes:
+  closed_ended: "support (Military_Support): 1-10 approval of the American decision, asked before the open item"
+human_codes:
+  available: false
+  column: null
+  notes: "None deposited."
+provenance:
+  written_before_reading_text: true
+  contamination: "No value of Written_Response was seen. The builder's re-read check revealed (by count, not by display) that one answer, in an excluded row, is the literal string 'NA'; it was dropped as empty. The article body was read by the lead, not by the drafting agent; the passages quoted above are as supplied by the lead."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the online appendix, replication script, variable labels and article passages supplied by the lead"
+  date: "2026-11-18"

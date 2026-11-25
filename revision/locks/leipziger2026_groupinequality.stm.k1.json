@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4a212f61cd3db1c5fc5de5e3f47d3dc7bb0695d1e81ac2ea8a16a6a1b044c0a5",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_leipziger2026_groupinequality",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/leipziger2026_groupinequality.stm.rds",
+      "sha256": "d29da97d06551c8dd12c21faae01903b8b165120a6b12ea321e209a20009ded6"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/leipziger2026_groupinequality.topic_choice.csv",
+      "sha256": "383f1e6d5b46b95c3e4fe0f7371eef0df50ef0e7e142bf316ec3eb87cd62fe16"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "19e637356746818f2067d4126eb72db11e4ed735459d91760412129d610e6ed4",
+  "created": "2026-11-18T05:51:02Z",
+  "opencheck_version": "0.0.0.9000"
+}

@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "3acd1093441db7a4e4db945f62918917539604ea9e0324539a4028cda38920ec",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_kwon2025_productjourney",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/kwon2025_productjourney.stmcov.rds",
+      "sha256": "9e6b19ad67e38ebcf8de8ff131a1193cde941d171ed85a3c024a11dd1c5e0ded"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/kwon2025_productjourney.stmcov.topic_choice.csv",
+      "sha256": "8686b040c8588104f976c7e979faafe1f99c82238672c141f0fbf3561f70fd95"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "bb4c87209d9be6d501c336aa44d73461ec93a5fe399c98b9c2446effa68642f3",
+  "created": "2026-11-22T16:41:24Z",
+  "opencheck_version": "0.0.0.9000"
+}

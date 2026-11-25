@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "4a72288611455455ebc19f17e9dc6755ca540788ec3c95ecf577aa647b8303f9",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/pogacar2023_inactioninertia.d7ad8bcaeecd.yaml",
+      "sha256": "c79e8e6ded767c8dbcd5f737b6874e97420305d66a8175ed44b5b8ffcefdbe3d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["0251adad871b8437e946c9579612fb9dd647a0bbf41922dce5f3497b67cb720e", "2a0f85f8f58abbb9cb01539003bda97095d43ef07edff3d3c4fd363eb24580a4", "42a69cb9cf46da634da74921f33d1206d5f2d49217c452372bda75f4d58dc98a", "462e4a1397ce4184fd8a4563be5548313cced06892ba2549a591befc548846fb", "89073c29db53d5f2876e40afb08713a409f991203ecf4166ee0d0ff22304cbeb", "8da0a36b408feb05babb2d7f6661bfe137a926ef1010c38ed1ffc9c56e1931ac", "9f80389b5e0d36342cdf7f0dbb70995e7debae1b81bb68ee7c607581b4b2d5c3"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "641055fd7126c00243f09f8c1384f023849126680069cdf47b744e0e99a6a3b7",
+  "created": "2026-11-17T22:48:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

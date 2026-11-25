@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the abstract, codebook, questionnaire and coder
+# instructions before any open-text value was read. Steven must confirm the placebo
+# constructs and the conditional estimand before running oc_study_register().
+id: bisgaard2019_study4
+title: "Worse- vs better-than-expected growth figure and partisan responsibility attributions (Bisgaard 2019, Study 4, Denmark)"
+source:
+  citation: "Bisgaard, M. (2019). How getting the facts right can fuel partisan-motivated reasoning. American Journal of Political Science, 63(4), 824-839."
+  doi: "10.1111/ajps.12432"
+  data: "doi:10.7910/DVN/FTFJTV (no license stated); data/external/bisgaard2019_econnews/raw/study4.RData (645 strings are Latin-1: convert with iconv)"
+languages: [da]
+context: "Danish adults (2016) saw a one-sentence report of Danish economic growth in 2015 (versions differed) directly above a question asking, in Danish, who they think is responsible for the current economic situation in Denmark."
+unit: respondent
+id_column: id
+text:
+  column: respOpen
+  prompt: "Q10a/Q10b merged (English translation): [treatment sentence] We would like to hear your thoughts about who is responsible for the economic situation in Denmark today. Please write as many as your thoughts as possible in the box below - keywords or a few sentences are enough. Who do you think is responsible for the current economic situation in Denmark?"
+  position: "The treatment sentence sits directly above the open question on the same screen. This is the first item of 'Experiment 2' in the questionnaire, after a block from another study (Q5-Q9, about a person named Safa Mohammad Hadi) and before an unrelated video experiment ('Experiment 1', Q11 onward)"
+treatment:
+  variable: treatment
+  contrast: "pos ('Danish economy grew by up to 1.7 percent in 2015. This is markedly better than expected by economists.') vs neg ('...grew by only 0.7 percent in 2015. This is markedly worse than expected by economists.')"
+  level: respondent
+  notes: "Random display of Q10a or Q10b. Denmark, 15-31 Jan 2016. neg 756 / pos 752. gov = 1 votes for the Liberal Party (Venstre, incumbent), 0 = Social Democrats or Socialist People's Party; 497 non-NA"
+constructs:
+  target:
+    - name: incumbent_responsibility
+      definition: "The response names Lars Løkke Rasmussen, his government or Venstre as responsible (credit or blame) for the economic situation"
+      source: "Bisgaard 2019, abstract and Study 4: selective attribution of credit and blame by partisans. Coder instructions (coder_instruction_study3-4.pdf). Page numbers to be added"
+      expected_direction: "increase among government supporters (gov == 1) and decrease among opposition (gov == 0) for pos vs neg; no theorized sign for the pooled ITT"
+    - name: other_actor_responsibility
+      definition: "The response names actors or factors other than the current government as responsible: the previous government, parliament, the state, banks, the world economy, oil prices"
+      source: "Same; coder instructions list these as 'other' actors"
+      expected_direction: "decrease among gov == 1 and increase among gov == 0 for pos vs neg"
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: personal_finances
+      definition: "The response refers to the respondent's own job, income, unemployment or household finances"
+      rationale: "The treatment is one sentence of national growth news; personal circumstances are pre-treatment"
+    - name: immigration_reference
+      definition: "The response mentions immigrants, refugees or immigration policy"
+      rationale: "The same survey carries a separate study with a vignette about a person (Safa Mohammad Hadi, Q5-Q9) placed before this item, apparently on immigrant integration; check the questionnaire. Whatever spillover it causes should not differ between pos and neg growth news"
+estimand: "Difference in ITT effects: [E g(R(pos)) - E g(R(neg))] among gov == 1 minus the same among gov == 0, for the share expressing incumbent_responsibility, estimated on the estimation fold. The pooled ITT is reported descriptively"
+outcomes:
+  closed_ended: "None for responsibility in this study (the open item is the outcome)"
+human_codes:
+  available: true
+  column: "c1raw, c2raw"
+  notes: "Two coders: 0 no answer, 1 not the government, 2 government and others, 3 government only. Map 2 and 3 to incumbent_responsibility = 1. The codes cover the full sample"
+provenance:
+  written_before_reading_text: true
+  contamination: "No respOpen values were read. The drafter saw the c1raw x c2raw agreement table (not split by arm). The original author coded the full sample, so the direction is a replication target"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

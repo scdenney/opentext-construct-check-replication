@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "99f95b5601b8f67935b44c1ad9c55295c664c0306396ba2072fea3071a4638e7",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/banaji2019_surgeon.rds",
+      "sha256": "069ee20b00f11b17547292b50f858b8d4672df469c6e9357dd1754af7dd0084e"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/banaji2019_surgeon.topic_choice.csv",
+      "sha256": "98e9401b3a4c33cf9646a13da8d5fce86a13348c4068142085e072281a4fc552"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "854489296b8f82515ea776f79305551aa385efce8c96650bd8d5fdebb1d339a3",
+  "created": "2026-11-23T23:31:56Z",
+  "opencheck_version": "0.0.0.9000"
+}

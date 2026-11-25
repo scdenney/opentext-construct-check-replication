@@ -1,0 +1,51 @@
+# DRAFT, not registered. Written from the FPA article (Hypotheses section; Design,
+# Results and Open-Ended Responses sections of the Russia-Ukraine experiment), the
+# Online Appendix (Appendix B formal model, Appendix G, Appendix H pre-registration,
+# Appendix I instrument), the OSF pre-registration osf.io/b74te (record and attached
+# Analysis Plan.docx), the codebook and WTP_2022_Figure3-6.R. NOT BLIND: see
+# provenance.contamination.
+id: musgrave2026_sanctionswtp
+title: "Randomized gasoline price and sanctions-efficacy statements and explanations of votes on keeping US sanctions on Russia (US MTurk 2022)"
+source:
+  citation: "Musgrave, P. (2026). Pay Any Price? Measuring Americans' Willingness-to-Pay for Sanctions on Russia and China. Foreign Policy Analysis, 22(3), orag014."
+  doi: "10.1093/fpa/orag014"
+  data: "doi:10.7910/DVN/KCJFCI (CC0 1.0); data/external/musgrave2026_sanctionswtp/raw/WTP_2022_Russia_Ukraine.dta; harmonized_musgrave2026_sanctionswtp.csv"
+languages: [en]
+context: "US adults recruited through MTurk/CloudResearch in July 2022 read background on the sanctions the United States imposed on Russia after its invasion of Ukraine, including a Wall Street Journal quotation about the sanctions' effects, then voted in a hypothetical national referendum on whether to maintain the sanctions if this meant gasoline prices a stated amount per gallon higher, rated how certain they were, and were asked to briefly explain why they voted that way. Versions of the text differed in what the quotation said about the sanctions' effects and in the price amount."
+unit: respondent
+id_column: ID
+text:
+  column: sanctionsDVtext
+  prompt: "Please briefly explain why you voted that way."
+  position: "Item 13 of the instrument (Online Appendix I): after the efficacy quotation, the referendum vote at the first price (item 11, sanctionsDV) and the 0-10 certainty item (item 12); before the second-round price question (item 14, price2)"
+treatment:
+  variable: "treatment (price1 arm), efficacy_high"
+  contrast: "Primary: high initial price ($1.00 or $2.00 more per gallon) vs low initial price ($0.10 or $0.25), pooled over the efficacy factor; the $0.50 arm is left out of this contrast. Secondary: high efficacy (efficacy_high = 1) vs low efficacy (0), pooled over price; highest ($2.00) vs lowest ($0.10) price. Harmonized treatment labels: usd010, usd025, usd050, usd100, usd200"
+  level: respondent
+  notes: "Two factors randomized independently at the respondent level by the survey software (pre-registration q7: 'simple randomization of gasoline prices and of effectiveness condition'): the initial price price1 (5 levels; 393/402/421/427/387 assigned) and the Wall Street Journal quotation efficacy (high 993, low 1,037). High: 'Severe Western sanctions, will crimp [Russia's] military might...hindering its ability to produce new weapons systems and spare parts for existing armaments.' Low: 'Sanctions on Russia...haven't inflicted enough economic pain so far to hurt Moscow's war effort or push President Vladimir Putin to the negotiating table.' The base vignette, the same in all arms, says the sanctions may weaken Russia's economy and military and may have raised oil and gas prices. POSITIVE CONTROL, both factors: the vote question states the price amount (item 11), so a mention of gasoline prices is partly mechanical in every arm and the price contrast changes only the amount; the high-efficacy quotation itself says the sanctions hurt Russia's military, so an answer that repeats it will count for sanctions_effectiveness. Why the primary contrast is price above vs below the midpoint: H1 (Costs) is the author's first hypothesis in both the pre-registration and the article and the question in the title; the author models price as a continuous bid (DCchoice; stm estimateEffect with price1 continuous) and reports majority support at $0.25 and below with a steep decline above it (article, Results section). Splitting at the $0.50 midpoint keeps about 80% of answers and the monotone contrast the author tests; highest vs lowest is reported as secondary because it halves N. Each factor is the other's design-based placebo: every target is estimated under both contrasts. No exclusions: the author analyzes the full file (WTP_2022_Figure3-6.R l. 26, data.experiment with no filter); the pre-registration (H.4.2) uses attention-check failures and speeding only for robustness."
+constructs:
+  target:
+    - name: cost_to_americans
+      definition: "The response refers to what the sanctions cost the respondent, their household or Americans: higher gasoline, fuel or energy prices, the price increase named in the question, inflation or the cost of living, or what people can afford, whether as a reason to lift the sanctions or as a cost the respondent says is worth bearing"
+      source: "H1 Costs (article, Hypotheses section; pre-registration H1): as the costs of sanctions rise, support falls. Mechanism: Online Appendix B, P = omega*theta*S + N - C, the cost term C borne by the public enters the valuation of the policy and rises with the price; article: 'we might expect some costs to be borne only conditionally'. The author states no expectation about the open-ended answers; the pre-registration (q15) describes the text box only as a place to justify the vote. Primary target of the price contrast"
+      expected_direction: increase
+    - name: sanctions_effectiveness
+      definition: "The response says or implies that the sanctions are working or will work: that they hurt or weaken Russia's economy, military or war effort, pressure Putin or Russia to stop or negotiate, or help Ukraine resist. A statement that the sanctions are not working or will not work is a no"
+      source: "H2 Efficacy (article, Hypotheses section; pre-registration H3): the public supports sanctions likely to succeed more than those that are not. Mechanism: Online Appendix B, the success term omega*theta*S, where the efficacy statement moves the perceived probability of success theta, so expected success carries more of the valuation in the high-efficacy arm. Primary target of the efficacy contrast (secondary)"
+      expected_direction: increase
+  placebo:
+    - name: us_partisan_politics
+      definition: "The response refers to US domestic politics: a US party or partisan group (Democrats, Republicans, liberals, conservatives), a US president or politician (for example Biden or Trump), or Congress"
+      rationale: "Neither the price amount nor the efficacy quotation mentions US parties or politicians, and partisanship was measured before the vignette. Risk: in mid-2022 high gasoline prices were often blamed on the president, so a higher price could raise mentions of Biden; a rise under the price contrast should be read with that in mind"
+estimand: "ITT difference (price $1.00-$2.00 minus $0.10-$0.25, pooled over efficacy) in the share of responses expressing cost_to_americans, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; secondary: ITT difference (high minus low efficacy, pooled over price) in the share expressing sanctions_effectiveness. Each target is also estimated under the other factor's contrast as a design-based placebo"
+outcomes:
+  closed_ended: "sanctionsDV_num (vote to maintain the sanctions at the initial price; 'Don't know' coded no, as in the article); sanctionsDVconfidence_num (certainty 0-10); price2 / sanctionsDV2_num (second-round price and vote, asked after the text)"
+human_codes:
+  available: false
+  column: null
+  notes: "None. The author fit a 3-topic STM (Normative, Geopolitics, Economics; prevalence ~ efficacy_num + price1) and counted dictionary terms (geopolitics vs economics, Appendix G.1) on the full sample"
+provenance:
+  written_before_reading_text: false
+  contamination: "(1) Searcher: five values of sanctionsDVtext printed from the codebook frequency table, and fragments of the ten-per-topic STM quotations printed from Appendix G (Figure G.5); arm unknown (MANIFEST.md). (2) Drafter: read the article and appendix before drafting. The article reports the author's STM results on the full sample: the Normative topic becomes less prevalent and the Geopolitics topic more prevalent as the price rises, high efficacy lowers Geopolitics, and the Economics topic (economics and the environment) moves with neither factor (Figure 6, text). The abstract says normative arguments are invoked less often as cost rises. Appendix G.1 lists the author's geopolitics and economics dictionary terms. (3) The article prints one example answer per topic in Table 3 and quotes three answers in the Discussion of the Russia-Ukraine experiment; the drafter saw fragments of several of them while extracting text (in paraphrase: a normative answer referring to pain at the pump; an economics answer saying Russia earns more than ever from oil exports while Americans face inflation and gas prices; an answer not minding a moderate gas price increase; an answer torn between not helping Russia's war and not wanting gas prices to rise). No value was printed from the data file by the drafter; only counts. (4) The targets follow the author's hypotheses and formal model, not his topics; knowledge of the STM results informed the choice not to use normative or geopolitical reasons as placebos (they are reported to move with price)"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, pre-registration, questionnaire and code"
+  date: "2026-11-17"

@@ -1,0 +1,54 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from prc-cbcs/qsf/survey2025.qsf,
+# prc-cbcs/documentation/Full questionnaire 2.5.docx and prc-cbcs/scripts/01_data_prep.R;
+# blind to response values. No paper or pre-analysis plan for the NGO conjoint or the
+# surveillance vignette was found, so the target below is proposed from the instrument.
+id: prc2026_q60_ngo
+title: "NGO-trust conjoint open-end after task 3, with a four-arm surveillance vignette, Mainland China 2025"
+source:
+  citation: "Denney, S. & Steinhardt, H. C. PRC-CBCS survey, 'National Identity and NGO Trust in China' (RIWI partner panels, 2025); no paper or PAP for this component found"
+  doi: null
+  data: "data/harmonized/prc2026_q60_ngo.csv (from political-regimes-nationalism/prc-cbcs/data/Final_data_text.xlsx; task-3 linkage and surveillance_exp checked against prc-cbcs/data/clean/c2_ngo_trust_ready.rds, 0 mismatches)"
+languages: [zh-Hans]
+unit: respondent
+id_column: id            # Qualtrics ResponseId
+text:
+  column: text           # source column Q60 (QID145)
+  prompt: "请解释您为什么会认为这个组织值得被信任。 (Please explain why you think this organization is trustworthy.)"
+  wording_note: "Questionnaire 2.5 drafts the item as voluntary ('如果可以的话，请解释...'; 'If you like, please explain why this organization is trustworthy to you or the government'); the fielded QSF wording drops both and the item is forced response."
+  position: "NGO conjoint (C2; 6 paired tasks, 9 attributes), on the task-3 page with the forced choice (Q59); about the organization chosen in task 3. The surveillance vignette (Q41 plus the arm text Q42-Q44) and the support item Q45 come earlier in the survey, followed by the attention item Q47 and the volunteering block (Q48-Q55), then the NGO conjoint."
+treatment:
+  variable: treatment       # original variable surveillance_exp (0-3) kept alongside
+  contrast: "National security justification (surveillance_exp = 2) vs control (0); secondary: private/public security (1) and public morality (3) vs control"
+  level: respondent
+  notes: "QSF survey flow: BlockRandomizer, one of four groups, even presentation. All arms read the same description of the Skynet (天网) camera system and its planned upgrade; the treatment arms add one expert justification: private/public security (trafficking, violence, traffic accidents, theft), national security (terrorism, espionage, and foreign interference including separatism), or public morality (spitting, littering, queue-jumping, smoking in public). Task-3 NGO attributes (registration, origin, background, staff size, evaluation grade, party building, social media, service area, government cooperation) are linked as chosen_/other_ for the attribute-shown -> attribute-mentioned positive control."
+constructs:
+  target:
+    - name: foreign_influence_concern
+      definition: "The response trusts the organization because it is domestic, or expresses distrust of international or foreign-backed organizations or foreign influence"
+      source: "Proposed from the instrument, not from a stated hypothesis: the national-security arm text names foreign interference (境外势力干预) (Full questionnaire 2.5.docx, 'Vignette experiment on surveillance'; QSF block surveillance_national, Q43)"
+      expected_direction: increase
+    - name: state_alignment
+      definition: "The response grounds the organization's trustworthiness in its ties to or vetting by the party-state: government initiation, party-building participation, cooperation with government, official evaluation grade, or registration"
+      source: "Proposed from the instrument, as above; national-security framing as a prime toward state-sanctioned organizations"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments.
+    - name: organizational_capacity
+      definition: "The response invokes the organization's size, staff, professionalism, or online presence"
+      rationale: "The vignette arms speak to security and public morality, not to organizational capacity"
+    - name: personal_experience
+      definition: "The response invokes the respondent's own or acquaintances' experience with the organization or with NGOs"
+      rationale: "Not displayed and not addressed by any vignette arm"
+estimand: "ITT difference on the estimation fold in the share of responses expressing the target, national-security arm minus control, E[g(R(1))] - E[g(R(0))], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Q45 support for expanding Skynet (the vignette's direct outcome; not carried in the harmonized file); NGO choices Q57-Q63"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "LDA (k = 2-12) on all Q60 responses in prc-cbcs/scripts/03_topic_models.R, with a Chinese-English term dictionary and top-term tables (prc-cbcs/tables/c2_top_terms_by_topic*.csv); no analysis of Q60 by vignette arm found. Steven has seen the data."
+  author: "Steven Denney (drafted by Claude; unregistered, target and placebos to be confirmed)"
+  date: "2026-10-28"
+exclusions: "exclude = TRUE for 31 with missing task-3 attribute data (project drops them from C2) and 6 who failed or skipped the Q47 attention item (instrument-defined; not filtered by the project; attn_q47_pass allows reverting)"

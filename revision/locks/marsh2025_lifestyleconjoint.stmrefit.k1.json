@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "a131e3fdab68e825b88359545ba95ce9cb3a90ea02e3761f6b69ca40ad13e85a",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/marsh2025_lifestyleconjoint.rds",
+      "sha256": "d826522767fc1377b34fb057496cdd5a88428f26b2274c88d3ddfb927e3bc608"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/marsh2025_lifestyleconjoint.topic_choice.csv",
+      "sha256": "0b9eacd97efd07634ae45722a58cd9bfdfaf539171a7767a3f7aadd09baeda82"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "d224c8426d2be4553a5c376f83f0b6dc0389cc7b2c92949753cc52ebfc89fce7",
+  "created": "2026-11-23T23:29:59Z",
+  "opencheck_version": "0.0.0.9000"
+}

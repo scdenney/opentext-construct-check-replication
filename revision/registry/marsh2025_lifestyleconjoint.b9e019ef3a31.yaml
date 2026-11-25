@@ -1,0 +1,44 @@
+# DRAFT, not registered. Written from the CSV header, the researcher-generated profile
+# strings (design values only) and the README before any open-text value was read.
+# The conjoint module is not described in the Marsh paper; its designer and wording are unknown.
+id: marsh2025_lifestyleconjoint
+title: "Paired lifestyle-and-issue profile conjoint with an explain-your-choice item after each task (Lucid, August 2021)"
+source:
+  citation: "Module fielded in the survey archived with Marsh, W. Z. C. (2025). No one mourns the wicked: The limits of partisan hostility persisting through tragedy (replication data). The conjoint is not reported in that paper."
+  doi: null
+  data: "doi:10.7910/DVN/548AVK; data/external/marsh2025_wicked/raw/CES21_pilot1.csv (wevi1-5_choice, wevi1-5_why, traits1a-traits5b); harmonized_marsh2025_lifestyleconjoint.csv"
+languages: [en]
+context: "US adults on Lucid saw five pairs of hypothetical people described by party, a stance on an oil pipeline, a hobby, a car brand and a food or coffee chain, chose one person in each pair, rated both, and explained their choice."
+unit: task
+id_column: "ResponseId + task number (harmonized id = <ResponseId>_t<k>)"
+text:
+  column: "wevi<k>_why, k = 1..5"
+  prompt: "Explain-your-choice item after each paired task (exact wording not in the archive)"
+  position: "After the choice (wevi<k>_choice) and ratings (wevi<k>_rank_1/2) of task k, for each of the five tasks"
+treatment:
+  variable: "derived from traits<k>a / traits<k>b (pipe-separated attribute levels, order randomized within profile)"
+  contrast: "at least one profile in the pair states a pipeline stance ('Supports building ...' or 'Supports preventing a pipeline ...') = 1 vs neither profile does ('Has not yet taken a public stance on the issue.') = 0"
+  level: "task-level attribute (fully randomized levels; about 11% of tasks have no stance on either side)"
+  notes: "Attributes: party (Democrat/Republican/Independent), pipeline stance (3), hobby (NASCAR fan / organic food markets / plays the fiddle / plays the violin), car (Ford/Subaru), chain (Chick-fil-a/Starbucks). Split folds by respondent, not task; cluster by respondent."
+constructs:
+  target:
+    - name: environment_energy_issue
+      definition: "The explanation refers to the pipeline, the environment, climate, energy, or the economy-versus-environment trade-off"
+      source: "Design: the pipeline-stance attribute is the only issue content in the profiles; no paper states a hypothesis for this module"
+      expected_direction: increase
+  placebo:
+    - name: music_hobby_reference
+      definition: "The explanation refers to the person's hobby: NASCAR, organic food markets, fiddle or violin"
+      rationale: "Hobby levels are randomized independently of the pipeline attribute and appear in every profile"
+estimand: "Task-level difference (stance shown on at least one side minus no stance on either side) in the share of explanations expressing environment_energy_issue, estimated on the estimation fold with respondent-level splitting"
+outcomes:
+  closed_ended: "wevi<k>_choice (profile chosen); wevi<k>_rank_1/2 (0-100 ratings)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; module unanalysed in the archived paper. Caveat: undocumented design (wording, purpose and author of the module unknown)"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

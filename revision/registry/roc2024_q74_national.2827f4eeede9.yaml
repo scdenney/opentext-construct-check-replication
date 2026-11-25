@@ -1,0 +1,56 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from roc-natid-cbc/paper/paper.tex
+# (Denney & Steinhardt, Political Behavior submission, rd3) and
+# EA-naturalization/data/raw/instruments/taiwan_SV_9BMS4HMQmRNUK1M_definition.json
+# (QID74 = Q74, block "Nat ID Conjoint 2", flow FL_29); blind to response values.
+id: roc2024_q74_national
+title: "National-identity conjoint (CBC #2) open-end on the third task, Taiwan 2024"
+source:
+  citation: "Denney, S. & Steinhardt, H. C. 'Measuring National Identity with Conjoint Experiments Using the Case of Taiwan' (working paper, submitted to Political Behavior, May 2026)"
+  doi: null
+  data: "roc-natid-cbc/data/raw/ROC Experiments 2023_May 7, 2024_16.59.csv (Q74, Q66, C2-F-3-*); English labels from roc-natid-cbc/data/clean/tw_merged_direct_conjoint.csv; harmonized: data/harmonized/roc2024_q74_national.csv"
+languages: [zh-Hant]
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "Q74: 請解釋為什麼您選擇的人是我國國民。 (Please explain why the person you chose is a national of our country.)"
+  position: "Same page as the CBC #2 task-3 choice (Q66, task 3 of 6). In-page display logic shows it once person A or B is selected, before the 1-7 rating (Q67). Force response on. About the profile chosen in task 3."
+  wording_note: "Same wording as the citizenship-conjoint open-end Q89 in sktw_naturalization_2024 (TW). The same respondents answered both, Q74 first."
+treatment:
+  variable: "chosen_sentiment / other_sentiment and chosen_politics / other_politics (task-3 profile attributes)"
+  contrast: "Task-3 pair includes at least one profile that 'Identifies as Taiwanese' vs no such profile (sentiment); pair includes at least one profile with a democracy-related orientation ('Thinks democracy is good despite flaws' or 'Thinks democracy is chaotic, prefers one-party rule') vs neither (politics)"
+  level: "task-level attribute (positive control)"
+  notes: "All nine attributes and their levels are fully randomized without restrictions (paper §Research Design). No respondent-level arm precedes Q74: RandomTextFlag is set at flow FL_32, after this block. chosen_* levels depend on the respondent's choice, so contrasts are defined on the randomized pair."
+constructs:
+  target:
+    - name: national_self_identification
+      definition: "Justifies the choice by the person's subjective national identification: feeling or identifying as Taiwanese (or as Chinese, or as both)"
+      source: "roc-natid-cbc/paper/paper.tex §Results, 'CBC #2: The Multi-Level Identity Space': sentiment is 'the single most consequential identity criterion' (Taiwanese +17pp, both +10pp, Chinese -5pp)"
+      expected_direction: increase
+    - name: democratic_commitment
+      definition: "Justifies the choice by the person's stance on democracy, Taiwan's political system or one-party rule"
+      source: "paper.tex §The Case of Taiwan, 'Democracy' subsection (support for democracy as a central criterion), and §Results CBC #2 (anti-democratic preference -14pp, democracy despite flaws +5pp)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Separate yes/no judgments. Single-line
+    # answers can crowd out other reasons, so a small negative placebo shift is
+    # weaker evidence of a false positive than a positive one.
+    - name: han_ancestry_mention
+      definition: "Mentions ethnicity, Han Chinese descent or 'blood'"
+      rationale: "Ancestry is randomized independently of sentiment and politics, so neither contrast changes the ancestry levels shown"
+    - name: mandarin_language_mention
+      definition: "Mentions the person's Mandarin proficiency or language ability"
+      rationale: "Language is shown and independently randomized in every pair, so neither contrast should move language mentions"
+estimand: "Difference on the estimation fold in the share of Q74 responses expressing national_self_identification between task-3 pairs with and without an 'Identifies as Taiwanese' profile, E[g(R) | pair has level] - E[g(R) | pair lacks it], g frozen on the discovery fold; likewise for democratic_commitment and the politics contrast"
+outcomes:
+  closed_ended: "Forced choice in the six CBC #2 tasks (AMCEs and marginal means in the paper) and the 1-7 'how much is this person a national' rating after each task (Q63/65/67/69/71/73)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Q74 was used by mistake as the Taiwan open text in this repo's 2024-25 pipeline (STM K=8 and LLM classification) until analysis/R/00b_fix_tw_opentext.R replaced it with Q89; analysis/output/stm/STM_FINDINGS.md describes its topics as 'identity/political themes'; backup data/source/tw_analysis_ready_BACKUP_q74.rds. EA-naturalization/scripts/02_data_prep_tw.R also set open.text = Q74 for a legacy topic model, and resubmission/analysis/A12_quote_selection.R compares Q89 with Q74. The PB paper does not analyze Q74."
+  sample_note: "This file follows the May 7 export (2,050 delivered completes, the same Taiwan ids as sktw_naturalization_2024). The PB paper's analysis file matches the March 13 export, which differs by 48 respondents each way; the reason is undocumented."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

@@ -1,0 +1,44 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/S38 proposal.pdf), the
+# project description, the fielded combined questionnaire and the SPSS labels,
+# before any open-text value was read. No published article located.
+id: calarco2019_vignette
+title: "Pregnant woman sipping one glass of wine vs drinking only water at a bar and what respondents would say to her, US adults (TESS 2019)"
+source:
+  citation: "Calarco, J. M. (2019). Public Perceptions of Prenatal Alcohol Consumption. Time-sharing Experiments for the Social Sciences, study calarcoS38 (TESS 036; proposal and data)."
+  doi: null
+  data: "https://osf.io/dh3nj (TESS archive); data/external/calarco2019_vignette/raw/CalarcoS38__8041.036_CALARCO_TESS036_weighted.sav; harmonized_calarco2019_vignette.csv"
+languages: [en]
+context: "US adults read a short story about Megan, a woman seven months pregnant who joins co-workers at a bar after work and drinks something there, rated whether they approved of her decision and whether it would harm her baby, and were asked what they would say to Megan about her decision if she were their friend, and why."
+unit: respondent
+id_column: CaseId
+text:
+  column: Q9
+  prompt: "If Megan were your friend, what would you say to Megan about her decision to [drink only water / sip one glass of wine / finish two glasses of wine] at the bar? In your own words, please write a few sentences explaining what you would say to Megan about her decision and why this is what you would say."
+  position: "Last item of the Calarco block, after the vignette, Q7 (approve/disapprove) and Q8 (harm to the baby); the block's position among the three TESS studies in the instrument was randomized"
+treatment:
+  variable: CALARCO_VIGNETTE
+  contrast: "primary: light drinking ('sips one glass of wine'; cells 3, 4, 9, 10; treatment = 'light') vs no drinking ('drinks only water'; cells 1, 2, 7, 8; 'none'), pooled over status and warning. Heavy drinking ('finishes two glasses of wine'; 5, 6, 11, 12; 'heavy') enters secondary contrasts."
+  level: respondent
+  notes: "3 x 2 x 2 between-subjects vignette (12 cells, equal probability): drinking x status (lawyer, cells 1-6, vs cashier at a supermarket, 7-12; the proposal's 'house cleaner' was changed in the fielded instrument) x doctor's warning (even cells: 'she recalls her doctor saying that pregnant women should avoid alcohol'). Mapping from the value labels and questionnaire. Positive control: the vignette and the Q9 wording itself name what Megan drank, so part of any text shift is mechanical."
+constructs:
+  target:
+    - name: drinking_scrutiny
+      definition: "The response criticizes Megan for drinking alcohol while pregnant, tells her she should not drink (any amount) during pregnancy, or warns that alcohol could harm her baby"
+      source: "Proposal, Background and Research Goals (p. 1): 'We expect to find that women face high levels of scrutiny for drinking even small amounts of alcohol during pregnancy, especially when respondents are warned of the medical community's stance on prenatal alcohol consumption. We also expect that lower social class women engaging in light drinking will experience more scrutiny than higher social class women who drink the same amount'"
+      expected_direction: increase
+  placebo:
+    - name: occupation_reference
+      definition: "The response refers to Megan's job or work (being a lawyer or a cashier, her workday, her career)"
+      rationale: "Occupation is randomized independently of the drinking level; mentions should vary with the status factor, not with drinking"
+estimand: "ITT difference (one glass of wine minus water only) in the share of responses expressing drinking_scrutiny, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Q7 approve (1 strongly approve ... 5 strongly disapprove); Q8 will cause harm to the baby (1 strongly agree ... 5 strongly disagree)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: true
+  contamination: "No open-text value was read by the drafter or (per the manifest) the searcher. The proposal reports student pretest results (not this sample). No article was located."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and codebook only"
+  date: "2026-11-17"

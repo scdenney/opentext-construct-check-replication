@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "cf7c067dad772f2defc60221e2428aec47eb87719121924c3a4c787d9e2d6b40",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_braman2016_legitimacy",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/braman2016_legitimacy.stmcov.rds",
+      "sha256": "1f39272cce570af8e1dc05852c18a21323957e8542c18c0797e506b5c5f11224"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/braman2016_legitimacy.stmcov.topic_choice.csv",
+      "sha256": "cecdc82348e4c1107c5c3bc323eb4b3e2fd0e7ef3af8f2640006cd29f75fc4ac"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "09e0c5a8855879f399f51d5bca3d0ead547524b42f330cacbeb0f538236dca72",
+  "created": "2026-11-22T16:41:30Z",
+  "opencheck_version": "0.0.0.9000"
+}

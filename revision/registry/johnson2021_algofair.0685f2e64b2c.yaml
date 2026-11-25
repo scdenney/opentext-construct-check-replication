@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written from the TESS proposal (raw/Johnson1389.pdf), the study
+# summary (raw/osf_wiki_summary.txt), the fielded questionnaire
+# (raw/_8041.094__TESS_Johnson_vFINALsimple.docx), the NORC project report, the methods
+# sections of Johnson & Zhang (2025) and counts from the data file, before any open-text
+# value of this sample was read. See provenance.contamination.
+id: johnson2021_algofair
+title: "Parent requests vs other status-quo methods contrasted with a predictive algorithm and explanations of which method is fairer (US 2021)"
+source:
+  citation: "Johnson, R. A., & Zhang, S. (2021). Optimizing Schools? Public Perceptions of Algorithmic versus Status Quo Prioritization in K-12 Schooling. Time-sharing Experiments for the Social Sciences, study johnson1389 (TESS 094). Published as Johnson, R. A., & Zhang, S. (2025). Predictive Algorithms and Perceptions of Fairness: Parent Attitudes Toward Algorithmic Resource Allocation in K-12 Education. Sociological Science 12: 322-356."
+  doi: "10.15195/v12.a15"
+  data: "OSF https://osf.io/v3bfk/; data/external/johnson2021_algofair/raw/TESS094_Johnson_FinalData.dta; harmonized_johnson2021_algofair.csv. Authors' replication package doi:10.7910/DVN/EUJ1YZ (not downloaded)"
+languages: [en]
+context: "US adults (AmeriSpeak panel, 2021, with extra parents of school-age children) read about a school district with too few tutors for its struggling 9th graders. Counselors had been choosing students by one existing method, and the district was considering a predictive model using student records. Respondents chose which of the two methods was fairer and were asked to explain why their choice was fairer than the other."
+unit: respondent
+id_column: CaseId
+text:
+  column: Q4
+  prompt: "Explain why you think [method chosen at Q3] is fairer than [method not chosen at Q3]."
+  position: "After the vignette, the comprehension item Q2 (explain what a predictive model means) and the binary fairness choice Q3; shown if Q3 was answered; before the certainty (Q5), time-saving (Q6) items and the algorithmic-bias update"
+treatment:
+  variable: treatment
+  contrast: "status quo = parent requests (P_CONDITION 4-6) vs the other three status-quo methods pooled: counselor discretion (1-3), simple rule (7-9), weighted lottery (10-12)"
+  level: respondent
+  notes: "12 cells (P_CONDITION) = 4 status-quo methods x 3 district contexts (90% White, 90% Black or Latino, 45/45 integrated), randomized by NORC, 463-511 per cell; mapping from the questionnaire grid and value labels, checked in the builder. Strongly mechanical: the item names the respondent's chosen and rejected method, so only the parent-requests arm is asked about parent requests (positive control). Respondents in that arm who chose the algorithm may criticize parents; that does not count as the target. Q4 wording also depends on the Q3 choice, which the status-quo method moves (H2). 268 'Invalid Complete' cases (QUAL = 9; not among NORC's 5,643 interviews) are excluded; the article's final N is 5,606 (difference of 37 not reproduced) and its main analyses use parents only."
+constructs:
+  target:
+    - name: parental_knowledge
+      definition: "The answer argues that parents know their own child's needs best, are the experts on their own child, or that parents' own judgment or requests about their child should count in deciding who gets a tutor"
+      source: "Proposal (raw/Johnson1389.pdf, pp. 8-9): 'We further expect that parent requests will be the next-preferred method, aligning with a \"parents-first\" mentality in K-12 schooling and ideas about parents as experts on their own child (Eyal 2013)'; H2 (Appendix Table 2, 'main inferential hypothesis'): presenting parent requests as the status quo 'will lead respondents to rank algorithms as less fair than presenting any of the other three status quo methods'; article (Johnson & Zhang 2025, introduction): 'parent requests that draw on familial knowledge'"
+      expected_direction: increase
+  placebo:
+    - name: district_race_reference
+      definition: "The answer refers to the race or ethnicity of the students or the racial composition of the district"
+      rationale: "District composition is randomized independently of the status-quo method (Dimension 2 of the 4 x 3 design) and is balanced across the compared arms"
+    - name: covid_learning_loss
+      definition: "The answer refers to COVID-19, the pandemic, or learning lost during it"
+      rationale: "Every version of the vignette opens with the same COVID-19 learning-loss sentence; the status-quo method does not change it"
+estimand: "ITT difference (parent requests minus the other three methods) in the share of answers expressing parental_knowledge, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled over district context"
+outcomes:
+  closed_ended: "Q3 which method is fairer (status quo / predictive model); Q5 certainty (1-5); Q6 which saves time; Q8 method to use after the bias update"
+human_codes:
+  available: false
+  column: null
+  notes: "Not in the TESS archive. The authors hand-coded 422 parent responses (salience and valence of targeting and of impersonal vs personal knowledge) and coded 3,890 more with Claude 3.5 Sonnet (article, 'Large language model-assisted coding'); these codes may be in their replication package doi:10.7910/DVN/EUJ1YZ (not downloaded)"
+provenance:
+  written_before_reading_text: false   # strict: a fragment of one published answer was seen (item 2 below); the target was fixed from the proposal before that
+  contamination: "No answer from this sample was read in full. (1) The proposal (p. 9) quotes three pilot answers from a different sample (MTurk 2019), one of them saying parents know their children better than an algorithm. (2) While locating the article's methods sections the drafter saw a single line of grep output containing a seven-word fragment of a respondent quote printed in the article's results (line about what parents know trumping database information); the article prints example answers in its qualitative results section (not read). (3) The drafter read the article's introduction, which summarizes the qualitative result that parents are split on the valence of impersonal algorithmic vs personal parental knowledge. The authors coded the full parent sample"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from proposal, questionnaire and article methods only"
+  date: "2026-11-17"

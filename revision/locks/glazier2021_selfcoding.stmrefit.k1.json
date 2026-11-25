@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "4f0700dbf1ae2a09fce09340b16e08b08b23eed8537d8a77d5ae1950722f29c0",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/glazier2021_selfcoding.rds",
+      "sha256": "dc08c3628452bb749f5c82fa49a86c8923dc2904fe870933c9de9453b96a392c"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/glazier2021_selfcoding.topic_choice.csv",
+      "sha256": "0d9b78516becb76470b97053b15443833fcfdb4424ef0abe6a816140e37e26d7"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "08f6460d73d52b8293447cf85dfc4cf4eea31d105bb34ee19c0649dbbc7f2ad5",
+  "created": "2026-11-23T23:29:31Z",
+  "opencheck_version": "0.0.0.9000"
+}

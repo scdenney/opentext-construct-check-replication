@@ -1,0 +1,41 @@
+{
+  "lock_version": 1,
+  "split_hash": "bc3aac5c96772feb3c613cea90cb5e5e29dc5cd17c0ec585e17e2bb50b06019b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "card",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/revision/registry/powell2016_restroom.ab423e464900.yaml",
+      "sha256": "7512bb8b9c89de6e1a8d932847ddb98441204cd83b799b1afc8440b60be4240d"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": {
+    "qwen36_35b": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "qwen36_27b": "Qwen/Qwen3.6-27B-FP8",
+    "qwen38_27b": "Qwen/Qwen3.8-27B-FP8",
+    "gemma4_e4b": "google/gemma-4-E4B-it",
+    "gemma4_12b": "google/gemma-4-12B-it",
+    "gemma4_31b": "google/gemma-4-31B-it",
+    "exaone45_33b": "LGAI-EXAONE/EXAONE-4.5-33B-FP8",
+    "jev": "typesafe/jev-1.13",
+    "gpt6_luna": "openai/gpt-6-luna",
+    "claude_sonnet": "anthropic/claude-sonnet-5-5"
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 1,
+    "top_logprobs": 20,
+    "thinking": false
+  },
+  "prompt_hashes": ["18c85c9a6641d1f1ae1dda983c01cf2c3181d4b44d233b11f9fe5124b6fba2ce", "3dcef10b38b0fa4616ab4e0ba0cc967fd7ec7743850333c05150ea05b09ed40e", "5e864e888c6c31b4946cde031abc6c8657e930491e2ca1906d1ed94d01e39e03", "6477c628149a52ee73534f853a442c918e7959f86ed7b5adfdcf8bded415a191", "72c6f264cb910473a95ffee391c83c50a5b6ce083bb9a604ef6b63091490f6fd", "cd9a890fa107707131335ddabc13ef8a54fea3aa0b9cd650ff05b6d1bbc8bb2e", "df5842482f9e3b739ebab6bb233ccad4575f157584adeed601db100057f72dae"],
+  "notes": "Theory-only arms (A1 presence, C rating, B pairwise) from the registered card",
+  "lock_hash": "35f860f5d0085bc6653d903c5d02076bf4c2b22845c27cdf3155c97eb7881e27",
+  "created": "2026-11-17T21:10:54Z",
+  "opencheck_version": "0.0.0.9000"
+}

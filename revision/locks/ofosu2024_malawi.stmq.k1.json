@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "e3d9118fb6b747e0608e73255c7e72af13cd96c97253b420424f2185cfd0435f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_ofosu2024_malawi",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ofosu2024_malawi.stm.rds",
+      "sha256": "004cb584eb9e469870e35971846b5196c3fa931d93918d56387673ab534c3709"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/ofosu2024_malawi.topic_choice_qwen36_35b.csv",
+      "sha256": "16a03b100a5ab9d7ff86b7f3d61951f4118beeb13fc5ed450c93324fd2489c06"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "c82e2806e205c593d89fa1f034db528a3ed5f5f427f28a832ebf62da9a90504f",
+  "created": "2026-11-17T18:03:47Z",
+  "opencheck_version": "0.0.0.9000"
+}

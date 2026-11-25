@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "f28f51b3ebad4e00663c484873023a0aa64d071a049986cad99d97ef693819ee",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ifes2023_de_jobtraining.rds",
+      "sha256": "e396be916d216c4a79ccb525d73549c75a1ca7052fa743781af768bf17071458"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/ifes2023_de_jobtraining.topic_choice.csv",
+      "sha256": "f6a5e3b3374e608d8a5ace7a96a9cc23c7933871a8584338cfe21bd16c7d0328"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "0171e568e70d702cafb5dea3410f5dfdc8758b02ba4c9e399e865dce445b17fc",
+  "created": "2026-11-23T23:28:05Z",
+  "opencheck_version": "0.0.0.9000"
+}

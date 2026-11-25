@@ -1,0 +1,48 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 ROK export
+# header (Q106 wording), survey_design_overview.md, the 2023-11-28 final report draft,
+# Ward & Denney 2025 (Policy and Society) and SI; blind to response values.
+id: ifes2023_sk_jobtraining
+title: "Job-training priority conjoint with a task-4 open-end, South Korea (IFES 2023)"
+source:
+  citation: "Ward, P., & Denney, S. (2025). Welfare chauvinism in divided societies: the role of national identity in social policy preferences. Policy and Society."
+  doi: "10.1093/polsoc/puaf027"
+  data: "data/harmonized/ifes2023_sk_jobtraining.csv (from _archive/IFES2023/South Koreans/Data/IFES 2023 - ROK_February 12, 2024_16.45.csv; same export as replication/code/prepare_data.R)"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q106
+  prompt: "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate? Please enter your answer.)"
+  position: "After the forced choice of paired task 4 of 7 (Q98), before that task's ratings (Q99); about the candidate prioritized in task 4"
+treatment:
+  variable: "nk_origin_in_task (derived: chosen_birth_origin == 'North Hamgyong, DPRK' or other_birth_origin == 'North Hamgyong, DPRK')"
+  contrast: "task 4 shows at least one candidate born in North Hamgyong, DPRK (1) vs none (0)"
+  level: task-level attribute (positive control)
+  notes: "Six attributes (age, family status, sex, occupation, criminal record, origin at birth: North Hamgyong DPRK / Busan / Gyeonggi / Hanoi), randomized per profile and task; criminal record weighted 70/15/15. The indicator depends only on the randomized pair. Alternative positive control: foreign_origin_in_task (Hanoi, Vietnam). Fielded ages 25/36/45/62 (replication relabels 25/35/46/62). The designed co-national solidarity prime (inter-Korean family reunions) is absent from the fielded task text and the export has no randomizer field: no respondent-level arm. Harmonized task-4 attributes match replication/data/korea_job_training.csv for 1,762 of its 1,763 respondents; one replication id is not in this export."
+constructs:
+  target:
+    - name: nk_origin_reasoning
+      definition: "Reasoning that invokes the candidate's place of birth or origin, in particular North Korea, defectors or North Korean migrants, as a ground for prioritizing or not prioritizing them"
+      source: "Ward & Denney 2025, 'Intra-national exclusion: refining welfare chauvinism in divided societies' and results (candidates of North Korean origin 15-16 pp less likely to be prioritized)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: criminal_record
+      definition: "Reasoning that invokes a candidate's criminal record (petty theft, tax evasion) or lack of one"
+      rationale: "Criminal record is randomized independently of origin and shown in every task; only crowd-out could move it"
+    - name: family_need
+      definition: "Reasoning that invokes marital status or children, i.e. family need"
+      rationale: "Family status is randomized independently of origin and shown in every task"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing nk_origin_reasoning when task 4 includes a North Korean-born candidate minus when it does not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 7 tasks plus 1-7 preference ratings (P&S marginal means; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data. The validated sample (exclude = FALSE) came from post-fielding manipulation and attention checks (P&S SI Appendix A), which may have used the open-ends; attn_check_pass (Q110) is the text-independent alternative. No topic model or coding of Q106 found in IFES2023/Code."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

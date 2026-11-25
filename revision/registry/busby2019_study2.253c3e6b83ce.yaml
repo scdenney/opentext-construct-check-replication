@@ -1,0 +1,53 @@
+# DRAFT, not registered. The elaboration prompt differs by arm (groups vs events), and
+# the control arm wrote no essay. Written from the paper summary, the authors' 2025
+# replication, variable labels and the analysis script before any essay text was read.
+# Steven must confirm the placebos before running oc_study_register().
+id: busby2019_study2
+title: "Dispositional (groups) vs situational (events) blame framing and populist rhetoric in essays (Busby, Gubler & Hawkins 2019, Study 2)"
+source:
+  citation: "Busby, E. C., Gubler, J. R., & Hawkins, K. A. (2019). Framing and blame attribution in populist rhetoric. The Journal of Politics, 81(2), 616-630."
+  doi: "10.1086/701832"
+  data: "doi:10.7910/DVN/78JPNJ; data/external/busby2019_populism/raw/study2.dta"
+languages: [en]
+context: "US adults chose the political problem that worries them most and then wrote a short explanation of who or what is responsible for it and what should be done (the wording of the request differed between versions)."
+unit: respondent
+id_column: QID
+text:
+  column: "PROB_why (primary); PROB_respons (short who/what field) may be prepended"
+  prompt: "Groups arm: 'What groups or individuals do you think are most responsible for [problem]?' then 'In at least a few sentences, explain why you think these groups or individuals are responsible and what should be done about them.' Events arm: the events/circumstances version. (Wording from Busby et al. 2025, Frontiers; verify against the 2019 SI)"
+  position: "Directly after the respondent picks the problem that worries them most (PROB); before the candidate-support items (Trump, Clinton, Sanders, ...)"
+treatment:
+  variable: TREATMENT
+  contrast: "Groups (1) vs Events (2); Control (0) did no elaboration task and has no text"
+  level: respondent
+  notes: "Control 270 / Groups 273 / Events 297. TREAT_2 recodes the two essay arms (0 = Events, 1 = Groups)"
+constructs:
+  target:
+    - name: conspiring_elite
+      definition: "The essay blames a politically powerful actor for the problem: politicians, a ruling party, the government, bankers or corporations, the media, special interests"
+      source: "Busby et al. 2019 (JOP abstract): dispositional framing increased populist expression, and in Study 2 shifted candidate support toward Trump and Sanders relative to Clinton. Coding described in Busby et al. 2025 (Frontiers)"
+      expected_direction: increase
+    - name: good_people
+      definition: "The essay refers explicitly and positively to a large group of ordinary citizens harmed by the problem"
+      source: "Same"
+      expected_direction: increase
+  # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+  placebo:
+    - name: personal_experience
+      definition: "The essay refers to the respondent's own or family's experience of the problem"
+      rationale: "Pre-treatment; neither frame asks for personal experience"
+    - name: cites_facts_figures
+      definition: "The essay cites statistics, numbers or named factual sources"
+      rationale: "The frame manipulates the locus of blame, not the use of evidence"
+estimand: "ITT difference (Groups minus Events) in the share of essays expressing conspiring_elite, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Candidate support (Trump, Cruz, Rubio, Kasich, Clinton, Sanders; 0/1) and the POP_1-POP_14 battery"
+human_codes:
+  available: true
+  column: "badactor, badelite, goodpeople (averaged codes, 0/0.5/1); coder-level columns not yet checked"
+  notes: "Same coding scheme as Study 1"
+provenance:
+  written_before_reading_text: true
+  contamination: "No essay text was read. During structural checks the drafter tabulated the averaged badactor code by arm (Groups 204 vs Events 116 coded 1) before drafting. The authors coded the full sample"
+  author: "draft by Claude agent 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"

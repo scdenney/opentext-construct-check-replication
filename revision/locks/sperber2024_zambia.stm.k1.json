@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "360e387c3423560bfd0486ea0fa7d2afb9d598700f2ba670462fff97cb93b07d",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_sperber2024_zambia",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sperber2024_zambia.stm.rds",
+      "sha256": "ac66cfe272b9c9b3e967ceeda897e22db20e131ea4ef169fdd7e30885583802e"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sperber2024_zambia.topic_choice.csv",
+      "sha256": "2ce4259789c764e141165653173ffe9bd1c589ddf6c3ede486ede452b51f78f8"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "edfb2666f1b868421f459ecbd56660a8be7b4d163cc86f6a3ad0cf4bcd251c0b",
+  "created": "2026-11-17T21:35:26Z",
+  "opencheck_version": "0.0.0.9000"
+}

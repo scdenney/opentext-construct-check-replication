@@ -1,0 +1,49 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 North Korean
+# migrant export header (Q114 wording), survey_design_overview.md, the final report draft
+# and natid_book/chapters/04-korea-nk-migrants/article/main.tex; blind to response values.
+# ROUTING: alice_only (small, vulnerable, re-identifiable sample).
+id: ifes2023_nk_natid
+title: "National-identity conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)"
+source:
+  citation: "Denney, S. Becoming Korean: Resocialization and the Criteria of National Membership among North Korean Migrants (working paper, natid_book chapter 4)."
+  doi: null
+  data: "data/harmonized/ifes2023_nk_natid.csv (from _archive/IFES2023/North Koreans/Data/choice-text_IFES+2023+-+North+Koreans_October+23,+2023_09.46.csv); alice_only"
+languages: [ko]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q114
+  prompt: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this person? Please enter your answer.) [spacing as fielded]"
+  position: "After the forced choice of paired task 4 of 7 (Q106: 어느 분이 더 진정한 한국인이십니까? / Who is more truly Korean?), before task 5 (Q108); about the person chosen in task 4"
+treatment:
+  variable: "institutions_differs (derived: chosen_political_institutions != other_political_institutions)"
+  contrast: "task-4 profiles differ on respect for Korea's political institutions and norms (1) vs not (0)"
+  level: task-level attribute (positive control)
+  notes: "Eight binary attributes (birthplace, residence, ethnicity, citizenship, history and tradition, political institutions and norms, language, national feeling), randomized per profile and task. The indicator depends only on the randomized pair; P(differs) is about 1/2. No respondent-level arm. With about 302 included respondents the contrast is small; report it with that caveat."
+constructs:
+  target:
+    - name: civic_law_criteria
+      definition: "Reasoning that invokes respect for South Korea's laws, political institutions or social norms as a ground for the person being more truly Korean"
+      source: "natid_book ch. 4 article (main.tex), Results, 'A choice-based test: which criteria survive a trade-off' (respect for law and institutions is the largest AMCE, +23 pp)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: ethnic_ancestry
+      definition: "Reasoning that invokes Korean ethnicity, bloodline or ancestry"
+      rationale: "Ethnicity is randomized independently of the institutions attribute; only crowd-out could move it"
+    - name: economic_contribution
+      definition: "Reasoning that invokes work, taxes or economic contribution"
+      rationale: "No economic attribute is shown, so whether the profiles differ on institutions should not change it"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing civic_law_criteria when the task-4 profiles differ on the institutions attribute minus when they do not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 7 tasks (binary-outcome AMCEs in the chapter article; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data; Woorion staff and the team checked responses for quality (CPCS SI A.2). Exclusion follows the CPCS eligibility rule (born in North Korea, at least 15 years there), not text. The chapter article codes a sample of a different open-end (Q35, meaning of multiculturalism); no analysis of Q114 found. natid_book notes/matching_design.md states that open-text identity material is excluded from the chapter repository."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

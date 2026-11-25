@@ -1,0 +1,49 @@
+# DRAFT, not registered. Written by a Claude agent (wave 3, TESS) from the TESS
+# proposal (OSF component qvr78, Quadlin1348.pdf, TESS-1348.R1; not in raw/),
+# the study description (raw/TESS-1348.R1_description.docx), the fielded
+# questionnaire (raw/8041.096_TESS_Quadlin_vFINAL_simple.docx) and the SPSS
+# labels. No open-text value was read.
+id: quadlin2021_audit
+title: "Resume of a recent college graduate with randomized name, major and GPA, and employed adults' overall assessment of whether to interview, US"
+source:
+  citation: "Quadlin, N. (2021). Which College Graduates are Perceived as Trainable for Today's Work World? Perceptions of Race, Gender, Achievement, and the Liberal Arts. Time-sharing Experiments for the Social Sciences, study quadlin1348 (TESS 096)."
+  doi: null
+  data: "https://osf.io/mebw9/ (TESS096_Quadlin.sav; proposal https://osf.io/download/4jzg3/); data/external/quadlin2021_audit/harmonized_quadlin2021_audit.csv"
+languages: [en]
+context: "Employed US adults reviewed the resume of a recent graduate of Indiana University, identified by name, major and grade point average, imagined the applicant applying where they work, rated the applicant on several scales, and then wrote a few sentences giving their overall assessment of whether to interview the applicant and their perceptions of the applicant."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "What is your overall assessment regarding whether to interview [FIRSTNAME] and your perceptions of [FIRSTNAME]? In your own words, please write a few sentences explaining why you feel this way."
+  position: "After the resume and Q1 (likelihood of recommending an interview, 0-10), Q2 trait grid (trainable, competent, warm, leadership, assertive), Q3 expected tenure and Q4 class difficulty (whose stem restates the major and GPA); before Q6 recall of grades"
+treatment:
+  variable: treatment
+  contrast: "liberal arts major (English or Physics; 1) vs applied major (Communications or Computer Science; 0), pooled over name (race x gender) and GPA"
+  level: respondent
+  notes: "96 conditions (P_CONDITION) = 8 names x 4 majors x 3 GPAs, assigned at random with equal probability; field grouping from the study description. The pairing is within domain (English vs Communications, Physics vs Computer Science). The instructions screen tells every respondent that 'This applicant may have majored in a subject that is far outside your industry' and invites a low rating if that would be a problem, so major relevance is primed in all arms. The major is shown on the resume and restated in Q4."
+constructs:
+  target:
+    - name: major_relevance_doubt
+      definition: "The answer doubts that the applicant's major or degree is relevant or useful for the job or the workplace, or says it gives few practical, technical or job-related skills"
+      source: "Proposal p. 3, Predictions Set 1: 'Applicants with liberal arts degrees will be perceived as less hire-able than those with \"applied\" degrees ... may be due to perceptions of liberal arts graduates as less trainable, less competent, less committed to their work, and less likeable'; human-capital mechanism, p. 3: 'employers might prefer those who have \"applied\" degrees with stronger linkages to the labor market'"
+      expected_direction: increase
+  placebo:
+    - name: race_ethnicity_reference
+      definition: "The answer refers to the applicant's race, ethnicity or the ethnic origin of their name"
+      rationale: "The name (race x gender) is randomized independently of the major"
+    - name: grades_reference
+      definition: "The answer refers to the applicant's GPA or grades"
+      rationale: "GPA is randomized independently of the major and shown on every resume (it may be crowded out somewhat if major talk rises)"
+estimand: "ITT difference (liberal arts minus applied) in the share of answers expressing major_relevance_doubt, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "Q1 likelihood of recommending an interview (0-10); Q2A trainability (1-7)"
+human_codes:
+  available: false
+  column: null
+  notes: "TESS archives hold survey data only"
+provenance:
+  written_before_reading_text: true
+  contamination: "None known. No published article located."
+  author: "draft by Claude agent (wave 3, TESS) from proposal, questionnaire and labels only"
+  date: "2026-11-17"

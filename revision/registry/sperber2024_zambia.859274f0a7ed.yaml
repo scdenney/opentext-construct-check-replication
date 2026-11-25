@@ -1,0 +1,52 @@
+# DRAFT, not registered. Written from the preregistered pre-analysis plan (OSF
+# osf.io/8xf59, 28 May 2021), the replication do-file, Twilio_cleaning.R and the
+# two codebooks, before any open-text value was read. The AJPS article itself is
+# paywalled and was not read. Steven must confirm the licence position (no licence
+# set; see the report) before running oc_study_register().
+id: sperber2024_zambia
+title: "Religious vs secular vs information-only WhatsApp civics course and self-described political identity (Zambia 2021)"
+source:
+  citation: "Sperber, E., McClendon, G., & Kaaba, O. (2024). Comparing religious and secular interventions to increase young adult political participation: Evidence from WhatsApp-based civic education courses in Zambia. American Journal of Political Science."
+  doi: "10.1111/ajps.12896"
+  data: "doi:10.7910/DVN/UBU601; data/external/sperber2024_zambia/raw/{clean_Twilio.dta,homeworkanswers_identity.dta,pp_baseline_cleaned.dta}; harmonized_sperber2024_zambia.csv"
+languages: [en]
+context: "Young adults (18 to 35) in Zambia took a free four-lesson civic-education course on WhatsApp before the August 2021 general election; course versions differed in their motivational messages. After the second lesson they were asked by text message to reply with one or two words describing the parts of their identity most important to them when they think about politics."
+unit: respondent
+id_column: caseid
+text:
+  column: identity_open
+  prompt: "When asked to identify themselves, people describe themselves in many different ways, for instance in terms of their ethnic group, their religion, gender, age, occupation and so on. Reply with one or two words describing the parts of your identity that are most important to you, especially when you think about politics?"
+  position: "Homework question HW9, sent by WhatsApp right after Lesson 2 (hw_a2_4 / hw_b2_4 / hw_c2_4); the fourth of five lesson-2 homework items. Same wording in all tracks (PAP homework list, Codebook_cleaned_Twilio.pdf)"
+treatment:
+  variable: track
+  contrast: "religious motivational course (track C, religioustr) vs information-only (A, infoonlytr) and non-religious motivational (B, seculartr) courses pooled; harmonized labels religious, infoonly, secular"
+  level: respondent
+  notes: "Respondent-level randomization into three tracks, stratified on gender and Christian denomination (OSF registration q7), within three recruitment waves (harmonized columns male, church_type, wave). Track C adds religious motivational messages to lessons 2-4 'emphasizing the study participant's identity as a Christian, the efficacy of faith and the resilience brought by faith'; track B adds secular messages emphasizing identity as a youth, self-efficacy and resilience (PAP p. 17). Lesson 2 in track C contains a 'Christian ID' slide (lesson_sawchristianid; seen by 383 of 408) shortly before this homework item, and track B a 'youth ID' slide; the prompt wording is identical across tracks, but because the lesson just before it primes Christian identity, the item is close to a manipulation check (a positive control for H11 rather than a test of a distal mechanism). The prompt itself lists religion as an example in every arm."
+constructs:
+  target:
+    - name: religious_identity
+      definition: "The answer names religion or a religious identity as an important part of the respondent's identity: e.g. Christian, a denomination, believer, child of God, faith, God, church member, religious"
+      source: "PAP (osf.io/8xf59), Mechanisms H11, p. 29: 'Study participants in Track C (the religiously motivated track) will exhibit stronger attachment to a Christian identity than study participants in Tracks A and B'; PAP p. 9 lists Christian identity as an intermediate outcome of the religious course. The replication do-file ('Table 5') regresses the RA code id_religion (Mentioned religion in open-ended question about identity, e.g., God, Christian, religious) on track."
+      expected_direction: increase
+  # Separate yes/no judgments. Youth/age identity is NOT used as a placebo: H10
+  # predicts the secular track raises youth identity, so it would move in the
+  # pooled reference group.
+  placebo:
+    - name: gender_identity
+      definition: "The answer names gender as an important part of the respondent's identity: e.g. woman, man, female, male, girl, boy, lady"
+      rationale: "Neither motivational track addresses gender (PAP p. 17); gender is a randomization stratum, so it is balanced across tracks. With one-or-two-word answers a rise in religion can crowd out other identities, so a decrease is possible; an increase would signal a false positive"
+    - name: national_identity
+      definition: "The answer names Zambian nationality or patriotism as an important part of the respondent's identity: e.g. Zambian, citizen of Zambia, patriot"
+      rationale: "All three tracks share the same civic-information content about Zambia's political system; neither motivational track is described as emphasizing national identity (PAP p. 17)"
+estimand: "ITT difference (religious track minus information-only and secular tracks pooled) in the share of identity answers expressing religious_identity, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold among respondents who answered the item, with wave, gender and denomination strata"
+outcomes:
+  closed_ended: "None in the homework file. Endline phone survey E3 'How important would you say being a Christian is to your identity?' (PAP p. 21; pp_endline_cleaned.dta, not downloaded)"
+human_codes:
+  available: true
+  column: "human_religion (id_religion), human_age (id_age), human_national (id_national), human_ethnic (id_ethnic), human_gender (id_gender)"
+  notes: "Binary codes of identity_open by a PhD RA (Alexis Palmer), homeworkanswers_identity.dta, for all 1,183 respondents; non-respondents are coded 0 in the deposit (the authors' Table 5 includes them), while the harmonized file keeps only rows with text. human_religion maps to the target, human_gender and human_national to the placebos. Coding rule from Codebook_homeworkanswers_identity.pdf only; no reliability statistic in the archive"
+provenance:
+  written_before_reading_text: true
+  contamination: "No identity_open value was seen by the drafter or, per the wave-3 leftovers log, by the searcher (who dumped only Stata variable names and labels). The authors' RA coded the full sample and the article reports the id_religion result (Table 5; the article was not read). The PAP prints no participant answers. Incident (after this card was written, while testing the builder): the drafter saw by-arm counts of the RA codes among answerers (human_religion, human_age, human_national, human_ethnic, human_gender by track); no text value was shown. The builder now prints pooled totals only"
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the PAP, do-file and codebooks only"
+  date: "2026-11-17"

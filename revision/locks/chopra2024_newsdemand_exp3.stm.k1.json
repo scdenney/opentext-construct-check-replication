@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "33575b64a63cb048b08d1a8934ecc02e771b312a1e178d5bafae6070a4881f6b",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_chopra2024_newsdemand_exp3",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chopra2024_newsdemand_exp3.stm.rds",
+      "sha256": "e7c35331c3bf55504d3a95645e546f8efe7f04e828e4daebd2c5690388e58470"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/chopra2024_newsdemand_exp3.topic_choice.csv",
+      "sha256": "1c4cdbbe28ab55c1426e7dbb80964435f06c1b404edcda2ebab758fa40bd3f12"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "9634080d62d11d1e00f62c4027af26024350c13855ccba650e2cd60117ee169c",
+  "created": "2026-11-17T21:35:11Z",
+  "opencheck_version": "0.0.0.9000"
+}

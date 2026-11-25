@@ -1,0 +1,48 @@
+# DRAFT, unregistered. Drafted by Claude 2026-10-28 from the IFES 2023 German export
+# header (Q86 wording), survey_design_overview.md, the 2023-11-28 final report draft,
+# Brehm, Zhou & Denney 2025 (CPCS) and IFES2023/Code; blind to response values.
+id: ifes2023_de_politician
+title: "Emerging-politician conjoint with a task-6 open-end, Germany (IFES 2023)"
+source:
+  citation: "Brehm, R., Zhou, T., & Denney, S. (2025). From Division to Democracy: Integrating Post-Socialist Citizens in Germany and South Korea. Communist and Post-Communist Studies."
+  doi: "10.1525/cpcs.2025.2636997"
+  data: "data/harmonized/ifes2023_de_politician.csv (from _archive/IFES2023/Germans/Data/IFES 2023 - German_February 12, 2024_18.11-choice_text.csv)"
+languages: [de]
+unit: respondent
+id_column: id
+text:
+  column: text
+  source_column: Q86
+  prompt: "Warum haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)"
+  position: "After the forced choice of paired task 6 of 8 (Q80), before that task's ratings (Q81); about the politician chosen in task 6"
+treatment:
+  variable: "diversity_differs (derived: chosen_diversity != other_diversity)"
+  contrast: "task-6 profiles state different views on diversity (1) vs the same view (0)"
+  level: task-level attribute (positive control)
+  notes: "Five attributes (democracy, economy, welfare, gender, diversity) with levels randomized per profile and task, attribute order randomized, no duplicate profiles (CPCS, design section and Table 2). 'Differs' is symmetric in chosen/other, so it depends only on the randomized pair, not on the choice. chosen_* and other_* alone are post-choice and are not randomized contrasts. The same construction is available for the other four attributes. No respondent-level arm. The CPCS construct, regime socialization, is a non-randomized population contrast (post-GDR vs Western Germans); it can be reported only as descriptive heterogeneity."
+constructs:
+  target:
+    - name: diversity_reasoning
+      definition: "Reasoning that invokes ethnic or cultural diversity, immigration, multiculturalism or national unity as a ground for choosing the politician"
+      source: "Brehm, Zhou & Denney 2025, abstract and Table 2 ('Views on diversity', theoretical expectation of post-socialist skepticism); German results section (attitudes toward diversity diverge between Western and Eastern/post-GDR Germans)"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Code each as a separate yes/no judgment.
+    - name: personal_character
+      definition: "Reasoning that invokes the politician's personal qualities (honesty, competence, likability, experience)"
+      rationale: "No personal trait is shown in any profile, so whether the diversity views differ should not change mentions of character"
+    - name: gender_roles
+      definition: "Reasoning that invokes gender roles, women's employment or gender equality"
+      rationale: "The gender attribute is randomized independently of diversity; only crowd-out in a short answer could move it"
+estimand: "Task-level randomized contrast on the estimation fold: share of responses expressing diversity_reasoning when the task-6 profiles differ on diversity minus when they do not, E[g(R)|D=1] - E[g(R)|D=0], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Forced choice in each of 8 tasks plus 1-7 agreement ratings of each politician (CPCS marginal means; not used to validate g)"
+human_codes:
+  available: false
+  column: null
+  notes: null
+provenance:
+  written_before_reading_text: false
+  contamination: "Steven has seen the data. The final report (Survey Design #1) describes these open-ends as manipulation checks of seriousness, and the post-fielding validation used manipulation and attention checks, so the exclude flag may depend on text content (attn_check_pass, embedded item Q114, is the text-independent alternative). No topic model or coding of Q86 found in IFES2023/Code."
+  author: "Steven Denney (drafted by Claude; unregistered, placebos to be confirmed)"
+  date: "2026-10-28"

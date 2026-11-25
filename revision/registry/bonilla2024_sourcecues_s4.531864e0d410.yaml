@@ -1,0 +1,50 @@
+# DRAFT, not registered. The article (JOP 84(4), paywalled) and its appendix were
+# NOT read: no open copy exists. Theory comes from the abstract, the replication
+# code (Figures.R; Study 3/4 cleanup commands as echoed in log.log) and the
+# coding instructions. Written before any S2_reason value was read. Shares all
+# respondents with bonilla2024_sourcecues_s3: this is round 2 of the same survey.
+# Steven: check the hypotheses section and Appendix A-K before registering.
+id: bonilla2024_sourcecues_s4
+title: "White vs Muslim candidate making a derogatory statement about Muslims and Black respondents' reasons for their position (US 2019, Study 4)"
+source:
+  citation: "Bonilla, T., Filindra, A., & Lajevardi, N. (2022). How source cues shape evaluations of group-based derogatory political messages. Journal of Politics, 84(4), 1979-1996."
+  doi: "10.1086/720308"
+  data: "doi:10.7910/DVN/2CVG5E; data/external/bonilla2024_sourcecues/raw/study3_4_data.tsv (text), study3_cleaned_coded.dta (assignment), study4_cleaned_coded.dta and study4_data_coded_v2.dta (codes); harmonized_bonilla2024_sourcecues_s4.csv"
+languages: [en]
+context: "Black adults in the United States (online survey, 2019), after an earlier question about a different candidate statement, read a short statement on law enforcement by a candidate for office who was identified as White or as Muslim; the statement either generalized negatively about Muslims and terrorism or talked about enforcing the law in general. They said how strongly they agreed with the statement and were then asked to explain the key reasons for their position."
+unit: respondent
+id_column: responseid
+text:
+  column: S2_reason
+  prompt: "Please explain the key reasons for your position."
+  position: "Round 2 of 2: right after the second candidate statement (blocks wnm/wdm/mnm/mdm) and the agreement item S2_agree; the respondent had answered the same items about a round-1 statement (card _s3) a few minutes earlier"
+treatment:
+  variable: treatment
+  contrast: "Derogatory statement about Muslims vs neutral statement, pooled over the speaker (white_derog, muslim_derog vs white_neutral, muslim_neutral). Secondary: the speaker, within the derogatory arms."
+  level: respondent
+  notes: "Round 2 of a within-respondent design (treat2): speaker White/Muslim x statement derogatory/neutral; arms white_neutral 205, white_derog 201, muslim_neutral 205, muslim_derog 203 (56 respondents have no round-2 assignment and are excluded, as in the authors' study4_cleaned.dta). The statement factor is NOT independent of round 1: every respondent saw one derogatory and one neutral statement, so derog2 = 1 - derog1. The round-2 speaker is randomized independently of round 1 (checked by cross-tabulation). Hence the primary contrast (speaker within the derogatory arms) is clean: both arms saw a neutral round-1 statement, with the round-1 speaker balanced. The secondary contrast derog vs neutral in round 2 compares 'derogatory after neutral' with 'neutral after derogatory' and is partly mechanical (only the derogatory statement mentions Muslims; positive control). white_neutral vs muslim_neutral is a design-based placebo contrast for the target (no derogation). Statement wording per coding_instructions2.docx: neutral = enforce the country's laws; derogatory = Muslims are violent and terrorists, stiffer penalties to deter terrorism. LEAD CORRECTION (17 Nov 2026, before registration, from the article read through the university library): for Black respondents the authors expect no source-cue effect ('We expect Black audiences to recognize derogation in political messages and penalize the candidate regardless'; 'we expect source cues to play less of a role in shaping Black political judgments than White political judgments'). The registered primary contrast is therefore derogatory vs neutral, for which the authors state a direction; the speaker contrast is secondary with no expected direction. The derogatory vs neutral contrast is partly mechanical: only the derogatory statement makes a claim about the group."
+constructs:
+  target:
+    - name: rejects_as_bigoted
+      definition: "The answer rejects or criticizes the candidate's statement as bigoted, prejudiced, stereotyping, Islamophobic, discriminatory, offensive or inappropriate toward Muslims (yes/no). Disagreement on other grounds alone does not count."
+      source: "Abstract: 'Both [Black and White Americans] punish the derogation less when issued by minority candidates'; norms against group-based derogatory speech are the mechanism. Authors' human code S2_code2 = -2 ('clear pushback ... because it was inappropriate, racist', coding_instructions1.docx) and, in the second coding round, code8 'respondent thinks the statement is inappropriate' (coding_instructions2.docx; not in the deposited file) Direction for the registered contrast: article, theory section, 'We expect Black audiences to recognize derogation in political messages and penalize the candidate regardless' of the speaker."
+      expected_direction: increase
+  placebo:
+    - name: other_policy_issue
+      definition: "The answer refers to a policy issue other than crime, terrorism, policing, security or the justice system, such as the economy, jobs, taxes, health care or education (yes/no)."
+      rationale: "No version of the statement raises other policy issues, and the speaker's identity should not bring them up."
+    - name: media_reference
+      definition: "The answer refers to the news media, the interview, or press coverage of the candidate (yes/no)."
+      rationale: "Every arm presents the statement the same way; the speaker's identity does not change how it was reported."
+estimand: "ITT difference (white_derog minus muslim_derog) in the share of answers expressing rejects_as_bigoted, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "S2_agree (agreement with the statement), S2_appropriate (appropriateness); vote likelihood and trait ratings in the authors' file (M_index)"
+human_codes:
+  available: true
+  column: "First coding round: human_c1_code1..6 (coder 1), human_c2_code1..6, human_c2_nonsense (coder 2). Second round: human_v2c1_* and human_v2c2_* (nonsense, othergroup, othergroup_tone, muslim, muslim_tone, empathy, vague)"
+  notes: "First round (coding_instructions1.docx, written for this item): code1 pushback -1 / ambivalent 0 / support 1; code2 -2 clear pushback because inappropriate or racist ... 2 clear endorsement; code3 discrimination against Black people; code4 against other stigmatized groups; code5 against Muslims; code6 inclusivity. rejects_as_bigoted corresponds to code2 == -2 (and partly code5 == 1). Second round (coding_instructions2.docx, study4_data_coded_v2.dta): code0 nonsense, code4/code4a other groups and tone, code5/code5a mentions Muslims and tone, code6 empathy toward Muslims, code7 too vague; code8 (inappropriate) is described but absent from the file; coder 2 coded only 488 of 786. Blindness: NOT blind. Coder 2's first-round sheet carries treat2; the second-round instructions tell coders to use neutral2/derog2 and list the statements. The authors use the averaged first-round code6 ('Group Empathy') and code5 ('Group Solidarity') as moderators of approval by arm (Figures.R: figure6_study4, appendix_study4_solidarity), not as outcomes."
+provenance:
+  written_before_reading_text: true
+  contamination: "No S2_reason value was read by the drafter. coding_instructions2.docx prints three example answers to this item (as coding examples for empathy), which the drafter read; they are probably S2 answers from this sample. The drafter saw marginal counts of the human codes (not by arm). The article was not read, so whether it prints example answers or coded shares by arm is unknown."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from abstract, replication code and coding instructions"
+  date: "2026-11-17"

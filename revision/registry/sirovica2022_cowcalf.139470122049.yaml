@@ -1,0 +1,54 @@
+# DRAFT, not registered. Written from the Journal of Dairy Science article (Abstract,
+# Introduction, Materials and Methods up to Data Analysis; Wayback Machine copy of the
+# publisher PDF), the Readme, the S3 SAS code and counts. The abstract summarizes the
+# qualitative findings in one clause (see provenance.contamination; no answer seen); the Qualitative
+# Findings section was not read. The authors' prediction is for the attitude ratings;
+# whether it meets criterion (ii) is a judgment call flagged in the drafter's report.
+id: sirovica2022_cowcalf
+title: "Calf separated and individually housed vs kept with its mother and explanations of views on a cow-calf management system (Canada 2019, US 2020)"
+source:
+  citation: "Sirovica, L. V., Ritter, C., Hendricks, J., Weary, D. M., Gulati, S., & von Keyserlingk, M. A. G. (2022). Public attitude toward and perceptions of dairy cattle welfare in cow-calf management systems differing in type of social and maternal contact. Journal of Dairy Science, 105(4), 3248-3268."
+  doi: "10.3168/jds.2021-21344"
+  data: "doi:10.5683/SP3/GQ8DUY (CC0 1.0); data/external/sirovica2022_cowcalf/raw/Final_CAUSdataset.tab, CAUSdataset_with_IDs_and_constructs.tab; harmonized_sirovica2022_cowcalf.csv"
+languages: [en]
+context: "Canadian and American adults in online panels read that cows must give birth to a calf to produce milk and then a short description of one system for housing and caring for dairy cows and their calves, including whether and when the calf is separated from its mother and who it is housed with. They rated how much they agreed with the system and how appropriate and acceptable it is, then explained their views."
+unit: respondent
+id_column: "ID (S4 anonymous id, country + number; harmonized: id)"
+text:
+  column: "Qual (S2; harmonized: text)"
+  prompt: "Please explain your views about this cow-calf management system."
+  position: "Directly after the three 7-point attitude items (agree, appropriate, acceptable); before the relevance and quality-of-life ratings, the welfare items, willingness to pay and demographics."
+treatment:
+  variable: treatment
+  contrast: "separated within a few hours and individually housed (si) vs not separated, cow-calf pairs group housed (ns)"
+  level: respondent
+  notes: "One factor with four levels, random assignment (Survey Design, Table 1): si separated and individually housed (419), sg separated and group housed (429), fc separated and kept with foster cows (469), ns not separated and group housed (477). The primary contrast is the pair the authors made a prediction about (most favorable ns, least favorable si); they state no basis for predicting sg and fc, which enter only as secondary contrasts. The descriptions say the calf 'is separated from the cow' and 'housed by itself' (si) vs 'is not separated' and 'able to nurse from its mother cow' (ns), so mentions of separation and nursing partly restate the stimulus (positive control); the target is restricted to criticism of the system on these grounds. Country (CA 307, US 1,487) is a sample, not a randomized factor; the authors pool the two after finding no country effect or interaction. The deposited file is the authors' analytic sample (attention check and duplicates removed); no further exclusions (exclude = FALSE for all rows)."
+constructs:
+  target:
+    - name: maternal_separation_concern
+      definition: "The response criticizes the system described, or gives as a reason against it, that the calf is separated from or deprived of its mother: the loss of the mother-calf bond or maternal care, the calf not being able to nurse from its mother, or distress to the cow or calf from being separated"
+      source: "Introduction: early separation causes 'acute distress responses' and prevents 'natural maternal behaviors'; public concern 'centers on contentious practices', in the dairy industry 'early separation of cows and calves' and individual housing; previous studies show 'public opposition toward early cow-calf separation'; prediction (end of Introduction) that attitudes 'would be most favorable toward the management system that allowed continued cow-calf contact and least favorable to early separation followed by individual housing'. The prediction is stated for the ratings; concern about separation is the reason the authors give for it."
+      expected_direction: increase
+  # Separate yes/no judgments. Crowd-out by the target could lower them, so the
+  # false-positive check is an increase. No factor is randomized independently of the
+  # system, so the placebos are considerations fixed before treatment or absent from
+  # every description.
+  placebo:
+    - name: own_farm_experience
+      definition: "The response refers to the respondent's own experience with or knowledge of farming or dairy cattle (growing up on or working on a farm, having raised cattle, or saying they know little about farming)"
+      rationale: "Farm experience and familiarity are fixed before treatment (the authors measure them as demographics); the system description does not ask about them."
+    - name: milk_additives_reference
+      definition: "The response refers to hormones, antibiotics, chemicals or other additives in milk or given to dairy cows"
+      rationale: "None of the four descriptions mentions drugs, hormones or additives, and the descriptions are identical apart from separation and housing; the system should not change whether respondents raise them."
+estimand: "ITT difference (si minus ns) in the share of responses expressing maternal_separation_concern, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold; country as a stratum"
+outcomes:
+  closed_ended: "agree, appropriate, acceptable (1-7, Readme 4-6) and attitude (their mean, the authors' construct), all asked before the text"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors analyzed the answers by generic qualitative description and labeled quotes with the anonymous ID; codes are not deposited."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer was quoted to the drafter. The abstract, read before the card was drafted, summarizes the qualitative results: 'many participants' concern for the importance of the mother cow-calf relationship and perceptions that severing of this bond was a breach of standard of care'. This states that the target theme was common, though not its distribution by arm. The search snippet for the article said respondents 'seemed to care about the mother-calf bond'. The Qualitative Findings section was not read. No value of the data file's text columns was printed; S4 and S2 texts were compared only by prefix and equality counts. Per the manifest the searcher saw none."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, readme and counts"
+  date: "2026-11-17"

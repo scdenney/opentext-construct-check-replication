@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "567ac48c6fa7b40c49327d08f3449012d441ce3f3b3419f746383d0634802056",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_sydnor2016_video_whynot",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sydnor2016_video_whynot.stm.rds",
+      "sha256": "a199afe6f0a8971c66bcecba0c7319595f64cc2113c4ba094fb89a2fe9744b4f"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/sydnor2016_video_whynot.topic_choice.csv",
+      "sha256": "ca4aa2957499b45924cd52b43d055334ca5623dd88bfc1d0336233e4cd4de1cf"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "33bdc5300dfb14730be1670af4818532f25f49ed13ac17d449c617163de8a82b",
+  "created": "2026-11-17T22:52:23Z",
+  "opencheck_version": "0.0.0.9000"
+}

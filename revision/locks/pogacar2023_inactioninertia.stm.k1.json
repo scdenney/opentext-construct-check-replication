@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "4a72288611455455ebc19f17e9dc6755ca540788ec3c95ecf577aa647b8303f9",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_pogacar2023_inactioninertia",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/pogacar2023_inactioninertia.stm.rds",
+      "sha256": "60f4bbb0c7a80d19b2ac3e3131e03c44226bee5bcf149198bb73d8aa28dbc6d2"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/pogacar2023_inactioninertia.topic_choice.csv",
+      "sha256": "e650831d2a48a3672d9ce87c2d16fb3511ebd64c5c5fbf2d5b49f1a552741631"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "dd77e69264c9d9d674bd41856ac9dd736bc40f9ada7df3ae51811b6d50cddc25",
+  "created": "2026-11-18T00:05:25Z",
+  "opencheck_version": "0.0.0.9000"
+}

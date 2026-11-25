@@ -1,0 +1,48 @@
+# DRAFT, not registered. Written from the QJE article (141(4), Section V.D.2.ii), Online
+# Appendix D.3.8, the 2024 working paper (CEBI WP 07-23 rev1, Section 5.3), the AEA RCT
+# Registry preregistration "Explaining Equilibrium Study" (13 Jun 2023), the .qsf and the
+# authors' cleaning code, before any answer from this file was read.
+id: andre2024_stockmodels_arbitrage
+title: "Explaining arbitrage and equilibrium pricing and households' explanations of their return forecast after stale good news (Andre, Schirmer & Wohlfart, US 2023, wave 1)"
+source:
+  citation: "Andre, P., Schirmer, P., & Wohlfart, J. (2026). Mental models of the stock market. Quarterly Journal of Economics, 141(4), 2925-."
+  doi: "10.1093/qje/qjag039"
+  data: "doi:10.7910/DVN/BNFSAO; data/external/andre2024_stockmodels/raw/data/experiments/explain_eq_1_raw.sav; harmonized_andre2024_stockmodels_arbitrage.csv"
+languages: [en]
+context: "US adults in an online survey first read a short explanatory text and summarized it in their own words: either how stock prices adjust to expected company earnings through arbitrage, or what determines the range of the tides. They then read two hypothetical news scenarios about Nike announced four weeks earlier, neutral news (a supplier partnership continued) and good news (a new partnership expected to cut raw material costs by 20%), predicted in which scenario $1,000 invested in Nike stock today and sold in twelve months would earn a higher return, and explained their prediction."
+unit: respondent
+id_column: ResponseId
+text:
+  column: explanation
+  prompt: "For the following investment ... You invest $1,000 in Nike stocks today, four weeks after the announcement was made in the two scenarios. You sell these stocks twelve months from now. ... you responded that you expect that the return of the investment in Nike stock would be [higher in scenario 1 / similar in both scenarios / higher in scenario 2]. Please explain why you think that would be the case. (MMSM__Arbitrage_knowledge_W1.qsf, tag explanation)"
+  position: "Part 2 of the survey, directly after the directional return forecast; part 1 is the explanatory text and the own-words summaries (ownwords_eq_* or ownwords_tides_*)"
+treatment:
+  variable: treatment
+  contrast: "explain_eq (1; explanation that stocks of firms with higher expected earnings must be priced higher, that arbitrage would otherwise move prices, and hence that higher expected earnings alone do not raise future returns) vs explain_tides (0; equally long text on the tidal range)"
+  level: respondent
+  notes: "Qualtrics randomizer, June 2023 (947 after the authors' filters). Same explanation prompt in both arms. Treated respondents had just summarized the arbitrage principle in their own words, so repeating the lesson is partly experimenter demand or recall (authors' own concern, App. D.3.8); treat a shift as partly a positive control. The follow-up wave on the Amazon scenario is carded separately (andre2024_stockmodels_arbitrage_w2; same respondents)"
+constructs:
+  target:
+    - name: equilibrium_price_offset
+      definition: "The response argues that the good news is already reflected in Nike's current stock price, or that the higher price an investor pays today offsets the higher future earnings, so the expected return need not be higher; references to prices being 'priced in', market efficiency, arbitrage, or paying more for the same future profits count. Answer yes or no."
+      source: "Preregistration 13 Jun 2023 ('the treatment condition familiarizes participants with the consequences of equilibrium on stock markets'; 'We test whether explaining the consequences of equilibrium on stock markets affects individuals' return expectations and the reasoning behind their expectations'); QJE Section V.D.2.ii ('To test whether knowledge of this principle matters for how households reason about prices'); 2024 working paper Section 5.3 (intervention 'aimed at closing the gap in respondents' mental model')"
+      expected_direction: increase
+  placebo:
+    - name: macroeconomic_conditions
+      definition: "The response refers to the general economy or markets as a whole: recession, inflation, interest rates, the overall stock market or economic outlook. Answer yes or no."
+      rationale: "The arbitrage text concerns how a single stock is priced, not the wider economy"
+    - name: social_or_ethical_concerns
+      definition: "The response refers to ethical, social or environmental aspects of the news: workers, labor conditions, sustainability or recycling as a moral matter, or the respondent's approval of Nike's conduct. Answer yes or no."
+      rationale: "Neither explanatory text has ethical content; the scenarios are identical across arms"
+estimand: "ITT difference (explain_eq minus explain_tides) in the share of responses expressing equilibrium_price_offset, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold"
+outcomes:
+  closed_ended: "news_congruent (authors' return_1_recoded: 3 = higher return in the good news scenario, 2 = similar, 1 = lower)"
+human_codes:
+  available: false
+  column: null
+  notes: "The 2024 working paper reports human model-scheme codes for this study, but the package ships none for this file (0 of 952 ResponseIds in human_labels.csv). The package has the authors' GPT-5.2 attention-scheme codes (has_pc prices as costs etc.; labels.csv, merge on ResponseId); not in the harmonized file"
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer from this file was read. The drafter read the QJE article, Online Appendix D.3.8 (effects on forecasts, prices-as-costs and benefits codes) and the 2024 working paper (Table 4 and Section 5.3 on the equivalent 2024 experiment: effects on efficiency and EER codes) before drafting. The QJE prints six example explanations from the main descriptive surveys (Section IV.A.1; same item, other respondents). Online Appendix Tables C.1-C.2 (coding examples) were skipped. The own-words summaries were not opened. The searcher read no text from this package (MANIFEST)."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from paper, preregistration, questionnaire and code"
+  date: "2026-11-17"

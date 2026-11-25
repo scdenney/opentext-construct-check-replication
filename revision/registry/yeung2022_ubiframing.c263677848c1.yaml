@@ -1,0 +1,55 @@
+# DRAFT, not registered. Written from the article (PMC9484344 full text: sections "Framing UBI:
+# Two Possibilities", "Treatments", "Survey Flow and Measurement", "Rigid Attitudes Toward UBI
+# Among American Conservatives"), the online appendix (Appendix H), the preanalysis plan
+# (osf.io/bcuqe), the Qualtrics header and label rows of final2.csv, the authors' scripts, and counts.
+# Two published example answers from Appendix F were seen by accident (see provenance).
+id: yeung2022_ubiframing
+title: "Equalizing-opportunity and limiting-government frames vs a plain description of universal basic income, and US adults' explanations of their support or opposition (Lucid, September 2021)"
+source:
+  citation: "Yeung, E. S. F. (2022). Can conservatives be persuaded? Framing effects on support for universal basic income in the US. Political Behavior."
+  doi: "10.1007/s11109-022-09824-z"
+  data: "doi:10.7910/DVN/VCHMLD (CC0 1.0); data/external/yeung2022_ubiframing/raw/final2.csv (main wave) and final1.csv (soft launch); harmonized_yeung2022_ubiframing.csv"
+languages: [en]
+context: "US adults in an online survey (September 2021) read a short neutral description of universal basic income (UBI): the government pays everyone the same monthly income, it replaces many other social benefits, and it is paid for by taxes; some also read one additional sentence about the program. They rated how much they were against or in favor of UBI in the United States and then briefly explained why they hold that view."
+unit: respondent
+id_column: ResponseId
+text:
+  column: open.ended.favor / open.ended.oppose / open.ended.neutral (pooled as text; version in prompt_version)
+  prompt: "NOT IN ARCHIVE (no questionnaire deposited). Article, 'Survey Flow and Measurement': 'Respondents are then asked to provide an open-ended response to briefly explain why they hold such views.' Qualtrics labels: 'Open-Ended Response (Favor)', '(Oppose)', '(Neutral)'"
+  position: "Directly after the 0-6 support item ('Overall, would you be against or in favor of having universal basic income in the United States?'), which follows the vignette; before the party-association items and the 10 policy statements"
+treatment:
+  variable: treatment
+  contrast: "opportunity (equalizing-opportunity frame) vs control (primary for equal_opportunity_self_reliance); limit_government (limiting-government frame) vs control (primary for limiting_government)"
+  level: respondent
+  notes: "Three-arm between-subjects design, randomized after the demographic block (group 0 = control, 1 = equalizing-opportunity frame, 2 = limiting-government frame; treatment1/treatment2 in the authors' scripts test H1a/H2a). All arms read the same UBI vignette; the frames add one two-sentence paragraph. Opportunity frame: 'An important feature of UBI is that it will create a level playing field because poor households will also be financially empowered. This encourages people to be more self-reliant and self-responsible.' Limiting-government frame: 'An important feature of UBI is that it will limit government because some existing government programs for the poor will be cut or replaced by UBI. This helps to minimize government bureaucracy.' The open item exists in three versions (favor if support 4-6, neutral if 3, oppose if 0-2); every respondent who answered the support item saw exactly one, so the versions are pooled as one item. The version depends on the post-treatment support answer, so prompt_version is post-treatment and must not be conditioned on. The frames contain the target's key terms ('level playing field', 'self-reliant', 'limit government', 'bureaucracy'), so part of any shift can be echo of the vignette wording (partly a positive control). The authors' expectation (H1a, H2a) is stated for conservatives; the authors' conservative indicator (conservatism score >= 5 from the 10 policy statements) is measured after the open item, so no conservative-only contrast is registered; the pooled contrast rests on the frames' content being brought to every reader's attention. Each frame's consideration is the placebo for the other frame's contrast (the frames have the same length and structure and differ in content, section 'Treatments')."
+constructs:
+  target:
+    - name: equal_opportunity_self_reliance
+      definition: "The response says or implies that UBI would give people an equal or fairer chance, level the playing field, help the poor get a start or get ahead, or make people more self-reliant, independent or responsible for themselves. Answer yes if the response attributes any of these to UBI, whether or not the respondent welcomes it. Answer no for mentions only of reducing poverty, meeting basic needs or helping those in need without reference to opportunity or self-reliance, and no for claims that UBI makes people dependent or less willing to work."
+      source: "Article, section 'Framing UBI: Two Possibilities': H1a 'Framing UBI as an opportunity-equalizing policy will increase conservatives' support for UBI', resting on the mechanism 'if framing UBI as an opportunity-equalizing policy helps to preempt conservatives from perceiving UBI as an outcome-equalizing policy'; section 'Treatments': the frame names 'level playing field', 'self-reliant' and 'self-responsible', 'the concepts that American conservatives tend to emphasize and, consequently, are more likely to respond to'. The text analysis itself is exploratory (preanalysis plan p. 22; article: open-ended analysis 'reinforce[s]' the null on support), with no stated content expectation"
+      expected_direction: increase
+    - name: limiting_government
+      definition: "The response says or implies that UBI would reduce government bureaucracy, administration, waste or the size of government, or would cut, replace or consolidate existing welfare or government programs. Answer yes if the response attributes any of these to UBI, whether or not the respondent welcomes it. Answer no for claims that UBI would expand government or bureaucracy, and no for mentions of taxes or cost alone."
+      source: "Article, section 'Framing UBI: Two Possibilities': H2a 'Framing UBI as a policy that limits government will increase conservatives' support for UBI' ('framing UBI as a policy that limits government should appeal to them'); section 'Treatments': the frame names 'limit government' and 'government bureaucracy'. Same caveat: the text analysis is exploratory, with no stated content expectation"
+      expected_direction: increase
+  # Code each as a separate yes/no judgment. Under each contrast the other frame's
+  # target serves as the content placebo (see treatment.notes).
+  placebo:
+    - name: partisan_reference
+      definition: "The response refers to a political party, Democrats or Republicans, or a named politician"
+      rationale: "Neither frame names a party or messenger; the author omits them by design ('No political endorsement', section 'Treatments'), so partisan references should not move with the frames"
+    - name: race_reference
+      definition: "The response refers to race, racial or ethnic groups, or immigrants"
+      rationale: "The author omits race from all vignettes by design ('No mention of race', section 'Treatments'), and the frames are identical in this respect to the control vignette"
+estimand: "ITT difference (frame minus control) in the share of responses expressing that frame's target, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, separately for each frame against control"
+outcomes:
+  closed_ended: "support (0-6, the authors' main outcome); prompt_version (favor / neutral / oppose, post-treatment); ideo (self-reported ideology, asked before treatment); cons_score (0-10 conservatism score from the policy statements, post-treatment) and conservative (cons_score >= 5); attention (screeners); wave (soft launch or main)"
+human_codes:
+  available: false
+  column: null
+  notes: "None deposited. The author fit a K = 4 structural topic model (policy analysis, helping the needy, poverty and inequality, discouraging work) and a dictionary count of 'stimulus', 'package', 'check' on the full sample, and read all conservative treatment-group answers; no per-answer codes are archived"
+provenance:
+  written_before_reading_text: false
+  contamination: "No answer was read from the data. While locating sections of the online appendix (ESM PDF) with grep, the drafter saw the text of two published representative responses from Appendix F (Figure A15-type examples): both are opposed answers about taxes and work disincentives, and one fragment of a third. These do not touch the targets or placebos. The article body summarizes the topic results (no framing effect on topic prevalence; conservatives cite work disincentives and taxes). The searcher's manifest reports no text read."
+  author: "draft by Claude agent (wave 3) 2026-11-18 from the article, appendix, preanalysis plan, scripts and counts"
+  date: "2026-11-18"

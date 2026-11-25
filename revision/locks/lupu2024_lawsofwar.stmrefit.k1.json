@@ -1,0 +1,35 @@
+{
+  "lock_version": 1,
+  "split_hash": "3af937a6764cdea3962ab079187f89ec8a96eddd016e99f467e6cbb94d5c2235",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "fits",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/lupu2024_lawsofwar.rds",
+      "sha256": "8ce1b0dff13c10ac269c5b83b5350319770d489bfe50daa0c716917527a4ee0a"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm_refit/lupu2024_lawsofwar.topic_choice.csv",
+      "sha256": "6b8d52c3b8bede16b230ad0c0631da9768eda376091d4d425438e1ffc24c1829"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "refits": 20,
+    "order_seed": 20261123,
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "none; ~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "dd6182946d29c60be9b8e49f3d68fb4bdc9ad3070d09af15e3f125f8301d3b40",
+  "created": "2026-11-23T23:29:57Z",
+  "opencheck_version": "0.0.0.9000"
+}

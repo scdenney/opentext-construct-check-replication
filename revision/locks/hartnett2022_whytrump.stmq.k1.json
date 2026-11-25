@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "ecbfda130827ba932b1b30e4033f4c71b69e35f24c8c0e1d34302dbfb7fdf43c",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_hartnett2022_whytrump",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/hartnett2022_whytrump.stm.rds",
+      "sha256": "36f8e3c62d633be4ff5aef44d11910fab7a79e165784206ab21625984797c932"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/hartnett2022_whytrump.topic_choice_qwen36_35b.csv",
+      "sha256": "a6f501f41b328ac5faac5c425e061f50bc912abebac5c755cb8237e2b49d48b7"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "1a21d06239a6d0b31137fcf3025fd2d77c91815459abd185b307efd79d7a3bd6",
+  "created": "2026-11-17T18:03:47Z",
+  "opencheck_version": "0.0.0.9000"
+}

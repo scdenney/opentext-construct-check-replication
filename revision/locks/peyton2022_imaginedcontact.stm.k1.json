@@ -1,0 +1,33 @@
+{
+  "lock_version": 1,
+  "split_hash": "277d75fcaca67affe8f72be739aa6a4a5eca86d9405f6aa0ed93b60daa20c31f",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_peyton2022_imaginedcontact",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/peyton2022_imaginedcontact.stm.rds",
+      "sha256": "cca5ced8f67aa03eeb1efbf6ff4a63f9e34d3ad49e38e644f6febf3f7cd9db64"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/home/buddleman/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/peyton2022_imaginedcontact.topic_choice.csv",
+      "sha256": "80d1233080d1ed8cdb7eebaa95be6948090f701ed3b3cc8d975ce76fc27ba711"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "9b723220dd7e30a4185b1ca8579f31b6070872a8c13d3eabfda8064049eb77f9",
+  "created": "2026-11-17T21:35:23Z",
+  "opencheck_version": "0.0.0.9000"
+}

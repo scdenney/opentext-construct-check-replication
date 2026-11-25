@@ -1,0 +1,34 @@
+{
+  "lock_version": 1,
+  "split_hash": "4f3171d6967795252c0518a4e083f892a2167b1eb66d9f9a105526bbfc66e770",
+  "split_k": 1,
+  "scheme": "holdout",
+  "discovery_fold": "D",
+  "estimation_fold": "E",
+  "components": [
+    {
+      "name": "stm_nomikos2019_audiencecosts",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nomikos2019_audiencecosts.stmcov.rds",
+      "sha256": "5bf833e74ece9490423a7b0fa5a340c0a4707480f1e5847ae8a620545a71b73a"
+    },
+    {
+      "name": "topic_choice",
+      "path": "/Users/scdenney/Documents/github/research/projects/lucdh_opentext-surveys/data/jobs/stm/nomikos2019_audiencecosts.stmcov.topic_choice.csv",
+      "sha256": "2b3a12e1563eb6f2d198112cab251eb4fdfe27cdb54e3cf866d3dd167c284570"
+    }
+  ],
+  "n_example_ids": 0,
+  "example_ids_hash": null,
+  "models": "google/gemma-4-12B-it",
+  "decoding": {
+    "K_grid": [4, 6, 8, 10, 12],
+    "init": "Spectral",
+    "seed": 42,
+    "prevalence": "~arm (discovery fit only)"
+  },
+  "prompt_hashes": null,
+  "notes": null,
+  "lock_hash": "86ab6efa51e248aabc70b98b05a74d18e5be1345b91507c893c4ee78cf5d0b48",
+  "created": "2026-11-22T16:41:36Z",
+  "opencheck_version": "0.0.0.9000"
+}

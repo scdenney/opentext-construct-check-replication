@@ -1,0 +1,58 @@
+# DRAFT, not registered. Written from the Security Studies article (hypotheses
+# H1a-H4 in "Hypotheses about Individual-Level Variation"; design section and
+# Table 1), read in the open published version deposited in ORA (Oxford), plus the
+# online appendix (Appendices 2-3) and the replication .do file, before any
+# open-text value of the dataset was read. The article's summary of the coded
+# open responses by condition was seen (see contamination).
+id: dill2022_kettlesofhawks
+title: "Nuclear versus conventional strike on a terrorist chemical-weapons facility in Libya with randomized effectiveness, civilian deaths and intent, and the single most important reason for the preferred strike (US, UK, France 2018)"
+source:
+  citation: "Dill, J., Sagan, S. D., & Valentino, B. A. (2022). Kettles of hawks: Public opinion on the nuclear taboo and noncombatant immunity in the United States, United Kingdom, France, and Israel. Security Studies, 31(1), 1-31."
+  doi: "10.1080/09636412.2022.2038663"
+  data: "doi:10.7910/DVN/PAY8IA (CC0 1.0); data/external/dill2022_kettlesofhawks/raw/; harmonized_dill2022_kettlesofhawks.csv"
+languages: [en, fr]
+context: "Adults in the United States, the United Kingdom and France read a mock news story in which their country's leaders choose between a conventional and a nuclear cruise-missile strike to destroy a terrorist chemical-weapons facility in a Libyan town before a planned attack on their capital, with the strikes' chances of success and the Libyan civilian deaths described differently for different respondents; they chose which strike they preferred and then described in their own words the single most important reason for preferring it."
+unit: respondent
+id_column: id
+text:
+  column: text
+  prompt: "In your own words, please briefly describe the single most important reason you preferred the nuclear strike [nuclear preferrers: nuke_reason_open] / the conventional strike [conventional preferrers: conv_reason_open]. (French sample: French version of the same item.)"
+  position: "After the story, the manipulation checks and the 4-point preference item strike_pref (1-2 conventional, 3-4 nuclear); the item shown depends on the choice; the two are pooled into one answer per respondent (design column item). Before the ranking item, the ethics ratings and the closed 'most important reason' menu (closed_reason; its position after the open item is inferred from the file order, not stated in the appendix)."
+treatment:
+  variable: treatment
+  contrast: "primary: nuc100k (nuclear strike 90% effective and kills 100,000 Libyan civilians; conventional 45% effective, 2,700 deaths) vs eff9045 (identical except the nuclear strike kills 2,700); secondary: target_civ (both strikes 90% effective, 2,700 deaths, civilians intentionally targeted to send a message) vs eff9090 (same, deaths an unintended side-effect); eff9045 vs eff9090 (conventional strike's success chance halved); christian (as nuc100k, half the residents Christian) vs nuc100k"
+  level: respondent
+  notes: "Experiment A respondents were randomly assigned to one of five stories (treatment_A 1-5; about 166 per arm per country), within each country sample; Table 1 of the article pairs conditions 2 and 3 (civilian deaths), 1 and 4 (intent) and 1 and 2 (effectiveness). The question wording does not differ by arm, but the stories put the varied facts in the headline, pull quotes and a summary table, so a rise in references to them is partly a recall effect (positive control). The answer item is conditional on the closed strike choice, which the treatment moves (H3, H4; e.g. nuclear preferrers are 243 of 481 answers in eff9045 and 129 of 512 in nuc100k); the registered contrast pools both items (ITT on all answers), as the article describes the item as one question put to all subjects, and keeps item and strike_pref as design columns. Strata: country (US, GB, FR). The Israeli sample (Hebrew) is left out because its text is destroyed in the deposit; the no-attack reason item is not used (asked only of a post-treatment subset). Weights (weight) are YouGov population weights; the authors' estimates are weighted. The prompt asks for a single most important reason, so codes compete."
+constructs:
+  target:
+    - name: civilian_casualties
+      definition: "The response gives the number of Libyan (foreign) civilians a strike would kill, or the difference in civilian deaths between the strikes, as a reason: it treats civilian deaths as a cost to be avoided or minimized"
+      source: "H4 (civilian consequentialist): 'Individuals will be less likely to prefer a nuclear strike the greater the number of foreign civilians that nuclear weapons are projected to kill compared to a conventional strike'; under a consequentialist logic preferences 'decrease when the strike is projected to kill more foreign civilians' (section 'Hypotheses about Individual-Level Variation'); Condition 3 is 'a test of how sensitive respondents are to rising foreign civilian casualties' and Table 1 pairs it with Condition 2. Code book category 'civilian consequences' (online Appendix 3)."
+      expected_direction: increase
+    - name: civilian_immunity
+      definition: "The response says the strike is wrong because it deliberately targets or aims at civilians or innocent people, or that intentionally killing civilians is always wrong"
+      source: "H2a/H2b (noncombatant immunity): individuals will prefer not to launch a strike 'that intentionally targets foreign civilians' and will assess any strike that intentionally targets foreign civilians as less ethical (section 'Hypotheses about Individual-Level Variation'); Condition 4 'is designed to test the strength of the categorical noncombatant immunity norm'. Code book category 'civilian immunity' (online Appendix 3)."
+      expected_direction: increase
+    - name: military_effectiveness
+      definition: "The response refers to how likely a strike is to destroy the facility or stop the terrorist attack, or to one strike being more effective or more certain to succeed than the other"
+      source: "H3 (nuclear consequentialist): 'Individuals will be more likely to prefer a nuclear strike the more effective nuclear weapons are projected to be in destroying a target compared to a conventional strike' (section 'Hypotheses about Individual-Level Variation'); Condition 2 'forces subjects to consider whether avoiding the use of nuclear weapons is more important than doubling the likelihood of preventing the terrorist attack'."
+      expected_direction: increase
+  placebo:
+    - name: own_military_personnel
+      definition: "The response refers to the lives or safety of the respondent's own country's soldiers, pilots or military personnel"
+      rationale: "Every story says both strikes use pilotless cruise missiles that put no compatriot soldiers at risk, and no arm changes this. Caveat: the single-reason prompt allows crowd-out, so a fall is not by itself a false positive; a rise would be."
+    - name: financial_cost
+      definition: "The response refers to the monetary cost or expense of a strike or of the weapons"
+      rationale: "No story varies or states the cost of either strike, and none of the hypotheses concerns cost (a cost option appears only among the manipulation-check answers, identical in every arm)."
+estimand: "ITT difference (nuc100k minus eff9045) in the share of responses expressing civilian_casualties, E[g(R(1))] - E[g(R(0))], pooled over the nuclear and conventional items and the three countries, estimated on the estimation fold; secondary contrasts as listed under treatment"
+outcomes:
+  closed_ended: "strike_pref (1 strongly prefer the conventional strike ... 4 strongly prefer the nuclear strike; the authors' outcome is its binary form); closed_reason (closed 'most important reason' menu: nuc1-nuc4 for nuclear preferrers, conv1-conv6 for conventional preferrers, labels in the .dta)"
+human_codes:
+  available: false
+  column: null
+  notes: "The authors' three-coder codes of the open answers (Appendix 3: nuclear taboo, civilian immunity, radiation, international law, nuclear precedent, civilian consequences) are not in the deposit. nuke_reasons_A and conv_reasons_A, which the search notes took for these codes, are respondents' answers to a closed menu (one value per respondent, YouGov skipped/not-asked codes, categories that differ from the code book); they are kept as closed_reason."
+provenance:
+  written_before_reading_text: true
+  contamination: "No answer in the dataset was seen. Published material seen while drafting: the article's summary of the coded open responses (taboo reasons under 4 percent on average and 6.3 percent in Condition 2; 69.5 percent of conventional preferrers in Condition 3 cite civilian casualties; radiation the most common reason in Conditions 1, 2 and 4, about 38-39 percent; precedent 9.7, 15.7 and 12.2 percent in Conditions 1, 2 and 4; among no-strike preferrers, civilian-targeting reasons 8.6 percent in Condition 1 and 12.8 percent in Condition 4). The code book's illustrative phrasings (Appendix 3) are coder instructions, not answers. Text was handled only as counts (script and encoding checks), including the check that Israeli answers are stored as underscores."
+  author: "draft by Claude agent (wave 3) 2026-11-17 from the article, online appendix and replication code"
+  date: "2026-11-17"

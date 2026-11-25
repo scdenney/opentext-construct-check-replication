@@ -1,0 +1,51 @@
+# Registered 2026-10-28. Placebos confirmed by Steven 2026-10-28. Prompt wording
+# checked against ROK_241_Experiments.qsf (Q129) and the Taiwan survey definition
+# taiwan_SV_9BMS4HMQmRNUK1M_definition.json (QID90 = Q89).
+id: sktw_naturalization_2024
+title: "Naturalization conjoint with a withheld social-integration attribute, South Korea and Taiwan"
+source:
+  citation: "Denney, Fraser & Steinhardt, 'Cues of Commitment' (working paper)"
+  doi: null
+  data: "data/source/{sk,tw}_analysis_ready.rds (open text: open.text); replication/data/citizenship_conjoint/corpus.csv"
+languages: [ko, zh-Hant]
+context: "Respondents in South Korea and Taiwan saw pairs of hypothetical immigrants applying for citizenship, chose one, and then explained their choice in a short open-ended answer written in Korean or Traditional Chinese. Read the answer in its original language."
+unit: respondent
+id_column: ResponseId
+text:
+  column: open.text
+  prompt: "SK Q129: 해당 이민자를 선택하신 이유는 무엇입니까? (Why did you choose this immigrant?). TW Q89: 請解釋為什麼您選擇的人是我們國民。 (Please explain why the person you chose is our national.)"
+  wording_note: "The two prompts differ: SK asks why this immigrant was chosen; TW frames the choice as national membership. SI Appendix (supplementary_information.tex:626) gives one English wording for both, which matches neither exactly."
+  position: "SK: after paired task 8; TW: after paired task 7; about the profile chosen in that task"
+treatment:
+  variable: cue_shown
+  contrast: "social-integration attribute displayed (1) vs withheld (0) across all tasks"
+  level: respondent
+  notes: "Respondent-level randomization of whether the attribute appears at all (a regime contrast; R2). Also randomized: RandomTextFlag (civil-society framing)."
+constructs:
+  target:
+    - name: civic_commitment
+      definition: "Reasoning that invokes participation in community life: volunteering, community organizing, social participation; outward-facing, prosocial engagement"
+      source: "analysis/codebooks/civic_fairness.yaml; paper §4"
+      expected_direction: increase
+  placebo:
+    # PROPOSED; Steven to confirm. Measure placebos as separate yes/no (multi-label)
+    # judgments. If target and placebo are mutually exclusive single-label shares,
+    # any rise in the target mechanically lowers the placebo.
+    - name: ethnic_ancestry
+      definition: "Reasoning that invokes ethnic or ancestral ties (co-ethnicity, Korean/Chinese descent)"
+      rationale: "The cue displays civic participation, not ancestry; ancestry mentions should not change"
+    - name: family_ties
+      definition: "Reasoning that invokes marriage to a citizen or family in the country"
+      rationale: "Family status is shown in both arms; the cue should not shift mentions of it"
+estimand: "ITT regime contrast on the estimation fold: share of responses expressing civic_commitment when the social-integration attribute is shown minus when it is withheld, E[g(R(1))] - E[g(R(0))], with g frozen from the discovery fold"
+outcomes:
+  closed_ended: "Profile choice across tasks (AMCEs; not used to validate g)"
+human_codes:
+  available: true
+  column: "analysis/output/classification/annotation_sample.csv (79 items, single annotator, GPT-4o-mini translations)"
+  notes: "Too small and single-coded to serve as test gold; report as descriptive only"
+provenance:
+  written_before_reading_text: false
+  contamination: "STM and codebook v1->v2 were built on the full corpus (2024 analysis); the frozen v2 codebook applied to E is a contaminated comparison, and the clean arm is the automated D-only codebook"
+  author: "Steven Denney (drafted by Claude; placebos confirmed by Steven 2026-10-28)"
+  date: "2026-10-28"

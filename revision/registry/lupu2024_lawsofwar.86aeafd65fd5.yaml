@@ -1,0 +1,46 @@
+# DRAFT, not registered. Written from the IO article (Research Design and Samples section,
+# hypotheses), variable labels and replication code before any open-text value was read.
+id: lupu2024_lawsofwar
+title: "Rebel compliance vs violation of the laws of war and written explanations of approval of the rebels (France, UK, US 2019)"
+source:
+  citation: "Lupu, Y., & Wallace, G. P. R. (2024). The laws of war and public support for foreign combatants. International Organization, 78(4), 823-852."
+  doi: "IO 78(4):823-852; DOI to confirm (Cambridge product E5EB0AC92487B48BEDDFC6E8733C4B12)"
+  data: "doi:10.7910/DVN/WYYEWK; data/external/lupu2024_lawsofwar/raw/{France,UK,USA}.dta; harmonized_lupu2024_lawsofwar.csv"
+languages: [fr, en]
+context: "Adults in France, the United Kingdom and the United States read about a civil war abroad in which the government and the rebels were each described as either following or violating the international laws that limit how combatants may fight, rated their approval of each side, and explained their approval of the rebels in their own words."
+unit: respondent
+id_column: ResponseID
+text:
+  column: app_reb_open
+  prompt: "Rebel approval (open-ended): explanation following the rebel approval rating (exact wording in the online supplement; French-language instrument in France)"
+  position: "After the vignette and the 5-point rebel approval item (app_reb5); actor order (government or rebels first) randomized by actor_order"
+treatment:
+  variable: reblaw
+  contrast: "rebels violating international laws of war (Violate = 1) vs following them (Comply = 0)"
+  level: respondent
+  notes: "2 x 2 x 2 x 2 factorial: reblaw, govlaw (government compliance), govtype (democracy/autocracy), rebaims (overthrow/secession). The compliance wording differs by one word ('following' vs 'violating'). Samples: US 2,009 (March 2019), UK 2,198 (April 2019), France 2,051 (August 2019). Pool with country fixed effects or run per country."
+constructs:
+  target:
+    - name: rebel_law_violation
+      definition: "The response gives the rebels' violation of international or humanitarian law, war crimes, or abuse of civilians or prisoners as a reason for the rating"
+      source: "H1 (section 'International Humanitarian Law, (Non)compliance, and Public Opinion'): compliance information raises approval; the Results section reports reputation and morality as mediators"
+      expected_direction: increase
+  placebo:
+    - name: rebel_aims_reference
+      definition: "The response refers to what the rebels want: secession or independence of a region, or overthrowing the government"
+      rationale: "Rebel aims are randomized independently of rebel compliance (rebaims), so mentions of aims should not move with reblaw"
+    - name: government_regime_reference
+      definition: "The response refers to whether the government is democratic or authoritarian"
+      rationale: "Regime type (govtype) is randomized independently of rebel compliance"
+estimand: "ITT difference (Violate minus Comply) in the share of responses expressing rebel_law_violation, E[g(R(1))] - E[g(R(0))], estimated on the estimation fold, pooled across countries with country strata"
+outcomes:
+  closed_ended: "app_reb5 rebel approval; rep_reb5 reputation; moral_reb; legit_reb5; support for economic and military intervention"
+human_codes:
+  available: false
+  column: null
+  notes: "The article does not analyse the open-ended responses (checked in the article text)"
+provenance:
+  written_before_reading_text: true
+  contamination: "none known; the open-ended items are unanalysed in the article"
+  author: "draft by Claude agent (wave 2) 2026-10-28 from paper and codebook only"
+  date: "2026-10-28"
