@@ -1,0 +1,71 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1005
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector, or specific association with North Korea as a ground for
+      prioritizing or excluding them.
+    clarification: Includes explicit mentions of "North Korea" (북한), "defectors" (탈북민),
+      "North Korean migrants", or expressions of preference/dislike specifically tied
+      to North Korean identity (e.g., "North Korea is rejected", "North Korean people
+      are unfamiliar", "Not North Korea").
+    negative_clarification: Exclude general references to "Korean" (한국인, 대한민국 국민)
+      which refer to South Korean citizenship or general ethnicity without specific
+      North Korean distinction. Use `citizenship_origin` for general South Korean
+      identity. Use `criminal_record` if the reason is purely about crime without
+      NK reference.
+  citizenship_origin:
+    definition: Reasoning that invokes the candidate's South Korean citizenship, nationality,
+      or general Korean ethnicity as a ground for prioritizing them.
+    clarification: Includes mentions of "Korean citizen" (한국인, 대한민국 국민), "same country"
+      (같은 나라), "nationality" (국적), "Korean ethnicity" (한민족), or assumptions about
+      cultural/linguistic fit based on being South Korean.
+    negative_clarification: Exclude specific references to North Korea (use `nk_origin_reasoning`).
+      Exclude general "Korean" references that are not tied to citizenship/nationality
+      but rather vague identity. Exclude age/gender/family reasons.
+  criminal_record:
+    definition: Reasoning that invokes the candidate's criminal history (or lack thereof)
+      as the primary ground for selection.
+    clarification: Includes mentions of "no criminal record" (전과기록 없음, 무전과), "theft"
+      (절도), "tax evasion" (탈세), "crime" (범죄), or judgments about moral character based
+      on legal history.
+    negative_clarification: Exclude reasons based on age, family status, or nationality.
+      If a response mentions both criminal record and age, code the primary driver;
+      if equally weighted, prefer `criminal_record` if it's the explicit differentiator
+      mentioned.
+  age_factor:
+    definition: Reasoning that invokes the candidate's age (youth or old age) as a
+      ground for prioritizing or excluding them.
+    clarification: Includes mentions of "young" (젊다, 어리다), "old" (나이 많음, 고령), "age"
+      (나이), or assumptions about energy, longevity, or experience based on age.
+    negative_clarification: Exclude reasons based on criminal record, family status,
+      or nationality.
+  family_status:
+    definition: Reasoning that invokes the candidate's marital status, number of children,
+      or family responsibilities as a ground for prioritizing them.
+    clarification: Includes mentions of "children" (자녀), "married" (기혼), "single mother"
+      (미혼모), "dependents" (부양가족), or the need to support a family.
+    negative_clarification: Exclude reasons based on age, criminal record, or nationality.
+  job_qualifications:
+    definition: Reasoning that invokes the candidate's professional background, job
+      stability, or specific work experience as a ground for prioritizing them.
+    clarification: Includes mentions of "job title" (직업, 경비원, 백화점 직원), "experience"
+      (경력), "stability" (안정적), "manager" (매니저), or competence related to work.
+    negative_clarification: Exclude reasons based on age, family, criminal record,
+      or nationality.
+  none_of_above:
+    definition: Responses that are uninformative, nonsensical, purely emotional without
+      specific reasoning, or do not fit into the specific categories above.
+    clarification: Includes "just" (그냥), "I don't know" (모름), random characters, single
+      words like "good" or "yes", vague preferences like "looks good" (좋아보임) without
+      specific attribute, or reasons that are too abstract to code (e.g., "he is comfortable").
+    negative_clarification: Exclude any response that clearly cites age, criminal
+      record, nationality, family, or job qualifications.
+

@@ -1,0 +1,42 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 2
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 4
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly cites economic, fiscal, or practical operational considerations, such as cost-effectiveness, job creation, business growth, financial efficiency, market mechanisms, or specific material benefits. It must refer to the economic mechanics or outcomes of the policy.
+    clarification: |
+      Includes mentions of subsidies, grants, tax implications, business viability, employment, or financial support structures. Also includes references to business support mechanisms (e.g., consulting, advisory services, loans, screening for viability) and the involvement of large corporations or business associations as indicators of economic utility or market validation.
+    negative_clarification: |
+      Does NOT include vague statements like "good for Korea" or "helpful" unless they are explicitly tied to economic metrics. Does NOT include political endorsements or general moral sentiments. Does NOT include mere mentions of "policy objectives" or "policy tools" without economic context.
+  normative_rationale:
+    definition: |
+      The reason cites moral, ethical, identity-based, or political grounds. This includes appeals to fairness, solidarity, national unity, patriotism, human rights, or alignment with specific political groups/ideologies.
+    clarification: |
+      Includes "good for Korea" (patriotic solidarity), support from human rights groups or political parties (political/identity alignment), and general moral obligations to North Korean defectors. Also includes references to civic groups or NGOs if framed as moral/social support.
+    negative_clarification: |
+      Does NOT include purely economic calculations (e.g., "it saves money"). Does NOT include vague preferences without a stated value basis. Does NOT include references to business viability or corporate support unless framed as a moral endorsement of the entity.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither clearly economic nor normative. This includes vague preferences, procedural justifications, references to external validation (e.g., "president supports it") that do not fit the strict normative or economic definitions, or general positive sentiment without specific economic or moral reasoning.
+    clarification: |
+      Includes "I like it," "It's better," "Support target" (if not justified by economics/morals), political party support (as a heuristic), and general positive sentiment without specific economic or moral reasoning. Also includes responses that express uncertainty or lack of knowledge ("I don't know") if they are treated as a substantive stance in the survey context, or vague procedural comments.
+    negative_clarification: |
+      Does NOT include empty responses ("no reason", "don't know") if they are interpreted as substantive non-preference in the specific survey coding scheme (see uninformative for truly empty/nonsensical). Does NOT include clear economic or normative arguments.
+  uninformative:
+    definition: |
+      No substantive reason is provided. The response is empty, indicates uncertainty ("don't know"), states no preference/reason, or is completely off-topic or nonsensical in the context of the question.
+    clarification: |
+      Includes "No reason," "I don't know," "None," and text that does not address the preference rationale at all. Also includes single words or phrases that are purely descriptive of the policy type without offering a reason for preference (e.g., "a policy objective," "policy tool," "just," "scope of support") unless they imply a specific economic or normative judgment.
+    negative_clarification: Does NOT include vague preferences ("I like it") or political/moral
+      statements, as these are substantive reasons (classified as other or normative).
+      Does NOT include incomplete sentences that imply a reason. Does NOT include
+      references to business support or corporate involvement, which are substantive
+      economic rationales.
+

@@ -1,0 +1,65 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1009
+codes:
+  national_security_threat:
+    definition: Responses that cite national security, the threat from North Korea,
+      espionage, or the need to defend the state as the primary reason for their position.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korean threat' (북한 위협), 'espionage' (간첩), 'defense of the state'
+      (국가방위), and 'unified Korea stability' (통일시 혼란 방지).
+    negative_clarification: Do not use for responses that only mention 'democracy'
+      or 'liberalism' without explicit reference to security threats or state defense.
+      Use 'democratic_values' instead.
+  democratic_values:
+    definition: Responses that prioritize the protection of liberal democracy, human
+      rights, or civil liberties over national security concerns.
+    clarification: Includes mentions of 'protecting liberal democracy' (자유민주주의 보호),
+      'democracy' (민주주의), 'civil liberties' (시민권), and arguments that the law infringes
+      on freedom of speech or democratic principles.
+    negative_clarification: Do not use for responses that cite security threats. Use
+      'national_security_threat' instead. Do not use for vague political preferences.
+      Use 'none_of_above' if no substantive policy reason is given.
+  policy_scope_modification:
+    definition: Responses that focus specifically on the scope, range, or specific
+      provisions of the National Security Act, advocating for expansion, restriction,
+      or amendment rather than outright abolition or maintenance.
+    clarification: Includes calls to 'limit the scope' (범위 제한), 'expand the scope'
+      (범위 확대), 'amend specific clauses' (독소조항 수정), or 'clarify legal definitions'.
+    negative_clarification: Do not use if the reason is purely based on security threats
+      or democratic values without mentioning the legal scope. Use 'national_security_threat'
+      or 'democratic_values' respectively.
+  partisan_affiliation:
+    definition: Responses that indicate the choice was driven by support for or opposition
+      to a specific political party (e.g., Democratic Party, People Power Party) rather
+      than the policy content itself.
+    clarification: Includes explicit mentions of party names (더불어민주당, 국민의힘), 'party
+      support' (당 지지), 'party stance' (입장 지지자), or general partisan bias.
+    negative_clarification: Do not use if the respondent mentions policy reasons alongside
+      party support. Prioritize 'national_security_threat' or 'democratic_values'
+      if substantive reasons are present. Use 'none_of_above' if the answer is purely
+      non-substantive.
+  status_quo_maintenance:
+    definition: Responses that advocate for maintaining the current law or status
+      quo, often citing stability, lack of better alternatives, or the current situation
+      as justification.
+    clarification: Includes 'maintain current law' (현행 유지), 'no change' (변경 없음), 'status
+      quo' (현상 유지), or 'not the right time to abolish' (폐지하기엔 이르다).
+    negative_clarification: Do not use if the maintenance is explicitly justified
+      by security threats. Use 'national_security_threat' instead. Do not use if it's
+      just a lack of opinion. Use 'none_of_above'.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, random, or do not
+      fit into the substantive policy categories.
+    clarification: Includes 'no reason' (이유 없음), 'just liked it' (좋아보여서), 'don't know'
+      (모름), random characters, or purely emotional/vague statements without policy
+      content.
+    negative_clarification: Do not use for substantive policy reasons. If a response
+      contains security or democratic arguments, code them accordingly.
+

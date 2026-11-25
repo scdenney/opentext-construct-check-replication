@@ -1,0 +1,58 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1009
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly cites helping North Koreans who face discrimination,
+      prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of 'discrimination' (차별), 'prejudice' (편견), 'human
+      rights' (인권) in the context of helping North Koreans, or helping those facing
+      unequal treatment.
+    negative_clarification: Exclude general economic support, employment aid, or business
+      growth reasons that do not reference discrimination or prejudice. Use 'economic_benefit'
+      or 'policy_mechanism' instead.
+  political_support:
+    definition: Reasoning based on the support of a specific political party, leader,
+      or political ideology.
+    clarification: Includes mentions of supporting the President (대통령), specific parties
+      (Democratic Party, People Power Party, etc.), or political alignment.
+    negative_clarification: Exclude support based on policy content, economic logic,
+      or social welfare. Use 'policy_mechanism' or 'economic_benefit' instead.
+  economic_benefit:
+    definition: Reasoning based on the perceived economic advantages for South Korea,
+      local businesses, or the general public.
+    clarification: Includes mentions of 'good for Korea' (한국에게 좋은 일), 'national interest'
+      (국익), 'local business improvement' (지역 비즈니스 상황 향상), or 'profitability' (수익성)
+      as a primary driver.
+    negative_clarification: Exclude reasons focused on the direct aid to North Koreans'
+      livelihoods or business survival. Use 'direct_aid' instead.
+  policy_mechanism:
+    definition: Reasoning based on the specific design, funding source, or implementation
+      method of the policy.
+    clarification: Includes preferences for specific tools like 'low-interest loans'
+      (저금리대출), 'tax deductions' (세액공제), 'corporate tax increases' (법인세 인상), 'employment
+      support' (고용지원), or 'R&D support' (연구개발 지원).
+    negative_clarification: Exclude reasons based on who supports the policy politically
+      or the general economic outcome. Use 'political_support' or 'economic_benefit'
+      instead.
+  direct_aid:
+    definition: Reasoning based on the belief that the policy directly helps North
+      Koreans with their livelihood, business survival, or integration.
+    clarification: Includes mentions of helping North Koreans survive, start businesses,
+      or integrate, without referencing discrimination.
+    negative_clarification: Exclude reasons citing discrimination (use 'anti_discrimination_help')
+      or reasons citing general economic benefit to Korea (use 'economic_benefit').
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes 'I don't know' (모름), 'no reason' (이유 없음), 'just felt like
+      it' (맘에 든다/느낌), random characters, or expressions of dissatisfaction without
+      specific reasoning.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to politics, economics, policy design, or social aid.
+

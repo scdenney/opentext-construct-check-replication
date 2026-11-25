@@ -1,0 +1,76 @@
+codebook:
+  name: dill2022_kettlesofhawks_induced
+  residual_code: none_of_above
+  context: Adults in the United States, the United Kingdom and France read a mock
+    news story in which their country's leaders choose between a conventional and
+    a nuclear cruise-missile strike to destroy a terrorist chemical-weapons facility
+    in a Libyan town before a planned attack on their capital, with the strikes' chances
+    of success and the Libyan civilian deaths described differently for different
+    respondents; they chose which strike they preferred and then described in their
+    own words the single most important reason for preferring it.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:dill2022_kettlesofhawks:1001
+codes:
+  civilian_casualties:
+    definition: The response cites the number of Libyan (foreign) civilians killed,
+      or the difference in civilian deaths between the two strike options, as the
+      primary reason for preference. This includes explicit mentions of minimizing,
+      avoiding, or comparing the death toll of non-combatants.
+    clarification: Includes references to specific numbers of civilian deaths, comparisons
+      of civilian death tolls (e.g., "less civilians killed," "100,000 vs 2700"),
+      and the moral imperative to save innocent lives or minimize harm to non-combatants.
+    negative_clarification: Exclude responses that focus on military casualties, terrorist
+      deaths, or general "collateral damage" without specifying civilians. If the
+      response focuses on the risk of retaliation against one's own country's citizens
+      rather than the immediate death toll in Libya, code as geopolitical_risk.
+  effectiveness_success:
+    definition: The response cites the higher probability of successfully destroying
+      the chemical weapons facility or eliminating the terrorist threat as the primary
+      reason for preference.
+    clarification: Includes mentions of success rates, effectiveness, certainty of
+      destroying the target, preventing future attacks, or the tactical superiority
+      of the chosen option in achieving the military objective.
+    negative_clarification: Exclude responses that mention success only as a secondary
+      factor to civilian casualties or environmental concerns. If the response argues
+      that the conventional strike is better *because* it has a similar success rate
+      but fewer casualties, code as civilian_casualties.
+  environmental_radiation:
+    definition: The response cites the long-term environmental damage, radioactive
+      fallout, or contamination of the area as the primary reason for preference.
+    clarification: Includes references to radiation, "salted earth," long-term health
+      effects on survivors, ecological damage, or the uninhabitability of the region
+      after a nuclear strike.
+    negative_clarification: Exclude responses that focus on immediate civilian deaths
+      (code as civilian_casualties) or general moral objections to nuclear weapons
+      without specific reference to environmental/radiological consequences.
+  geopolitical_risk:
+    definition: The response cites the risk of international escalation, nuclear arms
+      race, retaliation by other nations, or setting a dangerous political precedent
+      as the primary reason for preference.
+    clarification: Includes fears of starting a nuclear war, other countries using
+      nuclear weapons in response, violating international norms/treaties, or the
+      political implications of being the first to use nuclear weapons.
+    negative_clarification: Exclude responses focused on immediate tactical success
+      or direct civilian death tolls. If the response mentions retaliation but focuses
+      on the *deaths* caused by that retaliation rather than the political/military
+      escalation, code as civilian_casualties.
+  moral_anti_nuclear:
+    definition: The response cites a general moral, ethical, or ideological opposition
+      to the use of nuclear weapons as the primary reason for preference, independent
+      of specific consequences.
+    clarification: Includes statements that nuclear weapons are inherently evil, taboo,
+      immoral, or should never be used under any circumstances, often referencing
+      historical events like Hiroshima/Nagasaki as moral warnings.
+    negative_clarification: Exclude responses that provide specific consequentialist
+      reasons (e.g., "it kills too many people" -> civilian_casualties; "it causes
+      radiation" -> environmental_radiation). If the moral objection is tied to a
+      specific outcome, use the outcome code.
+  none_of_above:
+    definition: The response is uninformative, expresses indifference, or cites reasons
+      not covered by the other codes.
+    clarification: Includes responses such as "I don't know," "no middle option,"
+      "forced to choose," "both are bad," "random choice," or vague statements like
+      "it seems better" without elaboration.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to casualties, success, environment, geopolitics, or morality.
+

@@ -1,0 +1,78 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1001
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's past or present
+      membership in the Workers' Party of Korea (WPK), other North Korean political
+      organizations, or ideological ties to the North Korean regime.
+    clarification: Includes mentions of 'Workers' Party' (노동당), 'North Korean regime'
+      (북한 정권), 'ideology' (이념), or being a 'defector from the North' (탈북민) specifically
+      in the context of political background or regime affiliation.
+    negative_clarification: Exclude mentions of general North Korean origin without
+      specific political/regime context (code as north_korean_origin if applicable,
+      or other_demographic). Exclude general negative sentiments about North Korea
+      not tied to a specific profile attribute (code as none_of_above).
+  north_korean_origin:
+    definition: Reasoning that references the profile's background as a North Korean
+      defector or their origin from North Korea, without specific reference to political
+      party membership or regime ideology.
+    clarification: Includes mentions of 'defector' (탈북민), 'North Korean' (북한), 'North
+      Korean background' (북한 출신), or 'escape from North' (북한 이탈).
+    negative_clarification: Exclude if the response specifically mentions Workers'
+      Party membership or regime ties (code as north_korea_regime_ties). Exclude if
+      it refers to Chinese origin or general migration without specifying North Korean
+      origin (code as other_demographic).
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea, implying better adaptation, familiarity, or lower risk.
+    clarification: Includes mentions of 'residence period' (체류기간), 'living in Korea'
+      (한국 거주), 'years in Korea' (한국에 온 지 X년), 'adaptation period' (적응 기간), or 'long/short
+      stay' (길다/짧다).
+    negative_clarification: Exclude if the reasoning is primarily about age, gender,
+      or profession without mentioning duration of stay (code as other_demographic
+      or occupation). Exclude if it mentions Chinese residence duration without Korean
+      duration (code as other_demographic).
+  occupation_profession:
+    definition: Reasoning based on the profile's job, profession, or economic stability.
+    clarification: Includes mentions of 'doctor' (의사), 'programmer' (프로그래머), 'office
+      worker' (사무직), 'stable job' (안정된 직장), 'unemployed' (무직), or specific professional
+      skills.
+    negative_clarification: Exclude if the reasoning is about the person's character
+      or social skills rather than their job (code as other_demographic). Exclude
+      if it mentions occupation only as a secondary factor to residence duration (code
+      as korea_residence_duration if residence is the primary driver, or create a
+      combined code if necessary, but here prioritize the most distinct attribute;
+      if mixed, usually occupation is distinct enough).
+  demographic_characteristics:
+    definition: Reasoning based on age, gender, marital status, or family structure.
+    clarification: Includes mentions of 'age' (나이), 'young/old' (젊다/늙다), 'gender'
+      (남성/여성), 'married' (결혼), 'children' (자녀), 'family' (가족), or 'same gender' (동성).
+    negative_clarification: Exclude if the reasoning is about political ties (code
+      as north_korea_regime_ties) or residence duration (code as korea_residence_duration).
+      Exclude if it is vague (code as none_of_above).
+  interpersonal_adaptation:
+    definition: Reasoning based on the perceived ability to socialize, make friends,
+      or integrate socially with Koreans.
+    clarification: Includes mentions of 'Korean friends' (한국 친구), 'colleagues' (동료),
+      'social skills' (사회성), 'easy to get along' (친근/친해지기 쉬움), 'communication' (소통),
+      or 'human relations' (인간관계).
+    negative_clarification: Exclude if the reasoning is about professional competence
+      (code as occupation_profession) or political background (code as north_korea_regime_ties).
+      Exclude if it is a general preference without specific social mechanism (code
+      as none_of_above).
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not provide
+      a clear rationale based on the profile's attributes.
+    clarification: Includes 'no reason' (이유없음), 'just because' (그냥), 'good feeling'
+      (호감/마음에 들어서), 'better than the other' (B가 더 낫다), 'no answer' (없음), punctuation
+      only, or random characters.
+    negative_clarification: Exclude any response that mentions specific attributes
+      like age, job, residence, political ties, or social factors (code accordingly).
+

@@ -1,0 +1,76 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1010
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly or implicitly invokes helping North Korean
+      migrants (defectors) who face discrimination, prejudice, or unequal treatment
+      in South Korea, often linking support to their integration, rights, or overcoming
+      social barriers.
+    clarification: Includes mentions of helping North Koreans who are discriminated
+      against, supporting their rights, helping them overcome prejudice, or aiding
+      them specifically because they are vulnerable to unequal treatment. Also includes
+      references to human rights organizations supporting the policy as a proxy for
+      this concern.
+    negative_clarification: Exclude general economic support for North Koreans that
+      does not reference discrimination or inequality (code as `economic_benefit`
+      or `target_group`). Exclude general anti-discrimination sentiments not specific
+      to North Koreans.
+  economic_benefit_korea:
+    definition: Reasoning that the policy is chosen because it provides economic benefits,
+      growth, or positive impact to South Korea, its economy, or South Korean businesses.
+    clarification: Includes phrases like "good for Korea," "benefits the local economy,"
+      "helps Korean businesses," "promotes regional business," or "creates jobs for
+      Koreans."
+    negative_clarification: Exclude reasons focused solely on the benefit to North
+      Koreans without mentioning Korean economic gain (code as `target_group` or `anti_discrimination_help`).
+      Exclude general political preferences.
+  target_group_preference:
+    definition: Reasoning based on the specific eligibility criteria or target group
+      of the policy, such as supporting North Korean-owned businesses, startups, or
+      specific sectors, independent of broader economic or discriminatory contexts.
+    clarification: Includes preferences for supporting "North Korean operated businesses,"
+      "startups," "small and medium enterprises," or specific subsets of the target
+      population. Focuses on *who* gets the help rather than *why* (economic or social
+      justice).
+    negative_clarification: Exclude if the reason is explicitly about overcoming discrimination
+      (code as `anti_discrimination_help`) or if it's about general economic gain
+      for Korea (code as `economic_benefit_korea`).
+  fiscal_finance_method:
+    definition: Reasoning based on the method of funding or financial structure of
+      the policy, such as tax increases, budget deficits, loans, or grants.
+    clarification: Includes preferences for "corporate tax increases," "income tax,"
+      "no deficit spending," "low-interest loans," "grants," or "tax credits." Focuses
+      on the fiscal mechanism rather than the social outcome.
+    negative_clarification: Exclude if the fiscal reason is secondary to a social
+      goal. Exclude general "good for economy" reasons.
+  political_party_alignment:
+    definition: Reasoning based on the political party, leader, or organization that
+      supports or opposes the policy.
+    clarification: Includes mentions of supporting the "President," "Democratic Party,"
+      "People Power Party," "large corporations," "labor unions," or "citizen groups"
+      because they endorse the policy.
+    negative_clarification: Exclude if the support is based on the policy's content
+      rather than the supporter's identity.
+  general_preference_ineffable:
+    definition: Responses that indicate a choice was made based on a general feeling,
+      intuition, or a comparative judgment that one option is "slightly better" without
+      providing a substantive reason.
+    clarification: Includes phrases like "just feels better," "slightly better," "no
+      particular reason," "gut feeling," or "both are bad but this one is less bad."
+    negative_clarification: Exclude if a specific reason (economic, fiscal, political)
+      is provided.
+  none_of_above:
+    definition: Uninformative responses, non-answers, or responses that do not fit
+      into any of the defined categories.
+    clarification: Includes "no reason," "don't know," "random," gibberish, or responses
+      that are purely negative without constructive reasoning.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if weak.
+

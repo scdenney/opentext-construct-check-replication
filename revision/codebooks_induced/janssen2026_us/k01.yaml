@@ -1,0 +1,69 @@
+codebook:
+  name: janssen2026_us_induced
+  residual_code: none_of_above
+  context: US adults on Prolific (2025) read about a political situation involving
+    their preferred party and another party (versions differed), then chose what they
+    would like their party's politicians to do about protests, voting rules or press
+    access. They were asked to briefly explain their choice.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:janssen2026_us:1001
+codes:
+  fairness_reciprocity:
+    definition: The explanation endorses responding in kind to restore fairness or
+      balance, explicitly citing the other party's prior action as justification for
+      a mirrored response.
+    clarification: Includes references to 'leveling the playing field', 'they did
+      it first', 'tit-for-tat', 'equal footing', or the belief that the only way to
+      counteract the opponent's move is to replicate it.
+    negative_clarification: Exclude responses that reject retaliation on principle
+      (e.g., 'two wrongs don't make a right') or those that advocate for universal
+      rights regardless of the opponent's actions. Use 'principled_democracy' or 'rights_based'
+      instead.
+  rights_based:
+    definition: The explanation appeals to universal legal, constitutional, or democratic
+      rights (such as free speech, press access, or voting) that should apply to all
+      parties regardless of the specific political context.
+    clarification: Includes citations of the First Amendment, 'free speech', 'free
+      press', 'right to vote', 'constitutional rights', or the idea that these rights
+      are inherent and non-negotiable for everyone.
+    negative_clarification: Exclude responses that condition these rights on the behavior
+      of the other party or use rights arguments primarily to justify a reciprocal
+      restriction. Use 'fairness_reciprocity' if the rights argument is tied to 'they
+      did it first'.
+  anti_retaliation:
+    definition: The explanation explicitly rejects responding in kind, arguing that
+      retaliation is counterproductive, undemocratic, or morally wrong, often advocating
+      for a 'high road' approach.
+    clarification: Includes phrases like 'two wrongs don't make a right', 'don't sink
+      to their level', 'be the bigger politician', 'hypocritical', or 'counterproductive'.
+    negative_clarification: Exclude responses that support retaliation. Use 'fairness_reciprocity'
+      for those. Exclude responses that simply state a right exists without addressing
+      the retaliatory aspect; use 'rights_based' instead.
+  partisan_advantage:
+    definition: The explanation is driven by a desire to gain a strategic electoral
+      advantage or protect the respondent's preferred party from perceived unfair
+      disadvantages, without necessarily invoking a principle of reciprocity or universal
+      rights.
+    clarification: Includes arguments about 'stealing elections', 'rigging the system',
+      'protecting our voters', 'countering their bias', or ensuring the preferred
+      party can win.
+    negative_clarification: Exclude responses that frame the advantage as a matter
+      of fairness or balance (use 'fairness_reciprocity') or those that frame it as
+      a violation of universal rights (use 'rights_based').
+  procedural_neutrality:
+    definition: The explanation argues for consistent, neutral rules or processes
+      that apply equally to all parties, focusing on the integrity of the system rather
+      than the specific actions of the opponent.
+    clarification: Includes calls for 'consistent laws', 'no targeting of one party',
+      'fair rules for everyone', or 'impartiality'.
+    negative_clarification: Exclude responses that justify consistency because the
+      other party did something first (use 'fairness_reciprocity') or those that appeal
+      to absolute rights (use 'rights_based').
+  none_of_above:
+    definition: The response is uninformative, expresses uncertainty, or does not
+      provide a substantive reason for the choice.
+    clarification: Includes 'I don't know', 'undecided', 'no strong opinion', 'depends',
+      or vague statements that do not clarify the reasoning.
+    negative_clarification: Exclude any response that offers a clear reason, even
+      if it is weak. Use the most appropriate substantive code instead.
+

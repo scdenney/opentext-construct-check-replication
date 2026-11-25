@@ -1,0 +1,73 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1004
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, occupational skill, professional stability, or work capacity as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      office worker), employment status (employed vs. unemployed), job stability,
+      professional expertise, or the perceived utility of the job for the role.
+    negative_clarification: Do not use for general life stability derived from marriage
+      or age, or for cultural adaptation. If the response mentions "experience" or
+      "age" without linking it to work history or professional skill, use the respective
+      codes.
+  age_maturity:
+    definition: Reasoning based on the profile's age, implying that a certain age
+      is necessary for maturity, experience, wisdom, or legal eligibility to hold
+      office.
+    clarification: Includes references to being "young," "old," "appropriate age,"
+      "maturity," "life experience" (in a general sense), or legal age requirements
+      (e.g., rejecting an 18-year-old).
+    negative_clarification: Do not use if the age is mentioned solely as a demographic
+      trait without implying maturity or capability. If age is linked to work experience,
+      use employment_occupation.
+  residence_adaptation:
+    definition: Reasoning that cites the length of residence in South Korea or the
+      presence of Korean social networks as indicators of cultural adaptation, trustworthiness,
+      or understanding of local conditions.
+    clarification: Includes mentions of "length of stay," "years in Korea," "Korean
+      colleagues/friends," "cultural understanding," "assimilation," or "knowing the
+      local situation."
+    negative_clarification: Do not use for general trust based on personality or vague
+      feelings. If the residence is cited specifically to prove work capability or
+      professional integration, consider employment_occupation, but usually, this
+      code captures the socio-cultural integration aspect.
+  political_background:
+    definition: Reasoning that references the profile's political affiliation, specifically
+      membership or non-membership in the Workers' Party of Korea (WPK) or other political
+      histories.
+    clarification: Includes mentions of "WPK member," "former WPK member," "political
+      ideology," "North Korean regime connection," or lack thereof.
+    negative_clarification: Do not use for general political views unrelated to North
+      Korean affiliation.
+  demographic_preference:
+    definition: Reasoning based on gender, marital status, or family status (children)
+      as a primary factor for selection, often linked to social roles or stereotypes.
+    clarification: Includes preferences for male/female, married/unmarried, or having/no
+      children. May include stereotypes about women's empathy or men's leadership.
+    negative_clarification: Do not use if these traits are mentioned only as secondary
+      descriptors alongside employment or residence. If the choice is driven by the
+      belief that these traits make the person a better worker/leader, use employment_occupation
+      or age_maturity.
+  general_fit_trust:
+    definition: Reasoning based on vague feelings of trust, likability, "good vibe,"
+      or general suitability without specific reference to the constructs above.
+    clarification: Includes phrases like "I felt it," "trust," "good feeling," "suitable,"
+      "no particular reason but this one," or "just liked it."
+    negative_clarification: Do not use if a specific attribute (job, age, residence)
+      is clearly identified as the cause.
+  none_of_above:
+    definition: Uninformative responses, refusals to answer, or comments unrelated
+      to the profile's attributes.
+    clarification: Includes "no reason," "both are bad," "I don't know," "random,"
+      "irrelevant comments," or incomplete sentences.
+    negative_clarification: Do not use if any of the other codes can be applied.
+

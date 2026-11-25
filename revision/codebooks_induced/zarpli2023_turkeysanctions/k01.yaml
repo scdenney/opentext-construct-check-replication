@@ -1,0 +1,71 @@
+codebook:
+  name: zarpli2023_turkeysanctions_induced
+  residual_code: none_of_above
+  context: Adults in Turkey recruited through Facebook ads (March 2021) read a short
+    text about the economic sanctions the United States imposed on Turkey in December
+    2020 over its purchase of Russian S-400 missiles (versions of the text differed
+    in what they said about the US's goals and the economic consequences), said how
+    far they approve of changing the government's S-400 policy, and were asked to
+    explain in one or two sentences why they answered that way.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:zarpli2023_turkeysanctions:1001
+codes:
+  sender_ulterior_motives:
+    definition: The response attributes the US sanctions to hidden agendas, bad faith,
+      or ulterior motives rather than stated security concerns.
+    clarification: Includes claims that the US aims to weaken Turkey's defense industry
+      or independence, uses the S-400 as a pretext for broader hostility, is untrustworthy
+      or hypocritical (e.g., double standards regarding other nations), or would not
+      lift sanctions even if policy changed.
+    negative_clarification: Do not use for responses that simply state the US is a
+      bad actor without linking it to the specific motive of the sanctions (e.g.,
+      general anti-Americanism). Use 'sovereignty' if the focus is on the right to
+      choose rather than the US's hidden intent.
+  sovereignty_independence:
+    definition: The response argues that Turkey has the right to make independent
+      foreign and defense policy decisions without external interference.
+    clarification: Includes statements that Turkey is a sovereign, independent state;
+      that internal affairs or defense choices are not subject to foreign dictation;
+      and that Turkey should not be a "colony" or subordinate to any power.
+    negative_clarification: Do not use if the response focuses on the US's specific
+      malicious intent (use 'sender_ulterior_motives') or if it focuses on NATO rules
+      (use 'nato_compliance').
+  nato_compliance:
+    definition: The response argues that the S-400 purchase violates Turkey's obligations
+      as a NATO member or undermines alliance cohesion.
+    clarification: Includes claims that NATO members should not buy Russian weapons,
+      that interoperability is compromised, or that Turkey should align its defense
+      strategy with NATO standards and allies.
+    negative_clarification: Do not use for general pro-NATO sentiment that doesn't
+      specifically cite the incompatibility of the S-400 with NATO rules. Use 'sovereignty'
+      if the respondent argues Turkey should leave NATO or ignore its rules.
+  domestic_policy_critique:
+    definition: The response criticizes the Turkish government's handling of the situation,
+      the decision-making process, or the economic impact on citizens.
+    clarification: Includes complaints about the cost of the missiles, lack of transparency,
+      poor strategic planning, economic sanctions hurting the poor, or general dissatisfaction
+      with the current administration's competence or integrity.
+    negative_clarification: Do not use for critiques of US motives (use 'sender_ulterior_motives')
+      or arguments for national sovereignty (use 'sovereignty_independence').
+  anti_militarism:
+    definition: The response expresses opposition to weapons acquisition, military
+      buildup, or war in general.
+    clarification: Includes statements that money should be spent on social services
+      instead, that weapons do not bring peace, or that the respondent is against
+      militarism regardless of the specific system.
+    negative_clarification: Do not use if the opposition is based on strategic or
+      political reasons (e.g., NATO rules, sovereignty). Use 'domestic_policy_critique'
+      if the cost is criticized for economic mismanagement rather than moral opposition
+      to arms.
+  no_change_status_quo:
+    definition: The response argues that the government should not change its policy
+      because the decision has already been made or money has been paid.
+    clarification: Includes arguments that Turkey must stand by its decisions, that
+      reversing course would show weakness or damage prestige, or that the missiles
+      were purchased and must be used.
+    negative_clarification: Do not use if the argument is based on the US having bad
+      motives (use 'sender_ulterior_motives') or if it argues for changing policy
+      to align with NATO (use 'nato_compliance').
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

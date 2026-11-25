@@ -1,0 +1,72 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1010
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly invokes religion, Christianity, the church,
+      or faith as a primary or significant ground for the person being (more) German.
+    clarification: Includes mentions of being Christian, having a Christian faith,
+      religious affiliation, or the belief that religion is a decisive factor for
+      German identity.
+    negative_clarification: Exclude responses that mention religion only to deny its
+      relevance (e.g., "not religious", "religion plays no role"). Use `civic_criteria`
+      or `none_of_above` instead.
+  civic_criteria:
+    definition: Reasoning based on legal status, political loyalty, respect for laws/institutions,
+      or adherence to democratic norms.
+    clarification: Includes possession of German citizenship (Staatsbürgerschaft),
+      respect for German laws and political institutions, adherence to the legal system,
+      and democratic values.
+    negative_clarification: Exclude responses focusing solely on birth, ancestry,
+      or language without legal/political framing. Use `birth_criteria`, `ancestry_criteria`,
+      or `language_criteria` instead.
+  birth_criteria:
+    definition: Reasoning based on the person's place of birth or long-term residence
+      in Germany.
+    clarification: Includes being born in Germany, growing up in Germany, living in
+      Germany for a long time, or having lived in Germany for the majority of one's
+      life.
+    negative_clarification: Exclude responses focusing on citizenship, ancestry, or
+      language. Use `civic_criteria`, `ancestry_criteria`, or `language_criteria`
+      instead.
+  ancestry_criteria:
+    definition: Reasoning based on ethnic lineage, family background, or genetic heritage.
+    clarification: Includes having German ancestors (Vorfahren), German bloodline,
+      or ethnic German heritage.
+    negative_clarification: Exclude responses focusing on legal status, birth, or
+      culture. Use `civic_criteria`, `birth_criteria`, or `cultural_criteria` instead.
+  language_criteria:
+    definition: Reasoning based on the ability to speak German or linguistic integration.
+    clarification: Includes speaking German, knowing the language, or language proficiency
+      as a key indicator of being German.
+    negative_clarification: Exclude responses focusing on legal status, birth, or
+      ancestry. Use `civic_criteria`, `birth_criteria`, or `ancestry_criteria` instead.
+  cultural_criteria:
+    definition: Reasoning based on shared culture, traditions, history, or worldview.
+    clarification: Includes familiarity with German history and traditions, sharing
+      a German worldview (Weltanschauung), or cultural identification.
+    negative_clarification: Exclude responses focusing on legal status, birth, ancestry,
+      or language. Use `civic_criteria`, `birth_criteria`, `ancestry_criteria`, or
+      `language_criteria` instead.
+  subjective_identity:
+    definition: Reasoning based on the person's self-identification or the respondent's
+      personal feeling/intuition.
+    clarification: Includes the person feeling/identifying as German, the respondent's
+      gut feeling (Bauchgefühl), personal impression, or subjective preference.
+    negative_clarification: Exclude responses with specific objective criteria (law,
+      birth, etc.). Use `none_of_above` if the answer is purely non-informative noise.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses.
+    clarification: Includes "I don't know", "no opinion", random characters, insults,
+      expressions of dissatisfaction with the survey, or statements that both/none
+      are equal without reasoning.
+    negative_clarification: Exclude any response that provides a reason for the choice,
+      even if weak. Use specific codes above if a reason is identifiable.
+

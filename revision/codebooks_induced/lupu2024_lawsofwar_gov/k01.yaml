@@ -1,0 +1,65 @@
+codebook:
+  name: lupu2024_lawsofwar_gov_induced
+  residual_code: none_of_above
+  context: Adults in France, the United Kingdom and the United States read about a
+    civil war abroad in which the government and the rebels were each described as
+    either following or violating the international laws that limit how combatants
+    may fight, rated their approval of each side, and explained their approval of
+    the government in their own words.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:lupu2024_lawsofwar_gov:1001
+codes:
+  government_law_violation:
+    definition: The respondent cites the government's violation of international law,
+      humanitarian law, or the rules of war as a reason for their approval rating.
+    clarification: Includes explicit mentions of breaking international agreements,
+      violating war conventions, committing war crimes, or failing to adhere to established
+      rules of engagement.
+    negative_clarification: Do not use for general disapproval of war, moral objections
+      to violence, or criticism of government corruption unrelated to combat rules.
+      Use 'general_moral_objection' or 'government_corruption' instead.
+  government_law_compliance:
+    definition: The respondent cites the government's adherence to international law,
+      humanitarian law, or the rules of war as a reason for their approval rating.
+    clarification: Includes explicit mentions of following international agreements,
+      respecting war conventions, playing by the rules, or adhering to guidelines
+      of engagement.
+    negative_clarification: Do not use for general approval of the government's actions
+      without reference to legal compliance. Use 'general_support' or 'democratic_legitimacy'
+      instead.
+  general_moral_objection:
+    definition: The respondent expresses disapproval based on general moral objections
+      to war, violence, or killing, regardless of legal compliance.
+    clarification: Includes statements that war is wrong, violence is bad, people
+      are dying, or peace is preferable.
+    negative_clarification: Do not use if the objection is specifically tied to the
+      government breaking laws. Use 'government_law_violation' instead.
+  government_corruption:
+    definition: The respondent cites corruption, self-interest, or lack of democratic
+      legitimacy as a reason for their rating.
+    clarification: Includes mentions of the government being corrupt, not putting
+      people first, acting in self-interest, or being a dictatorship/tyranny.
+    negative_clarification: Do not use if the criticism is specifically about violating
+      international war laws. Use 'government_law_violation' instead.
+  insufficient_information:
+    definition: The respondent states they do not have enough information, knowledge,
+      or facts to form an opinion or explain their rating.
+    clarification: Includes phrases like "not sure," "don't know," "need more info,"
+      or "can't explain."
+    negative_clarification: Do not use for substantive reasons. Use 'none_of_above'
+      if the response is non-informative gibberish or irrelevant.
+  general_support:
+    definition: The respondent expresses general support for the government based
+      on non-legal reasons such as democracy, protection, or leadership.
+    clarification: Includes support because the government is democratic, protecting
+      citizens, or doing its job, without specific reference to war laws.
+    negative_clarification: Do not use if the support is explicitly linked to following
+      international laws. Use 'government_law_compliance' instead.
+  none_of_above:
+    definition: The response is uninformative, non-sensical, irrelevant, or expresses
+      no substantive opinion.
+    clarification: Includes gibberish, random characters, "no comment," "same as before,"
+      or purely emotional exclamations without explanation.
+    negative_clarification: Use this only when the response provides no discernible
+      reason for the rating.
+

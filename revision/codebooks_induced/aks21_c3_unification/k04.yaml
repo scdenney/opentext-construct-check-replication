@@ -1,0 +1,75 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1004
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly favors or opposes the political system of
+      the unified Korea based on its democratic or authoritarian nature, specifically
+      citing liberal democracy, freedom, or the rejection of one-party/authoritarian
+      rule.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), 'freedom' (자유), 'one-party rule' (일당체제), 'dictatorship' (독재), or the
+      political system of North Korea (e.g., Workers' Party participation).
+    negative_clarification: Do not use for economic preferences, military arrangements,
+      or general stability. Use 'economic_fiscal' for tax issues, 'military_security'
+      for troop issues, or 'none_of_above' for vague preferences.
+  military_security:
+    definition: Reasoning focused on the management, presence, integration, or dissolution
+      of military forces and security arrangements in the unified Korea.
+    clarification: Includes North Korean military dissolution (북한군 해산), integration
+      of South and North Korean armies (남북군대 통합), presence of foreign troops (US,
+      China, UN peacekeepers), nuclear weapon management, and concerns about military
+      vacuums or security threats.
+    negative_clarification: Do not use for political system type or economic costs.
+      Use 'political_system_democracy' for regime type arguments or 'economic_fiscal'
+      for tax arguments.
+  economic_fiscal:
+    definition: Reasoning based on the economic burden, tax structure, or financial
+      implications of unification, particularly regarding the 'unification tax' (통일세).
+    clarification: Includes preferences for lower unification taxes, specific tax
+      rates (e.g., top 10% only, 1%), fairness in tax burden, and economic restrictions
+      on business operations (e.g., bans on North Korean enterprises or restrictions
+      on South Korean enterprises).
+    negative_clarification: Do not use for political ideology or military strategy.
+      Use 'political_system_democracy' for regime type or 'military_security' for
+      troop issues.
+  implementation_timeline:
+    definition: Reasoning that prioritizes the speed, pace, or phased nature of the
+      unification process and policy implementation.
+    clarification: Includes preferences for immediate implementation (즉시 이행), gradual/step-by-step
+      implementation (단계별 이행), phased opening, or concerns about the duration of restrictions
+      (e.g., border movement limits).
+    negative_clarification: Do not use for the content of the policy (e.g., tax amount
+      or troop type) but only for the timing. Use 'economic_fiscal' or 'military_security'
+      if the timing is secondary to the specific policy detail.
+  sovereignty_intervention:
+    definition: Reasoning concerning national sovereignty, self-determination, and
+      the acceptance or rejection of foreign intervention in the unification process.
+    clarification: Includes opposition to Chinese or US military presence/intervention,
+      preference for South-North joint management, rejection of foreign oversight
+      (e.g., UN or US/China managing nuclear weapons), and emphasis on Korean self-reliance.
+    negative_clarification: Do not use for general security concerns about North Korean
+      troops. Use 'military_security' if the focus is on the threat itself rather
+      than the sovereignty aspect of foreign presence.
+  general_preference:
+    definition: Non-substantive reasons, vague preferences, or aesthetic judgments
+      that do not specify a concrete policy dimension.
+    clarification: Includes phrases like 'it feels right' (마음에 든다), 'looks better'
+      (더 나아 보임), 'reasonable' (합리적), 'safe' (안전하다), 'I don't know' (모름), or simple
+      agreement/disagreement without explanation.
+    negative_clarification: Do not use if a specific policy dimension (politics, military,
+      economy, timeline) is mentioned. Use the specific code if any detail is provided.
+  none_of_above:
+    definition: Uninformative responses, gibberish, or answers that do not fit into
+      any of the substantive categories.
+    clarification: Includes single characters, punctuation marks, 'no reason', 'don't
+      know', or responses that are completely unintelligible.
+    negative_clarification: If the response contains any discernible policy preference
+      (even if poorly phrased), code it into the appropriate substantive category.
+

@@ -1,0 +1,56 @@
+codebook:
+  name: john2022_citizenvoice_induced
+  residual_code: none_of_above
+  context: A national online sample of UK adults read a description of a hypothetical
+    research study in which researchers contact their local MP (seven versions differ
+    in deception, debriefing, use of confederates, MP pre-agreement, complaints or
+    a journalist) and were asked to say in more than ten words how they feel about
+    the study.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:john2022_citizenvoice:1001
+codes:
+  deception_objection:
+    definition: The response objects to, or raises concern about, researchers lying
+      to, deceiving or misleading MPs, e.g. pretending to be a constituent or using
+      a false identity.
+    clarification: Includes explicit mentions of lying, deception, trickery, entrapment,
+      being underhand, unethical impersonation, or moral objections to the method
+      of contacting MPs without their prior knowledge.
+    negative_clarification: Do not use for general political criticism, complaints
+      about MP responsiveness, or indifference. Use 'general_approval' if the respondent
+      supports the study despite the deception, or 'general_disapproval' if they dislike
+      the study for non-deception reasons.
+  general_approval:
+    definition: The response expresses a positive view of the study, supporting its
+      value, methodology, or potential outcomes.
+    clarification: Includes statements that the study is a good idea, useful, interesting,
+      necessary for accountability, or a valid way to test MP behavior. May acknowledge
+      the deceptive nature but still support the research goal.
+    negative_clarification: Do not use if the response is neutral, indifferent, or
+      explicitly objects to the deception. Use 'general_disapproval' for negative
+      views not related to deception.
+  general_disapproval:
+    definition: The response expresses a negative view of the study, but the objection
+      is not primarily focused on the ethical issue of deceiving MPs.
+    clarification: Includes complaints that the study is a waste of time, irrelevant,
+      boring, or that MPs are too busy for it. Also includes general cynicism about
+      politics or politicians without specific reference to the study's deceptive
+      methodology.
+    negative_clarification: Do not use if the objection is specifically about lying/deception
+      (use 'deception_objection') or if the view is positive (use 'general_approval').
+  neutral_indifference:
+    definition: The response indicates a lack of strong feelings, uncertainty, or
+      indifference towards the study.
+    clarification: Includes phrases like "I don't know," "no feelings," "not bothered,"
+      "indifferent," "unsure," or "it's ok."
+    negative_clarification: Do not use if there is a clear positive or negative sentiment,
+      or if there is a specific objection to the methodology. Use 'none_of_above'
+      if the response is unintelligible or completely off-topic.
+  none_of_above:
+    definition: The response is uninformative, unintelligible, or does not address
+      the study's content or ethics.
+    clarification: Includes random text, gibberish, irrelevant personal statements,
+      or responses that fail to convey a coherent opinion on the study.
+    negative_clarification: Do not use if the response contains a discernible opinion
+      (positive, negative, or objection to deception).
+

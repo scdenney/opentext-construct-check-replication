@@ -1,0 +1,66 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1009
+codes:
+  diversity_reasoning:
+    definition: The respondent explicitly cites ethnic, cultural, or national diversity,
+      immigration, or multiculturalism as a primary reason for choosing the politician.
+      This includes both positive valuations (e.g., diversity enriches) and negative
+      valuations (e.g., diversity destroys culture/economy, anti-immigration sentiment).
+    clarification: Includes mentions of "Diversität", "ethnische Vielfalt", "kulturelle
+      Vielfalt", "Ausländer", "Migranten", "Herkunft", or specific stances on multiculturalism
+      and national identity related to diversity.
+    negative_clarification: Do not use for general gender equality (use gender_reasoning)
+      or general economic/social policy unless it specifically targets diversity/immigration
+      issues. Use none_of_above if the mention is incidental or not the stated reason.
+  gender_reasoning:
+    definition: The respondent cites gender equality, women's rights, or the irrelevance
+      of gender in professional contexts as the reason for choosing the politician.
+    clarification: Includes mentions of "Geschlecht", "Frauenrechte", "Gleichberechtigung",
+      "Gleichstellung", "Männer/Frauen", or the idea that gender should not play a
+      role in hiring/roles.
+    negative_clarification: Do not use for general diversity (use diversity_reasoning)
+      or general political values. Use none_of_above if gender is mentioned only as
+      a demographic fact without being a reason for choice.
+  policy_agreement:
+    definition: The respondent chooses the politician because their specific policy
+      positions (e.g., on economy, social welfare, state control, or democracy as
+      a system) align with the respondent's views.
+    clarification: Includes references to "Wirtschaft", "Sozialhilfe", "Demokratie"
+      (as a system of government, not just a value), "Unternehmen", "Freiheit", or
+      general agreement with specific political statements.
+    negative_clarification: Do not use for diversity or gender reasons. Use none_of_above
+      if the answer is too vague to identify a specific policy area.
+  general_agreement:
+    definition: The respondent chooses the politician because they generally agree
+      with the politician's views or personality, without specifying a particular
+      policy domain or identity characteristic.
+    clarification: Includes phrases like "meine Meinung", "stimme zu", "passt besser",
+      "sympathisch", "vertritt meine Interessen", or "Übereinstimmung".
+    negative_clarification: Do not use if a specific policy (policy_agreement) or
+      identity trait (diversity_reasoning, gender_reasoning) is explicitly cited.
+      Use none_of_above for non-substantive answers.
+  negative_comparison:
+    definition: The respondent chooses the politician because the alternative is worse,
+      or because the chosen politician is the "lesser evil".
+    clarification: Includes phrases like "geringeres Übel", "weniger schlecht", "B
+      ist extremer", "Pest und Cholera", or explicit comparison where the other candidate
+      is rejected.
+    negative_clarification: Do not use if the choice is based on positive attributes
+      of the chosen candidate. Use none_of_above if the comparison is not the primary
+      stated reason.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or indicates a lack
+      of opinion.
+    clarification: Includes "Keine Ahnung", "Weiß nicht", "Nichts", "Bauchgefühl"
+      (without further explanation), random characters, "getestet", "notgedrungen"
+      (forced choice without reason), or purely emotional reactions without content.
+    negative_clarification: Do not use if any substantive reason (diversity, gender,
+      policy, general agreement, or negative comparison) is provided.
+

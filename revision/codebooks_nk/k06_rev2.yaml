@@ -1,0 +1,40 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 2
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 6
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly concerns economic, fiscal, or practical policy mechanics: costs, efficiency, job creation, market impact, operational benefits, or financial viability. This includes references to business support, startups, loans, budgets, R&D, employment, and practical feasibility (e.g., "realistic," "stand on own feet"). It also includes reasons based on the support or views of economic actors (e.g., private sector, big corporations, small business associations) when linked to business outcomes.
+    clarification: |
+      Include mentions of cost, budget, efficiency, jobs, market, profit, loss, specific economic mechanisms, business support, startups, loans, R&D, employment, practical feasibility, and support from economic entities (private sector, corporations) when relevant to business operations.
+    negative_clarification: |
+      Exclude vague praise ("good", "better"), political support ("president supports"), moral/national duty ("good for Korea"), human rights appeals, or administrative labels unless tied to specific economic outcomes.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, moral obligation, solidarity, identity, human rights, or national interest. This includes appeals to what is "right," "just," or beneficial for the nation's moral standing or social cohesion. It also includes reasons based on the support of moral or advocacy entities (e.g., human rights groups, NGOs) or appeals to helping those in need, even if phrased broadly.
+    clarification: |
+      Include mentions of fairness, rights, duty, solidarity, national pride, moral obligation, human rights, helping those in need, and support from moral/advocacy entities (human rights groups, NGOs).
+    negative_clarification: |
+      Exclude purely economic calculations (cost/benefit), administrative descriptions, or political party support.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither clearly economic nor normative. This includes political considerations (party support, presidential backing), administrative or procedural aspects (target criteria, application scope, joint venture structures), vague but substantive preferences, general assessments of appropriateness/effectiveness, or meta-statements about the policy structure. It also includes non-substantive fragments that imply a choice or stance (e.g., "I think so," "looks good," "relative choice") where the human coder interpreted this as a substantive, albeit vague, preference.
+    clarification: |
+      Include political support, administrative details, vague substantive reasons ("it's better", "appropriate"), non-economic/non-moral justifications, and non-substantive fragments that indicate a stance or preference (e.g., "I think so", "looks good", "none", "don't know" when interpreted as a substantive non-answer).
+    negative_clarification: |
+      Exclude purely meta-labels ("policy support reasons"), non-substantive noise ("just", "let's go"), and clear economic or normative reasons.
+  uninformative:
+    definition: |
+      No substantive reason is given. This includes "don't know," "no particular reason," off-topic text, or non-substantive fragments that do not convey a reason (e.g., "just", "let's go", "big companies" as a standalone label). Note: Meta-labels like "policy support reasons" or vague phrases like "good for Korea" (if interpreted as normative) or "better" (if interpreted as other) are NOT uninformative if humans coded them as substantive.
+    clarification: |
+      Include "don't know", "no reason", "N/A", and non-linguistic noise.
+    negative_clarification: Exclude vague substantive reasons ("it's better", "good
+      for Korea"), meta-labels ("policy support"), and political/administrative reasons
+      ("president supports"), which are coded as other or normative.
+

@@ -1,0 +1,74 @@
+codebook:
+  name: andre2024_stockmodels_memory_induced
+  residual_code: none_of_above
+  context: 'US adults in an online survey read two hypothetical news scenarios about
+    Nike announced four weeks earlier: neutral news (Nike continued a supplier partnership)
+    and bad news (a significant disruption of its supply chain); about half also read
+    that Nike''s stock price had fallen 10% since the bad news. They predicted in
+    which scenario $1,000 invested in Nike stock today and sold in twelve months would
+    earn a higher return, and explained their prediction. One or two days earlier,
+    in a separately branded survey, they had written headlines and summaries for five
+    news stories about past setbacks at large companies.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2024_stockmodels_memory:1001
+codes:
+  low_price_opportunity:
+    definition: The response argues that the stock's low or fallen price after the
+      bad news makes the investment attractive or raises its return. This includes
+      buying cheap or at a discount, getting more shares for the money, or expecting
+      the price to recover or bounce back after falling.
+    clarification: Includes arguments about buying at a discount, panic selling creating
+      an opportunity, rebound potential, mean reversion, or higher percentage gains
+      due to a lower entry price.
+    negative_clarification: Do not use if the respondent argues for Scenario 1 based
+      on stability, or if they argue for Scenario 2 based on fundamental improvements
+      unrelated to the price drop (e.g., better management). Use 'stability_preference'
+      or 'fundamental_analysis' instead.
+  stability_preference:
+    definition: The response argues that the return will be higher in Scenario 1 (neutral
+      news) because maintaining the supplier partnership ensures stability, predictability,
+      and avoids the risks associated with disruption.
+    clarification: Includes arguments about consistent costs, no operational disruption,
+      investor confidence in the status quo, and avoiding the uncertainty of a new
+      supplier.
+    negative_clarification: Do not use if the respondent focuses on the price drop
+      in Scenario 2 as the primary driver for higher returns. Use 'low_price_opportunity'
+      instead.
+  fundamental_analysis:
+    definition: The response argues that the return will be higher in Scenario 2 (bad
+      news) based on long-term fundamental improvements or strategic benefits of the
+      supply chain change, rather than the stock price movement.
+    clarification: Includes arguments that the new supplier will lower costs, improve
+      quality, or that the disruption is a necessary strategic move that will pay
+      off in the long run.
+    negative_clarification: Do not use if the argument is based on the stock price
+      being low (use 'low_price_opportunity') or if the argument favors Scenario 1
+      (use 'stability_preference').
+  sentiment_and_panic:
+    definition: The response attributes the difference in returns to investor psychology,
+      specifically panic selling in Scenario 2 or optimism in Scenario 1, independent
+      of the underlying business fundamentals.
+    clarification: Includes arguments that the market overreacted, that panic created
+      a buying opportunity, or that investor sentiment drives the price more than
+      facts.
+    negative_clarification: Do not use if the argument is strictly about the mechanics
+      of buying low (use 'low_price_opportunity') or strictly about operational stability
+      (use 'stability_preference'). This code captures the *cause* of the price movement
+      being psychological.
+  similar_returns:
+    definition: The response argues that the return will be similar in both scenarios,
+      often citing that the market has already adjusted, that long-term trends dominate,
+      or that the 12-month horizon washes out short-term shocks.
+    clarification: Includes arguments about market efficiency, long-term growth being
+      independent of short-term news, or that the starting price difference is offset
+      by future performance.
+    negative_clarification: Do not use if the respondent clearly prefers one scenario
+      over the other.
+  none_of_above:
+    definition: The response is uninformative, incoherent, expresses no clear opinion,
+      or does not address the reasoning for the investment return prediction.
+    clarification: Includes responses that are too short to interpret, purely emotional
+      without reasoning, or unrelated to the investment logic.
+    negative_clarification: Do not use if the response provides a clear reason for
+      preferring Scenario 1, Scenario 2, or similar returns.
+

@@ -1,0 +1,69 @@
+codebook:
+  name: andre2024_stockmodels_arbitrage_induced
+  residual_code: none_of_above
+  context: 'US adults in an online survey first read a short explanatory text and
+    summarized it in their own words: either how stock prices adjust to expected company
+    earnings through arbitrage, or what determines the range of the tides. They then
+    read two hypothetical news scenarios about Nike announced four weeks earlier,
+    neutral news (a supplier partnership continued) and good news (a new partnership
+    expected to cut raw material costs by 20%), predicted in which scenario $1,000
+    invested in Nike stock today and sold in twelve months would earn a higher return,
+    and explained their prediction.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2024_stockmodels_arbitrage:1001
+codes:
+  equilibrium_price_offset:
+    definition: The response argues that the good news is already reflected in Nike's
+      current stock price, or that the higher price an investor pays today offsets
+      the higher future earnings, so the expected return need not be higher.
+    clarification: Includes references to prices being 'priced in', market efficiency,
+      arbitrage, or paying more for the same future profits. Mentions that the announcement
+      was made four weeks ago, allowing time for the market to adjust.
+    negative_clarification: Do not use if the respondent argues that the news is still
+      'unexpected' and will cause further price increases, or if they argue returns
+      will be higher simply because the company is more profitable without addressing
+      the purchase price. Use 'future_earnings_drives_return' instead.
+  future_earnings_drives_return:
+    definition: The response argues that the return will be higher in the scenario
+      with the cost-saving partnership because it leads to increased profitability,
+      lower costs, or better market position, which drives the stock price up.
+    clarification: Focuses on the causal link between cost savings (20% reduction)
+      and higher future profits/stock value. Mentions increased competitiveness, consumer
+      appeal, or investor sentiment driving the price up.
+    negative_clarification: Do not use if the respondent argues that the current price
+      already reflects this news (use 'equilibrium_price_offset'). Do not use if the
+      respondent argues returns will be similar due to market volatility or lack of
+      impact (use 'market_volatility_or_neutrality').
+  market_volatility_or_neutrality:
+    definition: The response argues that the returns will be similar in both scenarios,
+      or that the specific news will not significantly impact the return over the
+      12-month period due to market factors.
+    clarification: Includes arguments about stock market volatility, the unpredictability
+      of the market, the idea that one supplier change is negligible for a large company
+      like Nike, or that other factors dominate.
+    negative_clarification: Do not use if the respondent explicitly links the similarity
+      to the news being 'priced in' (use 'equilibrium_price_offset'). Do not use if
+      the respondent predicts a specific higher return based on earnings (use 'future_earnings_drives_return').
+  external_factors_or_uncertainty:
+    definition: The response attributes the expected return to factors outside the
+      scope of the provided scenarios, such as general market trends, consumer behavior,
+      or expresses uncertainty.
+    clarification: Includes mentions of general economic conditions, consumer preferences
+      for eco-friendly products (as a driver of sales, not just cost), or statements
+      like "I'm not sure," "gut feeling," or "gambling."
+    negative_clarification: Do not use if the respondent focuses on the internal mechanics
+      of the stock price adjustment relative to the news (use 'equilibrium_price_offset'
+      or 'future_earnings_drives_return'). Do not use if the respondent argues for
+      similarity based on market efficiency (use 'market_volatility_or_neutrality').
+  misinterpretation_or_irrelevance:
+    definition: The response demonstrates a fundamental misunderstanding of the question,
+      the scenarios, or financial concepts, or provides an answer that is irrelevant
+      to the investment return.
+    clarification: Includes responses that confuse stock price with product price,
+      misunderstand the time frame, or provide nonsensical financial reasoning.
+    negative_clarification: Do not use if the response is a valid, albeit incorrect,
+      application of financial logic (e.g., 'future_earnings_drives_return'). Use
+      'none_of_above' if the response is completely unintelligible or off-topic.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

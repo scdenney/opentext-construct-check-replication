@@ -1,0 +1,92 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1009
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's past or present
+      membership in the Workers' Party of Korea (North Korean regime), or other direct
+      ties to the North Korean political structure or ideology.
+    clarification: Includes mentions of being a former or current member of the Workers'
+      Party (조선노동당원, 노동당원), being a non-member of the party (노동당원이 아님, 전 노동당원이 아님),
+      or negative/positive sentiment specifically directed at the party affiliation
+      or regime connection.
+    negative_clarification: Do not use for general political ideology, religious beliefs,
+      or general social integration. If the response mentions party membership, use
+      this code even if other factors (like age) are also present. Use 'general_social_integration'
+      if the reasoning is about social adaptation without mentioning the party.
+  age_preference:
+    definition: Reasoning based on the profile's age, including preferences for youth,
+      middle age, or elderly status, or age appropriateness for the role of a neighbor.
+    clarification: Includes mentions of being young (어리다, 젊은), old (나이가 많음, 고령), or
+      age being a deciding factor. Includes comparisons of age between profiles.
+    negative_clarification: Do not use if the primary reason is professional stability
+      or health (e.g., "doctor"). Use 'north_korea_regime_ties' if age is mentioned
+      alongside party membership as a key differentiator, but prioritize 'north_korea_regime_ties'
+      if the party aspect is the explicit political filter. If age is the sole or
+      primary driver, use this code.
+  residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea, assuming longer residence leads to better adaptation or understanding.
+    clarification: Includes mentions of long/short residence in Korea (한국 체류기간, 한국
+      거주기간), adaptation to Korean society due to time spent, or familiarity with Korean
+      culture/situation.
+    negative_clarification: Do not use for residence in China (use 'china_residence_duration'
+      if distinct, or 'general_social_integration' if it implies adaptation). Do not
+      use if the reason is purely about the profession.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile lived in China before
+      coming to South Korea, often viewed as a negative factor (suspicion of being
+      too influenced by China) or a neutral factor.
+    clarification: Includes mentions of time spent in China (중국 체류기간, 중국에서 생활한 기간),
+      and judgments based on whether that time was too long or too short.
+    negative_clarification: Do not use for time spent in South Korea. Use 'north_korea_regime_ties'
+      if the China residence is linked to regime ties (rare, but if so, prioritize
+      regime ties).
+  profession_stability:
+    definition: Reasoning based on the profile's occupation, particularly professional
+      jobs (like doctors, programmers) that imply stability, income, or utility.
+    clarification: Includes mentions of specific jobs (의사, 프로그래머, 사무직원), professional
+      stability (전문직, 안정적), or the utility of having a doctor nearby.
+    negative_clarification: Do not use if the job is mentioned only as a minor detail
+      while the main reason is age or residence. Use 'north_korea_regime_ties' if
+      the job is secondary to the political affiliation.
+  gender_preference:
+    definition: Reasoning based on the gender of the profile, including preferences
+      for male or female neighbors, often linked to safety or comfort.
+    clarification: Includes mentions of gender (여성, 남성, 여자, 남자) and reasons such as
+      feeling safer with women, or gender matching.
+    negative_clarification: Do not use if gender is mentioned only as a demographic
+      fact without being the reason for choice. Use 'north_korea_regime_ties' if gender
+      is combined with party membership as a key filter.
+  family_status:
+    definition: Reasoning based on the profile's marital status, presence of children,
+      or family structure, implying stability or relatability.
+    clarification: Includes mentions of marriage (결혼, 기혼), children (자녀, 아이), divorce
+      (이혼), or being a parent.
+    negative_clarification: Do not use if family status is not the primary reason.
+      Use 'general_social_integration' if the reason is about having friends/colleagues
+      rather than family.
+  general_social_integration:
+    definition: Reasoning based on the profile's social connections, such as having
+      Korean friends, colleagues, or general social skills, implying easier interaction.
+    clarification: Includes mentions of Korean friends/colleagues (한국인 동료, 한국인 지인),
+      social skills (친화력, 대인관계), or general compatibility.
+    negative_clarification: Do not use for specific professional utility. Use 'north_korea_regime_ties'
+      if the social connection is specifically about avoiding North Korean regime
+      networks. Use 'residence_duration' if the social connection is a result of long
+      residence.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not provide
+      a clear rationale based on the profile's attributes.
+    clarification: Includes responses like "no reason," "just felt like it," "all
+      are same," "don't know," "random," or purely emotional/aesthetic preferences
+      without specific attribute linkage.
+    negative_clarification: Do not use if any specific attribute (age, job, residence,
+      party, gender, family) is mentioned as a reason.
+

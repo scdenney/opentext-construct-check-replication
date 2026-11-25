@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1005
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's place of birth,
+      regional origin (specifically East Germany, Saxony, or the former GDR), or national
+      origin (Germany) as a primary ground for selection or rejection.
+    clarification: Includes mentions of being from Saxony, East Germany, the GDR,
+      or being a native German. Also includes reasoning based on national origin (e.g.,
+      "is German", "from Germany") if used as a distinguishing factor for prioritization.
+    negative_clarification: Exclude general mentions of living in Germany without
+      specific regional/national distinction as a reason. Use 'none_of_above' if the
+      mention is incidental or not a reason for choice.
+  age_related_reasoning:
+    definition: Reasoning that cites the candidate's age, youth, seniority, or proximity
+      to retirement as a key factor in the decision.
+    clarification: Includes preferences for younger candidates (more time to work,
+      learn, contribute) or older candidates (experience, need for support). Mentions
+      of specific ages or life stages (e.g., "near retirement") are included.
+    negative_clarification: Exclude if age is mentioned only as a factual descriptor
+      without being a reason for preference. Use 'none_of_above' if no age-based logic
+      is present.
+  criminal_record_reasoning:
+    definition: Reasoning that focuses on the presence or absence of a criminal record
+      (Vorstrafen) or specific legal infractions (e.g., tax evasion, theft) as the
+      deciding factor.
+    clarification: Includes preferences for candidates with no record or rejection
+      of those with records. Specific crimes mentioned (e.g., theft, tax evasion)
+      are included.
+    negative_clarification: Exclude if criminal record is not the primary reason.
+      Use 'none_of_above' if the answer is unrelated to legal history.
+  family_status_reasoning:
+    definition: Reasoning that cites family responsibilities, such as having children,
+      being single, or being a single parent, as a basis for prioritization.
+    clarification: Includes preferences for candidates who need to support children,
+      are single parents, or have fewer family burdens.
+    negative_clarification: Exclude if family status is not the reason for choice.
+      Use 'none_of_above' if unrelated.
+  professional_qualifications_reasoning:
+    definition: Reasoning based on the candidate's professional attributes, such as
+      education, experience, current job status, or perceived competence.
+    clarification: Includes mentions of better qualifications, more experience, specific
+      job roles, or perceived ability to succeed in training.
+    negative_clarification: Exclude if professional attributes are not the reason.
+      Use 'none_of_above' if unrelated.
+  gender_reasoning:
+    definition: Reasoning that explicitly cites the candidate's gender as a factor
+      in the decision, often related to equality or disadvantage.
+    clarification: Includes preferences for women due to perceived disadvantages or
+      equality goals.
+    negative_clarification: Exclude if gender is not the reason. Use 'none_of_above'
+      if unrelated.
+  none_of_above:
+    definition: Residual code for responses that are uninformative, non-substantive,
+      or do not fit into the specific substantive categories.
+    clarification: Includes "I don't know", "random choice", "had to choose one",
+      "no reason", "gut feeling", or purely emotional/aesthetic preferences not linked
+      to the above constructs.
+    negative_clarification: Exclude any response that provides a substantive reason
+      falling into the other codes.
+

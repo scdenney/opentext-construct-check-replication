@@ -1,0 +1,73 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1001
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the candidate's current job, profession,
+      employment status, occupational skills, or work capacity as the primary reason
+      for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer),
+      employment status (e.g., employed, working, stable job), occupational skills
+      (e.g., professional expertise, technical skills), or the general presence of
+      a job.
+    negative_clarification: Do not use for general stability derived from family/marriage,
+      age/experience, or length of stay in Korea. If the response mentions a job but
+      the primary logic is about social integration or age, code as the respective
+      other code. Use 'none_of_above' if the mention is incidental or uninformative.
+  length_of_stay:
+    definition: Reasoning that cites the duration of the candidate's residence in
+      South Korea (or sometimes China) as the primary factor, implying better adaptation,
+      knowledge of local conditions, or reduced risk.
+    clarification: Includes references to "length of stay," "time in Korea," "long-term
+      residence," "adaptation period," or specific years spent in the country.
+    negative_clarification: Do not use for general social integration based on friends/colleagues
+      (code as social_network) or for age/experience (code as age_experience). Do
+      not use for political affiliation.
+  age_experience:
+    definition: Reasoning that cites the candidate's age, youth, seniority, or life
+      experience as the primary factor for selection.
+    clarification: Includes mentions of being "young," "old," "mature," "experienced,"
+      "seniority," or "life experience."
+    negative_clarification: Do not use for specific occupational skills (code as employment_occupation)
+      or length of stay (code as length_of_stay).
+  social_network_integration:
+    definition: Reasoning that cites the candidate's social connections, relationships
+      with locals, or perceived social adaptability as the primary factor.
+    clarification: Includes mentions of having Korean friends/colleagues, having a
+      family in Korea, being well-integrated, having good interpersonal skills, or
+      being "approachable."
+    negative_clarification: Do not use for length of stay (code as length_of_stay)
+      or political affiliation. If the connection is purely professional (colleague)
+      but used to argue for job competence, code as employment_occupation.
+  political_affiliation:
+    definition: Reasoning that cites the candidate's political party membership (specifically
+      North Korean Workers' Party) or ideological stance as the primary factor.
+    clarification: Includes mentions of being a "Workers' Party member," "not a member,"
+      "ideology," or "political background."
+    negative_clarification: Do not use for general stability or employment.
+  demographic_preference:
+    definition: Reasoning that cites gender, marital status, or parental status as
+      the primary factor, often linked to perceived stability or relatability, without
+      explicit reference to job or political affiliation.
+    clarification: Includes mentions of being "male," "female," "married," "unmarried,"
+      "has children," or "single."
+    negative_clarification: Do not use if the marital/parental status is cited primarily
+      as a proxy for employment stability (code as employment_occupation) or if it
+      is combined with strong length-of-stay reasoning (code as length_of_stay if
+      that is dominant, or split if equal, but prefer the most distinct construct).
+      If it's just "I like women," code here.
+  none_of_above:
+    definition: Uninformative responses, random selections, general preferences without
+      specific rationale, or reasons that do not fit the defined constructs.
+    clarification: Includes responses like "just felt like it," "no reason," "both
+      are bad," "random," "good feeling," or single words that are not specific constructs
+      (e.g., "trust," "stability" without context).
+    negative_clarification: Exclude any response that clearly references job, stay
+      duration, age, politics, social ties, or demographics.
+

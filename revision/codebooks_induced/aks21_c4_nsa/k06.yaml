@@ -1,0 +1,77 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1006
+codes:
+  national_security_threat:
+    definition: Reasoning that explicitly invokes national security, the threat from
+      North Korea (or other external actors), espionage, or the necessity of defending
+      the state as the primary justification for the chosen position.
+    clarification: Includes mentions of 'national security' (국가안보), 'security' (안보/보안),
+      'North Korea' (북한), 'espionage' (간첩), 'defending the state' (국가 수호), and 'preventing
+      subversion' (공작정치/불안 요소). It covers arguments that the law is necessary to protect
+      the country from external or internal security threats.
+    negative_clarification: Exclude arguments based solely on protecting 'liberal
+      democracy' (자유민주주의) without explicit reference to security threats, or arguments
+      based on political party preference, general policy consistency, or vague feelings.
+      Use 'liberal_democracy_protection' or 'party_preference' instead.
+  liberal_democracy_protection:
+    definition: Reasoning that focuses on protecting liberal democratic values, human
+      rights, or freedom of expression, often arguing that the National Security Law
+      infringes upon these rights or that its modification is needed to better balance
+      security with democratic freedoms.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'freedom of
+      expression' (표현의 자유), 'human rights' (기본권), and 'democracy' (민주주의). Covers arguments
+      that the law should be modified or abolished to better protect democratic principles
+      or that the current law is too restrictive of democratic freedoms.
+    negative_clarification: Exclude arguments that cite 'national security' as the
+      primary driver. If the respondent mentions both, prioritize 'national_security_threat'
+      if security is the dominant frame, otherwise use this code. Do not use for general
+      political ideology without specific reference to democratic values.
+  party_preference:
+    definition: Reasoning based on support for or opposition to a specific political
+      party (e.g., People Power Party, Democratic Party of Korea) or their leaders,
+      rather than the substantive policy or rationale provided.
+    clarification: Includes explicit mentions of party names (국민의힘, 더불어민주당), party
+      supporters (지지자), or general partisan loyalty (political orientation, preference
+      for the ruling party).
+    negative_clarification: Exclude arguments that discuss the policy merits, security
+      implications, or democratic values. If the party mention is secondary to a substantive
+      argument (e.g., "I support the party because their security policy is better"),
+      use the substantive code instead.
+  policy_modification_scope:
+    definition: Reasoning focused on the technical scope, range, or extent of the
+      law (expansion vs. restriction vs. maintenance), without invoking deeper ideological
+      or security justifications.
+    clarification: Includes arguments about 'expanding the scope' (범위 확대), 'restricting
+      the scope' (범위 제한/축소), 'modifying' (수정), or 'maintaining' (유지) the law based
+      on practicality, appropriateness, or balance, without citing security threats
+      or democratic ideals as the core reason.
+    negative_clarification: Exclude arguments that explain *why* the scope should
+      be changed by citing security threats (use 'national_security_threat') or democratic
+      values (use 'liberal_democracy_protection'). Exclude vague or non-substantive
+      answers.
+  general_policy_rationale:
+    definition: Reasoning based on general policy consistency, practicality, realism,
+      or a general sense that the position is 'correct' or 'reasonable' without specifying
+      the underlying value or threat.
+    clarification: Includes mentions of 'policy consistency' (정책일관성), 'realism' (현실적),
+      'correctness' (옳은 일), 'reasonableness' (합당), or general preference for one rationale
+      over another due to clarity or persuasiveness.
+    negative_clarification: Exclude specific references to security, democracy, or
+      party affiliation. Exclude uninformative responses.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses that do not
+      provide a clear reason for the choice.
+    clarification: Includes 'no reason' (이유 없음), 'don't know' (모름), 'just because'
+      (그냥), single words or symbols (h, .., ?), complaints about the survey, or responses
+      that are clearly random or nonsensical.
+    negative_clarification: Exclude any response that contains a discernible argument,
+      even if weak. If a response mentions security, democracy, party, or policy scope,
+      use the appropriate substantive code.
+

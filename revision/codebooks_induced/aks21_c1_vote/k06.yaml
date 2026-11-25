@@ -1,0 +1,79 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1006
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (North Korean regime) or other direct ties to
+      the North Korean political system as a factor in the decision.
+    clarification: Includes mentions of "Workers' Party member" (노동당원), "former Workers'
+      Party member" (전 노동당원), "not a Workers' Party member" (노동당원이 아님), or explicit
+      references to North Korean political loyalty, ideology, or regime affiliation.
+    negative_clarification: Do not use for general mentions of "North Korea" (북한)
+      without specific regime/political context, or for general "defector" status.
+      Use `general_north_korean_background` if the response mentions North Korean
+      origin/history but not specifically regime ties. Use `none_of_above` if the
+      mention is irrelevant or non-existent.
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea, implying better adaptation, integration, or lower risk of North Korean
+      influence.
+    clarification: Includes mentions of "length of stay in Korea" (한국 체류기간), "long
+      time in Korea" (한국에 오래 살았음), "adaptation to Korea" (한국 적응), or "12 years in
+      Korea".
+    negative_clarification: Do not use for length of stay in China. Use `china_residence_duration`
+      for that. Use `none_of_above` if no residence duration is mentioned.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in China,
+      often implying shorter stays are preferred for better integration or longer
+      stays are viewed with suspicion.
+    clarification: Includes mentions of "length of stay in China" (중국 체류기간), "short/long
+      time in China" (중국 체류 기간이 짧음/길음).
+    negative_clarification: Do not use for residence in South Korea. Use `korea_residence_duration`
+      for that.
+  age:
+    definition: Reasoning based on the age of the profile, such as preferring younger
+      individuals for energy/future potential or older individuals for stability/experience.
+    clarification: Includes mentions of "age" (나이), "young" (젊음/어리다), "old" (나이 많음/연륜),
+      "18 years old", "middle-aged".
+    negative_clarification: Do not use if age is mentioned only in passing without
+      being a primary reason. Use `none_of_above` if age is not a factor.
+  gender:
+    definition: Reasoning based on the gender of the profile, such as preferring women
+      for safety, friendliness, or shared gender comfort.
+    clarification: Includes mentions of "female" (여성/여자), "male" (남성/남자), "same gender"
+      (동성).
+    negative_clarification: Do not use if gender is not a primary reason. Use `none_of_above`
+      if gender is not a factor.
+  occupation_profession:
+    definition: Reasoning based on the profile's job or professional status, such
+      as preferring doctors for utility, office workers for stability, or unemployment
+      as a negative.
+    clarification: Includes mentions of "doctor" (의사), "office worker" (사무직), "programmer"
+      (프로그래머), "unemployed" (무직), "stable job" (안정적인 직업), "profession" (직업/전문성).
+    negative_clarification: Do not use for general "skills" not tied to a specific
+      job title if the job title is the main point. Use `none_of_above` if occupation
+      is not a factor.
+  family_status:
+    definition: Reasoning based on the profile's marital or parental status, such
+      as preferring married individuals with children for stability or single individuals
+      for different reasons.
+    clarification: Includes mentions of "married" (결혼/혼인), "children" (자녀/아이), "single"
+      (미혼), "family" (가정).
+    negative_clarification: Do not use if family status is not a primary reason. Use
+      `none_of_above` if family status is not a factor.
+  none_of_above:
+    definition: Responses that are uninformative, generic, or do not fit into the
+      specific substantive categories above.
+    clarification: Includes "no reason" (이유 없음), "no difference" (차이 없음), "just liked
+      it" (마음에 들어서), "random" (무작위), "good" (좋음), "neutral" (중립), "don't know" (모름),
+      or gibberish.
+    negative_clarification: Do not use if the response contains specific reasoning
+      related to regime ties, residence, age, gender, occupation, or family.
+

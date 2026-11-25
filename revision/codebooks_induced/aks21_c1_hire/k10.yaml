@@ -1,0 +1,76 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1010
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's current job title, employment
+      status, professional skill, work capacity, or career stability as the primary
+      reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      office worker), employment status (employed, stable job), professional skills,
+      or the perceived value/stability of the occupation.
+    negative_clarification: Do not use for general statements about "experience" or
+      "skills" without linking them to a specific job or occupational role; use `general_experience`
+      or `competence` instead. Do not use for general economic stability not tied
+      to a job.
+  korea_residence_duration:
+    definition: Reasoning that cites the length of time the profile has lived in South
+      Korea as the primary factor.
+    clarification: Includes mentions of long/short residence periods in Korea, adaptation
+      to Korean society due to time spent, or familiarity with the local context gained
+      through duration.
+    negative_clarification: Do not use for residence in China or North Korea; use
+      `north_china_residence` instead. Do not use if the primary reason is social
+      integration via friends/colleagues rather than time itself; use `social_integration`
+      instead.
+  age_demographics:
+    definition: Reasoning that cites the profile's age or generation as the primary
+      factor.
+    clarification: Includes mentions of being young, old, appropriate age, generation
+      gap, or age-related traits (e.g., energy, experience, adaptability linked to
+      age).
+    negative_clarification: Do not use for age combined with other strong factors
+      where age is secondary; prioritize the dominant factor. Do not use for "experience"
+      unless explicitly tied to age/tenure.
+  political_affiliation:
+    definition: Reasoning that cites the profile's political party membership or ideological
+      background as the primary factor.
+    clarification: Includes mentions of being a former/current member of the Workers'
+      Party of Korea, non-membership, ideological purity, or political reliability.
+    negative_clarification: Do not use for general political views not tied to party
+      affiliation.
+  social_integration_networks:
+    definition: Reasoning that cites the profile's social connections, such as having
+      Korean colleagues, friends, or family, as the primary factor.
+    clarification: Includes mentions of Korean colleagues, friends, acquaintances,
+      marriage to a Korean, or having a support network in Korea.
+    negative_clarification: Do not use for residence duration alone; use `korea_residence_duration`
+      if time is the main point. Do not use for general "good personality" without
+      specific network references.
+  north_china_residence:
+    definition: Reasoning that cites the length of time the profile has lived in China
+      or North Korea as the primary factor.
+    clarification: Includes mentions of short/long residence in China or North Korea,
+      assimilation into those cultures, or lack of exposure to those regimes.
+    negative_clarification: Do not use for residence in South Korea; use `korea_residence_duration`
+      instead.
+  marital_family_status:
+    definition: Reasoning that cites the profile's marital status or family situation
+      as the primary factor.
+    clarification: Includes mentions of being married, single, having children, or
+      family stability influencing the decision.
+    negative_clarification: Do not use if the primary reason is the job or residence
+      time.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes responses like "just because," "no reason," "feeling,"
+      "trust" (without explanation), "good," "bad," or random characters.
+    negative_clarification: Do not use for substantive reasons even if brief; if a
+      specific code (like age or job) is identifiable, use that code.
+

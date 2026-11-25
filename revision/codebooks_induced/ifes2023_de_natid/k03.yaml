@@ -1,0 +1,78 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1003
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly invokes religion, Christianity, the church,
+      or religious faith as a primary or significant ground for the person being (more)
+      German.
+    clarification: Includes mentions of being Christian, having a Christian faith,
+      belonging to the church, or citing Christian values/culture as a defining German
+      trait.
+    negative_clarification: Exclude mentions of religion that are incidental or not
+      used as a criterion for German identity (e.g., just listing attributes without
+      linking them to 'being German'). Use 'none_of_above' if religion is not mentioned.
+  ancestry_and_lineage:
+    definition: Reasoning based on biological descent, family background, or ethnic
+      heritage.
+    clarification: Includes references to German ancestors, parents, grandparents,
+      bloodline, or ethnic origin.
+    negative_clarification: Exclude references to citizenship or legal status. Use
+      'legal_status' if only citizenship is mentioned. Use 'none_of_above' if no ancestry
+      is cited.
+  legal_status_and_citizenship:
+    definition: Reasoning based on formal legal ties to the state, such as holding
+      a passport or citizenship.
+    clarification: Includes mentions of German citizenship, passport, nationality,
+      or state affiliation.
+    negative_clarification: Exclude mentions of ancestry or residence. Use 'ancestry_and_lineage'
+      if ancestry is the primary reason. Use 'none_of_above' if no legal status is
+      cited.
+  language_proficiency:
+    definition: Reasoning based on the ability to speak, understand, or learn the
+      German language.
+    clarification: Includes mentions of speaking German, knowing the language, or
+      language skills as a marker of identity.
+    negative_clarification: Exclude general communication or non-linguistic integration.
+      Use 'none_of_above' if language is not mentioned.
+  cultural_and_historical_knowledge:
+    definition: Reasoning based on familiarity with German history, traditions, customs,
+      or cultural norms.
+    clarification: Includes mentions of knowing German history, respecting traditions,
+      understanding culture, or being socialized in Germany.
+    negative_clarification: Exclude general political agreement or legal compliance.
+      Use 'political_alignment' if only political views are cited. Use 'none_of_above'
+      if no cultural/historical knowledge is cited.
+  political_and_legal_compliance:
+    definition: Reasoning based on respect for German laws, political institutions,
+      or alignment with political values.
+    clarification: Includes mentions of respecting laws, respecting institutions,
+      agreeing with political systems, or sharing political views.
+    negative_clarification: Exclude cultural traditions or religious beliefs. Use
+      'cultural_and_historical_knowledge' if traditions are the focus. Use 'none_of_above'
+      if no political/legal respect is cited.
+  residence_and_integration:
+    definition: Reasoning based on length of stay, birthplace, or general integration
+      into German society.
+    clarification: Includes mentions of being born in Germany, growing up in Germany,
+      living in Germany for a long time, or general integration.
+    negative_clarification: Exclude specific legal status (use 'legal_status_and_citizenship')
+      or ancestry (use 'ancestry_and_lineage'). Use 'none_of_above' if no residence/integration
+      is cited.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      any of the substantive categories.
+    clarification: Includes vague feelings ("gut feeling", "instinct"), non-answers
+      ("no answer", "don't know"), random text, or reasons that are purely about personal
+      preference/sympathy without substantive criteria (e.g., "I like him better",
+      "he looks nicer").
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to religion, ancestry, law, language, culture, politics, or residence.
+

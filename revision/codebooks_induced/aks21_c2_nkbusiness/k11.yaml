@@ -1,0 +1,77 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1011
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly or implicitly invokes helping North Korean
+      defectors (talbukmin) who face discrimination, prejudice, or unequal treatment
+      in South Korean society.
+    clarification: Includes mentions of helping those facing discrimination, supporting
+      vulnerable groups due to social inequality, aiding North Koreans specifically
+      because they are disadvantaged or discriminated against, and general humanitarian
+      support for North Koreans framed as overcoming social barriers.
+    negative_clarification: Exclude general economic support, business growth, or
+      employment creation that does not reference the specific vulnerability or discriminatory
+      context of North Koreans. Use 'economic_benefit' or 'employment_support' instead.
+  economic_benefit:
+    definition: Reasoning based on the financial viability, profitability, or economic
+      efficiency of the policy or the supported businesses.
+    clarification: Includes mentions of profitability, revenue generation, cost-effectiveness,
+      fiscal responsibility, avoiding government deficit, tax implications (corporate/income
+      tax), and supporting businesses that are financially sound or have high growth
+      potential.
+    negative_clarification: Exclude reasoning focused on social justice, discrimination,
+      or general employment without economic efficiency arguments. Use 'anti_discrimination_help'
+      or 'employment_support' instead.
+  employment_support:
+    definition: Reasoning that prioritizes job creation, hiring, or employment stability
+      as the primary benefit of the policy.
+    clarification: Includes explicit mentions of job support, employment creation,
+      hiring partners, and labor market integration.
+    negative_clarification: Exclude reasoning that focuses on business profitability,
+      tax issues, or discrimination. Use 'economic_benefit' or 'anti_discrimination_help'
+      instead.
+  policy_mechanism_preference:
+    definition: Reasoning based on the specific type of policy instrument (e.g., low-interest
+      loans, consulting services, cash grants, office space) rather than the target
+      group or economic outcome.
+    clarification: Includes preferences for loans over grants, consulting over cash,
+      or specific administrative methods. Includes comparisons of policy tools (e.g.,
+      "loans are better than cash").
+    negative_clarification: Exclude reasoning about who benefits (North Koreans vs.
+      Koreans) or why they benefit (discrimination vs. profit). Use 'anti_discrimination_help'
+      or 'economic_benefit' instead.
+  political_heuristic:
+    definition: Reasoning based on the political affiliation, endorsement, or opposition
+      to specific political entities, leaders, or groups.
+    clarification: Includes support due to endorsement by the President, specific
+      political parties (e.g., People Power Party, Democratic Party), NGOs, or business
+      associations (e.g., KMEF), or opposition due to dislike of these entities.
+    negative_clarification: Exclude substantive policy arguments. Use 'anti_discrimination_help',
+      'economic_benefit', etc., if the political endorsement is secondary to a substantive
+      reason.
+  general_preference:
+    definition: Vague, non-substantive, or comparative preferences that do not specify
+      a clear rationale.
+    clarification: Includes phrases like "just because," "it seems better," "no particular
+      reason," "I like it," or simple comparative statements without explanation (e.g.,
+      "A is better than B").
+    negative_clarification: Exclude specific reasons related to economics, discrimination,
+      employment, or policy tools. Use 'none_of_above' if the response is gibberish
+      or completely uninformative.
+  none_of_above:
+    definition: Responses that are uninformative, nonsensical, or do not fit into
+      any of the substantive categories.
+    clarification: Includes gibberish, random characters, single punctuation marks,
+      "I don't know," "No answer," or responses that are purely negative without explanation
+      (e.g., "I hate it" with no reason).
+    negative_clarification: If a response contains a substantive reason (even if brief),
+      code it into the appropriate substantive category. Use this only for truly uninformative
+      or non-responsive entries.
+

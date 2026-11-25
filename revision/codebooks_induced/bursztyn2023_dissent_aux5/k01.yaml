@@ -1,0 +1,67 @@
+codebook:
+  name: bursztyn2023_dissent_aux5_induced
+  residual_code: none_of_above
+  context: US liberals and independents read an article reporting evidence that defunding
+    the police would increase violent crime, imagined joining a campaign against defunding,
+    chose which of two tweets they would post (one mentioning when they read the article,
+    one with no reference to it), and explained their choice.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bursztyn2023_dissent_aux5:1001
+codes:
+  social_cover:
+    definition: The respondent explains that including the article link serves to
+      provide context or evidence for their decision, specifically to prevent followers
+      from misjudging their motives, appearing uninformed, or acting on a whim.
+    clarification: Includes responses stating the link shows the decision was evidence-based,
+      prevents misinterpretation of motives, demonstrates that the respondent did
+      research, or clarifies that the stance is not arbitrary.
+    negative_clarification: Exclude responses that focus solely on educating the audience
+      about the topic itself without reference to the respondent's personal justification
+      or image management. Use 'educate_others' instead.
+  educate_others:
+    definition: The respondent prefers the tweet with the link because it provides
+      information, data, or resources that allow followers to learn about the issue
+      and form their own opinions.
+    clarification: Includes responses emphasizing the value of sharing facts, helping
+      others understand the complexity of the issue, or providing a resource for further
+      reading.
+    negative_clarification: Exclude responses where the primary goal is to justify
+      the respondent's own stance or protect their reputation. Use 'social_cover'
+      instead.
+  credibility_evidence:
+    definition: The respondent chooses the tweet with the link to add authority, scientific
+      backing, or professional validation to their statement.
+    clarification: Includes responses mentioning the need for "proof," "scientific
+      evidence," "reputable sources," or backing up claims with data to make the argument
+      more persuasive or credible.
+    negative_clarification: Exclude responses focused on the respondent's personal
+      image or the audience's general education. Use 'social_cover' or 'educate_others'
+      as appropriate.
+  communication_style:
+    definition: The respondent chooses a tweet based on preferences for brevity, simplicity,
+      or engagement dynamics, regardless of the informational content.
+    clarification: Includes responses stating a preference for short, simple, or direct
+      posts, or concerns that the longer tweet is too verbose, off-putting, or likely
+      to be ignored.
+    negative_clarification: Exclude responses where the choice is driven by the informational
+      value or social signaling of the link. Use 'none_of_above' if the reason is
+      purely aesthetic or unrelated to the content's substance.
+  substantive_disagreement:
+    definition: The respondent rejects the premise of the article or the campaign,
+      or critiques the accuracy of the article, influencing their choice of tweet.
+    clarification: Includes responses stating the article is misleading, incorrect,
+      or that the respondent disagrees with the findings, even if they still choose
+      one tweet over the other.
+    negative_clarification: Exclude responses that accept the article's premise and
+      choose based on presentation or social signaling. Use 'none_of_above' if the
+      response is purely a rejection of both options without explaining the choice
+      between them.
+  none_of_above:
+    definition: Responses that are uninformative, contradictory, or do not fit into
+      the specific substantive categories above.
+    clarification: Includes responses that are vague, state a preference for neither
+      tweet, or provide reasons unrelated to the construct of interest or the specific
+      dimensions of communication style.
+    negative_clarification: Exclude any response that clearly justifies the choice
+      based on social signaling, education, evidence, style, or substantive critique.
+

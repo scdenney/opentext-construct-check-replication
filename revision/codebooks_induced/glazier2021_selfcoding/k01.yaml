@@ -1,0 +1,48 @@
+codebook:
+  name: glazier2021_selfcoding_induced
+  residual_code: none_of_above
+  context: US adults on Mechanical Turk (2018) read a brief news report about poverty
+    (versions differed) and were then asked to list, in up to ten short entries, what
+    they think are the most important causes of poverty.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:glazier2021_selfcoding:1001
+codes:
+  societal_attribution:
+    definition: At least one listed cause attributes poverty to government, the economy,
+      or social structures.
+    clarification: Includes references to low wages, lack of jobs, poor economy, inflation,
+      cost of living, inequality, discrimination, policy, corporate greed, capitalism,
+      government regulations, education system, automation, outsourcing, and systemic
+      issues.
+    negative_clarification: Exclude responses that only cite individual traits (e.g.,
+      laziness, lack of motivation) or specific personal circumstances without linking
+      them to broader structural/economic forces. Use 'individual_blame' or 'personal_circumstances'
+      instead.
+  individual_blame:
+    definition: At least one listed cause attributes poverty to the individual's character,
+      behavior, or choices.
+    clarification: Includes laziness, lack of initiative, poor work ethic, bad decisions,
+      lack of motivation, irresponsibility, drug/alcohol abuse, criminal history,
+      and poor financial management.
+    negative_clarification: Exclude responses that also cite structural factors like
+      low wages or lack of jobs. If structural factors are present, use 'societal_attribution'.
+      Use 'none_of_above' if the response is incoherent.
+  personal_circumstances:
+    definition: At least one listed cause attributes poverty to individual life events,
+      health, or family structure, without explicit blame or structural attribution.
+    clarification: Includes illness, disability, mental health issues, debt, family
+      breakdown, single parenthood, being born into poverty, bad luck, and lack of
+      childcare/transportation.
+    negative_clarification: Exclude responses that frame these as results of systemic
+      failure (use 'societal_attribution') or as moral failings (use 'individual_blame').
+      Use 'none_of_above' for uninformative answers.
+  none_of_above:
+    definition: Responses that are uninformative, nonsensical, or do not provide a
+      clear cause of poverty.
+    clarification: Includes gibberish, repeated words, irrelevant statements, meta-comments
+      about the survey, or answers that are too vague to code (e.g., "money", "life",
+      "good").
+    negative_clarification: Exclude any response that clearly identifies a cause,
+      even if it is a single factor. If a cause is identifiable, code it into the
+      appropriate substantive category.
+

@@ -1,0 +1,28 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 1
+  seed: 7
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly cites financial, market, or operational mechanisms as the primary driver. This includes mentions of costs, subsidies, loans, business viability, efficiency, or specific economic outcomes. General statements about "helping" or "being good" are NOT economic unless they specify an economic mechanism (e.g., "loans," "subsidy," "business support").
+  normative_rationale:
+    definition: |
+      The reason appeals to moral values, social welfare, national interest, or identity. This includes arguments about what is right, fair, or beneficial for society/Korea, solidarity with North Korean migrants, human rights, or general "good things" for the country or the migrants. It covers broad social benefits and moral obligations.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither strictly economic nor normative. This includes procedural justifications (e.g., "trial," "safety," "distribution"), political endorsements (e.g., "president supports it"), vague preferences (e.g., "better," "realistic," "makes sense"), or reasons based on specific target groups or administrative details that do not fit economic or moral frameworks.
+  uninformative:
+    definition: 'No substantive policy reason is given. This includes: - Explicit
+      lack of knowledge or reason ("don''t know", "no reason", "none"). - Vague emotional
+      or intuitive statements ("my heart", "just feeling", "good luck"). - Meta-commentary
+      on the choice process ("nothing to choose", "not satisfied"). - Off-topic or
+      nonsensical text. - Responses that are too brief to infer a specific rationale
+      (e.g., "Korea-only", "a is not direct") unless they clearly map to a substantive
+      category.'
+

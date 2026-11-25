@@ -1,0 +1,66 @@
+codebook:
+  name: chopra2024_newsdemand_exp3_induced
+  residual_code: none_of_above
+  context: US Prolific respondents who voted for Biden or Trump in 2020 read the competing
+    party claims about either the Democrats' $15 minimum wage bill or a Republican
+    healthcare plan and the two statistics in the CBO's report on it, then learned
+    that The Boston Herald's article reported either only one of the statistics or
+    both. They were asked to explain in two to three sentences why they think the
+    newspaper reported the statistics that way.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:chopra2024_newsdemand_exp3:1001
+codes:
+  political_bias_attribution:
+    definition: The respondent attributes the newspaper's selection of statistics
+      to political bias, partisan alignment, or a desire to favor one political party
+      or ideology over the other.
+    clarification: Includes mentions of the newspaper being conservative/liberal,
+      having a political agenda, wanting to make the opposing party look bad, or skewing
+      facts to support a specific political viewpoint.
+    negative_clarification: Exclude responses that attribute the selection to non-political
+      factors such as editorial style, clickbait, factual reporting of the CBO, or
+      general media cynicism without specifying political partisanship. Use 'editorial_strategy'
+      or 'factual_reporting' instead.
+  factual_reporting:
+    definition: The respondent believes the newspaper reported the statistics because
+      they accurately reflected the data from the Congressional Budget Office (CBO)
+      report, implying no bias in selection.
+    clarification: Includes statements that the newspaper was simply reporting facts,
+      repeating the CBO's findings, or being accurate and objective.
+    negative_clarification: Exclude responses that suggest the newspaper cherry-picked
+      facts to support a narrative or bias. Use 'political_bias_attribution' or 'editorial_strategy'
+      instead.
+  editorial_strategy:
+    definition: The respondent attributes the selection to journalistic or business
+      motives unrelated to explicit political partisanship, such as generating clicks,
+      creating sensational headlines, or focusing on the most impactful human cost.
+    clarification: Includes mentions of "clicks," "headlines," "scare tactics," focusing
+      on the most important number, or general media cynicism about "doom and gloom"
+      reporting.
+    negative_clarification: Exclude responses that explicitly link the strategy to
+      supporting a political party or ideology. Use 'political_bias_attribution' instead.
+  economic_reasoning:
+    definition: The respondent provides an economic explanation for why one statistic
+      might be more relevant or true than the other, or why the newspaper might emphasize
+      one over the other based on economic logic.
+    clarification: Includes arguments about business costs, inflation, rent increases,
+      or the trade-off between employment and poverty reduction based on economic
+      principles.
+    negative_clarification: Exclude responses that attribute the reporting choice
+      to political bias or simple factual repetition. Use 'political_bias_attribution'
+      or 'factual_reporting' instead.
+  uncertainty:
+    definition: The respondent expresses confusion, lack of knowledge, or inability
+      to determine the reason for the newspaper's reporting choice.
+    clarification: Includes statements like "I don't know," "maybe," "I'm not sure,"
+      or "it's possible."
+    negative_clarification: Exclude responses that offer a specific hypothesis, even
+      if tentative. Use 'none_of_above' if the response is purely incoherent or irrelevant.
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, or do not fit into the
+      other categories.
+    clarification: Includes gibberish, irrelevant comments, or responses that do not
+      address the question of why the newspaper reported the statistics in that manner.
+    negative_clarification: Exclude any response that offers a plausible reason, even
+      if weak. Use 'uncertainty' for vague guesses.
+

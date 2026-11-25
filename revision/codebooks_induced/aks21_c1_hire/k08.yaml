@@ -1,0 +1,73 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1008
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, professional skills, or work capacity as the primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer),
+      employment status (employed, unemployed, jobless), occupational skills, or the
+      stability provided by having a job.
+    negative_clarification: Do not use for general stability derived from marriage
+      or long residence, or for political background. Use 'stability_security' or
+      'political_background' instead.
+  residence_adaptation:
+    definition: Reasoning that cites the length of stay in South Korea, familiarity
+      with Korean culture, or perceived social adaptation as the primary reason.
+    clarification: Includes references to 'length of stay', 'residence period', 'adaptation',
+      'understanding of Korean society/culture', or 'integration'.
+    negative_clarification: Do not use for general stability not linked to residence,
+      or for political background. Use 'stability_security' or 'political_background'
+      instead.
+  political_background:
+    definition: Reasoning that cites the profile's political affiliation, specifically
+      membership or non-membership in the Workers' Party of Korea, or ideological
+      alignment.
+    clarification: Includes mentions of 'Workers' Party member', 'non-member', 'ideology',
+      'thought', or 'political stance'.
+    negative_clarification: Do not use for general stability or residence. Use 'stability_security'
+      or 'residence_adaptation' instead.
+  demographic_preference:
+    definition: Reasoning based on demographic characteristics such as age, gender,
+      marital status, or family structure, excluding employment.
+    clarification: Includes preferences for 'young/old', 'male/female', 'married/unmarried',
+      'has children/no children', or 'life experience' (when not tied to a job).
+    negative_clarification: Do not use if the reasoning is primarily about job skills
+      or political background. Use 'employment_occupation' or 'political_background'
+      instead.
+  interpersonal_network:
+    definition: Reasoning that cites the profile's social connections, specifically
+      relationships with South Koreans or other North Korean defectors, as a proxy
+      for trust or integration.
+    clarification: Includes mentions of 'friends', 'colleagues', 'network', 'relationships
+      with South Koreans', or 'relationships with defectors'.
+    negative_clarification: Do not use for general personality traits or vague 'good
+      feeling'. Use 'personality_vague' or 'stability_security' instead.
+  stability_security:
+    definition: Reasoning that cites general stability, safety, reliability, or low
+      risk, without specifying the source (e.g., not tied to a specific job or political
+      fact).
+    clarification: Includes vague terms like 'stable', 'safe', 'reliable', 'low risk',
+      'normal life', or 'peaceful'.
+    negative_clarification: Do not use if the stability is explicitly linked to a
+      job ('employment_occupation') or political background ('political_background').
+  personality_vague:
+    definition: Reasoning based on vague personal impressions, gut feelings, or general
+      likability without specific structural reasons.
+    clarification: Includes 'gut feeling', 'like the person', 'good vibe', 'personality',
+      or 'just felt like it'.
+    negative_clarification: Do not use if there is a specific reason like job, residence,
+      or politics. Use those specific codes instead.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes 'no reason', 'random', 'both are bad', 'don't know', 'just
+      clicked', or single characters/numbers with no explanatory value.
+    negative_clarification: Do not use for any substantive reason related to the profile's
+      attributes.
+

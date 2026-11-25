@@ -1,0 +1,84 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1011
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly or implicitly invokes the candidate's origin
+      as North Korea, a defector, or a North Korean migrant as a decisive factor for
+      selection or rejection.
+    clarification: Includes explicit mentions of "North Korea" (북한), "North Korean
+      defector" (탈북자), "North Korean migrant" (북한이민자), or strong implications of being
+      from the North (e.g., "not born in North Korea" implying the other might be,
+      or "North Korean background"). It captures cases where the respondent's choice
+      is driven by the specific stigma or status associated with North Korean origin.
+    negative_clarification: Exclude general references to "South Korean" (한국인, 대한민국
+      국민) or "domestic" (국내) origin unless explicitly contrasted with or defined by
+      a North Korean origin. If the respondent simply states they are Korean or prefers
+      a Korean candidate without mentioning North Korea, code as `domestic_nationality`.
+      Exclude general "foreigner" (외국인) references that do not specify North Korea.
+  domestic_nationality:
+    definition: Reasoning that prioritizes or rejects candidates based on their status
+      as a South Korean citizen or native-born resident, often framed as "Korean first"
+      or "domestic priority."
+    clarification: Includes mentions of "Korean" (한국인), "South Korean" (대한민국 국민),
+      "domestic" (국내), "native" (토종), or "citizen" (자국민). It covers the preference
+      for supporting compatriots or excluding foreigners in general terms.
+    negative_clarification: Exclude specific references to North Korea (code as `nk_origin_reasoning`).
+      Exclude general "foreigner" mentions that are not tied to a specific national
+      identity preference other than general exclusion. Exclude cases where nationality
+      is not the primary driver.
+  criminal_record:
+    definition: Reasoning based on the presence or absence of a criminal record, particularly
+      theft or tax evasion.
+    clarification: Includes explicit mentions of "criminal record" (전과기록), "no criminal
+      record" (전과없음), "theft" (절도), "tax evasion" (탈세), "clean record" (깨끗함), or moral
+      judgments related to criminality (e.g., "untrustworthy due to crime").
+    negative_clarification: Exclude general character traits not linked to legal records
+      (e.g., "honest," "hardworking"). Exclude references to North Korean origin (code
+      as `nk_origin_reasoning`). Exclude general "foreigner" status.
+  family_responsibility:
+    definition: Reasoning that prioritizes candidates based on their family status,
+      specifically having children or being a head of household requiring financial
+      support.
+    clarification: Includes mentions of "children" (자녀, 아이), "head of household" (가장),
+      "single mother" (미혼모), "supporting family" (부양가족), "responsibility" (책임감) linked
+      to dependents, or "need for income" due to family size.
+    negative_clarification: Exclude general "family" mentions that do not imply economic
+      need or dependency (e.g., just "married"). Exclude criminal records (code as
+      `criminal_record`). Exclude age-based reasoning unless explicitly tied to family
+      stage (e.g., "young parents").
+  age_priority:
+    definition: Reasoning that prioritizes candidates based on their age, typically
+      favoring younger candidates for opportunity or older candidates for experience/stability.
+    clarification: Includes explicit mentions of "age" (나이), "young" (젊음, 젊은), "old"
+      (늙음, 노년), "generation" (세대), or "youth" (청년). Covers both "give opportunity
+      to youth" and "prefer experience of older workers."
+    negative_clarification: Exclude age mentions that are secondary to other factors
+      like criminal record or family status. Exclude general "life stage" references
+      not explicitly about age.
+  job_experience_qualification:
+    definition: Reasoning based on the candidate's current job, work experience, or
+      professional qualifications.
+    clarification: Includes mentions of "job" (직업), "experience" (경험, 경력), "manager"
+      (매니저), "security guard" (경비원), "part-time" (시간제), "full-time" (정직원), or specific
+      skills/qualifications relevant to the training.
+    negative_clarification: Exclude general "hard work" or "attitude" not tied to
+      specific job history. Exclude criminal records (code as `criminal_record`).
+      Exclude family status (code as `family_responsibility`).
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses that do not provide
+      a clear reason for the choice.
+    clarification: Includes gibberish (e.g., "asdf", "ㅁ"), single letters (e.g., "A",
+      "B"), emojis, "I don't know" (모름, 몰라), "no reason" (이유 없음, 딱히 없음), or vague
+      positive/negative sentiments without explanation (e.g., "good," "bad," "looks
+      nice").
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if poorly phrased. If a response contains a mix of valid codes, code the
+      most prominent one, not `none_of_above`.
+

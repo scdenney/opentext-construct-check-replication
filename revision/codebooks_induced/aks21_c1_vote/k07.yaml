@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1007
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's past or present
+      membership in the Workers' Party of Korea (Choson Rodongdang), or other direct
+      ties to the North Korean regime, ideology, or political structure.
+    clarification: Includes mentions of being a former or current member of the Workers'
+      Party, being a 'party member', or having ideological ties to North Korea. Also
+      includes negative references where the absence of such ties is the primary reason
+      for preference (e.g., "not a party member").
+    negative_clarification: Exclude general mentions of being North Korean or defector
+      status without specific regime/party reference. Use 'demographic_characteristics'
+      or 'integration_factors' if the reasoning is about general background rather
+      than political ties.
+  integration_factors:
+    definition: Reasoning based on the profile's length of residence in South Korea,
+      perceived social adaptation, or presence of social connections (e.g., Korean
+      colleagues, friends) that suggest ease of integration.
+    clarification: Includes mentions of long residence time in Korea, good adaptation
+      to Korean society, having Korean colleagues or friends, and low cultural alienation.
+    negative_clarification: Exclude mentions of residence in China (use 'migration_history').
+      Exclude general personality traits not linked to social integration (use 'personal_traits').
+  demographic_characteristics:
+    definition: Reasoning based on the profile's age, gender, or marital/family status.
+    clarification: Includes preferences for younger/older age, specific gender (male/female),
+      marital status, or having children.
+    negative_clarification: Exclude age/gender if it is explicitly linked to political
+      reliability or regime ties (use 'north_korea_regime_ties'). Exclude general
+      "feeling" or "vibe" without specific demographic attribution (use 'none_of_above').
+  professional_status:
+    definition: Reasoning based on the profile's occupation, employment status, or
+      professional skills.
+    clarification: Includes mentions of having a stable job, being a professional
+      (e.g., doctor, programmer), or having specific skills that make them a better
+      neighbor or more reliable.
+    negative_clarification: Exclude general "good job" if it's vague and overlaps
+      with stability; however, if it's the primary driver, keep here. Exclude if the
+      job is mentioned only as a secondary factor to integration (use 'integration_factors').
+  migration_history:
+    definition: Reasoning based on the profile's time spent in China or other countries
+      prior to arriving in South Korea.
+    clarification: Includes mentions of short or long residence in China, or the sequence
+      of migration.
+    negative_clarification: Exclude residence in South Korea (use 'integration_factors').
+      Exclude general migration experience without specific country reference (use
+      'none_of_above').
+  personal_traits:
+    definition: Reasoning based on perceived personality, character, or interpersonal
+      qualities.
+    clarification: Includes mentions of being friendly, easy to talk to, stable, trustworthy,
+      or having good interpersonal skills.
+    negative_clarification: Exclude traits that are clearly proxies for demographic
+      factors (e.g., "young and energetic" -> demographic). Exclude vague feelings
+      (use 'none_of_above').
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not provide
+      a clear rationale based on the profile's attributes.
+    clarification: Includes responses like "just felt like it," "no reason," "both
+      are bad," "random choice," single words like "okay," or incomplete sentences.
+    negative_clarification: Exclude any response that mentions at least one specific
+      attribute (age, job, party, residence, etc.) even if briefly.
+

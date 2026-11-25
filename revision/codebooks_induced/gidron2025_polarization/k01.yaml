@@ -1,0 +1,82 @@
+codebook:
+  name: gidron2025_polarization_induced
+  residual_code: none_of_above
+  context: Adults in ten Western democracies (2021) were asked in their own language
+    to describe the key cultural or economic issues on which political parties in
+    their country disagree; answers were machine-translated into English.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:gidron2025_polarization:1001
+codes:
+  immigration_dispute:
+    definition: The response explicitly identifies immigration, migrants, refugees,
+      asylum seekers, or border control as a key issue on which political parties
+      disagree.
+    clarification: Includes direct mentions of 'immigration', 'migration', 'refugees',
+      'asylum', 'border control', 'illegal aliens', 'legalization', and specific policies
+      related to these groups (e.g., 'asylum policy', 'immigration policy'). Also
+      includes responses that frame the disagreement around the volume or nature of
+      immigration (e.g., 'too many immigrants', 'stop the immigration').
+    negative_clarification: Exclude responses that mention immigration only as a minor
+      item in a long list of unrelated issues without emphasizing it as a point of
+      partisan clash, unless it is the primary focus. If the response is about general
+      'integration' without mentioning the movement of people, use 'integration_dispute'.
+      If the response is uninformative, use 'none_of_above'.
+  integration_dispute:
+    definition: The response identifies the integration of immigrants or multiculturalism
+      as a key cultural issue of disagreement, distinct from the act of immigration
+      itself.
+    clarification: Includes mentions of 'integration', 'multiculturalism', 'national
+      identity', 'assimilation', 'cultural differences', 'racism', 'xenophobia', 'nationalism',
+      and 'social cohesion' in the context of cultural diversity.
+    negative_clarification: Exclude responses that focus on the economic aspects of
+      integration (e.g., 'welfare for immigrants') or the physical movement of people
+      (use 'immigration_dispute'). Exclude general mentions of 'culture' or 'tradition'
+      without reference to diversity or immigration. Use 'none_of_above' for vague
+      cultural references.
+  economic_dispute:
+    definition: The response identifies economic issues such as taxes, inequality,
+      welfare, unemployment, or public spending as key issues on which political parties
+      disagree.
+    clarification: Includes mentions of 'taxes', 'taxation', 'welfare', 'unemployment',
+      'pensions', 'inequality', 'poverty', 'wealth', 'minimum wage', 'public spending',
+      'healthcare funding', 'housing', and 'economic policy'.
+    negative_clarification: Exclude responses that mention economic issues only in
+      passing alongside non-economic issues without clear emphasis on partisan disagreement
+      on the economy. If the response is primarily about immigration or culture, use
+      the respective code. Use 'none_of_above' for uninformative answers.
+  identity_nationalism_dispute:
+    definition: The response identifies national identity, sovereignty, or nationalism
+      as a key cultural issue of disagreement, distinct from immigration or multiculturalism.
+    clarification: Includes mentions of 'national identity', 'sovereignty', 'nationalism',
+      'patriotism', 'self-determination', 'country's right', 'citizenship', and 'national
+      pride'.
+    negative_clarification: Exclude responses that link national identity directly
+      to immigration control (use 'immigration_dispute') or multiculturalism (use
+      'integration_dispute'). Exclude general political dissatisfaction. Use 'none_of_above'
+      for vague or uninformative responses.
+  environmental_dispute:
+    definition: The response identifies climate change, environmental protection,
+      or ecological issues as a key issue on which political parties disagree.
+    clarification: Includes mentions of 'climate change', 'global warming', 'environment',
+      'ecology', 'pollution', 'green policy', and 'sustainability'.
+    negative_clarification: Exclude responses that mention environmental issues only
+      as a minor item in a list of many issues. Use 'none_of_above' if the response
+      is uninformative.
+  health_social_dispute:
+    definition: The response identifies healthcare systems, social services, or public
+      health as a key issue of disagreement.
+    clarification: Includes mentions of 'healthcare', 'health system', 'hospitals',
+      'social services', 'care', 'pandemic response', 'vaccines', and 'social security'.
+    negative_clarification: Exclude responses that focus on the economic cost of healthcare
+      (use 'economic_dispute') or immigration-related health issues (use 'immigration_dispute'
+      or 'economic_dispute'). Use 'none_of_above' for uninformative responses.
+  none_of_above:
+    definition: The response is uninformative, expresses no opinion, is too vague
+      to code, or does not identify a specific issue of partisan disagreement.
+    clarification: Includes 'I don't know', 'no idea', 'they are all the same', 'nothing',
+      'not interested', 'I don't follow politics', and other non-substantive answers.
+    negative_clarification: Exclude any response that clearly identifies a specific
+      issue (immigration, economy, culture, etc.) as a point of disagreement. If the
+      response mentions an issue but is too vague to determine the nature of the disagreement,
+      use 'none_of_above'.
+

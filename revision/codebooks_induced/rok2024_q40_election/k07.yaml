@@ -1,0 +1,61 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1007
+codes:
+  programmatic_policy_reasoning:
+    definition: Justifies the choice by referencing specific policy positions, ideological
+      stances, or political platforms of the candidate.
+    clarification: Includes references to housing/real estate taxes, labor hours/work
+      conditions, nuclear weapons/defense, foreign policy (alliances, North Korea
+      relations), anti-discrimination laws, and general ideological alignment (conservative/progressive)
+      or value congruence with policy outcomes.
+    negative_clarification: Exclude references to personal integrity, age, gender,
+      appearance, or lack of scandals. If the response mentions "policy" but refers
+      to the candidate's character (e.g., "honest policy"), use candidate_characteristics.
+      If the response is vague ("policy is good") without specifying content, use
+      none_of_above.
+  candidate_characteristics:
+    definition: Justifies the choice based on the candidate's personal attributes,
+      background, or perceived traits unrelated to specific policy platforms.
+    clarification: Includes age (young/old), gender, professional background (e.g.,
+      prosecutor, diplomat, activist), physical appearance, perceived intelligence,
+      leadership style, or personal integrity/cleanliness (lack of corruption/scandals).
+    negative_clarification: Exclude references to specific policy agreements or ideological
+      camps. If the reason is "clean record" but linked to a specific policy stance
+      (e.g., "anti-corruption policy"), use programmatic_policy_reasoning. If the
+      reason is purely aesthetic or demographic without policy implication, use this
+      code.
+  comparative_evaluation:
+    definition: Justifies the choice based on a relative comparison with other candidates,
+      often implying the chosen candidate is the "lesser evil" or relatively better.
+    clarification: Includes phrases like "less bad than others," "relatively better,"
+      "least corrupt among options," or "more reasonable than the alternative."
+    negative_clarification: Exclude specific reasons for the comparison. If the comparison
+      is based on policy (e.g., "better economic policy"), use programmatic_policy_reasoning.
+      If based on character (e.g., "less corrupt"), use candidate_characteristics.
+      This code is for when the *act of comparison* itself is the primary stated reason
+      without specific differentiating content.
+  demographic_identity:
+    definition: Justifies the choice based on shared demographic identity or regional
+      origin.
+    clarification: Includes references to gender (e.g., "chose a woman"), age group,
+      regional origin (e.g., "from Jeolla"), or ethnic background.
+    negative_clarification: Exclude policy reasons that might correlate with demographics.
+      If the response is "I chose a woman because she supports X policy," use programmatic_policy_reasoning.
+      This code is for identity-based voting without explicit policy justification.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or indicate no
+      specific reason for the choice.
+    clarification: Includes "no reason," "just felt like it," "random," "both are
+      bad," "didn't know," gibberish, or extremely vague statements that do not map
+      to policy, character, or comparison (e.g., "just good," "like it").
+    negative_clarification: Exclude any response that contains identifiable policy
+      keywords, character traits, or comparative logic. If the response is ambiguous
+      but leans towards policy or character, code accordingly.
+

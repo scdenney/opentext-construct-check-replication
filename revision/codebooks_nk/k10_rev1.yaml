@@ -1,0 +1,25 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 1
+  seed: 10
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns economic, fiscal, administrative, or practical policy considerations. This includes references to jobs, growth, cost, efficiency, tax implications, subsidies, business support mechanisms (e.g., advisory services, corporate support), and general utility or benefit to the economy or society. It also includes reasons based on the practical feasibility or realistic implementation of the policy.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, deservingness, moral obligation, solidarity, human rights, or identity. This includes arguments about what North Korean migrants are owed, moral duties to help them, or the ethical rightness of the policy. It also includes reasons based on social cohesion, integration, or the moral value of supporting a specific group, even if phrased as "good for Korea" when the core intent is moral solidarity or identity-based support.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes political reasons (e.g., party affiliation, presidential support), strategic or relational reasons (e.g., cooperation, joint ventures, relative choice between options), and general positive sentiments that do not fit economic or moral categories (e.g., "I like it," "It looks better").
+  uninformative:
+    definition: No substantive reason is given. This includes "don't know," "no reason,"
+      "nothing special," "none," or off-topic text. It also includes purely procedural
+      or non-explanatory phrases that do not convey a preference rationale (e.g.,
+      "Just," "Support target" without further explanation).
+

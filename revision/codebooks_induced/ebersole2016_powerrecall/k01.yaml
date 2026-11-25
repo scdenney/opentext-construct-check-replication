@@ -1,0 +1,73 @@
+codebook:
+  name: ebersole2016_powerrecall_induced
+  residual_code: none_of_above
+  context: US and Canadian university participant-pool students (20 sites) and MTurk
+    workers in 2014 were randomly asked to recall and describe either an incident
+    in which they had power over someone or one in which someone had power over them.
+    The written description is the manipulation itself; a sarcasm-perception task
+    followed.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ebersole2016_powerrecall:1001
+codes:
+  holding_power_over_others:
+    definition: The respondent describes themselves as controlling another person's
+      outcomes, resources, or opportunities, or as evaluating, supervising, directing,
+      or deciding for others.
+    clarification: Includes formal roles (manager, teacher, parent, coach, club president)
+      and informal roles (babysitter, team captain) where the respondent had authority
+      to direct, evaluate, hire/fire, or control access to desired items or activities
+      for another person.
+    negative_clarification: Use 'power_over_material_objects' if the power is limited
+      to controlling a physical object (e.g., a hat, a laptop) without controlling
+      the person's outcomes or opportunities. Use 'power_through_influence' if the
+      respondent only influenced or advised others without formal authority or control
+      over outcomes. Use 'none_of_above' if the response is uninformative.
+  power_over_material_objects:
+    definition: The respondent describes having power over a specific physical object
+      or resource that another person desired, but not over the person's broader outcomes,
+      opportunities, or evaluation.
+    clarification: Includes situations where the respondent controlled access to an
+      item (e.g., a hat, a laptop, candy) and the other person wanted it, but the
+      respondent did not act as a supervisor, evaluator, or director of the person's
+      actions or life outcomes.
+    negative_clarification: Use 'holding_power_over_others' if the control of the
+      object is part of a broader supervisory or evaluative role (e.g., a teacher
+      controlling grades/resources). Use 'none_of_above' if the response does not
+      describe a power dynamic.
+  power_through_influence:
+    definition: The respondent describes influencing, advising, or persuading others,
+      or being in a position where others seek their opinion, but without formal authority
+      or direct control over the other person's outcomes or resources.
+    clarification: Includes being asked for advice, editing papers for friends, or
+      leading by example where the respondent's "power" stems from respect, expertise,
+      or social dynamics rather than positional authority to direct or evaluate.
+    negative_clarification: Use 'holding_power_over_others' if the influence is backed
+      by formal authority (e.g., a manager giving feedback). Use 'none_of_above' if
+      the response is uninformative.
+  experiencing_powerlessness:
+    definition: The respondent describes a situation where someone else had power
+      over them, resulting in feelings of helplessness, lack of control, or negative
+      evaluation by another.
+    clarification: Includes being fired, being strictly supervised, being denied access
+      to classes or items by parents/teachers, being evaluated by superiors, or being
+      subject to the arbitrary decisions of others (e.g., police, bosses, strict parents).
+    negative_clarification: Use 'holding_power_over_others' if the respondent was
+      the one in control. Use 'none_of_above' if the response is uninformative.
+  emotional_state_only:
+    definition: The respondent describes their feelings or emotional state regarding
+      power dynamics but fails to describe a specific incident or the structural nature
+      of the power relationship.
+    clarification: Includes vague statements about feeling confident, shy, overwhelmed,
+      or happy without linking these feelings to a specific instance of controlling
+      or being controlled by another person.
+    negative_clarification: Use 'holding_power_over_others' or 'experiencing_powerlessness'
+      if a specific incident and power dynamic are described. Use 'none_of_above'
+      if the response is completely uninformative (e.g., "no such experience").
+  none_of_above:
+    definition: The response is uninformative, does not describe a power dynamic,
+      or is irrelevant to the prompt.
+    clarification: Includes responses stating "no such experience," "n/a," "overwhelming"
+      (without context), or descriptions of mutual cooperation without a power imbalance.
+    negative_clarification: Use other codes if a power dynamic (holding or experiencing)
+      is described.
+

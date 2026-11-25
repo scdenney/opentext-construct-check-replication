@@ -1,0 +1,77 @@
+codebook:
+  name: bonilla2024_sourcecues_s3_induced
+  residual_code: none_of_above
+  context: Black adults in the United States (online survey, 2019) read a short statement
+    on crime and the justice system by a candidate for office who was identified as
+    White or as Black; the statement either generalized negatively about Black people
+    or talked about enforcing the law in general. They said how strongly they agreed
+    with the statement and were then asked to explain the key reasons for their position.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bonilla2024_sourcecues_s3:1001
+codes:
+  rejects_as_racist:
+    definition: The respondent explicitly rejects or criticizes the candidate's statement
+      as racist, prejudiced, stereotyping, bigoted, offensive, or inappropriate toward
+      Black people.
+    clarification: Includes responses that label the statement as a racist generalization,
+      stereotype, or bias against Black people. Includes complaints about the statement
+      being offensive, insulting, or dehumanizing.
+    negative_clarification: Do not use for disagreement based on policy, fairness,
+      or factual accuracy alone. Use 'disagrees_on_policy_or_fairness' or 'disagrees_on_factual_accuracy'
+      instead.
+  disagrees_on_policy_or_fairness:
+    definition: The respondent disagrees with the statement because they believe the
+      proposed solution (e.g., stricter enforcement) is unjust, ineffective, or that
+      the justice system is already biased or unfair.
+    clarification: Includes arguments that the system is already rigged, that laws
+      are not enforced equally, that harsher penalties are not a deterrent, or that
+      the statement ignores systemic issues like poverty or lack of opportunity.
+    negative_clarification: Do not use if the primary reason is that the statement
+      is racist or a stereotype. Use 'rejects_as_racist' instead. Do not use for general
+      agreement.
+  agrees_with_statement:
+    definition: The respondent agrees with the candidate's statement, either because
+      they believe it is factually true, morally right, or necessary for societal
+      order.
+    clarification: Includes responses stating the statement is true, right, good,
+      or that Black people need to take responsibility, work harder, or clean up their
+      act.
+    negative_clarification: Do not use for disagreement. Use 'disagrees_on_policy_or_fairness'
+      or 'disagrees_on_factual_accuracy' instead.
+  disagrees_on_factual_accuracy:
+    definition: The respondent disagrees with the statement because they believe the
+      premise (e.g., that Black people are disproportionately criminal) is factually
+      incorrect or misleading.
+    clarification: Includes claims that crime rates are not higher among Black people,
+      that other races commit similar crimes, or that the data cited is wrong.
+    negative_clarification: Do not use if the disagreement is based on the statement
+      being racist or the policy being unfair. Use 'rejects_as_racist' or 'disagrees_on_policy_or_fairness'
+      instead.
+  general_system_critique:
+    definition: The respondent offers a broad critique of the government, justice
+      system, or society without directly addressing the specific content of the candidate's
+      statement regarding Black people and crime.
+    clarification: Includes general calls for reform, comments on government corruption,
+      or broad statements about equality and justice that do not specifically engage
+      with the racialized aspect of the prompt.
+    negative_clarification: Do not use if the response specifically addresses the
+      racial generalization or the specific policy of law enforcement in the context
+      of the statement. Use 'rejects_as_racist', 'disagrees_on_policy_or_fairness',
+      or 'agrees_with_statement' instead.
+  uninformative_or_technical:
+    definition: The response is uninformative, expresses confusion, or cites technical
+      issues preventing a substantive answer.
+    clarification: Includes "I don't know," "No reason," "Can't read the text," "Too
+      small print," "Don't understand," or non-sequiturs.
+    negative_clarification: Do not use for substantive disagreements or agreements.
+      Use 'none_of_above' if the response is completely unintelligible or irrelevant,
+      but prefer this code for common non-substantive responses like "I don't know."
+  none_of_above:
+    definition: The response does not fit into any of the defined categories or is
+      too vague to code.
+    clarification: Use for responses that are completely unintelligible, purely emotional
+      outbursts without reasoning, or responses that do not address the prompt's context
+      at all.
+    negative_clarification: Use other codes if the response contains any discernible
+      reasoning related to racism, policy, agreement, or factual accuracy.
+

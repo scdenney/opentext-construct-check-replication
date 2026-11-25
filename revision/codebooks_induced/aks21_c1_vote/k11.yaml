@@ -1,0 +1,59 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1011
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (North Korean regime), ideological ties to North
+      Korea, or the absence of such ties as a primary factor in the decision.
+    clarification: Includes mentions of "Workers' Party member" (노동당원), "North Korean
+      defector ties" (북헌 연고자), or explicit rejection/acceptance based on party affiliation
+      status.
+    negative_clarification: Do not use for general political ideology, religious beliefs,
+      or general social integration factors. Use 'general_social_integration' or 'religious_cultural_factors'
+      instead.
+  general_social_integration:
+    definition: Reasoning based on the profile's length of residence in South Korea,
+      length of residence in China, or quality of social networks (e.g., having Korean
+      colleagues/friends) as indicators of assimilation or trustworthiness.
+    clarification: Includes "length of stay in Korea" (한국 체류기간), "length of stay in
+      China" (중국 체류기간), "Korean colleagues" (한국인 동료), and "social adaptation" (적응).
+    negative_clarification: Do not use for demographic traits like age or gender unless
+      they are explicitly linked to integration speed. Do not use for regime ties.
+  demographic_preferences:
+    definition: Reasoning based on the profile's age, gender, or marital status as
+      primary determinants for neighbor selection.
+    clarification: Includes preferences for "young" (젊음/청년), "female" (여성), "married"
+      (결혼/기혼), or "similar age" (나이 비슷).
+    negative_clarification: Do not use if the demographic trait is secondary to professional
+      status or integration metrics. Do not use for regime ties.
+  professional_status:
+    definition: Reasoning based on the profile's occupation, employment status, or
+      perceived economic stability and utility.
+    clarification: Includes mentions of specific jobs (e.g., "doctor" 의사, "programmer"
+      프로그래머), "employed" (직업 있음), "unemployed" (무직), and "economic stability" (안정적).
+    negative_clarification: Do not use for general social integration or demographic
+      traits.
+  family_responsibility:
+    definition: Reasoning that cites the presence of children or family obligations
+      as an indicator of responsibility, stability, or a reason to provide support.
+    clarification: Includes mentions of "children" (자녀), "family" (가족), "responsibility"
+      (책임감), and "raising children" (양육).
+    negative_clarification: Do not use for general marital status without reference
+      to children/responsibility. Use 'demographic_preferences' for simple marital
+      status.
+  none_of_above:
+    definition: Responses that are uninformative, express no preference, indicate
+      indifference, or contain non-substantive filler.
+    clarification: Includes "no reason" (이유 없음, 별 이유 없음), "just" (그냥), "don't know"
+      (모름), random characters, or statements that both profiles are equally bad/good
+      without specific rationale.
+    negative_clarification: Do not use for any substantive reason related to demographics,
+      integration, profession, or regime ties.
+

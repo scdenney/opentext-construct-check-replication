@@ -1,0 +1,70 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1001
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or democratic principles as a primary ground for choosing the politician, including
+      assessments of democracy's value, stability, or compatibility with other goals.
+    clarification: Includes mentions of "democracy" (민주주의), "liberal democracy" (자유민주주의),
+      democratic legitimacy, or comparisons favoring democracy over other systems.
+      Also includes reasoning that democracy is flawed but still the preferred or
+      necessary system, or that the politician's stance on democratic values aligns
+      with the respondent.
+    negative_clarification: Exclude responses that mention democracy only as a distractor
+      or in a purely negative context without linking it to the choice (e.g., "Democracy
+      is chaos, so I chose B" might be coded as order_reasoning if order is the primary
+      driver, but if the focus is on the rejection of democracy itself, check if it
+      fits 'none_of_above' or 'order_reasoning'). Do not include general political
+      preferences unless they explicitly reference democratic mechanisms or values.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes the politician's stance on social welfare,
+      government responsibility for social safety nets, or economic redistribution.
+    clarification: Includes mentions of "welfare" (복지), government responsibility
+      for citizens' well-being, state-led economic support, or critiques of insufficient
+      social support.
+    negative_clarification: Exclude general economic growth arguments that do not
+      mention welfare or redistribution (code as economic_growth_reasoning). Exclude
+      general "fairness" unless tied to welfare provision.
+  economic_growth_reasoning:
+    definition: Reasoning that prioritizes the politician's stance on national economic
+      development, market mechanisms, or business environment.
+    clarification: Includes mentions of "economy" (경제), "economic development" (경제발전),
+      support for private enterprises (사기업), or state-owned enterprises (국영기업) specifically
+      for economic efficiency or growth.
+    negative_clarification: Exclude welfare-focused arguments (code as welfare_reasoning).
+      Exclude general "prosperity" without specific economic policy references.
+  equality_diversity_reasoning:
+    definition: Reasoning that prioritizes the politician's stance on gender equality,
+      racial/ethnic diversity, or non-discrimination.
+    clarification: Includes mentions of "diversity" (다양성), "gender equality" (성별 평등/차별
+      없음), "racial diversity" (인종 다양성), or rejection of gender/racial discrimination.
+    negative_clarification: Exclude general "fairness" or "justice" unless specifically
+      tied to identity-based equality. Exclude welfare or economic arguments.
+  competence_trust_reasoning:
+    definition: Reasoning based on the politician's perceived competence, honesty,
+      alignment with personal views, or general trustworthiness, without specific
+      policy or ideological content.
+    clarification: Includes phrases like "seems capable," "agrees with my views,"
+      "correct attitude," "trustworthy," or vague endorsements of the politician's
+      character or general political stance.
+    negative_clarification: Exclude specific policy reasons (welfare, economy, equality,
+      democracy). Exclude "none_of_above" if the response is substantive but vague;
+      this code captures substantive but non-policy-specific reasoning.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses that do not
+      provide a clear reason for the choice.
+    clarification: Includes "I don't know," "just picked A," "B seemed better," "politics
+      is hard," or responses that are incoherent or purely emotional without explanatory
+      content.
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if weak or poorly articulated. If a reason can be mapped to another code,
+      use that code.
+

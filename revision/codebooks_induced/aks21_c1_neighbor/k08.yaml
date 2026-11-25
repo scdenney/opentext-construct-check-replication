@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1008
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the respondent's
+      perception of the profile's social connections, interpersonal relationships,
+      or degree of assimilation into South Korean society.
+    clarification: Includes mentions of having Korean friends/colleagues, mixing with
+      South Koreans, keeping to North Korean circles, social adaptability, interpersonal
+      skills, marriage/family stability as a sign of integration, or general social
+      fit.
+    negative_clarification: Do not use for reasons based solely on professional competence,
+      age, or length of stay without reference to social interaction. Use 'professional_qualifications'
+      or 'demographic_characteristics' instead.
+  professional_qualifications:
+    definition: Reasoning based on the profile's employment status, job type, skills,
+      or perceived work ethic and competence.
+    clarification: Includes mentions of specific jobs (e.g., doctor, programmer),
+      being employed vs. unemployed, professional skills, career potential, reliability
+      in work, or suitability for a specific role.
+    negative_clarification: Do not use for reasons based on social mixing or age.
+      Use 'social_integration_ties' or 'demographic_characteristics' instead.
+  demographic_characteristics:
+    definition: Reasoning based on the profile's age, gender, or other static demographic
+      attributes.
+    clarification: Includes mentions of being young, old, male, female, or age-related
+      factors like retirement age or energy levels.
+    negative_clarification: Do not use for reasons based on social ties or professional
+      skills. Use 'social_integration_ties' or 'professional_qualifications' instead.
+  duration_of_stay:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea or China, used as a proxy for familiarity or influence.
+    clarification: Includes mentions of long/short stay in Korea, long/short stay
+      in China, or duration of residence as a factor for trust or adaptation.
+    negative_clarification: Do not use if the duration is mentioned only to support
+      a claim about social integration (use 'social_integration_ties') or if it is
+      the only reason without demographic/professional context. If duration is the
+      primary driver for trust/adaptation distinct from social ties, use this code.
+  political_ideology:
+    definition: Reasoning based on the profile's political affiliation, specifically
+      regarding membership in the Workers' Party of Korea or ideological alignment.
+    clarification: Includes mentions of being a former/current Workers' Party member,
+      ideological brainwashing, or political reliability.
+    negative_clarification: Do not use for general social or professional reasons.
+      Use 'social_integration_ties' or 'professional_qualifications' instead.
+  family_status:
+    definition: Reasoning based on the profile's marital status or presence of children,
+      viewed as a factor for stability or responsibility.
+    clarification: Includes mentions of being married, having children, or being single/unmarried
+      as a reason for trust or suitability.
+    negative_clarification: Do not use if family status is mentioned solely as part
+      of social integration (e.g., "married to a Korean"). Use 'social_integration_ties'
+      instead. If it's about general stability/responsibility, use this code.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      the specific substantive categories.
+    clarification: Includes "no reason," "just felt like it," "good," "trust" (without
+      explanation), "age" (without elaboration), "gender" (without elaboration), or
+      random characters.
+    negative_clarification: Do not use for substantive reasons. If a response mentions
+      age, job, or stay duration, use the specific code. Use this only for vague or
+      empty responses.
+

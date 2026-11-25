@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1001
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic values, or
+      the concept of democracy as a primary ground for choosing the politician.
+    clarification: Includes mentions of 'democracy' (민주주의), 'liberal democracy' (자유민주주의),
+      democratic principles, or the benefits/nature of democratic systems.
+    negative_clarification: Exclude responses that mention democracy only in passing
+      or as a secondary factor while focusing on other issues like welfare or economy.
+      Use 'welfare_reasoning', 'economic_reasoning', or 'diversity_reasoning' instead
+      if those are the primary drivers.
+  welfare_reasoning:
+    definition: Reasoning based on the politician's stance on social welfare, government
+      responsibility for citizens' livelihoods, or expansion of social safety nets.
+    clarification: Includes support for government-provided welfare, public pensions,
+      healthcare, or the belief that the state should take responsibility for citizens'
+      well-being.
+    negative_clarification: Exclude responses focused primarily on economic growth,
+      market mechanisms, or private enterprise. Use 'economic_reasoning' instead.
+  economic_reasoning:
+    definition: Reasoning based on the politician's stance on economic policy, market
+      structure, or national economic competitiveness.
+    clarification: Includes preferences for state-owned enterprises (public sector)
+      vs. private enterprises, market economy principles, job creation, or economic
+      efficiency.
+    negative_clarification: Exclude responses focused on social welfare distribution
+      or democratic values. Use 'welfare_reasoning' or 'democracy_reasoning' instead.
+  diversity_reasoning:
+    definition: Reasoning based on the politician's stance on social diversity, multiculturalism,
+      or gender equality.
+    clarification: Includes support for gender equality, non-discrimination, multicultural
+      acceptance, or diversity in society.
+    negative_clarification: Exclude responses that are purely about economic or democratic
+      structures. Use 'economic_reasoning' or 'democracy_reasoning' instead.
+  general_agreement:
+    definition: Reasoning based on a general alignment of the respondent's views with
+      the politician's overall platform or specific policy agreements, without specifying
+      a single domain.
+    clarification: Includes statements like "my views match," "I agree with their
+      opinions," or "their stance is reasonable," where the specific policy area is
+      not the sole or primary focus.
+    negative_clarification: Exclude responses that clearly identify a specific policy
+      area (welfare, economy, diversity, democracy). Use the specific code instead.
+  comparative_preference:
+    definition: Reasoning based on a relative comparison where one candidate is preferred
+      simply because they are "better" or "less bad" than the other, without substantive
+      policy justification.
+    clarification: Includes phrases like "A is better than B," "B is less bad," or
+      "I chose the one I liked more."
+    negative_clarification: Exclude responses that provide a specific reason for the
+      preference (e.g., policy alignment). Use 'general_agreement' or specific policy
+      codes if a reason is given.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes gibberish, single characters, "I don't know," "no reason,"
+      "just because," or responses that do not provide a clear rationale for the choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if vague. If a reason is present (even if general), use 'general_agreement'
+      or the appropriate specific code.
+

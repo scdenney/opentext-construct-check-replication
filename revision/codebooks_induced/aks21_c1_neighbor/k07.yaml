@@ -1,0 +1,75 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1007
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the respondent's
+      assessment of the profile's ability to mix with South Koreans, maintain social
+      networks within the host community, or adapt to local social norms.
+    clarification: Includes mentions of having Korean colleagues, friends, or acquaintances;
+      being married to a Korean; having lived in Korea long enough to be accustomed
+      to the culture; or having a social network that facilitates fitting in.
+    negative_clarification: Do not use for general statements about "adaptation" without
+      specifying social ties (use social_adaptation instead). Do not use for professional
+      networks or workplace relationships that are strictly transactional rather than
+      social (use professional_qualifications instead).
+  social_adaptation:
+    definition: Reasoning based on the profile's perceived ease of adjusting to South
+      Korean society, culture, or daily life, often inferred from length of residence
+      or age, without specific reference to interpersonal ties.
+    clarification: Includes mentions of long residence in Korea leading to familiarity
+      with customs, age suggesting better cultural absorption, or general statements
+      about being "used to" the environment or "adapting well."
+    negative_clarification: Do not use if the response specifically mentions Korean
+      friends, colleagues, or family members (use social_integration_ties instead).
+      Do not use if the focus is on professional skills or job performance (use professional_qualifications
+      instead).
+  professional_qualifications:
+    definition: Reasoning that cites the profile's occupation, job stability, professional
+      skills, or work experience as the primary factor for selection.
+    clarification: Includes mentions of specific jobs (e.g., doctor, programmer),
+      having a stable job, professional expertise, or work history.
+    negative_clarification: Do not use if the job is mentioned only as a secondary
+      factor alongside strong social ties (use social_integration_ties). Do not use
+      for general statements about "ability" or "capability" without linking to a
+      specific profession or skill set (use general_competence instead).
+  demographic_preferences:
+    definition: Reasoning based on age, gender, marital status, or family structure,
+      independent of social ties or professional skills.
+    clarification: Includes preferences for younger/older age, male/female gender,
+      married/unmarried status, or having/having no children.
+    negative_clarification: Do not use if age is cited specifically for its link to
+      cultural adaptation or social integration (use social_adaptation or social_integration_ties).
+      Do not use if marital status is cited because it implies ties to Koreans (use
+      social_integration_ties instead).
+  political_ideology:
+    definition: Reasoning that references the profile's political background, specifically
+      regarding membership in the North Korean Workers' Party or political loyalty.
+    clarification: Includes mentions of not being a party member, being a former member,
+      or political reliability.
+    negative_clarification: Do not use for general trustworthiness not linked to political
+      background (use general_competence or social_integration_ties).
+  general_competence:
+    definition: Vague or general positive assessments of the profile's character,
+      trustworthiness, or general ability, without specific reference to ties, adaptation,
+      skills, or demographics.
+    clarification: Includes phrases like "looks reliable," "seems good," "trustworthy,"
+      "capable," or "responsible."
+    negative_clarification: Do not use if the response is empty, random characters,
+      or purely negative (use none_of_above). Do not use if the reason is clearly
+      demographic or professional (use respective codes).
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      any of the substantive categories.
+    clarification: Includes empty responses, random characters, "no reason," "just
+      because," "both are bad," "forced to choose," or purely negative sentiments
+      without constructive reasoning.
+    negative_clarification: Do not use for substantive reasons, even if brief (e.g.,
+      "age" or "job" should be coded as demographic_preferences or professional_qualifications).
+

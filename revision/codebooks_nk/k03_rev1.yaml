@@ -1,0 +1,40 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 1
+  seed: 3
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns economic, fiscal, or practical policy considerations, including national benefit, efficiency, cost-effectiveness, feasibility, or general improvement of conditions. This includes arguments about what is "good for the country" or "better for Koreans" if framed as a practical or national interest outcome, rather than a moral duty.
+    clarification: |
+      Includes references to efficiency, effectiveness, national interest, economic growth, cost, practicality, and general "goodness" for the nation or economy.
+    negative_clarification: |
+      Does not include arguments based primarily on moral obligation, fairness, human rights, or solidarity. Does not include mere expressions of support without a reason.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, deservingness, moral obligation, human rights, solidarity, or ethical identity. It focuses on what is morally right or who is owed support based on ethical principles.
+    clarification: |
+      Includes references to human rights, moral duty, solidarity with defectors, fairness, and ethical considerations.
+    negative_clarification: |
+      Does not include arguments based on national economic interest, efficiency, or practical feasibility. Does not include mere expressions of support without a moral reason.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes reasons based on political alignment, specific policy mechanisms (e.g., joint ventures, target groups), personal feelings (if not moral), or descriptive facts about the policy structure that do not imply economic or moral value judgments.
+    clarification: |
+      Includes references to political party support, specific operational details (like joint ventures), target audience descriptions, and non-moral personal preferences or feelings.
+    negative_clarification: |
+      Does not include reasons that are clearly economic (cost/benefit) or normative (moral/fairness). Does not include uninformative responses.
+  uninformative:
+    definition: |
+      No substantive reason is given. This includes explicit statements of having no reason, expressions of uncertainty, or mere expressions of support/opinion without an explanatory clause.
+    clarification: |
+      Includes "no reason," "I don't know," "support," "good," "like," "dislike," "none," and off-topic text.
+    negative_clarification: Does not include responses that provide a reason, even
+      if brief or vague, such as "good for Korea" (economic), "human rights" (normative),
+      or "joint venture" (other).
+

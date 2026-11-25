@@ -1,0 +1,53 @@
+codebook:
+  name: ward2026_localcandidates_induced
+  residual_code: none_of_above
+  context: US adults recruited on Prolific in April 2025 were asked to write a short
+    reflection, either on the most important reason people feel they belong to their
+    neighborhood and want to live there, or on what kinds of things they personally
+    like and why. Answers are in English; personal details such as street and place
+    names are replaced by bracketed tags.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ward2026_localcandidates:1001
+codes:
+  neighborhood_attachment:
+    definition: The response expresses attachment to or belonging in the respondent's
+      own neighborhood or local community, citing social ties with neighbors, a sense
+      of community, feeling at home, or personal/family roots.
+    clarification: Includes mentions of friendly or supportive neighbors, shared values,
+      community events (block parties, gatherings), looking out for one another, multi-generational
+      family roots, and a general feeling of being "at home" or part of a social fabric.
+    negative_clarification: Exclude responses that mention only practical features
+      (safety, schools, shops, prices, commute, nature) without any social or emotional
+      connection to the people or community. If only practical features are mentioned,
+      use practical_features. If the response is about personal hobbies unrelated
+      to the neighborhood context, use personal_hobbies.
+  practical_features:
+    definition: The response cites practical, logistical, or material reasons for
+      belonging or liking the area, such as safety, affordability, schools, proximity
+      to amenities, or natural environment, without expressing social attachment.
+    clarification: Includes mentions of low crime rates, good school districts, affordable
+      housing, proximity to work or highways, access to parks or nature, quietness,
+      and property characteristics (lot size, privacy).
+    negative_clarification: Exclude responses that include social elements like neighborly
+      interactions, community spirit, or family roots. If social elements are present,
+      use neighborhood_attachment. If the response is purely about personal hobbies
+      not tied to the location's utility, use personal_hobbies.
+  personal_hobbies:
+    definition: The response lists personal interests, hobbies, or activities that
+      the respondent enjoys, without linking them to the neighborhood's social or
+      practical attributes.
+    clarification: Includes mentions of music, reading, gaming, sports, cooking, gardening
+      (as a personal activity), travel, pets, and other individual leisure pursuits.
+    negative_clarification: Exclude responses that explain why these hobbies are enjoyed
+      *because* of the neighborhood (e.g., "I garden because there is a community
+      garden here"). If the hobby is linked to neighborhood features or social ties,
+      use neighborhood_attachment or practical_features. If the response is uninformative
+      or nonsensical, use none_of_above.
+  none_of_above:
+    definition: The response is uninformative, nonsensical, or does not clearly address
+      the prompt's focus on reasons for belonging or personal likes.
+    clarification: Includes short, fragmented, or irrelevant answers that do not provide
+      a clear reason for neighborhood belonging or a coherent list of personal likes.
+    negative_clarification: Exclude any response that can be coded as neighborhood_attachment,
+      practical_features, or personal_hobbies.
+

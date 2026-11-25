@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1008
+codes:
+  democracy_reasoning:
+    definition: Responses that explicitly cite democracy, democratic government, or
+      democratic principles as the primary reason for choosing the politician.
+    clarification: Includes mentions of "democracy" (민주주의), "liberal democracy" (자유민주주의),
+      support for democratic systems, or the belief that democratic governance is
+      superior or correct.
+    negative_clarification: Exclude responses that mention democracy only as a general
+      context without linking it to the choice, or those that focus on other specific
+      policy areas like welfare or equality without invoking democratic theory. Use
+      other codes for those.
+  welfare_reasoning:
+    definition: Responses that cite government responsibility for social welfare,
+      public services, or economic security as the reason for choice.
+    clarification: Includes support for expanding public enterprises (국영기업), increasing
+      welfare benefits (복지 확대), government responsibility for citizens' livelihoods,
+      or reducing welfare.
+    negative_clarification: Exclude responses that focus on individual responsibility
+      for livelihoods (use individual_responsibility) or general economic growth without
+      specific welfare implications (use economic_reasoning).
+  equality_reasoning:
+    definition: Responses that cite gender equality, non-discrimination, or equal
+      opportunity as the reason for choice.
+    clarification: Includes support for gender neutrality in employment, rejection
+      of gender stereotypes, equal treatment regardless of sex, or general equality.
+    negative_clarification: Exclude responses that focus on diversity/multiculturalism
+      (use diversity_reasoning) or general fairness without specific equality dimensions.
+      Use equality_reasoning for gender-specific equality.
+  diversity_reasoning:
+    definition: Responses that cite ethnic, cultural, or racial diversity as a reason
+      for choice.
+    clarification: Includes support for multiculturalism, ethnic diversity, or acceptance
+      of different cultures/races.
+    negative_clarification: Exclude responses that focus on gender equality (use equality_reasoning)
+      or general tolerance without specific reference to diversity/multiculturalism.
+  individual_responsibility:
+    definition: Responses that cite individual responsibility for one's own life or
+      livelihood as the reason for choice.
+    clarification: Includes beliefs that individuals should be responsible for their
+      own survival, self-reliance, or that the state should not over-intervene in
+      personal economic matters.
+    negative_clarification: Exclude responses that support government welfare (use
+      welfare_reasoning) or general economic efficiency (use economic_reasoning).
+  economic_reasoning:
+    definition: Responses that cite economic principles, market efficiency, or private
+      sector expansion as the reason for choice.
+    clarification: Includes support for private enterprises (사기업), market liberalization,
+      economic efficiency, or general economic growth arguments.
+    negative_clarification: Exclude responses that focus on welfare distribution (use
+      welfare_reasoning) or individual responsibility (use individual_responsibility).
+  general_agreement:
+    definition: Responses that state the politician's views generally align with the
+      respondent's own views, without specifying the topic.
+    clarification: Includes phrases like "views match," "agree with opinions," "similar
+      thoughts," or "reasonable ideas" without detailing the specific policy area.
+    negative_clarification: Exclude responses that specify a policy area (use relevant
+      specific code) or are uninformative (use none_of_above).
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes gibberish, random characters, "I don't know," "no reason,"
+      "just felt like it," or responses that do not provide a clear reasoning for
+      the choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if vague, which should be coded as general_agreement.
+

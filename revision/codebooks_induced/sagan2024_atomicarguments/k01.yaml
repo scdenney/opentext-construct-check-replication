@@ -1,0 +1,69 @@
+codebook:
+  name: sagan2024_atomicarguments_induced
+  residual_code: none_of_above
+  context: US adults read a mock news story about a war with Iran in which the Joint
+    Chiefs of Staff present two options, a nuclear strike on an Iranian city or continuing
+    the ground war, with statements from the Joint Chiefs that differed between respondents;
+    they chose which option they preferred and then described in their own words the
+    single most important reason for preferring it.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:sagan2024_atomicarguments:1001
+codes:
+  law_reference:
+    definition: The response explicitly references the legality, illegality, or legal
+      status of the nuclear strike under international frameworks.
+    clarification: Includes mentions of international law, laws of war, armed conflict,
+      treaties (e.g., Geneva Convention, Non-Proliferation Treaty), war crimes, human
+      rights violations, or specific legal prohibitions against targeting civilians.
+    negative_clarification: Do not use for moral, ethical, or humanitarian arguments
+      that do not cite legal frameworks. Use moral_argument or humanitarian_concern
+      instead.
+  military_casualty_avoidance:
+    definition: The response prioritizes the preservation of U.S. military personnel
+      or the reduction of American combat deaths.
+    clarification: Includes arguments that the nuclear strike saves soldiers' lives,
+      reduces U.S. casualties, protects troops on the ground, or is preferable to
+      the loss of American military personnel.
+    negative_clarification: Do not use for arguments focused on saving Iranian civilians
+      or general human life. Use humanitarian_concern instead.
+  humanitarian_casualty_concern:
+    definition: The response expresses concern over the loss of life, specifically
+      focusing on Iranian civilians or general human suffering.
+    clarification: Includes mentions of civilian deaths, innocent lives, women and
+      children, mass killing, or the moral weight of taking human life, without invoking
+      legal statutes.
+    negative_clarification: Do not use for arguments focused on U.S. military safety.
+      Use military_casualty_avoidance instead. Do not use if it cites legal treaties.
+      Use law_reference instead.
+  precedent_and_escalation:
+    definition: The response argues that using nuclear weapons would set a dangerous
+      global precedent or lead to broader conflict.
+    clarification: Includes fears of World War III, nuclear arms races, other nations
+      using nuclear weapons, erosion of international norms, or the "genie out of
+      the bottle" argument.
+    negative_clarification: Do not use for immediate tactical concerns or specific
+      casualty counts. Use escalation_risk or humanitarian_casualty_concern instead.
+  strategic_effectiveness:
+    definition: The response argues based on the perceived military or political efficacy
+      of the chosen option.
+    clarification: Includes beliefs that the strike would force surrender, end the
+      war quickly, show strength, or that the ground war is more effective/ineffective.
+    negative_clarification: Do not use for moral, legal, or casualty-based arguments.
+      Use moral_argument, law_reference, or military_casualty_avoidance instead.
+  moral_unacceptability:
+    definition: The response rejects the option based on general ethical, moral, or
+      religious grounds without citing specific laws or casualty counts.
+    clarification: Includes statements that nuclear weapons are "immoral," "inhumane,"
+      "wrong," "evil," or that war itself is unjustified, without referencing legal
+      codes or specific death tolls.
+    negative_clarification: Do not use if the response cites legal treaties or specific
+      casualty numbers. Use law_reference or humanitarian_casualty_concern instead.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      any of the defined categories.
+    clarification: Includes "I don't know," "No comment," "N/A," random text, or responses
+      that do not provide a reason for the preference.
+    negative_clarification: Do not use for substantive reasons, even if they are weak
+      or poorly phrased. Ensure the response actually contains a reason before coding
+      as none_of_above.
+

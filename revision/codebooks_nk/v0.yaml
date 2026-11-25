@@ -1,0 +1,27 @@
+# v0: theory-only starting codebook for the held-out iteration test (2026-10-28).
+# Written from the coding scheme's four category names and the study design
+# alone, before any classification in this test; no response was read.
+codebook:
+  name: nk_entrepreneurship_v0
+  version: 0
+  context: >
+    South Korean respondents chose between two government policies supporting
+    businesses run by North Korean migrants, then explained in a few words why
+    they preferred the policy they chose. The answers are English translations
+    of Korean originals.
+  residual_code: uninformative
+codes:
+  economic_rationale:
+    definition: >
+      The reason concerns economic, fiscal or practical policy considerations:
+      jobs, growth, cost, efficiency, or how well the policy would work.
+  normative_rationale:
+    definition: >
+      The reason concerns fairness, deservingness, moral obligation, solidarity
+      or identity: what North Korean migrants are owed or what is right.
+  other_rationale:
+    definition: >
+      A substantive reason that is neither economic nor normative.
+  uninformative:
+    definition: >
+      No reason is given: don't know, no particular reason, or off-topic text.

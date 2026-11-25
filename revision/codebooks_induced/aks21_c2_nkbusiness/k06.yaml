@@ -1,0 +1,69 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1006
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly invokes helping North Koreans who face discrimination,
+      prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of helping those facing discrimination, prejudice,
+      unequal treatment, or human rights issues. Keywords may include '차별' (discrimination),
+      '인권' (human rights), '불평등' (inequality), or '편견' (prejudice) in the context
+      of aiding the target group.
+    negative_clarification: Exclude general economic support, employment assistance,
+      or business growth reasons that do not explicitly reference discrimination or
+      prejudice. Use 'economic_benefit' or 'employment_support' instead.
+  economic_benefit:
+    definition: Reasoning based on the economic profitability, financial viability,
+      or fiscal responsibility of the policy.
+    clarification: Includes mentions of profitability ('수익성'), cost-effectiveness,
+      budget funding methods ('예산조달'), tax implications ('세금', '법인세 인상'), avoiding
+      government deficit ('적자지출'), or general economic gain for Korea.
+    negative_clarification: Exclude reasons focused on social justice, discrimination,
+      or general political affiliation. Use 'anti_discrimination_help' or 'political_affiliation'
+      instead.
+  employment_support:
+    definition: Reasoning focused on job creation, employment stability, or labor
+      market benefits for the target group or the general public.
+    clarification: Includes mentions of job support ('고용지원'), employment expansion
+      ('고용증대'), job security, or helping people find work.
+    negative_clarification: Exclude general business support or economic profit reasons
+      that do not specifically highlight employment. Use 'economic_benefit' or 'business_support'
+      instead.
+  business_support:
+    definition: Reasoning focused on general business assistance, such as consulting,
+      incubation, office space, or operational support, without specific emphasis
+      on employment or discrimination.
+    clarification: Includes mentions of consulting services ('자문서비스'), office space
+      support ('사무공간 지원'), incubation, or general business development.
+    negative_clarification: Exclude reasons focused on employment, discrimination,
+      or pure financial profitability. Use 'employment_support', 'anti_discrimination_help',
+      or 'economic_benefit' instead.
+  political_affiliation:
+    definition: Reasoning based on the respondent's political party preference, support
+      for specific political figures, or distrust of opposing political entities.
+    clarification: Includes mentions of supporting or opposing the Democratic Party
+      ('더불어민주당'), People Power Party ('국민의힘'), the President ('대통령'), or political
+      trust/distrust.
+    negative_clarification: Exclude policy-specific merits like economics or social
+      impact. Use 'economic_benefit' or 'anti_discrimination_help' instead.
+  target_scope:
+    definition: Reasoning based on the eligibility criteria, target population, or
+      partnership structure of the policy.
+    clarification: Includes preferences for specific target groups (e.g., all businesses
+      vs. profitable ones, joint ventures vs. NK-only), or the clarity of the support
+      scope.
+    negative_clarification: Exclude reasons based on political affiliation or economic
+      outcomes. Use 'political_affiliation' or 'economic_benefit' instead.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes responses like "no reason," "just felt like it," "don't
+      know," "both are bad," or random characters.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to economics, politics, social support, or policy design.
+

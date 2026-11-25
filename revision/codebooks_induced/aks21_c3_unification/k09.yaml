@@ -1,0 +1,71 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1009
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), rejection of 'dictatorship' (독재), 'one-party system' (일당체계), or 'Workers'
+      Party participation ban' (노동당원 참여금지) as a proxy for anti-authoritarianism.
+    negative_clarification: Do not use for economic systems, military arrangements,
+      or general stability without explicit reference to political regime type. Use
+      'economic_considerations' or 'security_arrangements' instead.
+  security_military_arrangements:
+    definition: Reasoning focused on the presence, absence, or management of military
+      forces, including troop deployments, disarmament, and nuclear weapon control.
+    clarification: Includes preferences for South Korean troops only, UN peacekeeping
+      forces, joint US-ROK forces, North Korean military dissolution (해산), nuclear
+      weapon management (by South Korea, UN, or joint), and rejection of foreign (Chinese)
+      military presence.
+    negative_clarification: Do not use for political system preferences. Use 'political_system_democracy'
+      if the military choice is justified primarily by ideological opposition to the
+      North's regime type, though often these overlap; prioritize 'political_system_democracy'
+      if the core argument is about regime legitimacy.
+  economic_fiscal_factors:
+    definition: Reasoning based on the financial burden, tax structure, or economic
+      implications of unification.
+    clarification: Includes mentions of 'unification tax' (통일세), tax rates (e.g.,
+      top 10%, 1%, 5%), economic openness, joint ventures, and cost-effectiveness.
+    negative_clarification: Do not use for political or security arguments. Use 'political_system_democracy'
+      or 'security_arrangements' if the economic point is secondary to a political/security
+      preference.
+  implementation_process:
+    definition: Reasoning concerning the timeline, pace, or procedural steps of the
+      unification process.
+    clarification: Includes preferences for 'gradual implementation' (단계별 이행), 'immediate
+      implementation' (즉시 이행), 'transition period' (이행기간), and concerns about stability
+      during the transition.
+    negative_clarification: Do not use for static policy preferences like tax rates
+      or troop types unless the argument is specifically about the *timing* or *pace*
+      of those policies.
+  political_integration_model:
+    definition: Reasoning focused on the structural or constitutional arrangement
+      of the unified state, specifically regarding federalism or centralization.
+    clarification: Includes mentions of 'federal system' (연방제), 'confederation', or
+      the degree of centralization vs. regional autonomy.
+    negative_clarification: Do not use for general democratic preferences. Use 'political_system_democracy'
+      if the argument is about freedom/rights rather than the structural federal arrangement.
+  general_preference:
+    definition: Non-specific reasons indicating a general preference for one scenario
+      over the other without detailing specific policy dimensions.
+    clarification: Includes phrases like 'I like it' (맘에 든다), 'it seems better' (더
+      나아보임), 'more realistic' (현실적임), 'rational' (합리적), or 'no particular reason'
+      (별다른 이유 없음) that do not fall into specific policy categories.
+    negative_clarification: Do not use if a specific policy dimension (democracy,
+      security, economy, etc.) is mentioned. Use the specific code instead.
+  none_of_above:
+    definition: Uninformative responses, gibberish, or responses that do not provide
+      a rationale for the choice.
+    clarification: Includes single characters, emojis, 'no answer', 'don't know',
+      or completely irrelevant text.
+    negative_clarification: Do not use for any substantive reason, even if weak. If
+      a respondent gives a vague but substantive reason (e.g., 'stability'), use 'general_preference'.
+

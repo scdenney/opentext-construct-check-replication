@@ -1,0 +1,55 @@
+codebook:
+  name: roos2024_subjectivity_induced
+  residual_code: none_of_above
+  context: Dutch adults, mostly students, read two discussion threads of reader comments
+    posted under Dutch online news articles on different topics, rated how they perceived
+    the commenters, and for each thread wrote the comment they would post if they
+    joined that discussion; the thread stayed visible below the answer box.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:roos2024_subjectivity:1001
+codes:
+  subjective_opinion_marking:
+    definition: The response contains at least one explicit linguistic marker indicating
+      that the statement represents the writer's personal view, belief, or feeling,
+      rather than an objective fact.
+    clarification: Includes explicit first-person markers such as 'ik vind' (I find),
+      'ik denk' (I think), 'naar mijn mening' (in my opinion), 'volgens mij' (in my
+      view), 'ik heb het gevoel' (I feel), or 'persoonlijk' (personally) used to frame
+      a subjective claim.
+    negative_clarification: Exclude responses where opinions are stated as facts without
+      such markers (e.g., "Roken is slecht" vs "Ik vind roken slecht"). If no marker
+      is present, use 'factual_assertion' or 'general_comment' instead.
+  factual_assertion:
+    definition: The response states a claim, fact, or argument as an objective truth
+      without using explicit subjective markers.
+    clarification: Includes statements that present the writer's stance as a matter
+      of fact, logical deduction, or general knowledge, relying on the content's validity
+      rather than the speaker's perspective.
+    negative_clarification: Exclude responses that use 'ik vind', 'ik denk', etc.
+      Use 'subjective_opinion_marking' if such markers are present.
+  meta_commentary:
+    definition: The response comments on the nature, quality, or dynamics of the discussion
+      itself rather than engaging with the substantive topic.
+    clarification: Includes observations about the discussion being off-topic, polarized,
+      unproductive, or irrelevant to the news article.
+    negative_clarification: Exclude substantive arguments about the topic. Use 'factual_assertion'
+      or 'subjective_opinion_marking' if the user argues a point about the topic directly.
+  agreement_disagreement:
+    definition: The response expresses simple alignment or opposition with previous
+      comments or the article without providing new substantive arguments or subjective
+      framing.
+    clarification: Includes phrases like "I agree," "That's true," "Good point," or
+      "I disagree," often standing alone or with minimal elaboration.
+    negative_clarification: Exclude responses that elaborate on *why* they agree/disagree
+      using facts or subjective markers. If elaboration exists, code based on the
+      elaboration type.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      the other categories.
+    clarification: Includes greetings, emojis only, irrelevant personal anecdotes
+      unrelated to the topic, or extremely short, ambiguous phrases that convey no
+      clear stance or information.
+    negative_clarification: Exclude any response that offers a clear opinion, fact,
+      or meta-comment. If the response is a clear opinion (marked or unmarked), use
+      the appropriate substantive code.
+

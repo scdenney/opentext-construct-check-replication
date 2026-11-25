@@ -1,0 +1,78 @@
+codebook:
+  name: yeung2022_ubiframing_induced
+  residual_code: none_of_above
+  context: 'US adults in an online survey (September 2021) read a short neutral description
+    of universal basic income (UBI): the government pays everyone the same monthly
+    income, it replaces many other social benefits, and it is paid for by taxes; some
+    also read one additional sentence about the program. They rated how much they
+    were against or in favor of UBI in the United States and then briefly explained
+    why they hold that view.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:yeung2022_ubiframing:1001
+codes:
+  equal_opportunity_self_reliance:
+    definition: The response attributes to UBI the effect of providing an equal or
+      fairer chance, leveling the playing field, helping the poor get a start or get
+      ahead, or making people more self-reliant, independent, or responsible for themselves.
+    clarification: Includes mentions of "leveling the playing field," "equal opportunity,"
+      "fair chance," "getting a start," "self-reliance," "independence," "lifting
+      out of poverty" (when framed as enabling progress), or "starting point."
+    negative_clarification: Exclude responses that only mention reducing poverty or
+      meeting basic needs without reference to opportunity or self-reliance (code
+      as basic_needs_security). Exclude claims that UBI makes people dependent or
+      less willing to work (code as work_disincentive_dependency).
+  work_disincentive_dependency:
+    definition: The response claims that UBI will make people dependent on the government,
+      lazy, or less willing to work, thereby reducing self-reliance.
+    clarification: Includes mentions of "lazy," "no incentive to work," "dependent
+      on government," "handouts," "discourages work," "socialism/marxism" (when linked
+      to lack of work ethic), or "permanent lower class."
+    negative_clarification: Exclude responses that argue people *should* work but
+      do not claim UBI specifically causes laziness or dependency (code as work_ethic_general).
+      Exclude responses that view UBI as a tool for self-reliance (code as equal_opportunity_self_reliance).
+  basic_needs_security:
+    definition: The response supports or opposes UBI based on the provision of basic
+      necessities, financial security, or poverty reduction, without reference to
+      opportunity, fairness, or work incentives.
+    clarification: Includes mentions of "ending homelessness," "food and shelter,"
+      "basic needs," "safety net," "helping the poor," "financial stability," or "ease
+      stress."
+    negative_clarification: Exclude if the response frames these benefits as enabling
+      self-reliance or equal opportunity (code as equal_opportunity_self_reliance).
+      Exclude if the response focuses on the cost or tax burden rather than the benefit
+      to recipients (code as fiscal_concern).
+  fiscal_concern:
+    definition: The response focuses on the economic cost, tax implications, or funding
+      mechanisms of UBI, rather than its social or behavioral effects.
+    clarification: Includes mentions of "too expensive," "taxes are too high," "cost
+      effective," "deficit," "who pays for it," or "waste of tax money."
+    negative_clarification: Exclude if the cost concern is secondary to moral arguments
+      about work or fairness (code as work_ethic_general or fairness). Exclude if
+      the response is about the general affordability of living rather than the specific
+      program cost (code as basic_needs_security).
+  work_ethic_general:
+    definition: The response expresses a general belief that people should work for
+      their money or that income should be tied to effort, without specifically claiming
+      UBI causes dependency or laziness.
+    clarification: Includes mentions of "people should work," "earn your own way,"
+      "work for paygrade," "deserve what you earn," or "pride of work."
+    negative_clarification: Exclude if the response claims UBI specifically removes
+      the incentive to work (code as work_disincentive_dependency). Exclude if the
+      response is about fairness or equal opportunity (code as equal_opportunity_self_reliance).
+  fairness_ideology:
+    definition: The response focuses on ideological concepts of fairness, equality,
+      or political systems (e.g., socialism, communism, capitalism) without specific
+      reference to work incentives or basic needs.
+    clarification: Includes mentions of "socialism," "communism," "fair for everyone,"
+      "equal rights," "unamerican," or "government control."
+    negative_clarification: Exclude if "fairness" is linked to equal opportunity for
+      the poor (code as equal_opportunity_self_reliance). Exclude if "socialism" is
+      linked to laziness/dependency (code as work_disincentive_dependency).
+  none_of_above:
+    definition: The response is uninformative, incoherent, expresses no opinion, or
+      provides insufficient detail to classify into the other categories.
+    clarification: Includes "I don't know," "no opinion," gibberish, "not sure," "need
+      more info," or generic statements like "good" or "bad" without explanation.
+    negative_clarification: Exclude any response that provides a substantive reason,
+      even if brief, that fits into other codes.
+

@@ -1,0 +1,70 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1002
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly invokes religion, Christianity, the church,
+      or religious faith as a primary or significant ground for the person being (more)
+      German.
+    clarification: Includes mentions of being Christian, having Christian values,
+      the Christian faith, or religious affiliation as a marker of German identity.
+    negative_clarification: Exclude mentions of religion if they are not cited as
+      a reason for German identity (e.g., if religion is mentioned alongside other
+      factors but not as a basis for 'Germanness', or if it is mentioned neutrally).
+      Use 'legal_political_criteria' or 'cultural_criteria' if other factors are the
+      primary driver.
+  legal_political_criteria:
+    definition: Reasoning that invokes legal status, political institutions, respect
+      for laws, or citizenship as a ground for the person being (more) German.
+    clarification: Includes German citizenship (Staatsbürgerschaft), respect for the
+      constitution or political institutions, adherence to German laws, and knowledge
+      of the political system.
+    negative_clarification: Exclude general respect for rules if not tied to the state/political
+      system (use 'cultural_criteria' or 'behavioral_criteria'). Exclude religious
+      references (use 'religious_criteria').
+  cultural_heritage_criteria:
+    definition: Reasoning that invokes ancestry, ethnicity, history, or traditional
+      cultural knowledge as a ground for the person being (more) German.
+    clarification: Includes having German ancestors (Vorfahren), being born in Germany,
+      familiarity with German history and traditions, and ethnic background.
+    negative_clarification: Exclude language skills alone (use 'linguistic_criteria').
+      Exclude general cultural integration without specific reference to history/ancestry
+      (use 'integration_criteria').
+  linguistic_criteria:
+    definition: Reasoning that invokes the ability to speak German or language proficiency
+      as a ground for the person being (more) German.
+    clarification: Includes speaking German, understanding the language, and language
+      as a prerequisite for belonging.
+    negative_clarification: Exclude language if it is mentioned only as a minor detail
+      alongside strong legal or religious arguments (use the dominant code). Exclude
+      general communication skills not specific to German.
+  integration_residence_criteria:
+    definition: Reasoning that invokes long-term residence, integration into society,
+      or living in Germany as a ground for the person being (more) German.
+    clarification: Includes having lived in Germany for a long time, being integrated
+      into society, and the duration of stay.
+    negative_clarification: Exclude birth in Germany if it is framed as ancestry/heritage
+      (use 'cultural_heritage_criteria'). Exclude general respect for laws (use 'legal_political_criteria').
+  subjective_perception_criteria:
+    definition: Reasoning that invokes the person's self-identification, personal
+      feeling, or subjective impression as a ground for the person being (more) German.
+    clarification: Includes the person feeling German, the respondent's gut feeling,
+      personal opinion, or the person seeing themselves as German.
+    negative_clarification: Exclude objective criteria like laws or language. Exclude
+      vague non-answers (use 'none_of_above').
+  none_of_above:
+    definition: Uninformative, non-substantive, or purely procedural responses that
+      do not provide a substantive reason for the classification.
+    clarification: Includes "I don't know", "No answer", "Both are equal", "Just a
+      feeling" (without elaboration), random characters, "Good", "Yes/No", or comments
+      on the survey design itself.
+    negative_clarification: Exclude any response that offers a specific reason (legal,
+      cultural, religious, linguistic, etc.).
+

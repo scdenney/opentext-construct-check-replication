@@ -1,0 +1,64 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1010
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), rejection of 'dictatorship' (독재) or 'one-party rule' (일당체제/노동당 참여 금지),
+      and preference for federalism (연방제) as a democratic alternative.
+    negative_clarification: Exclude mentions of economic systems, military arrangements,
+      or general safety without explicit reference to the political regime type. Use
+      'economic_benefits' or 'security_military' instead.
+  security_military:
+    definition: Reasoning based on military presence, disarmament, or security arrangements
+      involving North Korean forces, UN peacekeepers, or foreign troops.
+    clarification: Includes preferences for North Korean military dissolution (북한군
+      해산), exclusion of Chinese/US troops, presence of UN peacekeepers, or Korean-only
+      military control.
+    negative_clarification: Exclude general safety feelings not tied to military/security
+      structures. Use 'general_preference' if vague.
+  economic_fiscal:
+    definition: Reasoning based on economic costs, tax burdens (unification tax),
+      or economic openness/liberalization.
+    clarification: Includes mentions of 'unification tax' (통일세), tax rates, income
+      distribution, economic openness (개방), or business restrictions.
+    negative_clarification: Exclude political system preferences. Use 'political_system_democracy'
+      if the tax is linked to regime type.
+  implementation_process:
+    definition: Reasoning based on the pace, method, or feasibility of the unification
+      process.
+    clarification: Includes preferences for 'step-by-step implementation' (단계별 이행),
+      'immediate implementation' (즉시 이행), or concerns about feasibility/realism (현실성).
+    negative_clarification: Exclude specific policy details like tax or military.
+      Use those specific codes if the reason is concrete.
+  north_korea_treatment:
+    definition: Reasoning focused on the political status, leadership, or integration
+      of North Korean elites and institutions.
+    clarification: Includes preferences for banning Workers' Party participation,
+      prosecuting North Korean leadership, or specific management of North Korean
+      institutions.
+    negative_clarification: Exclude general democratic preferences. Use 'political_system_democracy'
+      if the ban is framed as a democratic necessity.
+  general_preference:
+    definition: Vague or non-specific reasons indicating a general preference for
+      one scenario over the other without substantive detail.
+    clarification: Includes phrases like 'looks better' (더 나아보임), 'more preferable'
+      (더 선호), 'feels right' (마음에 든다), or 'no particular reason' (이유없음/딱히).
+    negative_clarification: Exclude any specific policy, system, or process mention.
+      Use specific codes if a reason is identifiable.
+  none_of_above:
+    definition: Uninformative, nonsensical, or irrelevant responses.
+    clarification: Includes gibberish, single letters, 'I don't know' (모름), or responses
+      that do not address the choice rationale.
+    negative_clarification: If a clear reason is present, use the appropriate substantive
+      code.
+

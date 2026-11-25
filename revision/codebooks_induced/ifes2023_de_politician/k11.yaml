@@ -1,0 +1,75 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1011
+codes:
+  policy_agreement:
+    definition: The respondent chose the politician because their general policy positions
+      or specific issue stances (e.g., economy, social welfare, state control of companies)
+      aligned with the respondent's own views.
+    clarification: Includes references to specific policy areas like Wirtschaft (economy),
+      Sozialhilfe (social welfare), Unternehmenskontrolle (company control), or general
+      "Ansichten" (views/opinions) on these topics.
+    negative_clarification: Exclude if the primary reason is explicitly about diversity,
+      gender equality, or democracy as a system. Use diversity_reasoning or democratic_values
+      instead.
+  gender_equality:
+    definition: The respondent chose the politician based on views regarding gender
+      roles, gender equality, or women's rights.
+    clarification: Includes mentions of Gleichberechtigung (equal rights), Geschlechtergleichheit
+      (gender equality), Frauenquote (women's quota), or the idea that gender should/should
+      not play a role in society or employment.
+    negative_clarification: Exclude if the response is about ethnic/cultural diversity
+      or general democracy. Use diversity_reasoning or democratic_values instead.
+  democratic_values:
+    definition: The respondent chose the politician because they support or represent
+      democratic principles, democracy as a form of government, or civil liberties.
+    clarification: Includes explicit mentions of "Demokratie", "Freiheit" (freedom),
+      or the belief that democracy is the best form of government.
+    negative_clarification: Exclude if the response is about specific policy details
+      or gender/diversity issues. Use policy_agreement or diversity_reasoning instead.
+  diversity_reasoning:
+    definition: Reasoning that invokes ethnic or cultural diversity, immigration,
+      multiculturalism or national unity as a ground for choosing the politician.
+    clarification: Includes positive references to "Vielfalt" (diversity), "kulturelle
+      Vielfalt" (cultural diversity), "Diversität", or "Migrationshintergrund". Also
+      includes negative references where the respondent rejects the politician due
+      to concerns about "kulturelle Vielfalt untergräbt die Einheit" (cultural diversity
+      undermines unity) or similar arguments linking diversity to national cohesion
+      or values. Essentially, any reasoning where the presence, absence, or impact
+      of ethnic/cultural diversity is the deciding factor.
+    negative_clarification: Exclude general policy disagreements not related to diversity.
+      Exclude gender equality arguments (use gender_equality). Exclude general democratic
+      system support (use democratic_values).
+  general_preference:
+    definition: The respondent chose the politician based on vague, non-substantive,
+      or affective reasons without specifying a policy or value-based ground.
+    clarification: Includes phrases like "gefallt mir besser" (likes me better), "passt
+      besser" (fits better), "bauchgefühl" (gut feeling), "klingt besser" (sounds
+      better), or general satisfaction without specific content.
+    negative_clarification: Exclude if a specific policy, gender, diversity, or democratic
+      reason is mentioned. Use the specific code instead.
+  no_preference_or_indifference:
+    definition: The respondent indicates no real preference, equal quality of candidates,
+      or chooses based on the absence of negative traits rather than positive alignment.
+    clarification: Includes "beide gleich schlecht" (both equally bad), "kleineres
+      Übel" (lesser evil), "keine Ahnung" (no idea), "weiß nicht" (don't know), or
+      "musste wählen" (had to choose).
+    negative_clarification: Exclude if a specific reason for choosing one over the
+      other is given. Use general_preference or the specific substantive code.
+  other_reasoning:
+    definition: The respondent provides a reason that does not fit into the above
+      categories, such as personal characteristics, trustworthiness, or other non-policy/value-based
+      attributes.
+    clarification: Includes mentions of "glaubwürdig" (credible), "ansprechend" (appealing),
+      "schlau" (smart), or specific personal traits.
+    negative_clarification: Exclude if the reason is clearly policy, gender, diversity,
+      or democratic. Use the specific substantive code.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

@@ -1,0 +1,61 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1001
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the respondent's
+      assessment of the profile's ability to mix with South Koreans, maintain social
+      networks within the host community, or adapt culturally due to long-term residence
+      or existing relationships.
+    clarification: Includes mentions of long residence in South Korea, having South
+      Korean colleagues/friends, being non-Party members (implying less ideological
+      isolation), having lived in China briefly (less foreignness), or general statements
+      about cultural adaptation and social fit.
+    negative_clarification: Exclude reasons based solely on professional skills, age,
+      or family status without reference to social mixing or community fit. Use 'professional_qualifications'
+      or 'demographic_preferences' instead.
+  professional_qualifications:
+    definition: Reasoning based on the profile's job title, specific skills (e.g.,
+      computer programming, medical degree), work experience, or perceived professional
+      competence.
+    clarification: Includes mentions of specific occupations (doctor, programmer,
+      office worker), having a job vs. being unemployed, relevant skills, or work
+      history.
+    negative_clarification: Exclude reasons based on age, gender, or social ties.
+      Use 'demographic_preferences' or 'social_integration_ties' instead.
+  demographic_preferences:
+    definition: Reasoning based on age, gender, or marital/family status as primary
+      selection criteria, often linked to perceived stability, energy, or relatability.
+    clarification: Includes preferences for younger/older age, male/female gender,
+      married/unmarried status, or having children.
+    negative_clarification: Exclude reasons based on job skills or social integration.
+      Use 'professional_qualifications' or 'social_integration_ties' instead.
+  political_security_concerns:
+    definition: Reasoning that cites political affiliation (specifically North Korean
+      Workers' Party membership) or security risks as a factor in the decision.
+    clarification: Includes explicit mentions of being a former/current Party member,
+      security risks, or ideological differences.
+    negative_clarification: Exclude general social integration or professional reasons.
+      Use 'social_integration_ties' or 'professional_qualifications' instead.
+  general_preference:
+    definition: Vague, non-specific, or comparative statements that do not identify
+      a concrete attribute or reason for the choice.
+    clarification: Includes phrases like "just because," "A is better," "no reason,"
+      "random," or simple comparative judgments without explanation.
+    negative_clarification: Exclude specific reasons related to jobs, age, social
+      ties, or politics. Use 'none_of_above' if the response is unintelligible or
+      purely noise.
+  none_of_above:
+    definition: Responses that are unintelligible, contain only punctuation, or are
+      completely uninformative regarding the selection rationale.
+    clarification: Includes random characters, single punctuation marks, or responses
+      that do not fit any of the above categories and provide no insight.
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if vague. Use 'general_preference' for vague but intelligible reasons.
+

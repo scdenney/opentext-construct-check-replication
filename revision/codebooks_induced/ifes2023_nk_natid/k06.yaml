@@ -1,0 +1,70 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1006
+codes:
+  civic_law_criteria:
+    definition: Reasoning that explicitly invokes respect for, understanding of, or
+      adherence to South Korea's laws, political institutions, regulations, or formal
+      social norms as a primary ground for the person being more truly Korean or a
+      better choice.
+    clarification: Includes mentions of respecting political systems, laws, regulations,
+      rules, or social norms. It covers cases where the respondent values the candidate's
+      alignment with the state's legal or political framework, even if the candidate
+      lacks citizenship or was born abroad.
+    negative_clarification: Exclude responses that only mention cultural appreciation,
+      language ability, or birthplace without referencing laws, politics, or formal
+      norms. Use 'cultural_heritage_criteria' or 'birthplace_residence' instead.
+  cultural_heritage_criteria:
+    definition: Reasoning that emphasizes shared history, traditional culture, language
+      proficiency, or cultural understanding as the basis for Korean identity or preference.
+    clarification: Includes references to knowing Korean history, understanding traditions,
+      speaking the language, or having a deep cultural connection. It focuses on ethno-cultural
+      or cultural markers rather than legal/political ones.
+    negative_clarification: Exclude responses that focus on laws, political systems,
+      or birthplace. Use 'civic_law_criteria' or 'birthplace_residence' instead.
+  birthplace_residence:
+    definition: Reasoning based on the person's place of birth (being born in South
+      Korea) or length of residence/living experience in South Korea.
+    clarification: Includes mentions of being born in Korea, living in Korea for most
+      of one's life, or having significant residence time. It focuses on geographic
+      and temporal presence rather than legal status or cultural knowledge.
+    negative_clarification: Exclude responses that focus on laws, politics, or cultural
+      history. Use 'civic_law_criteria' or 'cultural_heritage_criteria' instead.
+  citizenship_status:
+    definition: Reasoning that explicitly cites the possession or lack of South Korean
+      citizenship (nationality) as the deciding factor.
+    clarification: Includes direct mentions of holding Korean nationality, having
+      a passport, or lacking citizenship. It focuses strictly on the legal status
+      of membership in the state, distinct from respecting its laws or culture.
+    negative_clarification: Exclude responses that discuss respecting laws/politics
+      (use 'civic_law_criteria') or cultural/historical ties (use 'cultural_heritage_criteria').
+      If citizenship is mentioned alongside strong cultural/legal respect, prioritize
+      the specific construct of interest ('civic_law_criteria') if the respect is
+      the highlighted reason, otherwise use this code if citizenship is the sole or
+      primary driver.
+  ethnic_nationalism:
+    definition: Reasoning based on bloodline, ethnic homogeneity, or a sense of innate
+      "Koreanness" that is not tied to legal or cultural acquisition.
+    clarification: Includes references to "blood," "ethnicity," "same blood," or an
+      intuitive feeling of being "truly Korean" based on inherent traits rather than
+      learned behaviors or legal status.
+    negative_clarification: Exclude responses that cite laws, culture, birthplace,
+      or citizenship. Use 'civic_law_criteria' or 'cultural_heritage_criteria' if
+      the reasoning is about learned respect or culture.
+  none_of_above:
+    definition: Uninformative, incomplete, or irrelevant responses that do not provide
+      a clear reason for the choice.
+    clarification: Includes single words without context, random characters, numbers,
+      or responses that do not address the reason for choosing the person (e.g., "4",
+      "A", "I don't know", "Good").
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if vague. If a response mentions culture, law, birth, or citizenship, use
+      the appropriate substantive code.
+

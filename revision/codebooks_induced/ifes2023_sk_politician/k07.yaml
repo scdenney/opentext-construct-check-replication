@@ -1,0 +1,75 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1007
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic principles,
+      or the value of democratic governance as a primary ground for choosing the politician.
+    clarification: Includes mentions of 'democracy' (민주주의), 'liberal democracy' (자유민주주의),
+      'democratic values', or the belief that democracy is the best system or aligns
+      with the respondent's democratic views.
+    negative_clarification: Exclude mentions of democracy only as a generic filler
+      or when the primary reason is policy-specific (e.g., welfare or economy) without
+      explicit reference to democratic ideals. Use 'welfare_reasoning' or 'economic_reasoning'
+      instead if the focus is strictly on outcomes rather than the system itself.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes government responsibility for social welfare,
+      public support, or the expansion of social safety nets.
+    clarification: Includes calls for the government to take responsibility for welfare
+      (복지), support for the vulnerable, or agreement with policies that expand social
+      benefits.
+    negative_clarification: Exclude general economic growth arguments that do not
+      mention social protection. Use 'economic_reasoning' instead.
+  economic_reasoning:
+    definition: Reasoning based on economic principles, such as the role of private
+      vs. public enterprises, market freedom, or economic management.
+    clarification: Includes preferences for private enterprise expansion (사기업 확대),
+      opposition to state-owned enterprises, belief in market competition, or general
+      economic management competence.
+    negative_clarification: Exclude arguments focused on social welfare or equality.
+      Use 'welfare_reasoning' or 'equality_reasoning' instead.
+  equality_reasoning:
+    definition: Reasoning centered on gender equality, non-discrimination, or equal
+      treatment in social and professional roles.
+    clarification: Includes support for gender neutrality in job allocation, opposition
+      to gender discrimination, and beliefs that gender should not determine social
+      roles.
+    negative_clarification: Exclude arguments based on biological essentialism (e.g.,
+      men are stronger so they should have priority jobs). Use 'traditionalism_reasoning'
+      instead.
+  diversity_reasoning:
+    definition: Reasoning that values ethnic, racial, or cultural diversity as a positive
+      attribute for society or the politician.
+    clarification: Includes support for multiculturalism, acceptance of diverse races/cultures,
+      and the belief that diversity improves society.
+    negative_clarification: Exclude arguments that view diversity negatively or neutrally.
+      Use 'none_of_above' if the respondent opposes diversity.
+  traditionalism_reasoning:
+    definition: Reasoning that supports traditional gender roles, male priority, or
+      biological determinism in social/economic contexts.
+    clarification: Includes beliefs that men should have priority in jobs due to strength,
+      that gender roles are natural, or that traditional structures are preferable.
+    negative_clarification: Exclude arguments for gender equality. Use 'equality_reasoning'
+      instead.
+  general_agreement:
+    definition: Reasoning based on a general alignment of the respondent's views with
+      the politician's stated opinions, without specifying a particular policy domain.
+    clarification: Includes phrases like "my views match," "I agree with the opinions,"
+      "similar ideology," or "fits my political stance" without detailing the specific
+      issue (welfare, economy, etc.).
+    negative_clarification: Exclude specific policy reasons. If the respondent specifies
+      welfare, economy, or democracy, use the respective specific code.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes single letters/numbers, gibberish, "I don't know," "no
+      reason," "just liked him," or responses that do not provide a clear policy or
+      value-based justification.
+    negative_clarification: Exclude any response that contains a discernible policy
+      preference or value statement, even if brief.
+

@@ -1,0 +1,74 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1003
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly or implicitly invokes helping North Korean
+      migrants (defectors) who face discrimination, prejudice, or unequal treatment
+      in South Korea, often framed as a matter of human rights, fairness, or social
+      inclusion.
+    clarification: Includes mentions of helping those facing discrimination, ensuring
+      equal treatment, supporting human rights, aiding those in difficult positions
+      due to their status, or promoting a fair/non-discriminatory society for North
+      Koreans.
+    negative_clarification: Exclude general economic benefits to South Korea, general
+      employment support without reference to discrimination/inequality, or support
+      based solely on political party alignment. Use 'general_economic_benefit' or
+      'political_affiliation' instead.
+  general_economic_benefit:
+    definition: Reasoning that the policy is chosen because it benefits the South
+      Korean economy, society, or specific domestic groups (e.g., local businesses,
+      SMEs, consumers) through growth, efficiency, or positive spillover effects.
+    clarification: Includes arguments that the policy is good for Korea, helps local
+      businesses, creates jobs for Koreans, boosts the economy, or provides practical/realistic
+      help that benefits the host society.
+    negative_clarification: Exclude arguments focused primarily on the welfare of
+      North Koreans as a distinct group facing discrimination (use 'anti_discrimination_help')
+      or purely political reasons. Use 'anti_discrimination_help' or 'political_affiliation'
+      instead.
+  fiscal_finance_preference:
+    definition: Reasoning based on the preferred method of financing the policy, specifically
+      favoring corporate tax increases or government deficits over personal income
+      tax increases, or opposing cash handouts/subsidies in favor of loans or targeted
+      support.
+    clarification: Includes preferences for corporate tax hikes, opposition to income
+      tax hikes, preference for loans over grants, or concerns about fiscal responsibility
+      and budget allocation methods.
+    negative_clarification: Exclude arguments about the substantive content of the
+      aid itself (e.g., employment vs. consulting) unless tied to fiscal cost. Use
+      'policy_mechanism_preference' or 'general_economic_benefit' if the focus is
+      on economic impact rather than funding source.
+  policy_mechanism_preference:
+    definition: Reasoning based on the specific type of support offered (e.g., employment
+      support, consulting, startup support, joint ventures) being more effective,
+      practical, or desirable than the alternative.
+    clarification: Includes preferences for employment support over cash, consulting
+      services, startup incubation, joint ventures with Koreans, or support for profitable
+      businesses only.
+    negative_clarification: Exclude reasons based on who funds it (use 'fiscal_finance_preference')
+      or political alignment. Use 'fiscal_finance_preference' or 'political_affiliation'
+      instead.
+  political_affiliation:
+    definition: Reasoning based on the respondent's political party loyalty, support
+      for the President, or opposition to a specific political party, regardless of
+      the policy content.
+    clarification: Includes choosing because a specific party (e.g., People Power
+      Party, Democratic Party) supports it, liking the President, or disliking the
+      opposing party.
+    negative_clarification: Exclude substantive policy arguments. Use 'general_economic_benefit',
+      'anti_discrimination_help', etc., if the respondent also provides substantive
+      reasons.
+  none_of_above:
+    definition: Uninformative responses, random answers, expressions of indifference,
+      or reasons that do not fit into the substantive categories above.
+    clarification: Includes "no reason," "just felt like it," "both are bad," "don't
+      know," random characters, or vague statements like "it's good" without explanation.
+    negative_clarification: Exclude any response that provides a discernible reason
+      related to economics, finance, mechanism, discrimination, or politics.
+

@@ -1,0 +1,71 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1008
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector, or specific association with North Korea as a primary
+      ground for selection or rejection.
+    clarification: Includes mentions of 'North Korea' (북한), 'defector' (탈북민), 'North
+      Korean migrant', or specific fears/stereotypes associated with North Korean
+      identity (e.g., spy suspicion, unfamiliarity, ideological difference).
+    negative_clarification: Exclude references to general South Korean nationality,
+      ethnicity (Hanminjok), or birthplace in South Korea. Use 'nationality_reasoning'
+      or 'ethnicity_reasoning' instead.
+  nationality_reasoning:
+    definition: Reasoning that prioritizes or rejects the candidate based on their
+      South Korean citizenship, nationality, or being a domestic citizen.
+    clarification: Includes explicit mentions of 'South Korea' (한국, 대한민국), 'citizen'
+      (국민, 내국인), 'domestic' (자국민), or 'nationality' (국적).
+    negative_clarification: Exclude references to North Korean origin (use 'nk_origin_reasoning')
+      or general ethnic identity without nationalistic framing (use 'ethnicity_reasoning').
+  ethnicity_reasoning:
+    definition: Reasoning based on shared ethnic identity, cultural affinity, or being
+      'one of us' (compatriot) without explicit reference to legal nationality or
+      North Korean origin.
+    clarification: Includes terms like 'compatriot' (동포), 'same ethnicity' (한민족, 토종),
+      'cultural understanding' (문화이해도), or 'Korean' (한국인) used in an ethnic/cultural
+      sense rather than strictly legal.
+    negative_clarification: Exclude explicit legal nationality claims (use 'nationality_reasoning')
+      or North Korean specific references (use 'nk_origin_reasoning').
+  criminal_record_reasoning:
+    definition: Reasoning that cites the presence or absence of a criminal record
+      (past conviction) as the deciding factor.
+    clarification: Includes mentions of 'criminal record' (전과, 전과기록), 'theft' (절도),
+      'tax evasion' (탈세), 'crime' (범죄), or 'law-abiding' (준법정신).
+    negative_clarification: Exclude reasoning based on age, family status, or nationality.
+  age_reasoning:
+    definition: Reasoning that prioritizes or rejects the candidate based on their
+      age or youth.
+    clarification: Includes mentions of 'young' (젊음, 젊은), 'old' (나이 많음, 고령), 'age'
+      (나이, 연령), or life stage implications like 'longer working life'.
+    negative_clarification: Exclude reasoning based on criminal record, family status,
+      or nationality.
+  family_status_reasoning:
+    definition: Reasoning that prioritizes the candidate based on their marital status,
+      number of children, or financial responsibility as a head of household.
+    clarification: Includes mentions of 'children' (자녀, 아이), 'married' (기혼), 'unmarried'
+      (미혼), 'family' (가족), 'dependents' (부양가족), or 'responsibility' (책임감) linked to
+      family.
+    negative_clarification: Exclude reasoning based on age, criminal record, or nationality.
+  job_qualification_reasoning:
+    definition: Reasoning based on the candidate's professional experience, job type,
+      or perceived work capability.
+    clarification: Includes mentions of 'experience' (경력, 경험), 'job title' (직업, 경비원,
+      매니저), 'work efficiency' (작업 효율), or 'suitability' for the specific job.
+    negative_clarification: Exclude reasoning based on personal characteristics like
+      age, family, or criminal history.
+  none_of_above:
+    definition: Responses that are uninformative, random, purely emotional, or do
+      not fit into the specific substantive categories above.
+    clarification: Includes gibberish, single words like 'good' or 'no', 'don't know',
+      'no reason', or vague preferences like 'looks good' without substantive justification.
+    negative_clarification: Exclude any response that contains substantive reasoning
+      about origin, nationality, crime, age, family, or job skills.
+

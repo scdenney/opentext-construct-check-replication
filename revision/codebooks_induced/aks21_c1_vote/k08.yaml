@@ -1,0 +1,85 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1008
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (North Korean regime), ideological alignment
+      with North Korea, or specific ties to the North Korean political structure as
+      a decisive factor in the choice.
+    clarification: Includes mentions of '전 노동당원' (former Workers' Party member), '조선노동당'
+      (Workers' Party of Korea), '북한 연고' (North Korean ties), or the absence of such
+      ties (e.g., '노동당원이 아니어서') as the primary reason for selection or rejection.
+    negative_clarification: Do not use for general mentions of 'North Korea' without
+      specific regime/party ties. If the respondent mentions being a defector or having
+      lived in North Korea but does not cite party membership or regime ideology as
+      the reason, use other codes (e.g., adaptation or age). Use 'none_of_above' if
+      the mention is incidental and not the stated reason for choice.
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea, implying better social adaptation, cultural familiarity, or language
+      proficiency.
+    clarification: Includes references to '한국 체류기간' (Korea residence period), '국내
+      체류기간' (domestic residence period), '한국 적응' (Korean adaptation), or '한국인 동료/친구'
+      (Korean colleagues/friends) as indicators of integration.
+    negative_clarification: Do not use for residence in China or other countries unless
+      explicitly contrasted with Korea to argue for better Korean adaptation. If the
+      reason is purely about the number of years without linking it to adaptation
+      or social ties, it still falls here, but if it's about general 'time' without
+      context, consider 'none_of_above'.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in China,
+      used to infer their level of exposure to non-North Korean environments or capitalist
+      societies.
+    clarification: Includes references to '중국 체류기간' (China residence period), '중국
+      생활' (China life), or comparisons involving time spent in China.
+    negative_clarification: Do not use if the focus is primarily on Korean adaptation.
+      If the respondent mentions China only to say they didn't stay long enough to
+      be 'contaminated' by it, this code applies. If they mention China to say they
+      stayed too long and are 'too Chinese', this code applies.
+  professional_status:
+    definition: Reasoning based on the profile's occupation, professional skills,
+      or economic stability.
+    clarification: Includes mentions of specific jobs (e.g., '의사' doctor, '프로그래머'
+      programmer, '편의점' convenience store), '직업' (job), '안정적인 직장' (stable job), or
+      '전문직' (professional).
+    negative_clarification: Do not use for general statements about being 'working'
+      or 'employed' without specifying the nature of the work or its perceived value.
+      If the job is mentioned only as a fact without being the reason for choice,
+      use 'none_of_above'.
+  demographic_characteristics:
+    definition: Reasoning based on inherent demographic traits such as age, gender,
+      or marital/family status.
+    clarification: Includes references to '나이' (age), '젊음' (youth), '여성' (female),
+      '남성' (male), '결혼' (marriage), '자녀' (children), or '혼인관계' (marital status).
+    negative_clarification: Do not use if the demographic trait is mentioned only
+      as a descriptor and not as the reason for preference (e.g., 'same age so we
+      can talk' is demographic, but 'same age so we understand each other' might overlap
+      with adaptation; prioritize demographic if the trait itself is the basis). If
+      the reason is 'looks good' or 'feels right', use 'none_of_above'.
+  general_preference_or_ambiguity:
+    definition: Responses that indicate a general positive feeling, lack of specific
+      reasoning, or vague preferences that do not fit into the substantive categories
+      above.
+    clarification: Includes phrases like '그냥' (just), '딱히 없음' (no particular reason),
+      '좋아보여서' (looks good), '느낌' (feeling), '맘에 든다' (like it), '둘 중 낫다' (one is better
+      than the other), or '모름' (don't know).
+    negative_clarification: Do not use if a specific reason (even if weak) is provided.
+      If the respondent says 'no reason', use this code. If they say 'both are bad',
+      use this code.
+  none_of_above:
+    definition: Uninformative responses, gibberish, non-answers, or reasons that do
+      not pertain to the profile's attributes or the respondent's rationale for neighborly
+      interaction.
+    clarification: Includes single characters, symbols, random text, or responses
+      that are completely unintelligible or irrelevant to the conjoint choice.
+    negative_clarification: Use only when the response provides no discernible information
+      about why the profile was chosen. If the response is vague but implies a preference
+      (e.g., 'good'), use 'general_preference_or_ambiguity'.
+

@@ -1,0 +1,67 @@
+codebook:
+  name: egami2022_prison_exp2_induced
+  residual_code: none_of_above
+  context: US adults on Mechanical Turk (2017) read a short vignette about a 28-year-old
+    single man, a citizen of another country, convicted of illegally entering the
+    United States; versions differed in what was said about his prior criminal record.
+    After saying whether he should be sent to prison, they explained what the U.S.
+    government should do with him and why.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:egami2022_prison_exp2:1001
+codes:
+  punitive_removal:
+    definition: The response advocates for sending the individual to prison, imposing
+      a significant jail sentence, or deporting him to his country of origin as a
+      primary or sole punitive measure.
+    clarification: Includes calls for imprisonment (with or without subsequent deportation),
+      immediate deportation, or harsh punishment such as hard labor or execution.
+      Captures the construct of interest where the respondent believes the government
+      should actively punish or remove the individual from the US.
+    negative_clarification: Excludes responses that argue against prison/deportation
+      in favor of legal status, fines, or no action. If the response is ambiguous
+      or refuses to take a stance, use none_of_above.
+  non_punitive_removal:
+    definition: The response advocates for deportation or removal from the US but
+      explicitly rejects imprisonment or harsh punitive measures, often citing resource
+      constraints, overcrowding, or the non-violent nature of the offense.
+    clarification: Includes arguments that the individual should be sent home but
+      not jailed, or that deportation is the maximum appropriate penalty. Often includes
+      reasoning about taxpayer costs, prison overcrowding, or the idea that illegal
+      entry is not a crime worthy of incarceration.
+    negative_clarification: Excludes responses that support imprisonment. If the response
+      supports both prison and deportation, or only prison, use punitive_removal.
+      If the response supports legal status or no action, use legal_status_or_no_action.
+  legal_status_or_no_action:
+    definition: The response advocates for allowing the individual to remain in the
+      US, pursue legal citizenship, receive a fine, or take no punitive action at
+      all.
+    clarification: Includes suggestions to help the individual become a citizen, file
+      for legal status, pay a fine, or simply let him go. Also includes responses
+      that argue he has done nothing wrong or that the US should be more welcoming.
+    negative_clarification: Excludes responses that call for deportation or prison.
+      If the response supports removal (even without prison), use non_punitive_removal
+      or punitive_removal. If the response is uninformative, use none_of_above.
+  conditional_or_ambiguous:
+    definition: The response states that the appropriate action depends on additional
+      information, circumstances, or specific conditions that are not fully met in
+      the vignette.
+    clarification: Includes responses that say "it depends," request more context
+      about the prior crimes or reasons for entry, or offer a conditional statement
+      (e.g., "if he is a danger, then prison; otherwise, deportation") without committing
+      to a single clear outcome.
+    negative_clarification: Excludes responses that clearly advocate for one specific
+      outcome (prison, deportation, or legal status). If the response is clearly punitive
+      or clearly non-punitive, use the respective code. If the response is uninformative,
+      use none_of_above.
+  none_of_above:
+    definition: The response is uninformative, irrelevant, spam, or fails to provide
+      a clear recommendation for the US government's action.
+    clarification: Includes spam text (e.g., privacy policies), responses that are
+      too short to interpret, responses that only express confusion without offering
+      a solution, or responses that do not address the question of what the government
+      should do.
+    negative_clarification: Excludes any response that offers a substantive opinion
+      on the government's action, even if that opinion is conditional. If the response
+      can be coded as punitive_removal, non_punitive_removal, legal_status_or_no_action,
+      or conditional_or_ambiguous, do not use this code.
+

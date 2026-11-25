@@ -1,0 +1,78 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1005
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or democratic principles as a primary ground for choosing the politician, including
+      beliefs about democracy's inherent value, its necessity, or its alignment with
+      the respondent's views.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic" (민주적인), support
+      for democratic systems, belief that democracy is the best or necessary system,
+      or agreement with the politician's stance on democratic values.
+    negative_clarification: Exclude responses that mention democracy only as a minor
+      detail while focusing on other issues like welfare or equality, or those that
+      are purely non-substantive. Use `welfare_reasoning`, `equality_reasoning`, or
+      `none_of_above` instead.
+  welfare_reasoning:
+    definition: Reasoning that cites the politician's stance on government responsibility
+      for social welfare, public assistance, or economic security as the primary reason
+      for choice.
+    clarification: Includes mentions of "welfare" (복지), government responsibility
+      for citizens' well-being, expansion of state support, or criticism of insufficient
+      welfare.
+    negative_clarification: Exclude responses focused on general economic growth,
+      private enterprise, or individual responsibility. Use `economic_reasoning` or
+      `none_of_above` instead.
+  equality_reasoning:
+    definition: Reasoning that prioritizes gender equality, non-discrimination, or
+      equal treatment in society and employment as the main factor for selection.
+    clarification: Includes mentions of "gender equality" (성평등), "equality" (평등),
+      opposition to gender discrimination, or belief that gender should not determine
+      roles or opportunities.
+    negative_clarification: Exclude responses focused on racial/cultural diversity
+      (use `diversity_reasoning`) or general political ideology. Use `diversity_reasoning`
+      or `ideology_reasoning` instead.
+  diversity_reasoning:
+    definition: Reasoning that values racial, ethnic, or cultural diversity and inclusion
+      as a key reason for choosing the politician.
+    clarification: Includes mentions of "diversity" (다양성), "multiculturalism" (다문화),
+      respect for different races or cultures, or benefits of a diverse society.
+    negative_clarification: Exclude responses focused on gender equality (use `equality_reasoning`)
+      or general tolerance without specific reference to diversity. Use `equality_reasoning`
+      or `none_of_above` instead.
+  economic_reasoning:
+    definition: Reasoning based on the politician's proposed economic policies, such
+      as state-owned enterprise expansion, private enterprise support, or general
+      economic management.
+    clarification: Includes mentions of "state-owned enterprises" (국영기업), "private
+      enterprises" (사기업), "economy" (경제), "market economy" (시장경제), or specific economic
+      strategies.
+    negative_clarification: Exclude responses focused on welfare spending (use `welfare_reasoning`)
+      or general democratic values. Use `welfare_reasoning` or `democracy_reasoning`
+      instead.
+  ideology_reasoning:
+    definition: Reasoning that cites general political alignment, ideological similarity,
+      or broad political stance (e.g., progressive, conservative) without specifying
+      a concrete policy area.
+    clarification: Includes mentions of "political orientation" (정치성향), "ideology"
+      (이념), "progressive" (진보), "conservative" (보수), or general agreement with the
+      politician's worldview.
+    negative_clarification: Exclude responses that specify a concrete policy like
+      welfare, economy, or equality. Use `welfare_reasoning`, `economic_reasoning`,
+      or `equality_reasoning` instead.
+  none_of_above:
+    definition: Uninformative, non-substantive, or residual responses that do not
+      fit into the specific substantive categories.
+    clarification: Includes single words like "just" (그냥), "good" (굿), "I don't know"
+      (모름), random characters, emotional expressions without reasoning, or vague statements
+      like "he seems better" without explanation.
+    negative_clarification: Exclude any response that provides a clear substantive
+      reason (democracy, welfare, equality, diversity, economy, ideology).
+

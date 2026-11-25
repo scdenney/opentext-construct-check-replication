@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1004
+codes:
+  democracy_reasoning:
+    definition: Responses that explicitly invoke democracy, democratic values, or
+      the superiority of democratic systems as a primary reason for choosing the politician.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic values" (민주주의
+      가치), "democratic government" (민주주의 정부), or the belief that democracy is the
+      best or most acceptable form of government despite flaws.
+    negative_clarification: Exclude responses that mention democracy only as a neutral
+      fact or in passing without linking it to the choice. Use 'general_policy_agreement'
+      if the focus is on specific policy outcomes rather than the system itself.
+  welfare_state_reasoning:
+    definition: Responses that prioritize the government's responsibility for social
+      welfare, economic security, or public support for citizens' livelihoods.
+    clarification: Includes calls for government responsibility in welfare (복지), job
+      creation (일자리), economic support, or the belief that the state should ensure
+      citizens' basic needs and quality of life.
+    negative_clarification: Exclude responses focused solely on individual responsibility
+      or private sector growth. Use 'individual_responsibility' if the focus is on
+      self-reliance.
+  equality_and_diversity_reasoning:
+    definition: Responses that cite gender equality, non-discrimination, or acceptance
+      of cultural/racial diversity as the basis for selection.
+    clarification: Includes support for gender neutrality in roles, opposition to
+      gender-based discrimination, and acceptance of diverse ethnic or cultural backgrounds.
+    negative_clarification: Exclude responses that favor one gender over another.
+      Use 'traditional_gender_roles' if the respondent explicitly supports gender
+      hierarchy or distinct roles based on sex.
+  economic_ideology_reasoning:
+    definition: Responses that reflect a preference for specific economic structures,
+      such as state-owned enterprises or private sector expansion, independent of
+      welfare or democracy.
+    clarification: Includes explicit support for expanding state-owned enterprises
+      (국영기업) or private enterprises (사기업) as a means to strengthen the economy or
+      national power.
+    negative_clarification: Exclude responses that mention the economy only in the
+      context of welfare or general well-being. Use 'welfare_state_reasoning' if the
+      economic mention is tied to social safety nets.
+  general_ideological_agreement:
+    definition: Responses that indicate a general alignment with the politician's
+      views or ideology without specifying a particular policy domain.
+    clarification: Includes phrases like "my views match," "agree with their stance,"
+      or "fits my concept/ideology" without detailing the specific issue (e.g., welfare,
+      democracy, diversity).
+    negative_clarification: Exclude responses that specify a policy area. Use the
+      specific policy code (e.g., 'welfare_state_reasoning') if a specific issue is
+      mentioned.
+  individual_responsibility_reasoning:
+    definition: Responses that emphasize personal responsibility for one's livelihood
+      or life choices over government intervention.
+    clarification: Includes statements that individuals should be responsible for
+      their own survival, that the government should not bear the primary burden,
+      or that self-determination is key.
+    negative_clarification: Exclude responses that call for government support. Use
+      'welfare_state_reasoning' if the respondent expects government aid.
+  none_of_above:
+    definition: Responses that are uninformative, vague, incomplete, or do not fit
+      into any of the substantive categories.
+    clarification: Includes short, non-descriptive answers (e.g., "because," "good,"
+      "B"), typos that obscure meaning, or reasons that are purely personal preferences
+      unrelated to the political attributes presented.
+    negative_clarification: Exclude any response that contains a discernible political
+      or social reasoning. If a response is ambiguous but hints at a policy, use the
+      most likely specific code.
+

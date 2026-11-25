@@ -1,0 +1,77 @@
+codebook:
+  name: porumbescu2023_blame_induced
+  residual_code: none_of_above
+  context: 'US adults recruited online in late June 2020 read a short paragraph about
+    the Trump Administration''s efforts to test residents for the coronavirus (the
+    wording of the paragraph, and whether it gave a testing figure, differed across
+    versions), answered closed questions about the administration''s performance and
+    about who was responsible for the virus''s spread, and were then asked: ''In the
+    United States, who has done a bad job in responding to the pandemic? Why?'''
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:porumbescu2023_blame:1001
+codes:
+  chinese_people_blame:
+    definition: The response blames Chinese people, Chinese or Asian residents of
+      the United States, or Chinese-Americans or Asian-Americans, as a group, for
+      the pandemic or for the poor response to it.
+    clarification: Includes blaming Chinese people for spreading the virus, blaming
+      Asian-Americans for the spread, or blaming the Chinese government/CCP as a proxy
+      for the people.
+    negative_clarification: Does not include blaming the Chinese state/government
+      alone without implicating the people, nor does it include simply calling the
+      virus the 'Chinese virus' or stating it came from China without assigning blame
+      to the people. Use 'government_blame' if only the Chinese state is blamed.
+  federal_government_blame:
+    definition: The response blames the federal government, the President (specifically
+      Trump), the White House, or federal agencies (like the CDC or FDA) for the poor
+      response.
+    clarification: Includes blaming Trump for inaction, downplaying the virus, spreading
+      misinformation, lack of leadership, slow response, or politicizing the crisis.
+      Includes blaming federal agencies for poor testing, guidance, or preparedness.
+    negative_clarification: Does not include blaming state or local officials unless
+      they are explicitly grouped with the federal government. Use 'state_government_blame'
+      if only state/local officials are blamed. Use 'chinese_people_blame' if the
+      blame is directed at Chinese people.
+  state_government_blame:
+    definition: The response blames state governors, state legislatures, or local
+      officials (mayors, city councils) for the poor response.
+    clarification: Includes blaming specific governors (e.g., Cuomo, DeSantis, Inslee)
+      or states (e.g., Florida, New York, California) for opening too early, closing
+      too late, mishandling nursing homes, or violating civil rights.
+    negative_clarification: Does not include blaming the federal government or the
+      President unless they are mentioned alongside state officials in a general 'government'
+      critique. Use 'federal_government_blame' if the primary target is the federal
+      level.
+  public_citizen_blame:
+    definition: The response blames the general public, citizens, or individuals for
+      not following guidelines, social distancing, wearing masks, or taking the virus
+      seriously.
+    clarification: Includes blaming people for gathering in groups, ignoring lockdowns,
+      spreading the virus through negligence, or lacking personal responsibility.
+    negative_clarification: Does not include blaming specific political leaders or
+      government bodies. Use 'media_blame' if the blame is directed at news outlets
+      for causing panic or spreading misinformation.
+  media_blame:
+    definition: The response blames news media, journalists, or information outlets
+      for the poor response or the situation.
+    clarification: Includes blaming media for creating panic, spreading fear, exaggerating
+      the threat, spinning information, or failing to provide accurate guidance.
+    negative_clarification: Does not include blaming government officials for their
+      own statements. Use 'federal_government_blame' if the criticism is about the
+      administration's communication rather than the media's reporting.
+  other_institutional_blame:
+    definition: The response blames entities other than the government, public, or
+      media, such as pharmaceutical companies, corporations, or international bodies.
+    clarification: Includes blaming pharma companies for slow vaccine development,
+      corporations (e.g., Walmart) for unsafe practices, or the WHO for global mismanagement.
+    negative_clarification: Does not include blaming the US federal or state government.
+      Use 'federal_government_blame' or 'state_government_blame' for domestic government
+      entities.
+  none_of_above:
+    definition: The response is uninformative, incoherent, repeats the prompt, or
+      does not clearly assign blame to a specific group or entity.
+    clarification: Includes responses that are too short, nonsensical, purely descriptive
+      without blame, or state that no one did a bad job.
+    negative_clarification: If the response clearly blames a government entity, the
+      public, the media, or Chinese people, use the corresponding specific code.
+

@@ -1,0 +1,91 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1002
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly or implicitly invokes the candidate's place
+      of birth, regional origin (specifically East Germany, Saxony, or the former
+      GDR), or the political/historical division of Germany (West vs. East) as a primary
+      ground for prioritizing or deprioritizing them.
+    clarification: Includes mentions of specific East German states (Saxony, Brandenburg,
+      etc.), the term "Ost" (East), "DDR" (GDR), "Ostbundesländer" (East German states),
+      or contrasts with "Westdeutschland" (West Germany) or "BRD" in a way that highlights
+      regional origin as a factor. Also includes negative sentiment towards East German
+      regions (e.g., "Ich mag Sachsen nicht") or positive sentiment based on East
+      German identity.
+    negative_clarification: Exclude mentions of "Deutschland" or "Deutsche" if they
+      refer to nationality/citizenship without specific regional distinction. Exclude
+      general mentions of "Herkunft" (origin) if no specific region is named. Use
+      `nationality_reasoning` if only nationality is cited.
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of a criminal record (Vorstrafe) or the type of crime
+      committed (e.g., theft vs. tax evasion).
+    clarification: Includes explicit mentions of "Vorstrafe" (criminal record), "vorbestraft"
+      (previously convicted), "Straftat" (crime), "Diebstahl" (theft), "Steuerhinterziehung"
+      (tax evasion), or general concepts of trustworthiness linked to legal history.
+    negative_clarification: Exclude general moral judgments not linked to specific
+      legal records. Use `general_preference` if the reason is vague but implies moral
+      superiority without referencing crime.
+  age_reasoning:
+    definition: Reasoning that cites the candidate's age as a decisive factor, either
+      favoring youth for potential/energy or age for experience/stability.
+    clarification: Includes mentions of "jung" (young), "älter" (older), "Alter" (age),
+      "Lebenserfahrung" (life experience), "Rentenalter" (retirement age), or career
+      stage implications related to age.
+    negative_clarification: Exclude mentions of age if they are part of a broader
+      description of "experience" that is primarily professional rather than age-based.
+      Use `professional_experience` if the focus is strictly on job skills gained
+      over time, though overlap is common; prioritize `age_reasoning` if age itself
+      is the stated cause.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's family situation, such as having
+      children, being single, married, or a single parent.
+    clarification: Includes mentions of "Kinder" (children), "alleinerziehend" (single
+      parent), "verheiratet" (married), "Familie" (family), or financial responsibility
+      for dependents.
+    negative_clarification: Exclude mentions of family if they are incidental to other
+      factors like poverty without explicit reference to family structure. Use `socioeconomic_status`
+      if the focus is purely on income/poverty without linking it to family duties.
+  gender_reasoning:
+    definition: Reasoning that explicitly cites the candidate's gender as a reason
+      for selection or rejection.
+    clarification: Includes mentions of "Frau" (woman), "Mann" (man), "weiblich" (female),
+      "männlich" (male), or gender-specific stereotypes (e.g., "Frauen haben es schwerer").
+    negative_clarification: Exclude cases where gender is mentioned only as a demographic
+      fact without being a reason for choice. Use `none_of_above` if gender is irrelevant
+      to the decision.
+  professional_qualifications_reasoning:
+    definition: Reasoning based on the candidate's professional status, job title,
+      education, or career prospects.
+    clarification: Includes mentions of "Filialleiterin" (branch manager), "Ausbildung"
+      (education/training), "Berufserfahrung" (professional experience), "Teilzeit"
+      (part-time), "Vollzeit" (full-time), "Karriere" (career), or specific job roles.
+    negative_clarification: Exclude general statements about being "qualified" without
+      specifics. Use `age_reasoning` if the professional point is tied to age (e.g.,
+      "too old to learn").
+  nationality_reasoning:
+    definition: Reasoning based on the candidate's nationality or citizenship status,
+      distinct from regional origin within Germany.
+    clarification: Includes mentions of "Deutsche" (Germans), "Ausländer" (foreigners),
+      "Staatsbürgerschaft" (citizenship), or "Herkunft" (origin) when referring to
+      country of origin rather than German regions.
+    negative_clarification: Exclude mentions of "Deutsch" if it refers to language
+      or general identity without nationalistic exclusion/inclusion. Use `east_origin_reasoning`
+      if the origin is specifically within Germany (East/West).
+  none_of_above:
+    definition: Responses that are uninformative, vague, emotional without specific
+      reasoning, or indicate no preference.
+    clarification: Includes "Weiß nicht" (don't know), "Bauchgefühl" (gut feeling),
+      "Gefällt mir" (I like them), "Klingt gut" (sounds good), random characters,
+      "Keine Angabe" (no answer), or reasons that do not fit into the specific categories
+      above (e.g., "Sympathisch" without elaboration).
+    negative_clarification: Exclude any response that contains specific reasoning
+      related to age, crime, family, gender, region, or profession.
+

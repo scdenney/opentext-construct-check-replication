@@ -1,0 +1,73 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1011
+codes:
+  national_security_threat:
+    definition: Reasoning that explicitly invokes national security, the threat from
+      North Korea, espionage, or the necessity of defending the state as the primary
+      justification for the chosen position.
+    clarification: Includes mentions of 'national security' (국가안보), 'security' (안보),
+      'North Korea' (북한), 'espionage' (간첩), 'war risk' (전쟁의 위험), 'state defense' (국가
+      방어), and 'regime stability' in the context of external or internal security
+      threats.
+    negative_clarification: Exclude general political preferences, party loyalty,
+      or abstract concepts like 'democracy' or 'freedom' unless explicitly linked
+      to security threats. Use 'ideological_values' if the focus is on liberal democratic
+      principles without security framing.
+  ideological_values:
+    definition: Reasoning based on the protection of liberal democratic values, freedom
+      of speech, or human rights, often arguing that the National Security Law infringes
+      upon these rights.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), 'freedom' (자유), 'human rights' (인권), and 'civil liberties'. This code
+      captures arguments that prioritize individual rights or democratic ideals over
+      state security or policy maintenance.
+    negative_clarification: Exclude arguments focused solely on national security
+      threats. If the respondent mentions democracy but links it to security (e.g.,
+      'democracy needs security'), use 'national_security_threat'. Use 'none_of_above'
+      for vague references.
+  policy_scope_modification:
+    definition: Reasoning focused on the specific scope, range, or application of
+      the law, advocating for expansion, restriction, or modification rather than
+      simple maintenance or abolition.
+    clarification: Includes mentions of 'scope expansion' (범위 확대), 'scope restriction'
+      (범위 제한), 'modification' (수정), 'adjustment' (조정), and 'ambiguity' (애매모호함). This
+      code captures pragmatic concerns about how the law is applied or interpreted.
+    negative_clarification: Exclude arguments based on security threats or ideological
+      values. If the respondent argues for restriction *because* of security risks,
+      use 'national_security_threat'. If they argue for restriction *because* it violates
+      rights, use 'ideological_values'.
+  party_loyalty_preference:
+    definition: Reasoning based on support for or opposition to a specific political
+      party (e.g., People Power Party, Democratic Party of Korea) rather than the
+      substantive policy or rationale.
+    clarification: Includes explicit mentions of party names, 'party supporters' (입장
+      지지자), 'party interests' (당의 이익), and general preference for one party's stance
+      over another due to partisan alignment.
+    negative_clarification: Exclude substantive policy arguments. If the respondent
+      supports a party because of its security policy, use 'national_security_threat'.
+      If they oppose a party due to its democratic record, use 'ideological_values'.
+  general_approval_disapproval:
+    definition: Non-specific expressions of agreement, disagreement, or preference
+      without providing a substantive reason related to security, ideology, or policy
+      details.
+    clarification: Includes phrases like 'it's right' (옳은 일), 'feels better' (더 낫다),
+      'appropriate' (적절하다), 'good reason' (근거가 좋음), and general aesthetic or intuitive
+      preferences.
+    negative_clarification: Exclude any mention of security, democracy, party, or
+      scope. Use 'none_of_above' for gibberish or non-responses.
+  none_of_above:
+    definition: Uninformative responses, gibberish, non-responses, or reasons that
+      do not fit into the substantive categories above.
+    clarification: Includes random characters, 'no comment' (노코멘트), 'don't know' (잘
+      모름), 'no reason' (이유 없음), and empty or nonsensical inputs.
+    negative_clarification: Exclude any response that contains discernible reasoning,
+      even if weak. If a response mentions 'security' or 'democracy' even briefly,
+      code it accordingly.
+

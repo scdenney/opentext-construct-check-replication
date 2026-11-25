@@ -1,0 +1,70 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1003
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic values, or
+      the superiority of democratic governance as a primary ground for choosing the
+      politician.
+    clarification: Includes mentions of supporting democratic values, the belief that
+      democracy is the best form of government despite flaws, or choosing a politician
+      based on their stance on democratic principles.
+    negative_clarification: Exclude responses that mention democracy only as a minor
+      factor alongside other specific policy preferences (e.g., "welfare and democracy")
+      without emphasizing the democratic aspect as the core reason. Use 'welfare_reasoning'
+      or 'general_agreement' instead if democracy is not the primary driver.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes government responsibility for social welfare,
+      economic security, or public services.
+    clarification: Includes calls for government-funded welfare, expansion of state-owned
+      enterprises to provide social safety nets, or the belief that the government
+      should take responsibility for citizens' livelihoods.
+    negative_clarification: Exclude responses focused on general economic growth,
+      private sector expansion, or individual merit. Use 'economic_growth_reasoning'
+      or 'meritocracy_reasoning' instead.
+  diversity_reasoning:
+    definition: Reasoning based on the value of diversity in race, culture, or inclusion
+      of different groups.
+    clarification: Includes support for accepting people from other countries, valuing
+      cultural/racial diversity, or believing diversity benefits the nation.
+    negative_clarification: Exclude responses focused on gender equality or general
+      social roles. Use 'gender_equality_reasoning' instead.
+  gender_equality_reasoning:
+    definition: Reasoning based on the rejection of gender-based discrimination or
+      the belief that gender should not determine social or professional roles.
+    clarification: Includes statements that gender is irrelevant in social life, opposition
+      to gender-based job prioritization, or support for equal treatment regardless
+      of sex.
+    negative_clarification: Exclude responses that advocate for specific gender-based
+      policies (e.g., prioritizing men for jobs) or general diversity. Use 'meritocracy_reasoning'
+      or 'general_agreement' if the stance is not explicitly about equality/non-discrimination.
+  economic_policy_reasoning:
+    definition: Reasoning based on specific economic ideologies regarding state vs.
+      private sector control or general economic development.
+    clarification: Includes preferences for expanding state-owned enterprises, expanding
+      private enterprises, or general goals of national economic development and prosperity.
+    negative_clarification: Exclude responses focused on welfare/social safety nets.
+      Use 'welfare_reasoning' instead.
+  general_agreement:
+    definition: Reasoning based on a general alignment of the politician's views with
+      the respondent's own, without specifying a particular policy domain.
+    clarification: Includes statements like "I agree with their views," "their opinion
+      matches mine," or "I chose because I agree with their stance on various issues."
+    negative_clarification: Exclude responses that specify a particular issue (e.g.,
+      welfare, diversity, democracy). Use the specific code corresponding to the mentioned
+      issue.
+  none_of_above:
+    definition: Uninformative, incomplete, or non-substantive responses.
+    clarification: Includes single characters, symbols, "no problem," "nothing," or
+      responses that do not provide a clear reason for the choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if brief. Use the most appropriate substantive code if a reason can be
+      inferred.
+

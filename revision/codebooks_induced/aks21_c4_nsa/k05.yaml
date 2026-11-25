@@ -1,0 +1,71 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1005
+codes:
+  national_security_threat:
+    definition: Responses that cite national security, defense of the state, or the
+      North Korean threat as the primary reason for supporting the position.
+    clarification: Includes mentions of strengthening national security (국가 안보 강화),
+      protecting the state, distrust of North Korea (북한 불신), and the necessity of
+      security laws for state survival.
+    negative_clarification: Exclude responses that only mention "security" in the
+      context of political stability or general order without linking it to external
+      threats or state defense; use code 'political_stability' or 'none_of_above'
+      instead.
+  democratic_values_protection:
+    definition: Responses that prioritize the protection of liberal democracy, freedom,
+      or human rights over security concerns.
+    clarification: Includes explicit mentions of protecting liberal democracy (자유민주주의
+      보호), prioritizing freedom/liberty (자유 우선), and opposing authoritarianism or
+      dictatorship (독재 반대).
+    negative_clarification: Exclude responses that mention democracy only as a general
+      value without contrasting it with security or the specific policy; use code
+      'general_values' or 'none_of_above' instead.
+  policy_scope_modification:
+    definition: Responses that justify their choice based on the need to limit, restrict,
+      or expand the scope/application of the law or policy.
+    clarification: Includes arguments for limiting the scope (범위 제한/축소), restricting
+      application, or conversely, expanding the scope (범위 확대) based on legal clarity
+      or necessity.
+    negative_clarification: Exclude responses that mention scope only as a secondary
+      detail while the main reason is security or ideology; use code 'national_security_threat'
+      or 'democratic_values_protection' instead.
+  political_partisanship:
+    definition: Responses that cite support for or opposition to a specific political
+      party or political alignment as the reason.
+    clarification: Includes explicit support for the People Power Party (국민의힘), Democratic
+      Party (더불어민주당), or general conservative/liberal ideological alignment (보수 지지,
+      진보 성향).
+    negative_clarification: Exclude responses that mention parties only as a proxy
+      for policy preferences without explicit partisan language; use code 'policy_scope_modification'
+      or 'none_of_above' instead.
+  status_quo_maintenance:
+    definition: Responses that prefer maintaining the current situation or existing
+      policy due to stability, lack of change, or uncertainty.
+    clarification: Includes preferences for "maintaining the status quo" (현상 유지, 그대로
+      유지), "keeping it as is," or avoiding change due to risk or uncertainty.
+    negative_clarification: Exclude responses that support the status quo specifically
+      because of security or democratic reasons; use code 'national_security_threat'
+      or 'democratic_values_protection' instead.
+  abolition_support:
+    definition: Responses that explicitly advocate for the complete abolition or repeal
+      of the law/policy.
+    clarification: Includes calls for "abolition" (폐지), "repeal," or stating the law
+      is unnecessary, outdated, or an "evil law" (악법) that should be removed.
+    negative_clarification: Exclude responses that suggest modification or restriction
+      rather than total abolition; use code 'policy_scope_modification' instead.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      the specific substantive categories.
+    clarification: Includes single words like "good," "bad," "like it," "don't know,"
+      random characters, or vague statements like "no reason" or "just because."
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to security, democracy, scope, politics, or status quo; ensure these
+      are coded into the appropriate substantive codes.
+

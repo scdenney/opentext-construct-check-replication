@@ -1,0 +1,74 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1005
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly invokes helping North Koreans who face discrimination,
+      prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of helping North Koreans facing discrimination,
+      addressing inequality, supporting those with prejudice, or providing aid specifically
+      to overcome discriminatory barriers.
+    negative_clarification: Exclude general economic support, employment creation,
+      or business growth reasons that do not reference discrimination or unequal treatment.
+      Use 'economic_benefit' or 'business_support' instead.
+  economic_fiscal_rationale:
+    definition: Reasoning based on fiscal responsibility, budget allocation methods,
+      or tax policy preferences (e.g., opposing deficit spending, preferring corporate
+      tax hikes over income tax hikes).
+    clarification: Includes concerns about government deficit, specific tax mechanisms
+      (corporate vs. income tax), budget efficiency, or cost-effectiveness of the
+      policy.
+    negative_clarification: Exclude general economic benefits to Korea or business
+      profitability. Use 'economic_benefit' or 'business_support' instead.
+  economic_benefit:
+    definition: Reasoning that the policy benefits the South Korean economy, domestic
+      businesses, or the general public.
+    clarification: Includes phrases like "good for Korea," "benefits domestic companies,"
+      "boosts local business," or "creates jobs for Koreans."
+    negative_clarification: Exclude specific fiscal/tax arguments. Use 'economic_fiscal_rationale'
+      instead. Exclude general business support for North Koreans. Use 'business_support'
+      instead.
+  business_support_criteria:
+    definition: Reasoning based on the specific target group or operational criteria
+      of the business support, such as profitability, joint ventures, or SME focus.
+    clarification: Includes preferences for supporting profitable businesses only,
+      joint ventures with Koreans, SMEs, startups, or specific service types (consulting
+      vs. cash).
+    negative_clarification: Exclude general economic benefits to Korea. Use 'economic_benefit'
+      instead. Exclude fiscal/tax arguments. Use 'economic_fiscal_rationale' instead.
+  political_heuristic:
+    definition: Reasoning based on political alignment, party support, or leader endorsement
+      rather than policy content.
+    clarification: Includes support because a specific political party (e.g., People
+      Power Party), leader (President), or political group supports the policy, or
+      opposition because a disliked group supports it.
+    negative_clarification: Exclude support based on civil society/NGO endorsements
+      if not tied to a political party. Use 'civil_society_heuristic' instead.
+  civil_society_heuristic:
+    definition: Reasoning based on endorsement by civil society organizations, human
+      rights groups, or NGOs.
+    clarification: Includes support because human rights groups, NGOs, or citizen
+      groups endorse the policy.
+    negative_clarification: Exclude political party support. Use 'political_heuristic'
+      instead.
+  generic_preference:
+    definition: Non-substantive reasons indicating a general preference for one option
+      over the other without specific justification, or neutral/indifferent responses.
+    clarification: Includes "just looks better," "no particular reason," "both are
+      similar," "random choice," or vague positive/negative sentiments.
+    negative_clarification: Exclude uninformative noise like single characters or
+      gibberish. Use 'none_of_above' instead.
+  none_of_above:
+    definition: Uninformative, nonsensical, or incomplete responses that do not provide
+      a discernible reason for the choice.
+    clarification: Includes single characters (e.g., ".", "ㅎ"), gibberish, "I don't
+      know," "no answer," or responses that are purely negative without explanation.
+    negative_clarification: Exclude any response that contains a recognizable reason,
+      even if brief. Use 'generic_preference' for vague but intelligible reasons.
+

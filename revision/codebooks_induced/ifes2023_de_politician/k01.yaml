@@ -1,0 +1,77 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1001
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic, cultural, or racial diversity,
+      immigration, multiculturalism, or national unity as a primary ground for choosing
+      the politician.
+    clarification: Includes mentions of "Diversität", "ethnische Vielfalt", "kulturelle
+      Vielfalt", "Multikulti", "Herkunft", "Hautfarbe", or specific stances on immigration
+      and integration.
+    negative_clarification: Exclude general equality or gender equality (use gender_reasoning).
+      Exclude general democratic values (use democratic_reasoning). Exclude vague
+      or uninformative answers (use none_of_above).
+  gender_reasoning:
+    definition: Reasoning that cites gender equality, women's rights, feminism, or
+      the role of women in society and the workplace as a primary ground for choosing
+      the politician.
+    clarification: Includes mentions of "Gleichstellung", "Frauenrechte", "Feminismus",
+      "Männer/Frauen gleich behandeln", "Frauenförderung", or opposition to gender-based
+      preferences.
+    negative_clarification: Exclude ethnic/cultural diversity (use diversity_reasoning).
+      Exclude general democratic principles (use democratic_reasoning). Exclude general
+      economic views (use economic_reasoning).
+  democratic_reasoning:
+    definition: Reasoning that cites support for democracy, democratic values, or
+      the political system itself as a primary ground for choosing the politician.
+    clarification: Includes mentions of "Demokratie", "demokratische Grundordnung",
+      "Freiheit" (in a political/systemic sense), or the belief that democracy is
+      the best form of government.
+    negative_clarification: Exclude general personal agreement or vague satisfaction
+      (use none_of_above). Exclude specific policy areas like economy or social welfare
+      (use economic_reasoning or social_reasoning). Exclude diversity or gender issues
+      (use respective codes).
+  economic_reasoning:
+    definition: Reasoning that cites economic policies, business regulation, market
+      freedom, or economic responsibility as a primary ground for choosing the politician.
+    clarification: Includes mentions of "Unternehmen", "Wirtschaft", "Freiheit für
+      Unternehmen", "Kontrolle von Unternehmen", "Selbstverantwortung" (in an economic
+      context), or "Arbeitsplätze" (linked to economic meritocracy).
+    negative_clarification: Exclude social welfare/poverty alleviation (use social_reasoning).
+      Exclude general democratic values (use democratic_reasoning). Exclude diversity
+      or gender (use respective codes).
+  social_reasoning:
+    definition: Reasoning that cites social welfare, social justice, state responsibility
+      for citizens, or poverty alleviation as a primary ground for choosing the politician.
+    clarification: Includes mentions of "Sozialhilfe", "soziale Gerechtigkeit", "Staatliche
+      Hilfe", "Daseinsvorsorge", or the state's duty to care for people.
+    negative_clarification: Exclude economic/business freedom (use economic_reasoning).
+      Exclude general democratic values (use democratic_reasoning). Exclude diversity
+      or gender (use respective codes).
+  general_agreement:
+    definition: Reasoning that cites general agreement with the politician's views,
+      values, or platform without specifying a particular policy domain or identity
+      characteristic.
+    clarification: Includes phrases like "stimmt mit meinen Ansichten überein", "vertritt
+      meine Meinung", "passt zu mir", "bessere Argumente", or "mehr Übereinstimmung"
+      where no specific topic is identified.
+    negative_clarification: Exclude specific topics like democracy, economy, gender,
+      or diversity (use respective codes). Exclude uninformative or random answers
+      (use none_of_above).
+  none_of_above:
+    definition: Uninformative, random, emotional, or non-substantive responses that
+      do not provide a clear policy or value-based reason for the choice.
+    clarification: Includes "keine Ahnung", "weiß nicht", "bauchgefühl", "ist egal",
+      "besseres Übel", "zufällig", "beide doof", or purely aesthetic/intuitive statements
+      without substantive content.
+    negative_clarification: Exclude any response that provides a substantive reason,
+      even if brief (e.g., "Demokratie" goes to democratic_reasoning, "Frauen" goes
+      to gender_reasoning).
+

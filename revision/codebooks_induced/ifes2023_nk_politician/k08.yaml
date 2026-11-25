@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1008
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the superiority of democratic systems as a primary ground for choosing the
+      politician.
+    clarification: Includes mentions of "democracy" (민주주의), "liberal democracy" (자유민주주의),
+      or the belief that democracy is the best or necessary system for the country,
+      even if acknowledging its flaws.
+    negative_clarification: Exclude mentions of democracy only as a distractor or
+      in negative contexts without endorsing it as a reason for choice (e.g., "democracy
+      is灭亡" or "democracy is similar to North Korea"). Use 'none_of_above' for these.
+  equality_reasoning:
+    definition: Reasoning based on principles of equality, fairness, or non-discrimination,
+      particularly regarding gender, race, or social status.
+    clarification: Includes calls for gender equality (남녀평등), equal rights for women,
+      rejection of gender-based discrimination, and general fairness (공정성) in hiring
+      or social roles.
+    negative_clarification: Exclude general economic fairness or meritocracy not tied
+      to identity groups. Use 'economic_reasoning' or 'general_agreement' instead.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes government responsibility for social welfare,
+      public support, or economic security for citizens.
+    clarification: Includes demands for the government to take responsibility for
+      welfare (복지), job creation, and improving citizens' livelihoods through state
+      intervention.
+    negative_clarification: Exclude general economic growth arguments focused on private
+      sector expansion. Use 'economic_reasoning' instead.
+  economic_reasoning:
+    definition: Reasoning based on economic policy preferences, specifically regarding
+      the role of state vs. private enterprise in driving economic development.
+    clarification: Includes arguments for expanding private enterprises (사기업 확대) to
+      boost the economy, create jobs, or prevent corruption/inequality associated
+      with state-owned enterprises.
+    negative_clarification: Exclude welfare-focused arguments. Use 'welfare_reasoning'
+      instead.
+  diversity_reasoning:
+    definition: Reasoning that values cultural, racial, or ethnic diversity as beneficial
+      for society or the nation.
+    clarification: Includes positive views on multiculturalism, racial diversity,
+      and the idea that diversity strengthens the country's economy or social fabric.
+    negative_clarification: Exclude general tolerance without specific reference to
+      diversity/multiculturalism. Use 'general_agreement' or 'equality_reasoning'
+      if it pertains to gender.
+  general_agreement:
+    definition: Reasoning based on a general alignment of views, personal satisfaction,
+      or perceived competence without specifying a distinct policy domain.
+    clarification: Includes responses stating the politician's views match the respondent's
+      own, the politician seems suitable, or general agreement with the politician's
+      stance.
+    negative_clarification: Exclude specific policy reasons (welfare, economy, democracy,
+      etc.). Use the specific policy code if identifiable.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses.
+    clarification: Includes responses that are too vague to code, express dislike
+      for the other candidate rather than preference for this one, or are nonsensical.
+    negative_clarification: Exclude any response that provides a substantive reason
+      for choice, even if weak.
+

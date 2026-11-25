@@ -1,0 +1,64 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1010
+codes:
+  national_security_threat:
+    definition: Reasoning that explicitly invokes national security, the threat from
+      North Korea, espionage, or the necessity of defending the state as the primary
+      justification for the chosen position.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korean threat' (북한), 'espionage' (공작), and 'defending the state'
+      (나라를 지키기 위해). It covers arguments that the law is necessary to protect the country
+      from external or internal security threats.
+    negative_clarification: Exclude responses that focus solely on political ideology,
+      democratic values, or partisan support without referencing security threats.
+      Use 'ideological_democracy' or 'partisan_support' instead.
+  ideological_democracy:
+    definition: Reasoning based on the protection of liberal democracy, freedom, or
+      human rights, often framing the National Security Act as a tool to protect the
+      democratic order or, conversely, as a threat to civil liberties.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy protection'
+      (민주주의 보호), 'human rights' (기본권), and 'freedom'. This includes arguments that
+      the law protects democracy or arguments that it infringes on democratic freedoms.
+    negative_clarification: Exclude responses that cite national security threats
+      or partisan loyalty. Use 'national_security_threat' or 'partisan_support' instead.
+  partisan_support:
+    definition: Reasoning driven by support for or opposition to a specific political
+      party or candidate, rather than the policy content itself.
+    clarification: Includes explicit mentions of party names (e.g., 'Democratic Party',
+      'People Power Party'), expressions of trust or distrust in specific parties,
+      or choosing a position because the supporting party is preferred.
+    negative_clarification: Exclude responses that provide substantive policy reasons
+      like security or democracy. Use 'national_security_threat' or 'ideological_democracy'
+      instead.
+  policy_modification:
+    definition: Reasoning focused on the need to amend, restrict, or expand the scope
+      of the law rather than a binary choice of support or opposition based on values.
+    clarification: Includes arguments for 'amendment' (수정), 'restriction of scope'
+      (범위 제한), 'expansion of scope' (범위 확대), or 'gradual change'. The focus is on
+      the technical or structural adjustment of the law's application.
+    negative_clarification: Exclude responses that justify the modification based
+      on security threats or democratic values (which should be coded as 'national_security_threat'
+      or 'ideological_democracy'). Use 'none_of_above' if the modification reason
+      is vague.
+  general_approval:
+    definition: Non-substantive expressions of agreement, approval, or preference
+      without specific reasoning related to security, democracy, or partisanship.
+    clarification: Includes phrases like 'it seems right' (옳은 일), 'I like it' (좋아),
+      'it's better' (나아서), 'general support', or vague positive sentiments.
+    negative_clarification: Exclude responses with specific justifications. Use 'national_security_threat',
+      'ideological_democracy', or 'partisan_support' if specific reasons are present.
+  none_of_above:
+    definition: Uninformative responses, expressions of ignorance, neutrality, or
+      reasons that do not fit into the substantive categories above.
+    clarification: Includes 'no reason' (없음), 'don't know' (모름), 'neutral' (중립), 'no
+      opinion', random characters, or comments about the survey itself.
+    negative_clarification: Exclude any response that provides a substantive reason
+      for the choice.
+

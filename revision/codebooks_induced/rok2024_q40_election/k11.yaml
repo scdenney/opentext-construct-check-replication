@@ -1,0 +1,50 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1011
+codes:
+  programmatic_policy_reasoning:
+    definition: Justifies the choice by referencing specific policy positions, ideological
+      alignment, or political platforms of the candidate.
+    clarification: Includes references to specific policy areas such as nuclear weapons
+      (independent development or opposition), housing/real estate taxes, labor hours
+      (4.5-day work week), foreign policy (pro-US alliance, pro-national interest,
+      or neutrality), anti-discrimination laws, and general ideological camps (conservative,
+      progressive, liberal). Also includes general statements about agreeing with
+      the candidate's platform, public pledges, or political philosophy.
+    negative_clarification: Exclude references to personal integrity, age, gender,
+      profession (e.g., prosecutor), or vague feelings of "liking" the candidate without
+      policy context. Use `personal_characteristics` or `none_of_above` instead.
+  personal_characteristics:
+    definition: Justifies the choice based on the candidate's personal traits, demographics,
+      or perceived integrity rather than their policy platform.
+    clarification: Includes references to age (young/old), gender (male/female), profession
+      (e.g., prosecutor, activist), physical attractiveness, charisma, perceived honesty,
+      lack of scandal/corruption allegations, clean record, or general "liking" the
+      person.
+    negative_clarification: Exclude references to specific policy agreements or ideological
+      alignment. Use `programmatic_policy_reasoning` instead.
+  comparative_preference:
+    definition: Justifies the choice by stating the selected candidate is better than
+      the alternative, without specifying the policy or personal reason for the superiority.
+    clarification: Includes phrases like "better than the other," "less bad," "second
+      best," "more reasonable," or "more trustworthy" without detailing the specific
+      policy or trait that makes them superior.
+    negative_clarification: Exclude specific reasons for the comparison. If the user
+      says "better because of policy," use `programmatic_policy_reasoning`. If "better
+      because he is younger," use `personal_characteristics`. Use `none_of_above`
+      if the answer is truly uninformative.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not provide
+      a clear reason for the choice.
+    clarification: Includes "just," "no reason," "I don't know," random characters,
+      "both are bad," "forced to choose," or vague statements that do not map to policy,
+      personal traits, or comparative preference.
+    negative_clarification: Exclude any response that mentions a policy, a personal
+      trait, or a comparative judgment.
+

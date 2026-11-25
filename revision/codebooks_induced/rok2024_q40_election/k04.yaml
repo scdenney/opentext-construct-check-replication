@@ -1,0 +1,52 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1004
+codes:
+  programmatic_policy_reasoning:
+    definition: Justifies the choice by referencing specific policy positions, ideological
+      stances, or substantive political issues.
+    clarification: Includes references to housing/real estate taxes, labor policies
+      (working hours, job security), foreign policy (alliances, nuclear weapons, neutrality),
+      social policies (anti-discrimination laws), and general ideological alignment
+      (progressive/conservative, national interest).
+    negative_clarification: Excludes references to personal integrity, age, appearance,
+      or vague feelings. If the response mentions "national interest" without specific
+      policy context, code as vague_national_interest instead.
+  candidate_characteristics:
+    definition: Justifies the choice based on the candidate's personal attributes,
+      background, or perceived competence.
+    clarification: Includes age (young/old), appearance/image, career background (prosecutor,
+      diplomat, activist), perceived honesty/integrity, leadership potential, and
+      personal charisma.
+    negative_clarification: Excludes policy positions. If the response mentions "honesty"
+      in the context of avoiding corruption scandals, code as candidate_characteristics.
+  comparative_evaluation:
+    definition: Justifies the choice by comparing the selected candidate favorably
+      against the alternative, often without specifying substantive reasons.
+    clarification: Includes phrases like "less bad," "relatively better," "no other
+      choice," "less suspicious than the other," or general preference based on elimination
+      of the opponent.
+    negative_clarification: Excludes specific policy or trait justifications. If the
+      comparison is based on a specific policy difference, code as programmatic_policy_reasoning.
+  vague_national_interest:
+    definition: Cites "national interest" or "country's benefit" as the reason, but
+      lacks specific policy detail or ideological framing.
+    clarification: Includes short phrases like "national interest first," "for the
+      country," or "realistic policy" without elaboration on what that policy entails.
+    negative_clarification: Excludes specific policy mentions (e.g., nuclear weapons,
+      housing tax). If specific policies are mentioned alongside national interest,
+      code as programmatic_policy_reasoning.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "just because," random characters, "I don't
+      know," "good person" (without elaboration), or responses that do not provide
+      a clear rationale for the choice.
+    negative_clarification: Excludes any response that can be mapped to policy, traits,
+      or comparative evaluation.
+

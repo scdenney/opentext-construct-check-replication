@@ -1,0 +1,82 @@
+codebook:
+  name: andre2024_stockmodels_attention_induced
+  residual_code: none_of_above
+  context: 'US adults in an online survey read two hypothetical news scenarios about
+    Nike announced four weeks earlier: neutral news (a supplier partnership continued)
+    and good news (a new partnership expected to cut raw material costs by 20%), both
+    of which received a lot of attention from stock market traders. Just before forecasting,
+    some were asked how other traders had reacted to the announcements over the past
+    four weeks, and some also how that reaction had affected Nike''s stock price.
+    Respondents predicted in which scenario $1,000 invested in Nike stock today and
+    sold in twelve months would earn a higher return, and explained their prediction.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2024_stockmodels_attention:1001
+codes:
+  price_response_reference:
+    definition: The response explicitly refers to the movement, level, or inflation
+      of Nike's stock price since the announcement or at the time of purchase.
+    clarification: Includes mentions that the price has already gone up, is currently
+      high/expensive, is inflated due to attention, or that the benefit has already
+      been "priced in."
+    negative_clarification: Do not use for general statements about future price increases
+      based on fundamentals (e.g., "profits will rise so stock will go up"). Use for
+      those instead.
+  cost_savings_profitability:
+    definition: The response attributes the expected return to the direct financial
+      impact of the cost-cutting partnership, such as lower production costs, higher
+      profit margins, or increased bottom-line earnings.
+    clarification: Includes reasoning that cheaper materials lead to higher profits,
+      better margins, or increased company value due to efficiency.
+    negative_clarification: Do not use if the focus is primarily on consumer demand
+      or brand image rather than direct cost/profit mechanics. Use consumer_demand
+      or brand_image instead.
+  consumer_demand_sales:
+    definition: The response attributes the expected return to increased consumer
+      interest, sales volume, or market share driven by lower product prices or sustainability
+      features.
+    clarification: Includes reasoning that lower costs allow for lower consumer prices,
+      leading to more sales, or that eco-friendly materials attract more buyers.
+    negative_clarification: Do not use if the focus is on corporate profit margins
+      without linking to consumer behavior. Use cost_savings_profitability instead.
+  brand_image_sustainability:
+    definition: The response attributes the expected return to Nike's reputation,
+      brand value, or public perception, specifically regarding sustainability or
+      environmental friendliness.
+    clarification: Includes mentions of "green" initiatives, eco-friendly materials,
+      positive public perception, or brand loyalty driving investment.
+    negative_clarification: Do not use if the focus is on financial metrics like profit
+      margins or sales volume. Use cost_savings_profitability or consumer_demand_sales
+      instead.
+  market_efficiency_priced_in:
+    definition: The response argues that the return will be similar or lower in the
+      good news scenario because the market has already reacted to the news, making
+      the stock price reflect the value at the time of purchase.
+    clarification: Includes reasoning that the "good news" was expected, the price
+      spiked early, or that buying 4 weeks later means missing the initial gain.
+    negative_clarification: Do not use for general statements that the price is high.
+      Use price_response_reference if it's a simple observation, or this code if it's
+      an argument about market efficiency/valuation timing.
+  risk_uncertainty:
+    definition: The response attributes the expected return (often similar or lower
+      for the new partnership) to the risks, instability, or unknowns associated with
+      a new supplier or partnership.
+    clarification: Includes mentions of learning curves, quality control issues, potential
+      for the new supplier to fail, or general unpredictability of new ventures.
+    negative_clarification: Do not use for general market volatility. Use this only
+      when the risk is specific to the new partnership vs. the status quo.
+  status_quo_stability:
+    definition: The response attributes the expected return to the stability, consistency,
+      and reliability of maintaining the existing supplier partnership.
+    clarification: Includes reasoning that keeping the current supplier ensures steady
+      growth, avoids risk, or maintains known quality and cost structures.
+    negative_clarification: Do not use if the response is neutral or undecided. Use
+      none_of_above if the reasoning is vague.
+  none_of_above:
+    definition: The response is uninformative, expresses a guess without reasoning,
+      states a lack of knowledge, or provides reasoning that does not fit the other
+      categories.
+    clarification: Includes "I guessed," "I don't know," "It's a toss-up," or vague
+      statements like "Nike is a good company" without specific mechanism.
+    negative_clarification: Do not use if the response contains any of the specific
+      mechanisms defined in the other codes.
+

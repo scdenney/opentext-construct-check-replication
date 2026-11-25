@@ -1,0 +1,79 @@
+codebook:
+  name: kertzer2024_perspectivetaking_induced
+  residual_code: none_of_above
+  context: Adults in the United States (in English) and in China (in Chinese) read
+    that the other country (China or the United States) had decided to increase or
+    to decrease its naval deployments in the South China Sea, wrote what their own
+    country would conclude from that, and some were also asked to write what the other
+    country would conclude if their own country increased its military activities
+    there; all then said whether their own country's military activities in the South
+    China Sea should increase, decrease or stay the same and briefly explained their
+    response.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:kertzer2024_perspectivetaking:1001
+codes:
+  other_side_view:
+    definition: The response explicitly describes how the other country (China for
+      US respondents, US for Chinese respondents) would perceive, interpret, or react
+      to the respondent's own country's military activity or policy in the South China
+      Sea.
+    clarification: Includes statements about the other side viewing the action as
+      a threat, provocation, weakness, or goodwill; predictions that the other side
+      will escalate, de-escalate, or remain vigilant; or assertions that the action
+      is intended to signal resolve or deter the other side.
+    negative_clarification: Do not use for general statements about peace, sovereignty,
+      or domestic policy that do not reference the other side's reaction. Use 'domestic_benefit'
+      or 'sovereignty' instead.
+  sovereignty_and_territorial_integrity:
+    definition: The response justifies the military activity based on the defense,
+      assertion, or protection of the respondent's own country's territorial claims,
+      sovereignty, or national rights.
+    clarification: Includes references to protecting national territory, defending
+      against aggression, maintaining historical rights, or ensuring national security
+      through strength.
+    negative_clarification: Do not use if the primary focus is on the other side's
+      reaction. Use 'other_side_view' instead.
+  escalation_and_tension_management:
+    definition: The response focuses on the risk of conflict, war, or heightened tensions
+      resulting from military activities, or the need to manage these risks.
+    clarification: Includes arguments that increasing activity causes tension or war,
+      that decreasing activity reduces risk, or that a balance is needed to avoid
+      conflict.
+    negative_clarification: Do not use if the focus is on the other side's specific
+      interpretation. Use 'other_side_view' instead.
+  status_quo_and_wait_and_see:
+    definition: The response advocates for maintaining current military levels or
+      delaying any change until more information is available or the situation clarifies.
+    clarification: Includes calls to keep the status quo, wait and see, observe the
+      other side's moves, or maintain the current posture without increase or decrease.
+    negative_clarification: Do not use if the respondent provides a substantive reason
+      related to sovereignty or tension. Use 'sovereignty_and_territorial_integrity'
+      or 'escalation_and_tension_management' instead.
+  non_intervention_and_isolationism:
+    definition: The response argues that the respondent's country should not be involved
+      in the South China Sea issue, viewing it as not their business or a distraction
+      from domestic priorities.
+    clarification: Includes statements that the issue is not the respondent's country's
+      problem, that they should focus on domestic issues, or that they should withdraw
+      or not intervene.
+    negative_clarification: Do not use if the respondent supports involvement but
+      argues for a specific level. Use 'status_quo_and_wait_and_see' or 'escalation_and_tension_management'
+      instead.
+  alliance_and_regional_stability:
+    definition: The response justifies military activity based on obligations to allies,
+      maintaining regional order, or the strategic balance of power in the broader
+      region.
+    clarification: Includes references to protecting allies, acting as a stabilizer,
+      or maintaining a balance of power to prevent regional dominance by the other
+      side.
+    negative_clarification: Do not use if the focus is solely on the respondent's
+      own sovereignty. Use 'sovereignty_and_territorial_integrity' instead.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      any of the substantive categories.
+    clarification: Includes "I don't know," "I don't care," random characters, gibberish,
+      or extremely vague statements that do not provide a clear rationale for the
+      military activity preference.
+    negative_clarification: Do not use for substantive arguments. If the response
+      is substantive, use the appropriate substantive code.
+

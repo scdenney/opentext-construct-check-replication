@@ -1,0 +1,62 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1004
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly invokes helping North Koreans who face discrimination,
+      prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of helping North Koreans (탈북민/북한인) specifically
+      because they are discriminated against, face prejudice, or are in a disadvantaged
+      position requiring aid due to inequality.
+    negative_clarification: Exclude general economic support, employment creation,
+      or business success reasons that do not reference discrimination or unequal
+      treatment. Use 'economic_efficiency' or 'general_support' instead.
+  economic_efficiency:
+    definition: Reasoning based on financial prudence, cost-effectiveness, or avoiding
+      waste of public funds.
+    clarification: Includes arguments against government deficit spending, preference
+      for low-interest loans over grants, concern about budget allocation methods,
+      and the belief that support should be targeted to profitable ventures to avoid
+      waste ("bottomless pit").
+    negative_clarification: Exclude reasons based on political trust, general kindness,
+      or discrimination. Use 'political_trust' or 'anti_discrimination_help' instead.
+  economic_benefit_korea:
+    definition: Reasoning that the policy is chosen because it benefits the South
+      Korean economy or society.
+    clarification: Includes statements that the policy is "good for Korea," promotes
+      regional business improvement, creates jobs for Koreans, or leads to mutual
+      benefit/win-win situations for Korean and North Korean partners.
+    negative_clarification: Exclude reasons focused solely on North Korean welfare
+      without linking to Korean economic gain, or those focused on discrimination.
+      Use 'anti_discrimination_help' or 'general_support' instead.
+  political_trust:
+    definition: Reasoning based on the endorsement or support of specific political
+      figures, parties, or organizations.
+    clarification: Includes preferences for policies supported by the President, ruling
+      party (Democratic Party), opposition party (People Power Party), large corporations,
+      or NGOs/human rights groups.
+    negative_clarification: Exclude reasons based on the substantive content of the
+      policy (e.g., loans vs grants) or discrimination. Use 'economic_efficiency'
+      or 'anti_discrimination_help' instead.
+  general_support:
+    definition: Reasoning that expresses a general preference for helping North Koreans
+      or supporting their business without specific economic or political justification.
+    clarification: Includes vague statements like "I want to help," "It's the right
+      thing to do," "Support is needed," or "It seems better," without citing efficiency,
+      discrimination, or political figures.
+    negative_clarification: Exclude specific economic arguments, political endorsements,
+      or discrimination references. Use 'economic_efficiency', 'political_trust',
+      or 'anti_discrimination_help' instead.
+  none_of_above:
+    definition: Uninformative, non-substantive, or missing responses.
+    clarification: Includes "I don't know," "No reason," "Just chose it," "Both are
+      bad," "No opinion," or single words/punctuation that do not convey a clear rationale.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if weak. Use the most appropriate substantive code if a reason is present.
+

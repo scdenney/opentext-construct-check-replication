@@ -1,0 +1,72 @@
+codebook:
+  name: bursztyn2023_dissent_exp4_induced
+  residual_code: none_of_above
+  context: US Democrats and independents on Prolific (November 2021) were told they
+    had been matched with an earlier participant who joined a campaign to deport all
+    illegal Mexican immigrants and authorized a tweet saying so; the tweet said the
+    participant joined either before or after watching a Tucker Carlson Tonight clip
+    arguing that illegal immigrants commit violent crimes. They were then asked why
+    they think the participant joined.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bursztyn2023_dissent_exp4:1001
+codes:
+  evidence_attribution:
+    definition: The response attributes the participant's decision to join the campaign
+      to the specific information provided in the prompt, specifically the Tucker
+      Carlson video, the news segment, or the claim that illegal immigrants commit
+      violent crimes.
+    clarification: Includes references to the video, Tucker Carlson, Fox News, or
+      the specific argument about immigrant crime rates as the primary driver or trigger
+      for the participant's action.
+    negative_clarification: Exclude responses that attribute the decision solely to
+      pre-existing political identity, general racism, or economic fears without linking
+      it to the specific media stimulus or crime narrative provided in the prompt.
+      Use 'political_identity' or 'prejudice' instead.
+  political_identity:
+    definition: The response attributes the participant's decision to their political
+      affiliation, ideology, or partisan alignment (e.g., Republican, conservative,
+      Trump supporter).
+    clarification: Includes mentions of party affiliation, conservative values, right-wing
+      politics, or voting history as the reason for joining.
+    negative_clarification: Exclude responses that specifically cite the video or
+      crime statistics as the cause. Use 'evidence_attribution' if the media stimulus
+      is mentioned as the key factor.
+  prejudice:
+    definition: The response attributes the participant's decision to personal biases,
+      such as racism, xenophobia, bigotry, or general dislike of immigrants/Mexicans.
+    clarification: Includes labels like racist, xenophobic, ignorant, hateful, or
+      biased against a specific group.
+    negative_clarification: Exclude responses that cite the video or political party
+      as the primary reason. Use 'evidence_attribution' or 'political_identity' if
+      those are the main drivers.
+  economic_concern:
+    definition: The response attributes the participant's decision to perceived economic
+      threats, such as job loss, competition for resources, or strain on the economy.
+    clarification: Includes beliefs that immigrants take jobs, lower wages, or burden
+      public services.
+    negative_clarification: Exclude responses that focus on crime statistics or media
+      influence. Use 'evidence_attribution' if the crime claim is the link, or 'prejudice'
+      if the focus is on general animosity.
+  personal_experience:
+    definition: The response attributes the participant's decision to direct personal
+      interactions or negative experiences with immigrants.
+    clarification: Includes mentions of having a bad experience with an immigrant,
+      losing a job to an immigrant, or personal safety concerns based on direct contact.
+    negative_clarification: Exclude responses based on general stereotypes, media
+      consumption, or political ideology.
+  other_reasoning:
+    definition: The response provides a reason that does not fit into the specific
+      categories above, such as general moral beliefs about legality, counter-reaction
+      to the survey design, or vague uncertainty.
+    clarification: Includes beliefs that "illegal means illegal," general moral opposition
+      to law-breaking, or speculation that the match was random/opposite.
+    negative_clarification: Exclude responses that clearly fit evidence_attribution,
+      political_identity, prejudice, economic_concern, or personal_experience.
+  none_of_above:
+    definition: The response is uninformative, non-responsive, or consists only of
+      filler text.
+    clarification: Includes "I don't know," "No idea," blank responses, or responses
+      that do not attempt to answer the question.
+    negative_clarification: Exclude any response that offers a substantive reason,
+      even if that reason is weak or speculative.
+

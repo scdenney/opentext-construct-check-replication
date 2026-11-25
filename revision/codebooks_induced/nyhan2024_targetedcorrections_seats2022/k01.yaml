@@ -1,0 +1,83 @@
+codebook:
+  name: nyhan2024_targetedcorrections_seats2022_induced
+  residual_code: none_of_above
+  context: U.S. adults in a YouGov panel, surveyed shortly before the November 2022
+    midterm elections, read a short series of news-style articles. Respondents who
+    then said they expected voter fraud to change the result of one or more of the
+    2022 U.S. House and Senate elections were asked to explain why they expect this.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:nyhan2024_targetedcorrections_seats2022:1001
+codes:
+  election_safeguards:
+    definition: The response refers to specific procedures, mechanisms, or safeguards
+      used to run elections or protect against fraud, and asserts that these safeguards
+      are either insufficient, flawed, or will fail.
+    clarification: Includes mentions of voter registration list maintenance, voter
+      ID requirements, testing or certification of voting machines, use of paper ballots,
+      audits, recounts, ballot tracking, signature verification, oversight by election
+      officials or poll workers, and the integrity of the counting process. It captures
+      the belief that these specific technical or procedural elements are inadequate
+      to prevent fraud.
+    negative_clarification: Exclude responses that only mention general distrust of
+      politicians or parties without referencing specific election procedures. Exclude
+      responses that cite only human error or general dishonesty without linking it
+      to a specific safeguard failure. Use 'general_distrust' or 'human_nature' instead
+      if no specific safeguard is mentioned.
+  political_partisanship:
+    definition: The response attributes expected voter fraud to the actions, motives,
+      or inherent dishonesty of a specific political party or its supporters.
+    clarification: Includes claims that Democrats, Republicans, or a specific party
+      will cheat, steal, or manipulate the election to gain or keep power. Includes
+      references to party operatives, candidates, or the party platform as the source
+      of fraud.
+    negative_clarification: Exclude responses that cite specific procedural failures
+      (use 'election_safeguards') or general human nature (use 'human_nature'). Exclude
+      responses that are purely statistical guesses or lack a political actor.
+  general_distrust:
+    definition: The response expresses a broad lack of trust in the election system,
+      government, or election officials without citing specific procedural flaws or
+      partisan motives.
+    clarification: Includes statements that the system is rigged, corrupt, untrustworthy,
+      or that officials cannot be trusted. Includes general assertions that "the system
+      is broken" or "no one is honest" in a general sense.
+    negative_clarification: Exclude responses that specify *how* the system is broken
+      (use 'election_safeguards') or *who* is breaking it (use 'political_partisanship').
+      Exclude responses that are purely anecdotal about personal experiences with
+      voting logistics unless they imply a systemic safeguard failure.
+  human_nature:
+    definition: The response attributes expected voter fraud to inherent human characteristics
+      such as greed, dishonesty, error, or the impossibility of perfect systems.
+    clarification: Includes statements that "people will cheat if they can," "nothing
+      is 100% perfect," "human error is inevitable," or "greed drives fraud." Focuses
+      on the psychological or behavioral aspect of individuals rather than specific
+      election procedures or partisan agendas.
+    negative_clarification: Exclude responses that link human behavior to specific
+      procedural loopholes (use 'election_safeguards') or partisan goals (use 'political_partisanship').
+  past_evidence:
+    definition: The response cites specific past events, allegations, or evidence
+      of voter fraud to justify the expectation of future fraud.
+    clarification: Includes references to the 2020 election, specific videos, documentaries
+      (e.g., "2000 Mules"), whistleblowers, or alleged incidents in previous elections
+      as proof that fraud will happen again.
+    negative_clarification: Exclude responses that only mention past elections as
+      a general trend without citing specific evidence or allegations (use 'general_distrust'
+      or 'human_nature'). Exclude responses that are purely speculative about the
+      future without grounding in past claims.
+  statistical_probability:
+    definition: The response argues that fraud is expected based on mathematical probability,
+      the number of elections, or the margin of victory in close races.
+    clarification: Includes statements that with many elections, some must have fraud,
+      or that small amounts of fraud can change close results. Includes probabilistic
+      reasoning about the likelihood of fraud occurring somewhere.
+    negative_clarification: Exclude responses that cite specific procedural failures
+      or partisan motives. Exclude responses that are purely anecdotal.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      any of the defined categories.
+    clarification: Includes responses that are single words (e.g., "Yes", "No", "Na",
+      "x"), expressions of uncertainty without explanation (e.g., "Not sure", "I don't
+      know"), random guesses, or irrelevant comments.
+    negative_clarification: Exclude any response that provides a reason, even if weak
+      or vague, that fits into 'election_safeguards', 'political_partisanship', 'general_distrust',
+      'human_nature', 'past_evidence', or 'statistical_probability'.
+

@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1011
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, occupational skill, professional expertise, or work capacity as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer),
+      employment status (employed vs. unemployed), professional skills, work stability,
+      income potential, or the ability to contribute economically.
+    negative_clarification: Do not use for general stability derived from family or
+      residence. Use 'family_stability' or 'residence_duration' instead if the job
+      is not the explicit focus.
+  residence_duration:
+    definition: Reasoning that cites the length of time the profile has lived in South
+      Korea (or the duration of residence) as the primary factor for selection.
+    clarification: Includes references to '체류기간' (residence period), '거주기간' (stay
+      period), or the idea that longer residence leads to better understanding of
+      Korean society, culture, or politics.
+    negative_clarification: Do not use for general familiarity without specific reference
+      to time. Use 'social_integration' if the focus is on relationships rather than
+      time.
+  age_experience:
+    definition: Reasoning that cites the profile's age, youth, seniority, or life
+      experience as the primary factor for selection.
+    clarification: Includes mentions of being 'young' (energetic, adaptable), 'old'
+      (experienced, wise, responsible), or having 'life experience' (경륜, 경험).
+    negative_clarification: Do not use if the age is mentioned only in passing alongside
+      other factors. Use 'employment_occupation' if work capacity is linked to age,
+      or 'none_of_above' if it's a vague preference.
+  political_affiliation:
+    definition: Reasoning that cites the profile's political background, specifically
+      membership or non-membership in the North Korean Workers' Party, as the primary
+      factor.
+    clarification: Includes explicit mentions of '노동당원' (Workers' Party member), '당원'
+      (party member), or the absence thereof.
+    negative_clarification: Do not use for general political ideology unless tied
+      to party membership. Use 'none_of_above' for vague political leanings.
+  family_marital_status:
+    definition: Reasoning that cites the profile's marital status, family structure,
+      or children as the primary factor for selection.
+    clarification: Includes mentions of being married, having children, family stability,
+      or being single/unmarried.
+    negative_clarification: Do not use if family is mentioned only as a secondary
+      trait. Use 'employment_occupation' if the focus is on the economic stability
+      provided by the family/job.
+  social_integration:
+    definition: Reasoning that cites the profile's social connections, relationships
+      with South Koreans, or social adaptability as the primary factor.
+    clarification: Includes mentions of having 'Korean colleagues/friends', 'social
+      skills', 'adaptability', or 'networks'.
+    negative_clarification: Do not use for residence duration. Use 'residence_duration'
+      if the connection is due to time spent in Korea.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not clearly
+      align with the specific constructs of employment, residence, age, politics,
+      family, or social integration.
+    clarification: Includes responses like 'just because', 'no reason', 'both are
+      bad', 'random', 'feeling', or incomplete sentences.
+    negative_clarification: Do not use for substantive reasons. If a reason is present
+      but unclear, try to map it to the most specific code above; only use this if
+      no clear construct is identifiable.
+

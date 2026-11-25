@@ -1,0 +1,82 @@
+codebook:
+  name: busby2019_study1_induced
+  residual_code: none_of_above
+  context: US adults chose the political problem that worries them most and then wrote
+    a short explanation of who or what is responsible for it and what should be done
+    (the wording of the request differed between versions).
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:busby2019_study1:1001
+codes:
+  conspiring_elite:
+    definition: The respondent blames a politically powerful actor or group for the
+      problem. This includes politicians, elected officials, the government, ruling
+      parties, bankers, corporations, the media, special interests, or the wealthy
+      elite who use their power and money to influence policy or society.
+    clarification: Includes blame placed on specific entities such as "politicians,"
+      "lobbyists," "corporations," "the 1%," "big banks," "insurance companies," "the
+      media," "special interests," "campaign donors," or "the government" when attributed
+      to their political or economic power. Also includes blame on specific political
+      figures (e.g., Obama, Bush) or parties (e.g., Republicans, Democrats) for their
+      actions or inactions.
+    negative_clarification: Do not use this code if the blame is placed on general
+      human nature, individual parents, religious groups (unless they are acting as
+      political lobbyists), or abstract concepts like "greed" without a specific powerful
+      actor. Use `general_human_nature`, `family_responsibility`, `religious_cultural`,
+      or `abstract_vices` instead.
+  structural_systemic:
+    definition: The respondent blames systemic structures, economic systems, or broad
+      societal trends rather than specific actors. This includes capitalism, globalization,
+      free trade, the two-party system, or the general "system" as an impersonal force.
+    clarification: Includes references to "capitalism," "globalization," "free trade,"
+      "the system," "the two-party system," "outsourcing," "neoliberalism," or "industrialized
+      lifestyle" as the root cause. Focuses on how the structure of society or the
+      economy creates the problem.
+    negative_clarification: Do not use this code if the respondent explicitly blames
+      specific actors (e.g., "greedy CEOs," "corrupt politicians") within that system.
+      If the blame is on the actors, use `conspiring_elite`. If the blame is on general
+      human behavior, use `general_human_nature`.
+  family_responsibility:
+    definition: The respondent blames parents, families, or the home environment for
+      the problem.
+    clarification: Includes blame placed on "parents," "families," "home schooling,"
+      "lack of discipline at home," or "parental neglect." The responsibility is assigned
+      to the primary caregivers or the family unit.
+    negative_clarification: Do not use this code if the blame is on the government's
+      role in education or society. Use `conspiring_elite` or `structural_systemic`
+      instead.
+  general_human_nature:
+    definition: The respondent blames general human traits, behaviors, or societal
+      attitudes rather than specific groups or systems.
+    clarification: Includes blame placed on "people," "humanity," "greed," "selfishness,"
+      "racism," "ignorance," "lack of tolerance," "stupidity," or "apathy." It attributes
+      the problem to the collective behavior or moral failings of the general population.
+    negative_clarification: Do not use this code if the blame is on specific powerful
+      actors (use `conspiring_elite`) or specific structural forces (use `structural_systemic`).
+  religious_cultural:
+    definition: The respondent blames religious groups, religious beliefs, or specific
+      cultural ideologies for the problem.
+    clarification: Includes blame placed on "religion," "religious groups," "Islam,"
+      "Christianity," "fundamentalism," or specific cultural values (e.g., "traditional
+      values," "PC culture") as the primary cause.
+    negative_clarification: Do not use this code if the religious group is blamed
+      specifically for political lobbying or corruption (use `conspiring_elite`).
+      Use this when the blame is on the belief system or religious identity itself.
+  external_threat:
+    definition: The respondent blames foreign entities, terrorist groups, or external
+      geopolitical forces for the problem.
+    clarification: Includes blame placed on "ISIS," "Al-Qaeda," "foreign countries,"
+      "immigrants," "globalization" (when framed as external economic pressure), or
+      "terrorists."
+    negative_clarification: Do not use this code if the blame is on domestic policy
+      failures regarding these threats. Use `conspiring_elite` or `structural_systemic`
+      instead.
+  none_of_above:
+    definition: The response is uninformative, incoherent, humorous, or does not clearly
+      assign responsibility to any of the defined categories.
+    clarification: Includes responses that are nonsensical (e.g., "ninjas kill them
+      all"), purely descriptive without causal attribution, or express total confusion/philosophical
+      nihilism without identifying a responsible party.
+    negative_clarification: If the response clearly blames a specific actor or system,
+      use the appropriate code. Only use this for truly uninformative or non-responsive
+      answers.
+

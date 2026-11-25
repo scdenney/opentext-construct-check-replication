@@ -1,0 +1,76 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1006
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly or implicitly invokes religion, Christianity,
+      the church, or faith as a primary or significant ground for the person being
+      (more) German.
+    clarification: Includes mentions of being Christian, having religious faith, belonging
+      to the church, or religious heritage (e.g., "christlich", "Religion", "ariisch"
+      if interpreted as religious/ethnic-religious heritage in context, though "ariisch"
+      is often racial, in this specific sample it appears alongside religious markers;
+      however, strictly religious terms like "christlich" are the core).
+    negative_clarification: Exclude responses that mention only ethnicity, race, or
+      culture without religious reference. Use `ethnic_heritage` or `cultural_knowledge`
+      instead. Do not include vague feelings or non-religious values.
+  language_proficiency:
+    definition: Reasoning based on the ability to speak, understand, or learn the
+      German language.
+    clarification: Includes explicit mentions of speaking German ("spricht deutsch"),
+      knowing the language, or the necessity of language for belonging.
+    negative_clarification: Exclude responses that mention language only as a minor
+      detail while focusing on other factors like law or birth. Use `none_of_above`
+      if language is not the stated reason.
+  legal_status_citizenship:
+    definition: Reasoning based on formal legal status, specifically holding German
+      citizenship or passport.
+    clarification: Includes mentions of "Staatsbürgerschaft", "deutscher Pass", "Staatsangehörigkeit",
+      or being a citizen.
+    negative_clarification: Exclude responses that focus on birthplace or residence
+      without mentioning legal citizenship status. Use `birth_residence` instead.
+  birth_residence_integration:
+    definition: Reasoning based on being born in Germany, living in Germany for a
+      long time, or having grown up there.
+    clarification: Includes mentions of being born in Germany ("in Deutschland geboren"),
+      living there for the majority of one's life, or growing up there ("aufgewachsen").
+    negative_clarification: Exclude responses that focus on legal citizenship or language.
+      Use `legal_status_citizenship` or `language_proficiency` if those are the primary
+      reasons.
+  cultural_heritage_ancestry:
+    definition: Reasoning based on ethnic background, ancestry, or family history.
+    clarification: Includes mentions of German ancestors ("deutsche Vorfahren"), German
+      blood ("deutsches Blut"), or ethnic heritage.
+    negative_clarification: Exclude responses that focus on legal status or language.
+      Use `legal_status_citizenship` or `language_proficiency` if those are the primary
+      reasons.
+  values_respect_law:
+    definition: Reasoning based on adherence to German laws, respect for political
+      institutions, or shared democratic values.
+    clarification: Includes mentions of respecting laws ("Respekt vor Gesetzen"),
+      respecting institutions, following rules, or sharing political views/values.
+    negative_clarification: Exclude responses that focus on language, birth, or citizenship.
+      Use `language_proficiency`, `birth_residence_integration`, or `legal_status_citizenship`
+      if those are the primary reasons.
+  subjective_feeling_identity:
+    definition: Reasoning based on the respondent's gut feeling, personal identification,
+      or the candidate's self-identification as German.
+    clarification: Includes mentions of "Bauchgefühl" (gut feeling), "Gefühl" (feeling),
+      "empfindet sich als deutsch" (feels like a German), or personal intuition.
+    negative_clarification: Exclude responses that provide concrete reasons like language,
+      law, or birth. Use `none_of_above` if the answer is purely non-informative.
+  none_of_above:
+    definition: Uninformative, non-substantive, or residual responses that do not
+      fit the specific substantive codes.
+    clarification: Includes answers like "I don't know", "No reason", "Just clicked
+      one", "Both are similar", "None", or random characters.
+    negative_clarification: Exclude any response that provides a substantive reason
+      (language, law, birth, religion, etc.).
+

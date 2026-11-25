@@ -1,0 +1,84 @@
+codebook:
+  name: andre2025_macronarratives_provision_induced
+  residual_code: none_of_above
+  context: US adults on Prolific in April 2022 took part in a two-part study on inflation;
+    some first read an explanation of the rise in inflation attributed to economic
+    experts, others read none. One day later, in a follow-up survey, all were told
+    the current US inflation rate and asked which factors they think caused the increase.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_macronarratives_provision:1001
+codes:
+  pent_up_demand_cause:
+    definition: The response identifies that consumers saved money or were unable
+      to spend it during the pandemic/lockdowns and are now spending those accumulated
+      funds, creating a surge in demand that outstrips supply.
+    clarification: Includes mentions of "pent-up demand," "pandemic savings," people
+      being "flush with cash" from forced savings, or a surge in consumer spending
+      after reopening due to previously restricted activities.
+    negative_clarification: Excludes mentions of stimulus checks or government payments
+      alone without the saving-then-spending mechanism. Excludes general pandemic
+      mentions without the specific saving/spending dynamic. If only stimulus is mentioned,
+      use stimulus_government_payment_cause.
+  supply_chain_disruption_cause:
+    definition: The response attributes inflation to difficulties in the production,
+      transportation, or distribution of goods, leading to scarcity and higher prices.
+    clarification: Includes supply chain bottlenecks, shipping delays, port congestion,
+      lack of raw materials, labor shortages affecting production/transport, or general
+      scarcity of goods due to logistical issues.
+    negative_clarification: Excludes general "shortages" not linked to supply/logistics
+      (e.g., if linked only to demand). If the response focuses on corporate hoarding
+      or scalping without logistical context, use corporate_greed_cause.
+  war_geopolitical_cause:
+    definition: The response cites international conflicts, specifically the war in
+      Ukraine or Russia, or broader geopolitical instability, as a primary driver
+      of inflation.
+    clarification: Includes mentions of the war in Ukraine, Russian sanctions, global
+      unrest, trade wars, or international conflicts disrupting energy or commodity
+      supplies.
+    negative_clarification: Excludes general "global issues" without specific reference
+      to conflict or war. If war is mentioned alongside other factors, this code applies
+      if war is a distinct cause listed.
+  government_monetary_fiscal_cause:
+    definition: The response attributes inflation to government or central bank actions
+      regarding money supply, spending, or interest rates.
+    clarification: Includes printing money, quantitative easing, low interest rates,
+      excessive government spending, national debt, or Federal Reserve policies.
+    negative_clarification: Excludes mentions of stimulus checks alone unless linked
+      to the money supply expansion mechanism. Excludes general political blame without
+      economic mechanism.
+  corporate_greed_cause:
+    definition: The response attributes inflation to businesses or corporations raising
+      prices to increase profit margins, often described as exploitation or greed.
+    clarification: Includes mentions of corporate greed, record profits, price gouging,
+      companies raising prices "just because they could," or profit-driven price increases
+      unrelated to cost.
+    negative_clarification: Excludes mentions of rising costs passed to consumers
+      (use supply_chain_disruption_cause or labor_cost_cause). Excludes general "capitalism"
+      without specific blame on corporate behavior.
+  labor_cost_cause:
+    definition: The response attributes inflation to rising wages or labor shortages
+      driving up the cost of goods and services.
+    clarification: Includes mentions of rising wages, minimum wage increases, worker
+      shortages, or labor market tightness leading to higher prices.
+    negative_clarification: Excludes general "economy" or "demand" without specific
+      reference to labor costs. If labor is mentioned alongside supply chain, use
+      supply_chain_disruption_cause if supply is the primary focus, or this code if
+      labor is distinct.
+  energy_price_cause:
+    definition: The response specifically cites rising costs of energy, fuel, or oil
+      as a primary driver of inflation.
+    clarification: Includes mentions of gas prices, oil prices, energy costs, or fuel
+      shortages driving up the cost of production and transport.
+    negative_clarification: Excludes general "cost of living" or "inflation" without
+      specific energy reference. If energy is part of a broader supply chain or war
+      explanation, use those respective codes.
+  none_of_above:
+    definition: The response is uninformative, vague, or attributes inflation to factors
+      not covered by the other codes.
+    clarification: Includes responses that are too brief to code, express confusion,
+      blame vague "politics" or "Biden/Trump" without economic mechanism, or cite
+      factors like climate change or population growth without linking them to specific
+      economic mechanisms covered above.
+    negative_clarification: Excludes any response that clearly identifies one of the
+      specific causes listed in the other codes.
+

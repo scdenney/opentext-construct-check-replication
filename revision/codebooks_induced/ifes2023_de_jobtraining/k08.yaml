@@ -1,0 +1,88 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1008
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly or implicitly invokes the candidate's place
+      of birth, regional origin (specifically East Germany, Saxony, or the former
+      GDR), or national identity (Germany vs. non-German) as a primary ground for
+      selection or rejection.
+    clarification: Includes mentions of "Ostdeutschland", "Sachsen", "GDR", "Ostdeutscher",
+      "Deutschland" (as a positive trait implying native origin), "Deutscher" (as
+      a positive trait), "bayern" (as a regional contrast to East), or "kein Ausländer"/"nicht
+      deutsch" (as a negative trait implying non-native origin). Also includes negative
+      regional sentiments like "Ich mag Sachsen nicht".
+    negative_clarification: Exclude general mentions of living in Germany without
+      implying origin as a differentiator (e.g., "Lebt in Deutschland" if not contrasted
+      with foreign origin). Exclude general "Herkunft" if no specific region/nationality
+      is mentioned. Use `general_origin_reasoning` if the origin is non-German/non-European
+      but not East German specific, though in this dataset, most origin references
+      are pro-German or pro-East. If the response is just "Herkunft" without specification,
+      use `none_of_above` or `general_origin_reasoning` if defined; here, since the
+      construct is specific to East/German origin, vague "Herkunft" goes to `none_of_above`
+      unless it clearly implies the construct. However, "Herkunft Deutschland" is
+      included. Vague "Herkunft" alone is excluded.
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of prior convictions (Vorstrafen).
+    clarification: Includes mentions of "Vorstrafen", "Strafe", "nicht vorbestraft",
+      "keine Vorstrafen", "Diebstahl", "Steuerhinterziehung", "kriminell", "Rückfallquote".
+      Includes both positive selection (no crimes) and negative rejection (has crimes).
+    negative_clarification: Exclude general moral judgments not tied to legal records.
+      Exclude general "Qualität" or "seriös" unless explicitly linked to criminal
+      record. Use `general_qualification_reasoning` for general competence.
+  age_reasoning:
+    definition: Reasoning based on the candidate's age, either as a factor for employability,
+      potential for training, or proximity to retirement.
+    clarification: Includes mentions of "jung", "älter", "Alter", "Rente", "25", "62",
+      "kurz vor der Rente", "noch lange arbeiten". Includes arguments about youth
+      (more potential, less set in ways) or age (needs chance, harder to find work,
+      experienced).
+    negative_clarification: Exclude age mentioned only as a demographic fact without
+      reasoning (e.g., "25, Verheiratet..." if no argument is made). Use `none_of_above`
+      if age is just a label. Use `general_qualification_reasoning` if age is linked
+      to experience in a professional sense rather than demographic age bias.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's family situation, such as having
+      children, being single, or marital status, often linked to financial need or
+      social support.
+    clarification: Includes mentions of "Kinder", "Kind", "alleinerziehend", "ledig",
+      "verheiratet", "Familie", "Kinderanzahl", "zu versorgen". Includes arguments
+      about need for support due to family burden or suitability due to family stability.
+    negative_clarification: Exclude family status mentioned only as a demographic
+      fact without reasoning. Use `none_of_above` if it's just a list of attributes.
+  gender_reasoning:
+    definition: Reasoning based on the candidate's gender, often invoking equality,
+      representation, or stereotypes related to men or women.
+    clarification: Includes mentions of "weiblich", "Frau", "Mann", "Geschlecht",
+      "Frauen fördern", "Gleichstellung", "weil sie weiblich ist".
+    negative_clarification: Exclude gender mentioned only as a demographic fact. Use
+      `none_of_above` if it's just a label.
+  general_qualification_reasoning:
+    definition: Reasoning based on the candidate's professional qualifications, experience,
+      job role, or general competence, without specific reference to age, crime, or
+      family.
+    clarification: Includes mentions of "Ausbildung", "Berufserfahrung", "Filialleiter",
+      "Qualität", "bessere Voraussetzungen", "seriös", "Erfahrung", "Aufstiegsmöglichkeiten",
+      "Teilzeit/Vollzeit" (if linked to job fit).
+    negative_clarification: Exclude reasons covered by other specific codes (crime,
+      age, family, gender, origin). Use `none_of_above` for vague "besser" without
+      qualification context.
+  none_of_above:
+    definition: Responses that are uninformative, vague, purely subjective preferences
+      without specific reasoning, or indicate no clear reason.
+    clarification: Includes "keine Angabe", "weiß nicht", "k.a.", "nichts", "einfach
+      so", "weil ich musste", "Gefällt mir", "Sympathischer", "Meine Meinung", "Beides
+      ähnlich", "Unrelevant", "ok", "Gut", "Passt besser" (without explanation), "Hoffnung",
+      "Weil".
+    negative_clarification: Exclude any response that provides a specific reason covered
+      by the other codes. If a reason is given but doesn't fit the other codes (e.g.,
+      religious, political), it still falls here as it's not the construct of interest
+      or the main categories.
+

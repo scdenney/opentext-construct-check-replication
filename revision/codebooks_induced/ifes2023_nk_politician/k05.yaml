@@ -1,0 +1,90 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1005
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the concept of democratic legitimacy as a primary ground for choosing the
+      politician, including arguments about democracy's impact on order, economy,
+      or freedom.
+    clarification: Includes explicit mentions of "democracy" (민주주의), "democratic legitimacy"
+      (민주주의 정통성), or comparisons between democracy and dictatorship/authoritarianism.
+      Also includes arguments that democracy is necessary for economic growth or that
+      democracy is preferable despite flaws because it ensures freedom or order.
+    negative_clarification: Exclude responses that mention democracy only as a neutral
+      descriptor or in the context of a specific policy (e.g., welfare) without linking
+      it to the political system's value. Use 'welfare_reasoning' or 'general_policy_agreement'
+      instead if the focus is on specific outcomes rather than the democratic system
+      itself.
+  welfare_reasoning:
+    definition: Reasoning that cites the politician's stance on government responsibility
+      for welfare, social safety nets, or economic support for citizens as the primary
+      reason for choice.
+    clarification: Includes mentions of "welfare" (복지), "government responsibility"
+      (정부 책임), "state-owned enterprises" (국영기업) in the context of social support,
+      and the belief that the government should care for citizens' livelihoods.
+    negative_clarification: Exclude responses that focus on general economic growth
+      driven by private enterprise without mentioning government welfare responsibility.
+      Use 'economic_growth_reasoning' instead. Exclude responses that mention welfare
+      only as a minor detail among many other reasons; use 'general_policy_agreement'
+      if it's part of a broader ideological match.
+  gender_equality_reasoning:
+    definition: Reasoning that cites the politician's stance on gender equality, non-discrimination
+      based on sex, or equal rights for men and women in employment and society.
+    clarification: Includes explicit mentions of "gender equality" (성별 평등), "no discrimination"
+      (차별 없음), "equal rights" (동등한 권리), and opposition to prioritizing one gender
+      over another in jobs or social life.
+    negative_clarification: Exclude responses that focus on general diversity without
+      specific reference to gender. Use 'diversity_reasoning' instead. Exclude responses
+      that mention gender only in the context of specific job quotas without a broader
+      equality argument; use 'general_policy_agreement' if it's a specific policy
+      preference rather than a principle.
+  diversity_reasoning:
+    definition: Reasoning that cites the politician's stance on cultural, ethnic,
+      or racial diversity and inclusion as a primary reason for choice.
+    clarification: Includes mentions of "diversity" (다양성), "cultural differences"
+      (문화 차이), "ethnic inclusion" (인종 포함), and the belief that diversity does not
+      hinder national progress or citizen life.
+    negative_clarification: Exclude responses that focus solely on gender equality.
+      Use 'gender_equality_reasoning' instead. Exclude responses that mention diversity
+      only as a general value without linking it to the politician's specific stance
+      or policy implications; use 'general_policy_agreement' if it's vague.
+  economic_growth_reasoning:
+    definition: Reasoning that cites the politician's stance on economic development,
+      private enterprise expansion, or market-oriented policies as the primary reason
+      for choice.
+    clarification: Includes mentions of "economic development" (경제발전), "private enterprise"
+      (사기업), "job creation" (일자리 창출), and the belief that market forces or private
+      sector growth will improve the economy.
+    negative_clarification: Exclude responses that focus on government-led welfare
+      or state-owned enterprises. Use 'welfare_reasoning' instead. Exclude responses
+      that mention the economy only in the context of democracy's benefits; use 'democracy_reasoning'
+      instead.
+  general_policy_agreement:
+    definition: Reasoning that cites general agreement with the politician's views,
+      policies, or personality without specifying a distinct policy domain (e.g.,
+      welfare, gender, economy, democracy).
+    clarification: Includes vague statements like "views match," "similar thoughts,"
+      "good policy," "correct decision," or "heartfelt agreement." Also includes responses
+      that list multiple specific policies but frame the choice as a general alignment
+      of values.
+    negative_clarification: Exclude responses that clearly fall into specific categories
+      like welfare, gender, diversity, economy, or democracy. Use the specific code
+      instead. Exclude uninformative responses like single letters or dashes; use
+      'none_of_above' instead.
+  none_of_above:
+    definition: Residual code for uninformative, incomplete, or irrelevant responses
+      that do not provide a clear reason for choosing the politician.
+    clarification: Includes single letters (e.g., "B"), symbols (e.g., "ㅡ"), incomplete
+      sentences, or responses that are clearly not answers to the question (e.g.,
+      names of other politicians, random words).
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if vague. Use 'general_policy_agreement' for vague but meaningful reasons.
+

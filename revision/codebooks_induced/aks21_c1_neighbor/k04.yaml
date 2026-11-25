@@ -1,0 +1,68 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1004
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the profile's social
+      connections, community fit, or ability to mix with South Koreans versus staying
+      within North Korean circles.
+    clarification: Includes mentions of having Korean colleagues/friends, being married
+      to a Korean, having no North Korean contacts, long residence in Korea implying
+      cultural assimilation, or general social adaptability and friendliness.
+    negative_clarification: Exclude reasons based solely on age, employment status,
+      political background, or gender unless they are directly linked to social network
+      composition (e.g., "has Korean friends" vs "is young"). Use `age_demographics`,
+      `employment_status`, `political_background`, or `gender` instead.
+  age_demographics:
+    definition: Reasoning based on the profile's age, youth, or life stage.
+    clarification: Includes mentions of being young, old, middle-aged, having energy,
+      being at a prime working age, or having a "young mindset."
+    negative_clarification: Exclude if the age mention is tied to social integration
+      (e.g., "young and fits in") or employment potential without social context.
+      Use `social_integration_ties` or `employment_status` instead.
+  employment_status:
+    definition: Reasoning based on the profile's current job, professional skills,
+      or economic stability.
+    clarification: Includes mentions of having a job, being a doctor/programmer, having
+      specific skills, being unemployed, or having a stable career.
+    negative_clarification: Exclude if the job is mentioned primarily for its social
+      implications (e.g., "doctor helps community integration"). Use `social_integration_ties`
+      instead.
+  political_background:
+    definition: Reasoning based on the profile's political affiliation or history
+      with the North Korean regime.
+    clarification: Includes mentions of being a former or current member of the Workers'
+      Party of Korea, or lack thereof.
+    negative_clarification: Exclude if political background is mentioned as a proxy
+      for social trust without explicit social network details. Use `social_integration_ties`
+      if it implies mixing with South Koreans, otherwise keep as `political_background`.
+  gender:
+    definition: Reasoning based on the profile's gender.
+    clarification: Includes mentions of being male or female, or gender-based stereotypes
+      (e.g., women need protection, men are reliable).
+    negative_clarification: Exclude if gender is mentioned in the context of family
+      structure affecting social ties. Use `social_integration_ties` or `family_structure`
+      if applicable.
+  family_structure:
+    definition: Reasoning based on the profile's marital status, children, or family
+      composition.
+    clarification: Includes mentions of being married, having children, being divorced,
+      or being single.
+    negative_clarification: Exclude if family status is used to infer social integration
+      (e.g., "married to Korean implies good ties"). Use `social_integration_ties`
+      instead.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes "no reason," "just felt like it," "good feeling," "don't
+      know," "both are same," or single words like "age" or "job" without further
+      explanation.
+    negative_clarification: Exclude any response that provides a specific attribute
+      (age, job, politics, etc.) even if briefly stated. Use the specific attribute
+      code instead.
+

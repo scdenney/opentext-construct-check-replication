@@ -1,0 +1,71 @@
+codebook:
+  name: aarslew2026_electoralintegrity_induced
+  residual_code: none_of_above
+  context: US adults in an online survey (December 2021 to January 2022) read a short
+    text about a future congressional election in their state won by the Republican
+    or the Democratic candidate; versions differed in how the winning party conducted
+    the election. They were asked whom they would vote for if a new election were
+    held with the same candidates and, if they chose a candidate, to explain in their
+    own words why they would vote for that candidate.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aarslew2026_electoralintegrity:1001
+codes:
+  election_cheating:
+    definition: The respondent cites election fraud, misconduct, rigging, ballot harvesting,
+      or dishonesty in the electoral process as the primary reason for their vote
+      choice or rejection of the other candidate.
+    clarification: Includes references to cheating, stealing votes, ballot harvesting,
+      misinformation, rigged elections, lack of trust due to alleged dishonesty, or
+      voting for a candidate because the other party cheated. Also includes voting
+      for a candidate because they did NOT cheat (integrity).
+    negative_clarification: Exclude general distrust not linked to specific electoral
+      misconduct. Use 'party_affiliation' if the reason is simply loyalty to a party
+      without mentioning election integrity. Use 'policy_alignment' if the reason
+      is about specific political views unrelated to the election process.
+  policy_alignment:
+    definition: The respondent states they vote for the candidate because their political
+      views, ideology, or specific policy positions align with the respondent's own
+      beliefs.
+    clarification: Includes mentions of conservative/liberal values, specific issues
+      (abortion, guns, economy), "lesser of two evils" based on policy, or agreement
+      with the party's platform.
+    negative_clarification: Exclude general character traits like "honest" unless
+      tied to election integrity. Use 'election_cheating' if the honesty refers to
+      the election process. Use 'party_affiliation' if no specific policy or ideological
+      reason is given.
+  party_affiliation:
+    definition: The respondent cites their long-standing party loyalty, identity,
+      or upbringing as the reason for voting for the candidate.
+    clarification: Includes statements like "I am a Republican/Democrat," "always
+      vote this way," "raised to vote this way," or "party loyalty."
+    negative_clarification: Exclude responses that mention specific policies or election
+      integrity. Use 'policy_alignment' if specific views are cited. Use 'election_cheating'
+      if election misconduct is cited.
+  candidate_character:
+    definition: The respondent cites personal qualities, character, or competence
+      of the candidate or party as the reason for their vote.
+    clarification: Includes references to trustworthiness (general), honesty (general,
+      not election-specific), caring, service delivery, transparency, or being "good"
+      or "great."
+    negative_clarification: Exclude "honesty" if it refers to election integrity (use
+      'election_cheating'). Exclude general party loyalty (use 'party_affiliation').
+      Exclude specific policy agreements (use 'policy_alignment').
+  other_reasons:
+    definition: The respondent provides a reason for voting that does not fit into
+      the above categories, such as strategic voting, dissatisfaction with the system,
+      or vague preferences.
+    clarification: Includes voting for change, "new face," "not the incumbent," "two-party
+      system is corrupt," or vague statements like "better numbers" or "good attitude"
+      that don't clearly fit character or policy.
+    negative_clarification: Exclude uninformative responses (use 'none_of_above').
+      Exclude election cheating (use 'election_cheating'). Exclude clear policy or
+      party affiliation reasons.
+  none_of_above:
+    definition: The response is uninformative, nonsensical, or does not provide a
+      clear reason for the vote choice.
+    clarification: Includes "None," "Good," "Great," "Hi," clipboard text, "I don't
+      know," or responses that are purely emotional outbursts without a clear causal
+      link to the vote choice in the context of the question.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if weak. Use 'other_reasons' for vague but present reasons.
+

@@ -1,0 +1,77 @@
+codebook:
+  name: bursztyn2023_dissent_exp2_induced
+  residual_code: none_of_above
+  context: US Democrats and independents on Prolific were told they had been matched
+    with an earlier participant who joined a campaign opposing defunding the police
+    and authorized a tweet saying so; the tweet said the participant joined either
+    before or after reading an article reporting evidence that defunding would raise
+    violent crime. They were then asked why they think the participant joined the
+    campaign.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bursztyn2023_dissent_exp2:1001
+codes:
+  evidence_attribution:
+    definition: The respondent attributes the participant's decision to join the campaign
+      to the article, study, or specific evidence presented in the prompt (e.g., the
+      Princeton professor's research on crime rates).
+    clarification: Includes responses stating the participant was convinced by the
+      article, read the evidence, trusted the source (e.g., Princeton professor),
+      or that the data/information about increased crime was the primary reason for
+      joining.
+    negative_clarification: Exclude responses that attribute the decision to pre-existing
+      political views, personal relationships with police, or general beliefs about
+      safety without explicitly linking the decision to the provided article or evidence.
+      Use 'political_ideology' or 'general_safety_concern' instead.
+  pre_existing_belief:
+    definition: The respondent attributes the decision to the participant's prior
+      political ideology, racial identity, or general worldview, suggesting the article
+      merely confirmed existing biases.
+    clarification: Includes responses citing conservatism, Republican affiliation,
+      being white, or having "preconceived notions" as the driver. Includes the idea
+      that the participant only accepted evidence that aligned with their existing
+      views.
+    negative_clarification: Exclude responses where the article is seen as the *cause*
+      of the belief change or the primary motivator. If the response says they joined
+      *because* they are conservative, use this code. If they joined because the article
+      convinced them, use 'evidence_attribution'.
+  personal_connection:
+    definition: The respondent attributes the decision to the participant's personal
+      relationships with law enforcement or personal experiences with the police.
+    clarification: Includes responses mentioning family or friends in the police force,
+      positive personal experiences with police, or lack of negative encounters with
+      police.
+    negative_clarification: Exclude responses about general political views or the
+      specific article. Use 'political_ideology' or 'evidence_attribution' if those
+      are the primary reasons cited.
+  general_safety_concern:
+    definition: The respondent attributes the decision to a general fear of crime,
+      desire for public safety, or belief that police are necessary for order, without
+      referencing the specific article or personal connections.
+    clarification: Includes responses stating the participant fears violent crime,
+      wants to protect their community, or believes defunding police leads to anarchy/violence
+      based on general reasoning rather than the provided evidence.
+    negative_clarification: Exclude responses that explicitly mention the article,
+      study, or data as the reason. If the fear is linked to the article, use 'evidence_attribution'.
+      If it's a general stance, use this code.
+  misunderstanding_defund:
+    definition: The respondent attributes the decision to a misunderstanding of what
+      "defunding the police" actually means.
+    clarification: Includes responses stating the participant thinks defunding means
+      abolishing all police, removing all law enforcement, or leaving communities
+      unprotected, rather than reallocating funds.
+    negative_clarification: Exclude responses where the participant is seen as correctly
+      understanding the policy but disagreeing with it based on evidence or ideology.
+      Use 'general_safety_concern' or 'political_ideology' if the misunderstanding
+      isn't the primary focus.
+  unknown_or_uninformative:
+    definition: The respondent provides no clear reason, states they don't know, or
+      gives a response that does not fit into the other categories.
+    clarification: Includes responses like "I don't know," "Not sure," "Probably because,"
+      or vague statements that do not specify a cause (e.g., "They just did").
+    negative_clarification: Exclude any response that offers a specific hypothesis,
+      even if speculative. If the response offers a reason (even a weak one), code
+      it according to the reason provided. Use this code only for truly uninformative
+      answers.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

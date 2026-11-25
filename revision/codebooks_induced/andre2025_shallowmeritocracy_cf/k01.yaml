@@ -1,0 +1,72 @@
+codebook:
+  name: andre2025_shallowmeritocracy_cf_induced
+  residual_code: none_of_above
+  context: US adults in an online survey (Lucid, January 2021) read about two crowd
+    workers who knew before working that worker A would earn $0.50 per task and worker
+    B $0.10, and split the workers' total earnings between them in eight effort scenarios,
+    with real payouts. Afterwards they described the reasoning behind their decisions.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_shallowmeritocracy_cf:1001
+codes:
+  disadvantage_shaped_effort:
+    definition: The respondent explicitly states that the lower effort/output of Worker
+      B was caused by the lower piece rate, or that Worker B would have produced more
+      (or equal) output if paid the higher rate, and uses this causal link or counterfactual
+      to justify the split (e.g., arguing for a more equal split or compensation for
+      B).
+    clarification: Includes statements that B's low output is due to low pay, that
+      B would have worked more at $0.50, or that the disparity in pay justifies adjusting
+      the split to account for B's constrained effort.
+    negative_clarification: Excludes statements that B would *not* have worked more
+      at the higher rate, or statements that focus solely on the actual work done
+      without referencing the causal impact of the rate on effort. Use `actual_work_done`
+      instead if the reasoning is purely based on completed tasks without this causal
+      attribution.
+  actual_work_done:
+    definition: The respondent bases the split primarily on the actual number of tasks
+      completed or the percentage of total work performed by each worker, explicitly
+      ignoring or disregarding the piece rate differences and hypothetical scenarios.
+    clarification: Includes reasoning such as "paid for work done," "percentage of
+      tasks completed," "who did the most work," or "split based on actual output."
+    negative_clarification: Excludes responses that incorporate the piece rate's effect
+      on effort (`disadvantage_shaped_effort`) or those that rely on the initial agreement/contract
+      rather than the output volume. Use `contractual_agreement` if the focus is on
+      the signed rate rather than the task count.
+  contractual_agreement:
+    definition: The respondent justifies the split based on the workers' prior knowledge
+      and agreement to the specific piece rates, arguing that they accepted the terms
+      and should be paid according to those terms or the resulting earnings.
+    clarification: Includes statements like "they knew what they signed up for," "agreed
+      to the rate," "contractual obligation," or "paid according to the agreement."
+    negative_clarification: Excludes responses that focus on the volume of work done
+      (`actual_work_done`) or the causal link between rate and effort (`disadvantage_shaped_effort`).
+      Use `none_of_above` if the reference to agreement is vague or non-justificatory.
+  equity_fairness:
+    definition: The respondent cites a general principle of fairness, equity, or equality
+      as the primary driver, often implying that the unequal piece rates were unjust
+      and should be mitigated by equalizing the split or ensuring both workers receive
+      a fair share regardless of output.
+    clarification: Includes statements like "just seemed fair," "equal pay for equal
+      work," "disliked the random disparity," "felt bad for the other," or "should
+      be equal."
+    negative_clarification: Excludes specific references to work volume (`actual_work_done`)
+      or causal explanations of effort (`disadvantage_shaped_effort`). Use `none_of_above`
+      if the statement is purely emotional without a clear distributive principle.
+  hypothetical_counterfactual:
+    definition: The respondent explicitly considers what Worker B *would have* done
+      if paid the higher rate (or what would have happened in a scenario with equal
+      pay) and uses this hypothetical comparison to shape the decision, distinct from
+      claiming the rate *caused* the current low effort.
+    clarification: Includes reasoning that adjusts the split based on estimated output
+      at $0.50, or comparing the current split to a hypothetical equal-pay scenario.
+    negative_clarification: Excludes statements that simply say B's low effort was
+      *caused* by the low rate (use `disadvantage_shaped_effort`). Excludes statements
+      that ignore hypotheticals entirely (use `actual_work_done`).
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, purely procedural, or
+      do not provide a substantive reason for the split decision.
+    clarification: Includes "do not know," "no idea," "followed directions," "gut
+      feeling," "random," "I like it," or nonsensical phrases.
+    negative_clarification: Excludes any response that offers a substantive reason
+      related to work output, effort causality, contract, or fairness principles.
+

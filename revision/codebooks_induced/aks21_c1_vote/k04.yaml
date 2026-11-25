@@ -1,0 +1,66 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1004
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's membership in the
+      Workers' Party of Korea (WPK), former affiliation with the North Korean regime,
+      or ideological alignment with North Korea.
+    clarification: Includes mentions of being a WPK member (노동당원), former WPK member
+      (전 노동당원), or not being a WPK member. Also includes references to North Korean
+      ideology or political background as a deciding factor.
+    negative_clarification: Do not use for general references to "North Korea" without
+      specific regime/party ties. Use 'demographic_characteristics' for age/gender
+      or 'integration_factors' for length of stay if no party membership is mentioned.
+  integration_factors:
+    definition: Reasoning based on the profile's length of residence in South Korea,
+      length of residence in China, or perceived ease of social/cultural adaptation.
+    clarification: Includes mentions of long/short stay in Korea (한국 체류기간), long/short
+      stay in China (중국 체류기간), adaptation to Korean society (적응), familiarity with
+      Korean culture, or having Korean acquaintances/colleagues.
+    negative_clarification: Do not use for age, gender, or profession. Use 'north_korea_regime_ties'
+      if party membership is the primary reason.
+  professional_stability:
+    definition: Reasoning based on the profile's occupation, employment status, or
+      perceived economic stability.
+    clarification: Includes mentions of specific jobs (e.g., doctor/의사, programmer/프로그래머,
+      office worker/사무직), having a job (직업 유무), professional stability, or potential
+      for contribution due to skills.
+    negative_clarification: Do not use for general "stability" if it refers to family
+      status. Use 'north_korea_regime_ties' if party membership is cited.
+  demographic_characteristics:
+    definition: Reasoning based on the profile's age, gender, or marital/family status.
+    clarification: Includes mentions of age (young/어리다, old/나이가 많음), gender (female/여성,
+      male/남성), marital status (married/결혼, single/미혼), or having children (자녀).
+    negative_clarification: Do not use for occupation or length of stay. Use 'north_korea_regime_ties'
+      if party membership is the key differentiator.
+  interpersonal_dynamics:
+    definition: Reasoning based on perceived personality, social skills, or potential
+      for personal relationship.
+    clarification: Includes mentions of friendliness (친화력), having friends/acquaintances
+      (지인), feeling comfortable (편함, 호감), or potential for social interaction.
+    negative_clarification: Do not use for structural factors like job or age. Use
+      'integration_factors' if the social aspect is tied to length of stay in Korea.
+  preference_bias:
+    definition: Reasoning based on personal preference, gut feeling, or arbitrary
+      choice without substantive policy or profile-based justification.
+    clarification: Includes phrases like "just felt like it" (그냥, 느낌), "no particular
+      reason" (별 이유 없음), "both are similar" (둘 다 비슷), or choosing the "lesser of two
+      evils."
+    negative_clarification: Do not use if a specific profile attribute (age, job,
+      party, stay) is mentioned. Use 'none_of_above' if the response is unintelligible
+      or purely random noise.
+  none_of_above:
+    definition: Responses that are unintelligible, purely random, or do not fit into
+      any of the substantive categories above.
+    clarification: Includes single characters, gibberish, or responses that are completely
+      unrelated to the profile attributes.
+    negative_clarification: If the response mentions any profile attribute (even vaguely),
+      try to map it to the other codes.
+

@@ -1,0 +1,54 @@
+codebook:
+  name: hartnett2022_whytrump_induced
+  residual_code: none_of_above
+  context: Likely Trump voters in a US online survey (October 2020) read a hypothetical
+    in which Biden wins the popular vote by a stated margin and the electoral college.
+    Those who said the Trump campaign should resist the results were asked why.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:hartnett2022_whytrump:1001
+codes:
+  fraud_illegitimacy:
+    definition: The response claims the election is, would be, or is perceived as
+      rigged, fraudulent, or illegitimate due to specific mechanisms like voter fraud,
+      mail-in ballots, or manipulation by officials.
+    clarification: Includes claims of stolen elections, mail-in ballot fraud, tampering
+      with ballots, lack of trust in counting processes, or assertions that the results
+      do not reflect the true will of the voters due to systemic issues.
+    negative_clarification: Exclude responses that cite general distrust without specific
+      mechanism, or those that argue resistance is needed simply because the respondent
+      prefers Trump or dislikes Biden. Use 'policy_ideology' or 'pro_trump' instead.
+  policy_ideology:
+    definition: The response argues for resistance based on the belief that Biden’s
+      policies or the Democratic party’s agenda would be harmful to the country, without
+      explicitly claiming the election process itself was fraudulent.
+    clarification: Includes concerns about socialism, economic impact, border security,
+      taxes, crime, or general negative outcomes of a Biden presidency.
+    negative_clarification: Exclude responses that attribute the harm to fraud or
+      illegitimacy in the voting process. Use 'fraud_illegitimacy' if fraud is cited
+      as the cause of the potential harm.
+  pro_trump:
+    definition: The response argues for resistance primarily because the respondent
+      believes Trump is superior, deserving of re-election, or the best candidate,
+      without citing specific fraud or policy harms.
+    clarification: Includes statements that Trump is the best president, did a good
+      job, should stay in office, or that the respondent is simply for Trump.
+    negative_clarification: Exclude responses that provide specific reasons related
+      to fraud mechanisms or policy consequences. Use 'fraud_illegitimacy' or 'policy_ideology'
+      if those elements are present.
+  procedural_dispute:
+    definition: The response argues for resistance based on procedural irregularities,
+      close margins, or the need for recounts/investigations, without necessarily
+      asserting widespread fraud or illegitimacy.
+    clarification: Includes calls for recounts, arguments that the margin is too close
+      to call, or demands for proof of victory before accepting results.
+    negative_clarification: Exclude responses that claim the election is outright
+      stolen or fraudulent. Use 'fraud_illegitimacy' if the language implies theft
+      or rigging.
+  none_of_above:
+    definition: The response is uninformative, nonsensical, or does not provide a
+      substantive reason for resisting the election results.
+    clarification: Includes "Nothing," "no idea," "I don't know," or vague statements
+      that do not align with the other codes.
+    negative_clarification: Exclude any response that offers a specific reason, even
+      if weak. Ensure the response is truly uninformative before assigning this code.
+

@@ -1,0 +1,64 @@
+codebook:
+  name: hahn2024_oeq_neg_induced
+  residual_code: none_of_above
+  context: Secondary-school students in a five-day mathematics tutoring course preparing
+    for the German Abitur (school-leaving exam) filled in a course evaluation on their
+    phones after the fourth course day. The survey contained rating items on the course
+    and the tutor and two open questions on the tutor; this is the answer to the open
+    question asking what the tutor could do better in future.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:hahn2024_oeq_neg:1001
+codes:
+  closed_item_aspect:
+    definition: The response asks for improvement in at least one specific aspect
+      of the course or the tutor that corresponds to the survey's rating items.
+    clarification: Includes requests for clearer explanations, better preparation,
+      more understandable solution strategies, appropriate pace (slower/faster), more
+      practice with Abitur task types, deeper coverage of topics, better organization
+      of content, more enthusiasm, friendliness, or better handling of student questions.
+      Also includes requests for legible handwriting, clear speaking, or better time
+      management related to teaching delivery.
+    negative_clarification: Use 'none_of_above' for answers like 'nothing', 'stay
+      as you are', 'perfect', or comments that do not name a specific aspect from
+      the construct list (e.g., requests for candy, personal appearance comments unrelated
+      to teaching, or general praise without critique).
+  pacing_and_time_management:
+    definition: The response specifically requests adjustments to the speed of instruction
+      or the allocation of time for specific activities.
+    clarification: Includes requests to teach more slowly, speak more slowly, allow
+      more time for copying notes, reduce time on easy topics to focus on hard ones,
+      or better manage the overall schedule to cover all topics.
+    negative_clarification: Use 'closed_item_aspect' if the request is about the *quality*
+      of explanation (e.g., 'explain better') rather than just the speed. Use 'none_of_above'
+      for general complaints about time pressure without specific instructional adjustments.
+  teaching_style_and_clarity:
+    definition: The response requests improvements in how the material is presented,
+      explained, or structured for understanding.
+    clarification: Includes requests for clearer explanations, more step-by-step breakdowns,
+      better structure of board work/notes, more examples, less theory/more practice,
+      or adapting the difficulty level.
+    negative_clarification: Use 'pacing_and_time_management' if the core issue is
+      speed. Use 'closed_item_aspect' if it fits a specific rating item like 'humor'
+      or 'enthusiasm' better, though this code captures the broader 'understandable
+      explanations' and 'teaching style' aspects.
+  student_engagement_and_interaction:
+    definition: The response requests changes in how the tutor interacts with students
+      or involves them in the learning process.
+    clarification: Includes requests for more group problem-solving, calling on students
+      who don't volunteer, asking if students understand, encouraging questions, or
+      providing feedback on individual work.
+    negative_clarification: Use 'closed_item_aspect' if it refers to 'friendliness'
+      or 'genuine interest' as a personality trait rather than an interactive technique.
+      Use 'none_of_above' for comments about classroom discipline (e.g., 'tell kids
+      to be quiet') unless linked to learning engagement.
+  none_of_above:
+    definition: The response is uninformative, negative, or refers to aspects outside
+      the defined construct.
+    clarification: Includes 'nothing', 'keep it as is', 'perfect', 'no suggestions',
+      'N/A', or comments about irrelevant topics (e.g., requests for sweets, comments
+      on the teacher's beard/hair, technical issues with equipment not related to
+      teaching clarity, or general satisfaction without critique).
+    negative_clarification: Use 'closed_item_aspect' if the response contains a specific,
+      named improvement request related to the course content, tutor behavior, or
+      teaching method as defined in the construct.
+

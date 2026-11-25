@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1011
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly references the preference for a liberal
+      democratic political system, freedom, or the rejection of authoritarian/communist
+      systems (e.g., single-party rule, dictatorship) in a unified Korea.
+    clarification: Includes mentions of "liberal democracy," "democracy," "freedom,"
+      "anti-communism," "anti-dictatorship," "anti-Labor Party," or preference for
+      South Korea's political system over North Korea's.
+    negative_clarification: Exclude mentions of economic systems, military arrangements,
+      or administrative procedures unless they are explicitly framed as a defense
+      of democratic values. Use `economic_fiscal` or `military_security` if the focus
+      is on costs or troops.
+  political_system_federalism:
+    definition: Reasoning that invokes a federal or confederal arrangement for the
+      unified state, or explicitly rejects such an arrangement in favor of unitary
+      integration.
+    clarification: Includes mentions of "federal system" (연방제), "confederation," or
+      arguments for gradual political integration through federal structures. Also
+      includes explicit rejection of federalism if framed as a structural political
+      choice.
+    negative_clarification: Exclude general political preferences for democracy (use
+      `political_system_democracy`) or specific policy details like tax rates or troop
+      numbers.
+  military_security:
+    definition: Reasoning based on the presence, absence, or management of military
+      forces, including disarmament, integration, foreign troop presence, or nuclear
+      weapon control.
+    clarification: Includes "North Korean military dissolution," "military integration,"
+      "UN peacekeeping forces," "US/China troop presence," "nuclear weapon management,"
+      and concerns about national security or sovereignty regarding military matters.
+    negative_clarification: Exclude general political system preferences. If the respondent
+      mentions democracy in the context of security, use `political_system_democracy`
+      if the primary driver is ideological, or `military_security` if the primary
+      driver is physical safety/arms control.
+  economic_fiscal:
+    definition: Reasoning based on economic costs, tax burdens (unification tax),
+      or economic integration policies.
+    clarification: Includes mentions of "unification tax" (통일세), "tax burden," "income
+      percentage," "economic freedom," "business operations," or "economic stability."
+    negative_clarification: Exclude political system preferences or military arrangements.
+  implementation_process:
+    definition: Reasoning based on the speed, timeline, or procedural steps of the
+      unification process.
+    clarification: Includes "gradual implementation," "immediate implementation,"
+      "transition period," "speed," "stability through pace," or "phased approach."
+    negative_clarification: Exclude substantive policy preferences like taxes or military.
+      If the speed is linked to economic cost, use `economic_fiscal`.
+  sovereignty_autonomy:
+    definition: Reasoning focused on national sovereignty, self-determination, or
+      the exclusion of foreign interference in internal affairs.
+    clarification: Includes "national sovereignty," "autonomy," "opposition to foreign
+      interference" (specifically US/China), "Korean-led unification," or "self-management."
+    negative_clarification: Exclude general security concerns about troop presence
+      (use `military_security`) or economic costs.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "just because," "don't know," random characters,
+      emojis, or vague expressions like "it looks better" without specific justification.
+    negative_clarification: Exclude any response that provides a specific reason related
+      to politics, military, economy, or process.
+

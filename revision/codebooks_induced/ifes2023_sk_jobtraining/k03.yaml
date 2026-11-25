@@ -1,0 +1,65 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1003
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector, or specific North Korean identity as a primary factor
+      for selection or rejection.
+    clarification: Includes mentions of being North Korean, not being North Korean,
+      distrust of North Koreans, communication difficulties attributed to North Korean
+      accent/origin, or preference for non-North Koreans due to origin.
+    negative_clarification: Exclude general mentions of "foreigner" or "nationality"
+      that do not specify North Korea; use nk_foreign_nationality instead. Exclude
+      general distrust not linked to origin.
+  nk_foreign_nationality:
+    definition: Reasoning based on the candidate's non-North Korean foreign nationality
+      or general national identity (e.g., South Korean vs. other foreign countries).
+    clarification: Includes preferences for South Korean nationals, distrust of other
+      foreigners (e.g., Vietnamese), or beliefs that nationals understand the country
+      better.
+    negative_clarification: Exclude specific references to North Korea; use nk_origin_reasoning
+      instead. Exclude general "citizen first" arguments that don't contrast with
+      a specific foreign origin.
+  criminal_record:
+    definition: Reasoning based on the presence or absence of a criminal record (past
+      convictions).
+    clarification: Includes mentions of "no criminal record," "clean record," "theft,"
+      "tax evasion," or distrust due to past crimes.
+    negative_clarification: Exclude general "trust" or "integrity" not linked to a
+      specific crime; use general_characteristics. Exclude NK origin issues.
+  age_youth:
+    definition: Reasoning based on the candidate's age, specifically favoring youth
+      or citing age-related limitations.
+    clarification: Includes preferences for young candidates, beliefs that young people
+      are the future, or that older candidates are less capable/need more support.
+    negative_clarification: Exclude age combined with other strong distinct reasons
+      if the age is secondary; however, if age is a primary driver, use this. Exclude
+      general "energy" not tied to age.
+  family_dependents:
+    definition: Reasoning based on the candidate's family status, specifically having
+      children or being a head of household requiring support.
+    clarification: Includes mentions of having children, being married with kids,
+      needing to support a family, or prioritizing those with dependents.
+    negative_clarification: Exclude general "responsibility" not linked to family
+      structure.
+  general_characteristics:
+    definition: Vague or general positive attributes not falling into specific categories
+      like crime, age, or family.
+    clarification: Includes "trustworthy," "clean conscience," "good person," "looks
+      good," "fits well," or general competence.
+    negative_clarification: Exclude specific criminal records, NK origin, age, or
+      family status.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes single letters, gibberish, "I don't know," "no reason,"
+      "just because," or emojis.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if brief.
+

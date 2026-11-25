@@ -1,0 +1,79 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1004
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's place of birth,
+      regional origin (specifically East Germany, Saxony, or the former GDR), or the
+      political/economic distinction between East and West Germany as a primary ground
+      for selection or rejection.
+    clarification: Includes mentions of "Osten", "Sachsen", "Neue Bundesländer", "Ost",
+      "West", "GDR", or specific references to regional disparities (e.g., lower wages
+      in the East, need to strengthen East Germany).
+    negative_clarification: Exclude general mentions of "Germany" (Deutschland) or
+      "German" (deutsch) without specific regional/Eastern distinction. Use `general_nationality_reasoning`
+      or `none_of_above` if the reference is purely national identity without regional
+      nuance.
+  criminal_record_reasoning:
+    definition: Reasoning based on the presence or absence of a criminal record (Vorstrafen)
+      or specific types of crimes (e.g., theft, tax evasion).
+    clarification: Includes explicit mentions of "Vorstrafen", "Straftaten", "Diebstahl",
+      "Steuerhinterziehung", "saubere Weste", or "keine Probleme mit dem Gesetz".
+    negative_clarification: Exclude general moral judgments not tied to legal records.
+      Use `general_character_reasoning` if the respondent mentions trustworthiness
+      or honesty without referencing a specific crime or record.
+  age_and_career_potential_reasoning:
+    definition: Reasoning based on the candidate's age, specifically focusing on their
+      remaining working life, proximity to retirement, or career trajectory.
+    clarification: Includes mentions of "jung", "älter", "Rente", "Rentenalter", "Aufstiegschancen",
+      "berufliche Perspektiven", "noch lange arbeiten", or comparisons of age between
+      candidates.
+    negative_clarification: Exclude age mentioned solely in conjunction with family
+      status (e.g., "young mother") without explicit career/retirement logic. Use
+      `family_status_reasoning` if the focus is purely on dependency or family structure.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's family structure, marital status,
+      or number of children, particularly regarding financial need or dependency.
+    clarification: Includes mentions of "Kinder", "alleinerziehend", "ledig", "verheiratet",
+      "Familie", "Unterhaltspflicht", or "Kind zu versorgen".
+    negative_clarification: Exclude family status if it is not the primary driver
+      (e.g., if age/career is the main point). Use `none_of_above` if the mention
+      is incidental or uninformative.
+  gender_reasoning:
+    definition: Reasoning that explicitly cites the candidate's gender as a factor
+      for selection or rejection.
+    clarification: Includes mentions of "Mann", "Frau", "weiblich", "männlich", "Frauenquote",
+      or gender-based stereotypes (e.g., "women are disadvantaged").
+    negative_clarification: Exclude gender if it is not the stated reason for choice.
+      Use `none_of_above` if gender is just a descriptor without causal weight.
+  general_nationality_reasoning:
+    definition: Reasoning based on the candidate's nationality or ethnic origin (German
+      vs. non-German) without specific reference to East/West regional distinctions.
+    clarification: Includes mentions of "deutsch", "Deutscher", "Herkunft Deutschland",
+      "Staatsangehörigkeit", or "Einwanderer" (if implied as negative/positive).
+    negative_clarification: Exclude specific East/West regional references. Use `east_origin_reasoning`
+      if the distinction is regional. Use `none_of_above` if the reference is vague
+      or uninformative.
+  professional_qualification_reasoning:
+    definition: Reasoning based on the candidate's professional experience, education,
+      job title, or current employment status.
+    clarification: Includes mentions of "Erfahrung", "Qualifikation", "Weiterbildung",
+      "Job", "Beruf", "Filialleiter", "Angestellte", "Voraussetzungen", or "Kompetenz".
+    negative_clarification: Exclude professional status if it is not the primary reason
+      (e.g., if age is the main factor). Use `none_of_above` if the mention is vague
+      (e.g., "besserer Job" without context).
+  none_of_above:
+    definition: Responses that are uninformative, random, express no preference, or
+      cite reasons not covered by the other codes.
+    clarification: Includes "Ich weiß nicht", "Keine Ahnung", "Gefällt mir", "Einfach
+      so", "Muss ja einer sein", random characters, or vague sentiments like "besser"
+      or "gut" without explanation.
+    negative_clarification: Exclude any response that provides a specific reason related
+      to origin, crime, age, family, gender, nationality, or qualifications.
+

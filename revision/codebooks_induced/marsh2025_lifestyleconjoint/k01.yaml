@@ -1,0 +1,53 @@
+codebook:
+  name: marsh2025_lifestyleconjoint_induced
+  residual_code: none_of_above
+  context: US adults on Lucid saw five pairs of hypothetical people described by party,
+    a stance on an oil pipeline, a hobby, a car brand and a food or coffee chain,
+    chose one person in each pair, rated both, and explained their choice.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:marsh2025_lifestyleconjoint:1001
+codes:
+  environment_energy_issue:
+    definition: The explanation explicitly references the oil pipeline, environmental
+      protection, climate change, energy policy, or the trade-off between economic
+      benefits and environmental costs.
+    clarification: Includes mentions of "pipeline," "environment," "climate," "earth,"
+      "green," "pollution," "jobs vs environment," "energy independence," or specific
+      stances on building or blocking the pipeline based on these factors.
+    negative_clarification: Exclude responses that mention the pipeline only as a
+      neutral fact without expressing a preference based on environmental/energy grounds,
+      or where the choice is driven by other factors (see party_affiliation, lifestyle_preferences,
+      or none_of_above).
+  party_affiliation:
+    definition: The explanation cites political party identity (Democrat, Republican,
+      Independent) as the primary reason for the choice, regardless of the specific
+      policy stance.
+    clarification: Includes references to "Democrat," "Republican," "GOP," "Liberal,"
+      "Conservative," "Party loyalty," or general trust/distrust based on party label.
+    negative_clarification: Exclude if the party mention is secondary to a specific
+      policy stance on the pipeline (code as environment_energy_issue) or if it is
+      part of a broader lifestyle/trait description (code as lifestyle_preferences).
+  lifestyle_preferences:
+    definition: The explanation cites non-political personal attributes such as hobbies,
+      car brands, food chains, or general personality traits as the deciding factor.
+    clarification: Includes mentions of "Subaru," "Ford," "Chick-fil-A," "Starbucks,"
+      "hobbies," "down to earth," "cool," "nice," or "taste."
+    negative_clarification: Exclude if the choice is primarily driven by the pipeline
+      stance (code as environment_energy_issue) or party ID (code as party_affiliation).
+  general_political_stance:
+    definition: The explanation cites a general political philosophy, voting behavior,
+      or alignment with values, without specifying the pipeline or party label.
+    clarification: Includes phrases like "aligns with my values," "better candidate,"
+      "lesser of two evils," "takes a stance," "open to issues," or general agreement
+      with the candidate's perceived ideology.
+    negative_clarification: Exclude if the response is vague/uninformative (code as
+      none_of_above) or if it specifically mentions the pipeline/environment (code
+      as environment_energy_issue) or party (code as party_affiliation).
+  none_of_above:
+    definition: The response is uninformative, random, indicates no preference, or
+      contains non-substantive content.
+    clarification: Includes "just because," "random," "flipped a coin," "idk," "same,"
+      "both are good/bad," "no reason," gibberish, or technical errors.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to environment, party, lifestyle, or general political alignment.
+

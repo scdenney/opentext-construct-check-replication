@@ -1,0 +1,74 @@
+codebook:
+  name: ces2016_uma_millennials_induced
+  residual_code: none_of_above
+  context: White American adults in an online election survey in autumn 2016 were
+    shown several quoted statements from the presidential campaign and asked which
+    candidate made each one; on the next page they were asked to write, in a few words,
+    what comes to mind when they think of several groups. This answer is about Millennials.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ces2016_uma_millennials:1001
+codes:
+  offensive_comment:
+    definition: The response expresses hate, contempt, or hostility toward Millennials
+      as a group, or relies on demeaning stereotypes such as being lazy, spoiled,
+      stupid, or entitled.
+    clarification: Includes insults (e.g., "idiots", "pussies", "losers"), negative
+      character judgments (e.g., "selfish", "whiners", "crybabies"), and stereotypes
+      implying moral or intellectual deficiency (e.g., "lazy", "spoiled", "entitled",
+      "self-absorbed", "stupid").
+    negative_clarification: Do not code neutral descriptions of age or technology
+      use. Do not code policy views or structural critiques (e.g., "high debt", "no
+      jobs") unless they are framed as an insult to the group's character. Use none_of_above
+      for neutral observations.
+  demographic_description:
+    definition: The response provides a neutral or factual description of the group
+      based on age, generation, or basic human categorization.
+    clarification: Includes terms like "young", "kids", "humans", "people", "future
+      generation", "20-somethings", or specific birth years.
+    negative_clarification: Do not include responses that attach negative value judgments
+      to these descriptors (e.g., "spoiled kids" is offensive_comment). Do not include
+      technological or political traits. Use none_of_above for non-descriptive answers.
+  technological_trait:
+    definition: The response characterizes Millennials primarily by their relationship
+      with technology, social media, or digital culture.
+    clarification: Includes descriptors like "tech savvy", "social media junkies",
+      "digital natives", "behind a screen", "obsessed with smartphones", or "internet
+      savvy".
+    negative_clarification: Do not include technology mentions if they are coupled
+      with strong negative stereotypes like "spoiled tech brats" (use offensive_comment).
+      Do not include general age descriptions. Use none_of_above for unrelated traits.
+  political_ideology:
+    definition: The response characterizes Millennials by their perceived political
+      leanings, activism, or civic engagement.
+    clarification: Includes descriptors like "liberal", "progressive", "leftist",
+      "Bernie Sanders supporters", "politically active", "revolution", or "indoctrinated".
+    negative_clarification: Do not include political views if they are framed as an
+      insult (e.g., "threat to our country because they are liberals" is offensive_comment).
+      Do not include general ignorance unless linked to political naivety. Use none_of_above
+      for non-political traits.
+  economic_hardship:
+    definition: The response characterizes Millennials by their financial struggles,
+      employment issues, or economic disadvantages.
+    clarification: Includes mentions of "debt", "no jobs", "low wealth", "struggling",
+      "housing crisis", "crappy wages", "screwed", or "hard to launch".
+    negative_clarification: Do not include economic hardship if it is framed as the
+      group's fault (e.g., "lazy workers" is offensive_comment). Do not include general
+      life struggles not tied to economics. Use none_of_above for non-economic traits.
+  lack_of_knowledge:
+    definition: The response characterizes Millennials as uninformed, clueless, naive,
+      or lacking in experience or historical knowledge.
+    clarification: Includes descriptors like "clueless", "uninformed", "naive", "ignorant",
+      "don't know what they are doing", "misguided", or "lacking history".
+    negative_clarification: Do not include this if it is part of a broader insult
+      like "stupid idiots" (use offensive_comment). Do not include general age descriptions.
+      Use none_of_above for neutral or other traits.
+  none_of_above:
+    definition: The response is uninformative, expresses uncertainty, or does not
+      fit into the substantive categories above.
+    clarification: Includes "nothing", "none", "no comment", "not sure", "I don't
+      know", "who", "meh", "hmm", "?" or responses that are purely meta-commentary
+      on the survey question.
+    negative_clarification: Do not use for substantive descriptions of the group.
+      If the response is a substantive trait (even if neutral), use the appropriate
+      code. Use this only for empty, uncertain, or non-responsive answers.
+

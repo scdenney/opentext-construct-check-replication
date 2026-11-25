@@ -1,0 +1,77 @@
+codebook:
+  name: landrum2025_mechexplain_induced
+  residual_code: none_of_above
+  context: 507 US online participants read a mechanistic explanation about climate
+    change or mask-wearing that was either coherent or contained a logical flaw, rated
+    its argument strength, and were then invited to list their thoughts and reactions
+    to the message.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:landrum2025_mechexplain:1001
+codes:
+  noticing_logical_flaw:
+    definition: The respondent explicitly identifies a defect in the internal logic,
+      reasoning, or causal mechanism of the provided explanation. This includes pointing
+      out missing steps, contradictions, lack of connection between premises and conclusion,
+      or factual errors in the mechanistic description itself.
+    clarification: Includes comments that the explanation is confusing, lacks a clear
+      link (e.g., between greenhouse gases and warming, or mask particles and prevention),
+      is oversimplified to the point of being misleading, or contains specific logical
+      errors in the causal chain.
+    negative_clarification: Do not use for general disagreement with the conclusion
+      (e.g., "climate change isn't real"), emotional reactions, or comments on the
+      visual design. Use 'disagree_with_conclusion' or 'emotional_reaction' instead.
+  agree_with_conclusion:
+    definition: The respondent expresses agreement with the main claim or conclusion
+      of the message (e.g., that masks protect, or that human activity causes warming)
+      without focusing on the logical structure of the explanation.
+    clarification: Includes statements that the message is true, correct, believable,
+      or that the respondent already knew and agreed with the facts presented.
+    negative_clarification: Do not use if the respondent is critiquing the *reasoning*
+      or *mechanism* (use 'noticing_logical_flaw'). Do not use for neutral or non-committal
+      responses.
+  disagree_with_conclusion:
+    definition: The respondent explicitly rejects the main claim or conclusion of
+      the message, often citing alternative beliefs or skepticism about the phenomenon
+      itself.
+    clarification: Includes statements that the problem is exaggerated, that the government
+      is lying, that climate change is natural/not human-caused, or that masks are
+      unnecessary/ineffective.
+    negative_clarification: Do not use if the respondent accepts the conclusion but
+      critiques the explanation's logic (use 'noticing_logical_flaw'). Do not use
+      for general negativity without specific disagreement.
+  emotional_reaction:
+    definition: The respondent reports an emotional state or visceral reaction to
+      the content of the message, independent of their assessment of its truth or
+      logic.
+    clarification: Includes feelings of fear, sadness, hopelessness, anger, anxiety,
+      or being "scared" or "tragic."
+    negative_clarification: Do not use for cognitive assessments like "confusing"
+      or "convincing." Use 'noticing_logical_flaw' for confusion about logic, or 'agree/disagree'
+      for conviction.
+  informational_request_or_curiosity:
+    definition: The respondent expresses a desire for more information, asks questions
+      about the mechanism, or notes a gap in their own understanding that the message
+      did not fully resolve.
+    clarification: Includes questions like "How does this work?", "What can I do?",
+      or statements like "I want to know more," "More elaboration would be convincing,"
+      or "I didn't know this before."
+    negative_clarification: Do not use for simple agreement or disagreement. Do not
+      use for complaints that the explanation is flawed (use 'noticing_logical_flaw').
+  meta_commentary_on_format:
+    definition: The respondent comments on the presentation, style, length, or visual
+      aspects of the message rather than its substantive content or logic.
+    clarification: Includes comments that the graphic was neat, the text was easy
+      to read, the animation was good, or the message was succinct.
+    negative_clarification: Do not use if the comment implies the logic is flawed
+      (e.g., "the graph is confusing because it doesn't show X" -> use 'noticing_logical_flaw').
+      Do not use for emotional reactions to the visuals.
+  irrelevant_or_uninformative:
+    definition: The response contains no meaningful information regarding the message,
+      or consists of random words, typos, or unrelated thoughts.
+    clarification: Includes "None," "Not sure," "McDonald's," "Na," or disjointed
+      phrases that do not convey a clear thought about the message.
+    negative_clarification: This is the residual code. If a response has any discernible
+      opinion, emotion, or logical critique, use the appropriate substantive code.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

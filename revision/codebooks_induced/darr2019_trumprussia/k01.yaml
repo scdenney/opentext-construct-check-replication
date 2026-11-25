@@ -1,0 +1,84 @@
+codebook:
+  name: darr2019_trumprussia_induced
+  residual_code: none_of_above
+  context: Adults in the United States recruited online used a custom news website
+    as their main news source for one week in June 2017, then answered a follow-up
+    survey in which they listed up to five consequences they expected from Donald
+    Trump's presidency.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:darr2019_trumprussia:1001
+codes:
+  russia_scandal_consequence:
+    definition: The response explicitly names the Trump-Russia scandal, its investigation,
+      or related legal/political consequences as a consequence of the presidency.
+    clarification: Includes mentions of Russian interference in elections, collusion
+      between the Trump campaign and Russia, the firing of James Comey, Michael Flynn’s
+      involvement, the Special Counsel (Mueller) investigation, obstruction of justice
+      charges, or impeachment/removal proceedings arising specifically from these
+      Russia-related issues.
+    negative_clarification: Exclude general mentions of "Russia" as a foreign policy
+      adversary (e.g., "war with Russia") or general "scandals" without specifying
+      the Russia connection. Use `general_scandal_consequence` or `foreign_policy_consequence`
+      instead.
+  foreign_policy_consequence:
+    definition: The response identifies negative or positive changes in the United
+      States' relationships with other nations, international standing, or global
+      diplomacy.
+    clarification: Includes loss of allies, damaged international relations, decreased
+      respect on the world stage, isolationism, strained ties with specific countries
+      (e.g., China, Mexico, NATO), or changes in foreign aid and trade agreements.
+    negative_clarification: Exclude general "war" predictions unless tied to specific
+      foreign policy failures; use `war_consequence` for those. Exclude domestic policy
+      impacts. Use `russia_scandal_consequence` if the foreign policy issue is specifically
+      the Russia scandal.
+  domestic_policy_consequence:
+    definition: The response identifies changes to specific US domestic laws, regulations,
+      or government programs.
+    clarification: Includes healthcare (ACA repeal, costs), environmental regulations
+      (climate change, EPA), immigration policy (deportations, wall), taxes, education
+      funding, gun control, or civil rights legislation.
+    negative_clarification: Exclude general economic trends not tied to specific policy
+      (use `economic_consequence`). Exclude social/cultural shifts (use `social_consequence`).
+      Exclude foreign policy (use `foreign_policy_consequence`).
+  economic_consequence:
+    definition: The response identifies changes to the general state of the US economy,
+      financial markets, or employment.
+    clarification: Includes job growth/loss, stock market performance, national debt,
+      inflation, income inequality, corporate tax cuts, or general economic growth/decline.
+    negative_clarification: Exclude specific policy changes like healthcare costs
+      or tax rates if they are framed as policy rather than general economic outcome
+      (use `domestic_policy_consequence`). Exclude foreign trade impacts if framed
+      as diplomatic relations (use `foreign_policy_consequence`).
+  social_consequence:
+    definition: The response identifies changes to social cohesion, cultural norms,
+      or interpersonal relations within the US.
+    clarification: Includes increased racism, discrimination, hate crimes, political
+      polarization, civil unrest, riots, division among citizens, or changes in social
+      attitudes toward minorities/women/LGBTQ+.
+    negative_clarification: Exclude specific policy changes like immigration enforcement
+      (use `domestic_policy_consequence`). Exclude general economic hardship (use
+      `economic_consequence`).
+  war_consequence:
+    definition: The response identifies the risk or occurrence of military conflict,
+      war, or terrorism.
+    clarification: Includes World War III, nuclear war, war with specific countries
+      (e.g., North Korea, China), increased terrorist attacks, or general military
+      engagement.
+    negative_clarification: Exclude general foreign policy strain that doesn't explicitly
+      mention war/conflict (use `foreign_policy_consequence`).
+  general_scandal_consequence:
+    definition: The response mentions corruption, scandals, or ethical violations
+      without specifying the Russia scandal.
+    clarification: Includes nepotism, general corruption, "yes men," unethical behavior,
+      or loss of integrity in government not tied to the Russia investigation.
+    negative_clarification: Exclude Russia-specific scandals (use `russia_scandal_consequence`).
+      Exclude general policy failures (use `domestic_policy_consequence`).
+  none_of_above:
+    definition: The response is uninformative, vague, or does not fit into any of
+      the defined categories.
+    clarification: Includes responses that are purely emotional outbursts without
+      specific consequences, generic statements like "things will be bad," or responses
+      that do not identify a specific consequence of the presidency.
+    negative_clarification: If the response mentions a specific consequence (even
+      if negative or positive), it must be coded into one of the substantive codes.
+

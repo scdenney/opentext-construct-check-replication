@@ -1,0 +1,72 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1005
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, occupational skill, work capacity, or professional stability as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, office
+      worker, programmer), employment status (employed, unemployed, stable job), professional
+      skills, work experience, career stability, or the perceived competence derived
+      from having a job.
+    negative_clarification: Do not use for general statements about "experience" or
+      "maturity" unless explicitly tied to work/career. Do not use for general social
+      integration or demographic traits. Use 'demographic_age' or 'integration_residence'
+      instead if the reason is not work-related.
+  integration_residence:
+    definition: Reasoning that cites the length of residence in South Korea, familiarity
+      with Korean society, or social connections (colleagues/friends) as the primary
+      indicator of suitability.
+    clarification: Includes mentions of long-term residence, short residence in China/North
+      Korea, having Korean colleagues or friends, understanding of Korean culture/society,
+      and social adaptation based on time spent in the country.
+    negative_clarification: Do not use for job-related reasons. Use 'employment_occupation'
+      if the social connection is specifically framed as professional colleagues in
+      a work context that implies job competence, but generally, social integration
+      is separate. Use 'demographic_age' if age is the primary factor.
+  demographic_age:
+    definition: Reasoning that cites the profile's age, youth, seniority, or life
+      stage as the primary reason for selection.
+    clarification: Includes mentions of being young, old, appropriate age, seniority
+      (yeon-ryun), life experience related to age, or future potential based on age.
+    negative_clarification: Do not use if the age is mentioned only as a secondary
+      factor alongside a job or residence reason. Use 'employment_occupation' or 'integration_residence'
+      if those are the dominant factors.
+  demographic_gender:
+    definition: Reasoning that explicitly cites the profile's gender as the primary
+      reason for selection.
+    clarification: Includes preferences for male or female candidates, or gender-based
+      stereotypes regarding suitability.
+    negative_clarification: Do not use if gender is mentioned only as a descriptor
+      alongside other stronger reasons like job or residence.
+  political_ideology:
+    definition: Reasoning that cites political affiliation, ideological background,
+      or religious beliefs as the primary reason for selection.
+    clarification: Includes mentions of North Korean Workers' Party membership/non-membership,
+      Islamic faith, political ideology (conservative/progressive), or perceived political
+      reliability.
+    negative_clarification: Do not use for general social or economic reasons.
+  family_status:
+    definition: Reasoning that cites marital status, children, or family responsibilities
+      as the primary reason for selection.
+    clarification: Includes mentions of being married, having children, family stability,
+      or responsibility derived from family ties.
+    negative_clarification: Do not use if family is mentioned only as a minor detail.
+      Use 'employment_occupation' or 'integration_residence' if those are the main
+      drivers.
+  none_of_above:
+    definition: Responses that are uninformative, vague, contradictory, or cite reasons
+      not covered by the specific codes above.
+    clarification: Includes "no reason," "just a feeling," "both are bad," "random
+      choice," gibberish, or reasons that are purely aesthetic/subjective without
+      specific construct linkage.
+    negative_clarification: Do not use for any of the specific construct reasons listed
+      above.
+

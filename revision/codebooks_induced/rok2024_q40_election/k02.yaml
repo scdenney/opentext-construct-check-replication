@@ -1,0 +1,87 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1002
+codes:
+  programmatic_policy_reasoning:
+    definition: The respondent justifies their choice based on the candidate’s specific
+      policy positions, ideological alignment, or proposed solutions to national issues.
+    clarification: Includes references to specific policy domains such as housing/real
+      estate taxes, labor/work hours, foreign policy/alliances (e.g., US-ROK alliance,
+      China balancing), security/nuclear weapons (e.g., nuclear armament, tactical
+      nukes), anti-discrimination laws, and general ideological camps (conservative,
+      progressive, pro-national interest). Also includes general references to "platform,"
+      "pledges," or "policy direction" if they imply a substantive policy preference
+      over personal traits.
+    negative_clarification: Exclude responses that cite only personal characteristics
+      (age, gender, profession, appearance), lack of scandal, or vague feelings of
+      "betterness" without policy substance. If the response mentions policy but primarily
+      as a reason to reject the *other* candidate due to personal flaws, code as candidate_comparison.
+  candidate_comparison:
+    definition: The respondent chooses the candidate because they are perceived as
+      "less bad," "better than the alternative," or "more reasonable" than the other
+      option, without citing specific policy merits.
+    clarification: Includes phrases like "less corrupt," "more reliable," "better
+      than the other guy," "less idealistic," or "more realistic." This captures comparative
+      judgments that are not grounded in specific policy agreement but in a relative
+      assessment of quality or competence.
+    negative_clarification: Exclude responses that explicitly cite policy differences
+      as the basis for the comparison (e.g., "Candidate A's housing policy is better").
+      If the comparison is based on policy, use programmatic_policy_reasoning.
+  personal_characteristics:
+    definition: The respondent justifies the choice based on the candidate's personal
+      traits, demographics, or background rather than their political platform.
+    clarification: Includes references to age (young/old), gender, profession (e.g.,
+      prosecutor, businessman, activist), appearance, personality (e.g., honest, hardworking,
+      flexible thinking), or family background (e.g., descendant of pro-Japanese collaborators).
+    negative_clarification: Exclude responses that mention these traits only as a
+      proxy for policy competence (e.g., "young so he will be innovative") if the
+      innovation is policy-specific. If the trait is the primary reason, code here.
+  anti_scandal_integrity:
+    definition: The respondent chooses the candidate primarily because they lack corruption,
+      scandals, or legal controversies, or because the other candidate has them.
+    clarification: Includes references to "no suspicion," "no bribery," "no military
+      service scandal," "clean record," or "not a prosecutor" (if framed as avoiding
+      corruption/establishment). Focuses on the absence of negative personal/legal
+      history.
+    negative_clarification: Exclude responses that cite integrity as a general character
+      trait (e.g., "he is honest") without specific reference to scandals or legal
+      issues; those may fall under personal_characteristics. If the response mentions
+      policy *and* integrity, prioritize programmatic_policy_reasoning if policy is
+      the main driver, otherwise code as programmatic_policy_reasoning if the integrity
+      is linked to policy trustworthiness.
+  ideological_values:
+    definition: The respondent justifies the choice based on broad ideological values,
+      national interests, or social harmony, without referencing specific policy mechanisms.
+    clarification: Includes references to "national interest" (guk-ik), "harmony,"
+      "equality," "conservatism/progressivism" as a general identity, "patriotism,"
+      or "social stability." These are value-based justifications that are broader
+      than specific policy platforms.
+    negative_clarification: Exclude responses that cite specific policies (e.g., "tax
+      cuts") which should be coded as programmatic_policy_reasoning. If "national
+      interest" is linked to a specific policy (e.g., "national interest through nuclear
+      armament"), code as programmatic_policy_reasoning.
+  negative_voting:
+    definition: The respondent chooses the candidate because they dislike or oppose
+      the other candidate, rather than for positive reasons regarding the chosen candidate.
+    clarification: Includes statements like "I hate Candidate B," "I don't like the
+      other guy," "I chose this one because I dislike the alternative," or "I voted
+      against the other candidate."
+    negative_clarification: Exclude responses that dislike the other candidate *because*
+      of their policies (e.g., "I chose A because B's nuclear policy is dangerous").
+      If the dislike is policy-based, code as programmatic_policy_reasoning.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or indicates no reason
+      for the choice.
+    clarification: Includes responses such as "no reason," "just felt like it," "random,"
+      "don't know," "I didn't know who I voted for," "just picked one," or single
+      words like "good," "nice," "JH" (initials), or symbols.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if weak (e.g., "he seems nice" -> personal_characteristics; "policy is
+      okay" -> programmatic_policy_reasoning).
+

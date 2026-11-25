@@ -1,0 +1,84 @@
+codebook:
+  name: muradova2022_empathy_induced
+  residual_code: none_of_above
+  context: Adults in the United Kingdom said whether they opposed or favoured introducing
+    a universal basic income scheme. Some then read a short profile of a woman named
+    Sarah who held the opposite view, and some of those also wrote what they imagined
+    she thought and felt; others instead wrote about their last weekend. All then
+    restated their position and were asked to justify it in one paragraph.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:muradova2022_empathy:1001
+codes:
+  opposing_consideration:
+    definition: The justification acknowledges at least one argument, consideration
+      or viewpoint on the other side of the position it argues for (a drawback or
+      risk of a basic income if the respondent favours it; a benefit or reason for
+      it if the respondent opposes it), or acknowledges that the issue has more than
+      one legitimate side, whether or not the respondent then rejects that consideration.
+    clarification: Includes responses that mention potential benefits (e.g., reducing
+      poverty, simplifying bureaucracy) when opposing, or potential drawbacks (e.g.,
+      disincentive to work, high cost, unfairness to workers) when favouring. Also
+      includes explicit statements that the issue is complex or has multiple sides.
+    negative_clarification: Exclude responses that only state the respondent's own
+      position without referencing the counter-argument or the complexity of the issue.
+      Use 'pure_favour' or 'pure_oppose' instead.
+  pure_favour:
+    definition: The respondent favours basic income and provides reasons supporting
+      this position without acknowledging any counter-arguments, drawbacks, or the
+      complexity of the opposing view.
+    clarification: Includes arguments such as helping the poor, reducing homelessness,
+      ensuring a basic standard of living, or simplifying the welfare system, without
+      mentioning potential downsides like cost or work disincentives.
+    negative_clarification: Exclude responses that mention drawbacks or opposing views.
+      Use 'opposing_consideration' instead. Exclude responses that oppose basic income.
+      Use 'pure_oppose' instead.
+  pure_oppose:
+    definition: The respondent opposes basic income and provides reasons supporting
+      this position without acknowledging any counter-arguments, benefits, or the
+      complexity of the opposing view.
+    clarification: Includes arguments such as discouraging work, being too costly,
+      being unfair to taxpayers, or enabling abuse, without mentioning potential benefits
+      like poverty reduction or administrative simplicity.
+    negative_clarification: Exclude responses that mention benefits or opposing views.
+      Use 'opposing_consideration' instead. Exclude responses that favour basic income.
+      Use 'pure_favour' instead.
+  administrative_efficiency:
+    definition: The justification focuses specifically on the administrative aspects
+      of the current system versus a basic income, such as simplifying bureaucracy,
+      reducing red tape, or lowering administration costs, without necessarily addressing
+      broader economic or social impacts.
+    clarification: Includes mentions of "simplifying benefits," "reducing bureaucracy,"
+      "easier to administer," or "cutting red tape."
+    negative_clarification: Exclude responses that focus primarily on poverty alleviation,
+      work incentives, or fairness without mentioning administrative mechanics. Use
+      'pure_favour' or 'pure_oppose' instead.
+  work_incentive_concern:
+    definition: The justification centers on the impact of basic income on individuals'
+      motivation to work, either arguing it will reduce work effort (if opposing)
+      or potentially encourage flexible work/entrepreneurship (if favouring, though
+      less common in this sample).
+    clarification: Includes mentions of "laziness," "no incentive to work," "workshy,"
+      "discouraging employment," or conversely, "flexibility to work."
+    negative_clarification: Exclude responses that focus on cost, poverty, or administrative
+      issues without linking them to work motivation. Use 'pure_oppose' or 'pure_favour'
+      instead.
+  cost_and_funding:
+    definition: The justification focuses on the financial feasibility, cost to the
+      taxpayer, or source of funding for the basic income scheme.
+    clarification: Includes mentions of "too costly," "tax increases," "where will
+      the money come from," "affordability," or "economic burden."
+    negative_clarification: Exclude responses that focus on poverty alleviation, work
+      incentives, or administrative efficiency without linking them to the financial
+      cost. Use 'pure_favour' or 'pure_oppose' instead.
+  fairness_and_equity:
+    definition: The justification focuses on concepts of fairness, equality, or justice,
+      such as whether everyone should receive the same amount, whether it is fair
+      to give money to those who don't need it, or whether it addresses inequality.
+    clarification: Includes mentions of "fairness," "equality," "same for everyone,"
+      "unfair to workers," "gap between rich and poor," or "dignity."
+    negative_clarification: Exclude responses that focus on administrative efficiency,
+      work incentives, or specific cost calculations without a broader equity argument.
+      Use 'pure_favour' or 'pure_oppose' instead.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

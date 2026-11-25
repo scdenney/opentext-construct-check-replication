@@ -1,0 +1,76 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1009
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, professional skill, occupational stability, or work capacity as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      office worker), having a job/employment, professional stability, career experience,
+      or the perceived value of their work skills.
+    negative_clarification: Do not use for general "experience" or "maturity" unless
+      explicitly tied to work/career. Use 'personal_qualities' for general competence
+      or 'demographic' for age/gender if no job is mentioned.
+  korea_residence_duration:
+    definition: Reasoning that cites the length of time the profile has lived in South
+      Korea (or the shortness of time in China/North Korea) as the primary factor.
+    clarification: Includes references to "Korea residence period," "years in Korea,"
+      "long-term resident," or using residence time as a proxy for social adaptation,
+      cultural understanding, or trust.
+    negative_clarification: Do not use if the primary reason is explicitly about a
+      job or specific professional skill. Use 'employment_occupation' if both are
+      mentioned but the job is the distinct differentiator, or prioritize 'employment_occupation'
+      if the job implies the residence (e.g., "has a job in Korea"). If residence
+      is the sole reason, use this code.
+  political_affiliation:
+    definition: Reasoning that cites the profile's political background, specifically
+      membership or non-membership in the Workers' Party of Korea (WPK) or other political
+      ideologies.
+    clarification: Includes mentions of "not a WPK member," "former WPK member," "political
+      ideology," or "political stance."
+    negative_clarification: Do not use for general political views unrelated to North
+      Korean party affiliation. Use 'personal_qualities' for general progressive/conservative
+      views if not tied to WPK status.
+  demographic_characteristics:
+    definition: Reasoning that cites inherent demographic traits such as age, gender,
+      marital status, or family status (children) as the primary driver.
+    clarification: Includes mentions of "young," "old," "male," "female," "married,"
+      "unmarried," "has children," or "family stability."
+    negative_clarification: Do not use if the reasoning is primarily about professional
+      skills or residence duration. If age is linked to "experience" in a general
+      sense, consider 'personal_qualities'. If age is linked to "career potential,"
+      use 'employment_occupation'.
+  social_integration_networks:
+    definition: Reasoning that cites the profile's social connections, relationships
+      with Koreans, or level of social integration as the primary factor.
+    clarification: Includes mentions of "Korean friends," "Korean colleagues," "human
+      relations," "social network," or "getting along well with Koreans."
+    negative_clarification: Do not use for general "personality" or "charm." Use 'personal_qualities'
+      for traits like "friendly" or "charming." Use 'korea_residence_duration' if
+      the network is cited as a result of long residence without explicit mention
+      of the people themselves.
+  personal_qualities:
+    definition: Reasoning that cites general personal attributes, character traits,
+      or vague impressions of suitability that do not fall into the specific categories
+      above.
+    clarification: Includes mentions of "trustworthiness," "stability," "potential,"
+      "adaptability," "charm," "personality," "maturity," or general "good impression."
+    negative_clarification: Do not use if the reason is specifically about a job ('employment_occupation'),
+      residence time ('korea_residence_duration'), or political party ('political_affiliation').
+      Use 'none_of_above' if the response is incoherent or purely random.
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, express no preference,
+      or cite reasons not covered by the other codes.
+    clarification: Includes responses like "no reason," "just picked one," "both are
+      bad," "random," "no difference," or nonsensical text.
+    negative_clarification: Do not use for substantive reasons. If a reason is given
+      but is unclear, try to map it to the most specific available code. Only use
+      this for truly empty or non-substantive answers.
+

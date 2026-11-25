@@ -1,0 +1,82 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1002
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the value of democratic systems as a primary ground for choosing the politician.
+    clarification: Includes mentions of 'democracy' (민주주의), 'liberal democracy' (자유민주주의),
+      support for democratic values, or the belief that democracy is the best or necessary
+      form of government. Also includes reasoning based on the respondent's alignment
+      with the politician's stance on democratic principles or their rejection of
+      anti-democratic views.
+    negative_clarification: Exclude general policy preferences (e.g., welfare, economy)
+      unless they are explicitly framed as a consequence or requirement of democracy.
+      Exclude mentions of 'democracy' only in the context of criticizing its flaws
+      without affirming its value as a selection criterion. Use 'policy_reasoning'
+      or 'economy_reasoning' if the focus is strictly on material outcomes rather
+      than the political system itself.
+  gender_equality_reasoning:
+    definition: Reasoning based on the politician's stance on gender equality, gender
+      roles, or opposition to gender discrimination.
+    clarification: Includes support for gender neutrality in employment, opposition
+      to gender-based discrimination, belief in equal opportunities regardless of
+      gender, or rejection of traditional gender roles.
+    negative_clarification: Exclude general 'equality' if it refers to racial or ethnic
+      diversity (use 'diversity_reasoning'). Exclude general 'fairness' if not specifically
+      tied to gender. Use 'policy_reasoning' if the focus is on specific labor laws
+      rather than the principle of gender equality.
+  diversity_reasoning:
+    definition: Reasoning based on the politician's stance on ethnic, racial, or cultural
+      diversity and multiculturalism.
+    clarification: Includes support for multiculturalism, opposition to racism, belief
+      in the value of diverse populations, or acceptance of immigrants and different
+      cultures.
+    negative_clarification: Exclude general 'tolerance' if not linked to diversity.
+      Exclude gender equality issues (use 'gender_equality_reasoning'). Use 'none_of_above'
+      if the mention of diversity is vague or uninformative.
+  welfare_reasoning:
+    definition: Reasoning based on the politician's stance on social welfare, government
+      responsibility for citizen well-being, or social safety nets.
+    clarification: Includes support for government-provided welfare, belief that the
+      state should care for citizens' livelihoods, opposition to cutting social services,
+      or preference for a welfare state model.
+    negative_clarification: Exclude general economic growth or market efficiency arguments
+      (use 'economy_reasoning'). Exclude specific policy details unless they clearly
+      indicate a welfare orientation. Use 'policy_reasoning' if the focus is on a
+      specific program rather than the general principle of welfare.
+  economy_reasoning:
+    definition: Reasoning based on the politician's stance on economic systems, market
+      freedom, state-owned enterprises, or economic growth.
+    clarification: Includes support for free market capitalism, expansion of private
+      enterprises, opposition to state-owned enterprise expansion, belief in individual
+      economic responsibility, or focus on economic competitiveness.
+    negative_clarification: Exclude welfare arguments (use 'welfare_reasoning'). Exclude
+      general 'prosperity' if not tied to a specific economic ideology. Use 'none_of_above'
+      if the economic argument is too vague.
+  general_agreement_reasoning:
+    definition: Reasoning based on a general sense of agreement with the politician's
+      views without specifying the content, or a general preference for one candidate
+      over the other.
+    clarification: Includes statements like "my views match," "I agree with their
+      stance," "they seem better," "more reasonable," or "closer to my values" without
+      detailing the specific policy or ideological dimension.
+    negative_clarification: Exclude specific policy or ideological references (use
+      the specific code like 'democracy_reasoning' or 'welfare_reasoning'). Exclude
+      uninformative responses (use 'none_of_above').
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses that do not provide
+      a clear reason for the choice.
+    clarification: Includes random characters, single words like "good," "like," "just,"
+      "no reason," "don't know," "both are bad," or responses that are clearly not
+      answers to the question.
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if brief or poorly phrased. If a response contains a specific policy or
+      value reference, use the appropriate substantive code.
+

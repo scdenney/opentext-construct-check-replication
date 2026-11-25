@@ -1,0 +1,65 @@
+codebook:
+  name: andre2024_stockmodels_pricecosts_induced
+  residual_code: none_of_above
+  context: 'UK adults in an online survey read two hypothetical news scenarios about
+    Nike announced four weeks earlier: neutral news (Nike continued a supplier partnership)
+    and good news (a new partnership expected to cut raw material costs by 20%). Depending
+    on the version, the scenarios also said how Nike''s stock price had moved since
+    the announcements, and the investment was described either as investing $1,000
+    in Nike stock or as buying a fixed number of Nike shares. Respondents predicted
+    in which scenario the investment, made today and sold in twelve months, would
+    earn a higher return, and explained their prediction.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2024_stockmodels_pricecosts:1001
+codes:
+  prices_as_investor_costs:
+    definition: The respondent treats the current stock price (or its increase) as
+      a cost factor that negatively impacts the return, typically by noting that the
+      higher price buys fewer shares or requires a larger initial outlay, thereby
+      reducing the potential profit or offsetting the benefits of the good news.
+    clarification: Includes arguments that the stock is "more expensive," the investor
+      gets "fewer shares" for the same money, the "initial cost is higher," or that
+      the price increase has already "factored in" the good news, meaning the investor
+      pays a premium that dilutes future gains.
+    negative_clarification: Do not use for arguments that focus on the fundamental
+      business impact of cost savings on future profits (e.g., "lower costs mean higher
+      profits") without linking it to the purchase price/share count. Do not use for
+      arguments that the higher price signals quality or momentum leading to further
+      gains.
+  fundamental_profit_drivers:
+    definition: The respondent attributes the expected return to the underlying business
+      fundamentals, such as reduced production costs, increased profit margins, or
+      improved competitiveness, leading to a higher share price or dividends.
+    clarification: Includes reasoning that cost savings will boost Nike's bottom line,
+      increase demand due to lower consumer prices, or improve brand reputation, resulting
+      in a higher stock value over the 12-month period.
+    negative_clarification: Do not use if the respondent explicitly links the return
+      to the number of shares purchased or the entry price paid (see prices_as_investor_costs).
+      Do not use for arguments based on market efficiency or price neutrality.
+  market_efficiency_neutrality:
+    definition: The respondent argues that the returns will be similar because the
+      news was announced four weeks prior, allowing the market to fully price in the
+      information, so the current price reflects the expected future value.
+    clarification: Includes statements that the price change is "already factored
+      in," the market is "rational," or that the announcement was made too long ago
+      for it to drive further distinct returns compared to the neutral scenario.
+    negative_clarification: Do not use for arguments that the price is high but will
+      continue to rise due to momentum or fundamental improvements (see fundamental_profit_drivers).
+      Do not use for arguments that the high price is a barrier to entry reducing
+      returns (see prices_as_investor_costs).
+  uncertainty_and_risk:
+    definition: The respondent expresses doubt about the outcome, citing risks associated
+      with the new partnership, the unpredictability of the stock market, or the possibility
+      that the cost savings may not materialize or be passed on to consumers.
+    clarification: Includes mentions of "risk," "uncertainty," "gamble," potential
+      quality issues with new suppliers, or the belief that the outcome is unpredictable.
+    negative_clarification: Do not use for confident predictions based on fundamentals
+      or price mechanics. Do not use for vague non-answers (see none_of_above).
+  none_of_above:
+    definition: The response is uninformative, incoherent, or does not provide a clear
+      rationale for the predicted return difference.
+    clarification: Includes responses that are too brief to analyze, purely speculative
+      without reasoning, or unrelated to the investment logic.
+    negative_clarification: Do not use for responses that clearly argue for a specific
+      return based on price, fundamentals, or market efficiency.
+

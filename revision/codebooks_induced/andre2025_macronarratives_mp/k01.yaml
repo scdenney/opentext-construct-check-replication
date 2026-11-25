@@ -1,0 +1,81 @@
+codebook:
+  name: andre2025_macronarratives_mp_induced
+  residual_code: none_of_above
+  context: US adults on Prolific in June 2022 took part in a two-part study on inflation
+    and first read an explanation of the rise in inflation attributed to economic
+    experts. One day later, in a follow-up survey, they were told the current US inflation
+    rate and asked which factors they think caused the increase.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_macronarratives_mp:1001
+codes:
+  monetary_policy_cause:
+    definition: The response identifies monetary policy actions or conditions as a
+      cause of inflation. This includes references to the Federal Reserve, central
+      banks, interest rates, money supply expansion, printing money, or stimulus checks.
+    clarification: Includes mentions of the Federal Reserve, the Fed, central bank,
+      low or near-zero interest rates, cheap credit, borrowing, printing money, quantitative
+      easing, money supply expansion, and government stimulus payments/checks that
+      injected cash into the economy.
+    negative_clarification: Do not use this code if the response only mentions general
+      government spending on infrastructure, social programs, or bailouts without
+      linking it to money supply expansion or interest rates. Do not use if the response
+      only mentions corporate greed or supply/demand imbalances without referencing
+      monetary policy. Use 'supply_demand_cause' or 'corporate_greed_cause' instead.
+  supply_demand_cause:
+    definition: The response attributes inflation to imbalances between supply and
+      demand, such as shortages, increased consumer demand, or supply chain disruptions.
+    clarification: Includes mentions of supply chain disruptions, shipping issues,
+      labor shortages, worker shortages, increased consumer demand, post-pandemic
+      spending, hoarding, and general shortages of goods or raw materials.
+    negative_clarification: Do not use this code if the response explicitly attributes
+      the supply/demand imbalance to monetary policy (e.g., "stimulus caused demand").
+      In such cases, use 'monetary_policy_cause'. Do not use if the response focuses
+      primarily on energy prices or geopolitical events without mentioning supply/demand
+      mechanics. Use 'energy_cause' or 'geopolitical_cause' instead.
+  energy_cause:
+    definition: The response identifies rising energy costs, oil prices, or gas prices
+      as a primary driver of inflation.
+    clarification: Includes mentions of oil, gas, fuel, energy prices, gasoline, crude
+      oil, and the cost of energy production or transportation.
+    negative_clarification: Do not use this code if the response attributes energy
+      price increases solely to geopolitical events without mentioning the cost impact
+      itself as a distinct factor, or if it is bundled with supply chain issues. If
+      the response focuses on the war causing energy issues, use 'geopolitical_cause'.
+      If it focuses on the cost passing through to consumers, this code is appropriate.
+  geopolitical_cause:
+    definition: The response attributes inflation to international conflicts, wars,
+      or political tensions affecting global markets.
+    clarification: Includes mentions of the war in Ukraine, Russia's invasion, sanctions,
+      China's zero-covid policy, global political tension, and international trade
+      disruptions.
+    negative_clarification: Do not use this code if the response focuses on domestic
+      policy or internal US politics. Do not use if the response focuses on the economic
+      mechanism (supply/demand) rather than the political event itself.
+  corporate_greed_cause:
+    definition: The response attributes inflation to corporate behavior, specifically
+      price gouging, excessive profits, or lack of regulation.
+    clarification: Includes mentions of corporate greed, price gouging, companies
+      raising prices to increase profits, corporations cashing in, and lack of regulation
+      on wealthy entities.
+    negative_clarification: Do not use this code if the response attributes price
+      increases to rising costs of production (e.g., energy, labor) rather than profit-seeking
+      behavior. Use 'supply_demand_cause' or 'energy_cause' instead.
+  government_policy_cause:
+    definition: The response attributes inflation to specific government policies,
+      regulations, or leadership failures unrelated to monetary policy.
+    clarification: Includes mentions of Biden's regulations on oil/gas, poor leadership,
+      political infighting, infrastructure collapse, climate change reforms affecting
+      production, and general government mismanagement.
+    negative_clarification: Do not use this code if the response refers to stimulus
+      checks or interest rates. Use 'monetary_policy_cause'. Do not use if the response
+      refers to international wars. Use 'geopolitical_cause'.
+  none_of_above:
+    definition: The response is uninformative, vague, or does not clearly identify
+      a specific cause of inflation.
+    clarification: Includes responses that are too brief to understand, purely emotional
+      without causal explanation, or attribute inflation to vague concepts like "the
+      economy" or "things are tough" without specifying a factor.
+    negative_clarification: Use this code only if the response does not fit into any
+      of the other specific categories. If the response mentions a cause but it is
+      unclear, prefer the most likely specific code.
+

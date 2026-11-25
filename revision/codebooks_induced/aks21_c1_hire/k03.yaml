@@ -1,0 +1,85 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1003
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, occupational skill, work capacity, or professional stability as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      office worker), employment status (employed vs. unemployed), professional skills,
+      career stability, future potential in the workforce, or the belief that having
+      a job implies competence, responsibility, or educational attainment.
+    negative_clarification: Do not use for general stability not linked to work, family
+      status, or cultural adaptation. If the response mentions "stability" without
+      referencing a job or work capacity, use social_stability. If it mentions skills
+      but not a job, use skills_knowledge.
+  social_stability:
+    definition: Reasoning that cites family status, marital history, or general life
+      stability as an indicator of reliability or suitability.
+    clarification: Includes mentions of being married, having children, being a parent,
+      or having a stable home life. It also includes general notions of being "stable"
+      or "responsible" derived from life stage (e.g., age implying maturity/responsibility)
+      rather than professional capacity.
+    negative_clarification: Do not use if the stability is explicitly linked to a
+      job or career (use employment_occupation). Do not use for cultural adaptation
+      or social networks (use cultural_adaptation or social_networks).
+  cultural_adaptation:
+    definition: Reasoning that cites the length of stay in South Korea, familiarity
+      with Korean culture, or successful integration into Korean society as the primary
+      reason.
+    clarification: Includes mentions of long residence in Korea, understanding of
+      Korean customs/politics/society, adaptation to Korean life, or being less influenced
+      by North Korean or Chinese ideologies due to time spent in Korea.
+    negative_clarification: Do not use for social networks or friendships (use social_networks).
+      Do not use for general trust without reference to cultural familiarity or time
+      in Korea.
+  social_networks:
+    definition: Reasoning that cites the profile's social connections, specifically
+      relationships with South Koreans or other North Korean defectors, as a factor.
+    clarification: Includes mentions of having Korean friends, Korean colleagues,
+      or a mix of defector and Korean colleagues. It implies that these connections
+      indicate better social integration, trustworthiness, or lack of isolation.
+    negative_clarification: Do not use for family status (use social_stability). Do
+      not use for general "good relationships" without specifying the nature of the
+      network (e.g., if vague, use none_of_above or general_positivity).
+  political_ideology:
+    definition: Reasoning that cites political affiliation, party membership, or ideological
+      background as a factor.
+    clarification: Includes mentions of not being a member of the Workers' Party of
+      Korea, lack of political records, or ideological compatibility (e.g., being
+      less communist due to youth or exposure).
+    negative_clarification: Do not use for general trust or personality traits. If
+      the response mentions "democracy" or "education" in a political context, this
+      code is appropriate.
+  demographic_preference:
+    definition: Reasoning based primarily on age, gender, or physical attributes without
+      linking them to work, family, or adaptation.
+    clarification: Includes preferences for youth (energy, future potential), specific
+      gender (e.g., female preference, male distrust), or age appropriateness for
+      the role.
+    negative_clarification: Do not use if age is linked to experience/responsibility
+      in a work context (use employment_occupation or social_stability). Do not use
+      if gender is linked to specific job roles (use employment_occupation).
+  general_positivity:
+    definition: Vague, intuitive, or non-specific positive assessments that do not
+      fall into the specific categories above.
+    clarification: Includes phrases like "I felt like it," "good feeling," "trustworthy,"
+      "looks good," "compatible," or "just liked it" without further elaboration on
+      why.
+    negative_clarification: Do not use if a specific reason (job, family, time in
+      Korea) is provided. If the response is just "good" or "like," use this code.
+  none_of_above:
+    definition: Uninformative, random, negative, or non-substantive responses.
+    clarification: Includes "no reason," "random," "both are bad," "I don't know,"
+      "just picked one," "neutral," or responses that are purely negative towards
+      both options without explaining a preference for one based on the constructs.
+    negative_clarification: Do not use if any of the other codes apply. If the respondent
+      says "I didn't want to choose but had to," and gives no reason, use this code.
+

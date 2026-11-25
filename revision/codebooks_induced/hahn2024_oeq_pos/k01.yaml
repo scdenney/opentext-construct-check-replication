@@ -1,0 +1,73 @@
+codebook:
+  name: hahn2024_oeq_pos_induced
+  residual_code: none_of_above
+  context: Secondary-school students in a five-day mathematics tutoring course preparing
+    for the German Abitur (school-leaving exam) filled in a course evaluation on their
+    phones after the fourth course day. The survey contained rating items on the course
+    and the tutor and two open questions on the tutor; this is the answer to the open
+    question asking what the tutor did especially well.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:hahn2024_oeq_pos:1001
+codes:
+  closed_item_aspect:
+    definition: The response praises at least one specific aspect of the course or
+      the tutor that aligns with the survey's rating items. This includes learning
+      useful content, increased interest, understanding content, being challenged,
+      teaching with enthusiasm, being dynamic, humor, keeping interest, understandable
+      explanations, being well-prepared, overview of Abitur topics, practicing task
+      types, closing knowledge gaps, encouraging discussion/ideas, encouraging questions,
+      being friendly, making students feel safe to ask for help, genuine interest,
+      knowing names, noticing raised hands, legible handwriting, speaking clearly,
+      understandable solution strategies, answering questions clearly, suitable pace,
+      or suitable difficulty.
+    clarification: Includes specific mentions of clear/understandable explanations,
+      helpfulness with individual questions, friendly/encouraging demeanor, humor/relaxed
+      atmosphere, structured teaching, covering Abitur-relevant topics, practicing
+      tasks, and the tutor's enthusiasm or preparation.
+    negative_clarification: Exclude general praise without a named aspect (e.g., 'everything',
+      'great tutor'), 'nothing', or aspects outside the defined list (e.g., only mentioning
+      snacks or general personality traits without linking to teaching/learning aspects).
+      Use 'none_of_above' for these.
+  teaching_methodology:
+    definition: The response highlights specific pedagogical methods or structural
+      elements of the instruction, such as the use of examples, visual aids, step-by-step
+      solutions, practice exercises, or the balance between theory and practice.
+    clarification: Includes mentions of good examples, visualizations/sketches, step-by-step
+      solution paths, practice tasks, structured summaries, or the mix of explanation
+      and independent work.
+    negative_clarification: Exclude general statements about 'good explanations' without
+      specifying the method (e.g., just 'gut erklärt'). If the praise is about the
+      clarity of the explanation itself rather than the method used to achieve it,
+      use 'closed_item_aspect'.
+  interpersonal_dynamics:
+    definition: The response focuses on the social and emotional climate created by
+      the tutor, specifically regarding the relationship with students, the atmosphere,
+      and the tutor's personal demeanor.
+    clarification: Includes mentions of friendliness, humor, relaxed atmosphere, patience,
+      approachability, knowing students' names, making students feel comfortable/safe
+      to ask questions, and the tutor's positive energy or enthusiasm.
+    negative_clarification: Exclude specific teaching techniques (use 'teaching_methodology')
+      or general content mastery (use 'closed_item_aspect' if linked to understanding).
+      If the response is purely about the tutor being 'nice' without linking to the
+      learning environment or teaching style, it may still fall here if it implies
+      a supportive climate, but pure personality traits without context should be
+      'none_of_above'.
+  content_coverage:
+    definition: The response praises the selection, scope, or relevance of the mathematical
+      content covered during the course.
+    clarification: Includes mentions of covering all Abitur-relevant topics, providing
+      an overview, filling knowledge gaps, focusing on important topics, or the suitability
+      of the difficulty level.
+    negative_clarification: Exclude praise for how the content was explained (use
+      'closed_item_aspect' or 'teaching_methodology'). Exclude general statements
+      about learning 'something' without specifying the content aspect.
+  none_of_above:
+    definition: The response is uninformative, generic, or refers to aspects not covered
+      by the other codes.
+    clarification: Includes responses like 'everything', 'nothing', 'good', 'nice',
+      or mentions of non-instructional elements (e.g., only receiving sweets) without
+      linking to teaching or learning.
+    negative_clarification: Exclude any response that can be mapped to a specific
+      teaching method, interpersonal dynamic, content coverage, or the defined 'closed_item_aspect'
+      construct.
+

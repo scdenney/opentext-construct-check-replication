@@ -1,0 +1,73 @@
+codebook:
+  name: aks21_c1_hire_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, hiring-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_hire:1002
+codes:
+  employment_occupation:
+    definition: Reasoning that explicitly cites the profile's job title, employment
+      status, professional skills, work experience, or occupational stability as the
+      primary reason for selection.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      convenience store clerk), employment status (employed vs. unemployed), career
+      stability, professional expertise, or work capacity.
+    negative_clarification: Do not use for general statements about "stability" or
+      "trust" unless they are directly linked to the job. Do not use for general work
+      ethic or adaptability unless tied to a specific occupational role. Use 'general_stability'
+      or 'general_trust' if the reason is vague but positive.
+  korea_residence_duration:
+    definition: Reasoning that cites the length of time the profile has lived in South
+      Korea as the primary factor for selection.
+    clarification: Includes mentions of long-term residence, adaptation to Korean
+      society due to time spent, familiarity with local conditions, or comparison
+      of residence duration between profiles.
+    negative_clarification: Do not use if the primary reason is the job itself. If
+      both job and residence are mentioned equally, prioritize 'employment_occupation'
+      if the job is specific, otherwise use 'multiple_factors'.
+  political_affiliation:
+    definition: Reasoning that cites the profile's political party membership (specifically
+      North Korean Workers' Party) or lack thereof as the primary factor.
+    clarification: Includes explicit mentions of being a non-member of the Workers'
+      Party, avoiding party members, or political ideology related to party affiliation.
+    negative_clarification: Do not use for general political views or policy preferences
+      unless tied to party membership. Use 'general_trust' or 'other_demographics'
+      for other political reasons.
+  demographic_characteristics:
+    definition: Reasoning that cites age, gender, marital status, or family status
+      (e.g., having children) as the primary factor.
+    clarification: Includes preferences for younger/older age, female candidates,
+      married/unmarried status, or parental status.
+    negative_clarification: Do not use if the demographic trait is mentioned only
+      as a secondary factor alongside job or residence. Use 'employment_occupation'
+      or 'korea_residence_duration' if those are the dominant reasons.
+  social_integration_networks:
+    definition: Reasoning that cites the profile's social connections, specifically
+      having Korean colleagues, friends, or a strong network within Korea, as the
+      primary factor.
+    clarification: Includes mentions of Korean colleagues, Korean acquaintances, social
+      adaptability through networks, or lack of isolation.
+    negative_clarification: Do not use for general "good relationships" without specifying
+      Korean connections. Use 'general_trust' if the network is not specified as Korean
+      or professional.
+  general_stability_trust:
+    definition: Reasoning that cites general feelings of stability, trustworthiness,
+      reliability, or suitability without specifying a concrete attribute like job,
+      residence, or politics.
+    clarification: Includes vague positive assessments such as "stable," "trustworthy,"
+      "reliable," "suitable," "good fit," or "looks good."
+    negative_clarification: Do not use if a specific attribute (job, residence, party,
+      age) is mentioned. Use the specific code instead. Use 'none_of_above' if the
+      response is incoherent or purely emotional preference without rationale.
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, purely emotional preferences
+      without rationale, or indicate no reason.
+    clarification: Includes responses like "just," "no reason," "random," "both are
+      same," "I don't know," or non-sequiturs.
+    negative_clarification: Do not use if any substantive reason (even if weak) is
+      provided. Ensure all substantive reasons are coded into the appropriate specific
+      codes first.
+

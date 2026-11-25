@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1009
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      or social norms as a ground for the person being more truly Korean.
+    clarification: Includes explicit mentions of respecting laws (법), political systems/institutions
+      (정치 제도/정치), regulations/norms (규범/규정/규율), and the attitude of obeying or acknowledging
+      these structures.
+    negative_clarification: Exclude responses that only mention cultural understanding,
+      language ability, or birthplace without referencing legal or political compliance.
+      Use 'cultural_heritage_criteria' or 'linguistic_criteria' instead.
+  cultural_heritage_criteria:
+    definition: Reasoning that invokes understanding or respect for South Korea's
+      history, traditions, or culture as a primary ground for national identity.
+    clarification: Includes mentions of understanding history (역사), traditions (전통),
+      culture (문화), and national sentiment/emotion (국민정서/정서).
+    negative_clarification: Exclude responses that focus on legal/political compliance
+      (use 'civic_law_criteria') or purely biological/ethnic ties (use 'ethnic_criteria').
+  linguistic_criteria:
+    definition: Reasoning that invokes the ability to speak Korean or language proficiency
+      as a key factor in national identity.
+    clarification: Includes explicit statements that speaking Korean (한국어) is important,
+      necessary, or the deciding factor.
+    negative_clarification: Exclude responses where language is mentioned only as
+      a secondary trait alongside culture or law. Use 'cultural_heritage_criteria'
+      or 'civic_law_criteria' if those are the primary drivers.
+  ethnic_biological_criteria:
+    definition: Reasoning that invokes bloodline, ethnicity, or birthplace as the
+      primary determinant of being Korean.
+    clarification: Includes mentions of being born in Korea (한국에서 태어나), ethnic traits
+      (민족성), or biological connection.
+    negative_clarification: Exclude responses that emphasize legal/political respect
+      or cultural understanding over birth/ethnicity. Use 'civic_law_criteria' or
+      'cultural_heritage_criteria' instead.
+  legal_status_criteria:
+    definition: Reasoning that invokes formal citizenship, nationality, or legal residency
+      status as the primary ground for identity.
+    clarification: Includes mentions of holding Korean nationality/citizenship (국적/시민권/대한민국
+      국민), or length of residence (거주 기간) as a legal/social integration marker.
+    negative_clarification: Exclude responses that focus on the *attitude* towards
+      laws (use 'civic_law_criteria') or cultural understanding. This code is for
+      formal status or duration of stay.
+  subjective_identity_criteria:
+    definition: Reasoning that invokes the individual's own self-perception or internal
+      feeling of being Korean.
+    clarification: Includes mentions of feeling Korean (한국인임을 느낌/느끼다), internal identity,
+      or self-identification.
+    negative_clarification: Exclude responses that rely on external markers like laws,
+      culture, or birth. Use 'civic_law_criteria' or 'cultural_heritage_criteria'
+      if external norms are cited.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses.
+    clarification: Includes single letters (e.g., "A", "B"), gibberish, incomplete
+      sentences with no clear meaning, or responses that do not provide a reason for
+      the choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if brief. If a reason is present, code it according to the substantive
+      codes above.
+

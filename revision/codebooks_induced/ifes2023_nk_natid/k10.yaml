@@ -1,0 +1,76 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1010
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      social norms, or civic duties as a primary ground for the person being more
+      truly Korean or a better choice.
+    clarification: Includes explicit mentions of respecting laws (법), political systems/institutions
+      (정치 제도, 정치), social norms/standards (규범), civic rights/duties (시민권, 국민 정서, 주권),
+      and adherence to societal rules.
+    negative_clarification: Exclude responses that only mention cultural understanding
+      or language without referencing laws, politics, or civic norms; use cultural_heritage_criteria
+      or language_proficiency instead.
+  cultural_heritage_criteria:
+    definition: Reasoning that invokes knowledge of or respect for South Korea's history,
+      traditions, and culture as a primary ground for the person being more truly
+      Korean.
+    clarification: Includes mentions of understanding history (역사), traditions (전통),
+      culture (문화), and patriotic sentiment (애국심) rooted in cultural knowledge.
+    negative_clarification: Exclude responses that focus on legal/political respect;
+      use civic_law_criteria instead. Exclude responses that focus solely on language
+      or birthplace; use language_proficiency or birthplace_criteria instead.
+  language_proficiency:
+    definition: Reasoning that cites the ability to speak Korean or linguistic competence
+      as a key factor in identifying the person as Korean.
+    clarification: Includes explicit mentions of speaking Korean (한국어를 하다, 한국어 할 수
+      있음) or language ability as a criterion.
+    negative_clarification: Exclude responses where language is mentioned alongside
+      or subordinate to legal/political respect; use civic_law_criteria. Exclude responses
+      where language is not the primary reason; use other codes.
+  birthplace_residence_criteria:
+    definition: Reasoning that cites being born in South Korea, living in South Korea
+      for a significant period, or having a Korean birthplace as a primary ground
+      for the person being more truly Korean.
+    clarification: Includes mentions of birthplace (한국에서 태어남, 출생지), long-term residence
+      (거주 기간, 인생 대부분을 한국에서 보냄), and physical presence in Korea.
+    negative_clarification: Exclude responses that focus on legal/political respect;
+      use civic_law_criteria. Exclude responses that focus on cultural knowledge;
+      use cultural_heritage_criteria.
+  subjective_identity:
+    definition: Reasoning that cites the individual's own feeling of being Korean,
+      internal identity, or emotional connection to Korea as the primary ground.
+    clarification: Includes mentions of feeling Korean (한국인임을 느낌, 정서상 한국인), internal
+      identity (내면의 정체성), and self-perception of nationality.
+    negative_clarification: Exclude responses that focus on external markers like
+      laws, history, or birthplace; use civic_law_criteria, cultural_heritage_criteria,
+      or birthplace_residence_criteria instead.
+  citizenship_legal_status:
+    definition: Reasoning that cites holding South Korean citizenship or legal nationality
+      status as the definitive ground for being Korean.
+    clarification: Includes explicit mentions of Korean nationality/citizenship (한국
+      국적 보유, 대한민국 국민, 시민권) as the deciding factor, distinct from cultural or legal-respect
+      arguments.
+    negative_clarification: Exclude responses that discuss respecting laws/norms (use
+      civic_law_criteria) or cultural knowledge (use cultural_heritage_criteria).
+      If citizenship is mentioned alongside strong cultural/legal respect, prioritize
+      the more substantive reason (civic_law_criteria or cultural_heritage_criteria)
+      if the citizenship mention is secondary.
+  none_of_above:
+    definition: Uninformative, non-substantive, or irrelevant responses that do not
+      provide a clear reason related to the constructs of interest.
+    clarification: Includes random characters, single numbers, vague affirmations
+      without explanation (e.g., "이상없음", "HH", "4"), or reasons unrelated to identity
+      criteria (e.g., general policy preferences like "복지사업강화" if not tied to identity).
+    negative_clarification: Exclude any response that provides a coherent reason related
+      to law, culture, language, birth, identity, or citizenship; use the appropriate
+      substantive code instead.
+

@@ -1,0 +1,96 @@
+codebook:
+  name: andre2025_macronarratives_induced
+  residual_code: none_of_above
+  context: US adults in an online survey during the 2022 inflation surge were told
+    the current inflation rate and asked which factors caused the increase in inflation.
+    Before that question, a randomly selected half first wrote a few sentences about
+    what comes to mind when they think about recent government spending programs.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_macronarratives:1001
+codes:
+  government_spending_cause:
+    definition: The response explicitly attributes the increase in inflation to government
+      fiscal actions, including stimulus payments, relief checks, spending bills,
+      deficit spending, or the printing of money by the government or Federal Reserve.
+    clarification: Includes mentions of stimulus checks, relief packages, fiscal stimulus,
+      government deficits, printing money, excessive government spending, or monetary
+      expansion funded by the government.
+    negative_clarification: Do not use for general political blame (e.g., "Biden is
+      bad") unless specific spending mechanisms are cited. Do not use for general
+      economic policy like interest rates unless linked to money supply expansion.
+      Use 'political_cause' if only political affiliation or general leadership is
+      blamed without fiscal specifics.
+  pandemic_cause:
+    definition: The response attributes the increase in inflation primarily or significantly
+      to the COVID-19 pandemic, its associated lockdowns, health impacts, or the resulting
+      economic disruptions.
+    clarification: Includes mentions of the virus, lockdowns, shutdowns, health crisis,
+      pandemic-related demand shifts, or the general state of the pandemic as a root
+      cause.
+    negative_clarification: Do not use if the response focuses solely on supply chain
+      logistics or labor shortages without referencing the pandemic as the cause.
+      Use 'supply_chain_cause' or 'labor_cause' if the pandemic is not mentioned as
+      the driver.
+  supply_chain_cause:
+    definition: The response attributes the increase in inflation to disruptions in
+      the production, distribution, or transportation of goods, often citing shortages,
+      logistics issues, or shipping delays.
+    clarification: Includes mentions of supply chain disruptions, shipping delays,
+      port congestion, lack of inventory, shortages of specific goods (e.g., chips,
+      cars), or logistical bottlenecks.
+    negative_clarification: Do not use if the response attributes the shortage to
+      the pandemic itself without mentioning logistics. Use 'pandemic_cause' if the
+      pandemic is the primary explanation. Use 'government_spending_cause' if the
+      shortage is attributed to government policy (e.g., pipeline shutdowns) rather
+      than market/logistical factors.
+  labor_cause:
+    definition: The response attributes the increase in inflation to issues within
+      the labor market, such as worker shortages, wage increases, or changes in workforce
+      participation.
+    clarification: Includes mentions of labor shortages, workers quitting, minimum
+      wage increases, rising wages, labor strikes, or disincentives to work (e.g.,
+      unemployment benefits).
+    negative_clarification: Do not use if the labor issue is explicitly framed as
+      a result of the pandemic (e.g., "people are scared to work because of virus").
+      Use 'pandemic_cause' in that case. Use 'government_spending_cause' if the labor
+      issue is attributed to government benefits discouraging work.
+  corporate_greed_cause:
+    definition: The response attributes the increase in inflation to the profit-seeking
+      behavior of businesses, corporations, or retailers, often citing price gouging
+      or excessive profit margins.
+    clarification: Includes mentions of corporate greed, price gouging, companies
+      maximizing profits, corporate exploitation, or businesses raising prices opportunistically.
+    negative_clarification: Do not use if the response cites rising costs (wages,
+      materials) as the reason for price increases. Use 'labor_cause' or 'supply_chain_cause'
+      for cost-push inflation.
+  political_cause:
+    definition: The response attributes the increase in inflation to political factors,
+      such as the current administration, political parties, or general political
+      instability, without specifying fiscal spending or supply chain mechanics.
+    clarification: Includes mentions of the President, political party (Democrat/Republican),
+      political incompetence, or general political decisions/policies that are not
+      explicitly fiscal spending or supply chain related.
+    negative_clarification: Do not use if the response specifically cites stimulus
+      checks, spending bills, or money printing. Use 'government_spending_cause' instead.
+      Do not use if the response is vague or uninformative.
+  energy_cost_cause:
+    definition: The response attributes the increase in inflation primarily to rising
+      costs of energy, fuel, or oil.
+    clarification: Includes mentions of oil prices, gas prices, energy costs, fuel
+      shortages, or pipeline issues affecting energy supply.
+    negative_clarification: Do not use if energy is mentioned as one of many factors
+      without emphasis. Use 'other_cause' or 'none_of_above' if it's a minor point.
+      Do not use if the energy issue is attributed to government policy (e.g., pipeline
+      shutdowns) which might fit 'government_spending_cause' or 'political_cause'
+      depending on the framing, but if it's purely market price of oil, use this code.
+  none_of_above:
+    definition: The response is uninformative, expresses uncertainty, or cites factors
+      not covered by the other codes (e.g., general economic inequality, foreign relations,
+      climate change not linked to supply chains, or lack of knowledge).
+    clarification: Includes responses stating "I don't know," "No idea," or citing
+      factors like general economic inequality, foreign trade relations, or climate
+      change that do not fit the specific definitions above.
+    negative_clarification: Do not use if the response clearly identifies government
+      spending, pandemic, supply chain, labor, corporate greed, political leadership,
+      or energy costs.
+

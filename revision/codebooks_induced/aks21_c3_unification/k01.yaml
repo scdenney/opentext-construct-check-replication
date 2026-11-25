@@ -1,0 +1,75 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1001
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of "liberal democracy" (자유민주주의), "democracy"
+      (민주주의), rejection of "dictatorship" (독재), "one-party system" (일당체제), or "Workers'
+      Party participation" (노동당 참여). Also includes preference for confederal arrangements
+      if framed as a political structure choice distinct from authoritarianism.
+    negative_clarification: Exclude mentions of economic systems (market economy)
+      unless explicitly tied to political freedom. Exclude general stability or realism
+      arguments not rooted in political ideology. Use 'economic_considerations' for
+      tax/economic policy reasons. Use 'security_military' for military presence reasons
+      unless the military reason is explicitly to protect democracy.
+  security_military:
+    definition: Reasoning focused on military presence, disarmament, troop deployment,
+      or nuclear weapon management.
+    clarification: Includes preferences for "North Korean military dissolution" (북한군
+      해산), "South Korean/US/UN troop deployment" (군대 주둔), "nuclear weapon management"
+      (핵무기 관리), or rejection of foreign (Chinese) military presence.
+    negative_clarification: Exclude if the primary reason is political ideology (use
+      'political_system_democracy'). Exclude if the reason is purely economic cost
+      (use 'economic_considerations').
+  economic_considerations:
+    definition: Reasoning based on financial costs, tax burdens, or economic policies
+      regarding business operations.
+    clarification: Includes mentions of "unification tax" (통일세), tax rates (e.g.,
+      1%, 5%, 10%), burden on upper-income groups, or restrictions/permissions on
+      North Korean business operations.
+    negative_clarification: Exclude if the economic argument is secondary to a political
+      or security preference. Exclude general "cheap" or "expensive" without specific
+      reference to tax or economic policy.
+  implementation_process:
+    definition: Reasoning focused on the pace, timeline, or procedural steps of the
+      unification process.
+    clarification: Includes preferences for "gradual implementation" (단계별 이행), "immediate
+      implementation" (즉시 이행), "transition period" (이행 기간), or "closure/opening of
+      borders" timelines.
+    negative_clarification: Exclude if the process is chosen solely for stability
+      without mentioning the mechanism (use 'stability_general'). Exclude if the process
+      is tied to specific political or military conditions.
+  stability_general:
+    definition: General reasoning based on stability, realism, feasibility, or avoiding
+      chaos, without specific reference to political system, military, or economics.
+    clarification: Includes mentions of "stability" (안정), "realism" (현실적), "feasibility"
+      (실현가능성), "avoiding chaos" (혼란 방지), or "smooth transition".
+    negative_clarification: Exclude if specific mechanisms (military, tax, political)
+      are cited. Use 'political_system_democracy' if stability is linked to democratic
+      values. Use 'security_military' if stability is linked to military presence.
+  political_system_other:
+    definition: Reasoning invoking specific political structures other than liberal
+      democracy, such as confederalism or specific party arrangements, not covered
+      by the democracy code.
+    clarification: Includes explicit preference for "confederal system" (연방제) or specific
+      political party participation rules that are not framed as anti-authoritarian/democratic.
+    negative_clarification: Exclude if the confederal system is rejected in favor
+      of democracy (use 'political_system_democracy'). Exclude if the reason is economic
+      or security-based.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason" (이유 없음), "just good" (좋아보인다), "don't know"
+      (몰라요), random characters, or responses that do not provide a clear rationale
+      for the choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if brief.
+

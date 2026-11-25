@@ -1,0 +1,69 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1007
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly or implicitly invokes helping North Koreans
+      who face discrimination, prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of helping those facing discrimination, addressing
+      inequality, supporting vulnerable groups due to their status as defectors, or
+      aiding those who are disadvantaged.
+    negative_clarification: Exclude general economic support, job creation, or business
+      growth reasons that do not reference discrimination or unequal treatment. Use
+      'economic_benefit' or 'policy_mechanism' instead.
+  economic_benefit:
+    definition: Reasoning based on the economic advantages of the policy for South
+      Korea, such as job creation, regional economic activation, or mutual benefit
+      for Korean and North Korean partners.
+    clarification: Includes arguments about helping the local economy, creating jobs,
+      win-win scenarios, or benefiting the host country's economic stability.
+    negative_clarification: Exclude reasons focused solely on the financial mechanism
+      (e.g., tax rates) or the specific business target (e.g., profitable companies).
+      Use 'policy_mechanism' or 'target_selection' instead.
+  target_selection:
+    definition: Reasoning based on the specific criteria for who receives support,
+      such as focusing on profitable businesses, startups, or joint ventures rather
+      than all businesses.
+    clarification: Includes preferences for supporting only profitable enterprises,
+      startups, joint ventures with Koreans, or specific types of businesses to ensure
+      efficiency or reduce waste.
+    negative_clarification: Exclude reasons about the funding source or the political
+      endorsement. Use 'policy_mechanism' or 'political_endorsement' instead.
+  policy_mechanism:
+    definition: Reasoning based on the specific policy instruments or funding methods,
+      such as low-interest loans, tax cuts, or corporate tax increases.
+    clarification: Includes preferences for loans over grants, tax incentives, or
+      specific ways of raising funds (e.g., corporate tax vs. income tax) based on
+      their perceived effectiveness or fairness.
+    negative_clarification: Exclude reasons about the political party supporting the
+      policy or general economic benefits. Use 'political_endorsement' or 'economic_benefit'
+      instead.
+  political_endorsement:
+    definition: Reasoning based on the trust or credibility derived from the political
+      figures, parties, or organizations endorsing the policy.
+    clarification: Includes choices made because the President, a specific political
+      party (e.g., People Power Party, Democratic Party), or specific NGOs/corporations
+      support the policy.
+    negative_clarification: Exclude reasons based on the policy's content or economic
+      impact. Use 'policy_mechanism' or 'economic_benefit' instead.
+  comparative_preference:
+    definition: Reasoning that the chosen policy is simply "better," "more reasonable,"
+      or "less bad" than the alternative, without specifying a concrete attribute.
+    clarification: Includes vague statements like "this one is better," "more realistic,"
+      or "less bad option."
+    negative_clarification: Exclude specific reasons about discrimination, economics,
+      or mechanisms. Use 'none_of_above' if the answer is truly uninformative, but
+      this code captures weak substantive reasons.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "random choice," gibberish, single characters,
+      or answers that do not provide a clear rationale for the policy choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if weak. Use 'comparative_preference' for weak substantive reasons.
+

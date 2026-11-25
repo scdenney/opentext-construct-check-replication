@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1007
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly invokes religion, Christianity, the church,
+      or religious faith as a primary or significant ground for the person being (more)
+      German.
+    clarification: Includes mentions of being Christian, having Christian faith, religious
+      affiliation, or religious symbols/identity as a reason for German identity.
+    negative_clarification: Exclude mentions of religion that are incidental or not
+      cited as a reason for German identity. Use 'legal_institutional_criteria' if
+      only laws are mentioned, or 'ancestry_criteria' if only bloodline is mentioned.
+  legal_institutional_criteria:
+    definition: Reasoning based on adherence to German laws, political institutions,
+      democratic values, or the rule of law.
+    clarification: Includes respect for laws, respect for political institutions,
+      adherence to the constitution, or general legal compliance as a marker of German
+      identity.
+    negative_clarification: Exclude general moral respect not tied to German institutions.
+      Use 'religious_criteria' if religion is also cited. Use 'none_of_above' if the
+      answer is purely opinion-based without specific criteria.
+  civic_integration_criteria:
+    definition: Reasoning based on language proficiency, length of residence, birth
+      in Germany, or active integration into German society.
+    clarification: Includes speaking German, being born in Germany, living in Germany
+      for a long time, knowing German history/traditions, or feeling integrated.
+    negative_clarification: Exclude mere citizenship status without integration context
+      (use 'legal_status_criteria'). Exclude ancestry without integration (use 'ancestry_criteria').
+  legal_status_criteria:
+    definition: Reasoning based strictly on formal legal status, specifically holding
+      German citizenship or passport.
+    clarification: Includes having German citizenship, German passport, or being a
+      German citizen as the sole or primary reason.
+    negative_clarification: Exclude if integration, language, or laws are also cited
+      (use 'civic_integration_criteria' or 'legal_institutional_criteria'). Exclude
+      if ancestry is the main point (use 'ancestry_criteria').
+  ancestry_criteria:
+    definition: Reasoning based on bloodline, family background, or ethnic heritage.
+    clarification: Includes having German ancestors, German parents, or being of German
+      descent.
+    negative_clarification: Exclude if legal status or integration is the primary
+      reason. Use 'religious_criteria' if religion is also a factor.
+  subjective_perception_criteria:
+    definition: Reasoning based on the respondent's personal feeling, intuition, or
+      the candidate's self-identification as German.
+    clarification: Includes the candidate feeling German, the respondent's gut feeling,
+      personal sympathy, or the candidate's self-perception as German.
+    negative_clarification: Exclude if specific objective criteria (laws, language,
+      ancestry) are cited. Use 'none_of_above' if the answer is purely "my opinion"
+      without linking to the candidate's traits.
+  none_of_above:
+    definition: Uninformative answers, non-answers, or reasons unrelated to the candidate's
+      attributes as a marker of German identity.
+    clarification: Includes "I don't know," "No reason," "Just had to choose," "Both
+      are good/bad," random characters, or purely political agreement with the candidate's
+      views without linking to German identity.
+    negative_clarification: Exclude any answer that provides a specific criterion
+      for German identity (even if weak). Use the most specific applicable code from
+      the other categories if a criterion is present.
+

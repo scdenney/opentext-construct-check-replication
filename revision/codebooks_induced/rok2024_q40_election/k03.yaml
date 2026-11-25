@@ -1,0 +1,79 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1003
+codes:
+  programmatic_policy_reasoning:
+    definition: The respondent justifies their choice based on specific policy positions,
+      ideological stances, or political platforms advocated by the candidate.
+    clarification: Includes references to specific policy areas such as nuclear weapons
+      development, foreign policy (e.g., balancing US-China relations, national interest),
+      housing/real estate taxes, labor policies (e.g., working hours, universal employment),
+      anti-discrimination laws, and general ideological alignment (e.g., progressive/conservative,
+      pragmatism vs. idealism). Also includes general references to "platform," "pledges,"
+      or "policy direction" that imply substantive governance preferences.
+    negative_clarification: Exclude references to personal integrity, lack of scandal,
+      or character traits. If the response is vague (e.g., "policy is good") without
+      specifying content, code as `vague_policy_reference` if it implies a positive
+      assessment of substance, otherwise `none_of_above`. Do not code general "national
+      interest" if it is not linked to a specific policy mechanism or ideological
+      camp, unless it clearly refers to a diplomatic or security stance.
+  personal_integrity_and_scandal_avoidance:
+    definition: The respondent chooses the candidate primarily due to their perceived
+      honesty, lack of corruption, or absence of legal/moral scandals.
+    clarification: Includes mentions of "no suspicion," "clean," "no bribery," "no
+      conflict of interest," "no family scandal," or avoiding candidates with "suspicion."
+      Also includes negative reactions to the opponent's scandals as the primary driver
+      for choosing the current candidate.
+    negative_clarification: Exclude references to policy disagreements or ideological
+      differences. If the respondent mentions integrity alongside specific policy
+      preferences, code as `programmatic_policy_reasoning` if the policy is the primary
+      justification, or split if ambiguous, but typically prioritize the substantive
+      reason if both are present. Do not code general "trust" if it is not explicitly
+      linked to honesty or scandal avoidance.
+  demographic_and_personal_characteristics:
+    definition: The respondent justifies the choice based on the candidate's personal
+      attributes, demographics, or professional background unrelated to specific policy
+      outcomes.
+    clarification: Includes age (young/old), gender (male/female), profession (e.g.,
+      prosecutor, businessman, activist), appearance, or general personality traits
+      (e.g., "capable," "smart," "experienced," "strong leadership"). Also includes
+      "feeling" or "gut instinct" not tied to policy.
+    negative_clarification: Exclude references to policy positions or ideological
+      alignment. Do not code "experience" if it is cited as a reason for better policy
+      implementation (which would be `programmatic_policy_reasoning`).
+  comparative_and_relational_reasoning:
+    definition: The respondent chooses the candidate because they are perceived as
+      "less bad" or "better than the alternative" without citing specific substantive
+      reasons.
+    clarification: Includes phrases like "less bad," "better than the other," "no
+      other choice," "relatively better," or "avoiding the worse option." This captures
+      negative partisanship or comparative evaluation without substantive policy justification.
+    negative_clarification: Exclude responses that cite specific policy differences
+      between candidates (code as `programmatic_policy_reasoning`). Exclude responses
+      that cite specific personal flaws of the opponent (code as `personal_integrity_and_scandal_avoidance`
+      if the flaw is the primary reason).
+  vague_or_non_substantive_policy_reference:
+    definition: The respondent mentions "policy," "platform," or "national interest"
+      in a vague manner that does not specify a particular issue area or ideological
+      stance.
+    clarification: Includes generic statements like "policy is good," "national interest
+      first," "good platform," or "matches my views" without elaboration on what those
+      views or policies are.
+    negative_clarification: Exclude specific policy mentions (code as `programmatic_policy_reasoning`).
+      Exclude vague personal traits (code as `demographic_and_personal_characteristics`).
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a clear reason for the choice.
+    clarification: Includes random characters, single words like "just," "good," "no
+      reason," "I don't know," "both are bad," or responses that are clearly not answers
+      to the question.
+    negative_clarification: Exclude any response that can be mapped to the other codes.
+      If the response is ambiguous but hints at a reason, attempt to code it; only
+      use this for truly uninformative or missing data.
+

@@ -1,0 +1,86 @@
+codebook:
+  name: weston2021_elephant_induced
+  residual_code: none_of_above
+  context: US adults recruited on Amazon Mechanical Turk read a short description
+    of Molly, an Asian elephant at a tourist attraction in northern Thailand, including
+    whether tourists may touch and ride her and what elephant experts had determined
+    about how she feels most of the time. They rated their willingness to support
+    the attraction and how it would make them feel, then explained their answers.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:weston2021_elephant:1001
+codes:
+  elephant_welfare_concern:
+    definition: The respondent cites the elephant's suffering, poor welfare, unhappiness,
+      or mistreatment as the primary reason for their rating or decision regarding
+      support/visitation.
+    clarification: Includes explicit mentions of the elephant feeling terrible, sad,
+      depressed, or miserable. Includes concerns about captivity, exploitation, cruelty,
+      or the moral wrongness of using an unhappy animal for entertainment. Includes
+      the conflict between wanting to see the animal and not wanting to support its
+      suffering.
+    negative_clarification: Do not use for general dislike of zoos without reference
+      to the specific elephant's state. Do not use for responses that only mention
+      the elephant is happy or well-cared-for. Use 'general_attraction_interest' if
+      the response focuses on the experience of seeing the animal without referencing
+      its emotional state as a deterrent.
+  captivity_and_exploitation_opposition:
+    definition: The respondent opposes the attraction based on the principle that
+      wild animals should not be kept in captivity or used for human entertainment,
+      regardless of the specific elephant's reported emotional state.
+    clarification: Includes arguments that elephants belong in the wild, that captivity
+      is inherently cruel or unnatural, and that using animals for tourism is exploitation.
+      May mention releasing the elephant into the wild.
+    negative_clarification: Do not use if the respondent's opposition is specifically
+      tied to the elephant feeling "terrible" or "sad" (use 'elephant_welfare_concern').
+      Do not use if the respondent supports captivity provided the animal is happy
+      (use 'welfare_conditionality').
+  welfare_conditionality:
+    definition: The respondent's support or willingness to visit is conditional upon
+      the elephant being happy, well-cared-for, or having good welfare.
+    clarification: Includes statements like "I would go if she was happy," "It's good
+      that she is happy," or "I support it because they take good care of her." Includes
+      trust in the experts' assessment of the elephant's happiness.
+    negative_clarification: Do not use if the respondent is opposed because the elephant
+      is unhappy (use 'elephant_welfare_concern'). Do not use if the respondent opposes
+      captivity on principle regardless of welfare (use 'captivity_and_exploitation_opposition').
+  general_attraction_interest:
+    definition: The respondent expresses interest in visiting or supporting the attraction
+      based on the novelty, excitement, or educational value of seeing elephants,
+      without referencing the elephant's emotional state as a key factor.
+    clarification: Includes comments about the experience being "cool," "exciting,"
+      "unique," or "fun." Includes interest in seeing the animal up close, feeding,
+      or riding (if allowed). Includes general appreciation for tourism or nature.
+    negative_clarification: Do not use if the response is dominated by concerns about
+      the elephant's suffering (use 'elephant_welfare_concern'). Do not use if the
+      response is a non-substantive filler (use 'none_of_above').
+  conservation_and_economic_benefit:
+    definition: The respondent supports the attraction because it provides economic
+      benefits to the local community or contributes to elephant conservation and
+      safety.
+    clarification: Includes arguments that tourism money helps feed the elephants,
+      protects them from poaching, supports the local economy, or ensures their survival.
+      Includes the idea that supporting the attraction is better than letting it close
+      and harming the elephants.
+    negative_clarification: Do not use if the respondent opposes the attraction despite
+      these benefits due to welfare concerns (use 'elephant_welfare_concern'). Do
+      not use if the respondent is neutral or indifferent (use 'none_of_above').
+  conflicting_feelings:
+    definition: The respondent explicitly states they feel torn, conflicted, or unsure
+      between their desire to see the elephants and their concern for the elephants'
+      welfare or the ethics of captivity.
+    clarification: Includes phrases like "I feel conflicted," "hard choice," "mixed
+      feelings," or "crossroads." The respondent acknowledges both the appeal of the
+      attraction and the negative aspects (welfare or ethics) without resolving the
+      tension.
+    negative_clarification: Do not use if the respondent clearly resolves the conflict
+      in favor of one side (e.g., "I won't go because she is sad" -> 'elephant_welfare_concern').
+      Do not use for simple uncertainty without explanation (use 'none_of_above').
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a clear reason related to the construct of interest.
+    clarification: Includes single words (e.g., "yes", "good", "na"), statements of
+      making the "best choice" without explanation, expressions of general excitement
+      without context, or responses that are grammatically incoherent or irrelevant.
+    negative_clarification: Do not use if the response contains a clear argument about
+      welfare, captivity, interest, or economics.
+

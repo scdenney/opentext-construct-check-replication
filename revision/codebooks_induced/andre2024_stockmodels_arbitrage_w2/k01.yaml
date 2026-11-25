@@ -1,0 +1,71 @@
+codebook:
+  name: andre2024_stockmodels_arbitrage_w2_induced
+  residual_code: none_of_above
+  context: US adults in a follow-up online survey read two hypothetical news scenarios
+    about Amazon announced four weeks earlier, one with neutral news and one with
+    good news about its future earnings, predicted in which scenario $1,000 invested
+    in Amazon stock today and sold in twelve months would earn a higher return, and
+    explained their prediction. One to three days earlier they had read either a text
+    on how stock prices adjust to expected company earnings through arbitrage or a
+    text on the tides.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2024_stockmodels_arbitrage_w2:1001
+codes:
+  equilibrium_price_offset:
+    definition: The respondent argues that the good news is already reflected in Amazon's
+      current stock price, or that the higher price an investor pays today offsets
+      the higher future earnings, so the expected return need not be higher.
+    clarification: Includes references to prices being 'priced in', market efficiency,
+      arbitrage, or paying more for the same future profits. Also includes arguments
+      that the market has already adjusted to the news four weeks ago, meaning the
+      current price reflects the future outlook, leading to similar returns regardless
+      of the scenario's content.
+    negative_clarification: Do not use if the respondent argues that the news will
+      cause the stock price to rise further in the future (expecting higher returns
+      in the good news scenario) or fall (expecting lower returns). Do not use if
+      the respondent simply states the returns will be similar because the scenarios
+      are identical in content without referencing price adjustment mechanisms.
+  future_growth_expectation:
+    definition: The respondent expects higher returns in the scenario with expansion/good
+      news because they believe the expansion will lead to increased revenue, profits,
+      or customer base in the future.
+    clarification: Includes arguments that entering new markets (Africa) will generate
+      more sales, that the company will grow, or that the "good news" indicates a
+      stronger future performance. Also includes expectations that the stock price
+      will rise due to investor excitement or confidence in the expansion.
+    negative_clarification: Do not use if the respondent argues that the current price
+      already reflects this growth (equilibrium_price_offset) or if they argue that
+      the costs/risks of expansion will negate the benefits.
+  risk_and_cost_concern:
+    definition: The respondent expects similar or lower returns in the good news scenario
+      due to concerns about the risks, costs, or difficulties associated with the
+      expansion.
+    clarification: Includes arguments that expansion into Africa is risky, costly,
+      or unproven, and that these negative factors will offset the potential benefits.
+      May also include arguments that the "status quo" is safer or more predictable.
+    negative_clarification: Do not use if the respondent focuses on the price adjustment
+      mechanism (equilibrium_price_offset) or if they simply state that expansion
+      is good without citing specific risks/costs as the primary reason for their
+      prediction.
+  scenario_similarity:
+    definition: The respondent expects similar returns because they perceive the two
+      scenarios as substantively identical or because they believe the specific details
+      (expansion vs. status quo) do not materially change the outcome.
+    clarification: Includes arguments that both scenarios involve expansion, that
+      the news was similar in tone, or that the company's fundamental trajectory is
+      the same regardless of the announcement.
+    negative_clarification: Do not use if the respondent distinguishes between the
+      scenarios based on price adjustment (equilibrium_price_offset) or future growth
+      potential (future_growth_expectation).
+  uninformative_or_vague:
+    definition: The response is uninformative, vague, or expresses uncertainty without
+      providing a clear rationale for the prediction.
+    clarification: Includes responses that are purely speculative ("gut feeling"),
+      state "I don't know," or provide generic statements about investing without
+      linking them to the specific scenarios.
+    negative_clarification: Do not use if the response provides a specific reason,
+      even if that reason is flawed or based on a misunderstanding of the scenarios,
+      as long as it attempts to explain the prediction.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

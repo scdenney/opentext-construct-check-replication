@@ -1,0 +1,67 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1002
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly references the profile's social connections,
+      relationships with South Koreans, or ability to mix with the local community
+      versus staying within North Korean circles.
+    clarification: Includes mentions of having Korean colleagues, Korean friends,
+      mixed marriage (Korean spouse), lack of North Korean defector colleagues, or
+      general social adaptability and cultural assimilation through social contact.
+    negative_clarification: Do not use for general cultural understanding without
+      social context (use cultural_adaptation), professional networks (use professional_qualifications),
+      or general personality traits (use personal_traits).
+  cultural_adaptation:
+    definition: Reasoning based on the profile's familiarity with South Korean culture,
+      language, or social norms, typically inferred from length of residence in South
+      Korea.
+    clarification: Includes mentions of long residence in Korea, understanding Korean
+      culture/customs, being accustomed to the environment, or smooth adaptation to
+      South Korean society.
+    negative_clarification: Do not use if the reasoning focuses on specific social
+      ties (use social_integration_ties) or professional skills (use professional_qualifications).
+  professional_qualifications:
+    definition: Reasoning based on the profile's job title, career stability, professional
+      skills, or work experience.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer,
+      convenience store clerk), having a job, professional expertise, career stability,
+      or work history.
+    negative_clarification: Do not use for general age-related work potential (use
+      age_related_potential) or social mixing (use social_integration_ties).
+  age_related_potential:
+    definition: Reasoning based on the profile's age, youth, or life stage, often
+      linked to energy, future potential, or stability.
+    clarification: Includes mentions of being young/old, age appropriateness, energy/vitality,
+      future potential, or life stage (e.g., married with children, single).
+    negative_clarification: Do not use for general age as a demographic fact without
+      evaluative reasoning (use none_of_above) or if linked to specific professional
+      skills (use professional_qualifications).
+  political_background:
+    definition: Reasoning based on the profile's political affiliation, specifically
+      membership in the North Korean Workers' Party or lack thereof.
+    clarification: Includes mentions of not being a party member, being a former party
+      member, or political reliability/trustworthiness related to political history.
+    negative_clarification: Do not use for general trustworthiness not linked to politics
+      (use personal_traits).
+  personal_traits:
+    definition: Reasoning based on perceived personality, character, or general likability
+      not tied to specific demographics or skills.
+    clarification: Includes mentions of being friendly, trustworthy, reliable, good
+      personality, or general positive impression.
+    negative_clarification: Do not use for social ties (use social_integration_ties)
+      or professional skills (use professional_qualifications).
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "random," "both are same," "don't know,"
+      single characters, or responses that do not provide a clear rationale for the
+      choice.
+    negative_clarification: Use only when the response provides no discernible reasoning
+      code from the other categories.
+

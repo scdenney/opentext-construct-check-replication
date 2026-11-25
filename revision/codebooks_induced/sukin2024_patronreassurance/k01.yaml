@@ -1,0 +1,74 @@
+codebook:
+  name: sukin2024_patronreassurance_induced
+  residual_code: none_of_above
+  context: Adults in Poland, Romania, Latvia, Lithuania and Estonia, surveyed in March
+    2022 in their own language or English, read a scenario in which Russia has invaded
+    a NATO member (Latvia or Lithuania), compared several possible US policies, were
+    asked to imagine that the United States adopted one policy (sanctions on Russia,
+    a bilateral or multilateral summit with Russia, moving US forces into the attacked
+    country or into their own country, or reiterating the US promise to defend all
+    NATO states), rated it, and explained in their own words why they support or oppose
+    it.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:sukin2024_patronreassurance:1001
+codes:
+  escalation_risk:
+    definition: The respondent argues that the policy is dangerous, risky, or likely
+      to worsen the situation by provoking Russia, escalating the conflict, widening
+      the war, or drawing their country/NATO/US into direct fighting or nuclear war.
+    clarification: Includes statements that the policy is too aggressive, could trigger
+      a larger war, backfire, lead to concessions, or is too risky for the respondent's
+      country.
+    negative_clarification: Do not use for responses that say the policy reduces risk,
+      avoids war, or simply would not work. Use 'effectiveness_doubt' or 'peace_preference'
+      instead.
+  security_benefit:
+    definition: The respondent supports or opposes the policy because it increases
+      or decreases their personal or national security, safety, or sense of protection.
+    clarification: Includes feelings of safety, protection from Russia, deterrence,
+      strengthening NATO defense, or feeling vulnerable/unsafe without the policy.
+    negative_clarification: Do not use if the primary reason is abstract alliance
+      duty or moral correctness without reference to security outcomes. Use 'alliance_duty'
+      or 'moral_justification' instead.
+  alliance_duty:
+    definition: The respondent cites the obligation to support NATO allies, uphold
+      treaties, or maintain solidarity with partner nations as the primary reason
+      for their stance.
+    clarification: Includes references to NATO membership, defending allies, keeping
+      promises, "nothing about us without us," or the duty of strong nations to help
+      weak ones.
+    negative_clarification: Do not use if the focus is on the respondent's own country's
+      security or moral rightness. Use 'security_benefit' or 'moral_justification'
+      instead.
+  peace_preference:
+    definition: The respondent prefers the policy because it promotes peace, dialogue,
+      or avoids war, violence, and death.
+    clarification: Includes desires for peace, avoiding war, diplomatic solutions,
+      reducing casualties, or stopping violence.
+    negative_clarification: Do not use if the respondent explicitly fears the policy
+      will cause war or escalation. Use 'escalation_risk' instead.
+  effectiveness_doubt:
+    definition: The respondent doubts the policy will work, is ineffective, useless,
+      or counterproductive, without necessarily citing escalation risk.
+    clarification: Includes statements that the policy is useless, won't stop Russia,
+      is just empty talk, or that sanctions/dialogue won't have the desired effect.
+    negative_clarification: Do not use if the respondent says the policy will actively
+      make things worse (escalation). Use 'escalation_risk' instead.
+  moral_justification:
+    definition: The respondent supports or opposes the policy based on moral, ethical,
+      or justice-based grounds, such as punishing aggression, supporting the right
+      side, or condemning Russia's actions.
+    clarification: Includes calls for punishment, support for justice/righteousness,
+      condemnation of Putin/Russia, or general moral approval/disapproval.
+    negative_clarification: Do not use if the reasoning is primarily about security,
+      alliance duty, or peace. Use 'security_benefit', 'alliance_duty', or 'peace_preference'
+      instead.
+  none_of_above:
+    definition: The response is uninformative, incoherent, expresses no opinion, or
+      is irrelevant to the policy evaluation.
+    clarification: Includes "I don't know," gibberish, random characters, "I don't
+      care," or statements that do not explain why they support/oppose the specific
+      policy.
+    negative_clarification: Do not use for substantive reasons, even if brief. Use
+      the most appropriate substantive code.
+

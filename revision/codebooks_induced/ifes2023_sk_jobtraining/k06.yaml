@@ -1,0 +1,77 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1006
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector, or place of birth in North Korea as a primary ground for
+      selection or rejection.
+    clarification: Includes mentions of 'North Korea' (북한), 'defector' (이탈자), 'North
+      Korean migrant', 'origin/birthplace' (출생지/출신지) when specifically linked to North
+      Korea, or stereotypes/risks associated with North Korean identity (e.g., spy
+      suspicion, cultural unfamiliarity, specific support for defectors).
+    negative_clarification: Exclude mentions of South Korean nationality or birthplace
+      (use south_korean_origin or nationality). Exclude general foreigner/nationality
+      mentions not specific to North Korea (use nationality). Exclude responses that
+      mention North Korea only in passing without it being the reason for choice (use
+      none_of_above or other relevant code).
+  criminal_record_reasoning:
+    definition: Reasoning based on the presence or absence of a criminal record (past
+      offenses).
+    clarification: Includes mentions of 'criminal record' (전과기록), 'no criminal record'
+      (무전과/전과없음), 'theft' (절도), 'tax evasion' (탈세), 'crime' (범죄), or moral judgments
+      related to past illegal acts.
+    negative_clarification: Exclude general character traits not linked to legal records
+      (use character/competence). Exclude nationality or age.
+  family_dependents_reasoning:
+    definition: Reasoning based on the candidate's family status, specifically having
+      children or dependents requiring support.
+    clarification: Includes mentions of 'children' (자녀), 'single parent' (한부모/미혼모),
+      'family support' (부양가족), 'responsibility' (책임감) linked to family, or prioritizing
+      those with dependents.
+    negative_clarification: Exclude general 'family' mentions without specific dependents/children
+      focus if ambiguous, but generally include if dependents are cited. Exclude marital
+      status alone without children/dependents context if possible, but often overlaps;
+      prioritize if children are explicit. Exclude if 'family' is used metaphorically.
+  age_reasoning:
+    definition: Reasoning based on the candidate's age, either youth or old age.
+    clarification: Includes mentions of 'young' (젊음/어리다), 'old' (나이 많음/노인), 'age'
+      (나이), 'generation', or life stage (e.g., retirement, future potential).
+    negative_clarification: Exclude age if it is secondary to criminal record or family
+      status in the same response (code the primary reason). Exclude if age is not
+      the stated reason.
+  nationality_origin_reasoning:
+    definition: Reasoning based on the candidate's South Korean nationality or general
+      foreigner status (excluding North Korea specific).
+    clarification: Includes mentions of 'South Korean' (한국인/대한민국 국민), 'nationality'
+      (국적), 'citizen' (자국민), 'foreigner' (외국인/외노자), or preference for domestic candidates
+      over general foreigners.
+    negative_clarification: Exclude North Korean specific origins (use nk_origin_reasoning).
+      Exclude if nationality is not the primary driver.
+  competence_experience_reasoning:
+    definition: Reasoning based on the candidate's professional skills, experience,
+      leadership, or job performance.
+    clarification: Includes mentions of 'experience' (경력/경험), 'leadership' (리더십),
+      'skill' (능력), 'job performance', 'manager', 'flexibility', or work ethic.
+    negative_clarification: Exclude criminal record or age. Exclude general 'good
+      person' sentiments without specific competence.
+  policy_ideology_reasoning:
+    definition: Reasoning based on political ideology, policy alignment, or general
+      political sentiment.
+    clarification: Includes mentions of 'policy' (정책), 'ideology' (이념), 'political'
+      (정치적), 'progressive' (진보적), or alignment with the respondent's views.
+    negative_clarification: Exclude personal traits or demographic factors.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes single characters, gibberish, 'just because' (그냥), 'no
+      reason' (이유없음), 'I don't know' (모르겠음), or responses that do not fit any of the
+      above substantive categories.
+    negative_clarification: Exclude any response that provides a clear substantive
+      reason falling into the other codes.
+

@@ -1,0 +1,94 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1003
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly references the profile's social connections,
+      relationships with South Koreans, or ability to mix and fit into the local community.
+    clarification: Includes mentions of having Korean colleagues, friends, or acquaintances;
+      being married to a Korean; having a wide social network; or being perceived
+      as socially adaptable, well-integrated, or having good interpersonal relationships.
+    negative_clarification: Do not use for general statements about "fitting in" without
+      specific social ties (e.g., just saying "fits well" without mentioning people).
+      Use 'general_adaptation' if the reasoning is about cultural understanding or
+      general ease of life without referencing specific social networks. Use 'none_of_above'
+      if the answer is uninformative.
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea.
+    clarification: Includes mentions of long or short residence periods in Korea,
+      time spent adapting due to duration, or comparisons of how long the profile
+      has been in the country.
+    negative_clarification: Do not use for time spent in China (use 'china_residence_duration').
+      Do not use for general adaptation unless explicitly linked to the duration of
+      stay.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile spent living in
+      China before coming to South Korea.
+    clarification: Includes mentions of short or long stays in China, or the belief
+      that time in China affects integration or ideology.
+    negative_clarification: Do not use for time spent in Korea.
+  employment_status:
+    definition: Reasoning based on whether the profile is currently employed or unemployed.
+    clarification: Includes preferences for having a job, being "stable" because of
+      employment, or avoiding unemployment.
+    negative_clarification: Do not use for the specific type of job (use 'occupation_type')
+      or the quality of the job (use 'job_quality').
+  occupation_type:
+    definition: Reasoning based on the specific profession or job title of the profile.
+    clarification: Includes mentions of specific jobs like programmer, doctor, office
+      worker, or general categories like "professional job" or "IT personnel."
+    negative_clarification: Do not use for general employment status (use 'employment_status')
+      or the perceived quality/suitability of the job (use 'job_quality').
+  job_quality:
+    definition: Reasoning based on the perceived stability, reliability, or suitability
+      of the job, regardless of the specific title.
+    clarification: Includes mentions of "stable job," "reliable career," "good fit
+      for the role," or "useful skills."
+    negative_clarification: Do not use for the specific job title (use 'occupation_type')
+      or general employment status (use 'employment_status').
+  age:
+    definition: Reasoning based on the age of the profile.
+    clarification: Includes mentions of being young, old, appropriate age, or age-related
+      traits like energy, experience, or retirement.
+    negative_clarification: Do not use for age combined with other factors in a way
+      that doesn't isolate age as the primary driver. If age is the sole reason, use
+      this code.
+  gender:
+    definition: Reasoning based on the gender of the profile.
+    clarification: Includes preferences for male or female, or gender-based stereotypes
+      about work ethic or personality.
+    negative_clarification: Do not use if gender is mentioned only as a descriptor
+      without being a reason for choice.
+  political_affiliation:
+    definition: Reasoning based on the profile's political background or party membership.
+    clarification: Includes mentions of being a former or current member of the Workers'
+      Party of Korea, or lack thereof.
+    negative_clarification: Do not use for general political views unless explicitly
+      tied to party membership.
+  family_status:
+    definition: Reasoning based on the profile's marital status or presence of children.
+    clarification: Includes mentions of being married, single, having children, or
+      family responsibilities.
+    negative_clarification: Do not use for marriage to a Korean (use 'social_integration_ties').
+  general_adaptation:
+    definition: Reasoning that the profile will adapt well to South Korean society,
+      without citing specific social ties, residence duration, or job.
+    clarification: Includes general statements about fitting in, understanding Korean
+      culture, or being "used to" the environment, where the specific mechanism (ties,
+      time, etc.) is not the primary focus or is vague.
+    negative_clarification: If the adaptation is explicitly linked to Korean colleagues
+      or marriage, use 'social_integration_ties'. If linked to time in Korea, use
+      'korea_residence_duration'.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "just felt like it," "both are bad," "good,"
+      "bad," "same," or incomplete sentences that do not provide a clear rationale.
+    negative_clarification: Do not use for substantive reasons even if poorly phrased.
+

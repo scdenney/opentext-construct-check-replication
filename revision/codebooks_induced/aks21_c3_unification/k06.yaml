@@ -1,0 +1,78 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1006
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of "liberal democracy" (자유민주주의), "democracy"
+      (민주주의), rejection of "dictatorship" (독재), "one-party system" (일당체제), or "Workers'
+      Party participation bans" (노동당원 참여금지) as a mechanism to ensure non-authoritarian
+      rule.
+    negative_clarification: Do not use for economic preferences, security concerns,
+      or procedural steps. If the respondent mentions "federalism" (연방제) without explicitly
+      linking it to democratic values or rejecting authoritarianism, use code federalism
+      instead.
+  federalism:
+    definition: Reasoning that invokes a confederal or federal arrangement for the
+      unified state, often emphasizing gradual integration, trust-building, or preserving
+      distinct identities.
+    clarification: Includes mentions of "federal integration" (연방제 통합), "confederation,"
+      or arguments that federalism allows for better understanding and trust between
+      North and South.
+    negative_clarification: Do not use if the respondent explicitly rejects federalism
+      in favor of absorption or democracy. If the respondent mentions federalism but
+      primarily argues against authoritarianism, use political_system_democracy.
+  economic_considerations:
+    definition: Reasoning based on financial costs, tax burdens, or economic structures
+      of the unification proposal.
+    clarification: Includes mentions of "unification tax" (통일세), tax rates (e.g.,
+      1%, 10%), economic burden on citizens, protection of low-income groups, or restrictions
+      on South Korean corporate participation in the North.
+    negative_clarification: Do not use for general economic "development" or "potential"
+      without specific reference to costs or taxes. Use political_system_democracy
+      if the economic argument is secondary to the political system type.
+  security_and_military:
+    definition: Reasoning related to military presence, disarmament, nuclear weapon
+      management, or national sovereignty regarding foreign troops.
+    clarification: Includes preferences for "North Korean military dissolution" (북한군
+      해산), "South Korean military stationing" (한국군 주둔), "UN peacekeeping forces" (UN
+      평화유지군), "nuclear weapon management" (핵무기 관리), and rejection of Chinese or US/Chinese
+      joint military presence.
+    negative_clarification: Do not use for general "stability" or "safety" without
+      specific military/security context. Use political_system_democracy if the security
+      concern is framed as a consequence of the political system (e.g., "dictatorship
+      is dangerous").
+  procedural_and_timeline:
+    definition: Reasoning based on the speed, phases, or procedural aspects of implementing
+      unification.
+    clarification: Includes preferences for "gradual implementation" (단계적 이행), "immediate
+      execution" (즉시 집행), "closure periods" (폐쇄 유지 기간), or specific timelines for
+      adaptation.
+    negative_clarification: Do not use if the procedural aspect is tied to a specific
+      political or economic outcome. Use this only when the timing or phasing is the
+      primary stated reason.
+  sovereignty_and_foreign_interference:
+    definition: Reasoning focused on national autonomy, self-determination, and opposition
+      to foreign interference in the unification process.
+    clarification: Includes mentions of "self-reliance" (자주권), "South Korean leadership"
+      (남한 주도), rejection of "foreign interference" (외국 간섭), or specific opposition
+      to China's involvement.
+    negative_clarification: Do not use if the concern is specifically about military
+      stationing (use security_and_military) or nuclear management. Use this for broader
+      political sovereignty arguments.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes responses such as "no reason" (이유 없음), "just looks better"
+      (더 좋아보임), "don't know" (모름), random characters, or generic positive/negative
+      sentiments without specific justification.
+    negative_clarification: Do not use if the response contains any specific policy
+      preference, even if briefly stated.
+

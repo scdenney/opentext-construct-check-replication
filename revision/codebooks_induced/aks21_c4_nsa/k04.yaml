@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1004
+codes:
+  national_security_threat:
+    definition: Reasoning that explicitly invokes national security, the threat from
+      North Korea, espionage, or the necessity of defending the state as the primary
+      justification for the position.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korea' (북한), 'espionage' (간첩), 'defending the state' (국가보호),
+      and 'potential provocations' (잠재적도발).
+    negative_clarification: Do not use for general political stability, economic reasons,
+      or vague statements. If the response mentions security but focuses primarily
+      on protecting democratic values rather than the state itself, use 'democratic_values_protection'.
+  democratic_values_protection:
+    definition: Reasoning that emphasizes the protection of liberal democracy, freedom,
+      or human rights as the core justification, often framing the law as a tool to
+      safeguard these values against extremism.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy protection'
+      (민주주의보호), 'freedom' (자유), and 'protecting democratic order'.
+    negative_clarification: Do not use if the primary focus is on state security or
+      military threat. If the response mentions democracy but links it directly to
+      national survival against external threats, use 'national_security_threat'.
+  policy_scope_modification:
+    definition: Reasoning focused on the technical adjustment of the law's scope,
+      such as expanding, restricting, or modifying the range of application, rather
+      than the fundamental existence or abolition of the law.
+    clarification: Includes mentions of 'scope expansion' (범위확대), 'scope restriction'
+      (범위제한), 'modification' (수정), 'narrowing' (축소), and 'adjusting the range' (범위
+      수정).
+    negative_clarification: Do not use for arguments about abolishing the law entirely
+      or keeping it exactly as is without qualification. If the argument is about
+      scope but driven by security concerns, use 'national_security_threat'.
+  abolition_or_retention:
+    definition: Reasoning based on the binary choice of whether the law should be
+      completely abolished or retained in its current form, without detailed justification
+      regarding security or democracy.
+    clarification: Includes simple statements like 'abolish' (폐지), 'keep as is' (그대로
+      유지), 'retain' (존치), 'abolition is necessary' (폐지해야 한다), and 'abolition is premature'
+      (폐지는 시기상조).
+    negative_clarification: Do not use if the response provides a substantive reason
+      (e.g., security, democracy, scope). If the reason is 'because it's the party's
+      policy', use 'party_affiliation'.
+  party_affiliation:
+    definition: Reasoning that cites support for or opposition to a specific political
+      party (e.g., Democratic Party, People Power Party) as the primary driver for
+      the choice.
+    clarification: Includes mentions of 'Democratic Party' (더불어민주당), 'People Power
+      Party' (국민의힘), 'party policy' (정책/당원), and expressions of liking or disliking
+      a specific party.
+    negative_clarification: Do not use if the party mention is secondary to a policy
+      or security argument. If the response says "I chose this because of the party's
+      stance on security," use 'national_security_threat'.
+  uninformative_or_vague:
+    definition: Responses that are non-substantive, repetitive, emotional without
+      explanation, or indicate confusion about the question.
+    clarification: Includes 'no reason' (없음/이유없음), 'just looks good' (좋아보인다), 'I don't
+      know' (모름), 'question is ambiguous' (질문이 모호하다), single characters, or nonsensical
+      strings.
+    negative_clarification: Do not use for substantive arguments. If the response
+      is a clear but brief policy preference (e.g., "Abolish"), use 'abolition_or_retention'.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

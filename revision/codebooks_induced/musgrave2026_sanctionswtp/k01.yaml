@@ -1,0 +1,80 @@
+codebook:
+  name: musgrave2026_sanctionswtp_induced
+  residual_code: none_of_above
+  context: US adults recruited through MTurk/CloudResearch in July 2022 read background
+    on the sanctions the United States imposed on Russia after its invasion of Ukraine,
+    including a Wall Street Journal quotation about the sanctions' effects, then voted
+    in a hypothetical national referendum on whether to maintain the sanctions if
+    this meant gasoline prices a stated amount per gallon higher, rated how certain
+    they were, and were asked to briefly explain why they voted that way. Versions
+    of the text differed in what the quotation said about the sanctions' effects and
+    in the price amount.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:musgrave2026_sanctionswtp:1001
+codes:
+  cost_to_americans:
+    definition: The response explicitly references the financial burden on the respondent,
+      their household, or Americans in general, specifically citing higher gasoline/fuel/energy
+      prices, the specific price increase mentioned in the prompt, inflation, cost
+      of living, or affordability. This code captures both reasons to lift sanctions
+      (due to the cost) and reasons to maintain sanctions (acknowledging the cost
+      but deeming it worth bearing).
+    clarification: Includes mentions of gas prices, fuel costs, energy costs, inflation,
+      cost of living, affordability, personal financial impact, or the specific dollar
+      amount increase (e.g., 10 cents, $1). Applies to both "lift" and "maintain"
+      votes if the cost is the primary explanatory factor.
+    negative_clarification: Do not use for responses that mention cost only to dismiss
+      it as irrelevant (e.g., "I don't drive") or attribute cost to other causes (e.g.,
+      "Biden's policies") without linking it to the sanction decision as a primary
+      trade-off. Use `other_reasons` or `attribution_blame` instead.
+  moral_geopolitical_support:
+    definition: The response supports maintaining sanctions based on moral obligations,
+      support for Ukraine, punishing Russia, or broader geopolitical stability, often
+      framing the action as the "right thing to do" or necessary for international
+      order.
+    clarification: Includes references to helping Ukraine, punishing Putin/Russia,
+      preventing further aggression, upholding democracy, international law, or global
+      peace.
+    negative_clarification: Do not use if the primary reason is purely economic or
+      if the respondent explicitly rejects involvement. Use `cost_to_americans` if
+      the economic cost is the main focus, or `isolationism` if the rejection of involvement
+      is based on non-economic grounds.
+  isolationism_non_intervention:
+    definition: The response argues against maintaining sanctions (or for lifting
+      them) based on the principle that the US should not be involved in foreign conflicts,
+      should focus on domestic issues, or that the conflict is not America's problem.
+    clarification: Includes "America first," "mind our own business," "not our war,"
+      "focus on domestic issues," or "US should stay out of it."
+    negative_clarification: Do not use if the argument is primarily about the economic
+      cost to Americans (use `cost_to_americans`) or if the respondent supports sanctions
+      for moral reasons but cites cost as a secondary concern. Use `cost_to_americans`
+      if the economic burden is the explicit reason for the vote.
+  sanction_effectiveness:
+    definition: The response bases the vote on the perceived efficacy or ineffectiveness
+      of the sanctions themselves, regardless of the moral or economic arguments.
+    clarification: Includes claims that sanctions are "not working," "ineffective,"
+      "don't hurt Russia," "hurt innocent Russians," or "are the only way to break
+      Russia."
+    negative_clarification: Do not use if the response focuses on the cost to Americans
+      or moral support for Ukraine. Use `cost_to_americans` or `moral_geopolitical_support`
+      respectively.
+  other_reasons:
+    definition: The response provides a reason for the vote that does not fit into
+      the specific categories of cost, moral/geopolitical support, isolationism, or
+      effectiveness.
+    clarification: Includes vague statements like "it's the right thing," "gut feeling,"
+      "trust the government," or references to specific domestic policies unrelated
+      to the sanction trade-off (e.g., "drill baby drill" as a general policy preference
+      rather than a direct cost comparison).
+    negative_clarification: Do not use for uninformative answers (use `none_of_above`).
+      Do not use for responses that clearly fit `cost_to_americans`, `moral_geopolitical_support`,
+      `isolationism_non_intervention`, or `sanction_effectiveness`.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a clear reason for the vote.
+    clarification: Includes single words, phrases like "I don't know," "need more
+      info," "opinion," "guessed," or responses that are purely emotional outbursts
+      without a clear logical connection to the vote choice.
+    negative_clarification: Do not use for substantive responses that fit any of the
+      other codes.
+

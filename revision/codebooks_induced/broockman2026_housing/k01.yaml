@@ -1,0 +1,90 @@
+codebook:
+  name: broockman2026_housing_induced
+  residual_code: none_of_above
+  context: US adults on Prolific (February 2026) read about a proposed policy that
+    would require cities to approve housing developments that follow clear and specific
+    rules set in advance (some versions listed detailed project requirements). They
+    chose between a named group of builders (versions differed) being able to build
+    apartments that comply with those rules and local government officials always
+    being able to reject a proposed apartment development, and were then asked to
+    explain why they selected their answer.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:broockman2026_housing:1001
+codes:
+  negative_builder_affect:
+    definition: The explanation expresses a negative feeling, judgment, or distrust
+      regarding the builders, developers, or real estate companies. This includes
+      views that they are greedy, profit-driven, untrustworthy, corrupt, cut corners,
+      have bad reputations, or are harmful to the community.
+    clarification: Includes explicit statements that developers are "greedy," "monsters,"
+      "untrustworthy," "corrupt," or "only out for themselves." Also includes concerns
+      that builders will exploit communities, create low-quality housing, or prioritize
+      profit over resident well-being.
+    negative_clarification: Do not use this code if the respondent expresses negative
+      views about *local government officials* (e.g., calling them corrupt or petty)
+      or if they oppose the policy based on general principles of local control without
+      attacking the builders' character. Use `negative_govt_affect` or `local_control`
+      instead.
+  negative_govt_affect:
+    definition: The explanation expresses a negative feeling, judgment, or distrust
+      regarding local government officials or the government's role in the process.
+      This includes views that officials are corrupt, petty, vindictive, arbitrary,
+      or acting in self-interest.
+    clarification: Includes statements that local officials are "scum," "corrupt,"
+      "petty," "vindictive," or that they block development to keep property values
+      high or for personal gain.
+    negative_clarification: Do not use this code if the respondent is criticizing
+      the *builders* or expressing general skepticism about development without targeting
+      the government's character. Use `negative_builder_affect` or `general_skepticism`
+      instead.
+  local_control_community_impact:
+    definition: The explanation supports local government rejection based on the belief
+      that local officials best understand community needs, preserve neighborhood
+      character, or protect residents from negative externalities.
+    clarification: Includes arguments about preserving community identity, preventing
+      congestion/traffic, protecting environmental quality, ensuring infrastructure
+      compatibility, and the idea that local officials represent the "will of the
+      people" or have a "feel" for the area that rules cannot capture.
+    negative_clarification: Do not use this code if the respondent's opposition to
+      builder approval is primarily driven by distrust of the builders' motives (e.g.,
+      "they are greedy") rather than a positive valuation of local oversight. Use
+      `negative_builder_affect` instead.
+  rule_of_law_predictability:
+    definition: The explanation supports builder approval based on the principle that
+      if clear, pre-established rules are followed, the outcome should be guaranteed,
+      emphasizing fairness, predictability, and the prevention of arbitrary government
+      action.
+    clarification: Includes arguments that "rules are rules," that compliance should
+      equal approval, that government should not change its mind, and that clear guidelines
+      reduce delays and corruption.
+    negative_clarification: Do not use this code if the respondent supports builder
+      approval because they like the builders or dislike the government. Use `negative_govt_affect`
+      or `positive_builder_affect` instead.
+  housing_supply_crisis:
+    definition: The explanation supports builder approval based on the urgent need
+      for more housing, affordability, or solving the housing shortage.
+    clarification: Includes statements that we "need more housing," that red tape
+      restricts supply, that apartments lower costs, or that the housing crisis justifies
+      bypassing local vetoes.
+    negative_clarification: Do not use this code if the respondent supports builder
+      approval for reasons of fairness or rule of law without mentioning the housing
+      shortage or supply constraints. Use `rule_of_law_predictability` instead.
+  positive_builder_affect:
+    definition: The explanation expresses a positive or neutral view of the builders,
+      emphasizing their role as investors, job creators, or entities deserving of
+      rights and fair treatment.
+    clarification: Includes statements that builders make significant investments,
+      that small local builders are "good guys" or "hard workers," or that they deserve
+      to build if they follow the law.
+    negative_clarification: Do not use this code if the respondent expresses distrust
+      or negative stereotypes about builders. Use `negative_builder_affect` instead.
+  none_of_above:
+    definition: The response is uninformative, expresses indecision, or provides a
+      reason that does not fit the other categories.
+    clarification: Includes responses like "I don't know," "I need more information,"
+      "It depends," "Just felt right," or vague statements that do not clearly align
+      with the specific constructs above.
+    negative_clarification: Do not use this code if the response contains a clear
+      argument related to local control, rule of law, housing supply, or affect toward
+      builders/government.
+

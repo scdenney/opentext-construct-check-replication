@@ -1,0 +1,89 @@
+codebook:
+  name: andre2025_shallowmeritocracy_costs_induced
+  residual_code: none_of_above
+  context: US adults on Prolific (July 2023) read about two crowd workers who knew
+    before working that worker A would earn $0.50 per task and worker B $0.10, learned
+    what worker B would have done at $0.50 and how the workers rated the task, and
+    split the workers' total earnings between them in eight effort scenarios, with
+    real payouts. Afterwards they described the reasoning behind their decisions.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_shallowmeritocracy_costs:1001
+codes:
+  work_was_unpleasant:
+    definition: The response explicitly describes the work as tedious, boring, tiring,
+      monotonous, unpleasant, or hard, often citing this burden as a reason to compensate
+      the lower-paid worker or justify their effort.
+    clarification: Includes statements where the respondent mentions the task was
+      "tedious," "boring," "monotonous," "shitty," "unpleasant," or "hard." It also
+      includes references to the work being a "burden" or "cost" that needs compensation,
+      particularly for the worker paid less.
+    negative_clarification: Do not use this code if the respondent only mentions the
+      work was "exciting," "fun," "easy," or "enjoyable." If the respondent mentions
+      enjoyment, use the code `work_was_enjoyable` instead. If no description of the
+      work's nature is given, use `none_of_above`.
+  work_was_enjoyable:
+    definition: The response explicitly states that the workers found the task enjoyable,
+      exciting, fun, or easy, implying the work was not a burden.
+    clarification: Includes statements where the respondent mentions the task was
+      "exciting," "fun," "enjoyable," "easy," or that the workers were "happy" with
+      the job. This serves as the negative counterpart to the construct of interest.
+    negative_clarification: Do not use this code if the respondent describes the work
+      as tedious, boring, or hard. Use `work_was_unpleasant` in that case. If no description
+      of the work's nature is given, use `none_of_above`.
+  output_based_split:
+    definition: The decision was primarily based on the actual amount of work completed,
+      the percentage of tasks done, or the physical output of the workers, regardless
+      of pay rates.
+    clarification: Includes reasoning focused on "percentage of work," "number of
+      tasks completed," "output," "productivity," or "who did more work." The respondent
+      argues for splitting money proportional to the actual tasks finished.
+    negative_clarification: Do not use this code if the respondent explicitly factors
+      in the hypothetical performance (what B would have done at $0.50) or the fairness
+      of the pay rate itself as the primary driver. If the respondent mentions the
+      pay rate disparity as a key reason for redistribution, use `pay_rate_compensation`
+      instead. If the reasoning is vague or uninformative, use `none_of_above`.
+  pay_rate_compensation:
+    definition: The decision was influenced by the unfairness of the pay rate disparity,
+      leading to a redistribution of money to compensate the lower-paid worker (Worker
+      B) for their lower piece rate.
+    clarification: Includes reasoning where the respondent mentions "leveling the
+      playing field," "offsetting garbage pay," "fairness of payment," "compensating
+      for low rate," or "redistributing because B was unlucky." The focus is on correcting
+      the inequity of the wage structure.
+    negative_clarification: Do not use this code if the split is strictly proportional
+      to actual work done without mention of rate fairness. If the respondent focuses
+      on the hypothetical output B would have produced, use `hypothetical_performance`
+      instead. If the work itself is described as unpleasant, use `work_was_unpleasant`.
+  hypothetical_performance:
+    definition: The decision was shaped by considering how much work Worker B *would
+      have* done if they had been paid the higher rate ($0.50), using this counterfactual
+      to determine the split.
+    clarification: Includes reasoning that references "what B would have done," "if
+      they had the higher rate," "willingness to work at higher pay," or using the
+      hypothetical scenario to justify giving B more money than their actual output
+      warrants.
+    negative_clarification: Do not use this code if the respondent strictly uses actual
+      work completed. If the respondent focuses on the actual work output, use `output_based_split`.
+      If the respondent focuses on the unfairness of the rate itself rather than the
+      hypothetical output, use `pay_rate_compensation`.
+  commitment_agreement:
+    definition: The decision was based on the workers' prior commitments, agreements,
+      or pledges regarding how many tasks they would complete at their assigned rates.
+    clarification: Includes reasoning that references "what they promised," "agreed
+      to," "pledged," "commitment," or "contract." The respondent argues that workers
+      should be paid according to what they agreed to do, regardless of actual output
+      or rate fairness.
+    negative_clarification: Do not use this code if the respondent focuses on actual
+      output or hypothetical performance. If the respondent mentions the work was
+      tedious or boring, use `work_was_unpleasant`. If the reasoning is vague, use
+      `none_of_above`.
+  none_of_above:
+    definition: The response is uninformative, vague, or does not clearly align with
+      any of the specific reasoning categories.
+    clarification: Includes responses that are extremely brief (e.g., "fairness,"
+      "gut feeling," "I don't know," "random"), lack specific justification, or do
+      not mention work output, pay rates, hypotheticals, or work nature.
+    negative_clarification: Do not use this code if the response clearly fits one
+      of the other codes. For example, if the respondent says "I split it based on
+      work done," use `output_based_split`. If they say "It was boring," use `work_was_unpleasant`.
+

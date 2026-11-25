@@ -1,0 +1,63 @@
+codebook:
+  name: busby2019_study2_induced
+  residual_code: none_of_above
+  context: US adults chose the political problem that worries them most and then wrote
+    a short explanation of who or what is responsible for it and what should be done
+    (the wording of the request differed between versions).
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:busby2019_study2:1001
+codes:
+  conspiring_elite:
+    definition: The respondent blames a politically powerful actor or institution
+      for the problem. This includes politicians, political parties, the government,
+      bankers, corporations, the media, or special interest groups.
+    clarification: Includes specific mentions of politicians, congress, presidents,
+      parties (Democrats/Republicans), corporations, insurance companies, lobbyists,
+      PACs, banks, and the government as entities responsible for policy failures,
+      corruption, or economic harm.
+    negative_clarification: Do not use for general societal trends, individual moral
+      failings, foreign nations (unless acting as a state actor/government), or religious
+      groups unless they are framed as a political power structure. Use 'general_public'
+      or 'foreign_actors' instead.
+  general_public:
+    definition: The respondent blames the general public, citizens, or society at
+      large for the problem, often citing a lack of moral values, education, or civic
+      responsibility.
+    clarification: Includes blame placed on "people," "society," "parents," "citizens,"
+      or the "public" for issues like racism, violence, poor education, or moral decay.
+    negative_clarification: Do not use for specific political elites, corporations,
+      or foreign actors. Use 'conspiring_elite' or 'foreign_actors' if the blame is
+      directed at those specific groups.
+  foreign_actors:
+    definition: The respondent blames foreign nations, international organizations,
+      or non-US based groups for the problem.
+    clarification: Includes mentions of China, India, ISIS, Islamists, Muslims (as
+      a geopolitical/cultural force), foreign governments, or international trade
+      partners.
+    negative_clarification: Do not use for domestic political elites or the general
+      US public. Use 'conspiring_elite' if the blame is on US politicians for foreign
+      policy, or 'general_public' if the blame is on US citizens for welcoming them.
+  economic_systems:
+    definition: The respondent blames abstract economic forces, market conditions,
+      or systemic economic structures rather than specific actors.
+    clarification: Includes mentions of "the economy," "greed," "capitalism," "free
+      trade," "inflation," "cost of living," or "market forces" as the primary driver.
+    negative_clarification: Do not use if specific corporations or politicians are
+      named as the agents of these forces. Use 'conspiring_elite' if corporations/politicians
+      are explicitly blamed for manipulating the economy.
+  policy_governance:
+    definition: The respondent blames specific government policies, laws, or regulatory
+      frameworks for the problem.
+    clarification: Includes blame on specific laws (e.g., Obamacare, Common Core,
+      tax laws), regulations, or the failure to enforce existing laws.
+    negative_clarification: Do not use if the blame is on the *people* who made the
+      laws (politicians) or the *system* itself. If the focus is on the actors, use
+      'conspiring_elite'. If the focus is on abstract forces, use 'economic_systems'.
+  none_of_above:
+    definition: The response is uninformative, incoherent, or does not assign responsibility
+      to any identifiable group or actor.
+    clarification: Includes "I don't know," "No comment," "Dumb question," incoherent
+      text, or responses that do not address the question of responsibility.
+    negative_clarification: Do not use for responses that clearly assign blame to
+      any of the other categories.
+

@@ -1,0 +1,84 @@
+codebook:
+  name: turnbulldugarte2022_surrogacy_induced
+  residual_code: none_of_above
+  context: Adults in the United Kingdom answered an online survey in 2021. Most first
+    read a short news-style message about a married couple who had a child with the
+    help of a paid surrogate (the couple differed between respondents); others read
+    no message. All then said how far they agree that couples unable to conceive biological
+    children on their own should be allowed to pay a surrogate, and were asked what
+    mattered most to them when answering.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:turnbulldugarte2022_surrogacy:1001
+codes:
+  parents_sexuality:
+    definition: The respondent explicitly references the sexual orientation, gender
+      composition, or sex of the intended parents (or couples in general) as a primary
+      factor in their judgment.
+    clarification: Includes references to gay, lesbian, same-sex, two men, two fathers,
+      heterosexual, or the belief that a child requires both a mother and a father.
+      Counts whether the reference is used to support or oppose surrogacy.
+    negative_clarification: Do not use for general references to "couples" or "parents"
+      without specifying sex or orientation. Use 'general_parental_rights' or 'moral_religious_beliefs'
+      if the objection is based on general morality or religion without specific reference
+      to the parents' sex/orientation.
+  infertility_and_biological_connection:
+    definition: The respondent emphasizes the intended parents' inability to conceive
+      naturally or their desire for a biological/genetic connection to the child.
+    clarification: Includes mentions of infertility, inability to produce children,
+      desire for biological offspring, genetic link, or the medical/physical barrier
+      to conception.
+    negative_clarification: Do not use if the focus is on the financial aspect, the
+      surrogate's welfare, or general moral rights. Use 'financial_ethics' or 'surrogate_welfare'
+      for those concerns.
+  financial_and_commodification_ethics:
+    definition: The respondent focuses on the monetary transaction, payment to the
+      surrogate, or the ethical implications of treating children or pregnancy as
+      a commodity.
+    clarification: Includes concerns about buying/selling children, exploitation of
+      poor women, surrogacy as a business, or whether payment should be allowed.
+    negative_clarification: Do not use for general ethical concerns not tied to money/commodification.
+      Use 'general_ethics' or 'moral_religious_beliefs' for non-financial moral objections.
+  surrogate_welfare_and_consent:
+    definition: The respondent prioritizes the physical, emotional, or psychological
+      well-being, rights, or consent of the surrogate mother.
+    clarification: Includes concerns about the surrogate's health, emotional distress,
+      potential to change her mind, exploitation, or the necessity of her full consent.
+    negative_clarification: Do not use for concerns about the intended parents' welfare
+      or the child's welfare. Use 'general_parental_rights' or 'child_welfare' for
+      those.
+  child_welfare_and_upbringing:
+    definition: The respondent focuses on the best interests, happiness, stability,
+      or upbringing of the child resulting from the surrogacy.
+    clarification: Includes concerns about the child's home environment, whether the
+      parents can provide a good life, the child's happiness, or the impact on the
+      child's development.
+    negative_clarification: Do not use for concerns about the surrogate or the financial
+      cost. Use 'surrogate_welfare_and_consent' or 'financial_and_commodification_ethics'
+      for those.
+  general_parental_rights_and_choice:
+    definition: The respondent emphasizes the fundamental right of individuals or
+      couples to choose to have children, make personal decisions, or access family
+      planning options.
+    clarification: Includes arguments about freedom of choice, personal autonomy,
+      equal rights to parenthood, fairness, or the idea that people should be allowed
+      to do what they want with their bodies/lives.
+    negative_clarification: Do not use if the argument is specifically about sex/orientation
+      ('parents_sexuality'), money ('financial_and_commodification_ethics'), or the
+      surrogate's health ('surrogate_welfare_and_consent').
+  moral_religious_beliefs:
+    definition: The respondent cites personal moral codes, religious beliefs, or the
+      concept of "natural law" as the primary driver of their opinion.
+    clarification: Includes references to Christianity, religion, "God's will," "unnatural,"
+      "against nature," or broad moral principles not tied to specific financial or
+      welfare outcomes.
+    negative_clarification: Do not use if the objection is specifically about same-sex
+      couples ('parents_sexuality') or financial exploitation ('financial_and_commodification_ethics').
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      the specific substantive categories above.
+    clarification: Includes "I don't know," "no opinion," "it's none of my business,"
+      "I wasn't sure," or vague statements that do not clearly align with the defined
+      constructs.
+    negative_clarification: Use this only if the response provides no clear reasoning
+      or falls outside the scope of the other codes.
+

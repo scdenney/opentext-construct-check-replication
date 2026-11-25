@@ -1,0 +1,67 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1004
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic principles,
+      or the value of democratic governance as a primary ground for choosing the politician.
+    clarification: Includes responses mentioning "democracy" (민주주의), democratic values,
+      democratic systems, or the superiority of democratic governance.
+    negative_clarification: Exclude responses that only mention equality, welfare,
+      or diversity without explicitly referencing democracy. Use equality_reasoning,
+      welfare_reasoning, or diversity_reasoning instead.
+  welfare_reasoning:
+    definition: Reasoning based on the politician's stance on welfare, social safety
+      nets, or the government's responsibility to provide economic support.
+    clarification: Includes mentions of welfare (복지), government responsibility for
+      welfare, state-owned enterprises (국영기업) as a means of economic support, or general
+      economic security provided by the state.
+    negative_clarification: Exclude responses focused on individual economic responsibility
+      or private enterprise expansion. Use individual_responsibility_reasoning or
+      market_reasoning instead.
+  equality_reasoning:
+    definition: Reasoning based on the politician's stance on gender equality, non-discrimination,
+      or equal treatment regardless of gender.
+    clarification: Includes mentions of gender equality (성평등), no gender discrimination
+      (성차별 없음), equal opportunity, or fairness between men and women.
+    negative_clarification: Exclude responses focused on racial/cultural diversity
+      or general political ideology. Use diversity_reasoning or ideology_reasoning
+      instead.
+  diversity_reasoning:
+    definition: Reasoning based on the politician's stance on racial, ethnic, or cultural
+      diversity and inclusion.
+    clarification: Includes mentions of diversity (다양성), multiculturalism, racial
+      equality, or acceptance of different cultures/races.
+    negative_clarification: Exclude responses focused on gender equality or welfare.
+      Use equality_reasoning or welfare_reasoning instead.
+  ideology_reasoning:
+    definition: Reasoning based on the general alignment of the politician's political
+      ideology, values, or worldview with the respondent's own.
+    clarification: Includes mentions of "similar views" (의견이 비슷함), "ideology" (이념),
+      "progressive" (진보적), "conservative" (보수적), or general value alignment.
+    negative_clarification: Exclude responses that specify a particular policy area
+      (welfare, equality, diversity) or explicitly mention democracy. Use the specific
+      policy code or democracy_reasoning instead.
+  market_reasoning:
+    definition: Reasoning based on the politician's stance on free markets, private
+      enterprise expansion, or limited government intervention in the economy.
+    clarification: Includes mentions of private enterprise expansion (사기업 확대), free
+      market principles, individual economic responsibility, or reducing government
+      interference in business.
+    negative_clarification: Exclude responses focused on welfare provision or state-owned
+      enterprises. Use welfare_reasoning instead.
+  none_of_above:
+    definition: Uninformative, non-substantive, or purely comparative responses that
+      do not provide a clear substantive reason for the choice.
+    clarification: Includes short phrases like "good" (좋다), "no reason" (이유없음), "don't
+      know" (모름), random characters, simple comparisons like "A is better than B"
+      without explanation, or emotional reactions without policy basis.
+    negative_clarification: Exclude any response that contains substantive policy
+      preferences or ideological alignments. Use the appropriate substantive code.
+

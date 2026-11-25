@@ -1,0 +1,65 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1011
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      or social norms as a ground for the person being more truly Korean.
+    clarification: Includes explicit mentions of respecting laws (법), regulations
+      (규정/규제), political systems (정치제도), and social norms. Also includes reasoning
+      based on understanding or accepting the political structure or democratic values
+      of South Korea.
+    negative_clarification: Exclude mentions of laws/norms that are purely incidental
+      to other factors (e.g., "lived there so followed rules") without explicit emphasis
+      on the *respect* for the institution as the primary identity marker. If the
+      focus is on cultural history or ethnicity, use those codes instead.
+  ethnic_bloodline_birthplace:
+    definition: Reasoning based on biological descent, ethnicity, or place of birth
+      as the primary determinant of Korean identity.
+    clarification: Includes references to having Korean nationality (국적) primarily
+      as a legal proxy for ethnicity, being born in Korea (한국에서 태어남), having Korean
+      blood/ancestry, or being ethnically Korean.
+    negative_clarification: Exclude cases where nationality is explicitly linked to
+      civic participation or legal respect (use civic_law_criteria). Exclude cases
+      where birthplace is mentioned alongside strong cultural/historical understanding
+      as the defining factor (use cultural_historical_understanding).
+  cultural_historical_understanding:
+    definition: Reasoning that emphasizes knowledge of, respect for, or participation
+      in South Korean history, traditions, and culture.
+    clarification: Includes mentions of understanding Korean history (역사), traditions
+      (전통), culture (문화), and language (한국어) as key indicators of being truly Korean.
+    negative_clarification: Exclude mentions of language or history that are secondary
+      to ethnic/bloodline arguments. Exclude mentions of political institutions or
+      laws (use civic_law_criteria).
+  subjective_identity_emotion:
+    definition: Reasoning based on the respondent's or the candidate's internal sense
+      of belonging, emotional connection, or self-identification as Korean.
+    clarification: Includes phrases like "feels Korean" (한국인임을 느낌), "internal identity"
+      (내면의 정체성), "emotional connection" (정서), or "self-perception" (자각).
+    negative_clarification: Exclude objective criteria like birth, law, or history.
+      Exclude vague or non-substantive answers.
+  demographic_residence:
+    definition: Reasoning based on length of residence, daily life experience, or
+      demographic integration in South Korea.
+    clarification: Includes mentions of living in Korea for a long time (거주 기간, 인생
+      대부분을 한국에서 보냄), daily life adaptation, or social integration through residence.
+    negative_clarification: Exclude if the residence is cited primarily to imply cultural/historical
+      learning (use cultural_historical_understanding) or if it's just a factual statement
+      without being the core reason for identity attribution.
+  none_of_above:
+    definition: Uninformative, incoherent, or irrelevant responses that do not provide
+      a clear reason for the choice.
+    clarification: Includes responses that are nonsensical, express confusion about
+      the question, state "no reason," or are completely unrelated to identity criteria
+      (e.g., "translation error," "economy," "person B is a better person" without
+      identity context).
+    negative_clarification: Exclude any response that can be mapped to ethnic, cultural,
+      civic, or subjective identity codes.
+

@@ -1,0 +1,65 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1010
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's place of birth,
+      regional origin (specifically East Germany, Saxony, or the former GDR), or national
+      identity (Germany/West Germany) as a primary ground for selection or rejection.
+    clarification: Includes mentions of "Sachsen" (Saxony), "Ostdeutschland" (East
+      Germany), "GDR", "Westdeutsch" (West Germany), "Deutschland" (Germany) when
+      used as a distinguishing origin factor, or stereotypes associated with these
+      regions.
+    negative_clarification: Exclude general mentions of "German" only if not contrasted
+      with an origin or used as a generic descriptor without regional specificity.
+      Exclude if the mention is purely about language proficiency without regional
+      origin context. Use `none_of_above` if the mention is incoherent or irrelevant.
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of prior convictions (Vorstrafen).
+    clarification: Includes explicit mentions of "Vorstrafen" (criminal record), "nicht
+      vorbestraft" (not previously convicted), "Straftat" (crime), or general references
+      to being "clean" or "criminal".
+    negative_clarification: Exclude mentions of tax evasion if framed as a moral judgment
+      rather than a legal record check, unless explicitly linked to the "Vorstrafe"
+      variable. Use `east_origin_reasoning` if the crime is linked to regional stereotypes.
+  demographic_reasoning:
+    definition: Reasoning based on static demographic characteristics such as age,
+      gender, or family status.
+    clarification: Includes mentions of "Alter" (age), "jünger/älter" (younger/older),
+      "weiblich/männlich" (female/male), "Kinder" (children), "verheiratet" (married),
+      "ledig" (single).
+    negative_clarification: Exclude if the demographic factor is used as a proxy for
+      experience or future potential without being the primary stated reason. Use
+      `professional_reasoning` if age is linked to career stage.
+  professional_reasoning:
+    definition: Reasoning based on the candidate's current employment status, qualifications,
+      or career trajectory.
+    clarification: Includes mentions of "Vollzeit/Teilzeit" (full-time/part-time),
+      "Beruf" (profession), "Qualifikation" (qualification), "Erfahrung" (experience),
+      "Ausbildung" (training), "Karriere" (career).
+    negative_clarification: Exclude general statements about being "good" or "qualified"
+      without specific professional context. Use `demographic_reasoning` if the reason
+      is purely about age or gender.
+  affective_reasoning:
+    definition: Reasoning based on subjective feelings, intuition, or general preference
+      without specific objective criteria.
+    clarification: Includes mentions of "Bauchgefühl" (gut feeling), "sympathisch"
+      (likeable), "Gefühl" (feeling), "passt mir" (fits me), "mag ich" (I like).
+    negative_clarification: Exclude if specific traits (like age or record) are mentioned
+      alongside the feeling. Use `none_of_above` if the response is purely incoherent.
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, indicate forced choice
+      without preference, or do not provide a substantive reason for the selection.
+    clarification: Includes "weiß nicht" (don't know), "musste wählen" (had to choose),
+      random characters, "keine Ahnung" (no idea), or generic positive/negative words
+      without explanation (e.g., "gut", "besser").
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if weak. Use specific codes for any identifiable reason.
+

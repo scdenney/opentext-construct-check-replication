@@ -1,0 +1,73 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1010
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic values, or
+      the democratic system as a primary ground for choosing the politician.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic consciousness/values"
+      (민주적 의식/가치), "liberal democracy" (자유민주주의), or the belief that democracy is the
+      best or necessary system.
+    negative_clarification: Exclude general agreement with specific policies (like
+      welfare or diversity) unless explicitly linked to democratic principles. Use
+      equality_reasoning or policy_reasoning instead if the focus is on outcomes rather
+      than the system itself.
+  equality_reasoning:
+    definition: Reasoning based on the importance of equality, gender equality, or
+      non-discrimination.
+    clarification: Includes mentions of "equality" (평등), "gender equality" (성평등/남녀평등),
+      "no discrimination" (차별 없음/차별 없는), "equal opportunity" (기회균등), or opposition
+      to gender-based roles.
+    negative_clarification: Exclude general policy preferences. Use policy_reasoning
+      if the focus is on economic outcomes rather than the principle of equality.
+      Use democracy_reasoning if the equality argument is framed as a democratic right.
+  diversity_reasoning:
+    definition: Reasoning based on the value of diversity, multiculturalism, or inclusion
+      of different groups.
+    clarification: Includes mentions of "diversity" (다양성), "multiculturalism" (다문화),
+      "cultural diversity" (문화의 다양성), "ethnic diversity" (인종 다양성), or respect for
+      individual differences.
+    negative_clarification: Exclude general tolerance without specific reference to
+      diversity. Use equality_reasoning if the focus is on equal treatment rather
+      than the value of diverse identities.
+  welfare_reasoning:
+    definition: Reasoning based on the belief that the government should be responsible
+      for welfare, social safety nets, or public support.
+    clarification: Includes mentions of "welfare" (복지), "government responsibility
+      for welfare" (정부의 복지 책임), "state-led welfare" (국가주도 복지), or expansion of public
+      services.
+    negative_clarification: Exclude general economic growth arguments. Use economic_reasoning
+      if the focus is on market efficiency or private enterprise rather than state-provided
+      welfare.
+  economic_reasoning:
+    definition: Reasoning based on economic policies, such as state-owned enterprises,
+      private enterprise expansion, or economic growth.
+    clarification: Includes mentions of "state-owned enterprises" (국영기업/공기업), "private
+      enterprise" (사기업), "economic growth" (경제성장/활성화), "capitalism" (자본주의), or national
+      competitiveness.
+    negative_clarification: Exclude welfare arguments. Use welfare_reasoning if the
+      focus is on social support. Use democracy_reasoning if the economic argument
+      is framed as a democratic necessity.
+  general_agreement:
+    definition: Reasoning based on general agreement with the politician's views or
+      personality without specifying a particular policy domain.
+    clarification: Includes phrases like "views match mine" (의견이 맞음/비슷함), "good person"
+      (좋은 사람), "trust" (신뢰), "personality" (성향), or general satisfaction.
+    negative_clarification: Exclude specific policy or value-based reasons. If a specific
+      value (equality, diversity, democracy) is mentioned, use the corresponding specific
+      code. Use none_of_above if the response is unintelligible.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes gibberish (e.g., "hghy", "ㅁ"), single letters, "I don't
+      know" (모름/몰라), "no reason" (아무 이유 없음), or purely aesthetic judgments not linked
+      to policy/values (e.g., "handsome").
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if brief. If a reason is present (e.g., "welfare"), use the appropriate
+      substantive code.
+

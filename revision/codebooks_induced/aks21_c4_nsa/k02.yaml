@@ -1,0 +1,66 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1002
+codes:
+  national_security_threat:
+    definition: Responses that cite national security, the threat from North Korea,
+      espionage, or the need to defend the state as the primary reason for their choice.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korea' (북한), 'espionage' (간첩), 'state defense' (국가방어), and 'national
+      safety' (국가안위).
+    negative_clarification: Do not use for responses that only mention 'democracy'
+      or 'freedom' without explicit reference to security threats or state defense.
+      Use 'democracy_protection' instead.
+  democracy_protection:
+    definition: Responses that cite the protection of democracy, liberal democracy,
+      or civil liberties as the primary reason for their choice.
+    clarification: Includes mentions of 'democracy' (민주주의), 'liberal democracy' (자유민주주의),
+      'freedom' (자유), and 'protecting rights' (권리보호).
+    negative_clarification: Do not use for responses that focus on security threats
+      or state defense. Use 'national_security_threat' instead.
+  policy_scope_modification:
+    definition: Responses that express a preference for modifying, limiting, or restricting
+      the scope of the law rather than maintaining it fully or abolishing it completely.
+    clarification: Includes mentions of 'limiting scope' (범위제한), 'modifying' (수정),
+      'amending' (보완), 'narrowing' (축소), and 'adjusting' (조정).
+    negative_clarification: Do not use for responses that simply state 'maintain'
+      or 'abolish' without specifying a need for scope adjustment. Use 'policy_maintenance'
+      or 'policy_abolition' instead.
+  policy_maintenance:
+    definition: Responses that support keeping the current National Security Act as
+      it is, or maintaining the status quo.
+    clarification: Includes mentions of 'maintain' (유지), 'keep as is' (그대로 유지), 'status
+      quo' (현행), and 'no change' (변경 없음).
+    negative_clarification: Do not use for responses that want to modify the scope
+      or abolish the law. Use 'policy_scope_modification' or 'policy_abolition' instead.
+  policy_abolition:
+    definition: Responses that support the complete abolition or repeal of the National
+      Security Act.
+    clarification: Includes mentions of 'abolition' (폐지), 'repeal' (폐지), 'eliminate'
+      (없애다), and 'not needed' (불필요).
+    negative_clarification: Do not use for responses that want to modify the scope
+      or maintain the law. Use 'policy_scope_modification' or 'policy_maintenance'
+      instead.
+  partisan_political_reasoning:
+    definition: Responses that cite political party affiliation, distrust of a specific
+      party, or partisan alignment as the reason for their choice.
+    clarification: Includes mentions of 'People Power Party' (국민의힘), 'Democratic Party'
+      (더불어민주당), 'party stance' (정당입장), 'party support' (지지자), and political distrust.
+    negative_clarification: Do not use for responses that cite policy merits like
+      security or democracy. Use 'national_security_threat' or 'democracy_protection'
+      instead.
+  none_of_above:
+    definition: Responses that are uninformative, vague, express no opinion, or cite
+      reasons not covered by the other codes.
+    clarification: Includes 'no reason' (이유 없음), 'don't know' (모름), 'just like it'
+      (좋아서), 'random choice' (랜덤), 'other' (기타), and non-substantive comments.
+    negative_clarification: Do not use for substantive policy arguments. If the response
+      contains a clear argument for security, democracy, scope, maintenance, abolition,
+      or partisanship, use the corresponding code.
+

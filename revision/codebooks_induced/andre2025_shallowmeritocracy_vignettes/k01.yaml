@@ -1,0 +1,79 @@
+codebook:
+  name: andre2025_shallowmeritocracy_vignettes_induced
+  residual_code: none_of_above
+  context: US adults in an online survey (Lucid, February 2021) read short scenarios
+    about two people in unequal circumstances (for example two employees competing
+    for a promotion, or two people from rich and poor families) who earned different
+    amounts after making different choices, and said how the money should be split
+    between them. Afterwards they described the reasoning behind their decisions.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_shallowmeritocracy_vignettes:1001
+codes:
+  circumstances_shaped_choice:
+    definition: The respondent argues that the disadvantaged person's lower earnings
+      or negative choices were caused by their circumstances, or that they would have
+      made the same choices as the advantaged person if they had been in the same
+      situation, and uses this as a reason to adjust the money split (typically to
+      give the disadvantaged person more).
+    clarification: Includes statements that the person would have succeeded or worked
+      hard if they had equal opportunities, resources, or upbringing. Includes statements
+      that the disadvantaged person's lack of effort or illegal behavior was a result
+      of their environment or lack of options.
+    negative_clarification: Exclude statements that the person would have made the
+      same choices regardless of circumstances (e.g., "he would have chosen the same
+      way anyway"). Exclude statements that simply acknowledge different circumstances
+      without linking them to the choice or the redistribution logic. Use 'merit_based'
+      or 'need_based' instead if the reasoning focuses on effort or survival needs
+      without the causal link to circumstances.
+  merit_based:
+    definition: The respondent justifies the split based on the amount of effort,
+      hard work, risk-taking, or legal/ethical behavior exerted by the individuals,
+      regardless of their background.
+    clarification: Includes references to working hard, taking risks, following the
+      law, moral behavior, and earning what one works for. Includes the belief that
+      rewards should match effort or contribution.
+    negative_clarification: Exclude responses that attribute the outcome primarily
+      to external factors like luck, systemic bias, or circumstances. Use 'circumstances_shaped_choice'
+      if the lack of merit is excused by circumstances. Use 'need_based' if the focus
+      is on survival rather than effort.
+  need_based:
+    definition: The respondent justifies the split based on the financial needs of
+      the individuals, such as the ability to survive, pay for basic necessities,
+      or improve their quality of life.
+    clarification: Includes statements about helping the poor survive, ensuring everyone
+      has enough to live on, or providing a safety net.
+    negative_clarification: Exclude responses that focus on rewarding effort or punishing
+      laziness. Use 'circumstances_shaped_choice' if the need is framed as a result
+      of unfair circumstances that should be corrected. Use 'merit_based' if the focus
+      is on desert based on work.
+  equality_of_opportunity:
+    definition: The respondent argues for equal distribution or adjustment to ensure
+      that everyone has a fair chance to succeed, emphasizing that starting points
+      should not dictate outcomes.
+    clarification: Includes statements about giving everyone a "fair shot," "level
+      playing field," or "equal opportunity." Includes the idea that the disadvantaged
+      person deserves more to compensate for a lack of initial advantages.
+    negative_clarification: Exclude statements that focus on the causal link between
+      specific circumstances and specific choices (use 'circumstances_shaped_choice').
+      Exclude statements focused purely on survival needs (use 'need_based') or pure
+      effort (use 'merit_based').
+  status_quo_retention:
+    definition: The respondent argues that the money should remain with the person
+      who earned it, regardless of the amount or the circumstances, often citing property
+      rights or the idea that taking money is unfair.
+    clarification: Includes statements like "they earned it, so they keep it," "no
+      redistribution," or "you get what you earn." Includes the view that the split
+      should mirror the earnings exactly.
+    negative_clarification: Exclude responses that adjust the split based on merit,
+      need, or circumstances. Use 'merit_based' if the retention is justified by hard
+      work. Use 'none_of_above' if the response is incoherent.
+  none_of_above:
+    definition: The response is uninformative, incoherent, expresses confusion about
+      the task, or does not provide a clear reasoning for the money split.
+    clarification: Includes gibberish, expressions of confusion ("I don't know why
+      I did it"), statements that the survey was confusing, or generic positive/negative
+      comments without reasoning.
+    negative_clarification: Exclude any response that offers a substantive reason
+      for the split, even if the reason is weak or poorly articulated. Use the most
+      appropriate substantive code if a reason can be inferred.
+

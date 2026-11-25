@@ -1,0 +1,71 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1003
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of "liberal democracy" (자유민주주의), "democracy"
+      (민주주의), rejection of "dictatorship" (독재), "one-party system" (일당체계), or "Workers'
+      Party participation bans" (노동당 참여 금지) as a mechanism to ensure democratic integrity.
+    negative_clarification: Exclude reasons based solely on economic costs, military
+      arrangements, or nuclear management unless they are explicitly tied to preserving
+      democratic values. Use other codes for those.
+  federal_arrangement:
+    definition: Reasoning that invokes a confederal or federal structure for the unified
+      state as the preferred political arrangement.
+    clarification: Includes mentions of "federal system" (연방제), "two systems one country"
+      (1국가 2체제), or gradual integration through federal structures.
+    negative_clarification: Exclude simple mentions of federalism without context
+      of political structure preference; if it's just a keyword without reasoning,
+      use none_of_above. Do not confuse with general democratic preferences.
+  military_security:
+    definition: Reasoning based on military presence, troop integration, disarmament,
+      or security guarantees.
+    clarification: Includes preferences for "South Korean troops only" (한국군대 주둔),
+      "North Korean military dissolution" (북한군 해산), "UN peacekeeping forces" (UN 평화유지군),
+      "military integration" (군대 통합), or rejection of foreign troops (US/China).
+    negative_clarification: Exclude general security concerns not tied to specific
+      military arrangements. If the reason is purely about safety without specifying
+      military/political structure, consider none_of_above or economic if cost is
+      implied.
+  economic_fiscal:
+    definition: Reasoning based on economic costs, tax burdens, or business regulations.
+    clarification: Includes mentions of "unification tax" (통일세), "tax burden" (세금
+      부담), "lower taxes" (세금이 적다), "business operations" (기업 운영), or "economic cooperation"
+      restrictions/allowances.
+    negative_clarification: Exclude political system arguments. If the respondent
+      mentions both economy and democracy, prioritize political_system_democracy if
+      the political aspect is the primary driver, otherwise use the code that best
+      captures the dominant rationale. If mixed, use the most specific relevant code.
+  nuclear_management:
+    definition: Reasoning focused on the control, management, or denuclearization
+      of North Korean nuclear weapons.
+    clarification: Includes preferences for "South-North joint management" (남북 공동
+      관리), "UN management" (UN 관리), "South Korean management" (한국 관리), or rejection
+      of foreign (US/China) control over nuclear assets.
+    negative_clarification: Exclude general security or military reasons not specifically
+      about nuclear weapons.
+  migration_openness:
+    definition: Reasoning based on freedom of movement, border restrictions, or openness
+      of society.
+    clarification: Includes preferences for "immediate opening" (즉시 개방), "no migration
+      restrictions" (이동 제한 없음), or "freedom of movement" (이동 자유).
+    negative_clarification: Exclude economic reasons for migration (e.g., labor markets)
+      unless framed as a political freedom.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes "no reason" (이유 없음), "just felt like it" (느껴지는 대로), "both
+      are bad" (둘다 싫음), random characters, or generic positive/negative sentiments
+      without specific policy rationale.
+    negative_clarification: Exclude any response that provides a specific policy reason
+      (even if brief). If a response mentions a specific policy (e.g., "tax", "troops"),
+      code it accordingly.
+

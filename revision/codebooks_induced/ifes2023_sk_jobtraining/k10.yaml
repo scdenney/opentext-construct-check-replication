@@ -1,0 +1,76 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1010
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector, or specific birthplace in North Korea (or contrast with
+      South Korea) as a primary factor for selection or rejection.
+    clarification: Includes mentions of 'North Korea', 'defector', 'North Korean migrant',
+      'Hanoi birth' (in contrast to NK), 'South Korean birth', or explicit comparisons
+      between North and South Korean origins. Captures reasoning based on the political
+      or social implications of being from the North.
+    negative_clarification: Exclude general mentions of 'Korean' or 'South Korean'
+      without specific reference to the North/South divide or defector status (use
+      `nationality_reasoning` instead). Exclude mentions of other nationalities like
+      Vietnam or China unless specifically contrasted with North Korea in the context
+      of origin.
+  nationality_reasoning:
+    definition: Reasoning that prioritizes or rejects a candidate based on their South
+      Korean nationality or citizenship status, without specific reference to North
+      Korean origins or defector status.
+    clarification: Includes phrases like 'Korean person', 'South Korean citizen',
+      'compatriot', 'same ethnicity', 'national preference', or 'citizen first'. Focuses
+      on the shared national identity or legal status within South Korea.
+    negative_clarification: Exclude if the response specifically mentions North Korea,
+      defectors, or the North/South divide (use `nk_origin_reasoning`). Exclude if
+      the response is about general competence or other attributes.
+  criminal_record_reasoning:
+    definition: Reasoning based on the presence or absence of a criminal record (past
+      offenses) as the primary determinant for choice.
+    clarification: Includes mentions of 'no criminal record', 'past record', 'theft',
+      'tax evasion', 'crime', 'safety', 'trustworthiness' linked to legal history.
+    negative_clarification: Exclude if the criminal record is mentioned alongside
+      or subordinate to origin/nationality reasons (if origin is the distinct differentiator,
+      consider `nk_origin_reasoning` or `nationality_reasoning` depending on emphasis,
+      but usually if both are present, `criminal_record_reasoning` is the dominant
+      practical filter unless origin is the *reason* for the record). Exclude general
+      personality traits not linked to legal history.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's marital status, number of children,
+      or family responsibilities (breadwinner status).
+    clarification: Includes mentions of 'married', 'children', 'single parent', 'family
+      support', 'responsibility', 'breadwinner', 'young family'.
+    negative_clarification: Exclude if family status is mentioned only as a secondary
+      factor to origin or criminal record. Exclude if the reasoning is purely about
+      the candidate's personal preference or style.
+  age_reasoning:
+    definition: Reasoning based on the candidate's age, either preferring youth for
+      potential/energy or older age for experience/stability.
+    clarification: Includes mentions of 'young', 'old', 'age', 'generation', 'energy',
+      'experience' linked to age.
+    negative_clarification: Exclude if age is mentioned alongside other primary factors
+      like criminal record or family status without being the distinct driver. Exclude
+      vague age references that don't indicate a preference.
+  job_fit_reasoning:
+    definition: Reasoning based on the candidate's suitability for the specific job
+      role (security guard vs. part-time clerk) based on skills, experience, or physical
+      ability.
+    clarification: Includes mentions of 'manager experience', 'physical strength',
+      'flexibility', 'job skills', 'leadership', 'suitability for the role'.
+    negative_clarification: Exclude if the reasoning is based on personal preference,
+      vague feelings, or demographic factors like age/nationality.
+  none_of_above:
+    definition: Responses that are uninformative, random, or do not provide a substantive
+      reason related to the candidate's attributes.
+    clarification: Includes single letters, random characters, 'just', 'good', 'I
+      like him', 'no reason', 'similar', or non-sequiturs.
+    negative_clarification: Exclude any response that contains a discernible reason
+      related to origin, nationality, criminal record, family, age, or job fit.
+

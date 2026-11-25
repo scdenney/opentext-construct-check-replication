@@ -1,0 +1,60 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1001
+codes:
+  national_security_threat:
+    definition: Reasoning that explicitly invokes national security, the threat from
+      North Korea, espionage, or the necessity of defending the state as the primary
+      justification for the chosen position.
+    clarification: Includes mentions of 'national security' (국가안보, 안보), 'North Korea'
+      (북한), 'espionage' (간첩), 'defending the state' (국가 수호), and the idea that security
+      is a prerequisite for other values.
+    negative_clarification: Do not use for general 'democracy' or 'freedom' arguments
+      unless explicitly linked to security threats. Use 'ideological_values' if the
+      focus is purely on liberal democratic principles without security context. Use
+      'none_of_above' if the mention is incidental or part of a non-substantive answer.
+  ideological_values:
+    definition: Reasoning based on the protection of liberal democracy, freedom, or
+      human rights, without explicit reference to national security threats or state
+      defense.
+    clarification: Includes 'protection of liberal democracy' (자유민주주의 보호), 'freedom'
+      (자유), 'human rights', and general democratic ideals.
+    negative_clarification: Do not use if the response explicitly cites national security
+      or North Korea as the reason. Use 'national_security_threat' in that case. Use
+      'none_of_above' if the answer is vague or non-substantive.
+  party_politics:
+    definition: Reasoning based on partisan loyalty, support for a specific political
+      party, or dislike of the opposing party.
+    clarification: Includes explicit support for 'People Power Party' (국민의 힘, 국힘),
+      'Democratic Party' (더불어민주당, 민주당), or expressions of dislike for a specific party.
+    negative_clarification: Do not use if the reasoning is based on policy substance
+      (security or ideology). Use 'national_security_threat' or 'ideological_values'
+      if the party support is secondary to substantive reasons. Use 'none_of_above'
+      for non-substantive partisan mentions.
+  policy_preference:
+    definition: Reasoning based on a preference for specific policy mechanisms, such
+      as maintaining the status quo, modifying the scope of the law, or gradual change,
+      without citing security or ideology as the primary driver.
+    clarification: Includes preferences for 'maintaining the current law' (그대로 유지),
+      'modifying the scope' (범위 수정/제한), 'gradual change', or general 'policy preference'
+      (정책입장).
+    negative_clarification: Do not use if the preference is driven by security concerns
+      (use 'national_security_threat') or ideological alignment (use 'ideological_values').
+      Use 'none_of_above' if the answer is too vague to determine a specific policy
+      mechanism.
+  none_of_above:
+    definition: Uninformative, non-substantive, or random responses that do not provide
+      a clear reason for the choice.
+    clarification: Includes 'no reason' (이유 없음, 이유없음), 'random choice' (무작위, 아무거나),
+      'don't know' (모름, 잘모르겠어서), single characters, punctuation, or expressions of
+      general dissatisfaction without specific reasoning.
+    negative_clarification: Do not use if the response contains any substantive reasoning
+      related to security, ideology, party, or policy. Ensure all other codes are
+      exhausted before using this code.
+

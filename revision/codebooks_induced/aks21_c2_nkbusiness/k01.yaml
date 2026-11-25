@@ -1,0 +1,69 @@
+codebook:
+  name: aks21_c2_nkbusiness_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK migrant entrepreneurship
+    policy conjoint with a randomized policy rationale, South Korea 2021). Respondents
+    answered: "이 정책을 선택하신 이유는 무엇입니까? (Why did you choose the policy you did?)". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c2_nkbusiness:1001
+codes:
+  anti_discrimination_help:
+    definition: Reasoning that explicitly invokes helping North Koreans who face discrimination,
+      prejudice, or unequal treatment in South Korea.
+    clarification: Includes mentions of helping North Koreans escape discrimination,
+      addressing unequal treatment, supporting those facing prejudice, or promoting
+      fairness/equality for North Koreans.
+    negative_clarification: Exclude general economic support, employment creation,
+      or business growth reasons that do not reference discrimination or prejudice.
+      Use 'economic_benefit' or 'employment_support' instead.
+  economic_benefit:
+    definition: Reasoning based on the economic advantages of the policy for South
+      Korea, such as boosting the local economy, supporting profitable businesses,
+      or creating mutual economic gain.
+    clarification: Includes arguments that the policy is good for the Korean economy,
+      supports profitable ventures, reduces waste, or benefits both North Korean and
+      South Korean partners financially.
+    negative_clarification: Exclude reasons focused solely on helping North Koreans
+      without economic framing, or those focused on political/ideological grounds.
+      Use 'anti_discrimination_help' or 'political_ideology' instead.
+  employment_support:
+    definition: Reasoning that prioritizes job creation, employment support, or workforce
+      development as the primary benefit of the policy.
+    clarification: Includes mentions of supporting jobs, hiring, employment stability,
+      or helping North Koreans find work.
+    negative_clarification: Exclude general business support or economic growth arguments
+      that do not specifically highlight employment. Use 'economic_benefit' instead.
+  fiscal_responsibility:
+    definition: Reasoning based on fiscal prudence, such as avoiding government deficits,
+      preferring tax increases over deficit spending, or ensuring efficient use of
+      public funds.
+    clarification: Includes concerns about government debt, preference for tax-funded
+      solutions over deficit spending, or arguments against wasteful spending.
+    negative_clarification: Exclude general economic benefits or political reasons.
+      Use 'economic_benefit' or 'political_ideology' instead.
+  political_ideology:
+    definition: Reasoning driven by political affiliation, party support, or ideological
+      alignment with specific political figures or groups.
+    clarification: Includes support because a specific party (e.g., PPP, DP), president,
+      or political group supports the policy, or opposition due to dislike of the
+      opposing party.
+    negative_clarification: Exclude policy-specific merits like economic or social
+      outcomes. Use 'none_of_above' if the reason is purely arbitrary or uninformative.
+  policy_mechanism:
+    definition: Reasoning based on the specific design, mechanism, or feasibility
+      of the policy instrument itself, independent of political or broad economic
+      outcomes.
+    clarification: Includes preferences for specific tools like low-interest loans,
+      incubation services, or targeted support for profitable entities based on their
+      practical effectiveness or logic.
+    negative_clarification: Exclude reasons based on political support or general
+      economic benefit. Use 'political_ideology' or 'economic_benefit' instead.
+  none_of_above:
+    definition: Uninformative, arbitrary, or non-substantive responses.
+    clarification: Includes responses stating "no reason," "just picked one," "don't
+      know," "both are bad," or random characters.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to discrimination, economics, employment, fiscal policy, politics, or
+      policy design.
+

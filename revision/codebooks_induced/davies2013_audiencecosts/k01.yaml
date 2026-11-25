@@ -1,0 +1,82 @@
+codebook:
+  name: davies2013_audiencecosts_induced
+  residual_code: none_of_above
+  context: British adults read about an international crisis (nuclear threat, hostages,
+    or an invaded ally) in which the UK government did nothing, issued a threat or
+    an escalated threat, or took military action with or without casualties, rated
+    their approval of the government's handling and explained their rating in their
+    own words.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:davies2013_audiencecosts:1001
+codes:
+  inconsistency_credibility:
+    definition: The response criticizes the government for failing to follow through
+      on a stated threat or military action, arguing that this inconsistency damages
+      the country's credibility, makes it look weak, or renders future threats meaningless.
+    clarification: Includes comments about empty threats, backing down, looking weak/stupid,
+      losing respect, failing to carry out promises, and the negative signal sent
+      to adversaries or allies by not finishing what was started.
+    negative_clarification: Exclude responses that criticize the government for *not*
+      making a threat in the first place, or for using too much force. If the criticism
+      is about the morality of the threat itself rather than the failure to execute
+      it, use 'moral_principles' or 'effectiveness'.
+  effectiveness_outcome:
+    definition: The response evaluates the government's handling based on the tangible
+      results of the action (or inaction), such as whether the hostages were saved,
+      the nuclear threat was stopped, or the situation was resolved.
+    clarification: Includes judgments that the action was futile, pointless, or failed
+      to achieve its objective, regardless of whether a threat was made. Focuses on
+      the utility and success of the policy.
+    negative_clarification: Exclude responses that focus on the *consistency* of the
+      threat (use 'inconsistency_credibility') or the *morality* of the action (use
+      'moral_principles'). If the response says "it didn't work" without referencing
+      credibility or weakness, use this code.
+  risk_casualties:
+    definition: The response prioritizes the safety of British personnel or civilians,
+      arguing against military action due to the risk of death, injury, or negative
+      consequences for British citizens.
+    clarification: Includes concerns about losing soldiers/pilots, risking British
+      lives, the value of human life over political goals, and the unacceptable cost
+      of casualties.
+    negative_clarification: Exclude responses that focus on the risk to the *adversary*
+      or *civilians in the target country* (use 'moral_principles'). Exclude responses
+      that focus on the *political* risk to the government's reputation (use 'inconsistency_credibility').
+  moral_principles:
+    definition: The response bases its approval or disapproval on ethical, legal,
+      or ideological grounds, such as the right to use force, the illegitimacy of
+      nuclear weapons, or the principle of non-interference.
+    clarification: Includes arguments against war/violence, support for diplomacy/negotiation,
+      opposition to nuclear proliferation, concerns about hypocrisy (having nukes
+      but denying others), and the belief that military force is inherently wrong
+      or ineffective as a moral tool.
+    negative_clarification: Exclude responses that focus on the *consistency* of the
+      threat (use 'inconsistency_credibility') or the *safety* of British troops (use
+      'risk_casualties'). If the argument is about "right vs wrong" rather than "effective
+      vs ineffective" or "strong vs weak", use this code.
+  alliance_loyalty:
+    definition: The response focuses on the UK's obligations to allies, arguing that
+      the government failed to support a partner or should have stood by its commitments.
+    clarification: Includes comments about abandoning allies, failing to defend friends,
+      the importance of trust between nations, and the strategic necessity of supporting
+      partners regardless of the outcome.
+    negative_clarification: Exclude responses that focus on the *credibility* of the
+      threat itself (use 'inconsistency_credibility'). If the criticism is specifically
+      about the betrayal of a specific ally or treaty obligation, use this code.
+  lack_of_info:
+    definition: The response indicates that the respondent does not have enough information
+      to form an opinion or judge the government's handling of the situation.
+    clarification: Includes statements like "don't know," "not enough info," "need
+      more facts," or "hard to judge without more details."
+    negative_clarification: Exclude responses that express a clear opinion, even if
+      tentative (e.g., "I think they did okay but..."). If the respondent gives a
+      reason for their rating, use the appropriate substantive code.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      any of the specific substantive categories.
+    clarification: Includes single words like "ok," "no," "yes," "dk" (don't know),
+      "n/a," punctuation only, or vague statements that do not explain the reasoning
+      behind the approval/disapproval rating.
+    negative_clarification: Exclude any response that provides a clear reason for
+      the rating, even if the reason is brief. If a reason is present, code it according
+      to the substantive codes.
+

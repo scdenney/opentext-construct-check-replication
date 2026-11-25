@@ -1,0 +1,71 @@
+codebook:
+  name: nyhan2024_targetedcorrections_seats2020_induced
+  residual_code: none_of_above
+  context: U.S. adults in a YouGov panel, surveyed shortly before the November 2022
+    midterm elections, read a short series of news-style articles. Respondents who
+    then said voter fraud changed the result of one or more of the 2020 U.S. House
+    and Senate elections were asked to explain why they believe this.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:nyhan2024_targetedcorrections_seats2020:1001
+codes:
+  republican_or_judicial_sources:
+    definition: The response explicitly references statements, decisions, actions,
+      or legal proceedings involving Republican officials, politicians, judges, or
+      courts regarding the 2020 election fraud claims.
+    clarification: Includes mentions of Republican politicians (e.g., Trump, McConnell,
+      Barr) disputing results, Republican-led lawsuits, courts dismissing cases, or
+      Republican officials certifying or challenging outcomes. It also includes references
+      to Republican sources or narratives about fraud.
+    negative_clarification: Exclude responses that only mention general distrust,
+      Democratic corruption, or generic conspiracy theories without citing specific
+      Republican officials, judges, or courts. Use 'general_system_distrust' or 'democratic_fraud_allegation'
+      instead.
+  democratic_fraud_allegation:
+    definition: The response attributes voter fraud specifically to the Democratic
+      Party, Democratic officials, or Democratic-controlled jurisdictions.
+    clarification: Includes claims that Democrats cheated, stole the election, manipulated
+      vote counts, used ballot harvesting, or that Democratic states violated rules.
+    negative_clarification: Exclude responses that blame Republicans or generic "politicians"
+      without specifying Democratic culpability. Use 'republican_or_judicial_sources'
+      or 'general_system_distrust' instead.
+  general_system_distrust:
+    definition: The response expresses a general lack of trust in the election system,
+      government, or voting process without attributing fraud to a specific party
+      or citing specific official actions.
+    clarification: Includes beliefs that "no system is perfect," "corrupt politicians
+      exist," "machines can be hacked," "human error occurs," or general skepticism
+      about election integrity.
+    negative_clarification: Exclude responses that specifically blame Democrats, Republicans,
+      or cite specific judicial/political actions. Use 'democratic_fraud_allegation'
+      or 'republican_or_judicial_sources' instead.
+  procedural_irregularities:
+    definition: The response cites specific procedural anomalies, irregularities,
+      or logistical issues in the voting or counting process as evidence of fraud.
+    clarification: Includes mentions of ballot stuffing, drop box issues, signature
+      verification failures, counting pauses, late-night vote dumps, or specific state-level
+      procedural failures (e.g., PA, AZ, GA).
+    negative_clarification: Exclude vague claims of "cheating" or general distrust.
+      Use 'general_system_distrust' if no specific procedure is mentioned.
+  media_and_documentary_sources:
+    definition: The response cites media reports, documentaries, videos, or online
+      forums as the basis for believing in voter fraud.
+    clarification: Includes references to "2000 Mules," Dinesh D'Souza, news reports,
+      social media, or "videos showing" fraud.
+    negative_clarification: Exclude responses that cite official government or judicial
+      sources. Use 'republican_or_judicial_sources' if the source is a court or official.
+  personal_experience_or_anecdote:
+    definition: The response relies on personal observation, anecdotal evidence, or
+      individual experiences to justify the belief in fraud.
+    clarification: Includes claims like "I saw this happen," "my family received ballots
+      for dead people," or "people in my area vote illegally."
+    negative_clarification: Exclude general systemic critiques or citations of official
+      sources. Use 'general_system_distrust' or 'procedural_irregularities' if the
+      anecdote is about a specific procedural flaw.
+  none_of_above:
+    definition: The response is uninformative, repetitive, non-substantive, or does
+      not provide a reason for the belief in voter fraud.
+    clarification: Includes "I already answered," "No comment," "Just a feeling,"
+      "I don't know," "Voter fraud" (without explanation), or gibberish.
+    negative_clarification: Exclude any response that provides a substantive reason,
+      even if weak. Use the most appropriate substantive code instead.
+

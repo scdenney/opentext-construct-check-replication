@@ -1,0 +1,53 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1010
+codes:
+  programmatic_policy_reasoning:
+    definition: Justifies the choice by referencing specific policy positions, ideological
+      alignment, or campaign promises (e.g., housing, taxes, labor, foreign policy,
+      nuclear weapons, anti-discrimination laws).
+    clarification: Includes explicit mentions of policy areas (real estate, taxes,
+      labor hours, nuclear stance, foreign alliances), ideological camps (progressive,
+      conservative, liberal), or general agreement with the candidate's platform or
+      "public interest" (guk-ik) driven by policy outcomes.
+    negative_clarification: Exclude responses that focus solely on personal traits,
+      background, or lack of scandal without linking to policy. Use 'personal_characteristics'
+      or 'candidate_background' instead.
+  personal_characteristics:
+    definition: Justifies the choice based on the candidate's personal attributes,
+      leadership style, or perceived competence.
+    clarification: Includes references to age (young/old), experience, leadership
+      quality, flexibility, moral integrity, trustworthiness, or general "goodness"
+      of the person.
+    negative_clarification: Exclude responses that cite specific policy agreements.
+      Use 'programmatic_policy_reasoning' instead.
+  candidate_background:
+    definition: Justifies the choice based on the candidate's professional history,
+      family background, or identity markers.
+    clarification: Includes references to previous jobs (prosecutor, activist, businessman),
+      family history (pro-Japanese ancestry), gender, or regional origin.
+    negative_clarification: Exclude responses that focus on current policy stances
+      or personal personality traits. Use 'programmatic_policy_reasoning' or 'personal_characteristics'
+      instead.
+  comparative_negation:
+    definition: Justifies the choice primarily by rejecting the opponent rather than
+      supporting the chosen candidate.
+    clarification: Includes statements like "less bad," "not the other one," "opponent
+      has scandals," or "opponent is pro-Japanese."
+    negative_clarification: Exclude responses that offer positive reasons for the
+      chosen candidate. Use 'programmatic_policy_reasoning', 'personal_characteristics',
+      or 'candidate_background' if a positive trait is also cited.
+  none_of_above:
+    definition: Uninformative, non-substantive, or missing responses.
+    clarification: Includes "no reason," "just," "don't know," random characters,
+      or expressions of general dissatisfaction with all options without specifying
+      a reason for the specific choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if vague.
+

@@ -1,0 +1,77 @@
+codebook:
+  name: egami2022_prison_exp3_induced
+  residual_code: none_of_above
+  context: US adults on Mechanical Turk (2017) read a short vignette about a 28-year-old
+    single man, a citizen of another country, convicted of illegally entering the
+    United States; versions differed in what was said about his prior criminal record.
+    After saying whether he should be sent to prison, they explained what the U.S.
+    government should do with him and why.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:egami2022_prison_exp3:1001
+codes:
+  punitive_removal:
+    definition: The response advocates for sending the individual to prison, imposing
+      a punitive sentence, or deporting him to his country of origin, often emphasizing
+      law enforcement, deterrence, or the enforcement of immigration laws.
+    clarification: Includes calls for incarceration (with or without subsequent deportation),
+      deportation as a primary or secondary punishment, and arguments based on the
+      need to punish illegal entry or protect society from a criminal.
+    negative_clarification: Excludes responses that argue against imprisonment or
+      deportation in favor of alternative outcomes like citizenship, asylum, or simply
+      letting him stay without punishment. Use 'path_to_citizenship' or 'humanitarian_asylum'
+      instead.
+  path_to_citizenship:
+    definition: The response advocates for allowing the individual to remain in the
+      U.S., potentially after serving a sentence or under specific conditions, with
+      the goal of legalizing his status or granting citizenship.
+    clarification: Includes suggestions for a path to citizenship, legalization, or
+      allowing him to stay and build a life, provided he follows the law or completes
+      certain requirements.
+    negative_clarification: Excludes responses that prioritize deportation or prison
+      as the main outcome. Use 'punitive_removal' if deportation is the primary recommendation.
+  humanitarian_asylum:
+    definition: The response suggests that the individual should be granted asylum,
+      refugee status, or treated with compassion due to his circumstances, such as
+      fleeing poverty, violence, or persecution.
+    clarification: Includes arguments based on the individual's need for safety, economic
+      desperation, or moral considerations regarding human rights and the root causes
+      of migration.
+    negative_clarification: Excludes responses that focus on legal punishment or deportation.
+      Use 'punitive_removal' or 'path_to_citizenship' if the focus is on legal status
+      or punishment.
+  cost_and_resources:
+    definition: The response argues against imprisonment or deportation based on economic
+      grounds, such as the cost to taxpayers, resource allocation, or efficiency.
+    clarification: Includes arguments that prison is too expensive, deportation is
+      cheaper, or that resources should be spent elsewhere. Often overlaps with deportation
+      but focuses on the financial rationale.
+    negative_clarification: Excludes responses that advocate for deportation based
+      on law enforcement or punishment rather than cost. Use 'punitive_removal' if
+      the primary reason is legal/punitive.
+  prior_criminal_history:
+    definition: The response focuses on the individual's prior criminal record, particularly
+      violent crimes, as the primary factor in determining the appropriate action,
+      often arguing for harsher punishment due to recidivism or danger.
+    clarification: Includes arguments that the individual is a repeat offender, a
+      threat to society, or that his past crimes justify current incarceration or
+      permanent exclusion.
+    negative_clarification: Excludes responses that focus on the current illegal entry
+      offense alone or other factors like cost or citizenship. Use 'punitive_removal'
+      if the outcome is prison/deportation but the reasoning is broader.
+  procedural_fairness:
+    definition: The response emphasizes the need for due process, investigation, or
+      a case-by-case evaluation before determining the outcome.
+    clarification: Includes calls for interviews, background checks, or legal adjudication
+      to determine the individual's intentions, eligibility for asylum, or proper
+      legal status.
+    negative_clarification: Excludes responses that give a definitive answer for prison
+      or deportation without mentioning process. Use 'punitive_removal' or 'humanitarian_asylum'
+      if a specific outcome is recommended.
+  none_of_above:
+    definition: The response is uninformative, incoherent, or does not fit into any
+      of the defined categories.
+    clarification: Includes responses that are too short, irrelevant, or express confusion
+      without offering a clear stance on the government's action.
+    negative_clarification: Excludes responses that clearly advocate for one of the
+      other codes.
+

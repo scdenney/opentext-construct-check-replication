@@ -1,0 +1,86 @@
+codebook:
+  name: haslberger2025_aiexposure_induced
+  residual_code: none_of_above
+  context: Working-age adults in the United Kingdom with a ChatGPT account took an
+    online survey in 2023. They completed three short work-like writing and reading
+    tasks, some of them encouraged to use ChatGPT and others told not to, then answered
+    questions about AI, jobs and government responsibilities. At the end they were
+    asked what they think is most important when it comes to dealing with the effects
+    of artificial intelligence on the labour market.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:haslberger2025_aiexposure:1001
+codes:
+  job_loss_concern:
+    definition: The response expresses concern that AI will take people's jobs, replace
+      workers, or cause unemployment or job insecurity, for the respondent or for
+      others. This includes explicit calls to protect jobs, prevent displacement,
+      or mitigate the negative impact of job loss.
+    clarification: Includes mentions of preventing mass unemployment, protecting workers
+      from being replaced, ensuring job security, and concerns about specific sectors
+      losing jobs. Also includes responses that frame the primary challenge as the
+      risk of job displacement, even if they suggest solutions like UBI or retraining
+      as secondary to the primary concern of job loss.
+    negative_clarification: Exclude responses that focus solely on retraining or upskilling
+      without mentioning the risk of job loss as the primary concern. Exclude responses
+      that focus on ethical issues, regulation, or productivity without referencing
+      job replacement or unemployment. Use 'retraining_and_upskilling' or 'regulation_and_governance'
+      instead if those are the primary focus.
+  retraining_and_upskilling:
+    definition: The response emphasizes the importance of education, training, reskilling,
+      or upskilling the workforce to adapt to AI, often as a solution to changing
+      job requirements, without primarily focusing on the fear of job loss itself.
+    clarification: Includes calls for government-funded training, educational reform,
+      lifelong learning, and helping workers transition to new roles. Focuses on the
+      capability of workers to use AI or move to new jobs.
+    negative_clarification: Exclude responses where the primary driver is the fear
+      of losing one's job (use 'job_loss_concern'). Exclude responses that focus on
+      general ethical guidelines or regulatory frameworks without specific mention
+      of worker training. Use 'regulation_and_governance' if the focus is on laws
+      rather than individual worker skills.
+  economic_safety_nets:
+    definition: The response highlights the need for financial support systems, such
+      as Universal Basic Income (UBI), increased taxation on AI profits, or expanded
+      social security, to support those affected by AI, particularly those who lose
+      their jobs.
+    clarification: Includes mentions of UBI, taxing AI companies to fund social programs,
+      ensuring wealth distribution, and providing income support for the unemployed.
+      Focuses on the economic redistribution aspect of dealing with AI's effects.
+    negative_clarification: Exclude responses that focus on preventing job loss itself
+      (use 'job_loss_concern') or on training workers to keep their jobs (use 'retraining_and_upskilling').
+      Exclude general ethical concerns. Use 'job_loss_concern' if the mention of UBI
+      is strictly conditional on the fear of mass unemployment being the main point.
+  regulation_and_governance:
+    definition: The response calls for legal frameworks, oversight, transparency,
+      ethical guidelines, or government intervention to control the development and
+      use of AI in the workplace.
+    clarification: Includes demands for robust regulation, checks and balances, transparency
+      in AI decision-making, preventing bias, and ensuring AI is used ethically. Focuses
+      on the structural and legal control of AI technology.
+    negative_clarification: Exclude responses focused on the direct impact on employment
+      numbers (use 'job_loss_concern') or on worker training (use 'retraining_and_upskilling').
+      Exclude responses that are purely about the benefits of AI without mentioning
+      controls. Use 'job_loss_concern' if the regulation is specifically cited as
+      a means to prevent job loss.
+  human_ai_collaboration:
+    definition: The response argues that AI should be used as a tool to augment, assist,
+      or collaborate with human workers, rather than replace them, emphasizing the
+      continued value of human input, creativity, or interaction.
+    clarification: Includes views that AI should enhance productivity, handle repetitive
+      tasks while humans do creative work, or that human touch/empathy is irreplaceable.
+      Focuses on the complementary nature of AI and human labor.
+    negative_clarification: Exclude responses that express fear of replacement (use
+      'job_loss_concern'). Exclude responses that focus on training workers to use
+      AI (use 'retraining_and_upskilling'). Exclude general ethical concerns. Use
+      'job_loss_concern' if the collaboration is framed as a necessary alternative
+      to job loss.
+  none_of_above:
+    definition: The response is uninformative, expresses uncertainty, or focuses on
+      aspects not covered by the other codes (e.g., general AI safety, environmental
+      impact, or non-labour market issues).
+    clarification: Includes "I don't know," "Not sure," vague statements, or responses
+      focusing on AI taking over humanity in a sci-fi sense unrelated to the labour
+      market, or focusing on data privacy without labour context.
+    negative_clarification: Exclude any response that clearly addresses job loss,
+      training, economic support, regulation, or human-AI collaboration in the context
+      of the labour market.
+

@@ -1,0 +1,73 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1009
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly or implicitly invokes the candidate's place
+      of birth, regional origin (specifically East Germany, Saxony, or the former
+      GDR), or ethnic/national origin (specifically German vs. non-German) as a primary
+      ground for selection or rejection.
+    clarification: Includes mentions of "Sachsen", "Ost", "GDR", "Deutschland" (when
+      contrasted with foreign origin or used as a proxy for national identity), "deutscher
+      Herkunft", "gebürtiger Deutscher", or stereotypes associated with East Germans
+      (e.g., "Sachsen komisch"). Also includes negative reasoning based on being an
+      "Ausländer" or non-German.
+    negative_clarification: Exclude mentions of other German states (e.g., "Bayern",
+      "Hamburg") unless they are part of a specific East/West contrast or imply a
+      national identity argument. Exclude general "German" mentions if not tied to
+      an origin/identity argument. Use `demographic_reasoning` for age/location if
+      not tied to the specific East/German identity construct.
+  demographic_reasoning:
+    definition: Reasoning based on the candidate's age, family status, or number of
+      children, focusing on their labor market potential or financial need.
+    clarification: Includes mentions of "jung" (young), "alt" (old), "Rentenalter"
+      (retirement age), "Kinder" (children), "alleinerziehend" (single parent), "verheiratet"
+      (married). Focuses on the idea that younger people have more working years left
+      or that single parents/parents with many children have higher financial need.
+    negative_clarification: Exclude mentions of age if it is purely descriptive without
+      reasoning about labor market utility or need. Exclude family status if it is
+      not linked to economic need or stability. Use `none_of_above` if the mention
+      is random or uninformative.
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of prior convictions.
+    clarification: Includes mentions of "keine Vorstrafen" (no criminal record), "nicht
+      vorbestraft", "keine Straftaten", "kein Diebstahl", "Steuerhinterziehung" (tax
+      evasion). Focuses on trustworthiness, second chances, or legal compliance.
+    negative_clarification: Exclude general moral judgments not linked to specific
+      legal records. Use `none_of_above` for vague statements like "gut" or "sympatisch"
+      without reference to records.
+  professional_qualifications_reasoning:
+    definition: Reasoning based on the candidate's professional experience, job title,
+      education, or current employment status.
+    clarification: Includes mentions of "Erfahrung" (experience), "Filialleiter" (branch
+      manager), "Qualifikation", "Berufsjahre", "Teilzeit/Vollzeit", "Förderung",
+      "Weiterbildung". Focuses on the utility of the training for their career or
+      their current professional standing.
+    negative_clarification: Exclude general praise like "gut" or "besser" without
+      specific professional context. Use `none_of_above` for uninformative answers.
+  personal_preference_reasoning:
+    definition: Reasoning based on subjective feelings, gut instinct, or general likability
+      without specific objective criteria.
+    clarification: Includes mentions of "Bauchgefühl" (gut feeling), "sympatisch"
+      (likable), "gefällt mir" (I like it), "passt besser" (fits better), "meine Meinung"
+      (my opinion).
+    negative_clarification: Exclude answers that cite specific demographic, professional,
+      or legal reasons. Use `none_of_above` for non-answers.
+  non_response_reasoning:
+    definition: Responses that are non-informative, random, or indicate a lack of
+      engagement with the question.
+    clarification: Includes "Keine Ahnung" (no idea), "Weiß nicht" (don't know), "geht
+      so" (so-so), random characters ("xxx", "Cggvvxjn"), emojis, or statements indicating
+      the respondent just picked one arbitrarily ("einer muss es ja sein", "muss auswählen").
+    negative_clarification: Exclude any response that provides a reason, even if weak.
+      Use `none_of_above` for this category.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

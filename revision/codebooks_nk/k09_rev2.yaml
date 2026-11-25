@@ -1,0 +1,39 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 9
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly cites economic, fiscal, or practical policy mechanisms such as cost, efficiency, financial aid, loans, job creation, business viability, or specific economic outcomes for the country or the business. It includes references to financial instruments (cash, grants, loans), business support structures (incubation, office space), and economic impacts (R&D, regional improvement, deficit spending).
+    clarification: |
+      Include responses mentioning money, loans, grants, business support, efficiency, practical implementation details, or specific economic benefits (e.g., "helps R&D," "good for Korea" when linked to economic gain/deficit). Include references to specific economic actors or conditions if they imply economic utility (e.g., "cash aid," "large corporations").
+    negative_clarification: |
+      Exclude general statements about national interest, identity, or morality (e.g., "good for Korea") unless tied to specific economic outcomes. Exclude vague preferences without substantive content. Exclude purely procedural or non-substantive labels.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, moral obligation, solidarity, identity, or what is right or just for North Korean migrants. This includes general support based on humanitarian grounds, national identity, or moral duty. It also includes references to the moral standing of groups (e.g., human rights organizations, civic groups) or the ethical treatment of defectors.
+    clarification: |
+      Include responses expressing moral duty, solidarity, identity-based support, or general humanitarian reasons. "Good for Korea" is normative if it reflects national identity/solidarity rather than specific economic gain. Include references to the moral legitimacy of supporters (e.g., "human rights organization," "civic groups") or the ethical nature of the support (e.g., "reverse discrimination," "right to support").
+    negative_clarification: |
+      Exclude responses that are purely procedural, non-substantive, or refer to specific economic mechanisms (which belong in economic_rationale). Exclude vague substantive justifications that do not clearly invoke moral or identity-based frameworks.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither clearly economic nor normative. Includes vague substantive justifications, policy objectives, trust, support bases, or general approval without specific economic or moral framing. This category captures responses that provide a reason but lack the specific economic or moral markers of the other two codes.
+    clarification: |
+      Include responses citing policy goals, trustworthiness, support from groups (when not explicitly moral/human rights), or general substantive reasons that don't fit economic or normative categories. Include vague but substantive statements like "I think it's better," "reasonable," "looks better," or references to application targets/scope if they imply a substantive preference.
+    negative_clarification: |
+      Exclude responses that are truly empty, non-substantive, or purely procedural (which belong in uninformative). Exclude clear economic or normative reasons.
+  uninformative:
+    definition: |
+      No substantive reason is given. Includes "don't know," "no particular reason," "just because," "none," "other" (as a category label), or off-topic text. Also includes responses that are purely procedural notes, labels, or fragments that do not constitute a reason for the choice.
+    clarification: |
+      Include responses that provide no reasoning, only procedural notes, or non-substantive labels. Include phrases like "I don't know," "None," "No particular reason," "I just chose it," "It's up to you," or single words that do not form a coherent reason (e.g., "Cooperation," "Target," "Policy Support").
+    negative_clarification: Exclude any response that offers a substantive reason,
+      even if vague (which belongs in other_rationale) or clearly economic/normative.
+

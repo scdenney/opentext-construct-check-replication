@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1002
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic diversity, cultural diversity,
+      immigration, multiculturalism, or national unity as a primary factor in the
+      decision.
+    clarification: Includes mentions of 'Diversität', 'kulturelle Vielfalt', 'ethnische
+      Vielfalt', 'Masseneinwanderung', 'Vielfalt', or arguments about how diversity
+      enriches or harms the country.
+    negative_clarification: Exclude general gender equality or political system preferences.
+      Use 'gender_reasoning' or 'democracy_reasoning' instead.
+  gender_reasoning:
+    definition: Reasoning based on gender equality, women's rights, or the role of
+      gender in society and the workplace.
+    clarification: Includes mentions of 'Geschlecht', 'Gleichberechtigung', 'Frauenrechte',
+      'Gleichstellung', 'Männer/Frauen', or specific policies regarding gender quotas
+      or non-preference based on gender.
+    negative_clarification: Exclude general diversity or immigration topics. Use 'diversity_reasoning'
+      instead.
+  democracy_reasoning:
+    definition: Reasoning that prioritizes democratic values, the democratic system,
+      or political stability as the deciding factor.
+    clarification: Includes mentions of 'Demokratie', 'demokratisch', 'Freiheit' (in
+      a political/systemic sense), 'Rechtsstaat', or opposition to anti-democratic
+      forces.
+    negative_clarification: Exclude economic freedom arguments. Use 'economic_reasoning'
+      instead.
+  economic_reasoning:
+    definition: Reasoning based on economic policies, such as support for businesses,
+      market freedom, or state control of the economy.
+    clarification: Includes mentions of 'Unternehmen', 'Wirtschaft', 'Freiheit für
+      Unternehmen', 'Kontrolle der Unternehmen', 'Arbeitsplätze', or 'Sozialhilfe'
+      (if framed economically).
+    negative_clarification: Exclude general social welfare or moral arguments. Use
+      'social_welfare_reasoning' if focused on care, or 'economic_reasoning' if focused
+      on market mechanisms.
+  social_welfare_reasoning:
+    definition: Reasoning focused on social justice, state responsibility for citizens,
+      or general well-being and care for the population.
+    clarification: Includes mentions of 'Sozialstaat', 'für alle sorgen', 'soziale
+      Gerechtigkeit', 'Verantwortung des Staates', or 'Gemeinschaft'.
+    negative_clarification: Exclude specific economic policy details like corporate
+      control. Use 'economic_reasoning' instead.
+  general_agreement:
+    definition: Reasoning based on a general sense of alignment with the politician's
+      views without specifying a particular policy domain.
+    clarification: Includes phrases like 'stimme mehr zu', 'passt besser', 'meine
+      Meinung', 'Übereinstimmung', 'Ansichten gefallen mir', or 'entspricht meinen
+      Vorstellungen'.
+    negative_clarification: Exclude specific policy reasons. If a specific policy
+      (e.g., economy, gender) is mentioned, use the specific code.
+  affective_heuristic:
+    definition: Reasoning based on gut feeling, personal preference, charisma, or
+      non-rational factors.
+    clarification: Includes mentions of 'Bauchgefühl', 'Gefühl', 'sympathisch', 'gefällt
+      mir', 'klingt besser', 'einfach so', or 'geringeres Übel' (when not tied to
+      a specific policy).
+    negative_clarification: Exclude strategic voting based on policy alignment. Use
+      'general_agreement' if policy alignment is implied but not specified.
+  none_of_above:
+    definition: Uninformative, missing, or nonsensical responses.
+    clarification: Includes 'Weiß nicht', 'Keine Ahnung', 'Einfach so' (without further
+      context), gibberish, or responses that do not provide a reason for the choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if vague.
+

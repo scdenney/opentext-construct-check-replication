@@ -1,0 +1,88 @@
+codebook:
+  name: graeber2024_storiesmemory_induced
+  residual_code: none_of_above
+  context: Online respondents read about three hypothetical product scenarios (a video
+    game, a bicycle, a restaurant); for each product they received either a short
+    story based on one customer review, a statistic summarising reviews, or no information.
+    In a later follow-up survey they were asked to write down everything they remembered
+    about each product scenario.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:graeber2024_storiesmemory:1001
+codes:
+  recall_of_received_information:
+    definition: The response reproduces specific content, details, or the directional
+      sentiment (positive/negative) of the information actually presented in the first
+      survey (either the specific review story or the statistical summary).
+    clarification: Includes specific details from the review story (e.g., reviewer
+      demographics, specific complaints/praises, product defects, service issues)
+      or accurate recall of the statistics (e.g., "3 out of 7 were positive", "10
+      out of 11 were negative"). Also includes correct identification of the sentiment
+      direction if specific details are lost but the overall valence of the provided
+      info is remembered correctly.
+    negative_clarification: Exclude responses that only mention the general task,
+      the 50% guessing strategy, or vague impressions not tied to the specific stimulus.
+      Use 'general_task_awareness' for mentions of the 50% rule. Use 'vague_sentiment'
+      for generic positive/negative feelings without specific recall of the provided
+      info. Use 'no_information_received' if the respondent correctly states they
+      received no info.
+  general_task_awareness:
+    definition: The response references the procedural aspects of the study, specifically
+      the instruction to guess 50% when no additional information is provided, or
+      the mechanics of the selection process, without recalling specific product details.
+    clarification: Includes statements like "I was told to guess 50% if no info was
+      given," "I remember choosing percentages," or "I remember the random selection
+      process."
+    negative_clarification: Exclude if the respondent also recalls specific product
+      details or the content of a review/statistic. Use 'recall_of_received_information'
+      in that case. Use 'none_of_above' if the mention is irrelevant to the specific
+      product scenario being asked about.
+  no_information_received:
+    definition: The respondent explicitly states or strongly implies that they did
+      not receive any additional information (story or statistic) for this specific
+      product scenario.
+    clarification: Includes phrases like "No additional information was given," "I
+      don't think I got any background info," or "There was no extra info."
+    negative_clarification: Exclude if the respondent recalls receiving info but misremembers
+      the content. Use 'recall_of_received_information' (if they recall the *presence*
+      of info incorrectly) or 'vague_sentiment'. Exclude if they are unsure. Use 'none_of_above'
+      for simple "I don't remember" without the explicit claim of no info.
+  vague_sentiment:
+    definition: The response expresses a general positive or negative feeling about
+      the product or reviews but lacks specific details from the provided information
+      and does not accurately recall the specific stimulus.
+    clarification: Includes generic statements like "It seems unfair," "The restaurant
+      was cozy," "The game was boring," or "Most reviews were negative" without linking
+      it to the specific review text or statistic shown.
+    negative_clarification: Exclude if the sentiment is directly supported by recalled
+      details from the stimulus. Use 'recall_of_received_information'. Exclude if
+      the respondent explicitly states they received no info. Use 'none_of_above'
+      for non-substantive comments.
+  no_recollection:
+    definition: The respondent explicitly states they do not remember anything about
+      the scenario, the product, or the information provided.
+    clarification: Includes phrases like "I don't remember," "Nothing," "I can't recall,"
+      "I don't remember anything specific."
+    negative_clarification: Exclude if the respondent provides *any* detail, even
+      if vague or incorrect. Use 'vague_sentiment' or 'recall_of_received_information'
+      (if they recall the *absence* of info). Use 'none_of_above' for non-responses
+      like "na" or "nothing now that i'm thinking of burgers."
+  other_product_memory:
+    definition: The response recalls details about a different product scenario (e.g.,
+      confusing the video game with the bicycle) or general knowledge about the product
+      category not derived from the specific stimulus.
+    clarification: Includes mixing up details between the three products (e.g., describing
+      the bike's review when asked about the restaurant) or bringing in external knowledge
+      (e.g., "Video games are hit or miss").
+    negative_clarification: Exclude if the details match the specific product asked
+      about and the specific stimulus. Use 'recall_of_received_information'. Exclude
+      if it's a clear statement of no memory. Use 'none_of_above' for irrelevant tangents.
+  none_of_above:
+    definition: Responses that are uninformative, irrelevant, or do not fit into the
+      other categories.
+    clarification: Includes non-answers ("na", "nothing"), irrelevant personal anecdotes
+      ("I worked for 10 hours"), or comments that do not address the memory of the
+      product scenario.
+    negative_clarification: Exclude any response that attempts to answer the question
+      about memory, even if it is "I don't remember." Use 'no_recollection' for those.
+      Exclude responses that recall the stimulus. Use 'recall_of_received_information'.
+

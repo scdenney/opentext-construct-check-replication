@@ -1,0 +1,28 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 2
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 5
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly concerns financial costs, fiscal impacts, operational efficiency, job creation, or practical effectiveness of the policy mechanism. It must refer to tangible economic outcomes, logistical feasibility, or specific policy instruments (e.g., loans, tax changes, incubation, advisory services) and their perceived economic utility. It also includes comparisons based on economic safety, fiscal responsibility, or practical business support mechanisms.
+  normative_rationale:
+    definition: |
+      The reason concerns moral obligations, fairness, deservingness, solidarity, national identity, or the broader benefit to the nation (e.g., "good for Korea"). It includes appeals to what is right, who deserves support, shared identity/values, human rights, trust, credibility of supporters (e.g., NGOs, civic groups), and the social integration or status of North Korean defectors. It also includes general expressions of support for the group or the nation's direction.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither strictly economic nor normative. Includes expressions of general preference ("I like it"), vague support, observations about policy structure or targets, political context, credibility of supporters, or non-specific justifications that do not fit economic or moral categories. It also includes comparative statements that do not specify the economic or moral basis (e.g., "better than B", "similar", "ease").
+  uninformative:
+    definition: No substantive reason is given. This includes "don't know," "no particular
+      reason," "none," "nothing special," or text that is completely off-topic or
+      unintelligible. Mere expressions of liking/disliking without any explanatory
+      clause are classified as 'other_rationale', not uninformative. Single words
+      or short phrases that do not convey a clear rationale (e.g., "Policy", "Just",
+      "Be similar") are classified as uninformative unless they clearly imply a specific
+      economic or normative stance.
+

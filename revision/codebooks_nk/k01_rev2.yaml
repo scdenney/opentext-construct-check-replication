@@ -1,0 +1,42 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 1
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns specific economic, fiscal, or practical policy outcomes such as job creation, economic growth, cost-effectiveness, efficiency, market competition, financial viability, or the use of specific economic instruments (e.g., loans, tax credits, subsidies). It includes references to business viability, profitability, R&D, or practical economic support mechanisms.
+    clarification: |
+      Explicitly include specific policy instruments that have direct economic implications, such as "low-interest loans," "tax credits," "corporate tax increases," "R&D support," "start-up support," or "business support." References to "efficiency," "practicality," or "realism" in the context of business operations or policy implementation are economic. References to "self-reliance" or "employment" are economic if framed as financial independence or job creation.
+    negative_clarification: |
+      Do not classify as economic if the reason is based on moral duty, national solidarity, identity, fairness, or general "goodness" without economic specifics. Do not classify as economic if the reason is purely political (e.g., "party supports it") or procedural. Do not classify as economic if the reason is vague ("good," "better") without linking to an economic mechanism.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, moral obligation, solidarity, national identity, or the inherent worthiness of North Korean migrants. It includes appeals to helping the vulnerable, national unity, human rights, or what is "right" or "good" for the country/people in a moral or social sense. It also includes reasons based on the identity of the beneficiaries (e.g., "North Korean defectors") or the nature of the support as a social good, even if brief.
+    clarification: |
+      "Good for Korea," "national interest," "helping defectors," "solidarity," "human rights," and "fairness" are normative. Reasons based on moral duty or social cohesion are normative even if they mention employment or support, if the primary frame is moral/social rather than fiscal. References to "immigration support," "civic groups," or "human rights organizations" supporting the policy are normative. "It seems fair" is normative.
+    negative_clarification: |
+      Do not classify as normative if the reason is strictly about economic efficiency, cost, or market mechanics without a moral/social frame. Do not classify as normative if the reason is purely political preference (e.g., "party likes it") or procedural. Do not classify as normative if the reason is a vague expression of preference ("I like it") without a moral/social justification.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes political affiliations, procedural preferences, trust, specific policy instrument details (if not tied to economic/normative outcomes), or general political sentiment. It also includes reasons based on the source of support (e.g., "supported by conglomerates") or the structural nature of the policy (e.g., "joint venture," "scope of support") when not explicitly framed as economic gain or moral duty.
+    clarification: |
+      Reasons citing political party support, political ideology, trust, or specific non-economic/non-moral policy features are "other". If the respondent gives a substantive reason that doesn't fit economic or normative categories, use this code. References to "large companies supporting it" or "workers' groups supporting it" are other (political/structural). "I don't understand" or "No difference" when indicating a substantive lack of distinction or comprehension of the policy mechanics is other. "Just" or "None" are uninformative, but "No reason" or "For no reason" indicating a substantive rejection of reasoning is other.
+    negative_clarification: |
+      Do not use this for vague, non-substantive, or nonsensical answers (see uninformative). Do not use this for reasons that are clearly economic or normative. Do not use this for simple expressions of preference ("I like it") without substantive justification.
+  uninformative:
+    definition: |
+      No substantive reason is given. This includes "don't know," "no reason," "just," "good," "better," "none," "surprised," or text that is purely descriptive of the policy without explaining a preference, or off-topic gibberish. It also includes single words or fragments that do not constitute a clear rationale (e.g., "Start-up," "Low-interest loans," "Tax credit," "Immigration support policy") unless they are part of a longer sentence explaining the economic or normative benefit.
+    clarification: |
+      If the answer provides no justification for the choice (e.g., "Just," "None," "I don't know," "Good"), it is uninformative. If the answer is a fragment that does not constitute a reason (e.g., "Advisory Services Only" when asked for a reason), it is uninformative. Single-word labels of policy instruments (e.g., "Tax," "Loan," "Research") without explanation of why they are preferred are uninformative.
+    negative_clarification: Do not use this for substantive reasons, even if brief.
+      If the answer contains a clear economic, normative, or other substantive reason,
+      do not code as uninformative. Do not use this for "I don't understand" if it
+      implies a substantive reason for rejection (see other_rationale). Do not use
+      this for "No difference" if it implies a substantive comparison (see other_rationale).
+

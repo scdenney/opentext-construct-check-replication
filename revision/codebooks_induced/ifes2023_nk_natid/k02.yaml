@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1002
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      or social norms as a ground for the person being more truly Korean.
+    clarification: Includes explicit mentions of respecting political systems (정치
+      제도), laws (법), regulations/norms (규범/규율), and social order. Also includes reasoning
+      that adherence to these structures is a prerequisite for being Korean, even
+      if other markers (like birth or ethnicity) are absent.
+    negative_clarification: Exclude responses that only mention cultural understanding,
+      language ability, or historical knowledge without referencing laws, politics,
+      or formal norms. Use 'cultural_historical_criteria' or 'linguistic_criteria'
+      instead.
+  birth_nationality_criteria:
+    definition: Reasoning based on legal citizenship status (nationality) or place
+      of birth as the primary or sufficient indicator of Korean identity.
+    clarification: Includes mentions of holding Korean nationality (국적 보유), being
+      born in Korea (출생/태어남), or having citizenship. Often treated as a self-evident
+      or sufficient condition for being Korean.
+    negative_clarification: Exclude responses where nationality/birth is mentioned
+      alongside a strong emphasis on respecting laws/politics as the *reason* for
+      choice; if the law/politics aspect is dominant, use 'civic_law_criteria'. If
+      it's just a factual statement without normative weight, this code applies.
+  cultural_historical_criteria:
+    definition: Reasoning based on understanding, respecting, or sharing South Korean
+      history, traditions, customs, or general culture.
+    clarification: Includes mentions of understanding history (역사), traditions (전통),
+      customs (풍습), culture (문화), and national sentiment/pride (자부심/애국심). Focuses
+      on shared heritage and cultural knowledge.
+    negative_clarification: Exclude responses that specifically cite laws, political
+      institutions, or formal norms. Use 'civic_law_criteria' for those. Exclude responses
+      focused solely on language proficiency.
+  linguistic_criteria:
+    definition: Reasoning based on the ability to speak Korean or language proficiency
+      as a key factor.
+    clarification: Includes explicit mentions of knowing or speaking the Korean language
+      (한국어).
+    negative_clarification: Exclude responses where language is just one of many factors
+      but not the primary reason, or where it is subsumed under cultural understanding.
+      If language is the sole or main driver, use this code.
+  subjective_identity_criteria:
+    definition: Reasoning based on internal feelings, self-perception, or emotional
+      connection to being Korean.
+    clarification: Includes mentions of "feeling" Korean (한국인임을 느낌/느끼기), internal
+      identity (내면의 정체성), subjective standards (주관적인 기준), or emotional resonance.
+    negative_clarification: Exclude responses based on objective markers like birth,
+      nationality, or laws. Use 'birth_nationality_criteria' or 'civic_law_criteria'
+      for those.
+  other_civic_social_criteria:
+    definition: Reasoning based on other civic or social contributions, such as economic
+      development, patriotism, or general helpfulness to the nation, not covered by
+      laws or culture.
+    clarification: Includes mentions of contributing to economic development (경제 발전),
+      patriotism (애국심) in a general sense, or being a "good" citizen in terms of social
+      behavior not tied to specific laws or traditions.
+    negative_clarification: Exclude responses about laws/politics ('civic_law_criteria'),
+      culture/history ('cultural_historical_criteria'), or language ('linguistic_criteria').
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes short, meaningless answers (e.g., "4", "no particular
+      thought"), incomplete sentences, or answers that do not provide a clear reason
+      for the choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if vague. If a reason can be mapped to another code, do not use this code.
+

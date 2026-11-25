@@ -1,0 +1,61 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1010
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the respondent's
+      perception of the profile's ability to mix with South Koreans, maintain social
+      networks within the host community, or adapt culturally to South Korean society.
+    clarification: Includes mentions of having Korean colleagues/friends, long duration
+      of residence in Korea (as a proxy for adaptation), being non-party members (implying
+      ideological fit), mixed marriage, or general statements about fitting in, adapting,
+      or having good interpersonal relationships with locals.
+    negative_clarification: Exclude reasons based solely on professional skills, age,
+      gender, or employment status without reference to social fit or community integration.
+      Use 'professional_qualifications' or 'demographic_preferences' instead.
+  professional_qualifications:
+    definition: Reasoning based on the profile's job title, career stability, specific
+      skills, or work ethic.
+    clarification: Includes mentions of specific professions (e.g., doctor, programmer),
+      having a job vs. being unemployed, work experience, perceived competence, or
+      reliability in a professional context.
+    negative_clarification: Exclude reasons focused on social mixing or cultural adaptation.
+      Use 'social_integration_ties' if the job is cited as a means to integrate (e.g.,
+      "has Korean colleagues"). Use 'none_of_above' if the reason is vague.
+  demographic_preferences:
+    definition: Reasoning based on age, gender, or physical attributes unrelated to
+      social integration or professional skill.
+    clarification: Includes preferences for younger/older age, male/female gender,
+      or general attractiveness/vibe not tied to specific social ties.
+    negative_clarification: Exclude reasons where age/gender is linked to integration
+      (e.g., "young so adapts faster" -> 'social_integration_ties') or work capacity
+      (e.g., "young so more productive" -> 'professional_qualifications').
+  north_korean_background:
+    definition: Reasoning specifically referencing the profile's political affiliation,
+      party membership, or origin from North Korea.
+    clarification: Includes explicit rejection or preference based on being a member/non-member
+      of the Workers' Party of Korea, time spent in China, or ideological compatibility.
+    negative_clarification: Exclude general social integration reasons. If "non-party"
+      is cited as a reason for better social fit, use 'social_integration_ties'.
+  family_status:
+    definition: Reasoning based on marital status, presence of children, or family
+      structure.
+    clarification: Includes mentions of being married, having children, or being single,
+      and how this affects stability or responsibility.
+    negative_clarification: Exclude reasons where family status is linked to social
+      integration (e.g., "married to Korean" -> 'social_integration_ties').
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes single words like "just," "no reason," "good," "bad,"
+      "same," or gibberish. Also includes responses that indicate no preference or
+      forced choice without explanation.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if weak. Use specific codes for weak but identifiable reasons (e.g., "looks
+      good" -> 'demographic_preferences' or 'none_of_above' if truly vague).
+

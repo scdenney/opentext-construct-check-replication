@@ -1,0 +1,71 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1007
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the superiority of democratic systems as a primary ground for choosing the
+      politician.
+    clarification: Includes mentions of democracy being the best system, agreeing
+      with the politician's stance on democracy, or citing democratic values as a
+      key factor, even if accompanied by caveats about its flaws.
+    negative_clarification: Exclude responses that mention democracy only as a minor
+      detail while focusing on other issues like welfare or gender. Use 'welfare_reasoning'
+      or 'gender_reasoning' instead if those are the primary drivers.
+  welfare_reasoning:
+    definition: Reasoning that cites the politician's stance on government responsibility
+      for welfare, social safety nets, or economic support for citizens as the main
+      reason for choice.
+    clarification: Includes calls for state-owned enterprise expansion, government
+      responsibility for welfare, or policies aimed at improving citizens' livelihoods
+      and economic security.
+    negative_clarification: Exclude responses focused primarily on gender equality
+      or diversity without a strong welfare/economic component. Use 'gender_reasoning'
+      or 'diversity_reasoning' if those are the sole focus.
+  gender_reasoning:
+    definition: Reasoning based on the politician's stance regarding gender roles,
+      gender equality, or discrimination in the workplace and society.
+    clarification: Includes preferences for gender-neutral treatment, opposition to
+      gender discrimination, or specific views on employment priority based on gender.
+    negative_clarification: Exclude responses that mention gender only in passing
+      while focusing on broader democratic or welfare issues. Use 'democracy_reasoning'
+      or 'welfare_reasoning' if those are dominant.
+  diversity_reasoning:
+    definition: Reasoning that cites the politician's stance on cultural, ethnic,
+      or social diversity as a key factor in the decision.
+    clarification: Includes agreement with policies promoting diversity, multiculturalism,
+      or inclusion of different social groups.
+    negative_clarification: Exclude responses where diversity is mentioned alongside
+      or subordinate to gender or welfare issues. Use 'gender_reasoning' or 'welfare_reasoning'
+      if those are the primary drivers.
+  policy_agreement:
+    definition: Reasoning based on general agreement with the politician's specific
+      policy positions or platform, without invoking broader systemic values like
+      democracy or specific identity categories.
+    clarification: Includes statements like "my views match," "agree with their opinions,"
+      or "better policies," provided they do not fall into the specific categories
+      of democracy, welfare, gender, or diversity.
+    negative_clarification: Exclude responses that explicitly mention democracy, welfare,
+      gender, or diversity. Use the respective specific codes.
+  heuristic_vague:
+    definition: Reasoning based on vague impressions, general likability, or lack
+      of detailed policy knowledge.
+    clarification: Includes responses such as "looks good," "seems better," "not popular,"
+      "don't know politics well," or "personal feeling."
+    negative_clarification: Exclude responses with clear policy or value-based reasoning.
+      Use 'none_of_above' if the response is unintelligible or completely irrelevant.
+  none_of_above:
+    definition: Uninformative, unintelligible, or completely irrelevant responses
+      that do not provide a clear reason for the choice.
+    clarification: Includes single words with no context, gibberish, or answers that
+      do not address the question.
+    negative_clarification: Exclude any response that can be coded into the other
+      categories.
+

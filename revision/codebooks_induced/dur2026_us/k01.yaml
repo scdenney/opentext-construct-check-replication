@@ -1,0 +1,76 @@
+codebook:
+  name: dur2026_us_induced
+  residual_code: none_of_above
+  context: US adults in an online survey (2025) read a short description of India,
+    including a sentence about India's recent economic cooperation (versions differed),
+    and rated India and US-India relations. They were then asked to explain why they
+    evaluated India and the relationship the way they did.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:dur2026_us:1001
+codes:
+  negative_relations:
+    definition: The respondent expresses distrust, rivalry, or perceives India or
+      the US-India relationship as a threat, likely conflict, or aligned with US adversaries.
+    clarification: Includes explicit statements of distrust (e.g., "I don't trust
+      India"), perceptions of India as a threat (economic or military), accusations
+      of siding with adversaries (China, Russia), or beliefs that India is adversarial
+      or untrustworthy.
+    negative_clarification: Exclude general uncertainty, lack of knowledge, or neutral
+      observations. If the respondent mentions India's growth but frames it as an
+      opportunity or neutral fact, do not code here. Use 'uncertain' or 'economic_opportunity'
+      instead.
+  economic_benefit:
+    definition: The respondent cites economic factors, trade, jobs, or market growth
+      as the primary reason for their evaluation.
+    clarification: Includes mentions of trade agreements, economic cooperation, job
+      creation, imports/exports, India's growing economy, or mutual financial benefit.
+    negative_clarification: Exclude mentions of economic factors that are framed as
+      threats (e.g., "India's growth is a threat to US economy") which belong in 'negative_relations'.
+      Exclude general statements about the economy without specific relational context.
+  alliance_cooperation:
+    definition: The respondent views the relationship as positive, friendly, or cooperative,
+      citing shared values, defense ties, or diplomatic alignment.
+    clarification: Includes descriptions of India as an ally, friend, or partner;
+      mentions of shared democratic values; defense partnerships; or general positive
+      sentiment about the relationship's stability or friendliness.
+    negative_clarification: Exclude responses that are merely neutral or uncertain.
+      Exclude responses that cite economic benefits without a relational/strategic
+      component (use 'economic_benefit'). Exclude negative sentiments.
+  cultural_social_factors:
+    definition: The respondent bases their evaluation on cultural similarities, immigrant
+      communities, social interactions, or national character.
+    clarification: Includes mentions of Indian immigrants in the US, cultural compatibility,
+      personal interactions with Indians, or perceptions of Indian society/people
+      (e.g., "hard-working," "nice people").
+    negative_clarification: Exclude negative cultural stereotypes that imply threat
+      or rivalry (use 'negative_relations'). Exclude general economic or political
+      analysis.
+  uncertainty_lack_of_knowledge:
+    definition: The respondent indicates they do not know enough about the topic,
+      are unsure, or did not have a strong opinion.
+    clarification: Includes phrases like "I don't know," "Not sure," "Unaware," "No
+      opinion," or admissions of limited information.
+    negative_clarification: Exclude responses that provide a substantive reason, even
+      if the reason is weak or based on the provided text. If the respondent gives
+      a reason (even a flawed one), do not use this code.
+  political_leadership:
+    definition: The respondent attributes their evaluation to the actions, personality,
+      or policies of current political leaders (e.g., Trump, Modi).
+    clarification: Includes mentions of specific presidents or leaders, their unpredictability,
+      diplomatic styles, or how leadership changes affect the relationship.
+    negative_clarification: Exclude general political analysis not tied to specific
+      leaders or their personal attributes. Exclude negative relations that are structural
+      rather than leadership-based.
+  geopolitical_strategy:
+    definition: The respondent cites broader geopolitical contexts, such as China,
+      Russia, or global power dynamics, as the reason for their evaluation.
+    clarification: Includes mentions of India's relationship with China or Russia,
+      the balance of power, strategic positioning in the Indo-Pacific, or India's
+      role in global conflicts.
+    negative_clarification: Exclude if the mention of adversaries is framed as a direct
+      threat to the US (use 'negative_relations'). Exclude if the focus is primarily
+      on economic competition (use 'economic_benefit' or 'negative_relations' depending
+      on sentiment).
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

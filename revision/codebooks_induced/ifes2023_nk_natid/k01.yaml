@@ -1,0 +1,63 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1001
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      or social norms as a ground for the person being more truly Korean or a better
+      choice.
+    clarification: Includes explicit mentions of respecting or understanding political
+      systems, laws, regulations, rules, or social norms. Also includes references
+      to civic duties, national pride derived from institutional alignment, or the
+      idea that respecting these structures makes one more Korean.
+    negative_clarification: Exclude responses that only mention cultural history,
+      ethnicity, or language without referencing political/legal structures. Use 'cultural_heritage_criteria'
+      or 'ethnic_bloodline_criteria' instead.
+  cultural_heritage_criteria:
+    definition: Reasoning based on understanding, preserving, or valuing South Korea's
+      history, traditions, culture, or customs.
+    clarification: Includes mentions of understanding Korean history, traditions,
+      culture, or customs. Focuses on the cultural dimension of identity rather than
+      legal or ethnic dimensions.
+    negative_clarification: Exclude responses focusing on political institutions,
+      laws, or ethnic bloodline. Use 'civic_law_criteria' or 'ethnic_bloodline_criteria'
+      instead.
+  ethnic_bloodline_criteria:
+    definition: Reasoning based on ethnic kinship, bloodline, birthplace, or shared
+      national sentiment (minjok) as the primary determinant of Korean identity.
+    clarification: Includes mentions of birthplace, ethnicity, bloodline, 'minjok'
+      (ethnic nation), or the feeling of shared ethnic identity. Focuses on ascriptive
+      traits or emotional connection to the ethnic group.
+    negative_clarification: Exclude responses focusing on legal/civic respect or cultural
+      history. Use 'civic_law_criteria' or 'cultural_heritage_criteria' instead.
+  demographic_administrative_criteria:
+    definition: Reasoning based on formal administrative status, such as citizenship/nationality
+      possession, length of residence, or language proficiency.
+    clarification: Includes explicit mentions of holding Korean nationality/citizenship,
+      length of time living in Korea, or ability to speak Korean. Focuses on legal/administrative
+      facts or linguistic capability.
+    negative_clarification: Exclude responses that frame these factors as expressions
+      of respect for laws/norms (use 'civic_law_criteria') or deep cultural understanding
+      (use 'cultural_heritage_criteria').
+  general_affinity_vague:
+    definition: Vague expressions of feeling that the person is "truly Korean," "like
+      a Korean," or expressing general love/patriotism without specific criteria.
+    clarification: Includes phrases like "feels like a Korean," "true Korean," "love
+      Korea," or "good impression." Lacks specific reference to law, culture, ethnicity,
+      or demographics.
+    negative_clarification: Exclude responses with specific criteria. Use the specific
+      code (e.g., 'civic_law_criteria') if a specific reason is identifiable.
+  none_of_above:
+    definition: Uninformative, non-responsive, or irrelevant answers.
+    clarification: Includes empty responses, gibberish, or answers that do not provide
+      a reason for the choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if vague.
+

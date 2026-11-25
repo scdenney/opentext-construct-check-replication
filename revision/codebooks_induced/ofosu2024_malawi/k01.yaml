@@ -1,0 +1,75 @@
+codebook:
+  name: ofosu2024_malawi_induced
+  residual_code: none_of_above
+  context: Adults in rural Malawi (2022), interviewed face to face, watched a short
+    animated video in Chichewa (versions differed in content; some were about women
+    in politics). After a candidate-choice task, they were asked what message they
+    took from the video; answers were recorded in English.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ofosu2024_malawi:1001
+codes:
+  discrimination_low_viability:
+    definition: The response identifies that women in politics face specific barriers,
+      discrimination, or lack of support, or that they are perceived as having low
+      viability or need encouragement to win.
+    clarification: Includes mentions of discrimination, harassment, lack of party
+      support, voter prejudice, discouragement, or the idea that women need extra
+      encouragement/support to succeed or are unlikely to win without it.
+    negative_clarification: Exclude responses that simply state women are capable
+      or should be voted for without mentioning barriers, discrimination, or lack
+      of support. Use 'pro_women_development' or 'pro_women_general' instead.
+  pro_women_development:
+    definition: The response emphasizes that women are capable of bringing development,
+      are good leaders, or perform better than men in terms of community progress.
+    clarification: Includes statements that women bring development, are good politicians,
+      are hardworking, or that voting for women leads to tangible community improvements
+      (roads, schools, etc.).
+    negative_clarification: Exclude responses that focus on barriers or discrimination
+      faced by women. Use 'discrimination_low_viability' instead. Exclude responses
+      that focus on general product durability or debt issues. Use 'product_durable'
+      or 'debt_moral' instead.
+  pro_women_general:
+    definition: The response advocates for voting for or supporting women in politics
+      based on general principles of equality, capability, or fairness, without specific
+      reference to development outcomes or barriers.
+    clarification: Includes statements like "women are equal to men," "don't underestimate
+      women," "vote for women because they are capable," or general encouragement
+      to support female candidates.
+    negative_clarification: Exclude responses that cite specific development outcomes.
+      Use 'pro_women_development' instead. Exclude responses that cite discrimination
+      or lack of support. Use 'discrimination_low_viability' instead.
+  product_durable:
+    definition: The response focuses on the durability, quality, or strength of the
+      plastic basin featured in the video.
+    clarification: Includes mentions of the basin being strong, rigid, long-lasting,
+      good quality, or a good product.
+    negative_clarification: Exclude responses that interpret the basin as a metaphor
+      for women or politics. Use 'pro_women_development', 'pro_women_general', or
+      'discrimination_low_viability' instead. Exclude responses about debt or violence.
+      Use 'debt_moral' or 'violence_moral' instead.
+  debt_moral:
+    definition: The response focuses on the moral lesson regarding debt, borrowing,
+      or financial responsibility depicted in the video.
+    clarification: Includes statements about not paying back debts being wrong, the
+      importance of paying debts, or the conflict arising from unpaid loans.
+    negative_clarification: Exclude responses that focus on the physical attributes
+      of the basin. Use 'product_durable' instead. Exclude responses about violence
+      or general social harmony. Use 'violence_moral' instead.
+  violence_moral:
+    definition: The response focuses on the conflict, violence, or rudeness displayed
+      by the characters in the video.
+    clarification: Includes mentions of fighting, breaking the basin, cruelty, rudeness,
+      or the need for unity/peace to resolve disputes.
+    negative_clarification: Exclude responses that focus on the moral aspect of debt
+      specifically. Use 'debt_moral' instead. Exclude responses about product quality.
+      Use 'product_durable' instead.
+  none_of_above:
+    definition: The response is uninformative, indicates no memory of the video, or
+      describes the video content without extracting a clear message or lesson.
+    clarification: Includes "I forgot," "I didn't get anything," "Nothing," "Just
+      saw people arguing," or descriptions of the plot (e.g., "two men arguing over
+      a basin") without a derived lesson.
+    negative_clarification: Exclude any response that offers an interpretation, lesson,
+      or opinion, even if vague. If the respondent mentions women, development, or
+      the basin's quality, use the appropriate substantive code.
+

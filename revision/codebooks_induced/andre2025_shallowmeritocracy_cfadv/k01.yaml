@@ -1,0 +1,73 @@
+codebook:
+  name: andre2025_shallowmeritocracy_cfadv_induced
+  residual_code: none_of_above
+  context: US adults in an online survey (Lucid, June-August 2022) read about two
+    crowd workers who knew before working that worker A would earn $0.50 per task
+    and worker B $0.10, and split the workers' total earnings between them in eight
+    effort scenarios, with real payouts. Afterwards they described the reasoning behind
+    their decisions.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2025_shallowmeritocracy_cfadv:1001
+codes:
+  effort_proportional_split:
+    definition: The respondent states that the money split should be determined by
+      the proportion or percentage of total work/tasks completed by each worker, regardless
+      of the piece rate.
+    clarification: Includes references to splitting by percentage of tasks, share
+      of work done, or output-based allocation.
+    negative_clarification: Exclude if the respondent explicitly links the split to
+      the causal effect of the piece rate on effort (use advantage_shaped_effort)
+      or if they advocate for equal splits regardless of work (use equal_split).
+  advantage_shaped_effort:
+    definition: The respondent argues that the split should be influenced by the fact
+      that Worker A's higher effort was caused by the higher piece rate, or that Worker
+      B's lower effort was due to the lower rate, using this causal link to justify
+      a specific distribution (e.g., giving B more to compensate for low pay, or acknowledging
+      A's extra effort was incentivized).
+    clarification: Includes statements that A would have worked less at the lower
+      rate, B worked less because of low pay, or that the disparity in effort is a
+      result of the incentive structure and should affect the split.
+    negative_clarification: Exclude if the respondent simply notes the difference
+      in work without attributing it to the rate as a reason for the split (use effort_proportional_split).
+      Exclude if they state A would have worked just as hard at the lower rate.
+  equal_split:
+    definition: The respondent states that the money should be split equally (50/50)
+      between the workers, often citing fairness, team effort, or the fact that both
+      contributed.
+    clarification: Includes explicit mentions of "equal pay," "50/50," "split evenly,"
+      or "team effort" where the work amount is not the primary differentiator for
+      the split.
+    negative_clarification: Exclude if the equal split is justified by the workers
+      doing equal amounts of work (use effort_proportional_split). Exclude if the
+      equal split is a result of confusion or lack of reasoning (use none_of_above).
+  incentive_motivation:
+    definition: The respondent justifies the split based on the need to motivate workers,
+      encourage future effort, or reward the "hardest" worker to maintain performance.
+    clarification: Includes references to "encouraging them," "motivation," "rewarding
+      hard work," or ensuring workers have "successful profits" to stay engaged.
+    negative_clarification: Exclude if the motivation is purely based on past output
+      proportion (use effort_proportional_split) or if it involves compensating for
+      the low rate disparity (use advantage_shaped_effort).
+  fairness_equity:
+    definition: The respondent cites general concepts of fairness, equity, or justice
+      as the primary reason, without specifying a clear mechanism like proportional
+      work or equal split, or appeals to moral principles.
+    clarification: Includes statements like "it's fair," "right thing to do," "equity,"
+      or "justice" that do not clearly map to proportional or equal splits.
+    negative_clarification: Exclude if the fairness claim is explicitly tied to proportional
+      work (use effort_proportional_split) or equal split (use equal_split).
+  confusion_uncertainty:
+    definition: The respondent expresses confusion about the task, lack of understanding,
+      memory issues, or states they have no idea/reason.
+    clarification: Includes "I don't know," "not sure," "confusing," "flawed survey,"
+      or "no particular reason."
+    negative_clarification: Exclude if the respondent provides a coherent, albeit
+      simple, reason like "fairness" (use fairness_equity) or "work done" (use effort_proportional_split).
+  none_of_above:
+    definition: Responses that are uninformative, nonsensical, or do not fit into
+      any of the defined categories.
+    clarification: Includes gibberish, single words without context, or responses
+      that fail to describe any reasoning.
+    negative_clarification: Use only if the response does not meet the criteria for
+      any other code.
+

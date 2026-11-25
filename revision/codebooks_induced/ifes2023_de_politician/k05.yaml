@@ -1,0 +1,79 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1005
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic, cultural, or immigrant diversity,
+      multiculturalism, or national unity as a primary or decisive factor in the choice.
+    clarification: Includes mentions of "Diversität", "kulturelle Vielfalt", "ethnische
+      Vielfalt", "Zuwanderer", "Ausländer", or specific stances on multiculturalism
+      (positive or negative) as the deciding factor.
+    negative_clarification: Exclude general agreement with policy statements unless
+      they specifically reference diversity/immigration as the core reason. Use 'policy_agreement'
+      if the response is about general political alignment without specific diversity
+      focus. Use 'gender_reasoning' if the focus is strictly on gender equality without
+      diversity/immigration context.
+  gender_reasoning:
+    definition: Reasoning that cites gender equality, women's rights, or the gender
+      of the politician as the primary ground for choice.
+    clarification: Includes mentions of "Gleichberechtigung", "Gleichstellung", "Frauenrechte",
+      "Geschlechterpolitik", or the fact that the politician is a woman/man being
+      relevant to the decision.
+    negative_clarification: Exclude responses that mention gender only as a minor
+      point among many policy agreements. Use 'policy_agreement' if gender is just
+      one of many matching points. Use 'diversity_reasoning' if the response conflates
+      gender with broader cultural/ethnic diversity.
+  policy_agreement:
+    definition: Reasoning based on general alignment with the politician's political
+      views, values, or specific policy positions (e.g., economy, social welfare,
+      freedom, responsibility).
+    clarification: Includes "meine Meinung", "Übereinstimmung", "Werte", "Wirtschaft",
+      "Sozialhilfe", "Freiheit", "Verantwortung", "Demokratie" (as a system preference,
+      not just diversity).
+    negative_clarification: Exclude responses that are purely about diversity or gender.
+      Use 'diversity_reasoning' or 'gender_reasoning' if those are the specific drivers.
+      Use 'none_of_above' if the response is too vague to identify a specific policy
+      area.
+  democratic_values:
+    definition: Reasoning that cites the defense or preference for democracy, rule
+      of law, or political system stability as the main reason.
+    clarification: Includes explicit praise for "Demokratie" as the best form of government,
+      or concerns about democratic erosion, distinct from general policy agreement.
+    negative_clarification: Exclude general "I like democracy" statements that are
+      part of a broader policy agreement. Use 'policy_agreement' if democracy is mentioned
+      alongside other specific policies. Use 'diversity_reasoning' if the democratic
+      argument is specifically about protecting cultural diversity.
+  forced_choice_or_no_reason:
+    definition: Responses indicating the choice was arbitrary, forced, or that the
+      respondent had no real preference/reason.
+    clarification: Includes "musste wählen", "egal", "beide gleich", "kein Grund",
+      "Weiß nicht", "Bauchgefühl" (if no substantive reason given), "kleineres Übel".
+    negative_clarification: Exclude responses that give a substantive reason even
+      if qualified (e.g., "I had to choose, but I liked X more"). Use 'policy_agreement'
+      or other codes if a specific reason is provided despite the forced context.
+  personal_identity:
+    definition: Reasoning based on the respondent's personal identity (e.g., "because
+      I am a woman") intersecting with the politician's attributes, distinct from
+      general gender policy.
+    clarification: Includes "Weil ich eine Frau bin" implying a shared identity experience,
+      or strong personal identification with the politician's background.
+    negative_clarification: Exclude general support for gender equality policies.
+      Use 'gender_reasoning' if the focus is on policy outcomes for women. Use 'diversity_reasoning'
+      if the identity is ethnic/cultural.
+  other_substantive:
+    definition: Substantive reasons that do not fit into diversity, gender, general
+      policy, or democracy.
+    clarification: Includes competence ("kompetent"), trust ("vertrauen"), specific
+      non-policy traits ("sympathisch"), or other unique arguments not covered above.
+    negative_clarification: Exclude vague or non-substantive answers. Use 'none_of_above'
+      if the reason is unclear or non-existent. Use 'policy_agreement' if the trait
+      implies a policy stance (e.g., "competent" implies good governance).
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

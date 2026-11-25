@@ -1,0 +1,26 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 1
+  seed: 2
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns economic, fiscal, or practical policy considerations. This includes specific policy mechanisms (e.g., cash support, consulting, screening, capital), cost-efficiency, job creation, business viability, or practical implementation details. It also includes comparisons based on which policy is more realistic, effective, or financially sound.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, moral obligation, solidarity, identity, or national interest. This includes arguments that support is "good for Korea" (national benefit), helps North Korean migrants settle down or survive (humanitarian/solidarity), or aligns with moral duties. It includes long-term social integration goals and appeals to national unity or benefit.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes vague positive sentiments (e.g., "I like it", "good policy", "looks better"), political motivations (e.g., party affiliation, presidential support), or reasons based on personal preference or trust that do not cite economic or moral grounds. It also includes reasons related to specific target groups (e.g., "small businesses", "NGOs") if not framed as economic efficiency or moral duty.
+  uninformative:
+    definition: No reason is given or the text is non-substantive. This includes explicit
+      statements like "no reason", "don't know", "none", or "no particular reason".
+      It also includes fragmented phrases that do not convey a clear rationale (e.g.,
+      "Just", "Because of the application target" without further explanation) or
+      off-topic text.
+

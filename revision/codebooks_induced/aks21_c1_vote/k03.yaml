@@ -1,0 +1,80 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1003
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (Choson Rodongdang), ideological ties to the
+      North Korean regime, or the absence of such ties as a primary factor in the
+      decision.
+    clarification: Includes mentions of 'Workers' Party member' (노동당원), 'former party
+      member' (전 노동당원), 'party affiliation' (당원 여부), or explicit rejection/acceptance
+      based on these political/ideological backgrounds.
+    negative_clarification: Do not use for general 'North Korean' identity, ethnicity,
+      or refugee status. If the respondent mentions being a defector or North Korean
+      without referencing party membership or regime ideology, use 'north_korean_identity'
+      or 'none_of_above' depending on other factors. Do not use for general political
+      views unrelated to NK regime ties.
+  korea_settlement_duration:
+    definition: Reasoning based on the length of time the profile has resided in South
+      Korea, implying better adaptation, familiarity with Korean society, or lower
+      risk of 'North Korean' behavior.
+    clarification: Includes mentions of 'length of stay in Korea' (한국 체류기간), 'years
+      in Korea' (한국 거주 기간), 'long time' (오래), 'short time' (짧음), or comparisons of
+      settlement duration between profiles.
+    negative_clarification: Do not use for time spent in China or other countries
+      unless it is directly contrasted with Korea to explain adaptation. Do not use
+      for general 'experience' without specific reference to time in Korea.
+  occupation_professional_status:
+    definition: Reasoning based on the profile's job, profession, or economic stability,
+      often linked to trustworthiness, utility as a neighbor, or social status.
+    clarification: Includes mentions of 'doctor' (의사), 'office worker' (사무직), 'computer
+      programmer' (컴퓨터 기술자), 'stable job' (안정적인 직업), 'professional' (전문직), or 'unemployed'
+      (무직).
+    negative_clarification: Do not use for general 'hard work' or 'career' without
+      specific occupational details. If the job is mentioned only as a secondary factor
+      alongside age or gender, consider the primary driver.
+  demographic_characteristics:
+    definition: Reasoning based on age, gender, or marital status, often linked to
+      perceived compatibility, trust, or relatability.
+    clarification: Includes mentions of 'age' (나이, 연령), 'young/old' (젊음, 고령), 'gender'
+      (남성, 여성, 성별), 'married/unmarried' (결혼, 미혼), 'children' (자녀), or 'divorced' (이혼).
+    negative_clarification: Do not use if the demographic factor is secondary to regime
+      ties or settlement duration. If multiple demographics are cited equally, choose
+      the one most strongly linked to the 'neighborly' rationale (e.g., gender for
+      compatibility, age for relatability).
+  interpersonal_compatibility:
+    definition: Reasoning based on perceived social skills, personality, trust, or
+      ability to form relationships, often independent of specific demographic or
+      professional traits.
+    clarification: Includes mentions of 'communication' (소통), 'trust' (믿음, 신뢰), 'friendliness'
+      (친근감), 'social skills' (사회성), 'getting along' (잘 어울림), 'similar vibe' (동질감),
+      or 'personality' (기질).
+    negative_clarification: Do not use for general 'good feeling' without elaboration.
+      If 'trust' is linked to occupation or settlement duration, use those codes instead.
+  north_korean_identity_adaptation:
+    definition: Reasoning based on the profile's status as a North Korean defector,
+      specifically focusing on the length of time since defection or the degree of
+      'South Korean-ness' vs 'North Korean-ness', distinct from party ties.
+    clarification: Includes mentions of 'defector' (탈북민), 'time since leaving North'
+      (북한 이탈 기간), 'North Korean characteristics' (북한 성향), or comparisons of 'North
+      Korean-ness' vs 'South Korean-ness' not tied to party membership.
+    negative_clarification: Do not use if the reasoning is specifically about Workers'
+      Party membership (use north_korea_regime_ties). Do not use if it is purely about
+      length of stay in South Korea (use korea_settlement_duration).
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      the specific substantive categories above.
+    clarification: Includes 'no reason' (이유 없음, 이유없어), 'just felt like it' (그냥, 느낌상),
+      'both are bad' (둘다 싫다), 'hard to choose' (선택하기 어려움), random characters, or vague
+      statements like 'good' (좋아) without explanation.
+    negative_clarification: Do not use for substantive reasons even if weakly stated.
+      If a respondent mentions 'age' or 'job' even briefly, use the corresponding
+      substantive code.
+

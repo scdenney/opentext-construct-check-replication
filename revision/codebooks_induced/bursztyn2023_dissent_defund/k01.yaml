@@ -1,0 +1,64 @@
+codebook:
+  name: bursztyn2023_dissent_defund_induced
+  residual_code: none_of_above
+  context: US Democrats and independents on Prolific were told they had been matched
+    with an earlier participant who joined a campaign opposing defunding the police
+    and agreed to post a Tweet saying so; the Tweet said the participant was shown
+    an article arguing that defunding the police would increase violent crime either
+    before or after joining. They were then asked why they think the participant joined
+    the campaign.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bursztyn2023_dissent_defund:1001
+codes:
+  evidence_attribution:
+    definition: The response attributes the participant's decision to join the campaign
+      to the article, evidence, data, or information presented to them (e.g., they
+      were convinced by what they read).
+    clarification: Includes responses stating the participant was convinced, persuaded,
+      influenced, or informed by the article or the specific arguments/evidence about
+      crime rates contained within it.
+    negative_clarification: Do not use for responses that attribute the decision to
+      pre-existing beliefs, political ideology, or general fear without explicitly
+      linking it to the article's content. Use 'preexisting_beliefs' or 'fear_of_crime'
+      instead.
+  preexisting_beliefs:
+    definition: The response attributes the participant's decision to their own prior
+      political views, ideology, or stance on policing, independent of the article.
+    clarification: Includes responses citing conservatism, Republican affiliation,
+      support for police, law-and-order mindset, or general opposition to defunding
+      based on personal conviction.
+    negative_clarification: Do not use if the response explicitly states the article
+      changed their mind or provided the primary reason. Use 'evidence_attribution'
+      instead.
+  fear_of_crime:
+    definition: The response attributes the participant's decision to a general fear
+      of increased violence or crime, without necessarily citing the article as the
+      source of this belief.
+    clarification: Includes responses mentioning worry about safety, neighborhood
+      security, or the likelihood of victimization.
+    negative_clarification: Do not use if the response explicitly links this fear
+      to the article's content. Use 'evidence_attribution' instead.
+  misunderstanding_defund:
+    definition: The response attributes the participant's decision to a misconception
+      about what "defunding the police" actually means.
+    clarification: Includes responses stating the participant believes defunding means
+      abolishing police entirely, removing all protection, or eliminating law enforcement.
+    negative_clarification: Do not use for responses that correctly understand the
+      policy but oppose it for other reasons. Use 'preexisting_beliefs' or 'fear_of_crime'
+      instead.
+  demographic_political:
+    definition: The response attributes the participant's decision to their demographic
+      background or political party affiliation.
+    clarification: Includes responses citing being Republican, conservative, white,
+      or having family ties to law enforcement.
+    negative_clarification: Do not use if the response focuses on the content of the
+      article or specific policy arguments. Use 'evidence_attribution' or 'preexisting_beliefs'
+      instead.
+  none_of_above:
+    definition: The response is uninformative, expresses uncertainty, or provides
+      reasons not covered by the other codes.
+    clarification: Includes responses stating "I don't know," "hard to say," "no idea,"
+      or vague statements that do not clearly align with the specific constructs above.
+    negative_clarification: Use this only when the response does not fit into evidence_attribution,
+      preexisting_beliefs, fear_of_crime, misunderstanding_defund, or demographic_political.
+

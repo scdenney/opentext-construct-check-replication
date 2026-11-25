@@ -1,0 +1,70 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1005
+codes:
+  civic_law_criteria:
+    definition: Reasoning that explicitly invokes respect for, adherence to, or understanding
+      of South Korea's laws, political institutions, regulations, or formal social
+      norms as a primary ground for the person being more truly Korean or a better
+      choice.
+    clarification: Includes mentions of respecting political systems, following laws/regulations,
+      understanding political institutions, or adhering to social norms/rules.
+    negative_clarification: Exclude responses that only mention cultural understanding,
+      language ability, or birthplace without referencing laws, politics, or formal
+      norms. Use 'cultural_heritage_criteria' or 'linguistic_criteria' instead.
+  cultural_heritage_criteria:
+    definition: Reasoning that emphasizes understanding, appreciation, or connection
+      to South Korea's history, traditions, culture, or ethnic heritage as a key factor.
+    clarification: Includes mentions of knowing history, understanding traditions,
+      cultural affinity, or ethnic identity markers (e.g., "true Korean" based on
+      culture/history).
+    negative_clarification: Exclude responses that focus primarily on legal/political
+      compliance or language skills. Use 'civic_law_criteria' or 'linguistic_criteria'
+      instead.
+  linguistic_criteria:
+    definition: Reasoning that prioritizes the ability to speak Korean or language
+      proficiency as a determinant of Korean identity or suitability.
+    clarification: Includes explicit mentions of speaking Korean, language ability,
+      or communication skills as the main reason.
+    negative_clarification: Exclude responses where language is mentioned alongside
+      or secondary to legal/political or cultural factors. Use 'civic_law_criteria'
+      or 'cultural_heritage_criteria' if those are the dominant themes.
+  demographic_residency_criteria:
+    definition: Reasoning based on demographic facts such as birthplace in South Korea,
+      length of residence, or daily life experience within the country.
+    clarification: Includes mentions of being born in Korea, living in Korea for most
+      of one's life, or daily social integration.
+    negative_clarification: Exclude responses that focus on internal feelings, legal
+      compliance, or cultural knowledge. Use 'subjective_identity_criteria' or 'civic_law_criteria'
+      instead.
+  subjective_identity_criteria:
+    definition: Reasoning that emphasizes internal feelings, self-identification,
+      or emotional connection to being Korean, regardless of external markers.
+    clarification: Includes mentions of feeling Korean internally, self-perception
+      of identity, or emotional attachment to the nation.
+    negative_clarification: Exclude responses based on objective facts like birth,
+      residence, language, or legal compliance. Use 'demographic_residency_criteria'
+      or 'civic_law_criteria' instead.
+  citizenship_legal_status:
+    definition: Reasoning that prioritizes holding South Korean citizenship or legal
+      nationality as the definitive marker of being Korean.
+    clarification: Includes explicit mentions of holding Korean nationality, citizenship
+      status, or legal rights associated with citizenship.
+    negative_clarification: Exclude responses that focus on cultural, linguistic,
+      or civic/respect-based reasons. Use 'civic_law_criteria' or 'demographic_residency_criteria'
+      instead.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not clearly
+      align with any of the specific criteria codes.
+    clarification: Includes single words, numbers, incomplete thoughts, or generic
+      statements that do not provide a clear reason for the choice.
+    negative_clarification: Exclude any response that can be clearly categorized into
+      one of the substantive codes.
+

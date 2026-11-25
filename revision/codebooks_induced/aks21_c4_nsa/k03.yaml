@@ -1,0 +1,82 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1003
+codes:
+  national_security_threat:
+    definition: Responses that cite national security, defense against North Korea,
+      prevention of espionage/subversion, or the protection of the state as the primary
+      reason for their choice.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korean threat', 'espionage', 'defending the state', or 'preventing
+      subversion'. Also includes reasoning that the law is necessary to protect the
+      country from external or internal threats in the current geopolitical context.
+    negative_clarification: Exclude responses that only mention 'democracy' or 'liberal
+      democracy' without explicit reference to security threats or state defense.
+      Use 'liberal_democracy_protection' instead. Exclude vague or non-substantive
+      answers.
+  liberal_democracy_protection:
+    definition: Responses that cite the protection of liberal democracy, freedom,
+      or the democratic system as the primary reason for their choice.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), 'freedom' (자유), or 'protecting the system'. This code captures arguments
+      based on ideological alignment with democratic values rather than immediate
+      security threats.
+    negative_clarification: Exclude responses that explicitly link the protection
+      of democracy to national security threats (e.g., "protecting democracy from
+      North Korea"). Use 'national_security_threat' instead. Exclude responses that
+      only mention 'democracy' in a general, non-security context.
+  party_affiliation_ideology:
+    definition: Responses that cite support for or opposition to a specific political
+      party (e.g., Democratic Party, People Power Party) or general ideological alignment
+      as the primary reason.
+    clarification: Includes explicit mentions of party names (e.g., '더불어민주당', '국민의힘'),
+      party supporters, or general political leanings (e.g., 'progressive', 'conservative')
+      as the driver for the choice.
+    negative_clarification: Exclude responses that cite policy positions or security/democratic
+      arguments regardless of party. Use 'national_security_threat' or 'liberal_democracy_protection'
+      instead. Exclude responses that mention party only as a secondary factor while
+      citing substantive policy reasons.
+  policy_scope_preference:
+    definition: Responses that cite the scope of the law (expansion, restriction,
+      or maintenance) as the primary reason, without invoking security or democratic
+      ideology.
+    clarification: Includes preferences for 'expanding the scope' (범위 확대), 'restricting
+      the scope' (범위 제한/수정), or 'maintaining the status quo' (유지) based on practicality,
+      balance, or general preference, without explicit security/democratic justification.
+    negative_clarification: Exclude responses that justify scope changes via security
+      threats (use 'national_security_threat') or democratic principles (use 'liberal_democracy_protection').
+      Exclude vague preferences like "it seems better" without scope specification.
+  law_abuse_reform:
+    definition: Responses that cite the historical abuse, misuse, or negative consequences
+      of the National Security Law as the primary reason for supporting reform or
+      repeal.
+    clarification: Includes mentions of 'abuse' (악용), 'innocent victims' (무고한 피해자),
+      'political manipulation', or the need to 'correct' or 'reform' the law due to
+      past harms.
+    negative_clarification: Exclude responses that focus on future security needs
+      or democratic values. Use 'national_security_threat' or 'liberal_democracy_protection'
+      instead. Exclude general dissatisfaction without specific reference to the law's
+      misuse.
+  status_quo_maintenance:
+    definition: Responses that support maintaining the current state of the law or
+      policy simply because it is the current state, without strong substantive justification.
+    clarification: Includes statements like "keep as is" (그대로 유지), "status quo is
+      safe", or "no need to change".
+    negative_clarification: Exclude responses that justify maintenance via security
+      or democratic arguments. Use 'national_security_threat' or 'liberal_democracy_protection'
+      instead. Exclude responses that explicitly oppose change due to fear of instability
+      (which may imply security concerns).
+  none_of_above:
+    definition: Responses that are uninformative, incoherent, random, or do not fit
+      into any of the substantive categories.
+    clarification: Includes random characters, "I don't know", "no reason", "just
+      liked it", "party supporter" (if vague), or non-answers.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to security, democracy, party, policy scope, or law abuse.
+

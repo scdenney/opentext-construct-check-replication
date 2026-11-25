@@ -1,0 +1,39 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 1
+  seed: 9
+codes:
+  economic_rationale:
+    definition: |
+      The reason explicitly cites economic, fiscal, or practical policy mechanisms such as cost, efficiency, financial aid, loans, job creation, or business viability. It does NOT include general statements about national benefit ("good for Korea") unless tied to specific economic outcomes.
+    clarification: |
+      Include responses mentioning money, loans, grants, business support, efficiency, or practical implementation details.
+    negative_clarification: |
+      Exclude general statements about national interest, identity, or morality (e.g., "good for Korea," "solidarity") unless they specify an economic mechanism. Exclude vague preferences without substantive content.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, moral obligation, solidarity, identity, or what is right or just for North Korean migrants. This includes general support based on humanitarian grounds, national identity, or moral duty, even if phrased briefly (e.g., "helping," "good for Korea" as identity).
+    clarification: |
+      Include responses expressing moral duty, solidarity, identity-based support, or general humanitarian reasons. "Good for Korea" is normative if it reflects national identity/solidarity rather than specific economic gain.
+    negative_clarification: |
+      Exclude responses that are purely procedural, non-substantive, or refer to specific economic mechanisms (which belong in economic_rationale).
+  other_rationale:
+    definition: |
+      A substantive reason that is neither clearly economic nor normative. Includes vague substantive justifications, policy objectives, trust, support bases, or general approval without specific economic or moral framing.
+    clarification: |
+      Include responses citing policy goals, trustworthiness, support from groups, or general substantive reasons that don't fit economic or normative categories.
+    negative_clarification: |
+      Exclude responses that are truly empty, non-substantive, or purely procedural (which belong in uninformative). Exclude clear economic or normative reasons.
+  uninformative:
+    definition: |
+      No substantive reason is given. Includes "don't know," "no particular reason," "just because," "none," "other" (as a category label), or off-topic text.
+    clarification: |
+      Include responses that provide no reasoning, only procedural notes, or non-substantive labels.
+    negative_clarification: Exclude any response that offers a substantive reason,
+      even if vague (which belongs in other_rationale) or clearly economic/normative.
+

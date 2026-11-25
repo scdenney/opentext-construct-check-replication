@@ -1,0 +1,53 @@
+codebook:
+  name: nk_entrepreneurship_v3_published
+  version: 3.0
+  context: 'Classification of open-text responses explaining why South Korean respondents
+    supported a particular North Korean migrant entrepreneurship policy in a conjoint
+    experiment (Denney, Ward & Green 2023). This is an economic policy conjoint —
+    every option involves government business support for migrants. Classify generously:
+    if a response can reasonably be read as economic or normative given this context,
+    classify it that way rather than defaulting to other or uninformative.'
+  residual_code: uninformative
+  note: Published v3, revised on the full human-coded set (in-sample reference only).
+    Examples dropped.
+codes:
+  economic_rationale:
+    definition: |
+      The respondent's reasoning relates to economic, fiscal, or policy- effectiveness considerations in any way.
+    clarification: |
+      This is an economic policy experiment. Interpret broadly. ANY reference to how the policy works, whether it is effective, practical, efficient, or well-designed counts as economic reasoning. This includes:
+      Explicit economic terms: employment, jobs, tax, profit, business, growth, investment, loans, corporate, fiscal, budget, deficit, income, R&D, innovation, startups, enterprise.
+      Policy-mechanism language: effective, efficient, practical, development, sustainable, risk, scope, targets, instruments, advisory services, office space, incubation, subsidies, grants, tax credits, repayable, non-repayable.
+      References to business actors or corporate support: large companies, conglomerates, SMEs, business associations, enterprise support.
+      Evaluative statements about the policy working: "more meaningful," "more appropriate," "the scope is clear," "not cash aid," "it's not pouring water into a bottomless pit," "support the enterprise," "business support," "advisory services only."
+      Opposition on economic grounds: "can't support all businesses," "against raising corporate taxes," "too expensive," "fiscal deficit."
+      Single words or short phrases with economic content: "employment," "development," "R&D," "efficiency," "business support," "office space support policy," "advisory services," "a budgeting method," "a domestic policy," "policy tool."
+      When in doubt between economic and other, choose economic. The entire experiment is about economic policy, so policy-relevant responses should default to economic unless they are clearly normative.
+    negative_clarification: |
+      Only exclude from economic if the response is purely about national benefit, moral obligation, or fairness (normative), or if it truly contains no policy-related content at all.
+  normative_rationale:
+    definition: |
+      The respondent's reasoning relates to moral values, national benefit, rights, fairness, or what South Korea ought to do.
+    clarification: |
+      Includes any statement that the policy is "good for Korea" or benefits the country as a whole (even without elaboration). Includes helping North Koreans who face discrimination, human rights, moral obligation, national unity, co-ethnic solidarity, fairness, settlement as a matter of principle. Includes citing normative actors (human rights groups, civil society, defector organizations) as reasons for support. Includes statements about rejecting or opposing support for North Koreans on identity grounds. "Good for Korea," "It's a fair policy," and "I chose it because it looks like a good policy" are all normative.
+      Also normative: responses about what North Korean defectors need or deserve, about South Korea's responsibility toward them, or about inclusion/exclusion of this group on principle.
+    negative_clarification: |
+      Not normative if the reasoning is about the policy mechanism working well (that is economic). "It's more reliable and helpful" is about policy effectiveness (economic), not about values.
+  other_rationale:
+    definition: |
+      The respondent says something but it cannot reasonably be read as economic or normative. Use sparingly.
+    clarification: |
+      This is a residual category. Before assigning it, ask: could this response be economic (about the policy working, costing, or producing outcomes)? Could it be normative (about what is good, right, or fair for the country or for North Koreans)? Only use other if the answer to both is no.
+      Typical other responses: vague non-reasons ("just," "no particular reason," "no reason"), pure political-party preferences without further reasoning ("the ruling party supports this"), or statements that acknowledge a choice was made but give no substantive basis ("I thought this would be better" without any indication of why).
+      "None," "nothing in particular," and "just because" belong here, not in uninformative, because the respondent engaged with the question even if they did not provide a substantive reason.
+    negative_clarification: |
+      Do not put responses here if they contain any recognizable economic or normative content. "Business support" is economic, not other. "Good for Korea" is normative, not other. Err on the side of economic or normative.
+  uninformative:
+    definition: |
+      The response is completely empty, gibberish, or contains no recognizable words related to the survey.
+    clarification: |
+      ONLY use this for responses that are literally blank, contain only punctuation or nonsense characters, or are completely unrelated to anything in the survey (e.g., random words about unrelated topics). This category should be very small (under 5% of responses).
+      Do NOT classify brief but recognizable responses as uninformative. "Business support" is economic. "Just" is other. "None" is other. Even single recognizable words should be classified as economic, normative, or other based on their content.
+    negative_clarification: |
+      If you can identify ANY connection to the policy choice, no matter how tenuous, do not use uninformative. Reserve this strictly for empty and gibberish responses.
+

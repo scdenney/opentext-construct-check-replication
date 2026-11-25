@@ -1,0 +1,27 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 1
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 10
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns economic, fiscal, administrative, or practical policy considerations. This includes references to jobs, growth, cost, efficiency, tax implications, subsidies, business support mechanisms (e.g., advisory services, corporate support), and general utility or benefit to the economy or society. It also includes reasons based on the practical feasibility or realistic implementation of the policy.
+      Crucially, this code applies to substantive justifications involving business entities, financial mechanisms, or practical outcomes, even if the phrasing is brief or refers to specific administrative targets (e.g., "Small Business Association," "Estimated Procurement," "Tax amount"). It also covers reasons that prioritize broad economic benefit or general applicability over specific group identity, provided the core argument is about economic utility or practical scope.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, deservingness, moral obligation, solidarity, human rights, or identity. This includes arguments about what North Korean migrants are owed, moral duties to help them, or the ethical rightness of the policy. It also includes reasons based on social cohesion, integration, or the moral value of supporting a specific group.
+      This code applies when the respondent explicitly invokes moral, ethical, or identity-based grounds (e.g., "human rights," "solidarity," "helping defectors," "fairness"). It also includes reasons that frame the policy as a matter of moral duty or social justice, even if the phrasing is indirect (e.g., "I heard it's good" in a moral context, "I tend not to prefer policies that assist North Koreans" as a normative stance). It excludes reasons that are purely about economic efficiency or general preference without moral framing.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes political reasons (e.g., party affiliation, presidential support), strategic or relational reasons (e.g., cooperation, joint ventures, relative choice between options), and general positive sentiments that do not fit economic or moral categories (e.g., "I like it," "It looks better," "It seems appropriate").
+      This code captures vague but substantive preferences, such as "I think it's better," "A is a little better," "Dislike both," "No reason" (when used to express a substantive rejection of both options or a lack of strong economic/moral conviction), and general approval/disapproval that lacks specific economic or moral justification. It also includes reasons based on personal feeling or aesthetic preference ("I like it," "It's like a policy for new immigrants") that do not invoke economic utility or moral obligation.
+  uninformative:
+    definition: |-
+      No substantive reason is given. This includes "don't know," "no reason," "nothing special," "none," or off-topic text. It also includes purely procedural or non-explanatory phrases that do not convey a preference rationale (e.g., "Just," "Support target" without further explanation, "For no reason," "None," "Don't know").
+      This code is reserved for responses that provide no discernible rationale for the choice, including empty phrases, single words that do not constitute a reason (e.g., "Just," "None"), or explicit statements of lacking a reason. It does not include vague but substantive preferences (which go to `other_rationale`) or substantive economic/moral arguments (which go to `economic_rationale` or `normative_rationale`).
+

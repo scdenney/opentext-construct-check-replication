@@ -1,0 +1,39 @@
+codebook:
+  name: nk_entrepreneurship_v1
+  version: 2
+  context: |
+    South Korean respondents chose between two government policies supporting businesses run by North Korean migrants, then explained in a few words why they preferred the policy they chose. The answers are English translations of Korean originals.
+  residual_code: uninformative
+  revised_by: Qwen/Qwen3.6-35B-A3B-FP8
+  revision_round: 2
+  seed: 8
+codes:
+  economic_rationale:
+    definition: |
+      The reason concerns specific economic, fiscal, or practical policy mechanics: jobs, growth, cost, efficiency, budget, business viability, or technical feasibility. It also includes references to the involvement of private sector entities (e.g., large corporations, small business associations, civic groups) as a source of economic support, expertise, or validation of business viability.
+    clarification: |
+      Focus on tangible economic outcomes, policy mechanics, or the economic role of supporting entities. Explicitly include mentions of corporate support, business association backing, or practical business advantages (e.g., "realistic," "effective," "profitable," "loans," "office space") as economic rationales.
+    negative_clarification: |
+      Do not classify general "national interest", "good for Korea" (in a patriotic/unifying sense), "solidarity", "fairness", or "moral obligation" as economic. Do not classify vague non-answers as economic.
+  normative_rationale:
+    definition: |
+      The reason concerns fairness, deservingness, moral obligation, solidarity, identity, or national interest. This includes arguments that the policy is "good for Korea" in a patriotic or unifying sense, or that North Korean migrants deserve support due to shared identity or moral duty. It also includes references to the support of human rights organizations, civic groups, or political parties as indicators of moral or social legitimacy.
+    clarification: |
+      Includes "good for Korea" (patriotic/unifying), "national interest", "solidarity", "fairness", "deservingness", respect for beneficiary agency, and references to moral/social actors (human rights groups, civic groups, political parties) as validators of the policy's ethical or social value.
+    negative_clarification: |
+      Do not classify specific economic metrics (cost, jobs, efficiency) or private corporate business support as normative.
+  other_rationale:
+    definition: |
+      A substantive reason that is neither economic nor normative. This includes vague approvals, general support, references to political figures or groups without specific economic/normative reasoning, or reasons that are non-substantive but indicate a choice was made (e.g., "Just", "Support", "None", "I like it"). It also includes answers that describe the policy mechanism neutrally without evaluating its economic or moral merit (e.g., "Office Space Support Policy", "Target", "Policy").
+    clarification: |
+      Includes short, vague, or non-specific answers that indicate a preference but lack specific economic or normative detail. Includes "Just", "Support", "None", "I don't know" (if it implies a lack of specific reason but a choice), "Presidential support" (as a factual descriptor of backing, not an economic argument), and neutral policy descriptions.
+    negative_clarification: |
+      Do not classify this as "uninformative" if the respondent provided a reason, even if vague. Do not classify clear economic or normative reasons here.
+  uninformative:
+    definition: |
+      No reason is given, or the text is completely off-topic, gibberish, or indicates no preference/choice was made (e.g., "I don't like either", "No opinion").
+    clarification: |
+      Only for truly empty or non-responsive answers.
+    negative_clarification: Do not classify vague approvals ("Just", "Support") or
+      general national interest ("Good for Korea") as uninformative.
+

@@ -1,0 +1,82 @@
+codebook:
+  name: ifes23_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1010
+codes:
+  diversity_reasoning:
+    definition: The respondent explicitly cites ethnic, cultural, or racial diversity,
+      immigration, multiculturalism, or national unity as a primary reason for choosing
+      the politician. This includes both positive valuations (diversity as enrichment)
+      and negative valuations (diversity as a threat to unity or culture).
+    clarification: Includes mentions of "Diversität", "Vielfalt", "ethnisch", "kulturell",
+      "Migration", "Multikulti", "christliche Kultur", "Einheit des Landes", or specific
+      stances on how diversity affects society (e.g., "bereichert" or "untergräbt").
+    negative_clarification: Exclude general statements about equality or social justice
+      that do not specifically reference ethnic/cultural groups or immigration. Use
+      gender_reasoning for sex/gender-specific equality issues. Use none_of_above
+      for vague references to "diversity" without context if it's unclear, though
+      most explicit mentions should be captured here.
+  gender_reasoning:
+    definition: The respondent cites gender equality, women's rights, or the role
+      of women in society and the labor market as the deciding factor.
+    clarification: Includes mentions of "Geschlecht", "Frauenrechte", "Gleichberechtigung
+      der Geschlechter", "Männer/Frauen Bevorzugung", "Quote", or specific policies
+      regarding sex-based discrimination or equality.
+    negative_clarification: Exclude general human rights or broad equality statements
+      that do not specify gender. Use diversity_reasoning if the equality claim is
+      specifically about ethnic/cultural groups. Use none_of_above for general "equality"
+      without specification.
+  democratic_values_reasoning:
+    definition: The respondent chooses the politician based on their stance on democracy,
+      democratic institutions, or the political system itself.
+    clarification: Includes mentions of "Demokratie", "Rechtsstaat", "Freiheit" (in
+      a political/systemic sense), "Diktatur" (as a contrast), or the importance of
+      democratic processes.
+    negative_clarification: Exclude general political freedom or economic liberty.
+      Use economic_reasoning for market freedom. Use none_of_above for vague "freedom"
+      without democratic context.
+  economic_reasoning:
+    definition: The respondent cites economic policies, state intervention in the
+      economy, corporate regulation, or individual economic responsibility as the
+      key factor.
+    clarification: Includes mentions of "Unternehmenskontrolle", "Freiheit für Unternehmen",
+      "Wirtschaft", "Sozialhilfe", "Eigenverantwortung" (economic context), "Leistung",
+      or "Steuer".
+    negative_clarification: Exclude general social welfare or care for people ("Sorgt
+      sich um Menschen") unless tied to specific economic mechanisms. Use social_reasoning
+      for general care/safety nets not tied to market regulation.
+  social_reasoning:
+    definition: The respondent cites general social welfare, safety, protection of
+      the community, or care for vulnerable groups as the primary reason.
+    clarification: Includes mentions of "Sicherheit", "Schutz des Gemeinwesens", "Daseinsvorsorge",
+      "Sorgt sich um die Menschen", or general social cohesion not tied to diversity
+      or economics.
+    negative_clarification: Exclude economic regulation. Use diversity_reasoning if
+      the safety concern is specifically about cultural/ethnic threats. Use none_of_above
+      for vague "safety" without social context.
+  general_agreement_reasoning:
+    definition: The respondent states they chose the politician because their views
+      generally align with the respondent's, without specifying a particular policy
+      domain.
+    clarification: Includes phrases like "meine Meinung", "Übereinstimmung", "passt
+      zu mir", "ähnliche Ansichten", "vertritt meine Einstellung", or "stimme zu".
+    negative_clarification: Exclude specific policy reasons (use the specific code).
+      Exclude vague non-answers. If the respondent says "I agree" but also mentions
+      a specific topic (e.g., "I agree because of diversity"), use the specific code.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a clear reasoning based on the politician's attributes or policies.
+    clarification: Includes "keine Ahnung", "weiß nicht", "einfach so", "Bauchgefühl",
+      "beide schlecht", "kleineres Übel" (without specific reason), random characters,
+      or incomplete sentences that convey no meaning.
+    negative_clarification: Exclude any response that contains a discernible reason,
+      even if weak (e.g., "because he is nicer" might be coded as general_agreement
+      or none_of_above depending on strictness, but usually "none_of_above" for pure
+      affect without policy link). Ensure specific policy reasons are not miscoded
+      here.
+

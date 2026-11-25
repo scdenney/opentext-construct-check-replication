@@ -1,0 +1,66 @@
+codebook:
+  name: ifes2023_de_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a randomly withheld religion attribute and a task-5 open-end, Germany
+    (IFES 2023)). Respondents answered: "Bitte beschreiben Sie, warum die von Ihnen
+    gewählte Person eher deutsch ist (Please describe why the person you chose is
+    more German)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_natid:1009
+codes:
+  religious_criteria:
+    definition: Reasoning that explicitly invokes religion, Christianity, the church,
+      or faith as a primary or significant ground for the person being (more) German.
+    clarification: Includes mentions of being Christian, having a Christian faith,
+      religion playing a role, or Germany being a Christian country.
+    negative_clarification: Exclude responses that mention religion only to say it
+      is irrelevant (e.g., "Religion spielt keine Rolle"). Use `none_of_above` for
+      such cases.
+  legal_institutional_criteria:
+    definition: Reasoning based on adherence to German laws, political institutions,
+      democratic values, or the rule of law.
+    clarification: Includes respect for laws, respect for political institutions,
+      adherence to democratic principles, or following rules.
+    negative_clarification: Exclude responses that only mention general "respect"
+      without specifying laws/institutions. Use `none_of_above` if the reason is purely
+      vague respect.
+  linguistic_criteria:
+    definition: Reasoning based on the ability to speak German or language proficiency
+      as a marker of German identity.
+    clarification: Includes speaking German, knowing the language, or language skills
+      being a key factor.
+    negative_clarification: Exclude responses where language is mentioned alongside
+      other strong criteria like citizenship or birthplace as the *sole* reason; if
+      language is just one of many equal factors, consider `none_of_above` or the
+      most dominant factor. However, if language is the explicit differentiator, use
+      this code.
+  civic_bureaucratic_criteria:
+    definition: Reasoning based on formal legal status, citizenship, or long-term
+      residence/birth in Germany.
+    clarification: Includes having German citizenship (Staatsbürgerschaft), being
+      born in Germany, or having lived in Germany for a long time.
+    negative_clarification: Exclude responses that focus on ancestry/bloodline. Use
+      `ethnic_ancestry_criteria` for those.
+  ethnic_ancestry_criteria:
+    definition: Reasoning based on bloodline, ancestry, heritage, or ethnic background.
+    clarification: Includes having German ancestors, German roots, or being of German
+      descent.
+    negative_clarification: Exclude responses focusing on current legal status or
+      language. Use `civic_bureaucratic_criteria` for citizenship/birth.
+  subjective_identification:
+    definition: Reasoning based on the person's self-identification, feelings, or
+      internal sense of belonging to Germany.
+    clarification: Includes the person feeling German, identifying as German, or having
+      a German mindset/attitude.
+    negative_clarification: Exclude responses that focus on external markers like
+      laws or language. Use `none_of_above` if the identification is vague (e.g.,
+      "just feels right").
+  none_of_above:
+    definition: Uninformative, non-substantive, or residual responses that do not
+      fit the specific criteria above.
+    clarification: Includes "I don't know," "no reason," "gut feeling," "both are
+      bad," "random choice," "looks German," or statements that religion is irrelevant.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to religion, law, language, citizenship, ancestry, or self-identification.
+

@@ -1,0 +1,60 @@
+codebook:
+  name: aks21_c1_neighbor_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, neighbor-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_neighbor:1009
+codes:
+  social_integration_ties:
+    definition: Reasoning that explicitly or implicitly references the respondent's
+      perception of the profile's ability to mix with South Koreans, fit into the
+      local community, or maintain social networks that facilitate integration.
+    clarification: Includes mentions of having Korean friends/colleagues, long residence
+      in Korea leading to cultural familiarity, being 'Koreanized' or adapted, having
+      family in Korea, or general social compatibility and ease of fitting in.
+    negative_clarification: Do not use for reasons based solely on professional competence,
+      age, or political background unless they are explicitly linked to social mixing
+      or community acceptance. Use 'professional_qualifications' or 'demographic_characteristics'
+      instead if the focus is strictly on work skills or age.
+  professional_qualifications:
+    definition: Reasoning based on the profile's job title, career stability, specific
+      skills, or work experience.
+    clarification: Includes mentions of being a doctor, programmer, office worker,
+      having a stable job, professional expertise, or work history.
+    negative_clarification: Do not use for reasons related to social networks, age,
+      or political status. Use 'social_integration_ties' or 'demographic_characteristics'
+      if the reason is about age or social fit.
+  demographic_characteristics:
+    definition: Reasoning based on age, gender, marital status, or family status (e.g.,
+      having children).
+    clarification: Includes mentions of being young, old, male, female, married, single,
+      or having children.
+    negative_clarification: Do not use if the age/gender is explicitly linked to social
+      integration (e.g., "young people adapt faster socially") or professional suitability.
+      Use 'social_integration_ties' or 'professional_qualifications' in those cases.
+  political_background:
+    definition: Reasoning based on the profile's political affiliation, specifically
+      regarding the Workers' Party of Korea or North Korean regime ties.
+    clarification: Includes mentions of not being a former Workers' Party member,
+      being a defector, or political reliability.
+    negative_clarification: Do not use for general social or professional reasons.
+      Use 'social_integration_ties' if the political aspect is framed as a barrier
+      to social acceptance, but typically this is a distinct security/trust heuristic.
+  residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea or China, independent of specific social ties or professional skills.
+    clarification: Includes mentions of long/short residence in Korea or China, duration
+      of stay, or time since defection.
+    negative_clarification: If the residence duration is cited specifically to argue
+      for better social adaptation or cultural understanding, use 'social_integration_ties'.
+      If cited for professional stability, use 'professional_qualifications'.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "no reason," "just because," "good," "bad," "same," "don't
+      know," or random characters.
+    negative_clarification: Do not use for any substantive reason related to demographics,
+      profession, politics, or integration.
+

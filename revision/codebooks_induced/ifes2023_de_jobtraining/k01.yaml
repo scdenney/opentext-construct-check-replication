@@ -1,0 +1,92 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1001
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly or implicitly invokes the candidate's place
+      of birth, regional origin (specifically East Germany, Saxony, or the former
+      GDR), or national origin (Germany vs. foreign) as a primary ground for selection
+      or rejection.
+    clarification: Includes mentions of "Sachsen" (Saxony), "Osten" (East), "GDR",
+      "Deutschland" (Germany) as a positive trait (e.g., "because she is from Germany"),
+      or "Ausländer" (foreigner) as a negative trait. Also includes comparisons based
+      on regional location (e.g., "Sachsen is closer").
+    negative_clarification: Exclude general mentions of "German" if it refers to language
+      proficiency or citizenship without explicit regional/national origin bias as
+      the *reason*. Exclude general "experience" or "age" unless explicitly tied to
+      the region. Use `national_origin_reasoning` if the focus is strictly on citizenship/ethnicity
+      without the specific East/West or regional nuance, though in this dataset, "Deutsch"
+      often serves as the proxy for national origin. If the response is purely about
+      "German" as a language skill, use `other_personal_qualities`.
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of prior convictions (Vorstrafen) or the severity of
+      the alleged crime (e.g., tax evasion vs. theft).
+    clarification: Includes mentions of "keine Vorstrafen" (no criminal record), "nicht
+      vorbestraft" (not previously convicted), "Straftaten" (crimes), "Steuerhinterziehung"
+      (tax evasion), "Diebstahl" (theft). Includes judgments on the moral weight of
+      the crime (e.g., "tax evasion is worse").
+    negative_clarification: Exclude general statements about being "serious" or "trustworthy"
+      unless explicitly linked to a lack of crime. Exclude mentions of "police entry"
+      if it's vague and not clearly about a conviction. Use `none_of_above` if the
+      mention is just a data point without reasoning (e.g., "0 vorstrafen" with no
+      explanation).
+  age_reasoning:
+    definition: Reasoning that prioritizes or rejects a candidate based on their age,
+      typically favoring younger candidates for future potential or older candidates
+      for experience, or citing age as a barrier to retraining.
+    clarification: Includes "jung" (young), "älter" (older), "Alter" (age), "Rentenalter"
+      (retirement age), "Lebenserfahrung" (life experience) when tied to age. Includes
+      reasoning about "future potential" linked to youth or "less time left" linked
+      to age.
+    negative_clarification: Exclude general "experience" if not explicitly tied to
+      age. Exclude "health" or "energy" unless explicitly linked to age. Use `other_personal_qualities`
+      for general maturity.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's family situation, such as having
+      children, being single, or being married, and how this affects their need for
+      support or employability.
+    clarification: Includes mentions of "Kinder" (children), "alleinerziehend" (single
+      parent), "verheiratet" (married), "Familie" (family). Includes reasoning about
+      financial need due to children, difficulty finding work as a single parent,
+      or stability due to marriage.
+    negative_clarification: Exclude general "personal life" comments. Exclude mentions
+      of children if they are just listed as facts without reasoning about the job
+      choice. Use `none_of_above` for simple factual statements.
+  professional_qualification_reasoning:
+    definition: Reasoning based on the candidate's current job title, level of qualification,
+      work experience, or career trajectory.
+    clarification: Includes "Filialleiter" (branch manager), "Erfahrung" (experience),
+      "Qualifikation" (qualification), "Berufserfahrung" (professional experience),
+      "Aufstieg" (promotion), "Teilzeit/Vollzeit" (part-time/full-time) as indicators
+      of career level. Includes reasoning that one job is more "qualified" or has
+      better "perspectives" than the other.
+    negative_clarification: Exclude general "skills" not tied to professional history.
+      Exclude "education" if not explicitly mentioned as a professional credential.
+      Use `other_personal_qualities` for soft skills.
+  gender_reasoning:
+    definition: Reasoning that explicitly cites the candidate's gender as a factor
+      in the decision.
+    clarification: Includes "weiblich" (female), "männlich" (male), "Frau" (woman),
+      "Mann" (man), "Gleichstellung" (equal opportunity), "Frauen werden benachteiligt"
+      (women are disadvantaged).
+    negative_clarification: Exclude gender if it's just a demographic fact without
+      being the *reason* for choice. Use `none_of_above` if gender is mentioned but
+      not used as a justification.
+  none_of_above:
+    definition: Responses that are uninformative, purely random, express no preference,
+      or cite reasons not covered by the specific codes above.
+    clarification: Includes "weiss nicht" (don't know), "Bauchgefühl" (gut feeling),
+      "zufällig" (random), "beide gleich" (both equal), "keine Angabe" (no comment),
+      "weil ich wählen musste" (because I had to choose), "sympatisch" (likeable)
+      without specific reason, "gut" (good), "besser" (better) without explanation.
+    negative_clarification: Exclude any response that provides a substantive reason
+      related to origin, crime, age, family, job, or gender. If a reason is given
+      but is vague (e.g., "because he is better"), use this code.
+

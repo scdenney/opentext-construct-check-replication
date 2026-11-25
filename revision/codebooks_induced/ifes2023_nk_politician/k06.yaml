@@ -1,0 +1,60 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1006
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the superiority of democratic systems as a primary ground for choosing the
+      politician.
+    clarification: Includes mentions of "democracy" (민주주의), "liberal democracy" (자유민주주의),
+      "democratic legitimacy" (민주주의 정통성), or the belief that democracy is the best
+      or superior form of government compared to other systems, even if acknowledging
+      its flaws.
+    negative_clarification: Exclude general policy preferences (e.g., welfare, jobs)
+      unless explicitly linked to democratic principles. Use `policy_reasoning` or
+      `economic_reasoning` instead.
+  policy_welfare_reasoning:
+    definition: Reasoning based on the politician's stance on social welfare, government
+      responsibility for citizen livelihoods, or social safety nets.
+    clarification: Includes mentions of "welfare" (복지), "government responsibility"
+      (정부의 책임), "livelihood" (생계), and the belief that the state should support citizens'
+      economic well-being.
+    negative_clarification: Exclude general economic growth arguments not tied to
+      social support. Use `economic_reasoning` instead.
+  economic_reasoning:
+    definition: Reasoning based on economic growth, job creation, private sector expansion,
+      or national economic interests.
+    clarification: Includes mentions of "economy" (경제), "jobs" (일자리), "private enterprises"
+      (사기업), "state-owned enterprises" (국영기업), and national economic benefit.
+    negative_clarification: Exclude welfare-specific arguments. Use `policy_welfare_reasoning`
+      instead.
+  equality_diversity_reasoning:
+    definition: Reasoning based on principles of equality, non-discrimination, gender
+      parity, or respect for diversity.
+    clarification: Includes mentions of "equality" (평등), "gender equality" (성별 평등),
+      "diversity" (다양성), "non-discrimination" (차별 금지), and opposition to gender-based
+      job preferences.
+    negative_clarification: Exclude general policy preferences. Use `policy_reasoning`
+      or `democracy_reasoning` if linked to democratic rights.
+  general_preference_reasoning:
+    definition: Reasoning based on vague preferences, perceived betterment, or general
+      agreement without specific ideological or policy justification.
+    clarification: Includes phrases like "seems better" (나아보인다), "more reasonable"
+      (합리적임), "agrees with my views" (견해가 맞음), or "just feels right" (마음에 가서).
+    negative_clarification: Exclude specific policy, economic, or democratic arguments.
+      Use `none_of_above` if the answer is unintelligible or purely random.
+  none_of_above:
+    definition: Uninformative, incomplete, or irrelevant responses that do not fit
+      into the substantive categories.
+    clarification: Includes answers like "I don't know" (잘모겠다), random characters,
+      or responses that do not provide a clear reason for the choice.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if weak. Use `general_preference_reasoning` for vague but present reasons.
+

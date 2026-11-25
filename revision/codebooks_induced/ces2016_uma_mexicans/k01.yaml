@@ -1,0 +1,77 @@
+codebook:
+  name: ces2016_uma_mexicans_induced
+  residual_code: none_of_above
+  context: White American adults in an online election survey in autumn 2016 were
+    shown several quoted statements from the presidential campaign and asked which
+    candidate made each one; on the next page they were asked to write, in a few words,
+    what comes to mind when they think of several groups. This answer is about Mexicans.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ces2016_uma_mexicans:1001
+codes:
+  offensive_comment:
+    definition: The response expresses hate, contempt, or hostility toward Mexicans
+      as a group, or relies on demeaning stereotypes regarding criminality, illegality,
+      laziness, dirtiness, or cultural inferiority.
+    clarification: Includes slurs, generalizations that Mexicans are inherently criminal,
+      lazy, dirty, or ungrateful, claims that they are an "invasion" or "aliens,"
+      statements that they should "go back" to their country, or assertions that they
+      are culturally incompatible or dangerous (e.g., "rapist," "thieves," "stupid,"
+      "disregard for law").
+    negative_clarification: Exclude neutral descriptions of nationality, policy views
+      on immigration enforcement stated without disparaging the group's character,
+      or mentions of hardships faced by Mexicans. If the response is merely stating
+      a fact about immigration status without derogatory intent, use `immigration_status`.
+      If it is a slur or deep-seated prejudice, use this code.
+  hard_working_positive:
+    definition: The response highlights positive traits such as diligence, work ethic,
+      or family orientation without negative qualifiers.
+    clarification: Includes phrases like "hard workers," "hardworking," "family oriented,"
+      "trying," "ambitious," "industrious," or "dedicated."
+    negative_clarification: Exclude responses that pair "hard working" with negative
+      stereotypes (e.g., "hard working but illegal" or "hard working but lazy"). If
+      the negative aspect is prominent, code as `offensive_comment` or `immigration_status`
+      depending on the primary focus. Exclude simple "good people" without specific
+      positive trait attribution if it feels generic, though "good people" can be
+      included here if distinct from neutral.
+  immigration_status:
+    definition: The response focuses primarily on the legal status of Mexicans in
+      the US, specifically illegality, without necessarily expressing hate or praising
+      work ethic.
+    clarification: Includes mentions of "illegal," "illegals," "undocumented," "crossing
+      the border illegally," "need to come here legally," or "too many illegals."
+    negative_clarification: Exclude if the mention of illegality is coupled with a
+      slur or deep contempt (use `offensive_comment`). Exclude if the focus is on
+      the *work* they do despite being illegal (use `hard_working_positive` or `labor_role`).
+      Exclude neutral statements like "some legal, some not."
+  labor_role:
+    definition: The response identifies Mexicans primarily by their economic function
+      or type of employment.
+    clarification: Includes "farmers," "farm hands," "service workers," "cheap labor,"
+      "jobs whites don't want," "agricultural help," or "laborers."
+    negative_clarification: Exclude if the response emphasizes the *hard work* aspect
+      more than the specific job type (use `hard_working_positive`). Exclude if it
+      implies exploitation in a derogatory way (use `offensive_comment`).
+  cultural_food:
+    definition: The response associates Mexicans with food, cuisine, or cultural artifacts
+      in a neutral or positive manner.
+    clarification: Includes "tacos," "spicy food," "good food," "hot spicy," "culture,"
+      or "food."
+    negative_clarification: Exclude if the food mention is part of a stereotype about
+      dirtiness or uncleanliness (use `offensive_comment`). Exclude if it is a general
+      "people" response.
+  neutral_demographic:
+    definition: The response provides a neutral, factual, or generic description of
+      Mexicans as a group of people or from a specific location.
+    clarification: Includes "people," "humans," "from Mexico," "south of the border,"
+      "latinos," "hispanics," "spanish speaking," "normal," "just like the rest of
+      us," or "ethnicity."
+    negative_clarification: Exclude if the response contains any negative judgment,
+      stereotype, or political opinion. Exclude if it is uninformative (use `none_of_above`).
+  none_of_above:
+    definition: The response is uninformative, nonsensical, or indicates a lack of
+      thought.
+    clarification: Includes "nothing," "no thoughts," "none," "n/a," "not sure," "idk,"
+      random characters (e.g., "ghfdssz"), "no comment," or "???".
+    negative_clarification: Exclude any response that provides a substantive opinion,
+      even if brief or generic like "people" (which goes to `neutral_demographic`).
+

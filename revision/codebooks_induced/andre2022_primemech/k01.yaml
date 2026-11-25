@@ -1,0 +1,78 @@
+codebook:
+  name: andre2022_primemech_induced
+  residual_code: none_of_above
+  context: US adults in an online survey read a hypothetical scenario in which the
+    Federal Reserve unexpectedly raises the federal funds rate, and predicted how
+    US inflation would change compared with the rate staying constant. Some respondents
+    first predicted whether US firms would face higher or lower costs of doing business,
+    or higher or lower demand for their goods and services, and wrote a few sentences
+    about that prediction; all respondents then explained in 2-3 sentences how they
+    came up with their inflation prediction.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:andre2022_primemech:1001
+codes:
+  firm_cost_channel:
+    definition: The response explicitly links the interest rate increase to higher
+      costs for businesses (e.g., borrowing, financing, or production costs) and states
+      that these increased costs are passed on to consumers in the form of higher
+      prices, thereby driving inflation.
+    clarification: Includes mentions of higher borrowing costs for firms, increased
+      cost of doing business, or firms raising prices to cover higher operational
+      or financing expenses.
+    negative_clarification: Exclude mentions of higher borrowing costs that do not
+      specify that businesses bear the cost or pass it on (e.g., only mentioning consumer
+      loan rates). Exclude responses that mention business costs but attribute inflation
+      to other factors like demand or government policy without the cost-pass-through
+      mechanism. Use 'demand_channel' or 'general_inflation' instead.
+  demand_channel:
+    definition: The response attributes the change in inflation to changes in consumer
+      or aggregate demand, typically arguing that higher interest rates reduce purchasing
+      power or borrowing by consumers, leading to lower demand and thus lower inflation
+      (or vice versa).
+    clarification: Includes mentions of reduced consumer spending, lower demand for
+      goods/services due to higher loan/mortgage rates, or decreased purchasing power.
+    negative_clarification: Exclude responses that focus on business-side cost increases.
+      Exclude responses that mention demand but do not link it to the interest rate
+      mechanism (e.g., "demand dropped" without explanation). Use 'firm_cost_channel'
+      or 'none_of_above' if the reasoning is unclear.
+  general_inflation_trend:
+    definition: The response relies on general observations, historical trends, or
+      intuitive beliefs about inflation (e.g., "prices always go up," "inflation is
+      rising") without specifying a clear economic mechanism linking the interest
+      rate to the outcome.
+    clarification: Includes statements like "everything gets more expensive," "inflation
+      naturally rises," or references to past trends without explaining the causal
+      link to the rate hike.
+    negative_clarification: Exclude responses that specify a mechanism (cost or demand).
+      Exclude uninformative or random guesses. Use 'none_of_above' if the response
+      is incoherent or purely political ranting without economic reasoning.
+  political_or_external_factors:
+    definition: The response attributes the inflation prediction to political decisions,
+      government policy, external events (like the pandemic), or specific administrations
+      rather than the mechanical effect of the interest rate change.
+    clarification: Includes mentions of Biden/Trump, government spending, taxes, minimum
+      wage, pandemic recovery, or political incompetence as the primary drivers.
+    negative_clarification: Exclude responses where political factors are secondary
+      to a clear cost or demand mechanism. Use 'firm_cost_channel' or 'demand_channel'
+      if the interest rate mechanism is also present and primary. Use 'none_of_above'
+      if the response is purely a political insult with no economic reasoning.
+  mathematical_or_pattern_based:
+    definition: The response bases the prediction on simple arithmetic, pattern matching,
+      or mimicking the input numbers rather than economic reasoning.
+    clarification: Includes responses that simply add the rate change to a previous
+      inflation number, assume a 1:1 correlation, or state "I did the math" without
+      explaining the economic logic.
+    negative_clarification: Exclude responses that use math to explain a cost or demand
+      mechanism. Use 'general_inflation_trend' if the pattern is based on historical
+      observation rather than simple arithmetic. Use 'none_of_above' if the response
+      is incoherent.
+  none_of_above:
+    definition: The response is uninformative, incoherent, purely speculative without
+      reasoning, or expresses confusion/lack of knowledge.
+    clarification: Includes "I don't know," "Just a guess," random text, political
+      insults without economic context, or statements that do not explain *how* the
+      prediction was made.
+    negative_clarification: Exclude any response that provides a coherent economic
+      reason (cost, demand, or general trend). Use specific codes for any identifiable
+      reasoning.
+

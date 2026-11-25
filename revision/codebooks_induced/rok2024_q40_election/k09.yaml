@@ -1,0 +1,68 @@
+codebook:
+  name: rok2024_q40_election_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Candidate-choice
+    conjoint with a randomized general vs presidential election frame, South Korea
+    2024). Respondents answered: "Q40: 해당 후보를 선택하신 이유는 무엇입니까? (Why did you choose
+    this candidate?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:rok2024_q40_election:1009
+codes:
+  programmatic_policy_reasoning:
+    definition: Justifies the choice by referencing specific policy positions, ideological
+      stances, or campaign promises (e.g., labor, housing/real estate tax, social
+      policy, foreign policy, nuclear weapons).
+    clarification: Includes explicit mentions of policy areas (housing, taxes, labor
+      hours, nuclear arms, discrimination laws, foreign relations) or general references
+      to "policies," "promises," or "ideological alignment" with the candidate's platform.
+    negative_clarification: Exclude responses that focus on the candidate's personal
+      traits, integrity, age, or lack of scandal. If the response mentions policy
+      only to contrast with a personal trait (e.g., "policy is good but he is old"),
+      code the dominant reason or use none_of_above if mixed. Use this code instead
+      of personal_characteristics or integrity.
+  integrity_and_scandal_avoidance:
+    definition: Justifies the choice based on the candidate's perceived honesty, lack
+      of corruption, or avoidance of specific scandals (e.g., bribery, family corruption,
+      past misconduct).
+    clarification: Includes mentions of "no suspicion," "clean record," "anti-corruption,"
+      "not a prosecutor," or avoiding candidates with "scandals" or "family issues."
+    negative_clarification: Exclude responses that cite specific policy outcomes or
+      ideological agreements. If the reason is purely about avoiding a scandal rather
+      than supporting a policy, use this code instead of programmatic_policy_reasoning.
+  personal_characteristics_and_demographics:
+    definition: Justifies the choice based on the candidate's personal attributes,
+      demographic features, or leadership style rather than policy content.
+    clarification: Includes mentions of age (young/old), image (energetic, reliable),
+      profession (ex-prosecutor, diplomat), gender, or general leadership capability
+      ("will do a good job").
+    negative_clarification: Exclude responses that cite specific policy platforms
+      or integrity issues. Use this code instead of programmatic_policy_reasoning
+      or integrity_and_scandal_avoidance.
+  comparative_superiority:
+    definition: Justifies the choice by stating the selected candidate is "better,"
+      "more reasonable," or "less bad" than the alternative, without specifying the
+      underlying policy or trait.
+    clarification: Includes vague statements like "seems better," "more realistic,"
+      "more suitable," or "relatively better."
+    negative_clarification: Exclude responses that specify *why* they are better (e.g.,
+      "better policy" -> programmatic_policy_reasoning; "less corrupt" -> integrity_and_scandal_avoidance).
+      Use this code instead of specific substantive codes.
+  anti_candidate_sentiment:
+    definition: Justifies the choice primarily by expressing opposition to the other
+      candidate's background, identity, or specific negative attributes.
+    clarification: Includes rejection based on the opponent being a "descendant of
+      pro-Japanese collaborators," "prosecutor," "woman," or other identity-based
+      disqualifications.
+    negative_clarification: Exclude responses that focus on the positive attributes
+      of the chosen candidate. If the reason is purely negative towards the opponent
+      without positive justification for the choice, use this code instead of programmatic_policy_reasoning.
+  none_of_above:
+    definition: Captures uninformative, random, or non-substantive responses that
+      do not provide a clear rationale for the choice.
+    clarification: Includes random characters, "no reason," "just felt like it," "didn't
+      like either but had to choose," "don't know," or responses that are clearly
+      not answers to the question.
+    negative_clarification: Exclude any response that offers a discernible reason,
+      even if vague (e.g., "policy" -> programmatic_policy_reasoning; "clean" -> integrity_and_scandal_avoidance).
+      Use this code for truly empty or nonsensical inputs.
+

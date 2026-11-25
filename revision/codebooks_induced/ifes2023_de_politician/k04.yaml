@@ -1,0 +1,67 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1004
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic diversity, cultural diversity,
+      immigration, multiculturalism, or national unity as a primary or decisive factor
+      in the choice.
+    clarification: Includes mentions of "ethnische Vielfalt", "kulturelle Vielfalt",
+      "Diversität", "Migration", or arguments about whether diversity enriches or
+      undermines the country.
+    negative_clarification: Exclude general equality or gender equality arguments
+      (use gender_reasoning). Exclude general democratic values (use democratic_reasoning).
+      Exclude uninformative answers (use none_of_above).
+  gender_reasoning:
+    definition: Reasoning that cites gender equality, women's rights, or the irrelevance
+      of gender in professional contexts as a decisive factor.
+    clarification: Includes mentions of "Gleichstellung", "Geschlechter", "Frauenrechte",
+      "Gleichberechtigung", or arguments that gender should not play a role in hiring/selection.
+    negative_clarification: Exclude ethnic/cultural diversity arguments (use diversity_reasoning).
+      Exclude general democratic values (use democratic_reasoning). Exclude general
+      policy agreement (use policy_agreement).
+  democratic_reasoning:
+    definition: Reasoning that cites support for democracy, democratic values, or
+      the political system itself as a decisive factor.
+    clarification: Includes mentions of "Demokratie", "demokratisch", "Freiheit" (in
+      a political/systemic sense), or preference for democratic governance over other
+      forms.
+    negative_clarification: Exclude gender equality arguments (use gender_reasoning).
+      Exclude ethnic/cultural diversity arguments (use diversity_reasoning). Exclude
+      specific policy details like economy or social welfare (use policy_agreement).
+  policy_agreement:
+    definition: Reasoning based on agreement with specific policy positions such as
+      economic freedom, state control, social welfare, or individual responsibility.
+    clarification: Includes mentions of "Wirtschaft", "Unternehmen", "Sozialhilfe",
+      "Eigenverantwortung", "Freiheit" (in an economic sense), or general policy alignment.
+    negative_clarification: Exclude gender equality arguments (use gender_reasoning).
+      Exclude ethnic/cultural diversity arguments (use diversity_reasoning). Exclude
+      general democratic system support (use democratic_reasoning).
+  general_agreement:
+    definition: Reasoning based on general agreement with the politician's views or
+      overall alignment, without specifying a particular topic.
+    clarification: Includes phrases like "stimmt mit meiner Meinung überein", "passt
+      zu mir", "gleiche Ansichten", or "mehr Übereinstimmung".
+    negative_clarification: Exclude specific topic-based reasoning (use diversity_reasoning,
+      gender_reasoning, democratic_reasoning, or policy_agreement). Exclude uninformative
+      answers (use none_of_above).
+  personal_preference:
+    definition: Reasoning based on personal feelings, sympathy, or gut instinct rather
+      than policy or values.
+    clarification: Includes mentions of "sympathisch", "Gefällt mir", "Bauchgefühl",
+      "mag ihn lieber", or aesthetic/personal appeal.
+    negative_clarification: Exclude policy or value-based reasoning (use other substantive
+      codes). Exclude uninformative answers (use none_of_above).
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "keine Ahnung", "weil ich wählen musste", "beide sind
+      schlecht", random characters, or answers that do not provide a clear reason
+      for the choice.
+    negative_clarification: Exclude any substantive reasoning found in the other codes.
+

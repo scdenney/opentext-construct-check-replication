@@ -1,0 +1,64 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1006
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic, cultural, or gender diversity,
+      multiculturalism, or national unity as a primary ground for choosing the politician.
+    clarification: Includes mentions of 'Diversität', 'kulturelle Vielfalt', 'ethnische
+      Vielfalt', 'Gleichberechtigung' (when linked to diversity/multiculturalism context),
+      or arguments about the benefits/drawbacks of immigration and multicultural societies.
+    negative_clarification: Exclude general statements about 'Gleichstellung' (equality)
+      or 'Geschlechtergerechtigkeit' (gender equality) if they do not explicitly reference
+      diversity, multiculturalism, or ethnic/cultural backgrounds. Use gender_reasoning
+      instead. Exclude general 'Vielfalt' if it refers to political options or general
+      variety without specific cultural/ethnic connotation.
+  gender_reasoning:
+    definition: Reasoning that cites gender equality, women's rights, or the role
+      of gender in society as the primary ground for choosing the politician.
+    clarification: Includes mentions of 'Gleichberechtigung', 'Frauenförderung', 'Geschlechtergleichheit',
+      'Frauen bevorzugen', or arguments about women's roles in the workplace or society.
+    negative_clarification: Exclude if the response is purely about general 'Diversity'
+      without specific gender focus. Use diversity_reasoning if gender is framed as
+      part of a broader multicultural/diversity argument. Exclude general 'Gleichheit'
+      if not gender-specific.
+  policy_agreement:
+    definition: Reasoning based on agreement with specific policy positions, economic
+      views, or state intervention strategies.
+    clarification: Includes mentions of 'Wirtschaft', 'Sozialhilfe', 'Unternehmensfreiheit',
+      'Staatliche Kontrolle', 'Selbstverantwortung', 'Demokratie' (as a system preference),
+      or specific policy stances.
+    negative_clarification: Exclude if the response is vague or refers to general
+      'Ansichten' without specifying policy content. Use general_agreement if no specific
+      policy is mentioned. Exclude diversity or gender reasons.
+  general_agreement:
+    definition: Reasoning based on general alignment of views, values, or personality
+      without specifying policy or diversity aspects.
+    clarification: Includes phrases like 'stimme zu', 'meine Meinung', 'Ansichten
+      passen', 'überzeugender', 'plausibler', 'passt besser', 'Werte entsprechen'.
+    negative_clarification: Exclude if specific policies, diversity, or gender are
+      mentioned. Use those specific codes. Exclude non-informative responses.
+  non_informative:
+    definition: Responses that are uninformative, random, or indicate no real preference
+      based on the provided attributes.
+    clarification: Includes 'Weiß nicht', 'Keine Ahnung', 'Bauchgefühl', 'Einfach
+      so', 'Musste wählen', 'Beide schlecht', 'Geringes Übel', random characters,
+      or empty responses.
+    negative_clarification: Exclude any response that provides a reason, even if weak.
+      Use general_agreement for weak but substantive reasons.
+  other_reasoning:
+    definition: Reasoning based on other factors not covered by the above codes, such
+      as personal characteristics, trust, or competence.
+    clarification: Includes mentions of 'Kompetenz', 'Vertrauen', 'Erfahrung', 'Menschlichkeit',
+      'Stimme', 'Charakter', or 'Integrität'.
+    negative_clarification: Exclude if the reason is policy, diversity, gender, or
+      general agreement.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

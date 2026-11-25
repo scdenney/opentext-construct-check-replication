@@ -1,0 +1,78 @@
+codebook:
+  name: ifes2023_de_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-6 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Politiker*in ausgewählt? (Why did you choose this politician?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_politician:1003
+codes:
+  diversity_reasoning:
+    definition: Reasoning that explicitly cites ethnic diversity, cultural diversity,
+      immigration, multiculturalism, or national unity as a primary or decisive factor
+      in the choice.
+    clarification: Includes mentions of "Diversität", "kulturelle Vielfalt", "ethnische
+      Vielfalt", "Einwanderung", "Ausländer", "Zuwanderer", "multikulturell", or "nationale
+      Einheit". This applies to both positive endorsements (e.g., supporting diversity)
+      and negative rejections (e.g., opposing diversity or fearing loss of national
+      identity).
+    negative_clarification: Exclude general statements about equality or gender equality
+      unless they explicitly reference ethnic/cultural dimensions. Use gender_reasoning
+      for gender-specific arguments. Use none_of_above for vague references to "diversity"
+      without context if it's unclear, though in this dataset, "Diversität" usually
+      maps here.
+  gender_reasoning:
+    definition: Reasoning that cites gender equality, women's rights, female representation,
+      or gender roles as a primary factor.
+    clarification: Includes mentions of "Gleichberechtigung", "Frauen", "Geschlecht",
+      "Männer", "Frauenquote", "feministisch", or "Geschlechterrolle". Covers arguments
+      for or against gender-specific policies or representation.
+    negative_clarification: Exclude arguments based on general human equality not
+      tied to gender. Use diversity_reasoning if ethnic/cultural aspects are mixed
+      in and dominant. Use none_of_above for general "equality" without gender specification.
+  democratic_values_reasoning:
+    definition: Reasoning that cites support for democracy, democratic processes,
+      or political freedom as a primary factor.
+    clarification: Includes mentions of "Demokratie", "freiheit", "freiheitliche Grundordnung",
+      or specific praise for democratic systems.
+    negative_clarification: Exclude general political stability or economic freedom.
+      Use economic_reasoning for market/economy arguments. Use none_of_above for generic
+      "freedom" if not linked to democratic political structures.
+  economic_reasoning:
+    definition: Reasoning that cites economic policies, market freedom, state control
+      of business, or social welfare as a primary factor.
+    clarification: Includes mentions of "Marktwirtschaft", "Unternehmen", "Wirtschaft",
+      "Sozialhilfe", "Wohlfahrtsstaat", "Kontrolle der Unternehmen", or "Freiheit
+      für Unternehmen".
+    negative_clarification: Exclude general "freedom" if it refers to political liberty
+      (use democratic_values_reasoning). Exclude general "equality" (use gender_reasoning
+      or diversity_reasoning).
+  general_agreement_reasoning:
+    definition: Reasoning that states a general agreement with the politician's views
+      or platform without specifying the substantive topic.
+    clarification: Includes phrases like "stimme zu", "meine Meinung", "Ansichten
+      passen", "übereinstimmung", "passt besser", or "vertrete gleiche Werte" without
+      further elaboration on the content.
+    negative_clarification: Exclude specific policy references (use relevant substantive
+      code). Exclude vague non-answers (use none_of_above).
+  affective_personal_reasoning:
+    definition: Reasoning based on personal preference, feeling, charisma, or general
+      likability rather than policy or values.
+    clarification: Includes "gefällt mir", "mag ich", "Gefühl", "sympathisch", "besserer
+      Mensch", or "charisma".
+    negative_clarification: Exclude strategic voting or comparative judgments based
+      on policy (use general_agreement_reasoning or substantive codes).
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes "K/A", "Keine Ahnung", "Weiß nicht", "Einfach so", "Ist
+      egal", random strings, "Fortnite", "Dhsusiwiiwisjdbdbedbjxidnsbdbdbdndjsjsbsbsbsnsnsnsnsnsbsnwndjdjdjxjxidjdjdjdidiididiisiejwbwbe",
+      or statements that the respondent had to choose but liked neither ("kleineres
+      Übel" without specific reason, though if "kleineres Übel" is the *only* reason,
+      it often falls here or in general_agreement if tied to a specific point; however,
+      pure "lesser evil" without policy detail is residual). Also includes responses
+      that only say "Politiker B ist besser" without a "why".
+    negative_clarification: Exclude any response that provides a substantive reason
+      (policy, value, identity). If a reason is given, code it into the appropriate
+      substantive category.
+

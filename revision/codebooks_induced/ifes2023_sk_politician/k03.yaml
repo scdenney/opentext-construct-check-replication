@@ -1,0 +1,82 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1003
+codes:
+  democracy_reasoning:
+    definition: Responses that explicitly cite democracy, democratic principles, or
+      the value of democratic governance as a primary reason for choosing the politician.
+      This includes references to democratic systems, rights, freedoms, or the superiority
+      of democracy over other systems.
+    clarification: Includes mentions of 'democracy' (민주주의), 'liberal democracy' (자유민주주의),
+      'democratic values', 'rights and freedoms', 'democratic order', or the belief
+      that democracy is the correct or best form of government. Also includes reasoning
+      that democracy is a prerequisite for other goods (e.g., welfare).
+    negative_clarification: Exclude responses that only mention 'equality' or 'diversity'
+      without referencing the democratic system or principles. Exclude responses that
+      criticize democracy or argue for authoritarianism/order over democracy. Use
+      'equality_reasoning' or 'diversity_reasoning' if those are the sole focus.
+  welfare_reasoning:
+    definition: Responses that cite the politician's stance on government responsibility
+      for welfare, social safety nets, or economic support for citizens as the primary
+      reason for choice.
+    clarification: Includes mentions of 'welfare' (복지), 'government responsibility
+      for welfare', 'social security', 'support for the weak', or the belief that
+      the state should provide economic security.
+    negative_clarification: Exclude responses that focus on private sector expansion
+      or market economy without mentioning welfare. Use 'economic_reasoning' if the
+      focus is strictly on market efficiency or private enterprise growth.
+  economic_reasoning:
+    definition: Responses that cite economic policies, market mechanisms, or the role
+      of private vs. public enterprises as the primary reason for choice.
+    clarification: Includes mentions of 'private enterprise expansion' (사기업 확대), 'state-owned
+      enterprise expansion' (국영기업 확대), 'market economy' (시장경제), 'job creation', 'economic
+      growth', or 'economic stability'.
+    negative_clarification: Exclude responses that focus on welfare provision. Use
+      'welfare_reasoning' if the focus is on government support for citizens.
+  equality_reasoning:
+    definition: Responses that cite gender equality, fairness, or equal opportunity
+      as the primary reason for choice, without necessarily invoking democratic principles.
+    clarification: Includes mentions of 'gender equality' (성평등), 'equality' (평등),
+      'no gender discrimination', 'equal opportunity', or 'meritocracy' in hiring/employment.
+    negative_clarification: Exclude responses that explicitly link equality to democratic
+      values (use 'democracy_reasoning'). Exclude responses that argue for male/female
+      priority based on efficiency rather than equality (use 'stereotypical_reasoning'
+      or 'none_of_above' if uninformative).
+  diversity_reasoning:
+    definition: Responses that cite the acceptance or promotion of cultural, racial,
+      or ethnic diversity as the primary reason for choice.
+    clarification: Includes mentions of 'diversity' (다양성), 'multiculturalism' (다문화),
+      'racial diversity', 'cultural respect', or 'inclusion of different backgrounds'.
+    negative_clarification: Exclude responses that focus on gender equality. Use 'equality_reasoning'
+      if the focus is solely on gender.
+  stereotypical_reasoning:
+    definition: Responses that cite traditional gender roles, male superiority, or
+      efficiency-based gender differentiation as the reason for choice.
+    clarification: Includes mentions of 'men should be prioritized', 'men are better
+      at certain jobs', 'gender roles', or arguments against gender equality based
+      on biological or social efficiency.
+    negative_clarification: Exclude responses that support gender equality. Use 'equality_reasoning'
+      if the response supports equal treatment.
+  general_agreement:
+    definition: Responses that state the respondent agrees with the politician's views
+      or that their values align, without specifying the substantive policy or principle.
+    clarification: Includes phrases like 'my views match', 'I agree', 'similar values',
+      'good opinion', or 'resonates with me' without further detail.
+    negative_clarification: Exclude responses that specify *what* they agree with
+      (e.g., welfare, democracy). Use the specific substantive code (e.g., 'welfare_reasoning')
+      if details are provided.
+  none_of_above:
+    definition: Responses that are uninformative, random, purely comparative without
+      reason, or express no clear substantive preference.
+    clarification: Includes 'I don't know', 'random', 'just because', 'A is better
+      than B' (without reason), 'looks good', 'handsome', 'good person', or gibberish.
+    negative_clarification: Exclude any response that provides a substantive reason
+      (even if vague like 'good policy'). Use 'general_agreement' if it implies alignment,
+      but use this code for truly empty or non-substantive answers.
+

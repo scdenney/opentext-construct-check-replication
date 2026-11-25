@@ -1,0 +1,58 @@
+codebook:
+  name: leipziger2026_groupinequality_induced
+  residual_code: none_of_above
+  context: Members of economically disadvantaged groups (Scheduled Caste and Scheduled
+    Tribe respondents in India, Black South Africans, African Americans) answered
+    an online survey in 2024. Some first read a short news-style passage with a figure
+    on how unequally economic resources are distributed in their country (the comparison
+    described differed between respondents); others read nothing. All then answered
+    questions about how fair the differences in economic resources are, and were asked
+    for their reasons for why there are differences in economic resources in their
+    country.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:leipziger2026_groupinequality:1001
+codes:
+  group_based_reasons:
+    definition: The response attributes economic inequality to group membership, intergroup
+      relations, or historical treatment based on race, caste, ethnicity, or tribe.
+    clarification: Includes mentions of systemic racism, caste discrimination, apartheid,
+      colonialism, slavery, segregation, white privilege, black disadvantage, or historical
+      injustices affecting specific social groups.
+    negative_clarification: Do not code if the answer refers only to individual effort,
+      class/economic status (rich vs poor without group identity), general corruption,
+      or geographic factors without linking them to group identity. Use 'individual_factors',
+      'structural_systemic', or 'geographic_factors' instead.
+  individual_factors:
+    definition: The response attributes economic differences to individual characteristics,
+      behaviors, or circumstances.
+    clarification: Includes hard work, laziness, luck, talent, education level, personal
+      choices, family background (as individual lineage rather than group history),
+      or mindset.
+    negative_clarification: Do not code if the answer refers to systemic barriers,
+      group discrimination, or broad structural issues. Use 'group_based_reasons'
+      or 'structural_systemic' instead.
+  structural_systemic:
+    definition: The response attributes economic differences to broad political, economic,
+      or institutional systems and policies.
+    clarification: Includes capitalism, government policies, corruption, nepotism,
+      lack of jobs, education system failures, globalization, or general systemic
+      inequality not tied to a specific protected group identity.
+    negative_clarification: Do not code if the answer specifically blames race, caste,
+      or group-based discrimination. Use 'group_based_reasons' instead. If it mentions
+      corruption or politics without group identity, use this code.
+  geographic_factors:
+    definition: The response attributes economic differences to location, region,
+      or natural resource distribution.
+    clarification: Includes urban vs rural divides, state/provincial disparities,
+      access to natural resources, or infrastructure differences based on geography.
+    negative_clarification: Do not code if the geographic difference is explicitly
+      linked to racial or caste segregation (e.g., "black people live in poor areas
+      due to apartheid"). Use 'group_based_reasons' in that case.
+  none_of_above:
+    definition: The response is uninformative, non-responsive, or expresses uncertainty.
+    clarification: Includes "I don't know," "No comment," random characters, generic
+      statements of fairness/unfairness without reasons, or expressions of opinion
+      without causal explanation.
+    negative_clarification: Do not code if the response provides a specific reason,
+      even if vague. Use the most appropriate substantive code if a reason is identifiable.
+

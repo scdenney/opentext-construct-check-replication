@@ -1,0 +1,87 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1010
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (WPK), lack thereof, or other direct ties to
+      the North Korean regime or ideology as a primary factor in the choice.
+    clarification: Includes mentions of '전 노동당원' (former WPK member), '조선노동당원' (WPK
+      member), '당원' (party member), or explicit denial of such membership ('노동당원이
+      아님', '전 노동당원이 아니기 때문'). It also includes reasoning based on the perceived political
+      loyalty or ideological background associated with these ties.
+    negative_clarification: Do not use for general political views, religious beliefs,
+      or general 'North Korean' identity without specific reference to party/regime
+      ties. Use 'religion' or 'general_integration' instead if those are the primary
+      drivers.
+  professional_status:
+    definition: Reasoning based on the profile's occupation, career stability, professional
+      skills, or economic utility.
+    clarification: Includes mentions of specific jobs (e.g., '의사' doctor, '프로그래머'
+      programmer, '사무직' office worker), professional stability ('안정적 직업'), career
+      prospects ('경력', '장래성'), or the utility of their skills to the neighbor ('도움이
+      될 것 같아서').
+    negative_clarification: Do not use for general age or gender preferences unless
+      tied to professional stereotypes. Use 'demographic' or 'general_integration'
+      if the focus is on social fit rather than professional utility.
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea, implying better adaptation, cultural familiarity, or lower 'otherness'.
+    clarification: Includes mentions of '한국 체류기간' (Korea residence period), '한국 거주
+      기간', '한국에서 오래 살았기 때문에', or comparisons of residence time in Korea vs. China.
+      It implies that longer residence leads to better integration or communication.
+    negative_clarification: Do not use for residence in China ('중국 체류기간') unless it
+      is used to contrast with Korea. Use 'china_residence_duration' for that. Use
+      'general_integration' if the reasoning is vague about time but focuses on general
+      fit.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in China,
+      often viewed negatively or as a barrier to integration compared to Korea.
+    clarification: Includes mentions of '중국 체류기간' (China residence period), '중국에서
+      오래 살았기 때문에', or preferences for shorter China residence times.
+    negative_clarification: Do not use for Korea residence. Use 'korea_residence_duration'
+      for Korea. Use 'general_integration' if the reasoning is not specifically about
+      the duration in China.
+  demographic_characteristics:
+    definition: Reasoning based on age, gender, marital status, or family structure.
+    clarification: Includes mentions of '나이' (age), '젊다/어리다' (young), '여성/남성' (female/male),
+      '결혼' (marriage), '자녀' (children), or '미혼' (single). It covers preferences for
+      similar age, gender, or family stability.
+    negative_clarification: Do not use if the demographic factor is explicitly linked
+      to professional status (e.g., 'young doctor') where the profession is the main
+      driver; in such cases, prioritize 'professional_status' if the utility is highlighted,
+      or 'north_korea_regime_ties' if relevant. If it's just 'young' or 'female' without
+      other context, use this code.
+  social_integration_networks:
+    definition: Reasoning based on the profile's social connections, specifically
+      having Korean friends/colleagues or a lack of ties to other North Korean defectors.
+    clarification: Includes mentions of '한국인 동료' (Korean colleagues), '한국인 친구' (Korean
+      friends), '인맥' (networks), or negative references to having only North Korean
+      defector friends ('탈북민 동료만 있는게 수상함'). It emphasizes social assimilation through
+      mixed networks.
+    negative_clarification: Do not use for general personality traits like 'friendly'
+      without specific reference to Korean connections. Use 'general_integration'
+      for vague social fit.
+  general_integration_assimilation:
+    definition: Reasoning based on general perceived adaptability, cultural fit, communication
+      ease, or lack of 'otherness', without specific reference to time, party, or
+      job.
+    clarification: Includes vague statements like '적응이 빠를 것 같아서' (will adapt quickly),
+      '말이 통할 것 같아서' (will communicate well), '이질감이 없을 것 같아서' (no sense of alienation),
+      '평범한 사람' (ordinary person), or general 'good impression' ('호감도', '좋아보여서').
+    negative_clarification: Do not use if a specific factor (age, job, party, residence
+      time) is clearly stated. Use the specific code. Use 'none_of_above' for non-answers.
+  none_of_above:
+    definition: Uninformative, random, or non-substantive responses.
+    clarification: Includes single words like '없음' (none), '그냥' (just), '특별이없다' (no
+      special reason), '딱히 없음' (no particular reason), random characters, or statements
+      indicating no preference ('둘다 선호하지 않음', '상관없음').
+    negative_clarification: Do not use for substantive reasons. If the respondent
+      gives a reason, even if weak, try to categorize it into one of the other codes.
+

@@ -1,0 +1,76 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1002
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector (탈북민/탈북자), or specific association with North Korea as
+      a primary ground for selection or rejection.
+    clarification: Includes mentions of 'North Korea' (북한), 'defector' (탈북민, 탈북자),
+      'North Korean migrant', or specific concerns about North Korean identity such
+      as spy risks, ideological differences, or prioritizing defector support.
+    negative_clarification: Do not use for general 'foreigner' vs 'Korean' distinctions
+      unless North Korea is explicitly named. Use 'nationality_reasoning' for general
+      Korean citizenship arguments. Use 'crime_reasoning' if the concern is about
+      criminal records rather than origin.
+  nationality_reasoning:
+    definition: Reasoning that prioritizes or rejects candidates based on their status
+      as a South Korean citizen (nationality/citizenship) versus a foreigner, without
+      specific reference to North Korea.
+    clarification: Includes mentions of 'Korean' (한국인, 대한민국 국민, 내국인, 자국민), 'citizenship'
+      (국적, 시민), 'birthplace in Korea' (한국 출생, 국내 출신), or preferences for compatriots
+      over foreigners in general.
+    negative_clarification: Do not use if the response specifically mentions North
+      Korea or defectors; use 'nk_origin_reasoning' instead. Do not use for general
+      ethnic preferences not tied to legal citizenship status if ambiguous, but prioritize
+      this if 'Korean' is explicitly stated.
+  criminal_record_reasoning:
+    definition: Reasoning based on the presence, absence, or type of criminal record
+      (전과) of the candidate.
+    clarification: Includes mentions of 'criminal record' (전과, 범죄 기록), 'theft' (절도),
+      'tax evasion' (탈세), 'clean record' (전과 없음, 무전과), or judgments about trustworthiness
+      based on legal history.
+    negative_clarification: Do not use for general character traits not linked to
+      legal records. Do not use if the criminal record is mentioned only as a secondary
+      factor to origin; if origin is the primary differentiator, use 'nk_origin_reasoning'.
+  family_economic_need_reasoning:
+    definition: Reasoning based on the candidate's family structure, dependents, or
+      economic vulnerability.
+    clarification: Includes mentions of 'children' (자녀, 아이), 'single parent' (미혼모,
+      혼자 부양), 'elderly' (고령), 'financial need' (경제력 부족, 부양가족), 'responsibility' (책임감),
+      or 'welfare' (복지).
+    negative_clarification: Do not use for general age preferences unless linked to
+      economic dependency or family care. Do not use for political ideology.
+  age_reasoning:
+    definition: Reasoning based primarily on the candidate's age, independent of family
+      status or criminal record.
+    clarification: Includes mentions of 'young' (어리다, 젊은), 'old' (연세 많음, 고령), 'age'
+      (나이), or assumptions about energy, future potential, or retirement based solely
+      on age.
+    negative_clarification: Do not use if age is mentioned alongside strong family/economic
+      arguments; use 'family_economic_need_reasoning'. Do not use if age is linked
+      to criminal record (e.g., 'young enough to reform'); use 'criminal_record_reasoning'
+      or 'age_reasoning' depending on the primary focus, but prefer 'age_reasoning'
+      if the focus is on lifespan/productivity.
+  capability_job_fit_reasoning:
+    definition: Reasoning based on the candidate's perceived skills, work ethic, gender
+      suitability for the specific job, or general competence.
+    clarification: Includes mentions of 'ability' (능력), 'skill' (숙련도), 'gender' (남성,
+      여성) in the context of job efficiency (e.g., night shifts, physical strength),
+      'experience' (경력), or 'trustworthiness' not linked to crime.
+    negative_clarification: Do not use for general 'good person' sentiments without
+      specific capability reference. Do not use for nationality or origin.
+  none_of_above:
+    definition: Responses that are uninformative, random, or do not fit into the specific
+      substantive categories.
+    clarification: Includes single words like 'good', 'no reason', 'just', random
+      characters, emojis, or vague sentiments like 'feels right' without elaboration.
+    negative_clarification: Do not use for substantive reasons even if briefly stated.
+      If a response contains any of the above codes, use that code instead.
+

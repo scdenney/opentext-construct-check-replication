@@ -1,0 +1,62 @@
+codebook:
+  name: lupu2024_lawsofwar_induced
+  residual_code: none_of_above
+  context: Adults in France, the United Kingdom and the United States read about a
+    civil war abroad in which the government and the rebels were each described as
+    either following or violating the international laws that limit how combatants
+    may fight, rated their approval of each side, and explained their approval of
+    the rebels in their own words.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:lupu2024_lawsofwar:1001
+codes:
+  rebel_law_violation:
+    definition: The respondent cites the rebels' violation of international law, humanitarian
+      law, or rules of war (including abuse of civilians or prisoners) as a reason
+      for their rating.
+    clarification: Includes mentions of breaking international agreements, war crimes,
+      harming non-combatants, inhumane treatment of prisoners, or generally failing
+      to adhere to established laws of conflict.
+    negative_clarification: Do not use for general disapproval of violence, opposition
+      to war itself, or lack of information. Use 'general_anti_war' or 'insufficient_info'
+      instead.
+  rebel_law_compliance:
+    definition: The respondent cites the rebels' adherence to international law, humanitarian
+      law, or rules of war as a reason for their rating.
+    clarification: Includes mentions of following the rules of war, respecting international
+      agreements, protecting civilians, or fighting with honor/decency within legal
+      bounds.
+    negative_clarification: Do not use for general approval of the rebels' cause or
+      strategy unrelated to legal compliance. Use 'support_just_cause' or 'general_approval'
+      instead.
+  general_anti_war:
+    definition: The respondent expresses opposition to war, violence, or killing as
+      a primary reason for their rating, regardless of legal compliance.
+    clarification: Includes statements that war is never the answer, violence is wrong,
+      peace is preferable, or that fighting causes unnecessary misery and death.
+    negative_clarification: Do not use if the respondent specifically references legal
+      rules or laws. Use 'rebel_law_violation' or 'rebel_law_compliance' instead.
+  support_just_cause:
+    definition: The respondent supports or disapproves based on the rebels' underlying
+      motives, legitimacy, or the nature of the government they are fighting.
+    clarification: Includes mentions of fighting for freedom, democracy, self-determination,
+      or opposing a non-democratic/tyrannical government.
+    negative_clarification: Do not use if the reasoning is specifically about how
+      the war is fought (legal rules). Use 'rebel_law_violation' or 'rebel_law_compliance'
+      instead.
+  insufficient_info:
+    definition: The respondent states they do not have enough information, knowledge,
+      or familiarity with the situation to form an opinion.
+    clarification: Includes phrases like "don't know," "not enough info," "need more
+      facts," or "not familiar with the opposition group."
+    negative_clarification: Do not use for vague or non-substantive answers that imply
+      an opinion exists but is poorly articulated. Use 'none_of_above' for gibberish
+      or purely emotional outbursts without clear reasoning.
+  none_of_above:
+    definition: The response is uninformative, nonsensical, repetitive, or expresses
+      a personal stance unrelated to the specific context of the war or laws.
+    clarification: Includes gibberish, random text, "no comment," "same as before,"
+      or purely personal/political statements unrelated to the specific scenario (e.g.,
+      "I just want gems").
+    negative_clarification: Do not use for substantive reasons related to war, law,
+      or cause.
+

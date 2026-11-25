@@ -1,0 +1,65 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1007
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/communist rule
+      in a unified Korea.
+    clarification: Includes mentions of "liberal democracy" (자유민주주의), "democracy"
+      (민주주의), "freedom" (자유), rejection of dictatorship/one-party rule (독재, 공산당, 노동당
+      참여 금지), and preference for federal arrangements as a democratic compromise.
+    negative_clarification: Exclude mentions of military arrangements, economic costs,
+      or implementation timelines unless they are explicitly tied to the preservation
+      of democratic values. Use other codes for those.
+  military_arrangement:
+    definition: Reasoning focused on the disposition, presence, or integration of
+      military forces in unified Korea.
+    clarification: Includes preferences for South Korean troops only, US/South Korean
+      joint forces, UN peacekeeping forces, dissolution of North Korean troops, military
+      integration, or the absence of foreign troops (specifically Chinese).
+    negative_clarification: Exclude general political system preferences. If the respondent
+      mentions "democracy" alongside military, use political_system_democracy if the
+      political aspect is the primary driver, otherwise use this code if the military
+      aspect is dominant.
+  economic_considerations:
+    definition: Reasoning based on economic factors, financial burdens, or business
+      regulations in a unified Korea.
+    clarification: Includes mentions of "unification tax" (통일세) levels or distribution,
+      South Korean corporate participation in the North, restrictions on business
+      operations, or general economic burden.
+    negative_clarification: Exclude political system or military reasoning.
+  implementation_timeline:
+    definition: Reasoning focused on the speed, phase, or procedural aspects of the
+      unification process.
+    clarification: Includes preferences for immediate implementation, gradual/step-by-step
+      implementation (단계별 이행), short transition periods, or indefinite postponement.
+    negative_clarification: Exclude political system, military, or economic reasoning.
+  legal_judicial:
+    definition: Reasoning focused on the legal accountability, prosecution, or management
+      of North Korean leadership and assets.
+    clarification: Includes preferences for prosecution in South Korean courts, international
+      tribunals, or the management of North Korean nuclear weapons.
+    negative_clarification: Exclude general political system preferences.
+  mobility_restrictions:
+    definition: Reasoning focused on the freedom of movement and border control between
+      North and South Korea.
+    clarification: Includes preferences for immediate open borders, restricted movement
+      requiring permits, or phased opening of borders.
+    negative_clarification: Exclude general political system or economic reasoning.
+  general_preference:
+    definition: Non-specific reasons indicating a general preference for one scenario
+      over another without specifying the attribute.
+    clarification: Includes phrases like "looks better," "feels better," "more reasonable,"
+      "less bad," or "just like it."
+    negative_clarification: Exclude specific policy reasons. Use none_of_above for
+      gibberish or completely uninformative responses.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

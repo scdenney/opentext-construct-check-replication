@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_nk_natid_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National-identity
+    conjoint with a task-4 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 사람 을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this person? Please enter your answer.) [spacing as fielded]". Read
+    each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_natid:1004
+codes:
+  civic_law_criteria:
+    definition: Reasoning that invokes respect for South Korea's laws, political institutions,
+      social norms, or civic duties as a primary ground for the person being more
+      truly Korean or a better choice.
+    clarification: Includes explicit mentions of respecting laws (법), political systems/institutions
+      (정치 제도), regulations/norms (규범/규율), and civic duties. Also includes reasoning
+      that understanding or respecting these structures is more important than bloodline
+      or birthplace.
+    negative_clarification: Exclude responses that only mention legal status (citizenship)
+      without referencing respect for the system, or those that focus solely on cultural/historical
+      knowledge without mentioning laws/norms. Use 'citizenship_status' or 'cultural_historical_criteria'
+      instead.
+  citizenship_status:
+    definition: Reasoning based primarily on the possession of South Korean citizenship
+      (nationality) or legal residency status, without invoking respect for laws or
+      norms.
+    clarification: Includes mentions of holding Korean nationality (한국국적), being a
+      citizen, or having legal status. Focuses on the legal fact of belonging rather
+      than the normative respect for the system.
+    negative_clarification: Exclude responses that link citizenship to respect for
+      laws/norms (use 'civic_law_criteria') or those that focus on birthplace/culture
+      (use 'birthplace' or 'cultural_historical_criteria').
+  cultural_historical_criteria:
+    definition: Reasoning that invokes knowledge of or respect for South Korea's history,
+      traditions, culture, or language as a ground for being more truly Korean.
+    clarification: Includes mentions of understanding history (역사), traditions (전통),
+      culture (문화), and language proficiency (한국어). Focuses on cultural assimilation
+      or heritage.
+    negative_clarification: Exclude responses that focus on laws/political institutions
+      (use 'civic_law_criteria') or those that focus solely on birthplace (use 'birthplace').
+  birthplace_residence:
+    definition: Reasoning based on the person's place of birth or length of residence
+      in South Korea.
+    clarification: Includes mentions of being born in Korea (한국에서 태어남), living in
+      Korea for a long time, or having spent most of their life there.
+    negative_clarification: Exclude responses that also cite cultural knowledge or
+      legal status as the primary reason. If birthplace is mentioned alongside culture/law,
+      prioritize the more specific code ('cultural_historical_criteria' or 'civic_law_criteria')
+      if the logic is distinct, otherwise use the most prominent factor. If purely
+      geographic, use this code.
+  ethnic_national_sentiment:
+    definition: Reasoning based on ethnic kinship, shared bloodline, or a subjective
+      feeling of "being Korean" (ethnic identity) rather than civic or cultural criteria.
+    clarification: Includes mentions of ethnicity (민족성), feeling like a Korean (한국인임을
+      느낌/느끼다), or shared blood/heritage.
+    negative_clarification: Exclude responses that cite respect for laws, culture,
+      or citizenship. Use 'civic_law_criteria', 'cultural_historical_criteria', or
+      'citizenship_status' instead.
+  instrumental_pragmatic:
+    definition: Reasoning based on practical, economic, or political utility rather
+      than identity criteria.
+    clarification: Includes mentions of economic benefit (경제), political advantage,
+      or general helpfulness to the country.
+    negative_clarification: Exclude responses based on identity, culture, law, or
+      birthplace.
+  none_of_above:
+    definition: Uninformative, incomplete, or irrelevant responses.
+    clarification: Includes single letters (e.g., "A"), gibberish, statements about
+      the survey translation, or answers that do not provide a clear reason for the
+      choice.
+    negative_clarification: Exclude any response that provides a discernible reason
+      related to identity, law, culture, or pragmatism.
+

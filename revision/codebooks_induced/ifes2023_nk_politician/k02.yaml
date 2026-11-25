@@ -1,0 +1,68 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1002
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the effects of democracy on order or the economy as a ground for choosing
+      the politician.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic state" (민주
+      국가), or arguments that democracy is superior to other systems (e.g., authoritarianism,
+      state capitalism) despite potential flaws, or that it leads to better economic
+      or social outcomes.
+    negative_clarification: Excludes general appeals to equality, diversity, or welfare
+      that do not explicitly reference the political system of democracy. Use equality_reasoning,
+      diversity_reasoning, or welfare_reasoning instead.
+  equality_reasoning:
+    definition: Reasoning based on the principle of equality, fairness, or non-discrimination,
+      particularly regarding gender or general social status.
+    clarification: Includes calls for gender equality, rejection of gender-based discrimination,
+      belief that men and women should be treated equally in employment or society,
+      and general appeals to fairness or justice.
+    negative_clarification: Excludes reasoning that specifically cites "democracy"
+      as the mechanism for equality. Use democracy_reasoning instead. Excludes specific
+      policy preferences like welfare or economic structure.
+  diversity_reasoning:
+    definition: Reasoning that values cultural, ethnic, or racial diversity and inclusion.
+    clarification: Includes support for multiculturalism, acceptance of different
+      races and cultures, and the belief that diversity improves society or individual
+      lives.
+    negative_clarification: Excludes general equality arguments not tied to diversity.
+      Use equality_reasoning instead. Excludes economic or welfare arguments.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes government responsibility for social welfare,
+      public support, or economic security.
+    clarification: Includes beliefs that the government should provide welfare, support
+      citizens' livelihoods, or take responsibility for social safety nets.
+    negative_clarification: Excludes arguments about the political system (democracy)
+      or abstract principles of equality/diversity. Use democracy_reasoning or equality_reasoning
+      instead.
+  economic_reasoning:
+    definition: Reasoning focused on economic structure, private enterprise, or economic
+      growth as the primary criterion.
+    clarification: Includes preferences for private sector growth, skepticism of state-owned
+      enterprises, or beliefs that specific economic policies lead to national prosperity.
+    negative_clarification: Excludes general welfare appeals. Use welfare_reasoning
+      instead. Excludes arguments about the political system itself.
+  general_agreement:
+    definition: Reasoning based on general agreement with the politician's overall
+      stance or perceived suitability without specifying a distinct policy domain.
+    clarification: Includes statements like "I agree with their views," "they seem
+      suitable," "their thoughts match mine," or "they are the best choice" without
+      citing specific policy areas like economy, welfare, or democracy.
+    negative_clarification: Excludes specific policy-based reasoning. Use the specific
+      policy code (e.g., welfare_reasoning) if a specific domain is mentioned.
+  none_of_above:
+    definition: Uninformative, incomplete, or irrelevant responses.
+    clarification: Includes single letters (e.g., "A", "B"), typos with no clear meaning,
+      or responses that do not provide a reason for the choice.
+    negative_clarification: Excludes any response that provides a discernible reason,
+      even if vague. Use general_agreement if a vague reason is present.
+

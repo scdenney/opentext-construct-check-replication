@@ -1,0 +1,88 @@
+codebook:
+  name: ifes2023_sk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, South Koreans (IFES 2023)). Respondents answered:
+    "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this politician?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_politician:1006
+codes:
+  democracy_reasoning:
+    definition: Responses that explicitly cite democracy, democratic principles, or
+      the value of democratic governance as a primary reason for choosing the politician.
+      This includes invoking democracy's inherent correctness, its role in social
+      order, or its compatibility with other values like diversity.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic values" (민주적
+      가치), "democratic system" (민주주의 체제), or arguments that democracy is the correct/right
+      way to govern. Also includes reasoning that links democracy positively to social
+      outcomes (e.g., diversity, order) or negatively to non-democratic alternatives.
+    negative_clarification: Exclude responses that mention democracy only as a neutral
+      descriptor or in a list of policy areas without expressing a preference for
+      democratic governance itself. Exclude responses that criticize democracy (e.g.,
+      "democracy weakens competitiveness") unless the respondent chooses the politician
+      *because* they reject democracy (which would likely fall under economic/authoritarian
+      reasoning or none_of_above depending on clarity). Do not use for general "fairness"
+      or "equality" unless explicitly tied to democratic ideals.
+  welfare_government_responsibility:
+    definition: Responses that prioritize the government's role in providing welfare,
+      social safety nets, or economic security for citizens.
+    clarification: Includes calls for government responsibility in welfare (정부 복지
+      책임), expansion of public services, state-led economic support, or criticism
+      of insufficient welfare. Covers both support for state-provided welfare and
+      the belief that the state should be the primary actor in social security.
+    negative_clarification: Exclude responses that focus on private sector welfare,
+      individual responsibility for livelihood, or general economic growth without
+      a specific focus on government-provided social safety nets. Do not use for general
+      "economic policy" unless it specifically emphasizes state welfare provision.
+  economic_ideology_private_sector:
+    definition: Responses that favor private enterprise, market liberalization, or
+      reduced state intervention in the economy.
+    clarification: Includes support for expanding private companies (사기업 확대), free
+      market principles, reducing state-owned enterprises, or the belief that individuals/companies
+      should drive economic activity rather than the government.
+    negative_clarification: Exclude responses that support state-owned enterprises
+      (국영기업/공기업 확대) or state-led economic planning. Do not use for general "economic
+      growth" if it doesn't specify the mechanism (private vs. public).
+  diversity_inclusion:
+    definition: Responses that cite agreement with the politician's views on diversity,
+      multiculturalism, or inclusion of different ethnic/cultural groups.
+    clarification: Includes support for multiculturalism (다문화), ethnic diversity (인종
+      다양성), cultural diversity (문화 다양성), and the belief that diversity is positive
+      for society.
+    negative_clarification: Exclude responses that oppose diversity (e.g., "diversity
+      makes society chaotic") unless the respondent chooses the politician *because*
+      they oppose diversity (which may fall under none_of_above or specific ideological
+      codes if clear). Do not use for gender equality (use gender_equality code instead).
+  gender_equality:
+    definition: Responses that cite agreement with the politician's stance on gender
+      equality, gender roles, or the elimination of gender discrimination.
+    clarification: Includes support for gender neutrality in roles, opposition to
+      gender discrimination, belief that gender should not determine job opportunities,
+      or support for equal rights between men and women.
+    negative_clarification: Exclude responses that support traditional gender roles
+      (e.g., "men should have priority in jobs") unless the respondent chooses the
+      politician *because* they hold those views (which is still gender_equality reasoning,
+      just conservative). Do not use for general "fairness" unless specifically about
+      gender.
+  general_agreement_ideology:
+    definition: Responses that indicate a general alignment with the politician's
+      political ideology, values, or overall worldview without specifying a particular
+      policy domain.
+    clarification: Includes phrases like "my values match," "similar political stance,"
+      "conservative/progressive alignment," "I agree with their thoughts," or "it
+      feels right." Covers broad ideological congruence.
+    negative_clarification: Exclude responses that cite specific policy areas (use
+      the specific policy codes above). Exclude vague non-substantive answers like
+      "just because" or "they seem nice" (use none_of_above).
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or do not fit into
+      the specific substantive categories.
+    clarification: Includes random characters, emojis, "no reason," "just," "good,"
+      "I don't know," "both are bad," "A is better than B" without explanation, or
+      answers that are purely emotional/aesthetic without policy or value content.
+    negative_clarification: Exclude any response that contains a discernible reason
+      related to democracy, welfare, economy, diversity, gender, or general ideology.
+      If a response is ambiguous but hints at a policy preference, code it according
+      to the most likely policy domain rather than none_of_above.
+

@@ -1,0 +1,90 @@
+codebook:
+  name: marx2025_genderlanguage_induced
+  residual_code: none_of_above
+  context: German adults in a quasi-representative online survey (December 2021) were
+    asked to write down the most important things they hope for from the new coalition
+    government in Berlin; the question wording and instructions varied by experimental
+    arm.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:marx2025_genderlanguage:1001
+codes:
+  gnl_rejection:
+    definition: The response explicitly rejects, mocks, complains about, or refuses
+      to engage with the request for gender-neutral language (GNL) or the concept
+      of gendering itself, regardless of whether it also contains substantive policy
+      hopes.
+    clarification: Includes direct statements hating or opposing GNL (e.g., "hasse
+      diese Sprache", "aufhören mit dem gendern"), complaints about the linguistic
+      requirement, or refusal to use it. Also includes responses that are purely negative
+      reactions to the prompt's linguistic instruction.
+    negative_clarification: Do not code if the respondent simply uses standard language
+      without comment, or if they use GNL neutrally. Do not code if the response is
+      only about policy topics without mentioning language. Use 'none_of_above' if
+      the response is uninformative and does not mention language.
+  climate_environment:
+    definition: The response expresses hope for action on climate change, environmental
+      protection, energy transition, or nature conservation.
+    clarification: Includes mentions of climate crisis, CO2 reduction, renewable energy,
+      biodiversity, animal welfare, and sustainable agriculture.
+    negative_clarification: Exclude if climate is not mentioned. If mentioned alongside
+      other topics, this code applies, but ensure mutual exclusivity by prioritizing
+      the most prominent or first-mentioned theme if multiple strong themes exist,
+      or use 'policy_mix' if no single theme dominates. However, for simplicity in
+      a 4-8 code structure, if a response is purely about climate, use this. If it
+      mixes climate with social issues, consider 'policy_mix' or the most specific
+      dominant theme. Given the residual code, we aim to capture specific substantive
+      hopes. If a response lists multiple distinct policy areas (e.g., climate AND
+      migration), use 'policy_mix'.
+  social_welfare:
+    definition: The response expresses hope for improvements in social security, pensions,
+      healthcare, minimum wage, poverty reduction, or support for vulnerable groups.
+    clarification: Includes pensions (Rente), minimum wage (Mindestlohn), healthcare
+      system (Gesundheitswesen/Pflege), Hartz4/Bürgergeld, housing affordability,
+      and general social justice/equality.
+    negative_clarification: Exclude if the focus is purely on economic growth or tax
+      cuts without a social welfare component. Use 'economic_policy' for pure tax/growth
+      arguments.
+  migration_asylum:
+    definition: The response expresses hopes or demands regarding migration policy,
+      asylum, border control, or integration.
+    clarification: Includes calls for stricter borders, limiting refugee intake, better
+      integration, or changes to asylum laws.
+    negative_clarification: Exclude if migration is not the primary focus. If mixed
+      with other strong themes, use 'policy_mix'.
+  pandemic_health:
+    definition: The response expresses hope for better management, ending, or specific
+      measures related to the Corona pandemic and general public health.
+    clarification: Includes ending lockdowns, better virus control, hospital staffing,
+      and general health system resilience.
+    negative_clarification: Exclude if the focus is on social welfare (e.g., pensions)
+      rather than the pandemic/health system. Use 'social_welfare' for pension-focused
+      responses.
+  economic_fiscal:
+    definition: The response expresses hope for economic growth, tax cuts, support
+      for businesses/middle class, or fiscal stability.
+    clarification: Includes tax reductions (Steuersenkungen), support for SMEs (Mittelstand),
+      economic recovery, and price stability.
+    negative_clarification: Exclude if the focus is on social welfare (e.g., minimum
+      wage for workers) rather than broader economic/fiscal policy. Use 'social_welfare'
+      for worker-focused income issues.
+  policy_mix:
+    definition: The response lists multiple distinct, substantive policy areas (e.g.,
+      climate AND migration, or pensions AND digitalization) without a single dominant
+      theme, or expresses a general desire for competent governance across various
+      fields.
+    clarification: Includes responses that list 3+ distinct topics or broad statements
+      like "good governance," "transparency," "honesty," or "keeping promises" that
+      apply to all areas.
+    negative_clarification: Exclude if a single specific theme (climate, social, etc.)
+      is clearly dominant. Use the specific code instead. Use 'none_of_above' for
+      uninformative answers.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a clear hope for the government.
+    clarification: Includes "I don't know," "Nothing," "No opinion," random characters,
+      single words without context, or expressions of total apathy/disinterest that
+      do not constitute a policy hope.
+    negative_clarification: Exclude any response that contains a substantive policy
+      hope, even if brief. Use 'gnl_rejection' if the response is a complaint about
+      language.
+

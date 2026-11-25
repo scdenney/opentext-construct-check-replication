@@ -1,0 +1,77 @@
+codebook:
+  name: coles2026_gratitude_induced
+  residual_code: none_of_above
+  context: Online participants in 34 countries (2024-2025), each in their local language,
+    were randomly assigned to one of six gratitude practices or three control tasks.
+    In the two arms used here they spent a few minutes writing down either five things
+    they were grateful for in the past week or five events from the past day that
+    affected them, then rated their mood and outlook.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:coles2026_gratitude:1001
+codes:
+  gratitude_expression:
+    definition: The response explicitly or implicitly expresses thankfulness, appreciation,
+      blessing, or a sense of fortune regarding people, things, health, or life circumstances.
+    clarification: Includes direct statements of gratitude (e.g., "I am grateful for...",
+      "Thank you God"), expressions of being blessed or fortunate, and appreciative
+      reflections on positive aspects of life (family, health, job, home, nature)
+      even if the word "grateful" is not used, provided the tone is clearly appreciative
+      rather than merely descriptive.
+    negative_clarification: Exclude neutral descriptions of events, complaints, or
+      negative experiences. If the response lists positive events but does not frame
+      them with appreciation or thankfulness, use `positive_events` instead. If the
+      response is purely negative or neutral, use `negative_events` or `neutral_events`.
+  positive_events:
+    definition: The response lists specific events or occurrences from the past week
+      (gratitude arm) or past day (control arm) that had a positive impact or were
+      enjoyable, without explicitly framing them as objects of gratitude.
+    clarification: Includes descriptions of good meals, successful work tasks, pleasant
+      social interactions, hobbies, or favorable weather, where the respondent is
+      simply reporting what happened or how they felt, rather than expressing thankfulness
+      for the existence of these things.
+    negative_clarification: Exclude responses that explicitly thank someone or something
+      for these events (use `gratitude_expression`). Exclude negative or neutral events
+      (use `negative_events` or `neutral_events`).
+  negative_events:
+    definition: The response lists specific events or occurrences that had a negative
+      impact, caused distress, or were unpleasant.
+    clarification: Includes complaints about health issues, financial loss, conflicts
+      with others, work stress, bad weather, or general unhappiness. This code captures
+      the "affect" or "impact" aspect of the control prompt or negative reflections
+      in the gratitude prompt.
+    negative_clarification: Exclude responses that express gratitude despite the negative
+      event (e.g., "I am grateful I survived the accident" -> `gratitude_expression`).
+      Exclude neutral facts.
+  neutral_events:
+    definition: The response lists routine, mundane, or factual events that did not
+      have a strong positive or negative emotional valence.
+    clarification: Includes daily chores, commuting, eating, sleeping, or administrative
+      tasks described in a neutral tone. These are events that "affected" the day
+      in a logistical sense but were not emotionally charged.
+    negative_clarification: Exclude events that are clearly positive (use `positive_events`)
+      or negative (use `negative_events`). Exclude expressions of gratitude (use `gratitude_expression`).
+  abstract_or_vague:
+    definition: The response consists of abstract concepts, general life philosophies,
+      or vague statements that do not refer to specific events or tangible items.
+    clarification: Includes reflections on life meaning, general statements about
+      happiness, or broad categories without specific examples (e.g., "Life is good,"
+      "Peace of mind," "The future").
+    negative_clarification: Exclude specific examples of gratitude or events. If the
+      response is a specific list of items (even if broad like "family"), use `gratitude_expression`
+      or `positive_events`.
+  uninformative_or_noise:
+    definition: The response contains no meaningful content related to the prompt,
+      such as random characters, names, dates, or single words that do not form a
+      coherent answer.
+    clarification: Includes random strings of numbers/letters, single names, "NONE",
+      "I can't remember", or responses that are clearly placeholders or errors.
+    negative_clarification: Exclude responses that have some meaning but are off-topic
+      or irrelevant in a different way (though most off-topic meaningful responses
+      should be coded by their content type; this is for pure noise).
+  none_of_above:
+    definition: Residual code for responses that do not fit into any of the above
+      categories.
+    clarification: Use this if a response is ambiguous and cannot be confidently classified
+      into the other mutually exclusive codes.
+    negative_clarification: N/A
+

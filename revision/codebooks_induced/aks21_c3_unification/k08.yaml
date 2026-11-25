@@ -1,0 +1,72 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1008
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), rejection of 'dictatorship' (독재) or 'one-party system' (일당체제/노동당 참여
+      금지), and preference for confederal arrangements if linked to democratic principles.
+    negative_clarification: Exclude mentions of political system only when they are
+      not the primary reason or are vague (e.g., just 'political system'). Use 'security_military'
+      if the focus is on troop presence rather than regime type. Use 'none_of_above'
+      if the answer is uninformative.
+  security_military:
+    definition: Reasoning focused on military arrangements, troop presence, disarmament,
+      or national sovereignty regarding defense.
+    clarification: Includes preferences for South Korean troops, UN peacekeepers,
+      dissolution of North Korean army, joint US-South Korean forces, rejection of
+      Chinese/foreign troops, and nuclear weapon management (if framed as security).
+    negative_clarification: Exclude if the reasoning is purely about political ideology
+      without security implications. Use 'political_system_democracy' if the rejection
+      of North Korean troops is based on their political affiliation (e.g., Workers'
+      Party) rather than military threat.
+  economic_fiscal:
+    definition: Reasoning based on economic costs, tax burdens, or business regulations.
+    clarification: Includes concerns about 'unification tax' (통일세) rates, who pays
+      the tax (top income vs. all citizens), restrictions on South Korean business
+      operations in the North, and general economic efficiency.
+    negative_clarification: Exclude if the economic point is secondary to political
+      or security concerns. Use 'none_of_above' for vague economic statements like
+      'good for economy' without specifics.
+  implementation_process:
+    definition: Reasoning focused on the pace, method, or feasibility of the unification
+      process.
+    clarification: Includes preferences for 'gradual implementation' (단계별 이행), 'phased
+      approach', 'confederal integration' (연방제) as a structural process, and concerns
+      about sudden vs. slow changes.
+    negative_clarification: Exclude if 'confederal' is mentioned as a political system
+      preference (use 'political_system_democracy' if linked to freedom, otherwise
+      this code is for the structural/process aspect). Exclude if the focus is on
+      the outcome (democracy) rather than the process.
+  sovereignty_autonomy:
+    definition: Reasoning emphasizing Korean self-determination, independence from
+      foreign interference, or national pride.
+    clarification: Includes desires for 'self-resolution' (자체적 해결), rejection of foreign
+      intervention (especially Chinese), and the idea that Koreans should solve their
+      own problems.
+    negative_clarification: Exclude if the rejection of foreign troops is based on
+      security threats (use 'security_military') or political ideology (use 'political_system_democracy').
+  legal_judicial:
+    definition: Reasoning focused on legal jurisdiction, accountability, or judicial
+      processes.
+    clarification: Includes preferences for prosecuting North Korean leaders in South
+      Korean courts, legal rights of movement, and judicial oversight.
+    negative_clarification: Exclude if legal aspects are minor details. Use 'political_system_democracy'
+      if the prosecution is framed as a democratic justice issue.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses.
+    clarification: Includes answers like 'no reason', 'just looks good', 'don't know',
+      'both are bad', single words without explanation, or emotional reactions without
+      rationale.
+    negative_clarification: Exclude any response that provides a specific reason related
+      to politics, security, economy, or process.
+

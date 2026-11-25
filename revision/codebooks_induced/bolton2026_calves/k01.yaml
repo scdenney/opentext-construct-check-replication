@@ -1,0 +1,83 @@
+codebook:
+  name: bolton2026_calves_induced
+  residual_code: none_of_above
+  context: Australian adults in an online panel read that about 40% of calves born
+    on Australian dairy farms are slaughtered within 2 weeks of birth, then a short
+    scenario in which surplus calves are instead reared to about 18 months of age
+    before slaughter, with a statement about the dairy industry's position on early
+    slaughter and a description of where and how the animals are kept and fed. They
+    rated how much they agreed with, and how appropriate and acceptable they found,
+    the life led by these animals, then explained their ratings.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:bolton2026_calves:1001
+codes:
+  unnatural_confinement_concern:
+    definition: The response objects to or expresses concern that the animals are
+      kept in confined, indoor, or unnatural conditions (e.g., pens, feedlots) without
+      access to pasture, grass, or the outdoors, or are fed an unnatural diet (e.g.,
+      grain/hay instead of grazing).
+    clarification: Includes complaints about being locked in pens, lack of freedom
+      to roam, absence of grass/pasture, being fed grain/hay, or being kept indoors.
+      It also includes statements that the animals *should* have access to grass,
+      pasture, or free movement to improve their welfare.
+    negative_clarification: Do not use for general cruelty concerns that do not specify
+      the *cause* as confinement or diet. If the respondent objects to slaughter itself
+      regardless of conditions, use 'slaughter_objection'. If they object to the age
+      of slaughter but not the conditions, use 'slaughter_age_concern'.
+  slaughter_objection:
+    definition: The response objects to the act of slaughtering animals for food on
+      ethical, moral, or philosophical grounds, regardless of the conditions or age.
+    clarification: Includes vegetarian/vegan stances, beliefs that killing animals
+      is wrong/cruel/unnatural, or statements that animals have a right to live. Includes
+      views that the entire practice of using animals for food is unacceptable.
+    negative_clarification: Do not use if the objection is specifically about the
+      *conditions* of life (use 'unnatural_confinement_concern') or the *timing* of
+      the slaughter (use 'slaughter_age_concern'). Do not use if the respondent accepts
+      slaughter but finds the specific scenario cruel due to confinement.
+  slaughter_age_concern:
+    definition: The response expresses concern specifically about the age at which
+      the animals are slaughtered, either that 18 months is too short or that 2 weeks
+      is too short, independent of the living conditions.
+    clarification: Includes statements that 18 months is not a "real life" or is too
+      short, or that 2 weeks is too cruel. Includes views that animals should live
+      to adulthood or natural lifespan before slaughter.
+    negative_clarification: Do not use if the concern is primarily about the confinement/pasture
+      access (use 'unnatural_confinement_concern'). Do not use if the concern is about
+      the morality of killing itself (use 'slaughter_objection').
+  economic_and_practical_justification:
+    definition: The response justifies the practice based on economic viability, farming
+      realities, profit motives, or practical necessities of the dairy industry.
+    clarification: Includes statements about farmers needing to make a living, costs
+      of feed vs. pasture, viability of rearing calves, market demand for meat, or
+      the idea that this is the only practical way to manage surplus calves.
+    negative_clarification: Do not use for general acceptance of meat consumption
+      without reference to farming economics. Do not use for ethical objections.
+  general_acceptance_or_necessity:
+    definition: The response accepts the practice as a normal, necessary, or acceptable
+      part of life, food production, or the food chain, without specific criticism
+      of conditions or age.
+    clarification: Includes statements like "we need to eat," "it's just how it is,"
+      "part of the food chain," "humans are omnivores," or "farmers know best." Includes
+      neutral or positive views that do not cite specific welfare concerns.
+    negative_clarification: Do not use if the respondent expresses specific concerns
+      about confinement (use 'unnatural_confinement_concern') or slaughter ethics
+      (use 'slaughter_objection'). Do not use for uninformative responses.
+  comparative_welfare:
+    definition: The response evaluates the scenario primarily by comparing it to the
+      alternative (slaughter at 2 weeks) or other farming practices, rather than assessing
+      the scenario in isolation.
+    clarification: Includes statements that 18 months is "better than 2 weeks," "less
+      cruel than veal," or "an improvement." Includes views that while not ideal,
+      it is a better outcome than the previous practice.
+    negative_clarification: Do not use if the respondent thinks 18 months is still
+      unacceptable regardless of the alternative. Do not use if the comparison is
+      used to justify economic necessity.
+  none_of_above:
+    definition: The response is uninformative, expresses no opinion, lacks sufficient
+      knowledge to form a view, or contains only non-substantive comments.
+    clarification: Includes "no opinion," "I don't know," "I have no idea," "nothing,"
+      "fine," "good," or responses that are purely emotional outbursts without explanation
+      (e.g., "omg that makes me sick" without further context).
+    negative_clarification: Do not use if the response contains a clear stance on
+      welfare, economics, or ethics, even if brief.
+

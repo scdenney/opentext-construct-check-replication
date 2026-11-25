@@ -1,0 +1,70 @@
+codebook:
+  name: aks21_c1_vote_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (NK defector-migrant
+    profile conjoint, vote-choice rationale, South Korea 2021). Respondents answered:
+    "이 프로필을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the profile you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c1_vote:1005
+codes:
+  north_korea_regime_ties:
+    definition: Reasoning that explicitly references the profile's former membership
+      in the Workers' Party of Korea (North Korean regime) or other direct ties to
+      the North Korean political structure as a factor in the decision.
+    clarification: Includes mentions of "Workers' Party" (노동당), "Party member" (당원),
+      or explicit denial of such membership (e.g., "not a party member") as a reason
+      for preference or avoidance.
+    negative_clarification: Do not use for general anti-communist sentiment without
+      specific regime ties, or for general North Korean origin. Use `general_north_korean_origin`
+      if only origin is mentioned, or `none_of_above` if uninformative.
+  general_north_korean_origin:
+    definition: Reasoning based on the profile's identity as a North Korean defector
+      or refugee, without specific reference to regime affiliation.
+    clarification: Includes mentions of being a "North Korean defector" (탈북민), "North
+      Korean" (북한사람), or general concerns about North Korean background (e.g., "North
+      Korean people are cautious").
+    negative_clarification: Do not use if the response specifically cites Workers'
+      Party membership. Use `north_korea_regime_ties` instead.
+  korea_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in South
+      Korea.
+    clarification: Includes mentions of "length of stay in Korea" (한국 체류 기간), "long
+      time in Korea" (한국에 오래 살았음), or "adaptation period" (적응 기간).
+    negative_clarification: Do not use for China residence duration. Use `china_residence_duration`
+      if that is the primary factor.
+  china_residence_duration:
+    definition: Reasoning based on the length of time the profile has lived in China.
+    clarification: Includes mentions of "length of stay in China" (중국 체류 기간), "short
+      time in China" (중국 체류 기간이 짧음), or concerns about "China stigma" (중국혐오).
+    negative_clarification: Do not use for Korea residence duration. Use `korea_residence_duration`
+      if that is the primary factor.
+  employment_status:
+    definition: Reasoning based on the profile's current job, career stability, or
+      employment status.
+    clarification: Includes mentions of "occupation" (직업), "doctor" (의사), "unemployed"
+      (무직), "stable job" (안정된 직업), or "career" (경력).
+    negative_clarification: Do not use for general social integration. Use `social_integration`
+      if the job is mentioned only as a proxy for stability/adaptation without specific
+      job details.
+  demographic_characteristics:
+    definition: Reasoning based on the profile's age, gender, or marital/family status.
+    clarification: Includes mentions of "age" (나이), "young/old" (어리다/많음), "gender"
+      (여성/남성), "married" (결혼), "children" (자녀), or "single" (미혼).
+    negative_clarification: Do not use for residence duration or employment. Use the
+      specific code if those are the primary reasons.
+  social_integration:
+    definition: Reasoning based on the profile's perceived ability to integrate into
+      South Korean society or maintain social relationships.
+    clarification: Includes mentions of "social adaptation" (사회적응), "knowing Koreans"
+      (한국인 동료/지인), "communication" (소통), "fitting in" (융화), or "trust" (신뢰).
+    negative_clarification: Do not use for specific demographic traits. Use `demographic_characteristics`
+      if age/gender is the main point.
+  none_of_above:
+    definition: Responses that are uninformative, random, or do not provide a substantive
+      reason for the choice.
+    clarification: Includes "no reason" (이유 없음), "just because" (그냥), "both are bad"
+      (둘다 싫어서), "random" (무작위), or non-sensical text.
+    negative_clarification: Do not use if any substantive reason (regime, origin,
+      residence, job, demographics, integration) is present.
+

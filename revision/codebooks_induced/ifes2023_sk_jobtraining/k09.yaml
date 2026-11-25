@@ -1,0 +1,91 @@
+codebook:
+  name: ifes2023_sk_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-4 open-end, South Korea (IFES 2023)). Respondents answered:
+    "해당 후보를 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason you chose this candidate?
+    Please enter your answer.)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_sk_jobtraining:1009
+codes:
+  nk_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's North Korean origin,
+      status as a defector (탈북민/탈북자), or birthplace in North Korea as a primary factor
+      for prioritizing or deprioritizing them.
+    clarification: Includes mentions of 'North Korea' (북한), 'defector' (탈북민, 탈북자),
+      'North Korean migrant', or specific North Korean provinces/regions as birthplaces.
+      Covers both negative reasoning (e.g., distrust, security concerns, 'not North
+      Korean') and positive reasoning (e.g., prioritizing support for defectors, empathy
+      for their struggle).
+    negative_clarification: Exclude mentions of South Korean birthplaces (e.g., 'Gyeonggi-do',
+      'Seoul') unless contrasted with a North Korean origin. Exclude general 'foreigner'
+      or 'non-Korean' references that do not specify North Korea. Use 'foreign_origin_reasoning'
+      or 'nationality_reasoning' if the origin is non-North Korean.
+  family_responsibility_reasoning:
+    definition: Reasoning based on the candidate's family status, specifically having
+      children or being married, as a ground for prioritizing them due to economic
+      need or responsibility.
+    clarification: Includes mentions of 'children' (자녀, 아이), 'married' (기혼), 'single
+      parent' (미혼모), 'family support' (가족 부양, 생계), and 'number of children'. Focuses
+      on the burden of raising children or supporting a family as a justification
+      for job training priority.
+    negative_clarification: Exclude general 'family' mentions that do not specify
+      children or economic burden. Exclude reasoning based solely on marital status
+      without reference to children or economic need. Use 'none_of_above' if the reason
+      is vague (e.g., 'family relations' without context).
+  criminal_record_reasoning:
+    definition: Reasoning based on the candidate's criminal history, specifically
+      the presence or absence of a record, as a ground for selection.
+    clarification: Includes mentions of 'criminal record' (전과기록, 전과), 'theft' (절도),
+      'tax evasion' (탈세), 'crime' (범죄), and 'non-criminal' (비전과자, 전과 없음). Covers both
+      negative reasoning (avoiding those with records) and positive reasoning (choosing
+      those without records).
+    negative_clarification: Exclude mentions of minor administrative issues not classified
+      as crimes. Exclude reasoning that focuses on the *severity* of the crime without
+      referencing the record itself as the primary filter. Use 'nk_origin_reasoning'
+      if the crime is linked to national security/espionage in a North Korean context.
+  age_reasoning:
+    definition: Reasoning based on the candidate's age, specifically youth or old
+      age, as a ground for prioritization.
+    clarification: Includes mentions of 'young' (젊음, 젊은), 'old' (나이 많음, 노년), 'age'
+      (나이), 'youth' (청년), and 'elderly' (시니어). Covers preferences for younger candidates
+      (potential, energy) or older candidates (experience, need).
+    negative_clarification: Exclude age mentions that are secondary to other factors
+      like family or criminal record. Use 'none_of_above' if age is mentioned without
+      a clear preference or justification.
+  nationality_korean_reasoning:
+    definition: Reasoning that prioritizes South Korean nationality or citizenship
+      as a primary factor, distinct from North Korean origin.
+    clarification: Includes explicit mentions of 'South Korean' (대한민국 국민, 한국인), 'citizen'
+      (자국민, 내국인), and 'Korean' (한민족). Focuses on the preference for domestic citizens
+      over foreigners or non-citizens.
+    negative_clarification: Exclude mentions of North Korean origin (use 'nk_origin_reasoning').
+      Exclude general 'foreigner' mentions that do not specify South Korean nationality
+      as the positive criterion. Use 'foreign_origin_reasoning' if the reasoning is
+      about non-Korean foreigners.
+  foreign_origin_reasoning:
+    definition: Reasoning that invokes the candidate's non-Korean foreign origin as
+      a ground for prioritizing or deprioritizing them.
+    clarification: Includes mentions of 'foreigner' (외국인, 외노자), 'non-Korean' (비한국인),
+      and specific non-Korean nationalities (e.g., 'Vietnamese'). Covers both negative
+      reasoning (communication barriers, distrust) and positive reasoning (work ethic,
+      specific skills).
+    negative_clarification: Exclude mentions of North Korean origin (use 'nk_origin_reasoning').
+      Exclude mentions of South Korean nationality (use 'nationality_korean_reasoning').
+  experience_skill_reasoning:
+    definition: Reasoning based on the candidate's work experience, skills, or professional
+      background.
+    clarification: Includes mentions of 'experience' (경력, 경험), 'skill' (기술), 'job
+      history' (직업), 'manager' (매니저), and 'work ability' (일할 능력). Focuses on competence
+      and suitability for the job.
+    negative_clarification: Exclude mentions of age or family status. Exclude general
+      'good person' sentiments without specific skill references.
+  none_of_above:
+    definition: Uninformative, vague, or non-substantive responses that do not fit
+      into the specific categories above.
+    clarification: Includes responses like 'just because' (그냥), 'no reason' (이유 없음),
+      'I don't know' (모름), random characters, or very brief, ambiguous statements
+      that do not provide a clear rationale.
+    negative_clarification: Exclude any response that contains a discernible reason
+      related to family, crime, age, nationality, origin, or skills.
+

@@ -1,0 +1,95 @@
+codebook:
+  name: sirovica2022_cowcalf_induced
+  residual_code: none_of_above
+  context: Canadian and American adults in online panels read that cows must give
+    birth to a calf to produce milk and then a short description of one system for
+    housing and caring for dairy cows and their calves, including whether and when
+    the calf is separated from its mother and who it is housed with. They rated how
+    much they agreed with the system and how appropriate and acceptable it is, then
+    explained their views.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:sirovica2022_cowcalf:1001
+codes:
+  maternal_separation_concern:
+    definition: The response criticizes the system or gives as a reason against it
+      that the calf is separated from or deprived of its mother, citing the loss of
+      the mother-calf bond, maternal care, nursing opportunities, or distress to the
+      cow or calf from separation.
+    clarification: Includes explicit statements that separation is cruel, inhumane,
+      or wrong; mentions of stress, anxiety, or heartbreak for the mother or calf;
+      arguments that the calf should stay with the mother to nurse or bond; comparisons
+      to human mother-child separation; and general objections to the timing or necessity
+      of removing the calf.
+    negative_clarification: Do not use for responses that accept separation as necessary
+      for milk production, efficiency, or safety, even if they express mild sadness.
+      Do not use for general animal welfare concerns unrelated to the specific act
+      of separation (e.g., general cruelty, diet, housing conditions). Use 'general_animal_welfare_concern'
+      or 'efficiency_acceptance' instead.
+  general_animal_welfare_concern:
+    definition: The response expresses concern about the treatment of cows or calves
+      in general, or criticizes the dairy industry broadly, without specifically focusing
+      on the mother-calf separation as the primary objection.
+    clarification: Includes complaints about crowded conditions, unsanitary environments,
+      lack of antibiotics, use of hormones, veal production, or general "cruelty"
+      not tied to the specific separation mechanism described. Also includes broad
+      statements that "farming is cruel" without specifying the separation aspect.
+    negative_clarification: Do not use if the primary complaint is specifically about
+      the calf being taken from the mother. If the response mentions separation as
+      the main issue, use 'maternal_separation_concern'. Use 'none_of_above' if the
+      concern is too vague or unrelated to the specific system described.
+  efficiency_and_economic_necessity:
+    definition: The response accepts the system primarily because it is efficient,
+      necessary for milk production, economically viable for farmers, or the standard
+      way of doing things.
+    clarification: Includes statements that separation is needed to get enough milk
+      for humans, that it is efficient, that farmers need to make a living, that it
+      is a "business," or that it is the traditional/standard method. May acknowledge
+      separation is sad but justify it as necessary.
+    negative_clarification: Do not use if the response rejects the system due to separation
+      concerns. Use 'maternal_separation_concern' instead. Use 'alternative_diet_preference'
+      if the response argues for stopping dairy consumption entirely rather than justifying
+      the current system.
+  preference_for_longer_bonding_or_nursing:
+    definition: The response suggests that while separation might be acceptable or
+      necessary, the calf should remain with the mother for a longer period than described,
+      or should be allowed to nurse from the mother directly.
+    clarification: Includes requests for the calf to stay with the mother for days,
+      weeks, or months; suggestions that the calf should nurse from its own mother
+      rather than a foster cow or bucket; and ideas that the current separation time
+      is too short.
+    negative_clarification: Do not use if the response demands immediate and permanent
+      separation is wrong (use 'maternal_separation_concern'). Do not use if the response
+      accepts the current system as is (use 'efficiency_and_economic_necessity').
+      This code is for those who want modification of the timing or method of separation/nursing.
+  alternative_diet_preference:
+    definition: The response argues that cow's milk is unnecessary, unhealthy, or
+      that humans should switch to plant-based alternatives, rendering the management
+      system irrelevant or unethical.
+    clarification: Includes statements that humans don't need cow milk, that soy/plant
+      milk is better, that dairy consumption should be reduced or eliminated, or that
+      the entire industry is unnecessary.
+    negative_clarification: Do not use if the response focuses on the welfare of the
+      cows within the existing system. Use 'general_animal_welfare_concern' or 'maternal_separation_concern'
+      if the focus is on animal treatment. Use 'efficiency_and_economic_necessity'
+      if the focus is on the practicality of the system.
+  acceptance_of_system:
+    definition: The response states that the system is acceptable, humane, good, or
+      has no problems, often citing that the animals are cared for or that the system
+      is logical.
+    clarification: Includes positive ratings of the system, statements that it is
+      "fine," "good," "humane," or "logical." May mention that calves are fed or cared
+      for adequately.
+    negative_clarification: Do not use if the response has reservations or criticisms.
+      Use 'preference_for_longer_bonding_or_nursing' if there are reservations about
+      timing. Use 'efficiency_and_economic_necessity' if the acceptance is based on
+      necessity rather than inherent goodness.
+  none_of_above:
+    definition: The response is uninformative, irrelevant, expresses no opinion, or
+      is too vague to code.
+    clarification: Includes "n/a," "no comment," "I don't know," "I have no opinion,"
+      "sounds good" without explanation, or completely unrelated text (e.g., spam,
+      personal anecdotes unrelated to the system).
+    negative_clarification: Do not use if the response contains a clear opinion on
+      the system, even if it is neutral. Use 'acceptance_of_system' for neutral/positive
+      views. Use 'maternal_separation_concern' for negative views.
+

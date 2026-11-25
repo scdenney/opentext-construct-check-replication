@@ -1,0 +1,74 @@
+codebook:
+  name: ifes2023_nk_politician_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Emerging-politician
+    conjoint with a task-5 open-end, North Korean migrants in South Korea (IFES 2023)).
+    Respondents answered: "해당 정치인을 선택하신 이유가 무엇입니까? 답변을 입력해 주십시오. (What is the reason
+    you chose this politician? Please enter your answer.)". Read each answer in its
+    original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_nk_politician:1010
+codes:
+  democracy_reasoning:
+    definition: Reasoning that explicitly invokes democracy, democratic government,
+      or the inherent value of democratic systems as a primary ground for choosing
+      the politician.
+    clarification: Includes mentions of "democracy" (민주주의), "democratic person" (민주적인
+      사람), "democratic legitimacy" (민주주의 정통성), or the belief that democracy is the
+      best form of government despite its flaws.
+    negative_clarification: Exclude responses that mention equality, diversity, or
+      welfare without explicitly referencing the democratic system or process. Use
+      equality_reasoning, diversity_reasoning, or welfare_reasoning instead.
+  equality_reasoning:
+    definition: Reasoning based on the principle of equal treatment, non-discrimination,
+      or gender equality in social and economic roles.
+    clarification: Includes arguments against gender discrimination, support for equal
+      rights for men and women, belief that gender should not determine roles, and
+      general calls for an equal society (평등).
+    negative_clarification: Exclude responses that focus on the democratic system
+      itself. Use democracy_reasoning instead. Exclude responses focused solely on
+      economic growth or state power. Use economic_reasoning instead.
+  diversity_reasoning:
+    definition: Reasoning that values racial, ethnic, or cultural diversity and inclusion
+      of outsiders.
+    clarification: Includes acceptance of people from other countries, support for
+      racial and cultural diversity, opposition to racial discrimination, and the
+      belief that diversity is beneficial or just.
+    negative_clarification: Exclude responses that focus on gender equality specifically.
+      Use equality_reasoning instead. Exclude responses that frame diversity solely
+      in terms of economic benefit without mentioning the value of diversity itself.
+      Use economic_reasoning if the primary driver is purely economic gain.
+  welfare_reasoning:
+    definition: Reasoning that prioritizes government responsibility for social welfare,
+      public support, or improving citizens' quality of life.
+    clarification: Includes demands for the government to take responsibility for
+      welfare, focus on people's livelihoods (민생), and improve life quality.
+    negative_clarification: Exclude responses that focus on the political system (democracy)
+      or specific social identities (gender/race). Use democracy_reasoning or equality_reasoning/diversity_reasoning
+      instead.
+  economic_reasoning:
+    definition: Reasoning based on economic growth, private enterprise expansion,
+      or national economic benefit.
+    clarification: Includes support for expanding private enterprises (사기업), belief
+      that diversity leads to economic gain, focus on economic development (경제발전),
+      and national economic interest.
+    negative_clarification: Exclude responses that mention economic benefits as a
+      secondary effect of diversity or democracy without making it the primary reason.
+      If diversity is the main point, use diversity_reasoning. If democracy is the
+      main point, use democracy_reasoning.
+  personal_agreement:
+    definition: Reasoning based on the respondent's personal alignment with the politician's
+      views or general competence, without specifying a policy domain.
+    clarification: Includes statements like "my views match," "I agree with their
+      opinion," "they seem to care about people," or general trust in competence.
+    negative_clarification: Exclude responses that specify a policy reason (e.g.,
+      welfare, economy, equality). Use the specific policy code instead. Exclude uninformative
+      answers. Use none_of_above if the answer is just a letter or "XXX".
+  none_of_above:
+    definition: Uninformative, incomplete, or non-substantive responses.
+    clarification: Includes single letters (A, B), placeholders (XXX), or vague statements
+      that do not convey a clear reason for choice.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if brief. Use the most appropriate substantive code if a reason can be
+      inferred.
+

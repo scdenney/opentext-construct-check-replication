@@ -1,0 +1,82 @@
+codebook:
+  name: chopra2024_newsdemand_induced
+  residual_code: none_of_above
+  context: US Prolific respondents who voted for Biden or Trump in 2016 learned how
+    The Boston Herald covered a CBO report on a bill (either reporting only the statistic
+    favourable to one party or reporting both statistics), were offered a free weekly
+    newsletter featuring the outlet's articles, and were then asked to explain why
+    they did or did not subscribe.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:chopra2024_newsdemand:1001
+codes:
+  outlet_bias_complaint:
+    definition: The respondent explicitly states they will not subscribe (or explains
+      their stance) because they perceive the news outlet, the specific report, or
+      the newsletter as politically biased, partisan, slanted, one-sided, or selectively
+      reporting facts.
+    clarification: Includes mentions of specific political leanings (e.g., "right-wing,"
+      "left-wing," "liberal," "conservative"), accusations of propaganda, unfairness,
+      or failure to report both sides of an issue (e.g., "only reported one side,"
+      "didn't report the entire story").
+    negative_clarification: Exclude responses that mention general distrust of media
+      without citing bias, or those that cite lack of interest in the topic itself.
+      If the respondent mentions bias but still intends to subscribe to learn about
+      the bias, code as `interest_in_content`.
+  lack_of_interest_topic:
+    definition: The respondent states they are not interested in the subject matter
+      of the newsletter, specifically economics, economic policy, or politics in general.
+    clarification: Includes statements like "not interested in economics," "don't
+      care about politics," "not my field," or "not relevant to me."
+    negative_clarification: Exclude responses where the respondent expresses interest
+      in the topic but declines for other reasons (e.g., time, inbox clutter). If
+      the respondent says they are interested but won't read it due to bias, code
+      as `outlet_bias_complaint`.
+  inbox_clutter_volume:
+    definition: The respondent declines because they already receive too many emails,
+      newsletters, or information sources, leading to information overload or a desire
+      to keep their inbox empty.
+    clarification: Includes mentions of "too many emails," "inbox full," "information
+      overload," "clutter," "spam," or "zero inbox" goals.
+    negative_clarification: Exclude responses that cite lack of time to read as the
+      primary reason without mentioning email volume. If the respondent mentions both,
+      prioritize `inbox_clutter_volume` if the email volume is the explicit barrier
+      to adding another subscription.
+  lack_of_time_read:
+    definition: The respondent states they do not have sufficient time to read the
+      newsletter or consume additional news content.
+    clarification: Includes statements like "no time to read," "too busy," "don't
+      have hours in the day," or "won't have time to look through articles."
+    negative_clarification: Exclude responses that cite inbox clutter as the main
+      issue. If the respondent says they have time but no interest, code as `lack_of_interest_topic`.
+  preference_for_self_selection:
+    definition: The respondent prefers to seek out news and information on their own
+      terms rather than receiving unsolicited newsletters or subscriptions.
+    clarification: Includes statements like "I prefer to search for news myself,"
+      "I don't like being spoon-fed," "I go directly to the source," or "I don't subscribe
+      to things I don't seek out."
+    negative_clarification: Exclude responses that cite bias or lack of interest.
+      If the respondent prefers self-selection because they distrust the source's
+      bias, code as `outlet_bias_complaint`.
+  distrust_credibility:
+    definition: The respondent declines due to a general lack of trust in the credibility,
+      accuracy, or motives of the news outlet or media in general, without necessarily
+      citing specific political bias.
+    clarification: Includes statements like "I don't trust any news sources," "fake
+      news," "ulterior motives," "not credible," or "don't know who is writing it."
+    negative_clarification: Exclude responses that specifically accuse the outlet
+      of political slant (code as `outlet_bias_complaint`) or general disinterest
+      in the topic.
+  interest_in_content:
+    definition: The respondent indicates they are interested in the content, the outlet,
+      or the research study, often explaining why they said "Yes" or providing a nuanced
+      reason for their decision that doesn't fit the negative codes.
+    clarification: Includes statements like "I want to learn," "I'm curious," "I want
+      to see if it's unbiased," "I work in finance," or "I like to stay informed."
+      This also captures respondents who said "Yes" and provided a positive reason,
+      or those who said "No" but expressed interest in the topic itself.
+    negative_clarification: Exclude responses that are purely negative rejections
+      based on bias, time, clutter, or lack of interest. If the respondent says "No"
+      because of bias, code as `outlet_bias_complaint`.
+  none_of_above:
+    definition: Uninformative, off-topic or empty.
+

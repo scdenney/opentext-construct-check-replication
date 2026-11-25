@@ -1,0 +1,70 @@
+codebook:
+  name: dur2026_china_induced
+  residual_code: none_of_above
+  context: Adults in China in an online survey (2024) read a short description of
+    India in Chinese, including a sentence about India's recent economic cooperation
+    (versions differed), and rated India and China-India relations. They were then
+    asked, in Chinese, to explain why they evaluated India and the relationship the
+    way they did.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:dur2026_china:1001
+codes:
+  negative_relations:
+    definition: The respondent expresses distrust, rivalry, or hostility towards India
+      or the China-India relationship. This includes mentions of border conflicts,
+      Indian aggression or provocation, India aligning with China's rivals (particularly
+      the US), or general negative sentiment about India's attitude or character.
+    clarification: Includes references to border disputes, military friction, Indian
+      nationalism or arrogance, India siding with the US/West, historical enmity,
+      and general dislike or distrust of India.
+    negative_clarification: Do not use for neutral descriptions of border issues without
+      negative sentiment, or for positive economic/cultural cooperation. Use 'economic_cooperation'
+      or 'cultural_historical' if the focus is positive. Use 'source_based' if the
+      response is purely about media consumption without substantive opinion.
+  economic_cooperation:
+    definition: The respondent cites economic factors, trade, investment, or development
+      potential as the primary reason for their evaluation. This includes positive
+      views on trade relations, market potential, or economic complementarity.
+    clarification: Includes mentions of trade volume, export/import relationships,
+      economic growth, investment, "Belt and Road" cooperation, and the mutual benefit
+      of economic ties.
+    negative_clarification: Do not use if the economic mention is secondary to a negative
+      political/military assessment. Use 'negative_relations' if the economic aspect
+      is framed as a threat or competition. Use 'none_of_above' if the mention is
+      vague or non-substantive.
+  cultural_historical:
+    definition: The respondent refers to historical ties, cultural exchanges, religion
+      (e.g., Buddhism), or people-to-people connections as the basis for their evaluation.
+    clarification: Includes references to ancient friendship, Buddhist heritage, cultural
+      similarity, tourism, and long-standing historical connections.
+    negative_clarification: Do not use for negative cultural stereotypes (e.g., hygiene,
+      caste system) unless they are part of a broader negative relations code. Use
+      'negative_relations' if the cultural reference is used to justify distrust or
+      dislike.
+  geopolitical_rivalry:
+    definition: The respondent identifies structural geopolitical competition, such
+      as rivalry for regional influence, differing strategic interests, or competition
+      in the Indo-Pacific, as the main factor.
+    clarification: Includes mentions of India as a competitor for regional dominance,
+      differing stances in international organizations, or strategic balancing.
+    negative_clarification: Do not use if the rivalry is framed as a conflict or threat
+      (use 'negative_relations'). Do not use if it is purely about economic competition
+      (use 'economic_cooperation' or 'negative_relations' depending on sentiment).
+  source_based:
+    definition: The respondent states that their opinion is based on media reports,
+      news, official statements, or general impressions without providing specific
+      substantive reasons related to the relationship or India's attributes.
+    clarification: Includes phrases like "based on news," "official media," "personal
+      impression," "heard from social media," or "general knowledge."
+    negative_clarification: Do not use if the respondent provides specific details
+      from the news (e.g., specific border incidents, specific trade deals). Use 'negative_relations'
+      or 'economic_cooperation' if specific substantive content is provided.
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not fit into
+      any of the above categories.
+    clarification: Includes responses like "no reason," "don't know," "not sure,"
+      "just a feeling," "blank," or purely administrative comments (e.g., "I clicked
+      randomly").
+    negative_clarification: Use this only when the response provides no discernible
+      reasoning or is clearly invalid.
+

@@ -1,0 +1,66 @@
+codebook:
+  name: aks21_c3_unification_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Post-unification
+    scenario conjoint, scenario-choice rationale, South Korea 2021). Respondents answered:
+    "이 제안을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the scenario you did?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c3_unification:1002
+codes:
+  political_system_democracy:
+    definition: Reasoning that explicitly invokes the preference for a liberal democratic
+      political system, freedom, or the rejection of authoritarian/one-party rule
+      in a unified Korea.
+    clarification: Includes mentions of 'liberal democracy' (자유민주주의), 'democracy'
+      (민주주의), rejection of 'authoritarian/one-party rule' (독재적 일당 체계, 조선 노동당 참여 금지),
+      and confederal arrangements (연방제) when framed as a political structure choice.
+    negative_clarification: Exclude mentions of democracy that are not central to
+      the political system choice (e.g., general 'good' or 'better' without specifying
+      system). Use 'general_preference' if the reason is vague. Use 'political_system_authoritarian'
+      if the respondent explicitly prefers authoritarianism (rare, but possible).
+  military_security_arrangement:
+    definition: Reasoning focused on the deployment, dissolution, or management of
+      military forces and security apparatuses in unified Korea.
+    clarification: Includes preferences for 'South Korean army only' (한국군대만), 'dissolution
+      of North Korean army' (북한군 해산), 'UN peacekeeping forces' (UN 평화유지군), 'US military
+      presence' (미군 주둔), and 'nuclear weapon management' (핵무기 관리) by specific entities
+      (e.g., South Korea, UN, joint).
+    negative_clarification: Exclude general statements about 'safety' (안전하다) without
+      specifying military/security mechanisms. Use 'general_preference' if the reason
+      is purely emotional or vague.
+  economic_fiscal_policy:
+    definition: Reasoning based on economic factors, taxation, or financial burdens
+      associated with unification.
+    clarification: Includes mentions of 'unification tax' (통일세), tax rates (e.g.,
+      1%, 10%), 'business operations' (기업운영), 'joint ventures' (합작투자), and economic
+      restrictions or freedoms.
+    negative_clarification: Exclude general economic 'efficiency' (효율적) without specific
+      fiscal details. Use 'general_preference' if the reason is vague.
+  political_integration_mechanism:
+    definition: Reasoning concerning the administrative, legal, or procedural integration
+      of North and South Korea, excluding pure political system ideology.
+    clarification: Includes 'gradual implementation' (단계별 이행), 'judicial prosecution'
+      (기소) by South Korean institutions, 'leadership punishment' (리더십 처형/기소), 'movement
+      restrictions' (이동 제한), and 'joint management' (남북 공동 연합).
+    negative_clarification: Exclude reasons that are primarily about the political
+      system type (use 'political_system_democracy') or military (use 'military_security_arrangement').
+      Use 'general_preference' if the reason is too vague.
+  general_preference:
+    definition: Responses that indicate a choice based on overall impression, relative
+      comparison, or vague satisfaction without specific substantive reasons.
+    clarification: Includes phrases like 'seems better' (그나마 나은 것 같아서), 'I like it'
+      (맘에 들어서), 'no reason' (이유 없음 - if not 'none_of_above'), 'just good' (좋아서), 'more
+      realistic' (현실적이다), and 'trust' (믿을 수 있어서).
+    negative_clarification: Exclude responses that contain specific policy details
+      (tax, military, democracy, etc.). Use 'none_of_above' for non-answers or gibberish.
+  none_of_above:
+    definition: Uninformative responses, non-answers, gibberish, or explicit rejection
+      of unification.
+    clarification: Includes 'none' (없음), 'I don't know' (모름), 'I don't want unification'
+      (통일싫다), gibberish (e.g., 'ㅈ', 'ㄱㄱ'), and single characters or words that do
+      not convey a clear reason.
+    negative_clarification: Exclude any response that provides a discernible reason,
+      even if brief. Use 'general_preference' for brief but meaningful reasons like
+      'good'.
+

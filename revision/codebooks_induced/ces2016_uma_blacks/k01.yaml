@@ -1,0 +1,60 @@
+codebook:
+  name: ces2016_uma_blacks_induced
+  residual_code: none_of_above
+  context: White American adults in an online election survey in autumn 2016 were
+    shown several quoted statements from the presidential campaign and asked which
+    candidate made each one; on the next page they were asked to write, in a few words,
+    what comes to mind when they think of several groups. This answer is about Blacks.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ces2016_uma_blacks:1001
+codes:
+  offensive_comment:
+    definition: The response expresses hate, contempt, or hostility toward Blacks
+      as a group, or relies on demeaning stereotypes regarding character, intelligence,
+      or behavior (e.g., laziness, criminality, entitlement, violence).
+    clarification: Includes slurs, explicit statements of inferiority, generalizations
+      about criminality or laziness, accusations of entitlement or dependency on welfare,
+      and hostile sentiments.
+    negative_clarification: Do not code neutral descriptions, mentions of discrimination
+      faced by Blacks, or policy views stated without disparaging the group. Use 'neutral_description'
+      or 'discrimination_focus' instead.
+  discrimination_focus:
+    definition: The response highlights hardships, systemic racism, discrimination,
+      or historical injustices faced by Blacks, without expressing contempt for the
+      group itself.
+    clarification: Includes mentions of police brutality, systemic racism, slavery's
+      legacy, poverty due to structural factors, and calls for equality or justice.
+    negative_clarification: Do not code if the response blames Blacks for their situation
+      or uses stereotypes to explain their status. Use 'offensive_comment' instead.
+  neutral_description:
+    definition: The response provides a factual, demographic, or neutral identification
+      of the group without positive or negative evaluative judgment.
+    clarification: Includes terms like "people," "African Americans," "darker skin
+      color," "minority," "humans," or simple demographic facts.
+    negative_clarification: Do not code if the response contains stereotypes, hostility,
+      or praise. Use 'offensive_comment' or 'positive_sentiment' instead.
+  positive_sentiment:
+    definition: The response expresses admiration, respect, or positive attributes
+      regarding Blacks as a group or individuals within the group.
+    clarification: Includes terms like "hardworking," "strong," "kind," "great," "resilient,"
+      and affirmations of equality or worth.
+    negative_clarification: Do not code if the positivity is qualified by significant
+      negative stereotypes or if it is merely a neutral identification. Use 'neutral_description'
+      or 'offensive_comment' instead.
+  mixed_evaluation:
+    definition: The response contains both positive and negative sentiments or stereotypes,
+      often balancing generalizations about "some" being good with "others" being
+      bad.
+    clarification: Includes phrases like "some good, some bad," "mostly good but some
+      lazy," or acknowledging both hard work and criminality within the group.
+    negative_clarification: Do not code if the negative aspect is dominant and hateful
+      (use 'offensive_comment') or if the positive aspect is dominant and clear (use
+      'positive_sentiment').
+  none_of_above:
+    definition: The response is uninformative, non-substantive, or does not provide
+      a meaningful characterization of the group.
+    clarification: Includes "nothing," "no thoughts," "N/A," random characters, or
+      responses that do not address the prompt (e.g., "Whites" when asked about Blacks).
+    negative_clarification: Do not code if the response offers any substantive view,
+      even if negative or neutral. Use the appropriate substantive code instead.
+

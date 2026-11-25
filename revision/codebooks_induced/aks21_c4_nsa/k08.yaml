@@ -1,0 +1,68 @@
+codebook:
+  name: aks21_c4_nsa_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (National Security
+    Act position conjoint with randomized rationale, South Korea 2021). Respondents
+    answered: "이 입장을 선택하신 이유는 무엇입니까? 설명해 주십시오. (Why did you choose the position you
+    did?)". Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:aks21_c4_nsa:1008
+codes:
+  national_security_threat:
+    definition: Responses that cite national security, defense against North Korea,
+      counter-espionage, or the protection of the state as the primary reason for
+      their choice.
+    clarification: Includes mentions of 'national security' (국가안보), 'security strengthening'
+      (안보강화), 'North Korean threat' (북한), 'espionage' (간첩), 'state defense' (국가수호),
+      and 'national interest' (국익) when linked to security concerns.
+    negative_clarification: Do not use for general political stability, economic reasons,
+      or abstract concepts of 'order' without explicit security framing. Use 'political_ideology'
+      if the focus is on protecting democracy from internal threats without explicit
+      national security terminology.
+  democratic_protection:
+    definition: Responses that prioritize the protection of liberal democracy, civil
+      liberties, or human rights, often arguing against the law's potential to suppress
+      freedom of speech or political dissent.
+    clarification: Includes mentions of 'freedom' (자유), 'democracy' (민주주의), 'human
+      rights' (인권), 'civil liberties' (시민권), and 'protection of liberal democracy'
+      (자유민주주의 보호).
+    negative_clarification: Do not use if the respondent argues for security over
+      freedom. Use 'national_security_threat' if security is prioritized. Use 'political_ideology'
+      if the argument is purely partisan without reference to democratic principles.
+  policy_scope_preference:
+    definition: Responses that focus on the specific scope, range, or implementation
+      details of the policy (e.g., expansion, restriction, or maintenance of the current
+      range) rather than the underlying ideological or security rationale.
+    clarification: Includes preferences for 'expanding the scope' (범위 확대), 'restricting
+      the scope' (범위 제한/축소), or 'maintaining the current status' (현상 유지) based on
+      practicality, ambiguity, or administrative preference.
+    negative_clarification: Do not use if the scope preference is explicitly justified
+      by security or democratic reasons. Use 'national_security_threat' or 'democratic_protection'
+      in those cases.
+  political_ideology:
+    definition: Responses that reflect a respondent's political alignment, ideological
+      stance (conservative/liberal), or general political values unrelated to specific
+      security or democratic mechanisms.
+    clarification: Includes mentions of 'conservatism' (보수), 'liberalism' (진보), 'political
+      values' (정치적 가치), or general support for a political direction that is not tied
+      to a specific policy mechanism like scope or security.
+    negative_clarification: Do not use for partisan support of a specific party. Use
+      'partisan_support' for that. Do not use if the ideology is expressed through
+      security or democratic arguments.
+  partisan_support:
+    definition: Responses that explicitly state support for or opposition to a specific
+      political party (e.g., People Power Party, Democratic Party of Korea) as the
+      reason for the choice.
+    clarification: Includes direct mentions of party names, 'party support' (당 지지),
+      'party stance' (당 입장), or voting behavior based on party affiliation.
+    negative_clarification: Do not use if the party support is secondary to a policy
+      reason. Use 'policy_scope_preference' or 'national_security_threat' if the policy
+      reason is primary.
+  none_of_above:
+    definition: Responses that are uninformative, non-substantive, or indicate a lack
+      of knowledge or random selection.
+    clarification: Includes 'no reason' (이유 없음), 'don't know' (모르겠다), 'random choice'
+      (무작위), 'just looked good' (좋아 보여서), 'party decided' (당 결정 존중), or gibberish.
+    negative_clarification: Do not use for substantive policy, security, or ideological
+      reasons.
+

@@ -1,0 +1,72 @@
+codebook:
+  name: tripp2026_refugees_induced
+  residual_code: none_of_above
+  context: A nationally representative online sample of US adults (2024) was randomly
+    asked about either 'immigrants' or 'refugees' and wrote the first, second and
+    third thing that comes to mind when they hear the term.
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:tripp2026_refugees:1001
+codes:
+  involuntary_humanitarian:
+    definition: The response describes people forced to flee, displaced, or seeking
+      safety due to external threats, conflict, persecution, or natural disasters,
+      or in urgent need of humanitarian protection.
+    clarification: Includes mentions of war, violence, persecution, danger, fleeing,
+      asylum, displacement, safety, shelter, victims, oppressed, forced to leave,
+      natural disasters, and general need for protection or compassion due to circumstances
+      beyond their control.
+    negative_clarification: Exclude responses that focus solely on economic migration
+      for a better life without mention of force or danger, or those that are purely
+      legal/status-based. Use 'economic_opportunity' or 'legal_status' instead.
+  economic_opportunity:
+    definition: The response characterizes immigrants/refugees as individuals seeking
+      better economic conditions, jobs, wealth, or a higher standard of living, often
+      implying voluntary migration for improvement.
+    clarification: Includes seeking a better life, better future, American Dream,
+      jobs, work, hard worker, economic contribution, escaping poverty (when not linked
+      to immediate danger), and general improvement of circumstances.
+    negative_clarification: Exclude if the primary driver is explicitly stated as
+      fleeing war, persecution, or immediate physical danger. Use 'involuntary_humanitarian'
+      instead. Exclude if the focus is on illegality or burden.
+  legal_status_and_border_control:
+    definition: The response focuses on the legality of entry, border security, immigration
+      laws, or the distinction between legal and illegal immigration.
+    clarification: Includes terms like illegal, undocumented, border, wall, secure
+      the border, legal vs illegal, law breaker, crossing the border, and enforcement
+      of immigration laws.
+    negative_clarification: Exclude if the response describes the humanitarian plight
+      or economic motivation of the person. Use 'involuntary_humanitarian' or 'economic_opportunity'
+      instead.
+  negative_sentiment_and_burden:
+    definition: The response expresses negative attitudes, viewing immigrants/refugees
+      as a burden, threat, criminal, or drain on resources.
+    clarification: Includes freeloader, burden, drain, crime, terrorist, danger, invasion,
+      taking jobs, higher taxes, free handouts, unwanted, and general hostility or
+      resentment.
+    negative_clarification: Exclude if the negativity is specifically about legal
+      status (use 'legal_status_and_border_control') or if it describes a humanitarian
+      crisis requiring aid (use 'involuntary_humanitarian').
+  demographic_and_origin:
+    definition: The response identifies the group by their geographic origin, nationality,
+      or general demographic category without specific political or economic commentary.
+    clarification: Includes specific countries (Mexico, Syria, Ukraine, etc.), regions
+      (Middle East, Latin America), or general terms like foreigner, alien, non-citizen,
+      minority, or people from another country.
+    negative_clarification: Exclude if the response includes a judgment about legality,
+      economic impact, or humanitarian need. Use 'legal_status_and_border_control',
+      'economic_opportunity', or 'involuntary_humanitarian' instead.
+  cultural_and_social_impact:
+    definition: The response focuses on cultural differences, diversity, or the social
+      composition of the country.
+    clarification: Includes diversity, melting pot, culture, language barriers, assimilation,
+      and social cohesion.
+    negative_clarification: Exclude if the focus is on the economic cost or legal
+      status. Use 'economic_opportunity' or 'legal_status_and_border_control' instead.
+  none_of_above:
+    definition: The response is uninformative, nonsensical, expresses uncertainty,
+      or contains no substantive content related to the construct.
+    clarification: Includes "nothing," "don't know," "idk," random words, personal
+      unrelated thoughts, or repeated non-answers.
+    negative_clarification: Exclude any response that provides a descriptive or evaluative
+      thought about immigrants/refugees.
+

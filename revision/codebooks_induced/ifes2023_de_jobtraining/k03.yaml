@@ -1,0 +1,65 @@
+codebook:
+  name: ifes2023_de_jobtraining_induced
+  residual_code: none_of_above
+  context: 'These are open-ended answers from a survey experiment (Job-training priority
+    conjoint with a task-5 open-end, Germany (IFES 2023)). Respondents answered: "Warum
+    haben Sie diese*n Kandidat*in ausgewählt? (Why did you choose this candidate?)".
+    Read each answer in its original language.'
+  induced_by: Qwen/Qwen3.6-35B-A3B-FP8
+  induced_from: induce:ifes2023_de_jobtraining:1003
+codes:
+  east_origin_reasoning:
+    definition: Reasoning that explicitly invokes the candidate's place of birth,
+      regional origin (specifically East Germany, Saxony, or the former GDR), or a
+      political/economic motive related to supporting East Germany as a ground for
+      selection.
+    clarification: Includes mentions of "Sachsen", "Saxony", "Osten", "Ostdeutschland",
+      "neue Bundesländer", or explicit statements about strengthening/supporting East
+      Germany (e.g., "Um die neuen Bundesländer zu stärken").
+    negative_clarification: Exclude mentions of West German states (e.g., "Bayern",
+      "Hamburg", "Deutschland" in a general sense) unless contrasted with East. Use
+      west_origin_reasoning or other codes instead. Exclude general "German" identity
+      without regional specificity.
+  age_reasoning:
+    definition: Reasoning based on the candidate's age, including youth, seniority,
+      proximity to retirement, or life stage.
+    clarification: Includes "jünger", "älter", "Alter", "Rentenalter", "Jugend", "Erfahrung
+      aufgrund des Alters", or comparisons of age-related employability.
+    negative_clarification: Exclude age mentioned only as a demographic fact without
+      being a reason for choice. Use none_of_above if age is not the driver.
+  criminal_record_reasoning:
+    definition: Reasoning based on the presence or absence of a criminal record (Vorstrafen).
+    clarification: Includes "keine Vorstrafen", "nicht vorbestraft", "Straftaten",
+      "Diebstahl", or references to past crimes as a disqualifier or lack thereof
+      as a qualifier.
+    negative_clarification: Exclude general trustworthiness not linked to crime. Use
+      trust_reasoning instead.
+  family_status_reasoning:
+    definition: Reasoning based on the candidate's family situation, such as having
+      children, being single, or marital status.
+    clarification: Includes "Kind", "Kinder", "alleinerziehend", "verheiratet", "ledig",
+      or references to family responsibilities affecting availability or need for
+      support.
+    negative_clarification: Exclude family status mentioned without being a reason.
+      Use none_of_above if not a driver.
+  gender_reasoning:
+    definition: Reasoning based on the candidate's gender.
+    clarification: Includes "weiblich", "Mann", "Frau", or explicit preference for
+      male/female candidates.
+    negative_clarification: Exclude gender mentioned as a neutral descriptor. Use
+      none_of_above if not a driver.
+  general_preference_reasoning:
+    definition: Reasoning based on vague personal preference, sympathy, or lack of
+      specific criteria.
+    clarification: Includes "sympathisch", "gefällt mir", "Empfindung", "Gefühl",
+      "besser", "gute Wahl", or statements like "keine Präferenz" but forced to choose.
+    negative_clarification: Exclude specific attributes like age, crime, or family.
+      Use none_of_above for non-answers.
+  none_of_above:
+    definition: Uninformative answers, random text, or reasons not covered by the
+      specific codes above.
+    clarification: Includes "weiß nicht", "K/A", random characters, "nur so", "muss
+      ich wählen", or general statements like "Deutsch" without regional specificity.
+    negative_clarification: Exclude any substantive reasoning related to origin, age,
+      crime, family, or gender.
+
