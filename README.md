@@ -24,6 +24,8 @@ This repository is temporary. The materials will be deposited in a Dataverse upo
 
 No survey response is in this repository, and no file with one row per respondent. That leaves out the raw and harmonized data, the split manifests, the model labels, the saved topic-model fits, and the codebooks induced from responses.
 
+The screening notes from the corpus search, which record each inclusion and exclusion decision, are not here yet.
+
 The public datasets are not redistributed. `revision/dataset_citations.csv` gives the source article or deposit of each. The author's own surveys are not public.
 
 ## Running the code
